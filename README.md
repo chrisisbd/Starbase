@@ -48,5 +48,5 @@ Files that must not be pushed to the master branches are as follows:
     
 Note regarding empty folders.
 
-    Empty folders are by default ignored by git if you wish an empty folder to be included in your 
-    commits and pushes you must add a .gitkeep file to the folder first. 
+    Empty folders are by default ignored by git if you wish an empty folder to be included in 
+    your commits and pushes you must add a .gitkeep file to the folder first. 
