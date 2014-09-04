@@ -84,7 +84,7 @@ Jetty link is incorrect
 
 Migration Issue
 ===============
-
+Fixed issue with GitHub being ignored in preference to SVN.
 Izpack not yet migrated
 Jenkins not configured for use with GitHub
 
