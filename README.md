@@ -24,6 +24,9 @@ Development Instructions.
 For your first build using IntelliJ IDEA you will need to make a couple of corrections to
 framework.properties and the Projects Setting as detailed below.
 
+Please note the below example is for Linux, I'll detail any additional differences with
+Mac OS X and Windows build below.
+
     1.) Edit the file framework.properties and set the jdk.home.1.6 path to your JDK home
     
         e.g. jdk.home.1.6=/home/mark/opt/jdk1.6.0_45
@@ -32,7 +35,9 @@ framework.properties and the Projects Setting as detailed below.
         JDK; press F4 to open the Projects Settings.  Set the which JDK you are using under 
         the 'Platform Settings' heading, SDKs. Use the green plus sign to select your JDK 
         installation. 
-        
+
+        Also have a look at http://confluence.jetbrains.com/display/IntelliJIDEA/Version+Control+Basics
+        and check your settings look correct.
       
 Files that must not be pushed to the master branches are as follows:
 
@@ -50,3 +55,12 @@ Note regarding empty folders.
 
     Empty folders are by default ignored by git if you wish an empty folder to be included 
     in your commits and pushes you must add a .gitkeep file to the folder first. 
+
+
+Building on Mac OS X
+
+    TO BE DONE ...
+
+Building on Windows
+
+    TO BE DONE ...
