@@ -21,7 +21,8 @@ Development Instructions.
     
     
     
-When first building in IntelliJ IDEA you will need to make a couple of corrections to your system.
+For your first build using IntelliJ IDEA you will need to make a couple of corrections to
+framework.properties and the Projects Setting as detailed below.
 
     1.) Edit the file framework.properties and set the jdk.home.1.6 path to your JDK home
     
@@ -47,5 +48,5 @@ Files that must not be pushed to the master branches are as follows:
     
 Note regarding empty folders.
 
-    Empty folder are by default ignored if you wish an empty folder to be included in your 
+    Empty folders are by default ignored by git if you wish an empty folder to be included in your 
     commits and pushes you must add a .gitkeep file to the folder first. 
