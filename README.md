@@ -50,6 +50,8 @@ Files that must not be pushed to the master branches are as follows:
     4.)	src/org/lmn/fc/model/xmlbeans/
     
     5.)	xml/
+
+    6.) framework.properties
     
 Note regarding empty folders.
 
