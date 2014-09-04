@@ -1,0 +1,103 @@
+<?xml version="1.0" standalone="yes"?>
+
+<LookAndFeels xmlns="lookandfeels.xmlbeans.model.fc.lmn.org">
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Metal</Name>
+        <ClassName>javax.swing.plaf.metal.MetalLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Nimbus</Name>
+        <ClassName>com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Synth</Name>
+        <ClassName>javax.swing.plaf.synth.SynthLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Motif</Name>
+        <ClassName>com.sun.java.swing.plaf.motif.MotifLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Windows</Name>
+        <ClassName>com.sun.java.swing.plaf.windows.WindowsLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Kunststoff</Name>
+        <ClassName>com.incors.plaf.kunststoff.KunststoffLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+   <!--
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>GTK</Name>
+        <ClassName>com.sun.java.swing.plaf.gtk.GTKLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>   -->
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Oyoaha</Name>
+        <ClassName>com.oyoaha.swing.plaf.oyoaha.OyoahaLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Plastic</Name>
+        <ClassName>com.jgoodies.looks.plastic.PlasticLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>PlasticXP</Name>
+        <ClassName>com.jgoodies.looks.plastic.PlasticXPLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Plastic3D</Name>
+        <ClassName>com.jgoodies.looks.plastic.Plastic3DLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>WindowsJG</Name>
+        <ClassName>com.jgoodies.looks.windows.WindowsLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Metouia</Name>
+        <ClassName>net.sourceforge.mlf.metouia.MetouiaLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+    <LookAndFeel>
+        <Installed>1</Installed>
+        <Name>Compiere</Name>
+        <ClassName>org.compiere.plaf.CompiereLookAndFeel</ClassName>
+        <LicenceFilename>s</LicenceFilename>
+    </LookAndFeel>
+
+</LookAndFeels>

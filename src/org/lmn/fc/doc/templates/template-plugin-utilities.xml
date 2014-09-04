@@ -1,0 +1,134 @@
+<!-- ............................................................................... -->
+<!-- Each Controller may have zero or more Plugins, up to the I2C bus addressing limit -->
+<!-- Some Plugins are 'virtual', i.e. do not relate to separate I2C devices -->
+<!-- for example, the processor on-chip services such as A2D and D2A -->
+<!-- These are given an 'address' of zero -->
+
+<Plugin>
+    <Address>00</Address>
+    <Identifier>Utilities</Identifier>
+    <Name>Controller</Name>
+    <Description>The Instrument Utilities Module</Description>
+    <ResourceKey>Utilities</ResourceKey>
+
+    <!-- Example of Configuration Metadata specific to this Plugin -->
+    <Configuration>
+        <md:Key>Example.Data</md:Key>
+        <md:Value>Example</md:Value>
+        <md:DataTypeName>String</md:DataTypeName>
+        <md:Units>Dimensionless</md:Units>
+        <md:Description>A sample item of Utilities Plugin metadata</md:Description>
+    </Configuration>
+
+    <CommandCodeBase>01</CommandCodeBase>
+
+    <Command>
+        <Identifier>getClockDate</Identifier>
+        <CommandCode>00</CommandCode>
+        <Software>
+            <Identifier>Utilities Command</Identifier>
+            <Version>00.1</Version>
+            <Description>Gets the Date from the Instrument Controller clock</Description>
+        </Software>
+        <SendToPort>true</SendToPort>
+        <Response>
+            <Name>Clock.Date</Name>
+            <DataTypeName>Date</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$</Regex>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>setClockDate</Identifier>
+        <CommandCode>01</CommandCode>
+        <Software>
+            <Identifier>Utilities Command</Identifier>
+            <Version>00.1</Version>
+            <Description>Sets the Date on the Instrument Controller clock</Description>
+        </Software>
+        <Parameter>
+            <Name>Clock.Date</Name>
+            <InputDataType>
+                <DataTypeName>Date</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$</Regex>
+            <Tooltip>Format YYYY-MM-DD</Tooltip>
+        </Parameter>
+        <SendToPort>true</SendToPort>
+        <Ack>
+            <Name>Ack</Name>
+        </Ack>
+    </Command>
+
+    <Command>
+        <Identifier>getClockTime</Identifier>
+        <CommandCode>02</CommandCode>
+        <Software>
+            <Identifier>Utilities Command</Identifier>
+            <Version>00.1</Version>
+            <Description>Gets the Time from the Instrument Controller clock</Description>
+        </Software>
+        <SendToPort>true</SendToPort>
+        <Response>
+            <Name>Clock.Time</Name>
+            <DataTypeName>Time</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>^(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>setClockTime</Identifier>
+        <CommandCode>03</CommandCode>
+        <Software>
+            <Identifier>Utilities Command</Identifier>
+            <Version>00.1</Version>
+            <Description>Sets the Time on the Instrument Controller clock</Description>
+        </Software>
+        <Parameter>
+            <Name>Clock.Time</Name>
+            <InputDataType>
+                <DataTypeName>Time</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Regex>^(([0-1][0-9]|[2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+            <Tooltip>Format HH:MM:SS</Tooltip>
+        </Parameter>
+        <SendToPort>true</SendToPort>
+        <Ack>
+            <Name>Ack</Name>
+        </Ack>
+    </Command>
+
+    <Command>
+        <Identifier>getTemperature</Identifier>
+        <CommandCode>04</CommandCode>
+        <Software>
+            <Identifier>Utilities Command</Identifier>
+            <Version>00.1</Version>
+            <Description>Gets the Temperature of the Instrument Controller</Description>
+        </Software>
+        <SendToPort>true</SendToPort>
+        <Response>
+            <Name>Temperature</Name>
+            <DataTypeName>DecimalFloat</DataTypeName>
+            <Units>Celsius</Units>
+            <Regex>^-?\d*(\.\d+)?$</Regex>
+        </Response>
+    </Command>
+
+    <Software>
+        <Identifier>Staribus</Identifier>
+        <Version>00.1</Version>
+        <Description>The Utilities software for the Instrument Controller
+        </Description>
+    </Software>
+</Plugin>

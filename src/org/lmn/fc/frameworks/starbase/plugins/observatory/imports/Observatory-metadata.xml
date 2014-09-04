@@ -1,0 +1,545 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- See: http://utilitymill.com/utility/Regex_For_Range -->
+
+<ObservatoryMetadata xmlns="metadata.xmlbeans.model.fc.lmn.org">
+
+    <!-- The name of the Observatory -->
+    <Metadata>
+        <Key>Observatory.Name</Key>
+        <Value>The Starbase Observatory</Value>
+        <Regex>([a-zA-Z0-9'., ])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The name of the Observatory</Description>
+    </Metadata>
+
+    <!-- The description of the Observatory -->
+    <Metadata>
+        <Key>Observatory.Description</Key>
+        <Value>The Starbase Observatory is in deepest Suffolk</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The description of the Observatory</Description>
+    </Metadata>
+
+    <!-- The Geodetic Datum used by the Observatory -->
+    <Metadata>
+        <Key>Observatory.GeodeticDatum</Key>
+        <Value>WGS84</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The GeodeticDatum used by the Observatory</Description>
+    </Metadata>
+
+    <!-- The Latitude of the Observatory (North is positive) -->
+    <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 -->
+    <Metadata>
+        <Key>Observatory.Latitude</Key>
+        <Value>+00:00:00.001</Value>
+        <Regex>^([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?$</Regex>
+        <DataTypeName>Latitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>The Latitude of the Framework (North is positive)  -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999</Description>
+    </Metadata>
+
+    <!-- The Longitude of the Observatory -->
+    <!-- Uses the astronomical convention that West is positive -->
+    <!-- -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999 -->
+    <Metadata>
+        <Key>Observatory.Longitude</Key>
+        <Value>+000:00:00.001</Value>
+        <Regex>^([+\-]((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|(1[0-7][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]){1,4})*)?$</Regex>
+        <DataTypeName>Longitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>The Longitude of the Observatory (West is positive)  -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999</Description>
+    </Metadata>
+
+    <!-- The Geomagnetic Model used by the Observatory -->
+    <Metadata>
+        <Key>Observatory.GeomagneticModel</Key>
+        <Value>IGRF-11</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The GeomagneticModel used by the Observatory</Description>
+    </Metadata>
+
+    <!-- The Geomagnetic Latitude of the Observatory (North is positive) -->
+    <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 -->
+    <Metadata>
+        <Key>Observatory.GeomagneticLatitude</Key>
+        <Value>+00:00:00.000</Value>
+        <Regex>^([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?$</Regex>
+        <DataTypeName>Latitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>The GeomagneticLatitude of the Observatory (North is positive) -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999</Description>
+    </Metadata>
+
+    <!-- The Geomagnetic Longitude of the Observatory -->
+    <!-- Uses the astronomical convention that West is positive -->
+    <!-- -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999 -->
+    <Metadata>
+        <Key>Observatory.GeomagneticLongitude</Key>
+        <Value>+000:00:00.000</Value>
+        <Regex>^([+\-]((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|(1[0-7][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]){1,4})*)?$</Regex>
+        <DataTypeName>Longitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>The GeomagneticLongitude of the Observatory (West is positive)  -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999</Description>
+    </Metadata>
+
+    <!-- The MaidenheadLocator for the Observatory -->
+    <!-- http://en.wikipedia.org/wiki/Maidenhead_Locator_System -->
+    <!-- Character pairs encode first longitude and then latitude -->
+    <!-- First pair (field) encodes with base 18 and letters "A" to "R" -->
+    <!-- Second pair (square) encodes with base 10 and digits "0" to "9" -->
+    <!-- Third pair (subsquare) encodes with base 24 and letters "A" to "X" -->
+    <!-- Fourth pair (extended square) encodes with base 10 and digits "0" to "9" -->
+    <!-- See: http://en.wikipedia.org/wiki/Maidenhead_Locator_System -->
+    <!-- See: http://www.arrl.org/locate/grid.html -->
+    <!-- http://f6fvy.free.fr/qthLocator -->
+    <Metadata>
+        <Key>Observatory.MaidenheadLocator</Key>
+        <Value>JO02pb</Value>
+        <Regex>([A-R][A-R][0-9][0-9][a-x][a-x])([0-9][0-9])?</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The MaidenheadLocator for the Observatory</Description>
+    </Metadata>
+
+    <!-- The Height of the Observatory above Sea Level in metres -->
+    <Metadata>
+        <Key>Observatory.HASL</Key>
+        <Value>0.0</Value>
+        <Regex>^-?(([0-9])([0-9])?([0-9])?([0-9])?\.([0-9]))?$</Regex>
+        <DataTypeName>DecimalFloat</DataTypeName>
+        <Units>m</Units>
+        <Description>The Height of the Observatory above Sea Level in metres</Description>
+    </Metadata>
+
+    <!-- Locale ............................................................................... -->
+
+    <!-- The TimeZone containing the Observatory -->
+    <!-- Timezones use the Java convention for names -->
+    <!-- e.g. GMT-08:00 is equivalent to 8 hours behind Greenwich time -->
+    <!-- See for example: http://mindprod.com/jgloss/timezone.html -->
+    <!-- or: http://www.twinsun.com/tz/tz-link.htm -->
+    <!-- GMT-23:59 to GMT+00:00 to GMT+23:59 -->
+    <Metadata>
+        <Key>Observatory.TimeZone</Key>
+        <Value>GMT+00:00</Value>
+        <Regex>^GMT[+/-]0*([0-9]|1[0-9]|2[0-3]):0*([0-9]|[1-5][0-9])$</Regex>
+        <DataTypeName>TimeZone</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The TimeZone containing the Observatory  GMT-23:59 to GMT+00:00 to GMT+23:59</Description>
+    </Metadata>
+
+    <!-- The Language of the Observatory User -->
+    <!-- You must use the ISO standard names, which are case-sensitive -->
+    <!-- Country Codes: http://www.loc.gov/standards/iso639-2/php/code_list.php -->
+    <Metadata>
+        <Key>Observatory.Language</Key>
+        <Value>en</Value>
+        <Regex>[a-z][a-z]</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Language of the Observatory User (ISO 639-2)</Description>
+    </Metadata>
+
+    <!-- The Country containing the Observatory -->
+    <!-- You must use the ISO standard names, which are case-sensitive -->
+    <!-- Country Codes: http://www.iso.ch/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html -->
+    <Metadata>
+        <Key>Observatory.Country</Key>
+        <Value>GB</Value>
+        <Regex>[A-Z][A-Z]</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Country containing the Observatory (ISO 3166)</Description>
+    </Metadata>
+
+    <!-- End of Locale ........................................................................ -->
+
+    <!-- The Observatory website URL -->
+    <Metadata>
+        <Key>Observatory.Contact.URL</Key>
+        <Value>http://www.ukraa.com/www/starbase.html</Value>
+        <DataTypeName>URL</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observatory website URL</Description>
+    </Metadata>
+
+    <!-- The email address of the Observatory -->
+    <Metadata>
+        <Key>Observatory.Contact.Email</Key>
+        <Value>starbase@ukraa.com</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The email address of the Observatory</Description>
+    </Metadata>
+
+    <!-- The Observatory telephone number -->
+    <Metadata>
+        <Key>Observatory.Contact.Telephone</Key>
+        <Value>+44 473 000000</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observatory telephone number</Description>
+    </Metadata>
+
+    <!-- Line 1 of the Observatory postal address -->
+    <Metadata>
+        <Key>Observatory.Address.Line1</Key>
+        <Value>Observatory Address Line 1</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Line 1 of the Observatory postal address</Description>
+    </Metadata>
+
+    <!-- Line 2 of the Observatory postal address -->
+    <Metadata>
+        <Key>Observatory.Address.Line2</Key>
+        <Value>Observatory Address Line 2</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Line 2 of the Observatory postal address</Description>
+    </Metadata>
+
+    <!-- Line 3 of the Observatory postal address -->
+    <Metadata>
+        <Key>Observatory.Address.Line3</Key>
+        <Value>Observatory Address Line 3</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Line 3 of the Observatory postal address</Description>
+    </Metadata>
+
+    <!-- Line 4 of the Observatory postal address -->
+    <Metadata>
+        <Key>Observatory.Address.Line4</Key>
+        <Value>Observatory Address Line 4</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Line 4 of the Observatory postal address</Description>
+    </Metadata>
+
+    <!-- The Observatory Postcode (Zip Code) -->
+    <Metadata>
+        <Key>Observatory.Address.Postcode</Key>
+        <Value>AB01 0XY</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observatory Postcode (Zip Code)</Description>
+    </Metadata>
+
+    <!-- The Observatory Notes -->
+    <Metadata>
+        <Key>Observatory.Notes</Key>
+        <Value>Observatory Notes</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observatory Notes</Description>
+    </Metadata>
+
+    <!-- ............................................................................................... -->
+    <!-- A set of 32 default colours to use for the Charts, if no colours are specified in the data file -->
+    <!-- These are usually mapped to Observation.Channel.Colour.nnn -->
+
+    <!-- Colours temporarily removed, pending implementation in the code! -->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.0</Key>-->
+        <!--<Value>r=0 g=0 b=255</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 0</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.1</Key>-->
+        <!--<Value>r=255 g=0 b=0</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 1</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.2</Key>-->
+        <!--<Value>r=0 g=255 b=0</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 2</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.3</Key>-->
+        <!--<Value>r=255 g=255 b=0</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 3</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.4</Key>-->
+        <!--<Value>r=255 g=0 b=255</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 4</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.5</Key>-->
+        <!--<Value>r=0 g=255 b=255</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 5</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.6</Key>-->
+        <!--<Value>r=255 g=128 b=128</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 6</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.7</Key>-->
+        <!--<Value>r=0 g=0 b=128</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 7</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.8</Key>-->
+        <!--<Value>r=153 g=204 b=204</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 8</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.9</Key>-->
+        <!--<Value>r=255 g=153 b=204</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 9</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.10</Key>-->
+        <!--<Value>r=153 g=51 b=0</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 10</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.11</Key>-->
+        <!--<Value>r=51 g=51 b=153</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 11</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.12</Key>-->
+        <!--<Value>r=255 g=204 b=153</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 12</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.13</Key>-->
+        <!--<Value>r=136 g=43 b=214</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 13</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.14</Key>-->
+        <!--<Value>r=255 g=112 b=51</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 14</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.15</Key>-->
+        <!--<Value>r=255 g=204 b=51</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 15</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.16</Key>-->
+        <!--<Value>r=0 g=0 b=255</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 16</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.17</Key>-->
+        <!--<Value>r=255 g=0 b=0</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 17</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.18</Key>-->
+        <!--<Value>r=0 g=255 b=0</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 18</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.19</Key>-->
+        <!--<Value>r=255 g=255 b=0</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 19</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.20</Key>-->
+        <!--<Value>r=255 g=0 b=255</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 20</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.21</Key>-->
+        <!--<Value>r=0 g=255 b=255</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 21</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.22</Key>-->
+        <!--<Value>r=255 g=128 b=128</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 22</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.23</Key>-->
+        <!--<Value>r=0 g=0 b=128</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 23</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.24</Key>-->
+        <!--<Value>r=153 g=204 b=204</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 24</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.25</Key>-->
+        <!--<Value>r=255 g=153 b=204</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 25</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.26</Key>-->
+        <!--<Value>r=153 g=51 b=0</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 26</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.27</Key>-->
+        <!--<Value>r=51 g=51 b=153</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 27</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.28</Key>-->
+        <!--<Value>r=255 g=204 b=153</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 28</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.29</Key>-->
+        <!--<Value>r=136 g=43 b=214</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 29</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.30</Key>-->
+        <!--<Value>r=255 g=112 b=51</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 30</Description>-->
+    <!--</Metadata>-->
+
+    <!--<Metadata>-->
+        <!--<Key>Observatory.Default.Colour.31</Key>-->
+        <!--<Value>r=255 g=204 b=51</Value>-->
+        <!--<Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>-->
+        <!--<DataTypeName>ColourData</DataTypeName>-->
+        <!--<Units>Dimensionless</Units>-->
+        <!--<Description>The default Colour of Channel 31</Description>-->
+    <!--</Metadata>-->
+
+</ObservatoryMetadata>

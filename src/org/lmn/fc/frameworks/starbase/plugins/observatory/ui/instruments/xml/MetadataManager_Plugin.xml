@@ -1,0 +1,489 @@
+<!-- This file doesn't 'do' anything, it is a template for the MetadataManager Module - this one has WMM and VLSR. See below for one without  -->
+
+<!-- ............................................................................... -->
+<!-- MetadataManager Plugin -->
+
+<Plugin>
+    <!-- A virtual Plugin -->
+    <Identifier>MetadataManager</Identifier>
+    <Name>MetadataManager</Name>
+    <Description>The MetadataManager Module</Description>
+    <ResourceKey>MetadataManager</ResourceKey>
+
+    <!-- The MetadataManager Plugin is always CommandCodeBase 58 -->
+    <CommandCodeBase>58</CommandCodeBase>
+
+    <Command>
+        <Identifier>importMetadata</Identifier>
+        <CommandCode>00</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Import the selected Metadata</Description>
+        <Parameter>
+            <Name>MetadataType</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Framework,Observatory,Observer,Observation,Instrument,Controller,!PluginList</Choices>
+            <Tooltip>Allowed values: Framework, Observatory, Observer, Observation, Instrument, Controller, All Plugins</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>setMetadataValue</Identifier>
+        <CommandCode>01</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Set the Value of the selected Metadata item</Description>
+        <Parameter>
+            <Name>Metadata.Key</Name>
+            <InputDataType>
+                <DataTypeName>MetadataKey</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Tooltip>A Metadata Key valid for the current Instrument and dataset</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Metadata.Value</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Tooltip>The requested new Value of the Metadata</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>addToposWMMMetadata</Identifier>
+        <CommandCode>02</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <!-- See: http://www.ngdc.noaa.gov/geomag/WMM/soft.shtml -->
+        <Description>Add World Magnetic Model Topocentric Metadata</Description>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>addVLSRMetadata</Identifier>
+        <CommandCode>03</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Calculate the Velocity of the Local Standard of Rest</Description>
+        <!-- UNDER DEVELOPMENT -->
+        <Colour>r=050 g=255 b=050</Colour>
+        <Parameter>
+            <Name>Vlsr.RightAscension</Name>
+            <InputDataType>
+                <DataTypeName>RightAscension</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>HourMinSec</Units>
+            <!-- 00:00:00.00 to 23:59:59.99  hh:mm:ss -->
+            <Regex>((([0-9])|([0-1][0-9])|(2[0-3])):((0[0-9])|(0*[1-5][0-9])):((0[0-9])|(0*[1-5][0-9]))(\.([0-9]{1,4}))*)?</Regex>
+            <Tooltip>The RightAscension of the direction for which to calculate Vlsr, as HH:MM:SS</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Vlsr.Declination</Name>
+            <InputDataType>
+                <DataTypeName>Declination</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>DegMinSec</Units>
+            <!-- -89:59:59.99 to +00:00:00.00 to +89:59:59.99  deg:mm:ss -->
+            <Regex>([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?$</Regex>
+            <Tooltip>The Declination of the direction for which to calculate Vlsr as +/-DD:MM:SS</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Vlsr.Epoch</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>J2000,B1950.0</Choices>
+            <Tooltip>Allowed values: J2000 (Julian FK5), B1950.0 (Besselian FK4)</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Vlsr.ReferenceFrame</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Geocentric,Topocentric</Choices>
+            <Tooltip>Allowed values: Geocentric, Topocentric</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Vlsr.Value</Name>
+            <DataTypeName>DecimalDouble</DataTypeName>
+            <Units>km s-1</Units>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>exportMetadata</Identifier>
+        <CommandCode>04</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Saves the current MetaData in the specified file and format</Description>
+        <Parameter>
+            <Name>Filename</Name>
+            <InputDataType>
+                <DataTypeName>FileName</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Value>archive/Metadata</Value>
+            <Tooltip>The pathname/filename to be saved without file extension e.g. archive/Metadata</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Timestamp</Name>
+            <InputDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>true,false</Choices>
+            <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Format</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>FormattedStardata,CompressedStardata,CommaSeparated,TabSeparated</Choices>
+            <Tooltip>Allowed values: FormattedStardata,CompressedStardata,CommaSeparated,TabSeparated</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>removeMetadata</Identifier>
+        <CommandCode>05</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Remove the selected Metadata</Description>
+        <Parameter>
+            <Name>MetadataType</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Framework,Observatory,Observer,Observation,Instrument</Choices>
+            <Tooltip>Allowed values: Framework, Observatory, Observer, Observation, Instrument (all)</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>importPointsOfInterest</Identifier>
+        <CommandCode>06</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Import the selected PointsOfInterest and LinesOfInterest</Description>
+        <Parameter>
+            <Name>PointOfInterestType</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Framework,Observatory,Instrument</Choices>
+            <Tooltip>Allowed values: Framework, Observatory, Instrument</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>removePointsOfInterest</Identifier>
+        <CommandCode>07</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Remove the selected PointsOfInterest and LinesOfInterest</Description>
+        <Parameter>
+            <Name>PointOfInterestType</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Framework,Observatory,Instrument</Choices>
+            <Tooltip>Allowed values: Framework, Observatory, Instrument</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+        </Response>
+    </Command>
+
+</Plugin>
+
+<!-- Another one without WMM and VLSR -->
+
+<!-- ............................................................................... -->
+<!-- MetadataManager Plugin -->
+
+<Plugin>
+<!-- A virtual Plugin -->
+<Identifier>MetadataManager</Identifier>
+<Name>MetadataManager</Name>
+<Description>The MetadataManager Module</Description>
+<ResourceKey>MetadataManager</ResourceKey>
+
+<!-- The MetadataManager Plugin is always CommandCodeBase 58 -->
+<CommandCodeBase>58</CommandCodeBase>
+
+<Command>
+    <Identifier>importMetadata</Identifier>
+    <CommandCode>00</CommandCode>
+    <CommandVariant>0000</CommandVariant>
+    <Description>Import the selected Metadata</Description>
+    <Parameter>
+        <Name>MetadataType</Name>
+        <InputDataType>
+            <DataTypeName>String</DataTypeName>
+        </InputDataType>
+        <TrafficDataType>
+            <DataTypeName>String</DataTypeName>
+        </TrafficDataType>
+        <Units>Dimensionless</Units>
+        <Choices>Framework,Observatory,Observer,Observation,Instrument,Controller,!PluginList</Choices>
+        <Tooltip>Allowed values: Framework, Observatory, Observer, Observation, Instrument, Controller, All Plugins</Tooltip>
+    </Parameter>
+    <SendToPort>false</SendToPort>
+    <Response>
+        <Name>Ack</Name>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Response>
+</Command>
+
+<Command>
+    <Identifier>setMetadataValue</Identifier>
+    <CommandCode>01</CommandCode>
+    <CommandVariant>0000</CommandVariant>
+    <Description>Set the Value of the selected Metadata item</Description>
+    <Parameter>
+        <Name>Metadata.Key</Name>
+        <InputDataType>
+            <DataTypeName>MetadataKey</DataTypeName>
+        </InputDataType>
+        <TrafficDataType>
+            <DataTypeName>String</DataTypeName>
+        </TrafficDataType>
+        <Units>Dimensionless</Units>
+        <Tooltip>A Metadata Key valid for the current Instrument and dataset</Tooltip>
+    </Parameter>
+    <Parameter>
+        <Name>Metadata.Value</Name>
+        <InputDataType>
+            <DataTypeName>String</DataTypeName>
+        </InputDataType>
+        <TrafficDataType>
+            <DataTypeName>String</DataTypeName>
+        </TrafficDataType>
+        <Units>Dimensionless</Units>
+        <Tooltip>The requested new Value of the Metadata</Tooltip>
+    </Parameter>
+    <SendToPort>false</SendToPort>
+    <Response>
+        <Name>Ack</Name>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Regex>Ok</Regex>
+    </Response>
+</Command>
+
+<Command>
+    <Identifier>exportMetadata</Identifier>
+    <CommandCode>02</CommandCode>
+    <CommandVariant>0000</CommandVariant>
+    <Description>Saves the current MetaData in the specified file and format</Description>
+    <Parameter>
+        <Name>Filename</Name>
+        <InputDataType>
+            <DataTypeName>FileName</DataTypeName>
+        </InputDataType>
+        <TrafficDataType>
+            <DataTypeName>String</DataTypeName>
+        </TrafficDataType>
+        <Units>Dimensionless</Units>
+        <!-- ToDo Regex -->
+        <Value>archive/Metadata</Value>
+        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/Metadata</Tooltip>
+    </Parameter>
+    <Parameter>
+        <Name>Timestamp</Name>
+        <InputDataType>
+            <DataTypeName>Boolean</DataTypeName>
+        </InputDataType>
+        <TrafficDataType>
+            <DataTypeName>Boolean</DataTypeName>
+        </TrafficDataType>
+        <Units>Dimensionless</Units>
+        <Choices>true,false</Choices>
+        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+    </Parameter>
+    <Parameter>
+        <Name>Format</Name>
+        <InputDataType>
+            <DataTypeName>String</DataTypeName>
+        </InputDataType>
+        <TrafficDataType>
+            <DataTypeName>String</DataTypeName>
+        </TrafficDataType>
+        <Units>Dimensionless</Units>
+        <Choices>FormattedStardata,CompressedStardata,CommaSeparated,TabSeparated</Choices>
+        <Tooltip>Allowed values: FormattedStardata,CompressedStardata,CommaSeparated,TabSeparated</Tooltip>
+    </Parameter>
+    <SendToPort>false</SendToPort>
+    <Response>
+        <Name>Ack</Name>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Regex>Ok</Regex>
+    </Response>
+</Command>
+
+<Command>
+    <Identifier>removeMetadata</Identifier>
+    <CommandCode>03</CommandCode>
+    <CommandVariant>0000</CommandVariant>
+    <Description>Remove the selected Metadata</Description>
+    <Parameter>
+        <Name>MetadataType</Name>
+        <InputDataType>
+            <DataTypeName>String</DataTypeName>
+        </InputDataType>
+        <TrafficDataType>
+            <DataTypeName>String</DataTypeName>
+        </TrafficDataType>
+        <Units>Dimensionless</Units>
+        <Choices>Framework,Observatory,Observer,Observation,Instrument</Choices>
+        <Tooltip>Allowed values: Framework, Observatory, Observer, Observation, Instrument (all)</Tooltip>
+    </Parameter>
+    <SendToPort>false</SendToPort>
+    <Response>
+        <Name>Ack</Name>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Response>
+</Command>
+
+<Command>
+    <Identifier>importPointsOfInterest</Identifier>
+    <CommandCode>04</CommandCode>
+    <CommandVariant>0000</CommandVariant>
+    <Description>Import the selected PointsOfInterest and LinesOfInterest</Description>
+    <Parameter>
+        <Name>PointOfInterestType</Name>
+        <InputDataType>
+            <DataTypeName>String</DataTypeName>
+        </InputDataType>
+        <TrafficDataType>
+            <DataTypeName>String</DataTypeName>
+        </TrafficDataType>
+        <Units>Dimensionless</Units>
+        <Choices>Framework,Observatory,Instrument</Choices>
+        <Tooltip>Allowed values: Framework, Observatory, Instrument</Tooltip>
+    </Parameter>
+    <SendToPort>false</SendToPort>
+    <Response>
+        <Name>Ack</Name>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Response>
+</Command>
+
+<Command>
+    <Identifier>removePointsOfInterest</Identifier>
+    <CommandCode>05</CommandCode>
+    <CommandVariant>0000</CommandVariant>
+    <Description>Remove the selected PointsOfInterest and LinesOfInterest</Description>
+    <Parameter>
+        <Name>PointOfInterestType</Name>
+        <InputDataType>
+            <DataTypeName>String</DataTypeName>
+        </InputDataType>
+        <TrafficDataType>
+            <DataTypeName>String</DataTypeName>
+        </TrafficDataType>
+        <Units>Dimensionless</Units>
+        <Choices>Framework,Observatory,Instrument</Choices>
+        <Tooltip>Allowed values: Framework, Observatory, Instrument</Tooltip>
+    </Parameter>
+    <SendToPort>false</SendToPort>
+    <Response>
+        <Name>Ack</Name>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Response>
+</Command>
+
+</Plugin>
+
+
+

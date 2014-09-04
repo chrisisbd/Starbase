@@ -1,0 +1,71 @@
+# Indexed, One Channel, NO Temperature, CSV
+# Contact starbase@ukraa.com for support
+
+# All Metadata are defined with {Key, Value, DataType, Units, Description}
+# Keys, DataTypes and Units must appear in their respective Starbase Dictionaries
+# Comments are preceded with '#' and are not preserved during export-import
+
+# These Metadata items are required for Charting support
+
+Observation.Title,Test Indexed One Channel CSV,String, Dimensionless,The title for the Chart
+Observation.Axis.Label.X,X increment,String, Dimensionless,The X axis
+Observation.Axis.Label.Y.0,Data Value,String, Dimensionless,The Y axis
+
+# The Channel Count
+Observation.Channel.Count,1,DecimalInteger,Dimensionless,The number of data channels
+
+# Channel Colours grouped together for simplicity, and for ease of copying into code or other files
+Observation.Channel.Colour.0, r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 0 graph
+
+# Channel specifications, arbitrarily set to DataType=DecimalFloat, Units=mV
+
+Observation.Channel.Name.0,Channel 0,String,Dimensionless,The name of Channel 0
+Observation.Channel.Description.0,Channel 0 output,String,Dimensionless,The description of Channel 0
+Observation.Channel.DataType.0,DecimalFloat,DataType,Dimensionless,The DataType of Channel 0
+Observation.Channel.Units.0,mV,Units,Dimensionless,The Units of Channel 0
+
+0,36
+1,35
+2,34
+3,33
+4,32
+5,31
+6,30
+7,29
+8,28
+9,27
+10,26
+11,25
+12,24
+13,23
+14,22
+15,21
+16,20
+17,19
+18,18
+# Check faulty Data
+18,1xx8
+19,17
+20,16
+21,15
+# Check blank line in Data
+
+22,14
+23,13
+24,12
+2a5,11
+26,10
+27,9
+# Check faulty Data
+2xxx8,8
+28,8
+29,7
+# Check leading and trailing spaces
+    30    ,    6
+31,5
+32,4
+33,3
+34,2
+35,1
+36,0
+# The end

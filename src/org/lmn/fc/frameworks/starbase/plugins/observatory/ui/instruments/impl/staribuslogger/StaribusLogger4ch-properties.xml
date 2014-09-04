@@ -1,0 +1,82 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Properties xmlns="properties.xmlbeans.model.fc.lmn.org">
+
+    <!-- StaribusLogger -->
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>StaribusLogger4ch</Key>
+            <Key>Update</Key>
+            <Key>Enable</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Boolean</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>true</Value>
+        <Description>A flag to control the StaribusLogger update function</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>StaribusLogger4ch</Key>
+            <Key>Update</Key>
+            <Key>Default</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>60</Value>
+        <Description>The interval in seconds between StaribusLogger update cycles</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <!-- StaribusLogger DAO -->
+
+    <!-- This flag is mainly intended to allow continuing download of data with getData() -->
+    <!-- even after a full set of retries has occurred (e.g after CRC errors) -->
+    <PropertyResource>
+        <ResourceKey>
+            <Key>StaribusLogger4ch</Key>
+            <Key>Dao</Key>
+            <Key>OnError</Key>
+            <Key>Continue</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Boolean</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>true</Value>
+        <Description>A flag to control allow continued execution following an error</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>StaribusLogger4ch</Key>
+            <Key>Dao</Key>
+            <Key>Timeout</Key>
+            <Key>Default</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <!-- A long timeout will be needed during Discovery... -->
+        <Value>60</Value>
+        <Description>The Timeout interval in seconds for the StaribusLogger DAO</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+</Properties>

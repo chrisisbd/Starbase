@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="roles.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="roles.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <!-- A collection for file imports -->
+    <xs:element name="Roles">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded"
+                            name="Role"
+                            type="Role"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Role">
+        <xs:sequence>
+
+            <xs:element name="RoleName" type="RoleName"/>
+
+            <xs:element name="FrameworkViewer" type="xs:boolean"/>
+
+            <xs:element name="FrameworkEditor" type="xs:boolean"/>
+
+            <xs:element name="AtomViewer" type="xs:boolean"/>
+
+            <xs:element name="AtomEditor" type="xs:boolean"/>
+
+            <xs:element name="TaskViewer" type="xs:boolean"/>
+
+            <xs:element name="TaskEditor" type="xs:boolean"/>
+
+            <xs:element name="ResourceViewer" type="xs:boolean"/>
+
+            <xs:element name="ResourceEditor" type="xs:boolean"/>
+
+            <xs:element name="UserViewer" type="xs:boolean"/>
+
+            <xs:element name="UserEditor" type="xs:boolean"/>
+
+            <xs:element name="UserCreator" type="xs:boolean"/>
+
+            <xs:element name="UserDeletor" type="xs:boolean"/>
+
+            <xs:element name="FullScreen" type="xs:boolean"/>
+
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="RoleName">
+        <xs:restriction base="xs:normalizedString">
+            <xs:enumeration value="SuperUser"/>
+            <xs:enumeration value="Developer"/>
+            <xs:enumeration value="Builder"/>
+            <xs:enumeration value="Administrator"/>
+
+            <xs:enumeration value="LocalUser"/>
+            <xs:enumeration value="RemoteUser"/>
+
+            <xs:enumeration value="Demonstrator"/>
+            <xs:enumeration value="Tester"/>
+            <xs:enumeration value="Simplified"/>
+
+            <xs:enumeration value="Researcher"/>
+            <xs:enumeration value="Educational"/>
+            <xs:enumeration value="Tutor"/>
+            <xs:enumeration value="Student"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

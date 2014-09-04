@@ -1,0 +1,54 @@
+<!-- ............................................................................... -->
+<!-- Publisher Plugin -->
+
+<Plugin>
+    <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+    <Address>00</Address>
+    <Identifier>Publisher</Identifier>
+    <Name>Publisher</Name>
+    <Description>The Publisher Module</Description>
+    <ResourceKey>Publisher</ResourceKey>
+
+    <CommandCodeBase>03</CommandCodeBase>
+
+    <Command>
+       <Identifier>publishChartLocal</Identifier>
+       <CommandCode>00</CommandCode>
+       <Software>
+           <Identifier>Publisher Command</Identifier>
+           <Version>00.1</Version>
+           <Description>Publishes the current chart on an HTML page at localhost/index.html</Description>
+       </Software>
+        <Parameter>
+            <Name>Width</Name>
+            <InputDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+            <Tooltip>The width of the image in pixels (32 to 3000)</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Height</Name>
+            <InputDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+            <Tooltip>The height of the image in pixels (32 to 3000)</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+   </Command>
+</Plugin>

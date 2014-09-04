@@ -1,0 +1,170 @@
+<!-- This file doesn't 'do' anything, it some test PLugins for any instrument to use to test the XML assembler -->
+
+<!-- ............................................................................... -->
+<!-- Test Secondary Plugin 2 -->
+
+<Plugin>
+    <Identifier>SecondaryTest2</Identifier>
+    <Provider>SecondaryPlugin</Provider>
+    <Name>SecondaryTest2</Name>
+    <Description>The Secondary Test Module 2</Description>
+    <ResourceKey>SecondaryTest2</ResourceKey>
+
+    <!-- This will never be executed -->
+    <CommandCodeBase>92</CommandCodeBase>
+
+    <Command>
+        <Identifier>testPlugin2</Identifier>
+        <CommandCode>00</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Tests the Plugin</Description>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+</Plugin>
+
+<!-- ............................................................................... -->
+<!-- Test Secondary Plugin 3 -->
+
+<Plugin>
+    <Identifier>SecondaryTest3</Identifier>
+    <Provider>SecondaryPlugin</Provider>
+    <Name>SecondaryTest3</Name>
+    <Description>The Secondary Test Module 3</Description>
+    <ResourceKey>SecondaryTest3</ResourceKey>
+
+    <!-- This will never be executed -->
+    <CommandCodeBase>93</CommandCodeBase>
+
+    <Command>
+        <Identifier>testPlugin3</Identifier>
+        <CommandCode>00</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Tests the Plugin</Description>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+</Plugin>
+
+<!-- ............................................................................... -->
+<!-- Test Secondary Plugin 4 -->
+
+<Plugin>
+    <Identifier>SecondaryTest4</Identifier>
+    <Provider>SecondaryPlugin</Provider>
+    <Name>SecondaryTest4</Name>
+    <Description>The Secondary Test Module 4</Description>
+    <ResourceKey>SecondaryTest4</ResourceKey>
+
+    <!-- This will never be executed -->
+    <CommandCodeBase>94</CommandCodeBase>
+
+    <Command>
+        <Identifier>testPlugin4</Identifier>
+        <CommandCode>00</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Tests the Plugin</Description>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+</Plugin>
+
+<!-- ............................................................................... -->
+<!-- Test Secondary Plugin 5 -->
+
+<Plugin>
+    <Identifier>SecondaryTest5</Identifier>
+    <Provider>SecondaryPlugin</Provider>
+    <Name>SecondaryTest5</Name>
+    <Description>The Secondary Test Module 5</Description>
+    <ResourceKey>SecondaryTest5</ResourceKey>
+
+    <!-- This will never be executed -->
+    <CommandCodeBase>95</CommandCodeBase>
+
+    <Command>
+        <Identifier>testPlugin5</Identifier>
+        <CommandCode>00</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Tests the Plugin</Description>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+</Plugin>
+
+<!-- ............................................................................... -->
+<!-- Test Secondary Plugin 6 -->
+
+<Plugin>
+    <Identifier>SecondaryTest6</Identifier>
+    <Provider>SecondaryPlugin</Provider>
+    <Name>SecondaryTest6</Name>
+    <Description>The Secondary Test Module 6</Description>
+    <ResourceKey>SecondaryTest6</ResourceKey>
+
+    <!-- This will never be executed -->
+    <CommandCodeBase>96</CommandCodeBase>
+
+    <Command>
+        <Identifier>testPlugin6</Identifier>
+        <CommandCode>00</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Tests the Plugin</Description>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+</Plugin>
+
+<!-- ............................................................................... -->
+<!-- Test Secondary Plugin 7 -->
+
+<Plugin>
+    <Identifier>SecondaryTest7</Identifier>
+    <Provider>SecondaryPlugin</Provider>
+    <Name>SecondaryTest7</Name>
+    <Description>The Secondary Test Module 7</Description>
+    <ResourceKey>SecondaryTest7</ResourceKey>
+
+    <!-- This will never be executed -->
+    <CommandCodeBase>97</CommandCodeBase>
+
+    <Command>
+        <Identifier>testPlugin7</Identifier>
+        <CommandCode>00</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Tests the Plugin</Description>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+</Plugin>
+

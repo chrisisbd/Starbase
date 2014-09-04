@@ -1,0 +1,359 @@
+<xs:schema targetNamespace="poi.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="poi.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <!-- A collection for file imports -->
+    <xs:element name="POI">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PointOfInterest"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            type="PointOfInterest"/>
+
+                <!-- LineOfInterest information relevant to the Instrument -->
+                <xs:element name="LineOfInterest"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            type="LineOfInterest"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- PointOfInterest -->
+    <xs:complexType name="PointOfInterest">
+        <xs:sequence>
+            <!-- A Category for the PointOfInterest -->
+            <xs:element name="Category"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-_*])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="25"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Name of the PointOfInterest -->
+            <xs:choice>
+                <xs:element name="Name">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9'., ])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="255"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the POI Name via this Metadata Key -->
+                <xs:element name="NameKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- The Description of the PointOfInterest -->
+            <xs:choice>
+                <xs:element name="Description">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9'.,/ \-])*"/>
+                            <xs:minLength value="0"/>
+                            <xs:maxLength value="255"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the POI Description via this Metadata Key -->
+                <xs:element name="DescriptionKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- The Longitude of the PointOfInterest -->
+            <!-- WEST is POSITIVE (astronomical convention) -->
+            <xs:choice>
+                <xs:element name="Longitude">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <!-- -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999 -->
+                            <!-- Ensure this is kept in step with FrameworkRegex REGEX_LONGITUDE_DMS_SIGNED-->
+                            <xs:pattern value="([+\-]((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|(1[0-7][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]){1,4})*)?"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the POI Longitude via this Metadata Key -->
+                <xs:element name="LongitudeKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- The Latitude of the PointOfInterest -->
+            <!-- NORTH is POSITIVE -->
+            <xs:choice>
+                <xs:element name="Latitude">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 deg:mm:ss -->
+                            <!-- Ensure this is kept in step with FrameworkRegex REGEX_LATITUDE_DMS_SIGNED -->
+                            <xs:pattern value="([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the POI Latitude via this Metadata Key -->
+                <xs:element name="LatitudeKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- Height Above Sea Level -->
+            <xs:choice>
+                <xs:element name="HASL">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                            <xs:minInclusive value="-9999.9"/>
+                            <xs:maxInclusive value="9999.9"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the POI HASL via this Metadata Key -->
+                <xs:element name="HASLKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- An optional Maidenhead Locator -->
+            <!-- Character pairs encode first longitude and then latitude -->
+            <!-- First pair (field) encodes with base 18 and letters "A" to "R" -->
+            <!-- Second pair (square) encodes with base 10 and digits "0" to "9" -->
+            <!-- Third pair (subsquare) encodes with base 24 and letters "A" to "X" -->
+            <!-- Fourth pair (extended square) encodes with base 10 and digits "0" to "9" -->
+            <!-- See: http://en.wikipedia.org/wiki/Maidenhead_Locator_System -->
+            <!-- See: http://www.arrl.org/locate/grid.html -->
+            <xs:element name="MaidenheadLocator"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([A-R][A-R][0-9][0-9][a-x][a-x])([0-9][0-9])?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The filename of an optional PointOfInterest Icon to use on a Map -->
+            <xs:choice>
+                <xs:element name="IconFilename"
+                            minOccurs="0"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9./\-])*"/>
+                            <xs:minLength value="0"/>
+                            <xs:maxLength value="255"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the POI IconFilename via this Metadata Key -->
+                <xs:element name="IconFilenameKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- LineOfInterest -->
+    <xs:complexType name="LineOfInterest">
+        <xs:sequence>
+            <!-- The Label of the LineOfInterest -->
+            <xs:choice>
+                <xs:element name="Label">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9'., ])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="255"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the LOI Label via this Metadata Key -->
+                <xs:element name="LabelKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- The Colour of the LineOfInterest, in the format r=234 g=225 b=014 -->
+            <xs:choice>
+                <xs:element name="Colour">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the LOI Colour via this Metadata Key -->
+                <xs:element name="ColourKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- The Longitude of the Start of the LineOfInterest -->
+            <!-- WEST is POSITIVE (astronomical convention) -->
+            <xs:choice>
+                <xs:element name="StartLongitude">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <!-- -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999 -->
+                            <!-- Ensure this is kept in step with FrameworkRegex REGEX_LONGITUDE_DMS_SIGNED -->
+                            <xs:pattern value="([+\-]((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|(1[0-7][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]){1,4})*)?"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the LOI StartLongitude via this Metadata Key -->
+                <xs:element name="StartLongitudeKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- The Latitude of the Start of the LineOfInterest -->
+            <!-- NORTH is POSITIVE -->
+            <xs:choice>
+                <xs:element name="StartLatitude">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 deg:mm:ss -->
+                            <!-- Ensure this is kept in step with FrameworkRegex REGEX_LATITUDE_DMS_SIGNED -->
+                            <xs:pattern value="([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the LOI StartLatitude via this Metadata Key -->
+                <xs:element name="StartLatitudeKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- The Longitude of the End of the LineOfInterest -->
+            <!-- WEST is POSITIVE (astronomical convention) -->
+            <xs:choice>
+                <xs:element name="EndLongitude">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <!-- -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999 -->
+                            <!-- Ensure this is kept in step with FrameworkRegex REGEX_LONGITUDE_DMS_SIGNED -->
+                            <xs:pattern value="([+\-]((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|(1[0-7][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]){1,4})*)?"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the LOI EndLongitude via this Metadata Key -->
+                <xs:element name="EndLongitudeKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- The Latitude of the End of the LineOfInterest -->
+            <!-- NORTH is POSITIVE -->
+            <xs:choice>
+                <xs:element name="EndLatitude">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 deg:mm:ss -->
+                            <!-- Ensure this is kept in step with FrameworkRegex REGEX_LATITUDE_DMS_SIGNED -->
+                            <xs:pattern value="([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- Obtain the LOI EndLatitude via this Metadata Key -->
+                <xs:element name="EndLatitudeKey">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9.])*"/>
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

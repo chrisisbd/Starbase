@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="Framework"
+        default="init">
+
+    <property file="framework.properties"/>
+
+    <!-- Compiler options -->
+
+    <property name="compiler.debug" value="on"/>
+    <property name="compiler.generate.no.warnings" value="off"/>
+    <property name="compiler.args" value=""/>
+    <property name="compiler.max.memory" value="1024m"/>
+
+    <patternset id="ignored.files">
+        <exclude name="**/CVS/**"/>
+        <exclude name="**/SCCS/**"/>
+        <exclude name="**/RCS/**"/>
+        <exclude name="**/rcs/**"/>
+        <exclude name="**/.DS_Store/**"/>
+        <exclude name="**/.svn/**"/>
+        <exclude name="**/.sbas/**"/>
+        <exclude name="**/.IJI.*/**"/>
+        <exclude name="**/vssver.scc/**"/>
+        <exclude name="**/vssver2.scc/**"/>
+    </patternset>
+
+    <patternset id="compiler.resources">
+        <include name="**/?*.properties"/>
+        <include name="**/?*.xml"/>
+        <include name="**/?*.gif"/>
+        <include name="**/?*.png"/>
+        <include name="**/?*.jpeg"/>
+        <include name="**/?*.jpg"/>
+        <include name="**/?*.html"/>
+        <include name="**/?*.dtd"/>
+        <include name="**/?*.tld"/>
+        <include name="**/?*.ttf"/>
+        <include name="**/?*.pdf"/>
+        <include name="**/?*.odt"/>
+        <include name="**/?*.ods"/>
+        <include name="**/?*.odp"/>
+    </patternset>
+
+    <!-- JDK definitions -->
+
+    <property name="jdk.bin.1.6"
+             value="${jdk.home.1.6}/bin"/>
+
+    <path id="jdk.classpath.1.6">
+        <fileset dir="${jdk.home.1.6}">
+            <include name="jre/lib/charsets.jar"/>
+            <include name="jre/lib/deploy.jar"/>
+            <include name="jre/lib/javaws.jar"/>
+            <include name="jre/lib/jce.jar"/>
+            <include name="jre/lib/jsse.jar"/>
+            <include name="jre/lib/plugin.jar"/>
+            <include name="jre/lib/rt.jar"/>
+            <include name="jre/lib/ext/dnsns.jar"/>
+            <include name="jre/lib/ext/localedata.jar"/>
+            <include name="jre/lib/ext/sunjce_provider.jar"/>
+            <include name="jre/lib/ext/sunpkcs11.jar"/>
+        </fileset>
+    </path>
+
+    <property name="project.jdk.home"
+             value="${jdk.home.1.6}"/>
+
+    <property name="project.jdk.bin"
+             value="${jdk.bin.1.6}"/>
+
+    <property name="project.jdk.classpath"
+             value="jdk.classpath.1.6"/>
+
+    <!-- Project Libraries -->
+
+    <path id="library.lib.classpath">
+        <pathelement location="${basedir}/libraries/activation.jar"/>
+        <pathelement location="${basedir}/libraries/ant.jar"/>
+        <pathelement location="${basedir}/libraries/CLooks_120.jar"/>
+        <pathelement location="${basedir}/libraries/commons-codec-1.3.jar"/>
+        <pathelement location="${basedir}/libraries/commons-httpclient-3.1.jar"/>
+        <pathelement location="${basedir}/libraries/commons-logging-1.1.1.jar"/>
+        <pathelement location="${basedir}/libraries/connector-mxj.jar"/>
+        <pathelement location="${basedir}/libraries/contrib.jar"/>
+        <pathelement location="${basedir}/libraries/gnujaxp.jar"/>
+        <pathelement location="${basedir}/libraries/hsqldb.jar"/>
+        <pathelement location="${basedir}/libraries/jcommon-1.0.22.jar"/>
+        <pathelement location="${basedir}/libraries/jdic.jar"/>
+        <!-- <pathelement location="${basedir}/libraries/jfreechart-1.0.13-demo.jar"/> -->
+        <pathelement location="${basedir}/libraries/jfreechart-1.0.18.jar"/>
+        <pathelement location="${basedir}/libraries/jgraph.jar"/>
+        <pathelement location="${basedir}/libraries/jlfgr-1_0.jar"/>
+        <pathelement location="${basedir}/libraries/jmxri.jar"/>
+        <pathelement location="${basedir}/libraries/jmxtools.jar"/>
+        <pathelement location="${basedir}/libraries/jsr173_1.0_api.jar"/>
+        <pathelement location="${basedir}/libraries/jta26.jar"/>
+        <pathelement location="${basedir}/libraries/jtds-0.6.jar"/>
+        <pathelement location="${basedir}/libraries/junit-4.0.jar"/>
+        <pathelement location="${basedir}/libraries/kunststoff.jar"/>
+        <pathelement location="${basedir}/libraries/looks-2.1b1.jar"/>
+        <pathelement location="${basedir}/libraries/mail.jar"/>
+        <pathelement location="${basedir}/libraries/metouia.jar"/>
+        <pathelement location="${basedir}/libraries/mysql-connector-java-3.1.11-bin.jar"/>
+        <pathelement location="${basedir}/libraries/oalnf.jar"/>
+        <pathelement location="${basedir}/libraries/plastic.jar"/>
+        <pathelement location="${basedir}/libraries/poi-2.5-final-20040302.jar"/>
+        <pathelement location="${basedir}/libraries/resolver.jar"/>
+        <pathelement location="${basedir}/libraries/saxon8.jar"/>
+        <pathelement location="${basedir}/libraries/saxon8-xqj.jar"/>
+        <pathelement location="${basedir}/libraries/saxon8-xpath.jar"/>
+        <pathelement location="${basedir}/libraries/saxon8-xom.jar"/>
+        <pathelement location="${basedir}/libraries/saxon8-sql.jar"/>
+        <pathelement location="${basedir}/libraries/saxon8-jdom.jar"/>
+        <pathelement location="${basedir}/libraries/saxon8-dom4j.jar"/>
+        <pathelement location="${basedir}/libraries/saxon8-dom.jar"/>
+        <pathelement location="${basedir}/libraries/saxon8-ant.jar"/>
+        <pathelement location="${basedir}/libraries/servlet.jar"/>
+        <pathelement location="${basedir}/libraries/smtp.jar"/>
+        <pathelement location="${basedir}/libraries/TableLayout.jar"/>
+        <pathelement location="${basedir}/libraries/xbean.jar"/>
+        <pathelement location="${basedir}/libraries/xbean_xpath.jar"/>
+        <pathelement location="${basedir}/libraries/xmlpublic.jar"/>
+        <pathelement location="${basedir}/libraries/xmlbeans-qname.jar"/>
+
+        <pathelement location="${basedir}/libraries/jpedal_lgpl.jar"/>
+        <pathelement location="${basedir}/libraries/javapng-2.0.jar"/>
+        <pathelement location="${basedir}/libraries/jdom-1.1.2.jar"/>
+        <pathelement location="${basedir}/libraries/rome-1.0.jar"/>
+
+        <!-- 2008-01-12 Jetty 6 Server-->
+        <pathelement location="${basedir}/libraries/jetty-util-6.1.7.jar"/>
+        <pathelement location="${basedir}/libraries/jetty-6.1.7.jar"/>
+        <pathelement location="${basedir}/libraries/start.jar"/>
+
+        <pathelement location="${basedir}/libraries/standalone-compiler.jar"/>
+
+        <pathelement location="${basedir}/libraries/fits.jar"/>
+    </path>
+
+    <!-- Global Libraries -->
+
+    <!-- Modules -->
+
+    <!-- Module Starbase -->
+
+    <dirname property="module.framework.basedir"
+            file="${ant.file}"/>
+
+    <property name="module.jdk.home.framework"
+             value="${project.jdk.home}"/>
+
+    <property name="module.jdk.bin.framework"
+             value="${project.jdk.bin}"/>
+
+    <property name="module.jdk.classpath.framework"
+             value="${project.jdk.classpath}"/>
+
+    <property name="compiler.args.framework"
+             value="${compiler.args}"/>
+
+    <property name="fc.output.dir"
+             value="${module.framework.basedir}/classes/production/Framework"/>
+
+    <property name="fc.testoutput.dir"
+             value="${module.framework.basedir}/classes/test/Framework"/>
+
+    <path id="fc.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <patternset id="excluded.from.module.framework">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.framework">
+        <patternset refid="excluded.from.module.framework"/>
+    </patternset>
+
+    <path id="framework.module.sourcepath">
+        <dirset dir="${module.framework.basedir}">
+            <include name="src"/>
+        </dirset>
+    </path>
+
+    <path id="framework.module.test.sourcepath">
+        <dirset dir="${module.framework.basedir}">
+            <include name="test"/>
+        </dirset>
+    </path>
+
+    <!-- *************************************************************************************************************** -->
+    <!-- BEWARE! These slashes are liable to misinterpretation on Windows -->
+
+    <property name="framework.dist.dir"
+             value="${module.framework.basedir}/dist"/>
+
+    <property name="framework.tmp.dir"
+             location="framework-tmp"/>
+
+    <property name="plugin.jar.dir"
+             location="plugin-tmp"/>
+
+    <property name="framework.output.dir"
+             value="${module.framework.basedir}/classes"/>
+
+    <property name="xmltypesystem.output.dir"
+             value="${module.framework.basedir}/xml"/>
+
+    <property name="framework.testoutput.dir"
+             value="${module.framework.basedir}/classes"/>
+
+    <property name="framework.archive.dir"
+             value="${module.framework.basedir}/archive"/>
+
+    <property name="framework.datastore.dir"
+             value="${module.framework.basedir}/datastore"/>
+
+    <property name="framework.doc.dir"
+             value="${module.framework.basedir}/doc"/>
+
+    <property name="framework.javadoc.dir"
+             value="${module.framework.basedir}/javadoc"/>
+
+    <property name="framework.libraries.dir"
+             value="${module.framework.basedir}/libraries"/>
+
+    <property name="framework.logs.dir"
+              value="${module.framework.basedir}/logs"/>
+
+    <property name="framework.src.dir"
+             value="${module.framework.basedir}/src"/>
+
+    <property name="framework.test.dir"
+             value="${module.framework.basedir}/test"/>
+
+    <property name="framework.schemas.dir"
+             value="${module.framework.basedir}/src/org/lmn/fc/model/schemas"/>
+
+    <property name="framework.frameworks.dir"
+             value="${module.framework.basedir}/src/org/lmn/fc/frameworks"/>
+
+    <property name="host-name-uc"
+              value="Starbase"/>
+
+    <!--
+   <path id="fc.module.classpath">
+       <path refid="${module.jdk.classpath.framework}"/>
+       <path refid="library.lib.classpath"/>
+   </path> -->
+
+    <path id="framework.module.classpath">
+        <path refid="${module.jdk.classpath.framework}"/>
+        <fileset dir="${framework.libraries.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+
+    <!-- Targets -->
+
+    <target name="init"
+           description="Build initialization">
+        <echo>ant.file=${ant.file}</echo>
+        <echo>module.framework.basedir=${module.framework.basedir}</echo>
+        <echo>JDK=${jdk.home.1.6}</echo>
+    </target>
+
+    <target name="compile.module.framework"
+           depends="compile.module.framework.production,compile.module.framework.tests"
+           description="compile module Framework"/>
+
+    <target name="compile.module.framework.production"
+           description="compile module Framework production classes">
+        <mkdir dir="${framework.output.dir}"/>
+
+        <javac destdir="${framework.output.dir}"
+              debug="${compiler.debug}"
+              nowarn="${compiler.generate.no.warnings}"
+              memoryMaximumSize="${compiler.max.memory}"
+              fork="true">
+            <compilerarg line="${compiler.args.framework}"/>
+            <classpath refid="framework.module.classpath"/>
+            <src refid="framework.module.sourcepath"/>
+        </javac>
+
+        <copy todir="${framework.output.dir}">
+            <fileset dir="${framework.src.dir}">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+                <patternset refid="excluded.from.compilation.framework"/>
+            </fileset>
+        </copy>
+
+    </target>
+
+    <target name="compile.module.framework.tests"
+           depends="compile.module.framework.production"
+           description="compile module Framework test classes"
+           unless="skip.tests"/>
+
+    <target name="clean"
+           description="Clean all output directories">
+        <echo>Clean all output directories</echo>
+        <delete dir="${framework.dist.dir}"/>
+        <delete dir="${framework.output.dir}"/>
+        <delete dir="${framework.testoutput.dir}"/>
+        <!-- Added to ensure no 'old' classes hang around! -->
+        <delete dir="${xmltypesystem.output.dir}/com"/>
+        <delete dir="${xmltypesystem.output.dir}/org"/>
+
+    </target>
+
+
+    <!-- Build everything into Jars  -->
+
+    <target name="build_jars"
+           depends="clean, compile.module.framework"
+           description="Build everything into Jars">
+
+        <property name="host-name"
+                 value="starbase"/>
+
+        <!-- MARK had to move uc name to outside this target -->
+
+        <property name="main-class"
+                 value="${main.class}"/>
+
+        <property name="builder-classpath"
+                 value="${module.framework.basedir}/classes"/>
+
+        <property name="loader-properties"
+                 value="loader.properties"/>
+
+        <!-- Determine which Framework to generate...  -->
+        <property name="framework.selected.package"
+                 value="${framework.selected.package}"/>
+
+        <property name="framework.selected.dir"
+                 value="${module.framework.basedir}/src/org/lmn/fc/frameworks/${framework.selected.package}"/>
+
+        <!-- Allow access to the version.number, build.number etc. (otherwise build-single-plugin.xml reads the wrong value -->
+        <property file="build.properties"/>
+
+        <!-- and timestamp every build -->
+        <tstamp>
+          <format property="TODAY" pattern="yyyy-MM-dd HH:mm:ss" />
+        </tstamp>
+
+        <!-- Tidy up from any previous operations -->
+        <delete dir="${framework.dist.dir}"/>
+        <delete dir="${framework.tmp.dir}"/>
+        <delete dir="${plugin.jar.dir}"/>
+
+        <!-- Prepare empty folders in the distribution directory -->
+        <mkdir dir="${framework.dist.dir}"/>
+        <mkdir dir="${framework.dist.dir}/archive"/>
+        <mkdir dir="${framework.dist.dir}/datastore"/>
+        <mkdir dir="${framework.dist.dir}/datastore/distribution"/>
+        <mkdir dir="${framework.dist.dir}/doc"/>
+        <mkdir dir="${framework.dist.dir}/exports"/>
+        <mkdir dir="${framework.dist.dir}/imports"/>
+        <mkdir dir="${framework.dist.dir}/libraries"/>
+        <mkdir dir="${framework.dist.dir}/licences"/>
+        <mkdir dir="${framework.dist.dir}/logs"/>
+        <mkdir dir="${framework.dist.dir}/macros"/>
+        <mkdir dir="${framework.dist.dir}/platform"/>
+        <mkdir dir="${framework.dist.dir}/plugins"/>
+        <mkdir dir="${framework.dist.dir}/schemas"/>
+        <mkdir dir="${framework.dist.dir}/maps"/>
+
+        <!-- Somewhere to put testdata -->
+        <mkdir dir="${framework.dist.dir}/workspace"/>
+
+        <!-- 2008-01-12 Jetty 6 Server-->
+        <mkdir dir="${framework.dist.dir}/etc"/>
+        <mkdir dir="${framework.dist.dir}/webroot"/>
+
+        <!-- Prepare a temporary folder for Jar operations -->
+        <mkdir dir="${framework.tmp.dir}"/>
+
+        <!-- Copy the datastore; note that the OS service must not be running! -->
+        <copy todir="${framework.dist.dir}/datastore">
+            <fileset dir="${framework.datastore.dir}"/>
+        </copy>
+
+        <!-- Copy all documentation -->
+        <copy todir="${framework.dist.dir}/doc">
+            <fileset dir="${module.framework.basedir}/doc"/>
+        </copy>
+
+        <!-- Leave all the installation XML accessible for the selected Framework -->
+        <copy todir="${framework.dist.dir}/imports">
+            <fileset dir="${framework.selected.dir}/imports"/>
+        </copy>
+
+        <!-- Leave all the library jars accessible -->
+        <copy todir="${framework.dist.dir}/libraries">
+            <fileset dir="${framework.libraries.dir}">
+                <exclude name="*.zip"/>
+                <exclude name="*.xml"/>
+            </fileset>
+        </copy>
+
+        <!-- Copy all licences -->
+        <copy todir="${framework.dist.dir}/licences">
+            <fileset dir="${framework.selected.dir}/licences"/>
+        </copy>
+
+        <!-- copy installer -->
+        <copy todir="${framework.dist.dir}/installer">
+            <fileset dir="${framework.selected.dir}/installer"/>
+        </copy>
+
+        <!-- Copy all platform-dependent items for the Framework and the Framework instance -->
+        <copy todir="${framework.dist.dir}/platform">
+            <fileset dir="${module.framework.basedir}/platform"/>
+        </copy>
+
+        <copy todir="${framework.dist.dir}/platform">
+            <fileset dir="${framework.selected.dir}/platform"/>
+        </copy>
+
+        <!-- 2008-01-21 Copy over testdata to workspace -->
+        <copy todir="${framework.dist.dir}/workspace">
+            <fileset dir="${module.framework.basedir}/testdata"/>
+        </copy>
+
+        <!-- 2008-01-12 Jetty 6 Server -->
+        <copy todir="${framework.dist.dir}/etc">
+            <fileset dir="${module.framework.basedir}/etc"/>
+        </copy>
+
+        <!-- 2009-10-09 Copy Maps -->
+        <copy todir="${framework.dist.dir}/maps">
+            <fileset dir="${module.framework.basedir}/maps"/>
+        </copy>
+
+        <copy todir="${framework.dist.dir}/webroot">
+            <fileset dir="${module.framework.basedir}/webroot"/>
+        </copy>
+
+        <!-- Leave all the XML schemas accessible -->
+        <copy todir="${framework.dist.dir}/schemas">
+            <fileset dir="${framework.schemas.dir}"/>
+        </copy>
+
+        <!-- Copy *only* the Framework classes to the tmp directory -->
+        <copy todir="${framework.tmp.dir}">
+            <fileset dir="${framework.output.dir}">
+                <exclude name="org/lmn/fc/common/**"/>
+                <exclude name="org/lmn/fc/database/**"/>
+                <exclude name="org/lmn/fc/doc/**"/>
+                <exclude name="org/lmn/fc/frameworks/build*.xml"/>
+                <exclude name="org/lmn/fc/frameworks/${host-name}/imports/**"/>
+                <exclude name="org/lmn/fc/frameworks/${host-name}/plugins/**"/>
+                <exclude name="org/lmn/fc/model/**"/>
+                <exclude name="org/lmn/fc/model/schemas/**"/>
+                <exclude name="org/lmn/fc/ui/**"/>
+                <exclude name="com/**"/>
+            </fileset>
+        </copy>
+
+        <!-- Create the Framework Plugin Jar from the data in the tmp directory -->
+        <jar destfile="${framework.dist.dir}/${host-name-uc}-plugin.jar"
+            basedir="${framework.tmp.dir}">
+            <exclude name="org/lmn/fc/imports/**"/>
+            <manifest>
+                <attribute name="Built-By" value="${host-name-uc}"/>
+                <attribute name="Version-Number" value="${version.number}"/>
+                <attribute name="Build-Number" value="${build.number}"/>
+                <attribute name="Build-Status" value="${build.status}"/>
+                <attribute name="Built-Date" value="${TODAY}"/>
+            </manifest>
+        </jar>
+
+        <delete dir="${framework.tmp.dir}"/>
+
+        <!-- Create the Javadoc for the selected Framework plugin  /${host-name} -->
+        <!--<mkdir dir="${framework.tmp.dir}"/>-->
+
+        <!--<javadoc packagenames="org.lmn.fc.frameworks.${framework.selected.package}.*"-->
+                 <!--sourcepath="${module.framework.basedir}/src"-->
+                 <!--defaultexcludes="yes"-->
+                 <!--destdir="${framework.tmp.dir}/javadoc"-->
+                 <!--author="true"-->
+                 <!--version="true"-->
+                 <!--use="true"-->
+                 <!--windowtitle="${host-name}"-->
+                 <!--additionalparam="-breakiterator">-->
+            <!--<packageset dir="src"-->
+                        <!--defaultexcludes="yes">-->
+                <!--<include name="org/lmn/fc/frameworks/${framework.selected.package}/**"/>-->
+                <!--<exclude-->
+                    <!--name="org/lmn/fc/frameworks/${framework.selected.package}/plugins/**"/>-->
+            <!--</packageset>-->
+        <!--</javadoc>-->
+
+        <!-- Create the Framework plugin Javadoc Jar from the data in the tmp directory -->
+        <!--<jar destfile="${framework.dist.dir}/${host-name-uc}-javadoc.jar"-->
+             <!--basedir="${framework.tmp.dir}">-->
+            <!--<exclude-->
+                <!--name="javadoc/org/lmn/fc/frameworks/${framework.selected.package}/plugins/**"/>-->
+            <!--<manifest>-->
+                <!--<attribute name="Built-By" value="${host-name-uc}"/>-->
+                <!--<attribute name="Version-Number" value="${version.number}"/>-->
+                <!--<attribute name="Build-Number" value="${build.number}"/>-->
+                <!--<attribute name="Build-Status" value="${build.status}"/>-->
+                <!--<attribute name="Build-Date" value="${TODAY}"/>-->
+            <!--</manifest>-->
+        <!--</jar>-->
+
+        <!--<delete dir="${framework.tmp.dir}"/>-->
+
+        <!-- Create the Javadoc for the common parts of the Framework -->
+        <!-- ToDo replace when done!-->
+        <!--
+       <mkdir dir="${framework.tmp.dir}"/>
+
+       <javadoc sourcepath="${module.framework.basedir}/src"
+                defaultexcludes="yes"
+                destdir="${framework.tmp.dir}/javadoc/framework"
+                author="true"
+                version="true"
+                use="true"
+                windowtitle="${host-name}"
+                additionalparam="-breakiterator">
+           <packageset dir="src" defaultexcludes="yes">
+               <include name="org/lmn/fc/common/**"/>
+               <include name="org/lmn/fc/database/**"/>
+               <include name="org/lmn/fc/model/**"/>
+               <include name="org/lmn/fc/ui/**"/>
+
+                needs to exclude framework plugin ->
+               <exclude name="org/lmn/fc/frameworks/**"/>
+               <exclude name="org/lmn/fc/plugins/**"/>
+               <exclude name="schemaorg_apache_xmlbeans/**"/>
+               <exclude name="com/**"/>
+           </packageset>
+       </javadoc>
+
+        Create the Framework Javadoc Jar from the data in the tmp directory ->
+       <jar destfile="${framework.dist.dir}/framework-javadoc.jar"
+            basedir="${framework.tmp.dir}">
+           <manifest>
+               <attribute name="Built-By" value="Framework"/>
+               <attribute name="Version-Number" value="${version.number}"/>
+               <attribute name="Build-Number" value="${build.number}"/>
+               <attribute name="Build-Status" value="${build.status}"/>
+               <attribute name="Build-Date" value="${TODAY}"/>
+           </manifest>
+       </jar>
+
+       <delete dir="${framework.tmp.dir}"/> -->
+
+        <!-- Create the Common Jar from the classes in the common package-->
+        <!-- This must have the common, database, model and ui -->
+        <mkdir dir="${framework.tmp.dir}"/>
+
+        <!-- MARK -->
+        <!-- Remember to exclude the DataFilter implementations! -->
+        <copy todir="${framework.tmp.dir}">
+            <fileset dir="${framework.output.dir}">
+                <exclude name="com/**"/>
+                <exclude name="org/lmn/fc/doc/**"/>
+                <exclude name="org/lmn/fc/frameworks/**"/>
+                <exclude name="org/lmn/fc/common/datafilters/impl/**"/>
+            </fileset>
+        </copy>
+        <!-- END MARK -->
+
+        <jar destfile="${framework.dist.dir}/libraries/framework-common.jar"
+            basedir="${framework.tmp.dir}">
+            <manifest>
+                <attribute name="Built-By" value="${host-name-uc}"/>
+                <attribute name="Main-Class" value="${main-class}"/>
+                <attribute name="Version-Number" value="${version.number}"/>
+                <attribute name="Build-Number" value="${build.number}"/>
+                <attribute name="Build-Status" value="${build.status}"/>
+                <attribute name="Build-Date" value="${TODAY}"/>
+            </manifest>
+        </jar>
+
+        <delete dir="${framework.tmp.dir}"/>
+
+        <!-- Create the MySQL Jar from the classes in the com package-->
+        <mkdir dir="${framework.tmp.dir}"/>
+
+        <copy todir="${framework.tmp.dir}">
+            <fileset dir="${framework.output.dir}">
+                <exclude name="org/lmn/fc/common/**"/>
+                <exclude name="org/lmn/fc/database/**"/>
+                <exclude name="org/lmn/fc/doc/**"/>
+                <exclude name="org/lmn/fc/frameworks/**"/>
+                <exclude name="org/lmn/fc/model/**"/>
+                <exclude name="org/lmn/fc/ui/**"/>
+            </fileset>
+        </copy>
+
+        <jar destfile="${framework.dist.dir}/libraries/mysql-management.jar"
+            basedir="${framework.tmp.dir}">
+            <manifest>
+                <attribute name="Built-By" value="${host-name-uc}"/>
+                <attribute name="Version-Number" value="${version.number}"/>
+                <attribute name="Build-Number" value="${build.number}"/>
+                <attribute name="Build-Status" value="${build.status}"/>
+                <attribute name="Build-Date" value="${TODAY}"/>
+            </manifest>
+        </jar>
+
+        <delete dir="${framework.tmp.dir}"/>
+
+        <!-- Create the Schemas Jar from the classes in the schemaorg_apache_xmlbeans package-->
+        <mkdir dir="${framework.tmp.dir}"/>
+
+        <copy todir="${framework.tmp.dir}">
+            <fileset dir="${xmltypesystem.output.dir}"/>
+        </copy>
+
+        <jar destfile="${framework.dist.dir}/libraries/framework-schemas.jar"
+            basedir="${framework.tmp.dir}">
+            <manifest>
+                <attribute name="Built-By" value="${host-name-uc}"/>
+                <attribute name="Version-Number" value="${version.number}"/>
+                <attribute name="Build-Number" value="${build.number}"/>
+                <attribute name="Build-Status" value="${build.status}"/>
+                <attribute name="Build-Date" value="${TODAY}"/>
+            </manifest>
+        </jar>
+
+        <delete dir="${framework.tmp.dir}"/>
+
+        <!-- Copy over the top-level loader properties and platform batch files etc.-->
+        <copy file="${loader-properties}" todir="${framework.dist.dir}"/>
+        <copy file="${host-name-uc}.bat" todir="${framework.dist.dir}"/>
+        <copy file="${host-name-uc}512M.bat" todir="${framework.dist.dir}"/>
+        <copy file="${host-name-uc}.sh" todir="${framework.dist.dir}"/>
+        <copy file="${host-name-uc}512M.sh" todir="${framework.dist.dir}"/>
+        <!-- Added by Mark H -->
+        <!--<copy file="starbase-installer.bat" todir="${framework.dist.dir}"/>-->
+        <!--<copy file="starbase.vbs" todir="${framework.dist.dir}"/>-->
+        <!--<copy file="debug.properties" todir="${framework.dist.dir}"/>-->
+        <!--ReadMe files-->
+        <!--<copy file="doc/ReadMe-Windows.txt" todir="${framework.dist.dir}"/>-->
+        <!--<copy file="doc/ReadMe-Linux.txt" todir="${framework.dist.dir}"/>-->
+        <!--<copy file="doc/ReadMe-Mac.txt" todir="${framework.dist.dir}"/>-->
+        <!--<copy file="doc/ReleaseNotes.txt" todir="${framework.dist.dir}"/>-->
+
+        <!-- PLUGINS ******************************************************** -->
+        <antcall target="make-all-plugins">
+            <param name="builderclasspath1"
+                  value="${builder-classpath}"/>
+        </antcall>
+
+        <delete dir="${framework.tmp.dir}"/>
+
+        <!-- MARK -->
+        <antcall target="make-all-data-filters">
+            <param name="builderclasspath1"
+                   value="${builder-classpath}"/>
+        </antcall>
+        <!-- END MARK -->
+
+        <!-- Keep track of every time Starbase is rebuilt! -->
+        <!-- This number must be read and incremented only once during the build -->
+        <!-- Properties are immutable: whoever sets a property first freezes it for the rest of the build;
+            they are most definitely not variables.-->
+        <buildnumber file="build.properties"/>
+
+        <echo>Build Jars Complete! *************************************************</echo>
+
+    </target>
+
+    <!-- Runs all do_single_plugin tasks in all Ant sub-modules -->
+    <!--   depends="clean, compile.module.framework"  -->
+    <target name="make-all-plugins"
+           description="Make all Plugin Jars">
+
+        <antcall target="-make-plugins">
+            <param name="target"
+                  value="do_single_plugin"/>
+            <param name="builderclasspath2"
+                  value="${builderclasspath1}"/>
+        </antcall>
+
+    </target>
+
+    <!-- Internal target for executing tasks in plugin sub-modules -->
+    <target name="-make-plugins"
+           description="Internal target for executing tasks in plugin sub-modules">
+
+        <subant target="${target}"
+               inheritall="false">
+            <fileset dir="${framework.frameworks.dir}">
+                <include name="**/build-plugin.xml"/>
+                <exclude name="build-single-plugin.xml"/>
+            </fileset>
+        </subant>
+
+    </target>
+
+    <!-- ........................................................................... -->
+    <!-- MARK -->
+    <!-- Make all Filter jars -->
+
+    <target name="make-all-data-filters"
+            description="Make all Data Filter Jars">
+
+        <mkdir dir="${framework.tmp.dir}"/>
+
+        <!-- Copy over the resources from the src tree for each Filter folder, but exclude Java sources -->
+        <copy todir="${framework.tmp.dir}/org/lmn/fc/common/datafilters/impl"
+              failonerror="false">
+            <fileset dir="${framework.src.dir}/org/lmn/fc/common/datafilters/impl"
+                     includes="*/"
+                     excludes="/**/*.java"
+                     erroronmissingdir="false"/>
+        </copy>
+
+        <!-- Copy over the compiled classes for each Filter folder -->
+        <copy todir="${framework.tmp.dir}/org/lmn/fc/common/datafilters/impl"
+              failonerror="false">
+            <fileset dir="${framework.output.dir}/org/lmn/fc/common/datafilters/impl"
+                     includes="*/"
+                     erroronmissingdir="false"/>
+        </copy>
+
+        <!-- Jar each Filter found in the source tree -->
+        <foreach target="-make-filter-jar"
+                 param="filter.dir.name">
+
+            <path>
+                <dirset dir="${framework.tmp.dir}/org/lmn/fc/common/datafilters/impl"
+                        includes="*filter"
+                        casesensitive="no" />
+            </path>
+
+        </foreach>
+
+        <delete dir="${framework.tmp.dir}"/>
+    </target>
+
+    <!-- Assemble a single Filter jar -->
+    <target name="-make-filter-jar" >
+
+        <!-- Allow access to the build details -->
+        <property file="build.properties"/>
+        <tstamp>
+            <format property="JarStamp" pattern="yyyy-MM-dd HH:mm:ss" />
+        </tstamp>
+
+        <!-- filter.dir.name includes the whole path to the filter folder -->
+        <echo message="JAR Filter ${filter.dir.name}" />
+
+        <!-- We need only the Filter Name for naming the Jar -->
+        <!-- Get the class file for this Filter -->
+        <path id="path.filter.name">
+            <fileset dir="${filter.dir.name}" >
+                <!-- Linux : Note to make filters build under linux remove the leading slash from the below include -->
+                <include name="**/*.class" />
+            </fileset>
+        </path>
+
+        <!-- Remove all of the leading path -->
+        <pathconvert property="filter.name"
+                     refid="path.filter.name">
+            <mapper type="flatten"/>
+        </pathconvert>
+
+        <!-- Make sure we are left with just the Filter name -->
+        <basename file="${filter.name}"
+                  property="filter.basename"
+                  suffix=".class"/>
+
+        <!-- We need the package name for selecting which Filter to Jar from the tmp tree -->
+        <path id="path.filter.package">
+            <pathelement location="${filter.dir.name}"/>
+        </path>
+
+        <!-- Remove all of the leading path -->
+        <pathconvert property="path.selected.filter"
+                     refid="path.filter.package">
+            <mapper type="flatten"/>
+        </pathconvert>
+
+        <!--<echo message="Flattened path to selected Filter package ${path.selected.filter}" />-->
+
+        <!-- Jar everything in the selected Filter folder  -->
+        <jar destfile="${framework.dist.dir}/libraries/${filter.basename}.jar"
+             includes="**/impl/${path.selected.filter}/**/*"
+             basedir="${framework.tmp.dir}">
+            <manifest>
+                <attribute name="Distribution" value="${filter.basename}"/>
+                <attribute name="Plugin-Category" value="DataFilter"/>
+
+                <attribute name="Version-Number" value="${version.number}"/>
+                <attribute name="Build-Number" value="${build.number}"/>
+                <attribute name="Build-Status" value="${build.status}"/>
+                <attribute name="Build-Date" value="${JarStamp}"/>
+                <attribute name="Built-By" value="IntelliJ"/>
+
+                <attribute name="Author" value="Laurence Newell"/>
+                <attribute name="Website" value="www.ukraa.com/www/downloads/${filter.basename}.html"/>
+                <attribute name="Email" value="starbase@ukraa.com"/>
+            </manifest>
+        </jar>
+
+        <!-- Put a copy of the jar in the distribution folder -->
+        <copy file="${framework.dist.dir}/libraries/${filter.basename}.jar"
+              tofile="${framework.dist.dir}/datastore/distribution/${filter.basename}-distribution.jar"/>
+
+    </target>
+
+    <!-- END MARK -->
+    <!-- ........................................................................... -->
+    <!-- Make all Ephemeris jars -->
+
+    <target name="make-all-observatory-ephemerides"
+            description="Make all Observatory Ephemeris Jars">
+
+        <echo message="ToDo BUILD EPHEMERIS JARS"/>
+
+        <!-- ToDo Work in progress -->
+
+    </target>
+
+    <!-- XML Beans ........................................................... -->
+    <!-- The value of the property 'no.xmlbeans' is set to true if the timestamp of the
+        source file(s) is not more recent than the timestamp of the corresponding target file(s)-->
+    <target name="-check-xmlbean-required">
+        <uptodate property="no.xmlbeans"
+                 targetfile="${framework.src.dir}/org/lmn/fc/model/plugins/impl/FrameworkData.java">
+            <srcfiles dir="${framework.src.dir}/org/lmn/fc/model/schemas"
+                     includes="**/*.xsd"/>
+        </uptodate>
+    </target>
+
+    <!-- The task generates the source code that makes up the XMLBean type system specified by the schema files -->
+    <taskdef name="xmlbean"
+            classname="org.apache.xmlbeans.impl.tool.XMLBean"
+            classpath="${framework.libraries.dir}/xbean.jar:${framework.libraries.dir}/jsr173_1.0_api.jar"/>
+
+    <!--
+           unless="no.xmlbeans" -->
+
+            <!--depends="-check-xmlbean-required"-->
+    <target name="xml_beans"
+
+       description="Generate the XMLBeans from the schemas">
+        <echo>Build XML Beans</echo>
+
+        <!-- Remove old type system files -->
+        <delete dir="${xmltypesystem.output.dir}"/>
+
+        <!-- This path must agree with the namespace in the XSD -->
+        <!-- e.g. [type].xmlbeans.model.fc.lmn.org -->
+        <!-- This path is excluded from SVN -->
+        <delete dir="${framework.src.dir}/org/lmn/fc/model/xmlbeans"/>
+
+        <!-- WARNING! To generate setXXXList() etc. you MUST set the javasource=1.5 NOT to 1.6 ! -->
+        <!-- See http://dev2dev.bea.com/pub/a/2006/05/xmlbeans-2.html?page=3 OUT OF DATE? -->
+
+        <property name="schema.base"
+                 value="${framework.src.dir}/org/lmn/fc/model/schemas"/>
+
+        <!-- srcgendir Set a location to generate JAVA files into -->
+        <xmlbean srcgendir="${framework.src.dir}"
+                classgendir="${xmltypesystem.output.dir}"
+                javasource="1.5">
+            <fileset dir="${schema.base}"
+                    includes="**/*.xsd"/>
+        </xmlbean>
+
+        <delete dir="${xmltypesystem.output.dir}/com"/>
+        <delete dir="${xmltypesystem.output.dir}/org"/>
+
+        <echo>XML Beans Complete!*************************************************</echo>
+
+    </target>
+
+    <path id="build.classpath">
+        <fileset dir="${module.framework.basedir}/Izpack/IzPack">
+            <include name="lib/*.jar" />
+        </fileset>
+    </path>
+
+    <!-- Allows us to use the IzPack Ant task -->
+    <!-- BEWARE! Make sure that there is only one SAXParserFactory on the classpath  -->
+
+    <!--<taskdef name="IzPack"
+            classpath="${framework.libraries.dir}/standalone-compiler.jar"
+            classname="com.izforge.izpack.ant.IzPackTask"/>
+
+    <target name="SSPC"
+            description="Makes the SSPC tool using IzPack">
+
+        <echo message="Makes the SSPC tool using IzPack"/>
+
+        <IzPack input="${module.framework.basedir}/Izpack/SSPC/Installer/Izpack-SSPC.xml"
+                output="${module.framework.basedir}/Izpack/SSPC/SSPC.jar"
+                installerType="standard"
+                inheritAll="true"
+                basedir="${module.framework.basedir}"/>
+    </target>         -->
+
+    <!--
+
+    <target name="make-generic-installer"
+           description="Makes the installer using IzPack">
+
+    <echo message="Makes the installer using IzPack"/>
+
+
+
+    <IzPack input="${module.framework.basedir}/Izpack/Windows/IzPack-Production.xml"
+           output="${module.framework.basedir}/Izpack/Windows/Starbase-2.2.1-Generic-Installer.jar"
+           installerType="standard"
+           inheritAll="true"
+           basedir="${module.framework.basedir}"/>
+    </target>  -->
+
+
+    <!-- Beta Release target -->
+    <!--
+    <target name="make-generic-beta-installer"
+            description="Makes the beta installer using IzPack">
+
+    <echo message="Makes the beta installer using IzPack"/>
+
+    <IzPack input="${module.framework.basedir}/Izpack/Windows/IzPack-Beta.xml"
+                output="${module.framework.basedir}/Izpack/Windows/Starbase-2.2.1-Beta-Generic-Installer.jar"
+                installerType="standard"
+                inheritAll="true"
+                basedir="${module.framework.basedir}"/>
+    </target>  -->
+
+    <!-- Allow to use ANT task to create Izpack installer with Mac Application Bundle -->
+    <!--
+    <target name="make-mac-installer"
+           description="Makes the installer using IzPack">
+
+    <echo message="Makes the mac installer using IzPack"/>
+
+    <taskdef name="jarbundler"
+           classpath="${module.framework.basedir}/Izpack/libraries/jarbundler-2.2.0.jar"
+           classname="net.sourceforge.jarbundler.JarBundler" />
+
+    <property name="jarbundler.icon" value="Izpack/MacOSX/JarBundler/Starbase-icns/starbase.icns" />
+    <property name="javastub" value="Izpack/MacOSX/JarBundler/JavaStubMacOSX/JavaApplicationStub" />
+
+
+    <jarbundler dir="Izpack/MacOSX/JarBundler/MacBundle"
+                name="Starbase"
+                mainclass="org.lmn.fc.common.loaders.FrameworkLoader"
+                jvmversion="1.6+"
+                verbose="true"
+                showPlist="false"
+                stubfile="${javastub}"
+                icon="${jarbundler.icon}"
+                workingdirectory="$JAVAROOT/"
+                arguments="loader.properties"
+                vmoptions="-Xms768m -Xmx768m -XX:NewRatio=3 -XX:MaxPermSize=64m -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalPacing -XX:+CMSClassUnloadingEnabled -XX:+UseCMSCompactAtFullCollection -XX:CMSInitiatingOccupancyFraction=-1 -XX:CMSTriggerRatio=80 -XX:CMSInitiatingPermOccupancyFraction=-1 -XX:CMSTriggerPermRatio=80 -XX:+ExplicitGCInvokesConcurrent -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7091 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -jar libraries/framework-common.jar">
+     -->
+    <!-- Adjust the look, feel and behavior -->
+    <!--
+    <javaproperty name="apple.laf.useScreenMenuBar" value="false"/>
+    <javaproperty name="apple.awt.brushMetal" value="true"/>
+    <javaproperty name="apple.awt.showGrowBox" value="true"/>
+
+     -->
+
+    <!--<jarfileset dir="dist">  -->
+     <!--  <include name="*/**" />  -->
+       <!--<exclude name="doc/*/**,plugins/*/**,workspace/*/**" /> -->
+    <!--</jarfileset>
+
+    <jarfilelist dir="libraries" files="framework-common.jar" />
+
+    </jarbundler>
+
+    <IzPack input="${module.framework.basedir}/Izpack/MacOSX/installer/IzPack-mac-install.xml"
+           output="${module.framework.basedir}/Izpack/MacOSX/installer/Starbase-2.1-Mac-Installer.jar"
+           installerType="standard"
+           inheritAll="true"
+           basedir="${module.framework.basedir}"/>
+
+    </target>  -->
+</project>

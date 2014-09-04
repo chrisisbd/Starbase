@@ -1,0 +1,95 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Properties xmlns="properties.xmlbeans.model.fc.lmn.org">
+
+    <!-- Hydrogen Receiver -->
+
+    <!--<PropertyResource>-->
+        <!--<ResourceKey>-->
+            <!--<Key>HydrogenReceiver</Key>-->
+            <!--<Key>Enable</Key>-->
+            <!--<Key>Debug</Key>-->
+        <!--</ResourceKey>-->
+        <!--<Editable>1</Editable>-->
+        <!--<DataTypeClassName>java.lang.Boolean</DataTypeClassName>-->
+        <!--<EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>-->
+        <!--<Value>false</Value>-->
+        <!--<Description>A flag to control debug messages from the Hydrogen Line Receiver</Description>-->
+        <!--<CreatedDate>2000-01-01Z</CreatedDate>-->
+        <!--<CreatedTime>00:00:00.000Z</CreatedTime>-->
+        <!--<ModifiedDate>2000-01-01Z</ModifiedDate>-->
+        <!--<ModifiedTime>00:00:00.000Z</ModifiedTime>-->
+    <!--</PropertyResource>-->
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>HydrogenReceiver</Key>
+            <Key>Update</Key>
+            <Key>Enable</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Boolean</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>true</Value>
+        <Description>A flag to control the HydrogenReceiver update function</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>HydrogenReceiver</Key>
+            <Key>Update</Key>
+            <Key>Period</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>60</Value>
+        <Description>The interval in seconds between HydrogenReceiver update cycles</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <!-- HydrogenReceiver DAO -->
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>HydrogenReceiver</Key>
+            <Key>Dao</Key>
+            <Key>Update</Key>
+            <Key>Period</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>30</Value>
+        <Description>The interval in seconds between HydrogenReceiver DAO update cycles</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>HydrogenReceiver</Key>
+            <Key>Dao</Key>
+            <Key>Pathname</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.String</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>workspace/localdatabackup.spd</Value>
+        <Description>The pathname of the data file to be read in the DAO</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+</Properties>

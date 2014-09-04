@@ -1,0 +1,281 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Tasks xmlns="tasks.xmlbeans.model.fc.lmn.org">
+
+    <Task>
+        <Name>RootTask</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>0</SortOrder>
+        <Editable>0</Editable>
+        <Public>0</Public>
+        <Runnable>1</Runnable>
+        <RunAtStart>1</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The Workshop RootTask</Description>
+        <IconFilename>privatetask.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>EventViewer</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>1</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The Event Viewer for the Workshop</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>HelpViewer</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>2</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The Help Viewer for the Workshop</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>JavaDoc</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>3</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The JavaDoc Viewer for the Workshop Tasks</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>UIComponentTester</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>4</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>A general purpose tester for a UIComponent</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>StarMapTester</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>5</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The StarMap Tester</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>StarField</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>6</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>A starfield!</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>TheMatrix</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>7</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The Matrix!</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>SmithChart</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>8</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>A Smith Chart</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>JFreeChartDemo</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>9</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>Demonstration of JFreeChart</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>JGraphDemo</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>10</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>Demonstration of JGraph</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+    <Task>
+        <Name>ClockTester</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <SortOrder>11</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>Demonstration of the Clocks</Description>
+        <IconFilename>task.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+
+</Tasks>

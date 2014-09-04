@@ -1,0 +1,206 @@
+<!-- This file doesn't 'do' anything, it is a template for the MetadataManager Module - this one has WMM and VLSR. See below for one without  -->
+
+<!-- ............................................................................... -->
+<!-- DataProcessor Plugin -->
+
+<Plugin>
+    <!-- A virtual Plugin -->
+    <Identifier>DataProcessor</Identifier>
+    <Name>DataProcessor</Name>
+    <Description>The DataProcessor Module</Description>
+    <ResourceKey>DataProcessor</ResourceKey>
+
+    <!-- The DataProcessor Plugin is always CommandCodeBase 50 -->
+    <CommandCodeBase>50</CommandCodeBase>
+
+    <Command>
+        <Identifier>applyLinearTransform</Identifier>
+        <CommandCode>00</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Apply a LinearTransform to the selected dataset</Description>
+        <Parameter>
+            <Name>Linear.ScaleFactor</Name>
+            <InputDataType>
+                <DataTypeName>DecimalFloat</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>DecimalFloat</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Value>1.0</Value>
+            <Tooltip>Any valid positive or negative number</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Linear.Offset</Name>
+            <InputDataType>
+                <DataTypeName>DecimalFloat</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>DecimalFloat</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Value>0.0</Value>
+            <Tooltip>Any valid positive or negative number</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>ApplyTo.ChannelID</Name>
+            <InputDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Value>-1</Value>
+            <Tooltip>Any Channel ID for the current dataset, or -1, to apply to all channels</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>ApplyTo.Dataset</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>RawData,ProcessedData</Choices>
+            <Tooltip>Allowed values: RawData,ProcessedData</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>segmentTimeSeries</Identifier>
+        <CommandCode>01</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Segment a Time Series into a set of files</Description>
+        <Parameter>
+            <Name>Segment.Size</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Day,Daytime,Hour,Minute</Choices>
+            <Tooltip>Allowed values: Day,Daytime,Hour,Minute</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Pathname</Name>
+            <InputDataType>
+                <DataTypeName>PathName</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Value>archive</Value>
+            <Tooltip>The pathname used for saving the individual files e.g. archive</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Format</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>FormattedStardata,CompressedStardata,CommaSeparated,TabSeparated</Choices>
+            <Tooltip>Allowed values: FormattedStardata,CompressedStardata,CommaSeparated,TabSeparated</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>ApplyTo.Dataset</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>RawData,ProcessedData</Choices>
+            <Tooltip>Allowed values: RawData,ProcessedData</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>applyFilter</Identifier>
+        <CommandCode>02</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Apply a Filter to the selected dataset</Description>
+        <!-- UNDER DEVELOPMENT -->
+        <Colour>r=050 g=255 b=050</Colour>
+        <Parameter>
+            <Name>Filter</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>!FilterList</Choices>
+            <Tooltip>Select a Filter to apply to the RawData to create ProcessedData</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>ApplyTo.ChannelID</Name>
+            <InputDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Tooltip>Any Channel ID for the current dataset, or -1, to apply to all channels</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>ApplyTo.Dataset</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>RawData,ProcessedData</Choices>
+            <Tooltip>Allowed values: RawData,ProcessedData</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Command>
+
+    <Command>
+        <Identifier>evalTemperatureCorrelation</Identifier>
+        <CommandCode>03</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <!-- See: http://en.wikipedia.org/wiki/Correlation_and_dependence -->
+        <Description>Calculate Pearson Correlation Coefficient between Temperature and Data</Description>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>CorrelationCoefficients</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+        </Response>
+    </Command>
+
+</Plugin>

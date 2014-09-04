@@ -1,0 +1,3453 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- Some foreign characters are incorrect e.g. umlaut, Mocambique, Cote -->
+<Countries  xmlns="countries.xmlbeans.model.fc.lmn.org">
+    <Country>
+        <ISO2>AD</ISO2>
+        <ISO3>AND</ISO3>
+        <IOC3>AND</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ad</InternetDomain>
+        <ISONumeric>20</ISONumeric>
+        <ITUDiallingCode>376</ITUDiallingCode>
+        <UNVehicleCode>AND</UNVehicleCode>
+        <ISOCountryName>ANDORRA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AE</ISO2>
+        <ISO3>ARE</ISO3>
+        <IOC3>UAE</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ae</InternetDomain>
+        <ISONumeric>784</ISONumeric>
+        <ITUDiallingCode>971</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>UNITED ARAB EMIRATES</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AF</ISO2>
+        <ISO3>AFG</ISO3>
+        <IOC3>AFG</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>af</InternetDomain>
+        <ISONumeric>4</ISONumeric>
+        <ITUDiallingCode>93</ITUDiallingCode>
+        <UNVehicleCode>AFG</UNVehicleCode>
+        <ISOCountryName>AFGHANISTAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AG</ISO2>
+        <ISO3>ATG</ISO3>
+        <IOC3>ANT</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ag</InternetDomain>
+        <ISONumeric>28</ISONumeric>
+        <ITUDiallingCode>1-268</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>ANTIGUA AND BARBUDA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AI</ISO2>
+        <ISO3>AIA</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ai</InternetDomain>
+        <ISONumeric>660</ISONumeric>
+        <ITUDiallingCode>1-264</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>ANGUILLA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AL</ISO2>
+        <ISO3>ALB</ISO3>
+        <IOC3>ALB</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>al</InternetDomain>
+        <ISONumeric>8</ISONumeric>
+        <ITUDiallingCode>355</ITUDiallingCode>
+        <UNVehicleCode>AL</UNVehicleCode>
+        <ISOCountryName>ALBANIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AM</ISO2>
+        <ISO3>ARM</ISO3>
+        <IOC3>ARM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>am</InternetDomain>
+        <ISONumeric>51</ISONumeric>
+        <ITUDiallingCode>7</ITUDiallingCode>
+        <UNVehicleCode>ARM</UNVehicleCode>
+        <ISOCountryName>ARMENIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AN</ISO2>
+        <ISO3>ANT</ISO3>
+        <IOC3>AHO</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>an</InternetDomain>
+        <ISONumeric>530</ISONumeric>
+        <ITUDiallingCode>599</ITUDiallingCode>
+        <UNVehicleCode>NA</UNVehicleCode>
+        <ISOCountryName>NETHERLANDS ANTILLES</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AO</ISO2>
+        <ISO3>AGO</ISO3>
+        <IOC3>ANG</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ao</InternetDomain>
+        <ISONumeric>24</ISONumeric>
+        <ITUDiallingCode>244</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>ANGOLA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AQ</ISO2>
+        <ISO3>ATA</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>aq</InternetDomain>
+        <ISONumeric>10</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>ANTARCTICA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AR</ISO2>
+        <ISO3>ARG</ISO3>
+        <IOC3>ARG</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ar</InternetDomain>
+        <ISONumeric>32</ISONumeric>
+        <ITUDiallingCode>54</ITUDiallingCode>
+        <UNVehicleCode>RA</UNVehicleCode>
+        <ISOCountryName>ARGENTINA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AS</ISO2>
+        <ISO3>ASM</ISO3>
+        <IOC3>ASA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>as</InternetDomain>
+        <ISONumeric>16</ISONumeric>
+        <ITUDiallingCode>1-684</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>AMERICAN SAMOA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AT</ISO2>
+        <ISO3>AUT</ISO3>
+        <IOC3>AUT</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>at</InternetDomain>
+        <ISONumeric>40</ISONumeric>
+        <ITUDiallingCode>43</ITUDiallingCode>
+        <UNVehicleCode>A</UNVehicleCode>
+        <ISOCountryName>AUSTRIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AU</ISO2>
+        <ISO3>AUS</ISO3>
+        <IOC3>AUS</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>au</InternetDomain>
+        <ISONumeric>36</ISONumeric>
+        <ITUDiallingCode>61</ITUDiallingCode>
+        <UNVehicleCode>AUS</UNVehicleCode>
+        <ISOCountryName>AUSTRALIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AW</ISO2>
+        <ISO3>ABW</ISO3>
+        <IOC3>ARU</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>aw</InternetDomain>
+        <ISONumeric>533</ISONumeric>
+        <ITUDiallingCode>297</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>ARUBA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AX</ISO2>
+        <ISO3>ALA</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>??</InternetDomain>
+        <ISONumeric>248</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>ALAND ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>AZ</ISO2>
+        <ISO3>AZE</ISO3>
+        <IOC3>AZE</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>az</InternetDomain>
+        <ISONumeric>31</ISONumeric>
+        <ITUDiallingCode>994</ITUDiallingCode>
+        <UNVehicleCode>AZ</UNVehicleCode>
+        <ISOCountryName>AZERBAIJAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BA</ISO2>
+        <ISO3>BIH</ISO3>
+        <IOC3>BIH</IOC3>
+        <Installed>0</Installed>
+        <InternetDomain>ba</InternetDomain>
+        <ISONumeric>70</ISONumeric>
+        <ITUDiallingCode>387</ITUDiallingCode>
+        <UNVehicleCode>BIH</UNVehicleCode>
+        <ISOCountryName>BOSNIA AND HERZEGOVINA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BB</ISO2>
+        <ISO3>BRB</ISO3>
+        <IOC3>BAR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bb</InternetDomain>
+        <ISONumeric>52</ISONumeric>
+        <ITUDiallingCode>1-246</ITUDiallingCode>
+        <UNVehicleCode>BDS</UNVehicleCode>
+        <ISOCountryName>BARBADOS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BD</ISO2>
+        <ISO3>BGD</ISO3>
+        <IOC3>BAN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bd</InternetDomain>
+        <ISONumeric>50</ISONumeric>
+        <ITUDiallingCode>880</ITUDiallingCode>
+        <UNVehicleCode>BD</UNVehicleCode>
+        <ISOCountryName>BANGLADESH</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BE</ISO2>
+        <ISO3>BEL</ISO3>
+        <IOC3>BEL</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>be</InternetDomain>
+        <ISONumeric>56</ISONumeric>
+        <ITUDiallingCode>32</ITUDiallingCode>
+        <UNVehicleCode>B</UNVehicleCode>
+        <ISOCountryName>BELGIUM</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BF</ISO2>
+        <ISO3>BFA</ISO3>
+        <IOC3>BUR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bf</InternetDomain>
+        <ISONumeric>854</ISONumeric>
+        <ITUDiallingCode>226</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>BURKINA FASO</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BG</ISO2>
+        <ISO3>BGR</ISO3>
+        <IOC3>BUL</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bg</InternetDomain>
+        <ISONumeric>100</ISONumeric>
+        <ITUDiallingCode>359</ITUDiallingCode>
+        <UNVehicleCode>BG</UNVehicleCode>
+        <ISOCountryName>BULGARIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BH</ISO2>
+        <ISO3>BHR</ISO3>
+        <IOC3>BRN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bh</InternetDomain>
+        <ISONumeric>48</ISONumeric>
+        <ITUDiallingCode>973</ITUDiallingCode>
+        <UNVehicleCode>BRN</UNVehicleCode>
+        <ISOCountryName>BAHRAIN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BI</ISO2>
+        <ISO3>BDI</ISO3>
+        <IOC3>BDI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bi</InternetDomain>
+        <ISONumeric>108</ISONumeric>
+        <ITUDiallingCode>257</ITUDiallingCode>
+        <UNVehicleCode>RU</UNVehicleCode>
+        <ISOCountryName>BURUNDI</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BJ</ISO2>
+        <ISO3>BEN</ISO3>
+        <IOC3>BEN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bj</InternetDomain>
+        <ISONumeric>204</ISONumeric>
+        <ITUDiallingCode>229</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>BENIN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BM</ISO2>
+        <ISO3>BMU</ISO3>
+        <IOC3>BER</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bm</InternetDomain>
+        <ISONumeric>60</ISONumeric>
+        <ITUDiallingCode>1-441</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>BERMUDA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BN</ISO2>
+        <ISO3>BRN</ISO3>
+        <IOC3>BRU</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bn</InternetDomain>
+        <ISONumeric>96</ISONumeric>
+        <ITUDiallingCode>673</ITUDiallingCode>
+        <UNVehicleCode>BRU</UNVehicleCode>
+        <ISOCountryName>BRUNEI DARUSSALAM</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BO</ISO2>
+        <ISO3>BOL</ISO3>
+        <IOC3>BOL</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bo</InternetDomain>
+        <ISONumeric>68</ISONumeric>
+        <ITUDiallingCode>591</ITUDiallingCode>
+        <UNVehicleCode>BOL</UNVehicleCode>
+        <ISOCountryName>BOLIVIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BR</ISO2>
+        <ISO3>BRA</ISO3>
+        <IOC3>BRA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>br</InternetDomain>
+        <ISONumeric>76</ISONumeric>
+        <ITUDiallingCode>55</ITUDiallingCode>
+        <UNVehicleCode>BR</UNVehicleCode>
+        <ISOCountryName>BRAZIL</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BS</ISO2>
+        <ISO3>BHS</ISO3>
+        <IOC3>BAH</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bs</InternetDomain>
+        <ISONumeric>44</ISONumeric>
+        <ITUDiallingCode>1-242</ITUDiallingCode>
+        <UNVehicleCode>BS</UNVehicleCode>
+        <ISOCountryName>BAHAMAS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BT</ISO2>
+        <ISO3>BTN</ISO3>
+        <IOC3>BHU</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bt</InternetDomain>
+        <ISONumeric>64</ISONumeric>
+        <ITUDiallingCode>975</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>BHUTAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BV</ISO2>
+        <ISO3>BVT</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bv</InternetDomain>
+        <ISONumeric>74</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>BOUVET ISLAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BW</ISO2>
+        <ISO3>BWA</ISO3>
+        <IOC3>BOT</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bw</InternetDomain>
+        <ISONumeric>72</ISONumeric>
+        <ITUDiallingCode>267</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>BOTSWANA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BY</ISO2>
+        <ISO3>BLR</ISO3>
+        <IOC3>BLR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>by</InternetDomain>
+        <ISONumeric>112</ISONumeric>
+        <ITUDiallingCode>375</ITUDiallingCode>
+        <UNVehicleCode>BY</UNVehicleCode>
+        <ISOCountryName>BELARUS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>BZ</ISO2>
+        <ISO3>BLZ</ISO3>
+        <IOC3>BIZ</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>bz</InternetDomain>
+        <ISONumeric>84</ISONumeric>
+        <ITUDiallingCode>501</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>BELIZE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CA</ISO2>
+        <ISO3>CAN</ISO3>
+        <IOC3>CAN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ca</InternetDomain>
+        <ISONumeric>124</ISONumeric>
+        <ITUDiallingCode>1</ITUDiallingCode>
+        <UNVehicleCode>CDN</UNVehicleCode>
+        <ISOCountryName>CANADA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CC</ISO2>
+        <ISO3>CCK</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cc</InternetDomain>
+        <ISONumeric>166</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>COCOS (KEELING) ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CD</ISO2>
+        <ISO3>COD</ISO3>
+        <IOC3>COD</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cd</InternetDomain>
+        <ISONumeric>180</ISONumeric>
+        <ITUDiallingCode>243</ITUDiallingCode>
+        <UNVehicleCode>ZRE</UNVehicleCode>
+        <ISOCountryName>CONGO, THE DEMOCRATIC REPUBLIC OF THE (formerly Zaire)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CF</ISO2>
+        <ISO3>CAF</ISO3>
+        <IOC3>CAF</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cf</InternetDomain>
+        <ISONumeric>140</ISONumeric>
+        <ITUDiallingCode>236</ITUDiallingCode>
+        <UNVehicleCode>RCA</UNVehicleCode>
+        <ISOCountryName>CENTRAL AFRICAN REPUBLIC</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CG</ISO2>
+        <ISO3>COG</ISO3>
+        <IOC3>CGO</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cg</InternetDomain>
+        <ISONumeric>178</ISONumeric>
+        <ITUDiallingCode>242</ITUDiallingCode>
+        <UNVehicleCode>RCB</UNVehicleCode>
+        <ISOCountryName>CONGO, REPUBLIC OF</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CH</ISO2>
+        <ISO3>CHE</ISO3>
+        <IOC3>SUI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ch</InternetDomain>
+        <ISONumeric>756</ISONumeric>
+        <ITUDiallingCode>41</ITUDiallingCode>
+        <UNVehicleCode>CH</UNVehicleCode>
+        <ISOCountryName>SWITZERLAND (Confederation of
+            Helvetia)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CI</ISO2>
+        <ISO3>CIV</ISO3>
+        <IOC3>CIV</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ci</InternetDomain>
+        <ISONumeric>384</ISONumeric>
+        <ITUDiallingCode>225</ITUDiallingCode>
+        <UNVehicleCode>CI</UNVehicleCode>
+        <ISOCountryName>COTE D'IVOIRE (Ivory Coast)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CK</ISO2>
+        <ISO3>COK</ISO3>
+        <IOC3>COK</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ck</InternetDomain>
+        <ISONumeric>184</ISONumeric>
+        <ITUDiallingCode>682</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>COOK ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CL</ISO2>
+        <ISO3>CHL</ISO3>
+        <IOC3>CHI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cl</InternetDomain>
+        <ISONumeric>152</ISONumeric>
+        <ITUDiallingCode>56</ITUDiallingCode>
+        <UNVehicleCode>RCH</UNVehicleCode>
+        <ISOCountryName>CHILE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CM</ISO2>
+        <ISO3>CMR</ISO3>
+        <IOC3>CMR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cm</InternetDomain>
+        <ISONumeric>120</ISONumeric>
+        <ITUDiallingCode>237</ITUDiallingCode>
+        <UNVehicleCode>CAM</UNVehicleCode>
+        <ISOCountryName>CAMEROON</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CN</ISO2>
+        <ISO3>CHN</ISO3>
+        <IOC3>CHN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cn</InternetDomain>
+        <ISONumeric>156</ISONumeric>
+        <ITUDiallingCode>86</ITUDiallingCode>
+        <UNVehicleCode>RC</UNVehicleCode>
+        <ISOCountryName>CHINA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CO</ISO2>
+        <ISO3>COL</ISO3>
+        <IOC3>COL</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>co</InternetDomain>
+        <ISONumeric>170</ISONumeric>
+        <ITUDiallingCode>57</ITUDiallingCode>
+        <UNVehicleCode>CO</UNVehicleCode>
+        <ISOCountryName>COLOMBIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CR</ISO2>
+        <ISO3>CRI</ISO3>
+        <IOC3>CRI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cr</InternetDomain>
+        <ISONumeric>188</ISONumeric>
+        <ITUDiallingCode>506</ITUDiallingCode>
+        <UNVehicleCode>CR</UNVehicleCode>
+        <ISOCountryName>COSTA RICA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CS</ISO2>
+        <ISO3>SCG</ISO3>
+        <IOC3>SCG</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>yu</InternetDomain>
+        <ISONumeric>891</ISONumeric>
+        <ITUDiallingCode>381</ITUDiallingCode>
+        <UNVehicleCode>YU</UNVehicleCode>
+        <ISOCountryName>SERBIA AND MONTENEGRO (formerly Yugoslavia)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CU</ISO2>
+        <ISO3>CUB</ISO3>
+        <IOC3>CUB</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cu</InternetDomain>
+        <ISONumeric>192</ISONumeric>
+        <ITUDiallingCode>53</ITUDiallingCode>
+        <UNVehicleCode>CU</UNVehicleCode>
+        <ISOCountryName>CUBA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CV</ISO2>
+        <ISO3>CPV</ISO3>
+        <IOC3>CPV</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cv</InternetDomain>
+        <ISONumeric>132</ISONumeric>
+        <ITUDiallingCode>238</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>CAPE VERDE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CX</ISO2>
+        <ISO3>CXR</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cx</InternetDomain>
+        <ISONumeric>162</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>CHRISTMAS ISLAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CY</ISO2>
+        <ISO3>CYP</ISO3>
+        <IOC3>CYP</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cy</InternetDomain>
+        <ISONumeric>196</ISONumeric>
+        <ITUDiallingCode>357</ITUDiallingCode>
+        <UNVehicleCode>CY</UNVehicleCode>
+        <ISOCountryName>CYPRUS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>CZ</ISO2>
+        <ISO3>CZE</ISO3>
+        <IOC3>CZE</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>cz</InternetDomain>
+        <ISONumeric>203</ISONumeric>
+        <ITUDiallingCode>420</ITUDiallingCode>
+        <UNVehicleCode>CZ</UNVehicleCode>
+        <ISOCountryName>CZECH REPUBLIC</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>DE</ISO2>
+        <ISO3>DEU</ISO3>
+        <IOC3>GER</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>de</InternetDomain>
+        <ISONumeric>276</ISONumeric>
+        <ITUDiallingCode>49</ITUDiallingCode>
+        <UNVehicleCode>D</UNVehicleCode>
+        <ISOCountryName>GERMANY (Deutschland)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>DJ</ISO2>
+        <ISO3>DJI</ISO3>
+        <IOC3>DJI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>dj</InternetDomain>
+        <ISONumeric>262</ISONumeric>
+        <ITUDiallingCode>253</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>DJIBOUTI</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>DK</ISO2>
+        <ISO3>DNK</ISO3>
+        <IOC3>DEN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>dk</InternetDomain>
+        <ISONumeric>208</ISONumeric>
+        <ITUDiallingCode>45</ITUDiallingCode>
+        <UNVehicleCode>DK</UNVehicleCode>
+        <ISOCountryName>DENMARK</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>DM</ISO2>
+        <ISO3>DMA</ISO3>
+        <IOC3>DMA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>dm</InternetDomain>
+        <ISONumeric>212</ISONumeric>
+        <ITUDiallingCode>1-767</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>DOMINICA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>DO</ISO2>
+        <ISO3>DOM</ISO3>
+        <IOC3>DOM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>do</InternetDomain>
+        <ISONumeric>214</ISONumeric>
+        <ITUDiallingCode>1-809</ITUDiallingCode>
+        <UNVehicleCode>DOM</UNVehicleCode>
+        <ISOCountryName>DOMINICAN REPUBLIC</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>DZ</ISO2>
+        <ISO3>DZA</ISO3>
+        <IOC3>ALG</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>dz</InternetDomain>
+        <ISONumeric>12</ISONumeric>
+        <ITUDiallingCode>213</ITUDiallingCode>
+        <UNVehicleCode>DZ</UNVehicleCode>
+        <ISOCountryName>ALGERIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>EC</ISO2>
+        <ISO3>ECU</ISO3>
+        <IOC3>ECU</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ec</InternetDomain>
+        <ISONumeric>218</ISONumeric>
+        <ITUDiallingCode>593</ITUDiallingCode>
+        <UNVehicleCode>EC</UNVehicleCode>
+        <ISOCountryName>ECUADOR</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>EE</ISO2>
+        <ISO3>EST</ISO3>
+        <IOC3>EST</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ee</InternetDomain>
+        <ISONumeric>233</ISONumeric>
+        <ITUDiallingCode>372</ITUDiallingCode>
+        <UNVehicleCode>EST</UNVehicleCode>
+        <ISOCountryName>ESTONIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>EG</ISO2>
+        <ISO3>EGY</ISO3>
+        <IOC3>EGY</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>eg</InternetDomain>
+        <ISONumeric>818</ISONumeric>
+        <ITUDiallingCode>20</ITUDiallingCode>
+        <UNVehicleCode>ET</UNVehicleCode>
+        <ISOCountryName>EGYPT</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>EH</ISO2>
+        <ISO3>ESH</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>eh</InternetDomain>
+        <ISONumeric>732</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>WESTERN SAHARA (formerly Spanish Sahara)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>ER</ISO2>
+        <ISO3>ERI</ISO3>
+        <IOC3>ERI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>er</InternetDomain>
+        <ISONumeric>232</ISONumeric>
+        <ITUDiallingCode>291</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>ERITREA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>ES</ISO2>
+        <ISO3>ESP</ISO3>
+        <IOC3>ESP</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>es</InternetDomain>
+        <ISONumeric>724</ISONumeric>
+        <ITUDiallingCode>34</ITUDiallingCode>
+        <UNVehicleCode>E</UNVehicleCode>
+        <ISOCountryName>SPAIN (Espana)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>ET</ISO2>
+        <ISO3>ETH</ISO3>
+        <IOC3>ETH</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>et</InternetDomain>
+        <ISONumeric>231</ISONumeric>
+        <ITUDiallingCode>251</ITUDiallingCode>
+        <UNVehicleCode>ETH</UNVehicleCode>
+        <ISOCountryName>ETHIOPIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>FI</ISO2>
+        <ISO3>FIN</ISO3>
+        <IOC3>FIN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>fi</InternetDomain>
+        <ISONumeric>246</ISONumeric>
+        <ITUDiallingCode>358</ITUDiallingCode>
+        <UNVehicleCode>FIN</UNVehicleCode>
+        <ISOCountryName>FINLAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>FJ</ISO2>
+        <ISO3>FJI</ISO3>
+        <IOC3>FIJ</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>fj</InternetDomain>
+        <ISONumeric>242</ISONumeric>
+        <ITUDiallingCode>679</ITUDiallingCode>
+        <UNVehicleCode>FJI</UNVehicleCode>
+        <ISOCountryName>FIJI</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>FK</ISO2>
+        <ISO3>FLK</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>fk</InternetDomain>
+        <ISONumeric>238</ISONumeric>
+        <ITUDiallingCode>500</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>FALKLAND ISLANDS (MALVINAS)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>FM</ISO2>
+        <ISO3>FSM</ISO3>
+        <IOC3>FSM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>fm</InternetDomain>
+        <ISONumeric>583</ISONumeric>
+        <ITUDiallingCode>691</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>MICRONESIA (Federated States of
+            Micronesia)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>FO</ISO2>
+        <ISO3>FRO</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>fo</InternetDomain>
+        <ISONumeric>234</ISONumeric>
+        <ITUDiallingCode>298</ITUDiallingCode>
+        <UNVehicleCode>FO</UNVehicleCode>
+        <ISOCountryName>FAEROE ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>FR</ISO2>
+        <ISO3>FRA</ISO3>
+        <IOC3>FRA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>fr</InternetDomain>
+        <ISONumeric>250</ISONumeric>
+        <ITUDiallingCode>33</ITUDiallingCode>
+        <UNVehicleCode>F</UNVehicleCode>
+        <ISOCountryName>FRANCE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GA</ISO2>
+        <ISO3>GAB</ISO3>
+        <IOC3>GAB</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ga</InternetDomain>
+        <ISONumeric>266</ISONumeric>
+        <ITUDiallingCode>241</ITUDiallingCode>
+        <UNVehicleCode>GAB</UNVehicleCode>
+        <ISOCountryName>GABON</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GB</ISO2>
+        <ISO3>GBR</ISO3>
+        <IOC3>GBR</IOC3>
+        <Installed>1</Installed>
+        <NationalGridClassname>org.lmn.fc.common.utilities.coords.GridReferenceConverter</NationalGridClassname>
+        <InternetDomain>uk</InternetDomain>
+        <ISONumeric>826</ISONumeric>
+        <ITUDiallingCode>44</ITUDiallingCode>
+        <UNVehicleCode>GB</UNVehicleCode>
+        <ISOCountryName>GREAT BRITAIN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GD</ISO2>
+        <ISO3>GRD</ISO3>
+        <IOC3>GRN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gd</InternetDomain>
+        <ISONumeric>308</ISONumeric>
+        <ITUDiallingCode>1-473</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>GRENADA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GE</ISO2>
+        <ISO3>GEO</ISO3>
+        <IOC3>GEO</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ge</InternetDomain>
+        <ISONumeric>268</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode>GE</UNVehicleCode>
+        <ISOCountryName>GEORGIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GF</ISO2>
+        <ISO3>GUF</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gf</InternetDomain>
+        <ISONumeric>254</ISONumeric>
+        <ITUDiallingCode>594</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>FRENCH GUIANA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GH</ISO2>
+        <ISO3>GHA</ISO3>
+        <IOC3>GHA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gh</InternetDomain>
+        <ISONumeric>288</ISONumeric>
+        <ITUDiallingCode>233</ITUDiallingCode>
+        <UNVehicleCode>GH</UNVehicleCode>
+        <ISOCountryName>GHANA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GI</ISO2>
+        <ISO3>GIB</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gi</InternetDomain>
+        <ISONumeric>292</ISONumeric>
+        <ITUDiallingCode>350</ITUDiallingCode>
+        <UNVehicleCode>GBZ</UNVehicleCode>
+        <ISOCountryName>GIBRALTAR</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GL</ISO2>
+        <ISO3>GRL</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gl</InternetDomain>
+        <ISONumeric>304</ISONumeric>
+        <ITUDiallingCode>299</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>GREENLAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GM</ISO2>
+        <ISO3>GMB</ISO3>
+        <IOC3>GAM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gm</InternetDomain>
+        <ISONumeric>270</ISONumeric>
+        <ITUDiallingCode>220</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>GAMBIA, THE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GN</ISO2>
+        <ISO3>GIN</ISO3>
+        <IOC3>GUI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gn</InternetDomain>
+        <ISONumeric>324</ISONumeric>
+        <ITUDiallingCode>224</ITUDiallingCode>
+        <UNVehicleCode>RG</UNVehicleCode>
+        <ISOCountryName>GUINEA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GP</ISO2>
+        <ISO3>GLP</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gp</InternetDomain>
+        <ISONumeric>312</ISONumeric>
+        <ITUDiallingCode>590</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>GUADELOUPE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GQ</ISO2>
+        <ISO3>GNQ</ISO3>
+        <IOC3>GEQ</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gq</InternetDomain>
+        <ISONumeric>226</ISONumeric>
+        <ITUDiallingCode>240</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>EQUATORIAL GUINEA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GR</ISO2>
+        <ISO3>GRC</ISO3>
+        <IOC3>GRE</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gr</InternetDomain>
+        <ISONumeric>300</ISONumeric>
+        <ITUDiallingCode>30</ITUDiallingCode>
+        <UNVehicleCode>GR</UNVehicleCode>
+        <ISOCountryName>GREECE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GS</ISO2>
+        <ISO3>SGS</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gs</InternetDomain>
+        <ISONumeric>239</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GT</ISO2>
+        <ISO3>GTM</ISO3>
+        <IOC3>GUA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gt</InternetDomain>
+        <ISONumeric>320</ISONumeric>
+        <ITUDiallingCode>502</ITUDiallingCode>
+        <UNVehicleCode>GCA</UNVehicleCode>
+        <ISOCountryName>GUATEMALA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GU</ISO2>
+        <ISO3>GUM</ISO3>
+        <IOC3>GUM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gu</InternetDomain>
+        <ISONumeric>316</ISONumeric>
+        <ITUDiallingCode>1-671</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>GUAM</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GW</ISO2>
+        <ISO3>GNB</ISO3>
+        <IOC3>GBS</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gw</InternetDomain>
+        <ISONumeric>624</ISONumeric>
+        <ITUDiallingCode>245</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>GUINEA-BISSAU</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>GY</ISO2>
+        <ISO3>GUY</ISO3>
+        <IOC3>GUY</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>gy</InternetDomain>
+        <ISONumeric>328</ISONumeric>
+        <ITUDiallingCode>592</ITUDiallingCode>
+        <UNVehicleCode>GUY</UNVehicleCode>
+        <ISOCountryName>GUYANA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>HK</ISO2>
+        <ISO3>HKG</ISO3>
+        <IOC3>HKG</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>hk</InternetDomain>
+        <ISONumeric>344</ISONumeric>
+        <ITUDiallingCode>852</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>HONG KONG (Special Administrative Region of China)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>HM</ISO2>
+        <ISO3>HMD</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>hm</InternetDomain>
+        <ISONumeric>334</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>HEARD ISLAND AND MCDONALD ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>HN</ISO2>
+        <ISO3>HND</ISO3>
+        <IOC3>HON</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>hn</InternetDomain>
+        <ISONumeric>340</ISONumeric>
+        <ITUDiallingCode>504</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>HONDURAS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>HR</ISO2>
+        <ISO3>HRV</ISO3>
+        <IOC3>CRO</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>hr</InternetDomain>
+        <ISONumeric>191</ISONumeric>
+        <ITUDiallingCode>385</ITUDiallingCode>
+        <UNVehicleCode>HR</UNVehicleCode>
+        <ISOCountryName>CROATIA (Hrvatska)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>HT</ISO2>
+        <ISO3>HTI</ISO3>
+        <IOC3>HAI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ht</InternetDomain>
+        <ISONumeric>332</ISONumeric>
+        <ITUDiallingCode>509</ITUDiallingCode>
+        <UNVehicleCode>RH</UNVehicleCode>
+        <ISOCountryName>HAITI</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>HU</ISO2>
+        <ISO3>HUN</ISO3>
+        <IOC3>HUN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>hu</InternetDomain>
+        <ISONumeric>348</ISONumeric>
+        <ITUDiallingCode>36</ITUDiallingCode>
+        <UNVehicleCode>H</UNVehicleCode>
+        <ISOCountryName>HUNGARY</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>ID</ISO2>
+        <ISO3>IDN</ISO3>
+        <IOC3>INA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>id</InternetDomain>
+        <ISONumeric>360</ISONumeric>
+        <ITUDiallingCode>62</ITUDiallingCode>
+        <UNVehicleCode>RI</UNVehicleCode>
+        <ISOCountryName>INDONESIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>IE</ISO2>
+        <ISO3>IRL</ISO3>
+        <IOC3>IRL</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ie</InternetDomain>
+        <ISONumeric>372</ISONumeric>
+        <ITUDiallingCode>353</ITUDiallingCode>
+        <UNVehicleCode>IRL</UNVehicleCode>
+        <ISOCountryName>IRELAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>IL</ISO2>
+        <ISO3>ISR</ISO3>
+        <IOC3>ISR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>il</InternetDomain>
+        <ISONumeric>376</ISONumeric>
+        <ITUDiallingCode>972</ITUDiallingCode>
+        <UNVehicleCode>IL</UNVehicleCode>
+        <ISOCountryName>ISRAEL</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>IN</ISO2>
+        <ISO3>IND</ISO3>
+        <IOC3>IND</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>in</InternetDomain>
+        <ISONumeric>356</ISONumeric>
+        <ITUDiallingCode>91</ITUDiallingCode>
+        <UNVehicleCode>IND</UNVehicleCode>
+        <ISOCountryName>INDIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>IO</ISO2>
+        <ISO3>IOT</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>io</InternetDomain>
+        <ISONumeric>86</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>BRITISH INDIAN OCEAN TERRITORY</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>IQ</ISO2>
+        <ISO3>IRQ</ISO3>
+        <IOC3>IRQ</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>iq</InternetDomain>
+        <ISONumeric>368</ISONumeric>
+        <ITUDiallingCode>964</ITUDiallingCode>
+        <UNVehicleCode>IRQ</UNVehicleCode>
+        <ISOCountryName>IRAQ</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>IR</ISO2>
+        <ISO3>IRN</ISO3>
+        <IOC3>IRI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ir</InternetDomain>
+        <ISONumeric>364</ISONumeric>
+        <ITUDiallingCode>98</ITUDiallingCode>
+        <UNVehicleCode>IR</UNVehicleCode>
+        <ISOCountryName>IRAN (Islamic Republic of Iran)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>IS</ISO2>
+        <ISO3>ISL</ISO3>
+        <IOC3>ISL</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>is</InternetDomain>
+        <ISONumeric>352</ISONumeric>
+        <ITUDiallingCode>354</ITUDiallingCode>
+        <UNVehicleCode>IS</UNVehicleCode>
+        <ISOCountryName>ICELAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>IT</ISO2>
+        <ISO3>ITA</ISO3>
+        <IOC3>ITA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>it</InternetDomain>
+        <ISONumeric>380</ISONumeric>
+        <ITUDiallingCode>39</ITUDiallingCode>
+        <UNVehicleCode>I</UNVehicleCode>
+        <ISOCountryName>ITALY</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>JM</ISO2>
+        <ISO3>JAM</ISO3>
+        <IOC3>JAM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>jm</InternetDomain>
+        <ISONumeric>388</ISONumeric>
+        <ITUDiallingCode>1-876</ITUDiallingCode>
+        <UNVehicleCode>JA</UNVehicleCode>
+        <ISOCountryName>JAMAICA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>JO</ISO2>
+        <ISO3>JOR</ISO3>
+        <IOC3>JOR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>jo</InternetDomain>
+        <ISONumeric>400</ISONumeric>
+        <ITUDiallingCode>962</ITUDiallingCode>
+        <UNVehicleCode>HKJ</UNVehicleCode>
+        <ISOCountryName>JORDAN (Hashemite Kingdom of Jordan)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>JP</ISO2>
+        <ISO3>JPN</ISO3>
+        <IOC3>JPN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>jp</InternetDomain>
+        <ISONumeric>392</ISONumeric>
+        <ITUDiallingCode>81</ITUDiallingCode>
+        <UNVehicleCode>J</UNVehicleCode>
+        <ISOCountryName>JAPAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KE</ISO2>
+        <ISO3>KEN</ISO3>
+        <IOC3>KEN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ke</InternetDomain>
+        <ISONumeric>404</ISONumeric>
+        <ITUDiallingCode>254</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>KENYA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KG</ISO2>
+        <ISO3>KGZ</ISO3>
+        <IOC3>KGZ</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>kg</InternetDomain>
+        <ISONumeric>417</ISONumeric>
+        <ITUDiallingCode>996</ITUDiallingCode>
+        <UNVehicleCode>KS</UNVehicleCode>
+        <ISOCountryName>KYRGYZSTAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KH</ISO2>
+        <ISO3>KHM</ISO3>
+        <IOC3>CAM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>kh</InternetDomain>
+        <ISONumeric>116</ISONumeric>
+        <ITUDiallingCode>855</ITUDiallingCode>
+        <UNVehicleCode>K</UNVehicleCode>
+        <ISOCountryName>CAMBODIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KI</ISO2>
+        <ISO3>KIR</ISO3>
+        <IOC3>KIR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ki</InternetDomain>
+        <ISONumeric>296</ISONumeric>
+        <ITUDiallingCode>686</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>KIRIBATI</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KM</ISO2>
+        <ISO3>COM</ISO3>
+        <IOC3>COM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>km</InternetDomain>
+        <ISONumeric>174</ISONumeric>
+        <ITUDiallingCode>269</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>COMOROS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KN</ISO2>
+        <ISO3>KNA</ISO3>
+        <IOC3>SKN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>kn</InternetDomain>
+        <ISONumeric>659</ISONumeric>
+        <ITUDiallingCode>1-869</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SAINT KITTS AND NEVIS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KP</ISO2>
+        <ISO3>PRK</ISO3>
+        <IOC3>PRK</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>kp</InternetDomain>
+        <ISONumeric>408</ISONumeric>
+        <ITUDiallingCode>850</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>KOREA (Democratic Peoples Republic of [North] Korea)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KR</ISO2>
+        <ISO3>KOR</ISO3>
+        <IOC3>KOR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>kr</InternetDomain>
+        <ISONumeric>410</ISONumeric>
+        <ITUDiallingCode>82</ITUDiallingCode>
+        <UNVehicleCode>ROK</UNVehicleCode>
+        <ISOCountryName>KOREA (Republic of [South] Korea)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KW</ISO2>
+        <ISO3>KWT</ISO3>
+        <IOC3>KUW</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>kw</InternetDomain>
+        <ISONumeric>414</ISONumeric>
+        <ITUDiallingCode>965</ITUDiallingCode>
+        <UNVehicleCode>KWT</UNVehicleCode>
+        <ISOCountryName>KUWAIT</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KY</ISO2>
+        <ISO3>CYM</ISO3>
+        <IOC3>CAY</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ky</InternetDomain>
+        <ISONumeric>136</ISONumeric>
+        <ITUDiallingCode>1-345</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>CAYMAN ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>KZ</ISO2>
+        <ISO3>KAZ</ISO3>
+        <IOC3>KAZ</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>kz</InternetDomain>
+        <ISONumeric>398</ISONumeric>
+        <ITUDiallingCode>7</ITUDiallingCode>
+        <UNVehicleCode>KZ</UNVehicleCode>
+        <ISOCountryName>KAZAKHSTAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LA</ISO2>
+        <ISO3>LAO</ISO3>
+        <IOC3>LAO</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>la</InternetDomain>
+        <ISONumeric>418</ISONumeric>
+        <ITUDiallingCode>856</ITUDiallingCode>
+        <UNVehicleCode>LAO</UNVehicleCode>
+        <ISOCountryName>LAO PEOPLE'S DEMOCRATIC REPUBLIC</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LB</ISO2>
+        <ISO3>LBN</ISO3>
+        <IOC3>LIB</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>lb</InternetDomain>
+        <ISONumeric>422</ISONumeric>
+        <ITUDiallingCode>961</ITUDiallingCode>
+        <UNVehicleCode>RL</UNVehicleCode>
+        <ISOCountryName>LEBANON</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LC</ISO2>
+        <ISO3>LCA</ISO3>
+        <IOC3>LCA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>lc</InternetDomain>
+        <ISONumeric>662</ISONumeric>
+        <ITUDiallingCode>1-758</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SAINT LUCIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LI</ISO2>
+        <ISO3>LIE</ISO3>
+        <IOC3>LIE</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>li</InternetDomain>
+        <ISONumeric>438</ISONumeric>
+        <ITUDiallingCode>423</ITUDiallingCode>
+        <UNVehicleCode>FL</UNVehicleCode>
+        <ISOCountryName>LIECHTENSTEIN (Furstentum Liechtenstein)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LK</ISO2>
+        <ISO3>LKA</ISO3>
+        <IOC3>SRI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>lk</InternetDomain>
+        <ISONumeric>144</ISONumeric>
+        <ITUDiallingCode>94</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SRI LANKA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LR</ISO2>
+        <ISO3>LBR</ISO3>
+        <IOC3>LBR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>lr</InternetDomain>
+        <ISONumeric>430</ISONumeric>
+        <ITUDiallingCode>231</ITUDiallingCode>
+        <UNVehicleCode>LB</UNVehicleCode>
+        <ISOCountryName>LIBERIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LS</ISO2>
+        <ISO3>LSO</ISO3>
+        <IOC3>LES</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ls</InternetDomain>
+        <ISONumeric>426</ISONumeric>
+        <ITUDiallingCode>266</ITUDiallingCode>
+        <UNVehicleCode>LS</UNVehicleCode>
+        <ISOCountryName>LESOTHO</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LT</ISO2>
+        <ISO3>LTU</ISO3>
+        <IOC3>LTU</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>lt</InternetDomain>
+        <ISONumeric>440</ISONumeric>
+        <ITUDiallingCode>370</ITUDiallingCode>
+        <UNVehicleCode>LT</UNVehicleCode>
+        <ISOCountryName>LITHUANIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LU</ISO2>
+        <ISO3>LUX</ISO3>
+        <IOC3>LUX</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>lu</InternetDomain>
+        <ISONumeric>442</ISONumeric>
+        <ITUDiallingCode>352</ITUDiallingCode>
+        <UNVehicleCode>L</UNVehicleCode>
+        <ISOCountryName>LUXEMBOURG</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LV</ISO2>
+        <ISO3>LVA</ISO3>
+        <IOC3>LAT</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>lv</InternetDomain>
+        <ISONumeric>428</ISONumeric>
+        <ITUDiallingCode>371</ITUDiallingCode>
+        <UNVehicleCode>LV</UNVehicleCode>
+        <ISOCountryName>LATVIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>LY</ISO2>
+        <ISO3>LBY</ISO3>
+        <IOC3>LBA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ly</InternetDomain>
+        <ISONumeric>434</ISONumeric>
+        <ITUDiallingCode>218</ITUDiallingCode>
+        <UNVehicleCode>LAR</UNVehicleCode>
+        <ISOCountryName>LIBYA (Libyan Arab Jamahirya)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MA</ISO2>
+        <ISO3>MAR</ISO3>
+        <IOC3>MAR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ma</InternetDomain>
+        <ISONumeric>504</ISONumeric>
+        <ITUDiallingCode>212</ITUDiallingCode>
+        <UNVehicleCode>MA</UNVehicleCode>
+        <ISOCountryName>MOROCCO</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MC</ISO2>
+        <ISO3>MCO</ISO3>
+        <IOC3>MON</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mc</InternetDomain>
+        <ISONumeric>492</ISONumeric>
+        <ITUDiallingCode>377</ITUDiallingCode>
+        <UNVehicleCode>MC</UNVehicleCode>
+        <ISOCountryName>MONACO</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MD</ISO2>
+        <ISO3>MDA</ISO3>
+        <IOC3>MDA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>md</InternetDomain>
+        <ISONumeric>498</ISONumeric>
+        <ITUDiallingCode>373</ITUDiallingCode>
+        <UNVehicleCode>MD</UNVehicleCode>
+        <ISOCountryName>MOLDOVA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MG</ISO2>
+        <ISO3>MDG</ISO3>
+        <IOC3>MAD</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mg</InternetDomain>
+        <ISONumeric>450</ISONumeric>
+        <ITUDiallingCode>261</ITUDiallingCode>
+        <UNVehicleCode>RM</UNVehicleCode>
+        <ISOCountryName>MADAGASCAR</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MH</ISO2>
+        <ISO3>MHL</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mh</InternetDomain>
+        <ISONumeric>584</ISONumeric>
+        <ITUDiallingCode>692</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>MARSHALL ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MK</ISO2>
+        <ISO3>MKD</ISO3>
+        <IOC3>MKD</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mk</InternetDomain>
+        <ISONumeric>807</ISONumeric>
+        <ITUDiallingCode>389</ITUDiallingCode>
+        <UNVehicleCode>MK</UNVehicleCode>
+        <ISOCountryName>MACEDONIA (Former Yugoslav Republic of Macedonia)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>ML</ISO2>
+        <ISO3>MLI</ISO3>
+        <IOC3>MLI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ml</InternetDomain>
+        <ISONumeric>466</ISONumeric>
+        <ITUDiallingCode>223</ITUDiallingCode>
+        <UNVehicleCode>RMM</UNVehicleCode>
+        <ISOCountryName>MALI</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MM</ISO2>
+        <ISO3>MMR</ISO3>
+        <IOC3>MYA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mm</InternetDomain>
+        <ISONumeric>104</ISONumeric>
+        <ITUDiallingCode>95</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>MYANMAR (formerly Burma)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MN</ISO2>
+        <ISO3>MNG</ISO3>
+        <IOC3>MGL</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mn</InternetDomain>
+        <ISONumeric>496</ISONumeric>
+        <ITUDiallingCode>976</ITUDiallingCode>
+        <UNVehicleCode>MGL</UNVehicleCode>
+        <ISOCountryName>MONGOLIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MO</ISO2>
+        <ISO3>MAC</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mo</InternetDomain>
+        <ISONumeric>446</ISONumeric>
+        <ITUDiallingCode>853</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>MACAO (Special Administrative Region of China)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MP</ISO2>
+        <ISO3>MNP</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mp</InternetDomain>
+        <ISONumeric>580</ISONumeric>
+        <ITUDiallingCode>1-670</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>NORTHERN MARIANA ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MQ</ISO2>
+        <ISO3>MTQ</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mq</InternetDomain>
+        <ISONumeric>474</ISONumeric>
+        <ITUDiallingCode>596</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>MARTINIQUE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MR</ISO2>
+        <ISO3>MRT</ISO3>
+        <IOC3>MTN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mr</InternetDomain>
+        <ISONumeric>478</ISONumeric>
+        <ITUDiallingCode>222</ITUDiallingCode>
+        <UNVehicleCode>RIM</UNVehicleCode>
+        <ISOCountryName>MAURITANIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MS</ISO2>
+        <ISO3>MSR</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ms</InternetDomain>
+        <ISONumeric>500</ISONumeric>
+        <ITUDiallingCode>1-664</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>MONTSERRAT</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MT</ISO2>
+        <ISO3>MLT</ISO3>
+        <IOC3>MLT</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mt</InternetDomain>
+        <ISONumeric>470</ISONumeric>
+        <ITUDiallingCode>356</ITUDiallingCode>
+        <UNVehicleCode>M</UNVehicleCode>
+        <ISOCountryName>MALTA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MU</ISO2>
+        <ISO3>MUS</ISO3>
+        <IOC3>MRI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mu</InternetDomain>
+        <ISONumeric>480</ISONumeric>
+        <ITUDiallingCode>230</ITUDiallingCode>
+        <UNVehicleCode>MS</UNVehicleCode>
+        <ISOCountryName>MAURITIUS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MV</ISO2>
+        <ISO3>MDV</ISO3>
+        <IOC3>MDV</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mv</InternetDomain>
+        <ISONumeric>462</ISONumeric>
+        <ITUDiallingCode>960</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>MALDIVES</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MW</ISO2>
+        <ISO3>MWI</ISO3>
+        <IOC3>MAW</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mw</InternetDomain>
+        <ISONumeric>454</ISONumeric>
+        <ITUDiallingCode>265</ITUDiallingCode>
+        <UNVehicleCode>MW</UNVehicleCode>
+        <ISOCountryName>MALAWI</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MX</ISO2>
+        <ISO3>MEX</ISO3>
+        <IOC3>MEX</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mx</InternetDomain>
+        <ISONumeric>484</ISONumeric>
+        <ITUDiallingCode>52</ITUDiallingCode>
+        <UNVehicleCode>MEX</UNVehicleCode>
+        <ISOCountryName>MEXICO</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MY</ISO2>
+        <ISO3>MYS</ISO3>
+        <IOC3>MAS</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>my</InternetDomain>
+        <ISONumeric>458</ISONumeric>
+        <ITUDiallingCode>60</ITUDiallingCode>
+        <UNVehicleCode>MAL</UNVehicleCode>
+        <ISOCountryName>MALAYSIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>MZ</ISO2>
+        <ISO3>MOZ</ISO3>
+        <IOC3>MOZ</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>mz</InternetDomain>
+        <ISONumeric>508</ISONumeric>
+        <ITUDiallingCode>258</ITUDiallingCode>
+        <UNVehicleCode>MOC</UNVehicleCode>
+        <ISOCountryName>MOZAMBIQUE (Mocambique)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NA</ISO2>
+        <ISO3>NAM</ISO3>
+        <IOC3>NAM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>na</InternetDomain>
+        <ISONumeric>516</ISONumeric>
+        <ITUDiallingCode>264</ITUDiallingCode>
+        <UNVehicleCode>NAM</UNVehicleCode>
+        <ISOCountryName>NAMIBIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NC</ISO2>
+        <ISO3>NCL</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>nc</InternetDomain>
+        <ISONumeric>540</ISONumeric>
+        <ITUDiallingCode>687</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>NEW CALEDONIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NE</ISO2>
+        <ISO3>NER</ISO3>
+        <IOC3>NIG</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ne</InternetDomain>
+        <ISONumeric>562</ISONumeric>
+        <ITUDiallingCode>227</ITUDiallingCode>
+        <UNVehicleCode>RN</UNVehicleCode>
+        <ISOCountryName>NIGER</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NF</ISO2>
+        <ISO3>NFK</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>nf</InternetDomain>
+        <ISONumeric>574</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>NORFOLK ISLAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NG</ISO2>
+        <ISO3>NGA</ISO3>
+        <IOC3>NGR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ng</InternetDomain>
+        <ISONumeric>566</ISONumeric>
+        <ITUDiallingCode>234</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>NIGERIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NI</ISO2>
+        <ISO3>NIC</ISO3>
+        <IOC3>NCA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ni</InternetDomain>
+        <ISONumeric>558</ISONumeric>
+        <ITUDiallingCode>505</ITUDiallingCode>
+        <UNVehicleCode>NIC</UNVehicleCode>
+        <ISOCountryName>NICARAGUA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NL</ISO2>
+        <ISO3>NLD</ISO3>
+        <IOC3>NED</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>nl</InternetDomain>
+        <ISONumeric>528</ISONumeric>
+        <ITUDiallingCode>31</ITUDiallingCode>
+        <UNVehicleCode>NL</UNVehicleCode>
+        <ISOCountryName>NETHERLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NO</ISO2>
+        <ISO3>NOR</ISO3>
+        <IOC3>NOR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>no</InternetDomain>
+        <ISONumeric>578</ISONumeric>
+        <ITUDiallingCode>47</ITUDiallingCode>
+        <UNVehicleCode>N</UNVehicleCode>
+        <ISOCountryName>NORWAY</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NP</ISO2>
+        <ISO3>NPL</ISO3>
+        <IOC3>NEP</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>np</InternetDomain>
+        <ISONumeric>524</ISONumeric>
+        <ITUDiallingCode>977</ITUDiallingCode>
+        <UNVehicleCode>NEP</UNVehicleCode>
+        <ISOCountryName>NEPAL</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NR</ISO2>
+        <ISO3>NRU</ISO3>
+        <IOC3>NRU</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>nr</InternetDomain>
+        <ISONumeric>520</ISONumeric>
+        <ITUDiallingCode>674</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>NAURU</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NU</ISO2>
+        <ISO3>NIU</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>nu</InternetDomain>
+        <ISONumeric>570</ISONumeric>
+        <ITUDiallingCode>683</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>NIUE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>NZ</ISO2>
+        <ISO3>NZL</ISO3>
+        <IOC3>NZL</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>nz</InternetDomain>
+        <ISONumeric>554</ISONumeric>
+        <ITUDiallingCode>64</ITUDiallingCode>
+        <UNVehicleCode>NZ</UNVehicleCode>
+        <ISOCountryName>NEW ZEALAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>OM</ISO2>
+        <ISO3>OMN</ISO3>
+        <IOC3>OMA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>om</InternetDomain>
+        <ISONumeric>512</ISONumeric>
+        <ITUDiallingCode>968</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>OMAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PA</ISO2>
+        <ISO3>PAN</ISO3>
+        <IOC3>PAN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pa</InternetDomain>
+        <ISONumeric>591</ISONumeric>
+        <ITUDiallingCode>507</ITUDiallingCode>
+        <UNVehicleCode>PA</UNVehicleCode>
+        <ISOCountryName>PANAMA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PE</ISO2>
+        <ISO3>PER</ISO3>
+        <IOC3>PER</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pe</InternetDomain>
+        <ISONumeric>604</ISONumeric>
+        <ITUDiallingCode>51</ITUDiallingCode>
+        <UNVehicleCode>PE</UNVehicleCode>
+        <ISOCountryName>PERU</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PF</ISO2>
+        <ISO3>PYF</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pf</InternetDomain>
+        <ISONumeric>258</ISONumeric>
+        <ITUDiallingCode>689</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>FRENCH POLYNESIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PG</ISO2>
+        <ISO3>PNG</ISO3>
+        <IOC3>PNG</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pg</InternetDomain>
+        <ISONumeric>598</ISONumeric>
+        <ITUDiallingCode>675</ITUDiallingCode>
+        <UNVehicleCode>PNG</UNVehicleCode>
+        <ISOCountryName>PAPUA NEW GUINEA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PH</ISO2>
+        <ISO3>PHL</ISO3>
+        <IOC3>PHI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ph</InternetDomain>
+        <ISONumeric>608</ISONumeric>
+        <ITUDiallingCode>63</ITUDiallingCode>
+        <UNVehicleCode>RP</UNVehicleCode>
+        <ISOCountryName>PHILIPPINES</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PK</ISO2>
+        <ISO3>PAK</ISO3>
+        <IOC3>PAK</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pk</InternetDomain>
+        <ISONumeric>586</ISONumeric>
+        <ITUDiallingCode>92</ITUDiallingCode>
+        <UNVehicleCode>PK</UNVehicleCode>
+        <ISOCountryName>PAKISTAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PL</ISO2>
+        <ISO3>POL</ISO3>
+        <IOC3>POL</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pl</InternetDomain>
+        <ISONumeric>616</ISONumeric>
+        <ITUDiallingCode>48</ITUDiallingCode>
+        <UNVehicleCode>PL</UNVehicleCode>
+        <ISOCountryName>POLAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PM</ISO2>
+        <ISO3>SPM</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pm</InternetDomain>
+        <ISONumeric>666</ISONumeric>
+        <ITUDiallingCode>508</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SAINT PIERRE AND MIQUELON</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PN</ISO2>
+        <ISO3>PCN</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pn</InternetDomain>
+        <ISONumeric>612</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>PITCAIRN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PR</ISO2>
+        <ISO3>PRI</ISO3>
+        <IOC3>PUR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pr</InternetDomain>
+        <ISONumeric>630</ISONumeric>
+        <ITUDiallingCode>1</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>PUERTO RICO</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PS</ISO2>
+        <ISO3>PSE</ISO3>
+        <IOC3>PLE</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ps</InternetDomain>
+        <ISONumeric>275</ISONumeric>
+        <ITUDiallingCode>970</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>PALESTINIAN TERRITORIES</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PT</ISO2>
+        <ISO3>PRT</ISO3>
+        <IOC3>POR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pt</InternetDomain>
+        <ISONumeric>620</ISONumeric>
+        <ITUDiallingCode>351</ITUDiallingCode>
+        <UNVehicleCode>P</UNVehicleCode>
+        <ISOCountryName>PORTUGAL</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PW</ISO2>
+        <ISO3>PLW</ISO3>
+        <IOC3>PLW</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>pw</InternetDomain>
+        <ISONumeric>585</ISONumeric>
+        <ITUDiallingCode>680</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>PALAU</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>PY</ISO2>
+        <ISO3>PRY</ISO3>
+        <IOC3>PAR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>py</InternetDomain>
+        <ISONumeric>600</ISONumeric>
+        <ITUDiallingCode>595</ITUDiallingCode>
+        <UNVehicleCode>PY</UNVehicleCode>
+        <ISOCountryName>PARAGUAY</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>QA</ISO2>
+        <ISO3>QAT</ISO3>
+        <IOC3>QAT</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>qa</InternetDomain>
+        <ISONumeric>634</ISONumeric>
+        <ITUDiallingCode>974</ITUDiallingCode>
+        <UNVehicleCode>QA</UNVehicleCode>
+        <ISOCountryName>QATAR</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>RE</ISO2>
+        <ISO3>REU</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>re</InternetDomain>
+        <ISONumeric>638</ISONumeric>
+        <ITUDiallingCode>262</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>REUNION</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>RO</ISO2>
+        <ISO3>ROU</ISO3>
+        <IOC3>ROM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ro</InternetDomain>
+        <ISONumeric>642</ISONumeric>
+        <ITUDiallingCode>40</ITUDiallingCode>
+        <UNVehicleCode>RO</UNVehicleCode>
+        <ISOCountryName>ROMANIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>RU</ISO2>
+        <ISO3>RUS</ISO3>
+        <IOC3>RUS</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ru</InternetDomain>
+        <ISONumeric>643</ISONumeric>
+        <ITUDiallingCode>7</ITUDiallingCode>
+        <UNVehicleCode>RU</UNVehicleCode>
+        <ISOCountryName>RUSSIAN FEDERATION</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>RW</ISO2>
+        <ISO3>RWA</ISO3>
+        <IOC3>RWA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>rw</InternetDomain>
+        <ISONumeric>646</ISONumeric>
+        <ITUDiallingCode>250</ITUDiallingCode>
+        <UNVehicleCode>RWA</UNVehicleCode>
+        <ISOCountryName>RWANDA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SA</ISO2>
+        <ISO3>SAU</ISO3>
+        <IOC3>KSA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sa</InternetDomain>
+        <ISONumeric>682</ISONumeric>
+        <ITUDiallingCode>966</ITUDiallingCode>
+        <UNVehicleCode>SA</UNVehicleCode>
+        <ISOCountryName>SAUDI ARABIA (Kingdom of Saudi
+            Arabia)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SB</ISO2>
+        <ISO3>SLB</ISO3>
+        <IOC3>SOL</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sb</InternetDomain>
+        <ISONumeric>90</ISONumeric>
+        <ITUDiallingCode>677</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SOLOMON ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SC</ISO2>
+        <ISO3>SYC</ISO3>
+        <IOC3>SEY</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sc</InternetDomain>
+        <ISONumeric>690</ISONumeric>
+        <ITUDiallingCode>248</ITUDiallingCode>
+        <UNVehicleCode>SY</UNVehicleCode>
+        <ISOCountryName>SEYCHELLES</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SD</ISO2>
+        <ISO3>SDN</ISO3>
+        <IOC3>SUD</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sd</InternetDomain>
+        <ISONumeric>736</ISONumeric>
+        <ITUDiallingCode>249</ITUDiallingCode>
+        <UNVehicleCode>SUD</UNVehicleCode>
+        <ISOCountryName>SUDAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SE</ISO2>
+        <ISO3>SWE</ISO3>
+        <IOC3>SWE</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>se</InternetDomain>
+        <ISONumeric>752</ISONumeric>
+        <ITUDiallingCode>46</ITUDiallingCode>
+        <UNVehicleCode>S</UNVehicleCode>
+        <ISOCountryName>SWEDEN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SG</ISO2>
+        <ISO3>SGP</ISO3>
+        <IOC3>SIN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sg</InternetDomain>
+        <ISONumeric>702</ISONumeric>
+        <ITUDiallingCode>65</ITUDiallingCode>
+        <UNVehicleCode>SGP</UNVehicleCode>
+        <ISOCountryName>SINGAPORE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SH</ISO2>
+        <ISO3>SHN</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sh</InternetDomain>
+        <ISONumeric>654</ISONumeric>
+        <ITUDiallingCode>290</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SAINT HELENA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SI</ISO2>
+        <ISO3>SVN</ISO3>
+        <IOC3>SLO</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>si</InternetDomain>
+        <ISONumeric>705</ISONumeric>
+        <ITUDiallingCode>386</ITUDiallingCode>
+        <UNVehicleCode>SLO</UNVehicleCode>
+        <ISOCountryName>SLOVENIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SJ</ISO2>
+        <ISO3>SJM</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sj</InternetDomain>
+        <ISONumeric>744</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SVALBARD AND JAN MAYEN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SK</ISO2>
+        <ISO3>SVK</ISO3>
+        <IOC3>SVK</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sk</InternetDomain>
+        <ISONumeric>703</ISONumeric>
+        <ITUDiallingCode>421</ITUDiallingCode>
+        <UNVehicleCode>SK</UNVehicleCode>
+        <ISOCountryName>SLOVAKIA (Slovak Republic)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SL</ISO2>
+        <ISO3>SLE</ISO3>
+        <IOC3>SLE</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sl</InternetDomain>
+        <ISONumeric>694</ISONumeric>
+        <ITUDiallingCode>232</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SIERRA LEONE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SM</ISO2>
+        <ISO3>SMR</ISO3>
+        <IOC3>SMR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sm</InternetDomain>
+        <ISONumeric>674</ISONumeric>
+        <ITUDiallingCode>378</ITUDiallingCode>
+        <UNVehicleCode>RSM</UNVehicleCode>
+        <ISOCountryName>SAN MARINO (Republic of)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SN</ISO2>
+        <ISO3>SEN</ISO3>
+        <IOC3>SEN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sn</InternetDomain>
+        <ISONumeric>686</ISONumeric>
+        <ITUDiallingCode>221</ITUDiallingCode>
+        <UNVehicleCode>SN</UNVehicleCode>
+        <ISOCountryName>SENEGAL</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SO</ISO2>
+        <ISO3>SOM</ISO3>
+        <IOC3>SOM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>so</InternetDomain>
+        <ISONumeric>706</ISONumeric>
+        <ITUDiallingCode>252</ITUDiallingCode>
+        <UNVehicleCode>SO</UNVehicleCode>
+        <ISOCountryName>SOMALIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SR</ISO2>
+        <ISO3>SUR</ISO3>
+        <IOC3>SUR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sr</InternetDomain>
+        <ISONumeric>740</ISONumeric>
+        <ITUDiallingCode>597</ITUDiallingCode>
+        <UNVehicleCode>SME</UNVehicleCode>
+        <ISOCountryName>SURINAME</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>ST</ISO2>
+        <ISO3>STP</ISO3>
+        <IOC3>STP</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>st</InternetDomain>
+        <ISONumeric>678</ISONumeric>
+        <ITUDiallingCode>239</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SAO TOME AND PRINCIPE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SV</ISO2>
+        <ISO3>SLV</ISO3>
+        <IOC3>ESA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sv</InternetDomain>
+        <ISONumeric>222</ISONumeric>
+        <ITUDiallingCode>503</ITUDiallingCode>
+        <UNVehicleCode>ES</UNVehicleCode>
+        <ISOCountryName>EL SALVADOR</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SY</ISO2>
+        <ISO3>SYR</ISO3>
+        <IOC3>SYR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sy</InternetDomain>
+        <ISONumeric>760</ISONumeric>
+        <ITUDiallingCode>963</ITUDiallingCode>
+        <UNVehicleCode>SYR</UNVehicleCode>
+        <ISOCountryName>SYRIAN ARAB REPUBLIC</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>SZ</ISO2>
+        <ISO3>SWZ</ISO3>
+        <IOC3>SWZ</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>sz</InternetDomain>
+        <ISONumeric>748</ISONumeric>
+        <ITUDiallingCode>268</ITUDiallingCode>
+        <UNVehicleCode>SD</UNVehicleCode>
+        <ISOCountryName>SWAZILAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TC</ISO2>
+        <ISO3>TCA</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tc</InternetDomain>
+        <ISONumeric>796</ISONumeric>
+        <ITUDiallingCode>1-649</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>TURKS AND CAICOS ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TD</ISO2>
+        <ISO3>TCD</ISO3>
+        <IOC3>CHA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>td</InternetDomain>
+        <ISONumeric>148</ISONumeric>
+        <ITUDiallingCode>235</ITUDiallingCode>
+        <UNVehicleCode>TCH</UNVehicleCode>
+        <ISOCountryName>CHAD (Tchad)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TF</ISO2>
+        <ISO3>ATF</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tf</InternetDomain>
+        <ISONumeric>260</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>FRENCH SOUTHERN TERRITORIES</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TG</ISO2>
+        <ISO3>TGO</ISO3>
+        <IOC3>TOG</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tg</InternetDomain>
+        <ISONumeric>768</ISONumeric>
+        <ITUDiallingCode>228</ITUDiallingCode>
+        <UNVehicleCode>TG</UNVehicleCode>
+        <ISOCountryName>TOGO</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TH</ISO2>
+        <ISO3>THA</ISO3>
+        <IOC3>THA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>th</InternetDomain>
+        <ISONumeric>764</ISONumeric>
+        <ITUDiallingCode>66</ITUDiallingCode>
+        <UNVehicleCode>T</UNVehicleCode>
+        <ISOCountryName>THAILAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TJ</ISO2>
+        <ISO3>TJK</ISO3>
+        <IOC3>TJK</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tj</InternetDomain>
+        <ISONumeric>762</ISONumeric>
+        <ITUDiallingCode>992</ITUDiallingCode>
+        <UNVehicleCode>TJ</UNVehicleCode>
+        <ISOCountryName>TAJIKISTAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TK</ISO2>
+        <ISO3>TKL</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tk</InternetDomain>
+        <ISONumeric>772</ISONumeric>
+        <ITUDiallingCode>690</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>TOKELAU</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TL</ISO2>
+        <ISO3>TLS</ISO3>
+        <IOC3>TLS</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tp</InternetDomain>
+        <ISONumeric>626</ISONumeric>
+        <ITUDiallingCode>670</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>TIMOR-LESTE (formerly East Timor)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TM</ISO2>
+        <ISO3>TKM</ISO3>
+        <IOC3>TKM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tm</InternetDomain>
+        <ISONumeric>795</ISONumeric>
+        <ITUDiallingCode>993</ITUDiallingCode>
+        <UNVehicleCode>TM</UNVehicleCode>
+        <ISOCountryName>TURKMENISTAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TN</ISO2>
+        <ISO3>TUN</ISO3>
+        <IOC3>TUN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tn</InternetDomain>
+        <ISONumeric>788</ISONumeric>
+        <ITUDiallingCode>216</ITUDiallingCode>
+        <UNVehicleCode>TN</UNVehicleCode>
+        <ISOCountryName>TUNISIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TO</ISO2>
+        <ISO3>TON</ISO3>
+        <IOC3>TGA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>to</InternetDomain>
+        <ISONumeric>776</ISONumeric>
+        <ITUDiallingCode>676</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>TONGA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TR</ISO2>
+        <ISO3>TUR</ISO3>
+        <IOC3>TUR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tr</InternetDomain>
+        <ISONumeric>792</ISONumeric>
+        <ITUDiallingCode>90</ITUDiallingCode>
+        <UNVehicleCode>TR</UNVehicleCode>
+        <ISOCountryName>TURKEY</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TT</ISO2>
+        <ISO3>TTO</ISO3>
+        <IOC3>TRI</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tt</InternetDomain>
+        <ISONumeric>780</ISONumeric>
+        <ITUDiallingCode>1-868</ITUDiallingCode>
+        <UNVehicleCode>TT</UNVehicleCode>
+        <ISOCountryName>TRINIDAD AND TOBAGO</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TV</ISO2>
+        <ISO3>TUV</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tv</InternetDomain>
+        <ISONumeric>798</ISONumeric>
+        <ITUDiallingCode>688</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>TUVALU</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TW</ISO2>
+        <ISO3>TWN</ISO3>
+        <IOC3>TPE</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tw</InternetDomain>
+        <ISONumeric>158</ISONumeric>
+        <ITUDiallingCode>886</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>TAIWAN ('Chinese Taipei' for IOC)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>TZ</ISO2>
+        <ISO3>TZA</ISO3>
+        <IOC3>TAN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>tz</InternetDomain>
+        <ISONumeric>834</ISONumeric>
+        <ITUDiallingCode>255</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>TANZANIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>UA</ISO2>
+        <ISO3>UKR</ISO3>
+        <IOC3>UKR</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ua</InternetDomain>
+        <ISONumeric>804</ISONumeric>
+        <ITUDiallingCode>380</ITUDiallingCode>
+        <UNVehicleCode>UA</UNVehicleCode>
+        <ISOCountryName>UKRAINE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>UG</ISO2>
+        <ISO3>UGA</ISO3>
+        <IOC3>UGA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ug</InternetDomain>
+        <ISONumeric>800</ISONumeric>
+        <ITUDiallingCode>256</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>UGANDA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>UM</ISO2>
+        <ISO3>UMI</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>um</InternetDomain>
+        <ISONumeric>581</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>UNITED STATES MINOR OUTLYING ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>US</ISO2>
+        <ISO3>USA</ISO3>
+        <IOC3>USA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>us</InternetDomain>
+        <ISONumeric>840</ISONumeric>
+        <ITUDiallingCode>1</ITUDiallingCode>
+        <UNVehicleCode>USA</UNVehicleCode>
+        <ISOCountryName>UNITED STATES</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>UY</ISO2>
+        <ISO3>URY</ISO3>
+        <IOC3>URU</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>uy</InternetDomain>
+        <ISONumeric>858</ISONumeric>
+        <ITUDiallingCode>598</ITUDiallingCode>
+        <UNVehicleCode>ROU</UNVehicleCode>
+        <ISOCountryName>URUGUAY</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>UZ</ISO2>
+        <ISO3>UZB</ISO3>
+        <IOC3>UZB</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>uz</InternetDomain>
+        <ISONumeric>860</ISONumeric>
+        <ITUDiallingCode>998</ITUDiallingCode>
+        <UNVehicleCode>UZ</UNVehicleCode>
+        <ISOCountryName>UZBEKISTAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>VA</ISO2>
+        <ISO3>VAT</ISO3>
+        <IOC3>VAT</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>va</InternetDomain>
+        <ISONumeric>336</ISONumeric>
+        <ITUDiallingCode>379</ITUDiallingCode>
+        <UNVehicleCode>V</UNVehicleCode>
+        <ISOCountryName>VATICAN CITY (Holy See)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>VC</ISO2>
+        <ISO3>VCT</ISO3>
+        <IOC3>VIN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>vc</InternetDomain>
+        <ISONumeric>670</ISONumeric>
+        <ITUDiallingCode>1-784</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>SAINT VINCENT AND THE GRENADINES</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>VE</ISO2>
+        <ISO3>VEN</ISO3>
+        <IOC3>VEN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ve</InternetDomain>
+        <ISONumeric>862</ISONumeric>
+        <ITUDiallingCode>58</ITUDiallingCode>
+        <UNVehicleCode>YV</UNVehicleCode>
+        <ISOCountryName>VENEZUELA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>VG</ISO2>
+        <ISO3>VGB</ISO3>
+        <IOC3>IVB</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>vg</InternetDomain>
+        <ISONumeric>92</ISONumeric>
+        <ITUDiallingCode>1-284</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>VIRGIN ISLANDS, BRITISH</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>VI</ISO2>
+        <ISO3>VIR</ISO3>
+        <IOC3>ISV</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>vi</InternetDomain>
+        <ISONumeric>850</ISONumeric>
+        <ITUDiallingCode>1-340</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>VIRGIN ISLANDS, US</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>VN</ISO2>
+        <ISO3>VNM</ISO3>
+        <IOC3>VIE</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>vn</InternetDomain>
+        <ISONumeric>704</ISONumeric>
+        <ITUDiallingCode>84</ITUDiallingCode>
+        <UNVehicleCode>VN</UNVehicleCode>
+        <ISOCountryName>VIET NAM</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>VU</ISO2>
+        <ISO3>VUT</ISO3>
+        <IOC3>VAN</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>vu</InternetDomain>
+        <ISONumeric>548</ISONumeric>
+        <ITUDiallingCode>678</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>VANUATU</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>WF</ISO2>
+        <ISO3>WLF</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>wf</InternetDomain>
+        <ISONumeric>876</ISONumeric>
+        <ITUDiallingCode>681</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>WALLIS AND FUTUNA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>WS</ISO2>
+        <ISO3>WSM</ISO3>
+        <IOC3>SAM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ws</InternetDomain>
+        <ISONumeric>882</ISONumeric>
+        <ITUDiallingCode>685</ITUDiallingCode>
+        <UNVehicleCode>WS</UNVehicleCode>
+        <ISOCountryName>SAMOA (formerly Western Samoa)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>XU</ISO2>
+        <ISO3>???</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>0</Installed>
+        <InternetDomain>??</InternetDomain>
+        <ISONumeric></ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode>GBA</UNVehicleCode>
+        <ISOCountryName>ALDERNEY</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>XV</ISO2>
+        <ISO3>???</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>0</Installed>
+        <InternetDomain>ac</InternetDomain>
+        <ISONumeric></ISONumeric>
+        <ITUDiallingCode>247</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>ASCENSION ISLAND</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>XW</ISO2>
+        <ISO3>???</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>0</Installed>
+        <InternetDomain>??</InternetDomain>
+        <ISONumeric>830</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>CHANNEL ISLANDS</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>XX</ISO2>
+        <ISO3>???</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>0</Installed>
+        <InternetDomain>im</InternetDomain>
+        <ISONumeric>833</ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode>GBM</UNVehicleCode>
+        <ISOCountryName>ISLE OF MAN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>XY</ISO2>
+        <ISO3>???</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>0</Installed>
+        <InternetDomain>je</InternetDomain>
+        <ISONumeric></ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode>GBJ</UNVehicleCode>
+        <ISOCountryName>JERSEY</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>XZ</ISO2>
+        <ISO3>???</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>0</Installed>
+        <InternetDomain>gg</InternetDomain>
+        <ISONumeric></ISONumeric>
+        <ITUDiallingCode></ITUDiallingCode>
+        <UNVehicleCode>GBG</UNVehicleCode>
+        <ISOCountryName>GUERNSEY</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>YE</ISO2>
+        <ISO3>YEM</ISO3>
+        <IOC3>YEM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>ye</InternetDomain>
+        <ISONumeric>887</ISONumeric>
+        <ITUDiallingCode>967</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>YEMEN</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>YT</ISO2>
+        <ISO3>MYT</ISO3>
+        <IOC3>???</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>yt</InternetDomain>
+        <ISONumeric>175</ISONumeric>
+        <ITUDiallingCode>269</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>MAYOTTE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>ZA</ISO2>
+        <ISO3>ZAF</ISO3>
+        <IOC3>RSA</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>za</InternetDomain>
+        <ISONumeric>710</ISONumeric>
+        <ITUDiallingCode>27</ITUDiallingCode>
+        <UNVehicleCode>ZA</UNVehicleCode>
+        <ISOCountryName>SOUTH AFRICA (Zuid Afrika)</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>ZM</ISO2>
+        <ISO3>ZMB</ISO3>
+        <IOC3>ZAM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>zm</InternetDomain>
+        <ISONumeric>894</ISONumeric>
+        <ITUDiallingCode>260</ITUDiallingCode>
+        <UNVehicleCode></UNVehicleCode>
+        <ISOCountryName>ZAMBIA</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+    <Country>
+        <ISO2>ZW</ISO2>
+        <ISO3>ZWE</ISO3>
+        <IOC3>ZIM</IOC3>
+        <Installed>1</Installed>
+        <InternetDomain>zw</InternetDomain>
+        <ISONumeric>716</ISONumeric>
+        <ITUDiallingCode>263</ITUDiallingCode>
+        <UNVehicleCode>ZW</UNVehicleCode>
+        <ISOCountryName>ZIMBABWE</ISOCountryName>
+        <ISOCountryNameLower>Great Britain</ISOCountryNameLower>
+        <IOCCountryName>GREAT BRITAIN</IOCCountryName>
+        <IOCCountryNameLower>Great Britain</IOCCountryNameLower>
+    </Country>
+</Countries>

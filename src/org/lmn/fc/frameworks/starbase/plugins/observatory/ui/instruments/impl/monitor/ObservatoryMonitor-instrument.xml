@@ -1,0 +1,843 @@
+<?xml version="1.0" standalone="yes"?>
+
+
+<Instruments xmlns="instruments.xmlbeans.model.fc.lmn.org">
+
+    <!-- ....................................................................................... -->
+    <!-- Observatory Monitor -->
+
+    <Instrument>
+        <Identifier>ObservatoryMonitor</Identifier>
+
+        <!-- The Monitor Controller -->
+
+        <Controller>
+            <!-- A virtual Controller -->
+            <!-- Three DECIMAL digits, 000 in this version -->
+            <VirtualAddress>000</VirtualAddress>
+
+            <!-- ............................................................................... -->
+            <!-- Instrument (Primary Plugins) -->
+            <!-- ............................................................................... -->
+            <!-- Allow Parent to Child links to identify those physical Plugins **required** for this Instrument -->
+            <!-- The schema allows for zero Plugins -->
+
+            <PluginManifest>
+                <!-- The Key for the PrimaryPlugin, which defines the nature of the Instrument -->
+                <PrimaryResourceKey>Monitor</PrimaryResourceKey>
+
+                <!-- There are no Secondary Plugins for this Instrument -->
+            </PluginManifest>
+
+            <Identifier>Core</Identifier>
+            <Name>Core</Name>
+            <Description>The Observatory Monitor Core</Description>
+            <ResourceKey>Core</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Controller has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Resets the Observatory Monitor</Description>
+                <Parameter>
+                    <Name>Reset.Mode</Name>
+                    <InputDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>NumericIndexedList</DataTypeName>
+                        <FieldCount>1</FieldCount>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Choices>Soft,Defaults</Choices>
+                    <Tooltip>Allowed values: Soft, Defaults</Tooltip>
+                </Parameter>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Pings the Observatory Monitor Controller</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Gets the configuration of the Observatory Monitor in XML</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- ............................................................................... -->
+            <!-- Core Commands executed entirely on the host -->
+
+            <!-- start() starts the Instrument, exactly as for the ControlPanel green button -->
+            <!-- This is required for the Macro support -->
+            <Command>
+                <Identifier>start</Identifier>
+                <CommandCode>03</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Starts the Instrument</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Ack</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <!-- stop() stops the Instrument, exactly as for the ControlPanel red button -->
+            <!-- This is required for the Macro support -->
+            <Command>
+                <Identifier>stop</Identifier>
+                <CommandCode>04</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Stops the Instrument</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Ack</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <!-- getVersion() returns a String giving the version information for the Controller OS -->
+            <Command>
+                <Identifier>getVersion</Identifier>
+                <CommandCode>0A</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Gets the Version of the Controller OS</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration.Version</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- ............................................................................... -->
+            <!-- Monitor Plugin -->
+
+            <Plugin>
+                <Identifier>Monitor</Identifier>
+                <Name>Monitor</Name>
+                <Description>The Observatory Monitor</Description>
+                <ResourceKey>Monitor</ResourceKey>
+
+                <!-- The Monitor Plugin has a CommandCodeBase of 04 -->
+                <CommandCodeBase>40</CommandCodeBase>
+
+                <Command>
+                    <Identifier>monitorCommands</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Controls the CommandMonitor</Description>
+                    <Parameter>
+                        <Name>Run</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>monitorPorts</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Controls the PortMonitor</Description>
+                    <Parameter>
+                        <Name>Run</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>monitorMemory</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Controls the MemoryUsage</Description>
+                    <Parameter>
+                        <Name>Run</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>enableJavaConsole</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Controls the JavaConsole</Description>
+                    <Parameter>
+                        <Name>Run</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Exporter Plugin -->
+
+            <Plugin>
+                <Identifier>Exporter</Identifier>
+                <Name>Exporter</Name>
+                <Description>The Exporter Module</Description>
+                <ResourceKey>Exporter</ResourceKey>
+
+                <CommandCodeBase>81</CommandCodeBase>
+
+                <Command>
+                    <Identifier>exportCommandLog</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Monitor Command Log in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/CommandLog</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/CommandLog</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportCommandMonitor</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Command Monitor in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/CommandMonitor</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/CommandMonitor</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportPortMonitor</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Port Monitor in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/PortMonitor</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/PortMonitor</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportMemoryMonitor</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current MemoryMonitor chart as an image in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/MemoryMonitor</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/MemoryMonitor</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>png,jpg,gif</Choices>
+                        <Tooltip>Allowed values: PNG, JPG, GIF (PNG preferred)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Width</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Value>1024</Value>
+                        <Tooltip>The width of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Height</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Value>768</Value>
+                        <Tooltip>The height of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportActions</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the list of Actions in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/Actions</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/Actions</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportJavaConsole</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Java Console in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/JavaConsole</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/JavaConsole</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportObservatoryLog</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current Observatory Event Log in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/ObservatoryLog</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/ObservatoryLog</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportCommandLexicon</Identifier>
+                    <CommandCode>07</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the composite Observatory Commands Lexicon in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/CommandLexicon</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/CommandLexicon</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportInstrumentXML</Identifier>
+                    <CommandCode>08</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Instrument XML in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/InstrumentXML</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/InstrumentXML</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Utilities Plugin -->
+
+            <Plugin>
+                <Identifier>Utilities</Identifier>
+                <Name>Utilities</Name>
+                <Description>Utilities for this Instrument</Description>
+                <ResourceKey>Utilities</ResourceKey>
+
+                <!-- The Utilities Plugin is always CommandCodeBase 01 -->
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                    <Identifier>copyResponseToClipboard</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Copies the most recent ResponseValue to the host Clipboard</Description>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+            </Plugin>
+
+        </Controller>
+
+        <Name>Observatory Monitor</Name>
+        <Description>The Observatory Monitor</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.monitor.ObservatoryMonitor</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>ObservatoryMonitor</ResourceKey>
+
+        <DAO>
+            <Name>ObservatoryMonitor</Name>
+            <Description>The Observatory Monitor DAO</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.monitor.dao.MonitorDAO</DaoClassname>
+
+            <!-- The DAO has no Port -->
+
+            <!-- The DAO has no Inputs -->
+
+            <!-- DAO Outputs -->
+            <Output>
+                <Name>CommandLog</Name>
+                <Description>The Command Log produced by the DAO</Description>
+                <Tooltip>The Observatory Command Log</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>CommandMonitor</Name>
+                <Description>The Observatory Command Monitor produced by the DAO</Description>
+                <Tooltip>The Observatory Command Monitor</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>PortMonitor</Name>
+                <Description>The Observatory Port Monitor produced by the DAO</Description>
+                <Tooltip>The Observatory Port Monitor</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MemoryUsage</Name>
+                <Description>The Observatory MemoryUsage XYDataset produced by the DAO</Description>
+                <Tooltip>The Memory Usage XYDataset</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>ObservatoryLog</Name>
+                <Description>The Observatory Event Log produced by the DAO</Description>
+                <Tooltip>The Observatory Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>CommandLexicon</Name>
+                <Description>The Observatory Command Lexicon produced by the DAO</Description>
+                <Tooltip>The Observatory Command Lexicon</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XML</Name>
+                <Description>The Observatory XML Configuration produced by the DAO</Description>
+                <Tooltip>The Observatory XML Configuration</Tooltip>
+                <DataTypeName>XML</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+    </Instrument>
+
+</Instruments>

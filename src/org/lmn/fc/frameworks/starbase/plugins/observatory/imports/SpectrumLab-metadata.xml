@@ -1,0 +1,1010 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- See: http://utilitymill.com/utility/Regex_For_Range -->
+
+<ObservationMetadata xmlns="metadata.xmlbeans.model.fc.lmn.org">
+
+
+<!-- Starbase SpectrumLab metadata import -->
+<!-- See: http://www.qsl.net/dl4yhf/spectra1.html -->
+<!-- These data kindly supplied by Karl-Heinz Dansel -->
+<!-- Contact starbase@ukraa.com for support -->
+<!-- All Metadata are defined with {Key, Value, DataType, Units, Description} -->
+<!-- Keys, DataTypes and Units must appear in their respective Starbase Dictionaries -->
+<!-- This file represents an Observation, so initially it will contain only Observation Metadata -->
+<!-- Tell Starbase how many channels to expect in the realtime StaribusMultichannelData -->
+<!-- This must include the slow-speed Temperature channel, if present -->
+
+    <Metadata>
+        <Key>Observation.Title</Key>
+        <Value>Spectrum Lab Timestamped 24 Channel</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Title for the Chart</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Axis.Label.X</Key>
+        <Value>Time</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The X axis</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Axis.Label.Y</Key>
+        <Value>Signal dB</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Y Axis</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Count</Key>
+        <Value>24</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Number of Channels of data produced by this Instrument</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.0</Key>
+        <Value>Noise 1</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 0</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.0</Key>
+        <Value>Channel 0 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 0</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.0</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 0</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.0</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 0</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.1</Key>
+        <Value>19.5 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 1</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.1</Key>
+        <Value>Channel 1 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 1</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.1</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 1</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.1</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 1</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.2</Key>
+        <Value>23.3 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 2</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.2</Key>
+        <Value>Channel 2 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 2</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.2</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 2</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.2</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 2</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.3</Key>
+        <Value>20.9 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 3</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.3</Key>
+        <Value>Channel 3 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 3</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.3</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 3</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.3</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 3</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.4</Key>
+        <Value>21.7 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 4</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.4</Key>
+        <Value>Channel 4 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 4</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.4</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 4</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.4</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 4</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.5</Key>
+        <Value>22.1 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 5</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.5</Key>
+        <Value>Channel 5 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 5</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.5</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 5</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.5</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 5</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.6</Key>
+        <Value>22.6 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 6</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.6</Key>
+        <Value>Channel 6 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 6</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.6</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 6</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.6</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 6</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.7</Key>
+        <Value>23.4 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 7</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.7</Key>
+        <Value>Channel 7 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 7</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.7</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 7</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.7</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 7</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.8</Key>
+        <Value>24.0 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 8</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.8</Key>
+        <Value>Channel 8 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 8</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.8</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 8</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.8</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 8</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.9</Key>
+        <Value>26.7 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 9</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.9</Key>
+        <Value>Channel 9 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 9</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.9</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 9</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.9</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 9</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.10</Key>
+        <Value>37.5 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 10</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.10</Key>
+        <Value>Channel 10 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 10</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.10</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 10</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.10</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 10</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.11</Key>
+        <Value>Noise 2</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 11</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.11</Key>
+        <Value>Channel 11 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 11</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.11</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 11</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.11</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 11</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.12</Key>
+        <Value>44.2 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 12</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.12</Key>
+        <Value>Channel 2 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 12</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.12</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 12</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.12</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 12</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.13</Key>
+        <Value>45.9 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 13</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.13</Key>
+        <Value>Channel 13 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 13</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.13</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 13</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.13</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 13</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.14</Key>
+        <Value>52.0 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 14</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.14</Key>
+        <Value>Channel 14 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 14</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.14</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 14</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.14</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 14</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.15</Key>
+        <Value>53.4 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 15</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.15</Key>
+        <Value>Channel 15 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 15</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.15</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 15</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.15</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 15</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.16</Key>
+        <Value>60.0 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 16</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.16</Key>
+        <Value>Channel 16 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 16</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.16</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 16</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.16</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 16</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.17</Key>
+        <Value>63.9 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 17</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.17</Key>
+        <Value>Channel 17 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 17</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.17</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 17</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.17</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 17</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.18</Key>
+        <Value>66.6 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 18</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.18</Key>
+        <Value>Channel 18 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 18</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.18</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 18</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.18</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 18</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.19</Key>
+        <Value>75.0 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 2</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.2</Key>
+        <Value>Channel 19 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 19</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.19</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 19</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.19</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 19</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.20</Key>
+        <Value>77.5 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 20</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.20</Key>
+        <Value>Channel 20 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 20</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.20</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 20</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.20</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 20</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.21</Key>
+        <Value>81.0 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 21</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.21</Key>
+        <Value>Channel 21 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 21</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.21</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 21</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.21</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 21</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.22</Key>
+        <Value>82.8 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 22</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.22</Key>
+        <Value>Channel 22 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 22</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.22</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 22</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.22</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 22</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.23</Key>
+        <Value>93.8 kHz</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Name of Channel 23</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.23</Key>
+        <Value>Channel 23 output</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Description of Channel 23</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Datatype.23</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 23</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.23</Key>
+        <Value>dB</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Units of Channel 23</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.0</Key>
+        <Value>r=255 g=000 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 0</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.1</Key>
+        <Value>r=255 g=102 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 1</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.2</Key>
+        <Value>r=255 g=153 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 2</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.3</Key>
+        <Value>r=255 g=204 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 3</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.4</Key>
+        <Value>r=170 g=230 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 4</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.5</Key>
+        <Value>r=000 g=204 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 5</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.6</Key>
+        <Value>r=255 g=153 b=204</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 6</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.7</Key>
+        <Value>r=000 g=085 b=204</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 7</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.8</Key>
+        <Value>r=255 g=000 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 8</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.9</Key>
+        <Value>r=255 g=102 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 9</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.10</Key>
+        <Value>r=255 g=153 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 10</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.11</Key>
+        <Value>r=255 g=204 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 11</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.12</Key>
+        <Value>r=170 g=230 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 12</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.13</Key>
+        <Value>r=000 g=204 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 13</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.14</Key>
+        <Value>r=255 g=153 b=204</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 14</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.15</Key>
+        <Value>r=000 g=085 b=204</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 15</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.16</Key>
+        <Value>r=255 g=000 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 16</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.17</Key>
+        <Value>r=255 g=102 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 17</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.18</Key>
+        <Value>r=255 g=153 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 18</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.19</Key>
+        <Value>r=255 g=204 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 19</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.20</Key>
+        <Value>r=170 g=230 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 20</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.21</Key>
+        <Value>r=000 g=204 b=000</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 21</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.22</Key>
+        <Value>r=255 g=153 b=204</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 22</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.23</Key>
+        <Value>r=000 g=085 b=204</Value>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of Channel 23</Description>
+    </Metadata>
+
+</ObservationMetadata>

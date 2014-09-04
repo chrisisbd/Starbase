@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="exceptions.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="exceptions.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:element name="Exceptions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="ExceptionResource"
+                            type="ExceptionResource"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="ExceptionResource">
+        <xs:sequence>
+
+            <xs:element name="ResourceKey">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1"
+                                    maxOccurs="unbounded"
+                                    name="Key"
+                                    type="Key"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="LanguageCode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="[a-z][a-z]"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Editable" type="xs:boolean"/>
+
+            <xs:element name="EditorClassname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Text">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="CreatedDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="CreatedTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+            <xs:element name="ModifiedDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="ModifiedTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="Key">
+        <xs:restriction base="xs:normalizedString">
+            <xs:pattern value="([a-zA-Z0-9])*"/>
+            <xs:minLength value="1"/>
+            <xs:maxLength value="25"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

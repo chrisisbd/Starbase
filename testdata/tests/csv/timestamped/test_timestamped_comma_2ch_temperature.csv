@@ -1,0 +1,100 @@
+# Timestamped, Two Channels with Temperature, CSV
+# Contact starbase@ukraa.com for support
+
+# All Metadata are defined with {Key, Value, DataType, Units, Description}
+# Keys, DataTypes and Units must appear in their respective Starbase Dictionaries
+# Comments are preceded with '#' and are not preserved during export-import
+
+Observatory.Name,The Guest Observatory,String,Dimensionless,The name of the Observatory supplying Imported data
+Observatory.Description,The Guest Observatory could be anywhere,String,Dimensionless,The description of the Observatory
+Observatory.Notes,These data are supplied as an example of an import where the Starbase Instrument takes on the identity of the guest Observatory,String,Dimensionless,The Observatory Notes
+
+Observatory.Latitude,+53:00:00.001,Latitude,DegMinSec,The Latitude of the Framework (North is positive)  -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999
+Observatory.Longitude,+001:00:00.001,Longitude,DegMinSec,The Longitude of the Observatory (West is positive)  -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999
+Observatory.TimeZone,GMT+00:00,TimeZone,Dimensionless,The TimeZone containing the Observatory  GMT-23:59 to GMT+00:00 to GMT+23:59
+Observatory.HASL,100.0,DecimalFloat,m,The Height of the Observatory above Sea Level in metres
+Observatory.Country,GB,String,Dimensionless,The Country containing the Observatory (ISO 3166)
+
+Observer.Name,Guest Observer,String,Dimensionless,The name of the Observer
+Observer.Description,The Observer responsible for the imported data,String,Dimensionless,The description of the Observer
+Observer.Notes,This Observer made these observations,String,Dimensionless,The Observer Notes,String,Dimensionless,The notes made by the Observer
+Observer.Country,GB,String,Dimensionless,The Country containing the Observer (ISO 3166)
+
+# These Metadata items are required for Charting support
+
+Observation.Title,Test Timestamped 2 Channel + Temperature CSV,String, Dimensionless,The title for the Chart
+Observation.Axis.Label.X,Time,String, Dimensionless,The X axis
+Observation.Axis.Label.Y.0,Data Value,String, Dimensionless,The Y axis
+
+# The Channel Count
+Observation.Channel.Count,3,DecimalInteger,Dimensionless,The number of data channels
+
+# Channel Colours grouped together for simplicity, and for ease of copying into code or other files
+Observation.Channel.Colour.Temperature, r=255 g=153 b=000,ColourData,Dimensionless,The Colour of the Temperature Channel graph
+Observation.Channel.Colour.0, r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 0 graph
+Observation.Channel.Colour.1, r=255 g=102 b=000,ColourData,Dimensionless,The Colour of the Channel 1 graph
+
+# Temperature is a 'slow' channel
+Observation.Channel.Name.Temperature,Temperature,String,Dimensionless,The name of the Temperature Channel
+Observation.Channel.Description.Temperature,Temperature output,String,Dimensionless,The description of the Temperature Channel
+Observation.Channel.DataType.Temperature,DecimalFloat,DataType,Dimensionless,The DataType of the Temperature Channel
+Observation.Channel.Units.Temperature,Celsius,Units,Dimensionless,The Units of the Temperature Channel
+
+# Channel specifications, set to DataType=DecimalInteger, Units=mV
+
+Observation.Channel.Name.0,Channel 0,String,Dimensionless,The name of Channel 0
+Observation.Channel.Description.0,Channel 0 output,String,Dimensionless,The description of Channel 0
+Observation.Channel.DataType.0,DecimalInteger,DataType,Dimensionless,The DataType of Channel 0
+Observation.Channel.Units.0,mV,Units,Dimensionless,The Units of Channel 0
+
+Observation.Channel.Name.1,Channel 1,String,Dimensionless,The name of Channel 1
+Observation.Channel.Description.1,Channel 1 output,String,Dimensionless,The description of Channel 1
+Observation.Channel.DataType.1,DecimalInteger,DataType,Dimensionless,The DataType of Channel 1
+Observation.Channel.Units.1,mV,Units,Dimensionless,The Units of Channel 1
+
+2008-12-23,00:00:00,25.8,0,36
+2008-12-23,00:00:01,25.6,1,35
+2008-12-23,00:00:02,25.3,2,34
+2008-12-23,00:00:03,25.6,3,33
+2008-12-23,00:00:04,25.1,4,32
+2008-12-23,00:00:05,25.6,5,31
+# Check faulty Date
+2008-12-2xx3,00:00:06,25.6,6,30
+2008-12-23,00:00:07,25.6,7,29
+2008-12-23,00:00:08,25.5,8,28
+2008-12-23,00:00:09,25.2,9,27
+# Check faulty Time
+2008-12-23,00:0xx0:09,25.9,9,27
+2008-12-23,00:00:10,25.6,10,26
+2008-12-23,00:00:11,25.4,11,25
+2008-12-23,00:00:12,25.7,12,24
+2008-12-23,00:00:13,25.2,13,23
+2008-12-23,00:00:14,25.6,14,22
+# Check missing Data
+2008-12-23,00:00:14
+2008-12-23,00:00:15,25.6,15,21
+2008-12-23,00:00:16,25.3,16,20
+2008-12-23,00:00:17,25.7,17,19
+2008-12-23,00:00:18,25.6,18,18
+2008-12-23,00:00:19,25.3,19,17
+2008-12-23,00:00:20,25.9,20,16
+2008-12-23,00:00:21,25.6,21,15
+# Check too few Data columns
+2008-12-23,00:00:22,22
+# Check too many Data columns
+2008-12-23,00:00:23,25.6,23,13,19
+2008-12-23,00:00:24,25.6,24,12
+# Check faulty Data
+2008-12-23,00:00:25,25.0,2a5,11
+2008-12-23,00:00:26,25.6,26,10
+2008-12-23,00:00:27,25.1,27,9
+2008-12-23,00:00:28,25.6,28,8
+2008-12-23,00:00:29,25.6,29,7
+2008-12-23,00:00:30,25.7,30,6
+2008-12-23,00:00:31,25.6,31,5
+2008-12-23,00:00:32,25.6,32,4
+2008-12-23,00:00:33,25.4,33,3
+2008-12-23,00:00:34,25.6,34,2
+2008-12-23,00:00:35,25.3,35,1
+2008-12-23,00:00:36,25.6,36,0
+# The end

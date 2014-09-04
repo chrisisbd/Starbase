@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Properties xmlns="properties.xmlbeans.model.fc.lmn.org">
+
+    <!-- Starinet -->
+
+    <!-- Starinet DAO -->
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>StarinetTester</Key>
+            <Key>Dao</Key>
+            <Key>OnError</Key>
+            <Key>Continue</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Boolean</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>true</Value>
+        <Description>A flag to control allow continued execution following an error</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>StarinetTester</Key>
+            <Key>Dao</Key>
+            <Key>Timeout</Key>
+            <Key>Default</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>40</Value>
+        <Description>The Timeout period in seconds for the Starinet DAO</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>StarinetTester</Key>
+            <Key>Dao</Key>
+            <Key>URL</Key>
+            <Key>Referrer</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.String</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>http://www.ukraa.com/index.html</Value>
+        <Description>The referrer URL to use for the Starinet port requests</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+</Properties>

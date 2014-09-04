@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="users.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:roles="roles.xmlbeans.model.fc.lmn.org"
+           xmlns="users.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="roles.xmlbeans.model.fc.lmn.org"
+               schemaLocation="roles.xsd"/>
+
+    <!-- A collection for file imports -->
+    <xs:element name="Users">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded"
+                            name="User"
+                            type="User"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="User">
+        <xs:sequence>
+
+            <xs:element name="UserName">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Password">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9])*"/>
+                        <xs:minLength value="8"/>
+                        <xs:maxLength value="25"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Active" type="xs:boolean"/>
+
+            <xs:element name="SortOrder" type="xs:unsignedByte"/>
+
+            <xs:element name="Editable" type="xs:boolean"/>
+
+            <xs:element name="RoleName" type="roles:RoleName"/>
+
+            <xs:element name="CountryCode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="[A-Z][A-Z]"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="LanguageCode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="[a-z][a-z]"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Email">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="EditorClassname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="IconFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

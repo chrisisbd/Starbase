@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Strings xmlns="strings.xmlbeans.model.fc.lmn.org">
+
+    <!-- It is necessary for this file to exist, even if empty -->
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Plugin</Key>
+            <Key>Test</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Test</Text>
+        <Description>Test String</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+</Strings>

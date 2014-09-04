@@ -1,0 +1,104 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Tasks xmlns="tasks.xmlbeans.model.fc.lmn.org">
+
+    <Task>
+        <Name>RootTask</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Tester</RoleName>
+        <SortOrder>0</SortOrder>
+        <Editable>0</Editable>
+        <Public>0</Public>
+        <Runnable>1</Runnable>
+        <RunAtStart>1</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The LevelThreeA RootTask</Description>
+        <IconFilename>privatetask.png</IconFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Task>
+    <!--
+    <Task>
+        <Name>TaskViewer</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Tester</RoleName>
+        <SortOrder>1</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The Task Viewer for the Plugin</Description>
+        <IconFilename>task.png</IconFilename>
+    </Task>
+
+    <Task>
+        <Name>EventViewer</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Tester</RoleName>
+        <SortOrder>2</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The Event Viewer for the Plugin</Description>
+        <IconFilename>task.png</IconFilename>
+    </Task>
+
+    <Task>
+        <Name>HelpViewer</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Tester</RoleName>
+        <SortOrder>3</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The Help Viewer for the Plugin</Description>
+        <IconFilename>task.png</IconFilename>
+    </Task>
+
+    <Task>
+        <Name>JavaDoc</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Tester</RoleName>
+        <SortOrder>4</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The JavaDoc Viewer for the Plugin</Description>
+        <IconFilename>task.png</IconFilename>
+    </Task>
+
+    <Task>
+        <Name>AboutBox</Name>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Tester</RoleName>
+        <SortOrder>5</SortOrder>
+        <Editable>1</Editable>
+        <Public>1</Public>
+        <Runnable>0</Runnable>
+        <RunAtStart>0</RunAtStart>
+        <Active>1</Active>
+        <EditorClassname>org.lmn.fc.ui.editors.TaskEditor</EditorClassname>
+        <Description>The Plugin About Box</Description>
+        <IconFilename>task.png</IconFilename>
+    </Task>
+    -->
+
+</Tasks>

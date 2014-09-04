@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Plugins xmlns="plugins.xmlbeans.model.fc.lmn.org">
+
+    <Plugin>
+        <Name>LevelThreeA</Name>
+        <RoleName>Developer</RoleName>
+        <RoleName>Administrator</RoleName>
+        <Editable>1</Editable>
+        <Active>1</Active>
+        <LoadAtStart>1</LoadAtStart>
+        <EditorClassname>org.lmn.fc.ui.editors.PluginEditor</EditorClassname>
+        <Description>A LevelThreeA Plugin</Description>
+        <IconFilename>plugin.png</IconFilename>
+        <HelpFilename>Level3AHelp.html</HelpFilename>
+        <AboutFilename>AboutLevel3A.html</AboutFilename>
+        <LicenceFilename>Level3ALicence.html</LicenceFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Plugin>
+
+</Plugins>

@@ -1,0 +1,53 @@
+
+                <Command>
+                   <Identifier>appendDataset</Identifier>
+                   <CommandCode>03</CommandCode>
+                   <Software>
+                       <Identifier>Importer Command</Identifier>
+                       <CollectionID>00-00</CollectionID>
+                       <Description>Append the Dataset imported from a local file to the data already held</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be processed</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>FormattedStardata, CompressedStardata,RadioSkyPipe</Choices>
+                        <Tooltip>Allowed values: FormattedStardata, CompressedStardata, RadioSkyPipe</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Filter</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>PassThrough,SimpleIntegrator</Choices>
+                        <Tooltip>Allowed values: PassThrough, SimpleIntegrator</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>

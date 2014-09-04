@@ -1,0 +1,1183 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Queries  xmlns="queries.xmlbeans.model.fc.lmn.org">
+
+    <Metadata>
+        <Fields>
+            <Field attrname="ResourceKey0"      fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="ResourceKey1"      fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="ResourceKey2"      fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="ResourceKey3"      fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="Editable"          fieldtype="i2"                required="true"/>
+            <Field attrname="EditorClassname"   fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="Query0"            fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="Query1"            fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="Query2"            fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="Query3"            fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="Description"       fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="ExecutionCount"    fieldtype="string" WIDTH="23" required="true"/>
+            <Field attrname="ExecutionTime"     fieldtype="string" WIDTH="23" required="true"/>
+        </Fields>
+        <Params DEFAULT_ORDER="1" PRIMARY_KEY="1" LCID="1033"/>
+    </Metadata>
+
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN Components ON Editors.EditorID = Components.EditorID</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Language</ResourceKey1>
+          <ResourceKey2>ByName</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Components INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ComponentStrings ON Editors.EditorID = ComponentStrings.EditorID) ON Languages.LanguageCode = ComponentStrings.LanguageCode)</Query0>
+          <Query1> ON (Components.ComponentID = ComponentStrings.ComponentID) AND (Components.ApplicationID = ComponentStrings.ApplicationID)</Query1>
+          <Query2> WHERE (Components.ApplicationID = ?) AND (Components.ComponentID = ?) AND (ComponentStringID = ?)  AND (Languages.LanguageCode = ?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Components INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ComponentStrings ON Editors.EditorID = ComponentStrings.EditorID) ON Languages.LanguageCode = ComponentStrings.LanguageCode) ON (Components.ComponentID = ComponentStrings.Compon</Query0>
+          <Query1>entID) AND (Components.ApplicationID = ComponentStrings.ApplicationID)  WHERE (Components.ApplicationID=?) AND (Components.ComponentID=?) AND (ComponentStrings.ResourceKey0=?) AND  (ComponentStrings.ResourceKey1=?) AND  (ComponentStrings.ResourceKey2=?)</Query1>
+          <Query2>AND  (ComponentStrings.ResourceKey3=?) AND (Languages.LanguageCode = ?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Components INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ComponentStrings ON Editors.EditorID = ComponentStrings.EditorID) ON Languages.LanguageCode = ComponentStrings.LanguageCode) ON (Components.ComponentID = ComponentStrings.Compon</Query0>
+          <Query1>entID) AND (Components.ApplicationID = ComponentStrings.ApplicationID) WHERE (Components.ApplicationID = ?) AND (Components.ComponentID = ?) AND (Languages.LanguageCode = ?) ORDER BY ResourceKey0, ResourceKey1, ResourceKey2, ResourceKey3</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>3</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN FrameworkTasks ON Editors.EditorID = FrameworkTasks.EditorID WHERE (FrameworkTaskID = ?)</Query0>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>26</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN Applications ON Editors.EditorID = Applications.EditorID</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Applications INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ApplicationStrings ON Editors.EditorID = ApplicationStrings.EditorID) ON Languages.LanguageCode = ApplicationStrings.LanguageCode)</Query0>
+          <Query1> ON (Editors.EditorID = Applications.EditorID) AND (Applications.ApplicationID = ApplicationStrings.ApplicationID)</Query1>
+          <Query2>TO DO!!!</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ApplicationTasks ON Editors.EditorID = ApplicationTasks.EditorID</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ComponentTasks ON Editors.EditorID = ComponentTasks.EditorID</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ComponentTasks ON Editors.EditorID = ComponentTasks.EditorID WHERE ApplicationID = ? AND ComponentID = ? ORDER BY TaskSortOrder</Query0>
+          <Description></Description>
+          <ExecutionCount>3</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <!--
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>EventLog</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT TOP ? * FROM EventLog</Query0>
+          <Query1></Query1>
+          <Query2> WHERE (ApplicationID = ?) OR (ApplicationID = -1)</Query2>
+          <Query3> ORDER BY EventID Desc</Query3>
+          <Description></Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query> -->
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Language</ResourceKey1>
+          <ResourceKey2>List</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Languages WHERE (LanguageInstalled = 1) ORDER BY LanguageName</Query0>
+          <Description>TESTER 26/10/2003 09:53:07</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>DataType</ResourceKey1>
+          <ResourceKey2>List</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM DataTypes ORDER BY DataTypeClassName</Query0>
+          <Description></Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE Applications SET UserRoleMask=?, ApplicationName = ?, ApplicationSortOrder = ?, ApplicationEditable = ?, ApplicationActive = ?, ApplicationLoadAtStart = ?, EditorID=?, ApplicationDescription = ?, ApplicationIconFilename = ?,</Query0>
+          <Query1> ApplicationHelpFilename = ?, ApplicationAboutFilename = ?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=? WHERE (ApplicationID = ?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE ApplicationProperties</Query0>
+          <Query1> SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?, PropertyEditable=?, DataTypeID=?, EditorID=?, PropertyValue=?, PropertyDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query1>
+          <Query2> WHERE (ApplicationID = ?) AND (ApplicationPropertyID = ?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE ApplicationTasks SET UserRoleMask=?, TaskName=?, TaskSortOrder=?, TaskEditable=?, TaskPublic=?, TaskRunnable=?, TaskRunAtStart=?, TaskActive=?, EditorID=?, TaskDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query0>
+          <Query1> WHERE (ApplicationID = ?) AND (ApplicationTaskID = ?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>6</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE Components</Query0>
+          <Query1> SET UserRoleMask=?, ComponentName=?, ComponentSortOrder=?, ComponentEditable=?, ComponentActive=?,  EditorID=?, ComponentDescription=?, ComponentIconFilename=?, ComponentHelpFilename=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query1>
+          <Query2> WHERE (ApplicationID=?) AND (ComponentID=?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE ComponentProperties</Query0>
+          <Query1> SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?, PropertyEditable=?, DataTypeID=?, EditorID=?, PropertyValue=?, PropertyDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query1>
+          <Query2> WHERE (ApplicationID=?) AND (ComponentID=?) AND (ComponentPropertyID=?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ApplicationQueries ON Editors.EditorID = ApplicationQueries.EditorID WHERE ApplicationID = ? ORDER BY ResourceKey0, ResourceKey1, ResourceKey2, ResourceKey3</Query0>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ApplicationQueries ON Editors.EditorID = ApplicationQueries.EditorID</Query0>
+          <Query1></Query1>
+          <Query2> WHERE ApplicationID = ? AND ApplicationQueryID = ?</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ApplicationQueries ON Editors.EditorID = ApplicationQueries.EditorID WHERE (ApplicationID=?) AND (ApplicationQueries.ResourceKey0=?) AND  (ApplicationQueries.ResourceKey1=?) AND  (ApplicationQueries.ResourceKey2=?)  AND  (</Query0>
+          <Query1>ApplicationQueries.ResourceKey3=?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>37</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ComponentQueries ON Editors.EditorID = ComponentQueries.EditorID WHERE (Installed = 1) AND (ApplicationID=?) AND (ComponentID=?) ORDER BY ResourceKey0, ResourceKey1, ResourceKey2, ResourceKey3</Query0>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>3</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ComponentQueries ON Editors.EditorID = ComponentQueries.EditorID</Query0>
+          <Query1></Query1>
+          <Query2> WHERE (ApplicationID=?) AND (ComponentID=?) AND (ComponentQueryID=?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ComponentQueries ON Editors.EditorID = ComponentQueries.EditorID WHERE (ApplicationID=?) AND (ComponentID=?) AND (ComponentQueries.ResourceKey0=?) AND  (ComponentQueries.ResourceKey1=?) AND  (ComponentQueries.ResourceKey2=</Query0>
+          <Query1>?)  AND  (ComponentQueries.ResourceKey3=?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>68</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN (Languages INNER JOIN FrameworkStrings ON Languages.LanguageCode = FrameworkStrings.LanguageCode) ON Editors.EditorID = FrameworkStrings.EditorID</Query0>
+          <Query1> WHERE (FrameworkStrings.FrameworkStringID = ?) AND (Languages.LanguageCode = ?)</Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE FrameworkStrings SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?,  LanguageCode=?, Installed=?, EditorID=?, FrameworkString=?, StringDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=? WHERE (FrameworkStri</Query0>
+          <Query1>ngID=?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE FrameworkProperties SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?, PropertyEditable=?, DataTypeID=?, EditorID=?, PropertyValue=?,  PropertyDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=? WHERE (Frame</Query0>
+          <Query1>workPropertyID=?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>7</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE FrameworkQueries SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?,  Installed=?, EditorID=?, Query0=?, Query1=?, Query2=?, Query3=?, Description=?, ExecutionCount=?, ExecutionTime=?, DateCreated=?, TimeCreated=?, DateModified</Query0>
+          <Query1>=?, TimeModified=? WHERE (FrameworkQueryID=?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>56</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE applicationstrings</Query0>
+          <Query1> SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?, LanguageCode=?, Installed=?, EditorID=?, ApplicationString=?, StringDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query1>
+          <Query2> WHERE (ApplicationID=?) AND (ApplicationStringID=?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE applicationqueries</Query0>
+          <Query1> SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?, Installed=?, EditorID=?, Query0=?, Query1=?, Query2=?, Query3=?, Description=?, ExecutionCount=?, ExecutionTime=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query1>
+          <Query2> WHERE (ApplicationID=?) AND  (ApplicationQueryID=?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE componentexceptions</Query0>
+          <Query1> SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?, LanguageCode=?, Installed=?, EditorID=?, ComponentException=?, ExceptionDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query1>
+          <Query2> WHERE (ApplicationID=?) AND (ComponentID=?) AND (ComponentExceptionID=?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Components INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ComponentExceptions ON Editors.EditorID = ComponentExceptions.EditorID) ON Languages.LanguageCode = ComponentExceptions.LanguageCode) ON (Components.ComponentID = ComponentExcep</Query0>
+          <Query1>tions.ComponentID) AND (Components.ApplicationID = ComponentExceptions.ApplicationID)  WHERE (Components.ApplicationID=?) AND (Components.ComponentID=?) AND (ComponentExceptions.ResourceKey0=?) AND  (ComponentExceptions.ResourceKey1=?) AND  (ComponentExce</Query1>
+          <Query2>ptions.ResourceKey2=?)  AND  (ComponentExceptions.ResourceKey3=?) AND (Languages.LanguageCode = ?)</Query2>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE componentstrings</Query0>
+          <Query1> SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?, LanguageCode=?, Installed=?, EditorID=?, ComponentString=?, StringDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query1>
+          <Query2> WHERE (ApplicationID=?) AND (ComponentID=?) AND  (ComponentStringID=?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Query</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE componentqueries</Query0>
+          <Query1> SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?, Installed=?, EditorID=?, Query0=?, Query1=?, Query2=?, Query3=?, Description=?, ExecutionCount=?, ExecutionTime=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query1>
+          <Query2> WHERE (ApplicationID=?) AND (ComponentID=?) AND (ComponentQueryID=?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Components INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ComponentExceptions ON Editors.EditorID = ComponentExceptions.EditorID) ON Languages.LanguageCode = ComponentExceptions.LanguageCode) ON (Components.ComponentID = ComponentExcep</Query0>
+          <Query1>tions.ComponentID) AND (Components.ApplicationID = ComponentExceptions.ApplicationID) WHERE (Components.ApplicationID=?) AND (Components.ComponentID=?) AND (Languages.LanguageCode = ?) AND (ComponentExceptions.Installed = 1) ORDER BY ResourceKey0, Resourc</Query1>
+          <Query2>eKey1, ResourceKey2, ResourceKey3</Query2>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>3</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Components INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ComponentExceptions ON Editors.EditorID = ComponentExceptions.EditorID) ON Languages.LanguageCode = ComponentExceptions.LanguageCode)</Query0>
+          <Query1> ON (Components.ComponentID = ComponentExceptions.ComponentID) AND (Components.ApplicationID = ComponentExceptions.ApplicationID)</Query1>
+          <Query2> WHERE (Components.ApplicationID=?) AND (Components.ComponentID=?) AND (ComponentExceptionID=?) AND (Languages.LanguageCode = ?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE ComponentTasks SET UserRoleMask=?, TaskName=?, TaskSortOrder=?, TaskEditable=?, TaskPublic=?, TaskRunnable=?, TaskRunAtStart=?, TaskActive=?, EditorID=?, TaskDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query0>
+          <Query1> WHERE (ApplicationID=?) AND (ComponentID=?) AND (ComponentTaskID=?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>20</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Language</ResourceKey1>
+          <ResourceKey2>ByCode</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Languages</Query0>
+          <Query1></Query1>
+          <Query2> WHERE (LanguageCode = ?)</Query2>
+          <Query3></Query3>
+          <Description>Load all installed Languages</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN (Languages INNER JOIN FrameworkExceptions ON Languages.LanguageCode = FrameworkExceptions.LanguageCode) ON Editors.EditorID = FrameworkExceptions.EditorID</Query0>
+          <Query1> WHERE (FrameworkExceptions.FrameworkExceptionID = ?) AND (Languages.LanguageCode = ?)</Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN (Languages INNER JOIN FrameworkExceptions ON Languages.LanguageCode = FrameworkExceptions.LanguageCode) ON Editors.EditorID = FrameworkExceptions.EditorID WHERE  (FrameworkExceptions.ResourceKey0=?) AND  (FrameworkExceptio</Query0>
+          <Query1>ns.ResourceKey1=?) AND  (FrameworkExceptions.ResourceKey2=?)  AND  (FrameworkExceptions.ResourceKey3=?) AND (Languages.LanguageCode=?)</Query1>
+          <Description>Please enter a Description blah blah</Description>
+          <ExecutionCount>25</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN (Languages INNER JOIN FrameworkExceptions ON Languages.LanguageCode = FrameworkExceptions.LanguageCode) ON Editors.EditorID = FrameworkExceptions.EditorID WHERE (Languages.LanguageCode = ?) AND (FrameworkExceptions.Install</Query0>
+          <Query1>ed = 1) ORDER BY ResourceKey0, ResourceKey1, ResourceKey2, ResourceKey3</Query1>
+          <Description>tested</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN (Languages INNER JOIN FrameworkStrings ON Languages.LanguageCode = FrameworkStrings.LanguageCode) ON Editors.EditorID = FrameworkStrings.EditorID WHERE (Languages.LanguageCode = ?) AND (FrameworkStrings.Installed = 1) ORDE</Query0>
+          <Query1>R BY ResourceKey0, ResourceKey1, ResourceKey2, ResourceKey3</Query1>
+          <Description>tested</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE FrameworkExceptions SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?, LanguageCode=?, Installed=?, EditorID=?, FrameworkException=?, ExceptionDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=? WHERE (Frame</Query0>
+          <Query1>workExceptionID=?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Applications INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ApplicationExceptions ON Editors.EditorID = ApplicationExceptions.EditorID) ON Languages.LanguageCode = ApplicationExceptions.LanguageCode)</Query0>
+          <Query1> ON (Editors.EditorID = Applications.EditorID) AND (Applications.ApplicationID = ApplicationExceptions.ApplicationID)</Query1>
+          <Query2>TO DO!!!</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Applications INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ApplicationExceptions ON Editors.EditorID = ApplicationExceptions.EditorID) ON Languages.LanguageCode = ApplicationExceptions.LanguageCode) ON (Applications.ApplicationID = Ap</Query0>
+          <Query1>plicationExceptions.ApplicationID)   WHERE (Applications.ApplicationID = ?) AND (ApplicationExceptions.ResourceKey0=?) AND (ApplicationExceptions.ResourceKey1=?) AND (ApplicationExceptions.ResourceKey2=?) AND (ApplicationExceptions.ResourceKey3=?)  AND (L</Query1>
+          <Query2>anguages.LanguageCode=?)</Query2>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>2</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Test</ResourceKey0>
+          <ResourceKey1>~</ResourceKey1>
+          <ResourceKey2>~</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcde</Query0>
+          <Query1>fghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789</Query1>
+          <Query2>abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij01234</Query2>
+          <Query3>56789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefgh*</Query3>
+          <Description>A Test Query hh h h hh h h h h</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE applicationexceptions</Query0>
+          <Query1> SET ResourceKey0=?, ResourceKey1=?, ResourceKey2=?, ResourceKey3=?, LanguageCode=?, Installed=?, EditorID=?, ApplicationException=?, ExceptionDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query1>
+          <Query2> WHERE (ApplicationID=?) AND (ApplicationExceptionID=?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+         <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN (DataTypes INNER JOIN FrameworkProperties ON DataTypes.DataTypeID = FrameworkProperties.DataTypeID) ON Editors.EditorID = FrameworkProperties.EditorID ORDER BY ResourceKey0, ResourceKey1, ResourceKey2, ResourceKey3</Query0>
+          <Description>tom&apos;s bit</Description>
+          <ExecutionCount>2</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN (DataTypes INNER JOIN FrameworkProperties ON DataTypes.DataTypeID = FrameworkProperties.DataTypeID) ON Editors.EditorID = FrameworkProperties.EditorID</Query0>
+          <Query1></Query1>
+          <Query2>TODO!!</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN (DataTypes INNER JOIN FrameworkProperties ON DataTypes.DataTypeID = FrameworkProperties.DataTypeID) ON Editors.EditorID = FrameworkProperties.EditorID WHERE  (FrameworkProperties.ResourceKey0=?) AND  (FrameworkProperties.R</Query0>
+          <Query1>esourceKey1=?) AND (FrameworkProperties.ResourceKey2=?) AND  (FrameworkProperties.ResourceKey3=?)</Query1>
+          <Description>Please enter a Descriptioescriptioescriptioescript</Description>
+          <ExecutionCount>107</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN (Languages INNER JOIN FrameworkStrings ON Languages.LanguageCode = FrameworkStrings.LanguageCode) ON Editors.EditorID = FrameworkStrings.EditorID WHERE  (FrameworkStrings.ResourceKey0=?) AND  (FrameworkStrings.ResourceKey1</Query0>
+          <Query1>=?) AND  (FrameworkStrings.ResourceKey2=?)  AND  (FrameworkStrings.ResourceKey3=?) AND (Languages.LanguageCode=?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>206</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Count</ResourceKey0>
+          <ResourceKey1>Components</ResourceKey1>
+          <ResourceKey2>~</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT Count(*) As ComponentCount FROM Components</Query0>
+          <Query1></Query1>
+          <Query2> WHERE ApplicationID = ?</Query2>
+          <Query3></Query3>
+          <Description></Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN Applications ON Editors.EditorID = Applications.EditorID WHERE ApplicationID = ?</Query0>
+          <Description></Description>
+          <ExecutionCount>2</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Exception</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Applications INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ApplicationExceptions ON Editors.EditorID = ApplicationExceptions.EditorID) ON Languages.LanguageCode = ApplicationExceptions.LanguageCode) ON (Applications.ApplicationID = Ap</Query0>
+          <Query1>plicationExceptions.ApplicationID) WHERE (Applications.ApplicationID=?) AND (Languages.LanguageCode=? ) AND (ApplicationExceptions.Installed=1) ORDER BY ResourceKey0, ResourceKey1, ResourceKey2, ResourceKey3</Query1>
+          <Description></Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN Applications ON Editors.EditorID = Applications.EditorID</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3> ORDER BY ApplicationSortOrder</Query3>
+          <Description></Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>LoadAtStart</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN Applications ON Editors.EditorID = Applications.EditorID WHERE (ApplicationLoadAtStart = 1) ORDER BY ApplicationSortOrder</Query0>
+          <Description></Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM DataTypes INNER JOIN (Editors INNER JOIN ApplicationProperties ON Editors.EditorID = ApplicationProperties.EditorID) ON DataTypes.DataTypeID = ApplicationProperties.DataTypeID WHERE (ApplicationID=?) AND (ApplicationProperties.ResourceKey0=?</Query0>
+          <Query1>) AND  (ApplicationProperties.ResourceKey1=?) AND  (ApplicationProperties.ResourceKey2=?)  AND  (ApplicationProperties.ResourceKey3=?)</Query1>
+          <Description></Description>
+          <ExecutionCount>28</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM DataTypes INNER JOIN (Editors INNER JOIN ApplicationProperties ON Editors.EditorID = ApplicationProperties.EditorID) ON DataTypes.DataTypeID = ApplicationProperties.DataTypeID</Query0>
+          <Query1></Query1>
+          <Query2> WHERE ApplicationID = ? AND ApplicationPropertyID = ?</Query2>
+          <Query3></Query3>
+          <Description></Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM DataTypes INNER JOIN (Editors INNER JOIN ApplicationProperties ON Editors.EditorID = ApplicationProperties.EditorID) ON DataTypes.DataTypeID = ApplicationProperties.DataTypeID WHERE ApplicationID = ? ORDER BY ResourceKey0, ResourceKey1, Reso</Query0>
+          <Query1>urceKey2, ResourceKey3</Query1>
+          <Description></Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>15</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Applications INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ApplicationStrings ON Editors.EditorID = ApplicationStrings.EditorID) ON Languages.LanguageCode = ApplicationStrings.LanguageCode) ON (Applications.ApplicationID = Application</Query0>
+          <Query1>Strings.ApplicationID) WHERE (Applications.ApplicationID = ?) AND (ApplicationStrings.ResourceKey0=?) AND (ApplicationStrings.ResourceKey1=?) AND (ApplicationStrings.ResourceKey2=?) AND (ApplicationStrings.ResourceKey3=?)  AND (Languages.LanguageCode=?)</Query1>
+          <Description></Description>
+          <ExecutionCount>2</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>String</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Applications INNER JOIN (Languages INNER JOIN (Editors INNER JOIN ApplicationStrings ON Editors.EditorID = ApplicationStrings.EditorID) ON Languages.LanguageCode = ApplicationStrings.LanguageCode) ON (Applications.ApplicationID = Application</Query0>
+          <Query1>Strings.ApplicationID) WHERE (Applications.ApplicationID = ?) AND (Languages.LanguageCode = ?) AND (ApplicationStrings.Installed=1) ORDER BY ResourceKey0, ResourceKey1, ResourceKey2, ResourceKey3</Query1>
+          <Description></Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ApplicationTasks ON Editors.EditorID = ApplicationTasks.EditorID WHERE ApplicationID = ? AND ApplicationTaskID = ?</Query0>
+          <Description></Description>
+          <ExecutionCount>12</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Application</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ApplicationTasks ON Editors.EditorID = ApplicationTasks.EditorID WHERE ApplicationID = ? ORDER BY TaskSortOrder</Query0>
+          <Description></Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN Components ON Editors.EditorID = Components.EditorID WHERE ApplicationID = ? AND ComponentID = ?</Query0>
+          <Description></Description>
+          <ExecutionCount>6</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <!--
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>EventLog</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT TOP ? * FROM EventLog</Query0>
+          <Query1></Query1>
+          <Query2> WHERE (ApplicationID = ?) AND (ComponentID = ?)</Query2>
+          <Query3> ORDER BY EventID Desc</Query3>
+          <Description></Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>  -->
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN Components ON Editors.EditorID = Components.EditorID WHERE ApplicationID = ? ORDER BY ComponentSortOrder</Query0>
+          <Description></Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM DataTypes INNER JOIN (Editors INNER JOIN ComponentProperties ON Editors.EditorID = ComponentProperties.EditorID) ON DataTypes.DataTypeID = ComponentProperties.DataTypeID WHERE (ApplicationID=?) AND (ComponentID=?) AND (ComponentProperties.Re</Query0>
+          <Query1>sourceKey0=?) AND  (ComponentProperties.ResourceKey1=?) AND  (ComponentProperties.ResourceKey2=?)  AND  (ComponentProperties.ResourceKey3=?)</Query1>
+          <Description></Description>
+          <ExecutionCount>37</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM DataTypes INNER JOIN (Editors INNER JOIN ComponentProperties ON Editors.EditorID = ComponentProperties.EditorID) ON DataTypes.DataTypeID = ComponentProperties.DataTypeID</Query0>
+          <Query1></Query1>
+          <Query2> WHERE ApplicationID = ? AND ComponentID = ? AND PropertyID = ?</Query2>
+          <Query3></Query3>
+          <Description></Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Property</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM DataTypes INNER JOIN (Editors INNER JOIN ComponentProperties ON Editors.EditorID = ComponentProperties.EditorID) ON DataTypes.DataTypeID = ComponentProperties.DataTypeID WHERE ApplicationID = ? AND ComponentID = ? ORDER BY ResourceKey0, Reso</Query0>
+          <Query1>urceKey1, ResourceKey2, ResourceKey3</Query1>
+          <Description>Select the list of Component Properties</Description>
+          <ExecutionCount>3</ExecutionCount>
+          <ExecutionTime>15</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Component</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN ComponentTasks ON Editors.EditorID = ComponentTasks.EditorID WHERE ApplicationID = ? AND ComponentID = ? AND ComponentTaskID = ?</Query0>
+          <Description></Description>
+          <ExecutionCount>40</ExecutionCount>
+          <ExecutionTime>16</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>ByName</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN FrameworkTasks ON Editors.EditorID = FrameworkTasks.EditorID</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN FrameworkTasks ON Editors.EditorID = FrameworkTasks.EditorID ORDER BY TaskSortOrder</Query0>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Task</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE FrameworkTasks SET UserRoleMask=?, TaskName=?, TaskSortOrder=?, TaskEditable=?, TaskPublic=?, TaskRunnable=?, TaskRunAtStart=?, TaskActive=?, EditorID=?, TaskDescription=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=?</Query0>
+          <Query1> WHERE (FrameworkTaskID = ?)</Query1>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>22</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Resource</ResourceKey1>
+          <ResourceKey2>Editor</ResourceKey2>
+          <ResourceKey3>List</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors ORDER BY EditorClassName</Query0>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>UserInterface</ResourceKey0>
+          <ResourceKey1>Select</ResourceKey1>
+          <ResourceKey2>LookAndFeel</ResourceKey2>
+          <ResourceKey3>All</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM lookandfeels ORDER BY LookAndFeelName</Query0>
+          <Description>Select the list of Java LookAndFeels</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Country</ResourceKey1>
+          <ResourceKey2>List</ResourceKey2>
+          <ResourceKey3>All</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM countries ORDER BY ISOCountryName</Query0>
+          <Description>Select the full list of Countries ordered by the ISO Country Name</Description>
+          <ExecutionCount>1</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>ByID</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Editors INNER JOIN Frameworks ON Editors.EditorID = Frameworks.EditorID WHERE FrameworkID = ?</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>Framework</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE Frameworks SET UserRoleMask=?, FrameworkName=?, FrameworkEditable=?, FrameworkActive=?, FrameworkLoadAtStart=?, EditorID=?, FrameworkDescription=?,FrameworkLanguage=?,FrameworkCountry=?,FrameworkTimezone=?,FrameworkLongitude=?,FrameworkLatitude=?,</Query0>
+          <Query1> SelectFrameworkQueryList=?, SelectFrameworkQueryByName=?, FrameworkExportsFolder=?, FrameworkSplashScreenFilename=?, FrameworkIconFilename=?, FrameworkHelpFilename=?, FrameworkAboutFilename=?, FrameworkMapFilename=?,</Query1>
+          <Query2> FrameworkMapTopLeftLongitude=?, FrameworkMapTopLeftLatitude=?, FrameworkMapBottomRightLongitude=?, FrameworkMapBottomRightLatitude=?, DateCreated=?, TimeCreated=?, DateModified=?, TimeModified=? WHERE (FrameworkID=?)</Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Select</ResourceKey0>
+          <ResourceKey1>User</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>~</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>SELECT * FROM Users INNER JOIN UserRoles ON Users.RoleID = UserRoles.RoleID WHERE (Users.Username=?) AND (Users.Password=?) AND (Users.UserActive=1) ORDER BY Users.Username</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+    <Query>
+          <ResourceKey0>Update</ResourceKey0>
+          <ResourceKey1>User</ResourceKey1>
+          <ResourceKey2>Data</ResourceKey2>
+          <ResourceKey3>Login</ResourceKey3>
+          <Editable>1</Editable>
+          <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+          <Query0>UPDATE Users SET LastLoginDate=?, LastLoginTime=? WHERE UserID=?</Query0>
+          <Query1></Query1>
+          <Query2></Query2>
+          <Query3></Query3>
+          <Description>Please enter a Description</Description>
+          <ExecutionCount>0</ExecutionCount>
+          <ExecutionTime>0</ExecutionTime>
+    </Query>
+</Queries>

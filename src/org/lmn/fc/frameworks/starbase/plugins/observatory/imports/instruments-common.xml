@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="yes"?>
+
+
+<Instruments xmlns="instruments.xmlbeans.model.fc.lmn.org"
+        >
+
+    <!-- We have to have at least one dummy Instrument to make this work :-) -->
+    <!-- Leave out the OrderBy so that it is ignored -->
+    <Instrument>
+        <Identifier>Separator</Identifier>
+        <Name> </Name>
+        <Description>Separator</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.separator.Separator</InstrumentClassname>
+        <Controllable>false</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>Separator</ResourceKey>
+
+        <!-- Uncomment this if you want a separator to appear -->
+        <!--<ObservatoryGroups>-->
+            <!--<gp:Group>-->
+                <!--<gp:GroupID>0</gp:GroupID>-->
+                <!--<gp:SortIndex>0</gp:SortIndex>-->
+            <!--</gp:Group>-->
+        <!--</ObservatoryGroups>-->
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- The (optional) common Port used by any Instrument in the Observatory -->
+
+     <StaribusPort>
+         <Name>Staribus</Name>
+         <Description>The Staribus Common Port</Description>
+         <ResourceKey>Staribus</ResourceKey>
+
+         <!-- These are the real Streams for Staribus operation -->
+         <TxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.common.dao.StaribusTxStream</TxStream>
+         <RxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.common.dao.StaribusRxStream</RxStream>
+
+         <!-- The Loopback Streams test the functionality of wiring or COM adaptors -->
+         <!--<TxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.parsers.staribuslogger.dao.LoopbackStaribusTxStream</TxStream>-->
+         <!--<RxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.parsers.staribuslogger.dao.LoopbackStaribusRxStream</RxStream>-->
+
+         <!-- These 'stub' Streams mimic the behaviour of Staribus for the Core Command set **only** -->
+         <!-- This is to allow development of Core commands step by step -->
+         <!--<TxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.parsers.staribuslogger.dao.StubStaribusTxStream</TxStream>-->
+         <!--<RxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.parsers.staribuslogger.dao.StubStaribusRxStream</RxStream>-->
+     </StaribusPort>
+
+</Instruments>

@@ -1,0 +1,95 @@
+<!-- Copyright 2000, 2001, 2002, 2003, 04, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2013 -->
+<!-- Laurence Newell -->
+<!-- starbase@ukraa.com -->
+<!-- radio.telescope@btinternet.com -->
+<!-- -->
+<!-- This file is part of Starbase. -->
+<!-- -->
+<!-- Starbase is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+<!-- -->
+<!-- Starbase is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU General Public License for more details. -->
+<!-- -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Starbase.  If not, see http://www.gnu.org/licenses. -->
+
+<html>
+<head>
+<title>Starbase GPS Receiver</title>
+<body>
+<h3>Starbase GPS Receiver</h3>
+<br>
+<hr>
+<br> The GPS Receiver interprets the NMEA 0183 standard protocol, used by most GPS receivers to transmit data.
+<br> NMEA output is EIA-422A but for most purposes you can consider it RS-232 compatible.
+<br> Use 4800 bps, 8 data bits, no parity and one stop bit (8N1).
+<br> NMEA 0183 sentences are all ASCII. Each sentence begins with a dollar sign ($)
+<br> and ends with a carriage return linefeed (CR LF).
+<br> Data are comma delimited. All commas must be included as they act as markers.
+<br> Some GPS receivers do not send some of the fields.
+<br> A checksum is optionally added (in a few cases it is mandatory).
+<br> Following the $ is the address field aaccc.
+<br> aa is the device id. Transmission of the device ID is usually optional.
+<br> 'GP' is used to identify GPS data.
+<br> 'ccc' is the sentence formatter, otherwise known as the sentence name.
+<br>
+<br> e.g. The Garmin GPS35-PC unit produces the following NMEA sentences:
+<br>
+<br>  $GPGGA  Global Positioning System Fix Data
+<br>  $GPGSA  GPS DOP and Active Satellites
+<br>  $GPRMC  Recommended minimum specific GPS/Transit data
+<br>  $GPGSV  GPS Satellites in view
+<br>
+<hr>
+<br> To run the GPS Receiver, first select the GPS module.
+<br>
+<br> Use the <b>getInterpretedNMEA()</b> command to see which NMEA sentences are currently supported by Starbase.
+<br> This information is stored in Starbase, <b>NOT in the GPS receiver itself</b>.
+<br> (If some sentences are not supplied, then it may still be possible to obtain some useful information.)
+<br>
+<br> To obtain the latest position from the GPS Receiver, execute the <b>getGpsFix()</b> command.
+<br>
+<br> To capture repeated fixes and produce a scatter plot of the results, execute the <b>captureScatterPlot()</b> command.
+<br> This command will calculate the centroid of the accumulated fixes, or just use the latest fix.
+<br> It is possible to choose to update the location of the Framework, the Observatory, or both.
+<br>
+<br> Look in the <b>InstrumentLog</b> tab to see the detailed GPS information returned by the receiver.
+<br> Look in the <b>EventLog</b> tab to see if there are any warnings about missing or invalid data.
+<br> (It may be possible to configure your receiver to produce the required NMEA sentences.)
+<br>
+<br> The <b>SatelliteLocations</b> tab will show all currently visible satellites
+<br> on an Elevation-Azimuth projection. It will also show the position of the Sun and other objects.
+<br> To clear the satellite tracks and start again, execute the <b>reset()</b> command.
+<br>
+<br>    Zoom In
+<br>        Left_click zooms in
+<br>        Shift-left_click zooms to the full extents of the display
+<br>        Left_click in lower left corner (also) zooms to full extents
+<br>
+<br>    Zoom Out
+<br>        Right_click zooms out
+<br>        Shift-right_click zooms to the full extents of the display
+<br>
+<br>    Properties
+<br>        Control-right_click looks for the nearest object and shows a properties box
+<br>
+<br>    <i>Reserved
+<br>        Control-left_click moves the cursor in tracking mode (not implemented yet)</i>
+<br>
+<hr>
+<br>For information about GPS, see for example
+<br>
+<br>  <a href="http://en.wikipedia.org/wiki/Global_Positioning_System">http://en.wikipedia.org/wiki/Global_Positioning_System</a>
+<br>  <a href="http://www.nmea.org">http://www.nmea.org</a>
+<br>  <a href="http://home.mira.net/~gnb/gps/nmea.html">http://home.mira.net/~gnb/gps/nmea.html</a>
+<br>  <a href="http://www.garmin.com/products/gps35/spec.html">http://www.garmin.com/products/gps35/spec.html</a>
+<br>
+<br>  <b>Remember that this version of the Starbase browser does not have a 'Back' button!</b>
+<hr>
+</body>
+</html>

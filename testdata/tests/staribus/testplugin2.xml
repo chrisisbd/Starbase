@@ -1,0 +1,62 @@
+<!-- ............................................................................... -->
+<!-- Importer Plugin -->
+
+<Plugin>
+    <!-- A virtual Plugin -->
+    <Identifier>Importer</Identifier>
+    <Name>Importer</Name>
+    <Description>The Importer Module</Description>
+    <ResourceKey>Importer</ResourceKey>
+
+    <CommandCodeBase>80</CommandCodeBase>
+
+    <Command>
+       <Identifier>importRawDataLocal</Identifier>
+       <CommandCode>00</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+       <Description>Get a single data file from the local file system</Description>
+        <Parameter>
+            <Name>Filename</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Tooltip>The filename to be processed</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Format</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Stardata, RadioSkyPipe, TimestampedCommaSeparated, TimestampedTabSeparated, IndexedCommaSeparated, IndexedTabSeparated, JohnCook</Choices>
+            <Tooltip>Allowed values: Stardata, RadioSkyPipe, TimestampedCommaSeparated, TimestampedTabSeparated, IndexedCommaSeparated, IndexedTabSeparated, JohnCook</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Filter</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>PassThrough,SimpleIntegrator</Choices>
+            <Tooltip>Allowed values: PassThrough, SimpleIntegrator</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Response>
+            <Name>Ack</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+   </Command>
+</Plugin>

@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Properties xmlns="properties.xmlbeans.model.fc.lmn.org">
+
+    <!-- AntennaTester -->
+
+    <!-- AntennaTester DAO -->
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>AntennaTester</Key>
+            <Key>Dao</Key>
+            <Key>Timeout</Key>
+            <Key>Period</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>60</Value>
+        <Description>The Timeout period in seconds for the AntennaTester DAO</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>AntennaTester</Key>
+            <Key>Dao</Key>
+            <Key>Update</Key>
+            <Key>Period</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>60</Value>
+        <Description>The interval in seconds between DAO update cycles of the AntennaTester</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+</Properties>

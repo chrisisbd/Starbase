@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="stardata.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="stardata.xmlbeans.model.fc.lmn.org"
+           xmlns:metadata="metadata.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="metadata.xmlbeans.model.fc.lmn.org"
+               schemaLocation="metadata.xsd"/>
+
+
+    <xs:element name="Stardata">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- An optional Header, containing Metadata and Metadata describing the Metadata (!) -->
+                <xs:element name="Header"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="HeaderType"/>
+
+                <!-- Optional Data, containing Data and Metadata describing the Data -->
+                <xs:element name="Data"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="DataType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="HeaderType">
+        <xs:sequence>
+            <!-- Metadata describing the Metadata -->
+            <xs:element name="MetadataMetadata"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="metadata:Metadata"/>
+
+            <!-- The Header Metadata -->
+            <xs:element name="Metadata"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="metadata:Metadata"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DataType">
+        <xs:sequence>
+            <!-- Metadata describing the Data -->
+            <xs:element name="DataMetadata"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="metadata:Metadata"/>
+
+            <!-- A series of columns, as Date, Time and one or more Strings representing the data -->
+            <!-- or just columns of free-format data -->
+            <!-- Both types have verbose and compact forms (to save storage) -->
+            <xs:choice>
+                <!-- A verbose form where the meaning is clear -->
+                <!-- Date, Time and multiple Columns -->
+                <xs:element name="Record"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            type="RecordType"/>
+
+                <!-- Multiple Columns only -->
+                <xs:element name="RecordData"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            type="ColumnData"/>
+
+                <!-- A shorter form to save storage -->
+                <!-- Date, Time and multiple Columns -->
+                <xs:element name="R"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            type="RT"/>
+
+                <!-- Multiple Columns only -->
+                <xs:element name="RD"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            type="CD"/>
+                <!--</xs:choice>-->
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Verbose form of RecordType -->
+    <xs:complexType name="RecordType">
+        <xs:sequence>
+            <xs:element name="Date"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!--<xs:pattern value="(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])"/>-->
+                        <!-- 2000-01-01 -->
+                        <xs:length value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Time"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])([.][0-9][0-9][0-9])?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Column"
+                        minOccurs="1"
+                        maxOccurs="unbounded">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!--<xs:pattern value="([0-9.\-\+e])*"/>-->
+                        <xs:minLength value="0"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Verbose form of ColumnData -->
+    <xs:complexType name="ColumnData">
+        <xs:sequence>
+            <xs:element name="Column"
+                        minOccurs="1"
+                        maxOccurs="unbounded">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!--<xs:pattern value="([0-9.\-\+e])*"/>-->
+                        <xs:minLength value="0"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Compact form of RecordType -->
+    <xs:complexType name="RT">
+        <xs:sequence>
+            <xs:element name="D"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!--<xs:pattern value="(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])"/>-->
+                        <xs:length value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="T"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])([.][0-9][0-9][0-9])?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="C"
+                        minOccurs="1"
+                        maxOccurs="unbounded">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!--<xs:pattern value="([0-9.\-\+e])*"/>-->
+                        <xs:minLength value="0"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Compact form of ColumnData only -->
+    <xs:complexType name="CD">
+        <xs:sequence>
+            <xs:element name="C"
+                        minOccurs="1"
+                        maxOccurs="unbounded">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!--<xs:pattern value="([0-9.\-\+e])*"/>-->
+                        <xs:minLength value="0"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="InstrumentGenerator"
+         default="do_single_instrument">
+
+    <taskdef name="instrument-environment"
+             classname="org.lmn.fc.common.ant.DeriveInstrumentEnvironment"
+             classpath="${builderclasspath2}"/>
+
+    <target name="do_single_instrument"
+            description="Make Instrument Jar">
+
+        <!-- Run the helper class to find out various paths etc. -->
+        <instrument-environment basedir="${basedir}"/>
+
+        <!-- The helper class fills in the following properties -->
+        <echo message="----------------------------------------------------"/>
+        <echo message="BUILD SINGLE INSTRUMENT"/>
+        <echo message="basedir=${basedir}"/>
+        <echo message="project-root=${project-root}"/>
+        <echo message="instrument-basedir=${instrument-basedir}"/>
+        <echo message="instrument-path=${instrument-path}"/>
+        <echo message="instrument-package=${instrument-package}"/>
+        <echo message="instrument-jarname=${instrument-jarname}"/>
+        <echo message="instrument-folder=${instrument-folder}"/>
+        <echo message="----------------------------------------------------"/>
+
+        <!-- Refer to somewhere temporary to assemble each Instrument's components ready for the jars -->
+        <property name="instrument.tmp.dir"
+                  location="${project-root}/instrument-tmp"/>
+
+        <!-- Refer to somewhere temporary to assemble each Instrument's composite distribution Jar -->
+        <property name="instrument.distribution.tmp.dir"
+                  location="${project-root}/instrument-distribution"/>
+
+        <!-- Allow access to the version.number and build.number etc. -->
+        <property file="${project-root}/build.properties"/>
+
+        <!-- Refer to an Imports folder for the Instrument XML-->
+        <property name="instruments.imports.dir"
+                  location="${project-root}/dist/plugins/observatory/imports"/>
+
+        <!-- Refer to a Libraries folder for the Instrument JARs-->
+        <property name="instruments.libraries.dir"
+                  location="${project-root}/dist/plugins/observatory/libraries"/>
+
+        <!-- Refer to a Distribution folder for the Instrument JARs-->
+        <property name="instruments.distribution.dir"
+                  location="${project-root}/dist/datastore/distribution"/>
+
+        <!-- Timestamp every build -->
+        <tstamp>
+          <format property="TODAY" pattern="yyyy-MM-dd HH:mm:ss" />
+        </tstamp>
+
+        <!-- Copy only the Instrument and Properties XML configuration files to the Imports folder -->
+        <copy todir="${instruments.imports.dir}">
+            <fileset dir="${instrument-basedir}">
+                <include name="*-instrument.xml"/>
+                <include name="*-properties.xml"/>
+                <include name="*-macros.xml"/>
+                <include name="*-metadata.xml"/>
+                <include name="*-poi.xml"/>
+                <exclude name="build*.xml"/>
+                <exclude name="*.txt"/>
+                <exclude name="*.java"/>
+            </fileset>
+        </copy>
+
+        <!-- And the same again ready for the Distribution Jar -->
+        <copy todir="${instrument.distribution.tmp.dir}">
+            <fileset dir="${instrument-basedir}">
+                <include name="*-instrument.xml"/>
+                <include name="*-properties.xml"/>
+                <include name="*-macros.xml"/>
+                <include name="*-metadata.xml"/>
+                <include name="*-poi.xml"/>
+                <exclude name="build*.xml"/>
+                <exclude name="*.txt"/>
+                <exclude name="*.java"/>
+            </fileset>
+        </copy>
+
+        <!-- Now an Icon for the Plugin Manager UI -->
+        <copy todir="${instrument.distribution.tmp.dir}">
+            <fileset dir="${instrument-basedir}/images">
+                <include name="distribution.png"/>
+                <exclude name="build*.xml"/>
+                <exclude name="*.txt"/>
+                <exclude name="*.java"/>
+            </fileset>
+        </copy>
+
+        <!-- ................................................................................... -->
+        <!-- Jar the individual Instrument -->
+
+        <mkdir dir="${instrument.tmp.dir}"/>
+        <mkdir dir="${instrument.tmp.dir}/${instrument-path}"/>
+
+         <!--Obtain all files for this Instrument except the XML (Instrument and Properties) -->
+        <copy todir="${instrument.tmp.dir}/${instrument-path}">
+            <fileset dir="${project-root}/classes/${instrument-path}">
+                <exclude name="**/*.xml"/>
+            </fileset>
+        </copy>
+
+         <!--Make the Instrument Jar from everything in the tmp folder-->
+        <jar destfile="${instruments.libraries.dir}/${instrument-jarname}.jar"
+             basedir="${instrument.tmp.dir}">
+            <manifest>
+                <attribute name="Distribution" value="${instrument-jarname}"/>
+                <attribute name="Plugin-Category" value="Instrument"/>
+                <attribute name="Version-Number" value="${version.number}"/>
+                <attribute name="Build-Number" value="${build.number}"/>
+                <attribute name="Build-Status" value="${build.status}"/>
+                <attribute name="Build-Date" value="${TODAY}"/>
+                <attribute name="Built-By" value="IntelliJ"/>
+                <attribute name="Author" value="Laurence Newell"/>
+                <attribute name="Website" value="www.ukraa.com/www/downloads/${instrument-jarname}.html"/>
+                <attribute name="Email" value="starbase@ukraa.com"/>
+            </manifest>
+        </jar>
+
+        <!-- Another copy of the Instrument Jar for the Distribution Jar -->
+        <jar destfile="${instrument.distribution.tmp.dir}/${instrument-jarname}.jar"
+             basedir="${instrument.tmp.dir}">
+            <manifest>
+                <attribute name="Distribution" value="${instrument-jarname}"/>
+                <attribute name="Plugin-Category" value="Instrument"/>
+                <attribute name="Version-Number" value="${version.number}"/>
+                <attribute name="Build-Number" value="${build.number}"/>
+                <attribute name="Build-Status" value="${build.status}"/>
+                <attribute name="Build-Date" value="${TODAY}"/>
+                <attribute name="Built-By" value="IntelliJ"/>
+                <attribute name="Author" value="Laurence Newell"/>
+                <attribute name="Website" value="www.ukraa.com/www/downloads/${instrument-jarname}.html"/>
+                <attribute name="Email" value="starbase@ukraa.com"/>
+            </manifest>
+        </jar>
+
+        <!-- Tidy up -->
+        <delete dir="${instrument.tmp.dir}"/>
+
+        <!-- Now make the Distribution Jar -->
+        <jar destfile="${instruments.distribution.dir}/${instrument-jarname}-distribution.jar"
+             basedir="${instrument.distribution.tmp.dir}">
+            <manifest>
+                <attribute name="Distribution" value="${instrument-jarname}"/>
+                <attribute name="Plugin-Category" value="Instrument"/>
+                <attribute name="Version-Number" value="${version.number}"/>
+                <attribute name="Build-Number" value="${build.number}"/>
+                <attribute name="Build-Status" value="${build.status}"/>
+                <attribute name="Build-Date" value="${TODAY}"/>
+                <attribute name="Built-By" value="IntelliJ"/>
+                <attribute name="Author" value="Laurence Newell"/>
+                <attribute name="Website" value="www.ukraa.com/www/downloads/${instrument-jarname}.html"/>
+                <attribute name="Email" value="starbase@ukraa.com"/>
+            </manifest>
+        </jar>
+
+        <!-- Tidy up -->
+        <delete dir="${instrument.distribution.tmp.dir}"/>
+
+        <!-- ................................................................................... -->
+        <!-- Make the Javadoc for the individual Instruments -->
+
+        <!--<mkdir dir="${instrument.tmp.dir}"/>-->
+        <!--<mkdir dir="${instrument.tmp.dir}/${instrument-path}"/>-->
+
+        <!--<javadoc packagenames="${instrument-package}.*"-->
+                 <!--sourcepath="${project-root}/src"-->
+                 <!--defaultexcludes="yes"-->
+                 <!--destdir="${instrument.tmp.dir}/${instrument-path}/javadoc"-->
+                 <!--author="true"-->
+                 <!--version="true"-->
+                 <!--use="true"-->
+                 <!--windowtitle="${instrument-jarname}"-->
+                 <!--additionalparam="-breakiterator">-->
+        <!--</javadoc>-->
+
+        <!-- Create the Instrument Javadoc Jar from the data in instrument.tmp.dir -->
+        <!--<jar destfile="${instruments.dist.dir}/${instrument-jarname}-javadoc.jar"-->
+             <!--basedir="${instrument.tmp.dir}">-->
+            <!--<manifest>-->
+                <!--<attribute name="Built-By" value="Observatory"/>-->
+                <!--<attribute name="Version-Number" value="${version.number}"/>-->
+                <!--<attribute name="Build-Number" value="${build.number}"/>-->
+                <!--<attribute name="Build-Status" value="${build.status}"/>-->
+                <!--<attribute name="Build-Date" value="${TODAY}"/>-->
+            <!--</manifest>-->
+        <!--</jar>-->
+
+        <!-- Tidy up -->
+        <!--<delete dir="${instrument.tmp.dir}"/>-->
+
+    </target>
+
+</project>

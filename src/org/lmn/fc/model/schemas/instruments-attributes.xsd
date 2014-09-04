@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="attributes.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="attributes.xmlbeans.model.fc.lmn.org"
+           xmlns:roles="roles.xmlbeans.model.fc.lmn.org"
+           xmlns:groups="groups.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="roles.xmlbeans.model.fc.lmn.org"
+               schemaLocation="roles.xsd"/>
+
+    <xs:import namespace="groups.xmlbeans.model.fc.lmn.org"
+               schemaLocation="observatorygroups.xsd"/>
+
+    <!-- Define all Instrument Attributes in the Observatory -->
+    <xs:element name="Attributes">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- The top-level element is an unbounded list of Configuration -->
+                <xs:element maxOccurs="unbounded"
+                            name="Configuration"
+                            type="Configuration"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Configuration">
+        <xs:sequence>
+
+            <!-- A unique Identifier for the Instrument, recognisable by Starbase -->
+            <xs:element name="Identifier">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The User Roles permitted to use this Instrument -->
+            <xs:element name="UserRoles"
+                        minOccurs="1"
+                        maxOccurs="1"
+                        type="UserRoles"/>
+
+            <!-- Indicate the Groups in which the Instrument must appear in the Observatory UI -->
+            <xs:element name="ObservatoryGroups"
+                        minOccurs="0"
+                        maxOccurs="1"
+                        type="groups:ObservatoryGroups"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- The User Roles permitted to use this Instrument -->
+    <!-- The Role Names are specified in roles.xsd -->
+    <xs:complexType name="UserRoles">
+        <xs:sequence>
+            <xs:element minOccurs="1"
+                        maxOccurs="unbounded"
+                        name="RoleName"
+                        type="roles:RoleName"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

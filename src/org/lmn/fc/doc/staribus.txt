@@ -1,0 +1,57 @@
+Commands
+
+03 00  getSpace - Returns percentage of available storage in fixed decimal format (three digits for 100%)
+
+Usage example - Send: 2B 03 00
+                Reply: 2B 03 00 00 00 US 0 7 7 US  Indicates 77% memory space remaining.
+
+03 01  getData - Virtual command not sent to controller
+
+03 02  getRate - Returns the capture sample rate in fixed format decimal seconds (four digits)
+
+Usage example - Send: 2B 03 02
+                Reply: 2B 03 02 00 00 US 0 0 0 5 US   Indicates 5 seconds
+
+Note: Although the routine will accept settings between 0001 and 9999 seconds, the timer used
+      to generate the interupt uses one byte and is limited to 255 seconds. Please limit the
+      range to 0001 to 0255. This is adequate for current needs. A trap to stop a values of zero
+      or above 255 will be added, I am no sure why I did not do this earlier.
+
+03 03  setRate - Sets the capture sample rate in Fixed format decimal seconds (four digits)
+
+Usage example - Send: 2B 03 03 US 0 0 1 4 US    Sets the sample rate to 14 seconds
+                Reply: 2B 03 03 00 00
+
+03 04  captureActive - Enables / Disables Capture
+
+Usage example - Send: 2B 03 04 US Y US or 2B 03 04 US N US   Capital Y to enable Capital N to disable
+                Reply: 2B 03 04 00 00
+
+03 05  getDataMaxBlock - Returns the number of blocks captured in fixed format Hexadecimal (four characters)
+
+Usage example - Send: 2B 03 05
+                Reply: 2B 03 05 00 00 US 0 5 A C US   Indicates that a total of 05AC blocks have been captured
+
+Note: The range is from 0000h to FFFFh. The first block is 0000h, the maximum value, given 1MB of RAM is 0FE7h
+      1800h is reserved for buffers. A block held in hex in the controller is 256 bytes long.
+      FFFFh blocks x 256 bytes is over 16MB giving plenty of scope !
+
+03 06  getDataBlock - Reads the data block indicated by the included value/parameter
+
+Usage example - Send: 2B 03 06 US 0 1 2 B US    Requests the data held in block 012Bh
+                Reply: 2B 03 06 00 00 US >>>>> 512 bytes of ASCII coded Data <<<<< US
+
+The data will vary in format depending upon the instrument type. The VLF receiver using and on-board A2D will provide a voltage
+between 0000 and 2500mV. The magnetometer provides a signed value from -512 to +512. So the VLF data is in effect a single
+column of ddddmV. The magnetometer is two columns +XXX  and -YYY.
+
+The number of samples carried by a block depends upon the number of parameters recorded. The VLF with only 1 voltage to record
+has 120 samples, the magnetometer with 2 values to record has 60 samples.
+
+The data returned in the 512 byte 'field' of the command has a 32 byte header carrying date/time in the agreed ISO format. There are
+spaces to pad the block to 512 bytes, this area could carry the instrument temperature that I capture in the internal block header, but
+have not included in the output data pending some agreement between ourselves.
+
+I have attached an Excel spreadsheet that should explain the format of the data block. This is a messy area and it is easy to get confused
+when swapping from hex coded values internally to ASCII character representations in the output data. All data in the Excel table is an
+ASCII character.

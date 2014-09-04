@@ -1,0 +1,674 @@
+Check of field values for a date of 2007.0: 
+Returns magnetic variation above 60 degrees latitude.
+For a latitude of -45 degrees, a longitude of -180 degrees, and an altitude of 0 kilometers: 
+    The declination is: 25.329177983720754 degrees.
+    The total intensity is: 56866.23248706895 nT.
+    The dip angle is: -68.26145438705987 degrees.
+    The horizontal intensity is: 21061.64578636555 nT.
+    The vertical intensity is: -52822.11160151633 nT.
+    The north intensity is: 9010.555677799573 nT.
+    The east intensity is: 19036.88024881187 nT.
+For a latitude of -45 degrees, a longitude of -180 degrees, and an altitude of 100 kilometers: 
+    The declination is: 25.196062330765134 degrees.
+    The total intensity is: 54186.70770389365 nT.
+    The dip angle is: -68.29111098385535 degrees.
+    The horizontal intensity is: 20043.17012752173 nT.
+    The vertical intensity is: -50343.52612825633 nT.
+    The north intensity is: 8532.72038286333 nT.
+    The east intensity is: 18136.18900509829 nT.
+For a latitude of -45 degrees, a longitude of -120 degrees, and an altitude of 0 kilometers: 
+    The declination is: 25.91028846272569 degrees.
+    The total intensity is: 43017.12456897395 nT.
+    The dip angle is: -56.69520298743716 degrees.
+    The horizontal intensity is: 23620.39307331064 nT.
+    The vertical intensity is: -35952.05191981288 nT.
+    The north intensity is: 10321.245204841784 nT.
+    The east intensity is: 21246.05531291001 nT.
+For a latitude of -45 degrees, a longitude of -120 degrees, and an altitude of 100 kilometers: 
+    The declination is: 25.68184798010332 degrees.
+    The total intensity is: 41003.52373504846 nT.
+    The dip angle is: -56.68117629003736 degrees.
+    The horizontal intensity is: 22523.12819671487 nT.
+    The vertical intensity is: -34263.64917700726 nT.
+    The north intensity is: 9760.92893260295 nT.
+    The east intensity is: 20298.166669389804 nT.
+For a latitude of -45 degrees, a longitude of -60 degrees, and an altitude of 0 kilometers: 
+    The declination is: 0.6790862149734272 degrees.
+    The total intensity is: 26136.850507027568 nT.
+    The dip angle is: -44.90612918320328 degrees.
+    The horizontal intensity is: 18511.79874185588 nT.
+    The vertical intensity is: -18451.240114629974 nT.
+    The north intensity is: 219.40207680324073 nT.
+    The east intensity is: 18510.498518075394 nT.
+For a latitude of -45 degrees, a longitude of -60 degrees, and an altitude of 100 kilometers: 
+    The declination is: 0.6672597924138505 degrees.
+    The total intensity is: 25307.764298328806 nT.
+    The dip angle is: -45.28259420647529 degrees.
+    The horizontal intensity is: 17806.811298251025 nT.
+    The vertical intensity is: -17983.336875236637 nT.
+    The north intensity is: 207.3713061014107 nT.
+    The east intensity is: 17805.6037738945 nT.
+For a latitude of -45 degrees, a longitude of 0 degrees, and an altitude of 0 kilometers: 
+    The declination is: -22.32788392024724 degrees.
+    The total intensity is: 25119.48018190745 nT.
+    The dip angle is: -63.33015279704696 degrees.
+    The horizontal intensity is: 11274.848179541961 nT.
+    The vertical intensity is: -22446.961556912785 nT.
+    The north intensity is: -4283.386789507651 nT.
+    The east intensity is: 10429.515764559352 nT.
+For a latitude of -45 degrees, a longitude of 0 degrees, and an altitude of 100 kilometers: 
+    The declination is: -22.294145687176876 degrees.
+    The total intensity is: 24466.80553848414 nT.
+    The dip angle is: -63.12900284632859 degrees.
+    The horizontal intensity is: 11058.585740567354 nT.
+    The vertical intensity is: -21825.0373350544 nT.
+    The north intensity is: -4195.203027585971 nT.
+    The east intensity is: 10231.939705589215 nT.
+For a latitude of -45 degrees, a longitude of 60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -50.43008101697929 degrees.
+    The total intensity is: 42298.48775381723 nT.
+    The dip angle is: -64.92962142447338 degrees.
+    The horizontal intensity is: 17923.188754473536 nT.
+    The vertical intensity is: -38313.46200921211 nT.
+    The north intensity is: -13816.050482636821 nT.
+    The east intensity is: 11417.418455575566 nT.
+For a latitude of -45 degrees, a longitude of 60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -49.374312036766995 degrees.
+    The total intensity is: 40587.98051019441 nT.
+    The dip angle is: -65.22066890992251 degrees.
+    The horizontal intensity is: 17011.42040741342 nT.
+    The vertical intensity is: -36850.99371276383 nT.
+    The north intensity is: -12911.318729492956 nT.
+    The east intensity is: 11076.383567898245 nT.
+For a latitude of -45 degrees, a longitude of 120 degrees, and an altitude of 0 kilometers: 
+    The declination is: -7.768255135803992 degrees.
+    The total intensity is: 63853.01691240043 nT.
+    The dip angle is: -77.29885671082971 degrees.
+    The horizontal intensity is: 14039.086362951932 nT.
+    The vertical intensity is: -62290.54360742786 nT.
+    The north intensity is: -1897.6159275506284 nT.
+    The east intensity is: 13910.248009936022 nT.
+For a latitude of -45 degrees, a longitude of 120 degrees, and an altitude of 100 kilometers: 
+    The declination is: -7.664176513947692 degrees.
+    The total intensity is: 60692.114719344325 nT.
+    The dip angle is: -77.23212283756637 degrees.
+    The horizontal intensity is: 13413.063324116241 nT.
+    The vertical intensity is: -59191.40580666504 nT.
+    The north intensity is: -1788.8541029654125 nT.
+    The east intensity is: 13293.241468319757 nT.
+For a latitude of -30 degrees, a longitude of -180 degrees, and an altitude of 0 kilometers: 
+    The declination is: 16.519883944267555 degrees.
+    The total intensity is: 49187.63864382508 nT.
+    The dip angle is: -54.92901554111747 degrees.
+    The horizontal intensity is: 28262.767276238585 nT.
+    The vertical intensity is: -40257.17055686715 nT.
+    The north intensity is: 8036.463516614723 nT.
+    The east intensity is: 27096.111681511484 nT.
+For a latitude of -30 degrees, a longitude of -180 degrees, and an altitude of 100 kilometers: 
+    The declination is: 16.447590611289723 degrees.
+    The total intensity is: 46836.60378569561 nT.
+    The dip angle is: -54.924726127120586 degrees.
+    The horizontal intensity is: 26914.7538507986 nT.
+    The vertical intensity is: -38330.972846109165 nT.
+    The north intensity is: 7620.594363381242 nT.
+    The east intensity is: 25813.37863197842 nT.
+For a latitude of -30 degrees, a longitude of -120 degrees, and an altitude of 0 kilometers: 
+    The declination is: 16.830945690055312 degrees.
+    The total intensity is: 35956.56733552722 nT.
+    The dip angle is: -42.16552118565301 degrees.
+    The horizontal intensity is: 26651.319907200665 nT.
+    The vertical intensity is: -24136.73303822108 nT.
+    The north intensity is: 7716.857884776959 nT.
+    The east intensity is: 25509.66399586843 nT.
+For a latitude of -30 degrees, a longitude of -120 degrees, and an altitude of 100 kilometers: 
+    The declination is: 16.78077570515352 degrees.
+    The total intensity is: 34292.32493235089 nT.
+    The dip angle is: -42.081768351650716 degrees.
+    The horizontal intensity is: 25451.390968223557 nT.
+    The vertical intensity is: -22982.389933350336 nT.
+    The north intensity is: 7348.085693267562 nT.
+    The east intensity is: 24367.579667701266 nT.
+For a latitude of -30 degrees, a longitude of -60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -8.121268212200675 degrees.
+    The total intensity is: 22886.97969762118 nT.
+    The dip angle is: -32.15823869929503 degrees.
+    The horizontal intensity is: 19375.689941498415 nT.
+    The vertical intensity is: -12181.809347147135 nT.
+    The north intensity is: -2737.178904154406 nT.
+    The east intensity is: 19181.376706475865 nT.
+For a latitude of -30 degrees, a longitude of -60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -7.873929913673575 degrees.
+    The total intensity is: 22090.407301936575 nT.
+    The dip angle is: -32.220420875269504 degrees.
+    The horizontal intensity is: 18688.555027016177 nT.
+    The vertical intensity is: -11778.115543992646 nT.
+    The north intensity is: -2560.2169407572787 nT.
+    The east intensity is: 18512.357446151233 nT.
+For a latitude of -30 degrees, a longitude of 0 degrees, and an altitude of 0 kilometers: 
+    The declination is: -23.566966248799698 degrees.
+    The total intensity is: 26213.684266719956 nT.
+    The dip angle is: -65.62721021628022 degrees.
+    The horizontal intensity is: 10817.650693728614 nT.
+    The vertical intensity is: -23877.51403106601 nT.
+    The north intensity is: -4325.120015028392 nT.
+    The east intensity is: 9915.38720308632 nT.
+For a latitude of -30 degrees, a longitude of 0 degrees, and an altitude of 100 kilometers: 
+    The declination is: -22.89488457571521 degrees.
+    The total intensity is: 25228.67404169847 nT.
+    The dip angle is: -64.8293973627726 degrees.
+    The horizontal intensity is: 10730.133151368696 nT.
+    The vertical intensity is: -22833.095200961445 nT.
+    The north intensity is: -4174.4692879154045 nT.
+    The east intensity is: 9884.814798991056 nT.
+For a latitude of -30 degrees, a longitude of 60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -32.09043331471802 degrees.
+    The total intensity is: 40279.680588613715 nT.
+    The dip angle is: -61.274159910666505 degrees.
+    The horizontal intensity is: 19359.181287448595 nT.
+    The vertical intensity is: -35322.440009156286 nT.
+    The north intensity is: -10284.703051809121 nT.
+    The east intensity is: 16401.30431570636 nT.
+For a latitude of -30 degrees, a longitude of 60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -31.15610787843332 degrees.
+    The total intensity is: 38527.35108293918 nT.
+    The dip angle is: -61.159657725548605 degrees.
+    The horizontal intensity is: 18584.460186901066 nT.
+    The vertical intensity is: -33748.69806421492 nT.
+    The north intensity is: -9615.071815566806 nT.
+    The east intensity is: 15903.853445627685 nT.
+For a latitude of -30 degrees, a longitude of 120 degrees, and an altitude of 0 kilometers: 
+    The declination is: 0.7715454770020241 degrees.
+    The total intensity is: 57583.725256198166 nT.
+    The dip angle is: -64.23901546016731 degrees.
+    The horizontal intensity is: 25026.919359176216 nT.
+    The vertical intensity is: -51860.762834445515 nT.
+    The north intensity is: 337.00253370978527 nT.
+    The east intensity is: 25024.650285328313 nT.
+For a latitude of -30 degrees, a longitude of 120 degrees, and an altitude of 100 kilometers: 
+    The declination is: 0.6737301227715633 degrees.
+    The total intensity is: 54735.954622944686 nT.
+    The dip angle is: -64.18711228618976 degrees.
+    The horizontal intensity is: 23833.873759831386 nT.
+    The vertical intensity is: -49274.44763856294 nT.
+    The north intensity is: 280.2515086991608 nT.
+    The east intensity is: 23832.22602887634 nT.
+For a latitude of -15 degrees, a longitude of -180 degrees, and an altitude of 0 kilometers: 
+    The declination is: 11.696327314467617 degrees.
+    The total intensity is: 40694.07546540044 nT.
+    The dip angle is: -34.04399312806715 degrees.
+    The horizontal intensity is: 33719.435098085116 nT.
+    The vertical intensity is: -22781.73554955223 nT.
+    The north intensity is: 6835.756507778199 nT.
+    The east intensity is: 33019.27825226261 nT.
+For a latitude of -15 degrees, a longitude of -180 degrees, and an altitude of 100 kilometers: 
+    The declination is: 11.69910925011567 degrees.
+    The total intensity is: 38715.318718549526 nT.
+    The dip angle is: -34.15442893031838 degrees.
+    The horizontal intensity is: 32037.98603982175 nT.
+    The vertical intensity is: -21735.76209823474 nT.
+    The north intensity is: 6496.408806448952 nT.
+    The east intensity is: 31372.427736904676 nT.
+For a latitude of -15 degrees, a longitude of -120 degrees, and an altitude of 0 kilometers: 
+    The declination is: 11.511247535833164 degrees.
+    The total intensity is: 31011.916285754247 nT.
+    The dip angle is: -19.55082463180802 degrees.
+    The horizontal intensity is: 29223.924701850272 nT.
+    The vertical intensity is: -10377.917745637367 nT.
+    The north intensity is: 5831.935069508424 nT.
+    The east intensity is: 28636.101486139003 nT.
+For a latitude of -15 degrees, a longitude of -120 degrees, and an altitude of 100 kilometers: 
+    The declination is: 11.548219937341774 degrees.
+    The total intensity is: 29591.32107193147 nT.
+    The dip angle is: -19.398593675368506 degrees.
+    The horizontal intensity is: 27911.44576012578 nT.
+    The vertical intensity is: -9828.40161784671 nT.
+    The north intensity is: 5587.663921954623 nT.
+    The east intensity is: 27346.422367756448 nT.
+For a latitude of -15 degrees, a longitude of -60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -12.926934036863202 degrees.
+    The total intensity is: 23695.70864381277 nT.
+    The dip angle is: -10.462597625854906 degrees.
+    The horizontal intensity is: 23301.735745211834 nT.
+    The vertical intensity is: -4302.989587807562 nT.
+    The north intensity is: -5212.79202850386 nT.
+    The east intensity is: 22711.17980218662 nT.
+For a latitude of -15 degrees, a longitude of -60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -12.60851015816153 degrees.
+    The total intensity is: 22691.084513543465 nT.
+    The dip angle is: -10.394025362715109 degrees.
+    The horizontal intensity is: 22318.73038523174 nT.
+    The vertical intensity is: -4093.8478711483085 nT.
+    The north intensity is: -4871.915307533129 nT.
+    The east intensity is: 21780.499701450626 nT.
+For a latitude of -15 degrees, a longitude of 0 degrees, and an altitude of 0 kilometers: 
+    The declination is: -15.075873836010336 degrees.
+    The total intensity is: 29723.551943666553 nT.
+    The dip angle is: -55.27215014853354 degrees.
+    The horizontal intensity is: 16932.885637542542 nT.
+    The vertical intensity is: -24428.8134000354 nT.
+    The north intensity is: -4404.208729835399 nT.
+    The east intensity is: 16350.093622916542 nT.
+For a latitude of -15 degrees, a longitude of 0 degrees, and an altitude of 100 kilometers: 
+    The declination is: -14.732751150352206 degrees.
+    The total intensity is: 28218.84426110694 nT.
+    The dip angle is: -54.33294602864304 degrees.
+    The horizontal intensity is: 16453.678725774575 nT.
+    The vertical intensity is: -22925.523501582276 nT.
+    The north intensity is: -4184.348335410839 nT.
+    The east intensity is: 15912.723607822494 nT.
+For a latitude of -15 degrees, a longitude of 60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -13.317730225861776 degrees.
+    The total intensity is: 38468.4639861151 nT.
+    The dip angle is: -46.774732124919126 degrees.
+    The horizontal intensity is: 26345.83999938756 nT.
+    The vertical intensity is: -28030.687401091414 nT.
+    The north intensity is: -6068.78735356547 nT.
+    The east intensity is: 25637.338109299362 nT.
+For a latitude of -15 degrees, a longitude of 60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -13.091910052631246 degrees.
+    The total intensity is: 36608.2764659374 nT.
+    The dip angle is: -46.46483227555255 degrees.
+    The horizontal intensity is: 25215.768946987067 nT.
+    The vertical intensity is: -26539.2332635792 nT.
+    The north intensity is: -5711.719226912195 nT.
+    The east intensity is: 24560.359668798803 nT.
+For a latitude of -15 degrees, a longitude of 120 degrees, and an altitude of 0 kilometers: 
+    The declination is: 2.176541726348714 degrees.
+    The total intensity is: 48720.489627116745 nT.
+    The dip angle is: -44.969368488042704 degrees.
+    The horizontal intensity is: 34469.00167298063 nT.
+    The vertical intensity is: -34432.165676501514 nT.
+    The north intensity is: 1309.0873067970465 nT.
+    The east intensity is: 34444.1339963008 nT.
+For a latitude of -15 degrees, a longitude of 120 degrees, and an altitude of 100 kilometers: 
+    The declination is: 2.081802777932454 degrees.
+    The total intensity is: 46302.954902917474 nT.
+    The dip angle is: -44.99838939044454 degrees.
+    The horizontal intensity is: 32742.05375554646 nT.
+    The vertical intensity is: -32740.21302023729 nT.
+    The north intensity is: 1189.3982805026556 nT.
+    The east intensity is: 32720.443393411275 nT.
+For a latitude of 0 degrees, a longitude of -180 degrees, and an altitude of 0 kilometers: 
+    The declination is: 9.627716117597018 degrees.
+    The total intensity is: 34262.13081798532 nT.
+    The dip angle is: -4.825988414519038 degrees.
+    The horizontal intensity is: 34140.66477560165 nT.
+    The vertical intensity is: -2882.4671496363435 nT.
+    The north intensity is: 5709.879052858896 nT.
+    The east intensity is: 33659.80202736983 nT.
+For a latitude of 0 degrees, a longitude of -180 degrees, and an altitude of 100 kilometers: 
+    The declination is: 9.61736851792314 degrees.
+    The total intensity is: 32635.304353937354 nT.
+    The dip angle is: -5.147925137166062 degrees.
+    The horizontal intensity is: 32503.66532458224 nT.
+    The vertical intensity is: -2928.2811923844265 nT.
+    The north intensity is: 5430.310388720158 nT.
+    The east intensity is: 32046.840540287398 nT.
+For a latitude of 0 degrees, a longitude of -120 degrees, and an altitude of 0 kilometers: 
+    The declination is: 9.151895231824682 degrees.
+    The total intensity is: 31093.973195726117 nT.
+    The dip angle is: 9.443786523892319 degrees.
+    The horizontal intensity is: 30672.558340647116 nT.
+    The vertical intensity is: 5101.895131824382 nT.
+    The north intensity is: 4878.542333297288 nT.
+    The east intensity is: 30282.10131187443 nT.
+For a latitude of 0 degrees, a longitude of -120 degrees, and an altitude of 100 kilometers: 
+    The declination is: 9.218564729373844 degrees.
+    The total intensity is: 29659.4240916511 nT.
+    The dip angle is: 9.625259661763458 degrees.
+    The horizontal intensity is: 29241.891142793655 nT.
+    The vertical intensity is: 4959.1571704695625 nT.
+    The north intensity is: 4684.580989411145 nT.
+    The east intensity is: 28864.214844000897 nT.
+For a latitude of 0 degrees, a longitude of -60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -14.576005610385149 degrees.
+    The total intensity is: 28052.07700819438 nT.
+    The dip angle is: 15.911697653034285 degrees.
+    The horizontal intensity is: 26977.271700360307 nT.
+    The vertical intensity is: 7690.633008966612 nT.
+    The north intensity is: -6789.210205101138 nT.
+    The east intensity is: 26108.998701329234 nT.
+For a latitude of 0 degrees, a longitude of -60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -14.289985516780119 degrees.
+    The total intensity is: 26742.027879933623 nT.
+    The dip angle is: 15.95036689812695 degrees.
+    The horizontal intensity is: 25712.462725267156 nT.
+    The vertical intensity is: 7348.830909259939 nT.
+    The north intensity is: -6346.597888495459 nT.
+    The east intensity is: 24916.890549183656 nT.
+For a latitude of 0 degrees, a longitude of 0 degrees, and an altitude of 0 kilometers: 
+    The declination is: -6.497060184060931 degrees.
+    The total intensity is: 31557.639494703824 nT.
+    The dip angle is: -28.71094834899143 degrees.
+    The horizontal intensity is: 27677.76607734761 nT.
+    The vertical intensity is: -15160.009084605346 nT.
+    The north intensity is: -3131.801063118327 nT.
+    The east intensity is: 27500.01012969677 nT.
+For a latitude of 0 degrees, a longitude of 0 degrees, and an altitude of 100 kilometers: 
+    The declination is: -6.580942129701 degrees.
+    The total intensity is: 29810.64774430844 nT.
+    The dip angle is: -27.963002242907386 degrees.
+    The horizontal intensity is: 26330.271370324765 nT.
+    The vertical intensity is: -13978.25198300195 nT.
+    The north intensity is: -3017.6261944295006 nT.
+    The east intensity is: 26156.779667719744 nT.
+For a latitude of 0 degrees, a longitude of 60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -4.153639833420982 degrees.
+    The total intensity is: 36982.71975949739 nT.
+    The dip angle is: -17.456401045079303 degrees.
+    The horizontal intensity is: 35279.49891762898 nT.
+    The vertical intensity is: -11094.07575828353 nT.
+    The north intensity is: -2555.336747162304 nT.
+    The east intensity is: 35186.834156934136 nT.
+For a latitude of 0 degrees, a longitude of 60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -4.190852697138426 degrees.
+    The total intensity is: 35066.86383380074 nT.
+    The dip angle is: -17.314713631579174 degrees.
+    The horizontal intensity is: 33477.78792087182 nT.
+    The vertical intensity is: -10436.601700910625 nT.
+    The north intensity is: -2446.522406020819 nT.
+    The east intensity is: 33388.27357309314 nT.
+For a latitude of 0 degrees, a longitude of 120 degrees, and an altitude of 0 kilometers: 
+    The declination is: 1.0922640885949377 degrees.
+    The total intensity is: 41211.56478660631 nT.
+    The dip angle is: -16.91662971183242 degrees.
+    The horizontal intensity is: 39428.30614858374 nT.
+    The vertical intensity is: -11991.736588759879 nT.
+    The north intensity is: 751.6001138512275 nT.
+    The east intensity is: 39421.14182789871 nT.
+For a latitude of 0 degrees, a longitude of 120 degrees, and an altitude of 100 kilometers: 
+    The declination is: 1.056801726779527 degrees.
+    The total intensity is: 39168.63573594987 nT.
+    The dip angle is: -17.029636134984663 degrees.
+    The horizontal intensity is: 37451.22420580306 nT.
+    The vertical intensity is: -11471.17391125251 nT.
+    The north intensity is: 690.7362923533759 nT.
+    The east intensity is: 37444.85382382678 nT.
+For a latitude of 15 degrees, a longitude of -180 degrees, and an altitude of 0 kilometers: 
+    The declination is: 8.818026518634634 degrees.
+    The total intensity is: 33178.178051656156 nT.
+    The dip angle is: 23.672457838675253 degrees.
+    The horizontal intensity is: 30386.423630126304 nT.
+    The vertical intensity is: 13321.289644696562 nT.
+    The north intensity is: 4658.139901496194 nT.
+    The east intensity is: 30027.262174357278 nT.
+For a latitude of 15 degrees, a longitude of -180 degrees, and an altitude of 100 kilometers: 
+    The declination is: 8.74565741678408 degrees.
+    The total intensity is: 31713.881826061446 nT.
+    The dip angle is: 23.390121180794054 degrees.
+    The horizontal intensity is: 29107.732932808136 nT.
+    The vertical intensity is: 12590.082763417693 nT.
+    The north intensity is: 4425.786417306569 nT.
+    The east intensity is: 28769.298411258973 nT.
+For a latitude of 15 degrees, a longitude of -120 degrees, and an altitude of 0 kilometers: 
+    The declination is: 9.666469709995685 degrees.
+    The total intensity is: 36676.17116795618 nT.
+    The dip angle is: 36.108188375413356 degrees.
+    The horizontal intensity is: 29630.886683507055 nT.
+    The vertical intensity is: 21613.70134637713 nT.
+    The north intensity is: 4975.396358498897 nT.
+    The east intensity is: 29210.18446923387 nT.
+For a latitude of 15 degrees, a longitude of -120 degrees, and an altitude of 100 kilometers: 
+    The declination is: 9.658685319832276 degrees.
+    The total intensity is: 34973.40907816607 nT.
+    The dip angle is: 36.196390899618066 degrees.
+    The horizontal intensity is: 28223.45415414353 nT.
+    The vertical intensity is: 20653.7158438308 nT.
+    The north intensity is: 4735.29070866048 nT.
+    The east intensity is: 27823.37841268589 nT.
+For a latitude of 15 degrees, a longitude of -60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -15.06025416720495 degrees.
+    The total intensity is: 35271.635560724564 nT.
+    The dip angle is: 38.15416144245164 degrees.
+    The horizontal intensity is: 27735.899623130434 nT.
+    The vertical intensity is: 21790.09286864567 nT.
+    The north intensity is: -7206.749209301614 nT.
+    The east intensity is: 26783.257713329 nT.
+For a latitude of 15 degrees, a longitude of -60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -14.807651445986243 degrees.
+    The total intensity is: 33616.972805201374 nT.
+    The dip angle is: 38.20327778242789 degrees.
+    The horizontal intensity is: 26416.940463287377 nT.
+    The vertical intensity is: 20790.52950611837 nT.
+    The north intensity is: -6751.506074006222 nT.
+    The east intensity is: 25539.61450714413 nT.
+For a latitude of 15 degrees, a longitude of 0 degrees, and an altitude of 0 kilometers: 
+    The declination is: -2.5113453856345194 degrees.
+    The total intensity is: 34184.52891510739 nT.
+    The dip angle is: 8.722417650327738 degrees.
+    The horizontal intensity is: 33789.172140903596 nT.
+    The vertical intensity is: 5184.000692534427 nT.
+    The north intensity is: -1480.5473317530168 nT.
+    The east intensity is: 33756.71982829574 nT.
+For a latitude of 15 degrees, a longitude of 0 degrees, and an altitude of 100 kilometers: 
+    The declination is: -2.700259278090141 degrees.
+    The total intensity is: 32367.1570554781 nT.
+    The dip angle is: 9.04765050853827 degrees.
+    The horizontal intensity is: 31964.441619102974 nT.
+    The vertical intensity is: 5089.924148054004 nT.
+    The north intensity is: -1505.8758802920759 nT.
+    The east intensity is: 31928.950277987482 nT.
+For a latitude of 15 degrees, a longitude of 60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -0.6494107841138992 degrees.
+    The total intensity is: 39720.670136064946 nT.
+    The dip angle is: 18.51678750900512 degrees.
+    The horizontal intensity is: 37664.356666633306 nT.
+    The vertical intensity is: 12614.589686022962 nT.
+    The north intensity is: -426.89210087109774 nT.
+    The east intensity is: 37661.93736712941 nT.
+For a latitude of 15 degrees, a longitude of 60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -0.6945413547536808 degrees.
+    The total intensity is: 37631.23494237465 nT.
+    The dip angle is: 18.41546361987495 degrees.
+    The horizontal intensity is: 35704.16898767103 nT.
+    The vertical intensity is: 11887.899738306562 nT.
+    The north intensity is: -432.7965304848909 nT.
+    The east intensity is: 35701.545768542994 nT.
+For a latitude of 15 degrees, a longitude of 120 degrees, and an altitude of 0 kilometers: 
+    The declination is: -1.4233262559153037 degrees.
+    The total intensity is: 41046.827546215274 nT.
+    The dip angle is: 16.649729036326857 degrees.
+    The horizontal intensity is: 39325.908700350614 nT.
+    The vertical intensity is: 11760.737923294822 nT.
+    The north intensity is: -976.8231107439606 nT.
+    The east intensity is: 39313.77508862039 nT.
+For a latitude of 15 degrees, a longitude of 120 degrees, and an altitude of 100 kilometers: 
+    The declination is: -1.3562584964311821 degrees.
+    The total intensity is: 38962.12400509371 nT.
+    The dip angle is: 16.50681963853254 degrees.
+    The horizontal intensity is: 37356.336030493636 nT.
+    The vertical intensity is: 11070.287501467283 nT.
+    The north intensity is: -884.1858377697334 nT.
+    The east intensity is: 37345.87068241206 nT.
+For a latitude of 30 degrees, a longitude of -180 degrees, and an altitude of 0 kilometers: 
+    The declination is: 7.259940091468782 degrees.
+    The total intensity is: 37101.04807900502 nT.
+    The dip angle is: 43.35161357259828 degrees.
+    The horizontal intensity is: 26978.199961169772 nT.
+    The vertical intensity is: 25468.892701014334 nT.
+    The north intensity is: 3409.2639288613027 nT.
+    The east intensity is: 26761.91683359445 nT.
+For a latitude of 30 degrees, a longitude of -180 degrees, and an altitude of 100 kilometers: 
+    The declination is: 7.2290400398255255 degrees.
+    The total intensity is: 35579.83592404098 nT.
+    The dip angle is: 43.34326114591578 degrees.
+    The horizontal intensity is: 25875.60373695018 nT.
+    The vertical intensity is: 24420.84879012207 nT.
+    The north intensity is: 3256.084157260122 nT.
+    The east intensity is: 25669.919842346793 nT.
+For a latitude of 30 degrees, a longitude of -120 degrees, and an altitude of 0 kilometers: 
+    The declination is: 12.408582893897307 degrees.
+    The total intensity is: 45097.679257738266 nT.
+    The dip angle is: 54.63170595049208 degrees.
+    The horizontal intensity is: 26103.8903058121 nT.
+    The vertical intensity is: 36774.82270978292 nT.
+    The north intensity is: 5609.246498985103 nT.
+    The east intensity is: 25494.10604064191 nT.
+For a latitude of 30 degrees, a longitude of -120 degrees, and an altitude of 100 kilometers: 
+    The declination is: 12.250658759766456 degrees.
+    The total intensity is: 42993.48201506102 nT.
+    The dip angle is: 54.69872870819632 degrees.
+    The horizontal intensity is: 24844.889928856726 nT.
+    The vertical intensity is: 35088.04554548983 nT.
+    The north intensity is: 5271.810060486743 nT.
+    The east intensity is: 24279.13866394682 nT.
+For a latitude of 30 degrees, a longitude of -60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -16.052217169606156 degrees.
+    The total intensity is: 44035.52279619497 nT.
+    The dip angle is: 54.57318215315675 degrees.
+    The horizontal intensity is: 25525.747281866148 nT.
+    The vertical intensity is: 35882.63498736555 nT.
+    The north intensity is: -7058.208568952268 nT.
+    The east intensity is: 24530.500730618318 nT.
+For a latitude of 30 degrees, a longitude of -60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -15.787998346034863 degrees.
+    The total intensity is: 41967.504994345305 nT.
+    The dip angle is: 54.655549938363855 degrees.
+    The horizontal intensity is: 24277.80756047472 nT.
+    The vertical intensity is: 34232.43396994953 nT.
+    The north intensity is: -6605.474000089132 nT.
+    The east intensity is: 23361.92742856612 nT.
+For a latitude of 30 degrees, a longitude of 0 degrees, and an altitude of 0 kilometers: 
+    The declination is: -1.045249907303535 degrees.
+    The total intensity is: 40319.295042820566 nT.
+    The dip angle is: 40.60355468519325 degrees.
+    The horizontal intensity is: 30611.655921338315 nT.
+    The vertical intensity is: 26240.656899239544 nT.
+    The north intensity is: -558.4190669942752 nT.
+    The east intensity is: 30606.562145919368 nT.
+For a latitude of 30 degrees, a longitude of 0 degrees, and an altitude of 100 kilometers: 
+    The declination is: -1.2615813289483249 degrees.
+    The total intensity is: 38315.974125223154 nT.
+    The dip angle is: 40.593369472197416 degrees.
+    The horizontal intensity is: 29095.105168056292 nT.
+    The vertical intensity is: 24931.681219374565 nT.
+    The north intensity is: -640.5860229337524 nT.
+    The east intensity is: 29088.052432011977 nT.
+For a latitude of 30 degrees, a longitude of 60 degrees, and an altitude of 0 kilometers: 
+    The declination is: 2.073851505194739 degrees.
+    The total intensity is: 46453.54226508292 nT.
+    The dip angle is: 46.55445337540384 degrees.
+    The horizontal intensity is: 31944.46937559233 nT.
+    The vertical intensity is: 33726.583955178285 nT.
+    The north intensity is: 1155.9947687513743 nT.
+    The east intensity is: 31923.54616553079 nT.
+For a latitude of 30 degrees, a longitude of 60 degrees, and an altitude of 100 kilometers: 
+    The declination is: 1.9889246386628139 degrees.
+    The total intensity is: 44090.6148501351 nT.
+    The dip angle is: 46.352642818314386 degrees.
+    The horizontal intensity is: 30432.13001341194 nT.
+    The vertical intensity is: 31904.040194146975 nT.
+    The north intensity is: 1056.187007730111 nT.
+    The east intensity is: 30413.796312823393 nT.
+For a latitude of 30 degrees, a longitude of 120 degrees, and an altitude of 0 kilometers: 
+    The declination is: -4.804989334419933 degrees.
+    The total intensity is: 48078.123520941415 nT.
+    The dip angle is: 44.60166843170231 degrees.
+    The horizontal intensity is: 34231.89314855482 nT.
+    The vertical intensity is: 33759.19804676683 nT.
+    The north intensity is: -2867.4214504430424 nT.
+    The east intensity is: 34111.58751450324 nT.
+For a latitude of 30 degrees, a longitude of 120 degrees, and an altitude of 100 kilometers: 
+    The declination is: -4.599439364071347 degrees.
+    The total intensity is: 45585.41447222052 nT.
+    The dip angle is: 44.437159574907064 degrees.
+    The horizontal intensity is: 32548.8410194908 nT.
+    The vertical intensity is: 31915.559855531985 nT.
+    The north intensity is: -2610.064575130207 nT.
+    The east intensity is: 32444.022787344624 nT.
+For a latitude of 45 degrees, a longitude of -180 degrees, and an altitude of 0 kilometers: 
+    The declination is: 5.222391520892263 degrees.
+    The total intensity is: 44836.95235247505 nT.
+    The dip angle is: 57.28917171795707 degrees.
+    The horizontal intensity is: 24229.85978424268 nT.
+    The vertical intensity is: 37726.2003267498 nT.
+    The north intensity is: 2205.4447396812207 nT.
+    The east intensity is: 24129.27928190714 nT.
+For a latitude of 45 degrees, a longitude of -180 degrees, and an altitude of 100 kilometers: 
+    The declination is: 5.309067309732269 degrees.
+    The total intensity is: 42959.32041165607 nT.
+    The dip angle is: 57.46365515360446 degrees.
+    The horizontal intensity is: 23105.00439093935 nT.
+    The vertical intensity is: 36216.874276033304 nT.
+    The north intensity is: 2137.863638116141 nT.
+    The east intensity is: 23005.88548546105 nT.
+For a latitude of 45 degrees, a longitude of -120 degrees, and an altitude of 0 kilometers: 
+    The declination is: 16.189603647764585 degrees.
+    The total intensity is: 53797.14433359259 nT.
+    The dip angle is: 67.80720285450106 degrees.
+    The horizontal intensity is: 20320.493493613558 nT.
+    The vertical intensity is: 49811.74843975467 nT.
+    The north intensity is: 5665.696100217698 nT.
+    The east intensity is: 19514.669956829115 nT.
+For a latitude of 45 degrees, a longitude of -120 degrees, and an altitude of 100 kilometers: 
+    The declination is: 15.904072029347128 degrees.
+    The total intensity is: 51201.35832399462 nT.
+    The dip angle is: 67.85300345312396 degrees.
+    The horizontal intensity is: 19302.09883071233 nT.
+    The vertical intensity is: 47423.707941824905 nT.
+    The north intensity is: 5289.307224244778 nT.
+    The east intensity is: 18563.249940625654 nT.
+For a latitude of 45 degrees, a longitude of -60 degrees, and an altitude of 0 kilometers: 
+    The declination is: -19.378455947596187 degrees.
+    The total intensity is: 52040.00332755049 nT.
+    The dip angle is: 67.53024829941893 degrees.
+    The horizontal intensity is: 19889.46201844457 nT.
+    The vertical intensity is: 48089.200938966715 nT.
+    The north intensity is: -6599.451643019647 nT.
+    The east intensity is: 18762.67404701671 nT.
+For a latitude of 45 degrees, a longitude of -60 degrees, and an altitude of 100 kilometers: 
+    The declination is: -18.991299792049404 degrees.
+    The total intensity is: 49576.152996381395 nT.
+    The dip angle is: 67.56288964131494 degrees.
+    The horizontal intensity is: 18921.686833019256 nT.
+    The vertical intensity is: 45823.18968943303 nT.
+    The north intensity is: -6157.58192024735 nT.
+    The east intensity is: 17891.7416005904 nT.
+For a latitude of 45 degrees, a longitude of 0 degrees, and an altitude of 0 kilometers: 
+    The declination is: -1.3449715144303456 degrees.
+    The total intensity is: 46478.53616969152 nT.
+    The dip angle is: 60.58506887388963 degrees.
+    The horizontal intensity is: 22827.03939324304 nT.
+    The vertical intensity is: 40486.79534140302 nT.
+    The north intensity is: -535.7968501328863 nT.
+    The east intensity is: 22820.750408259086 nT.
+For a latitude of 45 degrees, a longitude of 0 degrees, and an altitude of 100 kilometers: 
+    The declination is: -1.5508446549416532 degrees.
+    The total intensity is: 44350.42899601279 nT.
+    The dip angle is: 60.47046787574223 degrees.
+    The horizontal intensity is: 21859.089276895396 nT.
+    The vertical intensity is: 38589.38672893221 nT.
+    The north intensity is: -591.5952759108395 nT.
+    The east intensity is: 21851.082331198224 nT.
+For a latitude of 45 degrees, a longitude of 60 degrees, and an altitude of 0 kilometers: 
+    The declination is: 7.118595356315344 degrees.
+    The total intensity is: 52673.292771833236 nT.
+    The dip angle is: 64.16340720360276 degrees.
+    The horizontal intensity is: 22955.337685984796 nT.
+    The vertical intensity is: 47408.103138067716 nT.
+    The north intensity is: 2844.7065185024185 nT.
+    The east intensity is: 22778.3926803711 nT.
+For a latitude of 45 degrees, a longitude of 60 degrees, and an altitude of 100 kilometers: 
+    The declination is: 6.776853631081233 degrees.
+    The total intensity is: 50146.53622083259 nT.
+    The dip angle is: 63.98854753559488 degrees.
+    The horizontal intensity is: 21991.803169230574 nT.
+    The vertical intensity is: 45067.013305888104 nT.
+    The north intensity is: 2595.094793154811 nT.
+    The east intensity is: 21838.152157376335 nT.
+For a latitude of 45 degrees, a longitude of 120 degrees, and an altitude of 0 kilometers: 
+    The declination is: -8.69450600106837 degrees.
+    The total intensity is: 56205.97675072193 nT.
+    The dip angle is: 63.31499518877105 degrees.
+    The horizontal intensity is: 25241.2708582629 nT.
+    The vertical intensity is: 50219.41923163292 nT.
+    The north intensity is: -3815.6228209794153 nT.
+    The east intensity is: 24951.20792723697 nT.
+For a latitude of 45 degrees, a longitude of 120 degrees, and an altitude of 100 kilometers: 
+    The declination is: -8.298886887594588 degrees.
+    The total intensity is: 53311.095656072386 nT.
+    The dip angle is: 63.15590095157176 degrees.
+    The horizontal intensity is: 24073.39328607553 nT.
+    The vertical intensity is: 47566.21338455305 nT.
+    The north intensity is: -3474.680812678528 nT.
+    The east intensity is: 23821.310995746437 nT.

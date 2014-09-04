@@ -1,0 +1,122 @@
+These are useful inks to Java related websites. Things maybe one day we could use :-)
+
+---------------------------------------------------------------------------------------------------
+Java Statistical Classes
+
+http://www.jsc.nildram.co.uk/
+
+---------------------------------------------------------------------------------------------------
+Michael Thomas Flanagan's Java Scientific Library
+
+http://www.ee.ucl.ac.uk/~mflanaga/java/
+
+Dr Michael Thomas Flanagan
+Department of Electronic and Electrical Engineering
+UCL (University College London)
+Torrington Place
+London
+WC1E 7JE
+
+E-mail: m.flanagan@ee.ucl.ac.uk
+Office: Room 303, Third Floor, 66-72 Gower Street
+
+---------------------------------------------------------------------------------------------------
+Astronomy
+
+http://www.grelf.net/docs/index.html
+http://www.naughter.com/aa.html
+
+---------------------------------------------------------------------------------------------------
+Maths
+
+http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/simpleTrig.html
+http://www.koders.com/java/fidE534BC65EBB1D92212FBF2A2EE62A14AC5B26102.aspx?s=252
+http://mathworld.wolfram.com/TrigonometricAdditionFormulas.html
+http://en.wikipedia.org/wiki/List_of_trigonometric_identities
+http://www.srrb.noaa.gov/highlights/sunrise/sunrise.html
+
+
+---------------------------------------------------------------------------------------------------
+Radio
+
+http://www.qsl.net/va3iul/Homebrew_RF_Circuit_Design_Ideas/Homebrew_RF_Circuit_Design_Ideas.htm
+http://www.setileague.org/hardware/8500agc.htm
+http://funcube.org.uk/overview/the-developers_/
+
+
+---------------------------------------------------------------------------------------------------
+Tools
+
+XML Spear
+http://www.donkeydevelopment.com/
+
+http://www.cdrummond.qc.ca/cegep/informat/Professeurs/Alain/files/ascii.htm
+
+
+---------------------------------------------------------------------------------------------------
+Comms
+
+http://www.winterwell.com/software/jtwitter.php
+
+
+
+---------------------------------------------------------------------------------------------------
+Mapping
+
+http://www.openstreetmap.org/
+
+http://today.java.net/pub/a/today/2007/10/30/building-maps-into-swing-app-with-jxmapviewer.html
+
+---------------------------------------------------------------------------------------------------
+Applets
+
+http://www.falstad.com/index.html
+
+---------------------------------------------------------------------------------------------------
+Regex
+
+http://utilitymill.com/utility/Regex_For_Range
+http://www.regexlib.com/
+
+---------------------------------------------------------------------------------------------------
+Tutorials
+
+http://web.njit.edu/~gary/728/Lecture1.html
+
+
+---------------------------------------------------------------------------------------------------
+Teams
+
+http://changingminds.org/explanations/preferences/belbin.htm
+http://en.wikipedia.org/wiki/INTJ
+
+---------------------------------------------------------------------------------------------------
+Suppliers, Distributors
+
+http://www.mpeforth.com/index.htm
+
+
+---------------------------------------------------------------------------------------------------
+Instruments
+
+SpectrumLab
+http://www.qsl.net/dl4yhf/speclab/ext_comms.htm#http
+
+http://www.rocketnumbernine.com/2010/03/06/decoding-a-rotary-encoder
+
+http://ipscan.git.sourceforge.net/git/gitweb.cgi?p=ipscan/ipscan;a=summary
+
+http://www.haystack.mit.edu/edu/undergrad/srt/SRT%20Software/SRTfiles.html
+
+---------------------------------------------------------------------------------------------------
+Science
+
+http://www.funsci.com/texts/wsites_en.htm
+
+
+---------------------------------------------------------------------------------------------------
+UI
+
+http://www.jidesoft.com/products/oss.htm
+http://java.net/projects/swinglabs/
+http://www.devdaily.com/java/swing/tame/examples/examples-index.shtml

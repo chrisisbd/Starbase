@@ -1,0 +1,139 @@
+Get Configuration as Metadata?
+
+Get e.g. serial port config on to Configuration tabs
+
+
+Remove translator DataClass? DONE!
+
+Translator channel count and temperature channel flag as for DAO and Wrapper
+
+DAOFilterHelper.filterRawDataToTimeSeries()  Fix for datatypes
+
+DAOFilterHelper.filterRawDataToXYDataset()  Fix for datatypes
+
+DAOFilterHelper.copyRawDataToXYDataset()  Fix for datatypes
+
+Put metadata & datatypes & Obs keys on a help panel?
+
+FTP should have a file max size limit
+
+GPS GPGGA does not decode on Garmin at Newb.
+
+Zero entry for capture time should mean continuous operation
+
+StarMap click does not follow mouse position - see StarMapViewport
+
+DAOFilterHelper.filterIteratedRawDataToTimeSeries()  to do all channels
+DAOCommandHelper.doIteratedDataCommand()  to do all channels
+
+Scroll rate is very slow on panels
+
+Detect duplicate instrument addresses at load time...
+Scan instruments for address conflicts at startup
+
+Improve AOR control icon
+
+Add Regex in Datatypes to parse inputs
+
+Add optional Regex in Metadata?
+
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+
+                                        // Now execute a Command, using the byte array received over UDP
+                                        // Use a dummy SpectraCyber Controller
+                                        coreXML = createInstrumentControllerCoreXml(STARIBUS_VIRTUAL_CONTROLLER_ADDRESS);
+
+                                        // We know we are dealing with the Controller's Core module (as opposed to a Plugin)
+                                        coreModule =  coreXML.getController();
+
+                                        cmdExecute = null;
+
+
+                                        setRawDataChannelCount(0);
+                                        setTemperatureChannel(false);
+
+                                        response = DAOHelper.executeCommandOnSameThread(getHostInstrument(),
+                                                                                        dao,
+                                                                                        coreXML,
+                                                                                        coreModule,
+                                                                                        cmdExecute,
+                                                                                        CommandProcessorUtilities.buildCommandStarScript(coreXML,
+                                                                                                                                         coreModule,
+                                                                                                                                         cmdExecute),
+                                                                                        errors,
+                                                                                        false,
+                                                                                        true);
+
+                                                                                            /***********************************************************************************************
+                                                                                             * Create the XML description of the dummy Instrument used to control the SpectraCyber,
+                                                                                             * containing the following Commands:
+                                                                                             *
+                                                                                             * execute()
+                                                                                             *
+                                                                                             * @param address
+                                                                                             *
+                                                                                             * @return Instrument
+                                                                                             */
+
+                                                                                            private static Instrument createInstrumentControllerCoreXml(final int address)
+                                                                                                {
+                                                                                                final Instrument instrumentXML;
+                                                                                                final Controller controller;
+                                                                                                final Controller.Address addressController;
+                                                                                                final CommandType cmdExecute;
+
+                                                                                                // This is the only place where a new Instrument is made
+                                                                                                instrumentXML = Instrument.Factory.newInstance();
+                                                                                                instrumentXML.setIdentifier(CONTROLLER_IDENTIFIER);
+                                                                                                instrumentXML.setName(CONTROLLER_IDENTIFIER);
+                                                                                                instrumentXML.setDescription("A temporary Controller used to control the SpectraCyber");
+                                                                                                // This Instrument will never be instantiated
+                                                                                                instrumentXML.setInstrumentClassname("x");
+                                                                                                instrumentXML.setControllable(true);
+                                                                                                instrumentXML.setSelectorPanelHeight(1);
+                                                                                                instrumentXML.setResourceKey(CONTROLLER_IDENTIFIER);
+
+                                                                                                // A DAO is not required
+
+                                                                                                controller = instrumentXML.addNewController();
+
+                                                                                                // BEWARE! The Address must be three digits, with leading zeroes
+                                                                                                // so we can't use setAddress(int)
+                                                                                                addressController = Controller.Address.Factory.newInstance();
+                                                                                                addressController.setStringValue(Utilities.intToString(address, 10, 3));
+
+                                                                                                controller.xsetAddress(addressController);
+                                                                                                controller.setIdentifier(MODULE_NAME);
+                                                                                                controller.setName(MODULE_NAME);
+                                                                                                controller.setSerialNumber("0000");
+                                                                                                controller.setDescription("SpectraCyber Core");
+                                                                                                controller.setResourceKey(MODULE_NAME);
+
+                                                                                                controller.setCommandCodeBase(COMMAND_CODE_BASE);
+
+                                                                                                // execute()
+                                                                                                cmdExecute = controller.addNewCommand();
+                                                                                                cmdExecute.setIdentifier(IDENTIFIER_EXECUTE);
+                                                                                                cmdExecute.setCommandCode(CODE_EXECUTE);
+                                                                                                cmdExecute.addNewSoftware();
+                                                                                                cmdExecute.getSoftware().setIdentifier(MODULE_COMMAND);
+                                                                                                cmdExecute.getSoftware().setVersion(SOFTWARE_VERSION);
+                                                                                                cmdExecute.getSoftware().setDescription("Executes a SpectraCyber command");
+                                                                                                cmdExecute.setSendToPort(true);
+                                                                                                cmdExecute.addNewResponse();
+                                                                                                cmdExecute.getResponse().setName(RESPONSE_NAME);
+                                                                                                cmdExecute.getResponse().setDataTypeName(SchemaDataType.STRING);
+                                                                                                cmdExecute.getResponse().setUnits(SchemaUnits.DIMENSIONLESS);
+
+                                                                                                controller.addNewSoftware();
+                                                                                                controller.getSoftware().setIdentifier(CONTROLLER_IDENTIFIER);
+                                                                                                controller.getSoftware().setVersion(SOFTWARE_VERSION);
+                                                                                                controller.getSoftware().setDescription("The Core software for the " + CONTROLLER_IDENTIFIER);
+
+                                                                                                return (instrumentXML);
+                                                                                                }
+
+
+

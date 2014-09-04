@@ -1,0 +1,55 @@
+
+------------------------------------
+No parameters
+
+Request
+
+Header          :
+Address         char char  in Hex
+CommandCode     char char char char
+Checksum        char char
+Terminator      CR LF
+
+-----------------------------------
+Response Only
+
+Header          :
+Address         char char
+StatusCode      char char
+CommandCode     char char char char
+Checksum        char char
+Terminator      CR LF
+
+-----------------------------------
+Response with Value
+
+Header          :
+Address         char char
+StatusCode      char char
+CommandCode     char char char char
+Value           char char {char char ..} US  
+Checksum        char char
+Terminator      CR LF
+
+==============================================================
+
+Parameters
+
+Request
+
+Header          :
+Address         char char  in Hex
+CommandCode     char char char char
+Parameters      char char {char char ..} US          parameter 0
+                char char {char char ..} US          parameter 1
+Checksum        char char
+Terminator      CR LF
+
+Boolean         Y|N
+Integer         123
+Float           21.9
+Date            20071223
+Time            123456
+BitString       10101010
+String          asdakjsd83249823rjh.ks (or XML)
+

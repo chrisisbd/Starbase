@@ -1,0 +1,202 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Plugins xmlns="plugins.xmlbeans.model.fc.lmn.org">
+
+    <Plugin>
+        <Name>Observatory</Name>
+        <RoleName>Developer</RoleName>
+        <RoleName>Builder</RoleName>
+        <RoleName>Administrator</RoleName>
+        <RoleName>LocalUser</RoleName>
+        <RoleName>Simplified</RoleName>
+        <RoleName>Educational</RoleName>
+        <Editable>1</Editable>
+        <Active>1</Active>
+        <LoadAtStart>1</LoadAtStart>
+        <EditorClassname>org.lmn.fc.ui.editors.PluginEditor</EditorClassname>
+        <Description>The Starbase Observatory</Description>
+        <IconFilename>observatory.png</IconFilename>
+        <HelpFilename>StarbaseUserGuide.pdf</HelpFilename>
+        <AboutFilename>AboutObservatory.pdf</AboutFilename>
+        <LicenceFilename>ObservatoryLicence.html</LicenceFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Plugin>
+
+    <!--
+    This gives problems with multiple use of the PortController...
+
+    <Plugin>
+        <Name>AlansObservatory</Name>
+        <RoleName>Developer</RoleName>
+        <RoleName>Administrator</RoleName>
+        <RoleName>LocalUser</RoleName>
+        <RoleName>Simplified</RoleName>
+        <Editable>1</Editable>
+        <Active>1</Active>
+        <LoadAtStart>1</LoadAtStart>
+        <EditorClassname>org.lmn.fc.ui.editors.PluginEditor</EditorClassname>
+        <Description>Alan's Observatory</Description>
+        <IconFilename>observatory.png</IconFilename>
+        <HelpFilename>ObservatoryHelp.html</HelpFilename>
+        <AboutFilename>AboutObservatory.html</AboutFilename>
+        <LicenceFilename>ObservatoryLicence.html</LicenceFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Plugin>
+    <Plugin>
+        <Name>AnalysisStudio</Name>
+        <RoleName>Developer</RoleName>
+        <RoleName>Administrator</RoleName>
+        <RoleName>LocalUser</RoleName>
+        <Editable>1</Editable>
+        <Active>1</Active>
+        <LoadAtStart>1</LoadAtStart>
+        <EditorClassname>org.lmn.fc.ui.editors.PluginEditor</EditorClassname>
+        <Description>The AnalysisStudio Plugin</Description>
+        <IconFilename>analysisstudio.png</IconFilename>
+        <HelpFilename>AnalysisStudioHelp.html</HelpFilename>
+        <AboutFilename>AboutAnalysisStudio.html</AboutFilename>
+        <LicenceFilename>AnalysisStudioLicence.html</LicenceFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Plugin>
+
+    <Plugin>
+        <Name>Repository</Name>
+        <RoleName>Developer</RoleName>
+        <RoleName>Administrator</RoleName>
+        <RoleName>LocalUser</RoleName>
+        <Editable>1</Editable>
+        <Active>1</Active>
+        <LoadAtStart>1</LoadAtStart>
+        <EditorClassname>org.lmn.fc.ui.editors.PluginEditor</EditorClassname>
+        <Description>The Repository Plugin</Description>
+        <IconFilename>repository.png</IconFilename>
+        <HelpFilename>RepositoryHelp.html</HelpFilename>
+        <AboutFilename>AboutRepository.html</AboutFilename>
+        <LicenceFilename>RepositoryLicence.html</LicenceFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Plugin>
+
+    <Plugin>
+        <Name>Workshop</Name>
+        <RoleName>Developer</RoleName>
+        <RoleName>Administrator</RoleName>
+        <RoleName>LocalUser</RoleName>
+        <Editable>1</Editable>
+        <Active>1</Active>
+        <LoadAtStart>1</LoadAtStart>
+        <EditorClassname>org.lmn.fc.ui.editors.PluginEditor</EditorClassname>
+        <Description>The Workshop Plugin</Description>
+        <IconFilename>workshop.png</IconFilename>
+        <HelpFilename>WorkshopHelp.html</HelpFilename>
+        <AboutFilename>AboutWorkshop.html</AboutFilename>
+        <LicenceFilename>WorkshopLicence.html</LicenceFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Plugin>
+
+    <Plugin>
+        <Name>LevelOneA</Name>
+        <RoleName>Developer</RoleName>
+        <RoleName>Administrator</RoleName>
+        <RoleName>LocalUser</RoleName>
+        <RoleName>Tester</RoleName>
+        <Editable>1</Editable>
+        <Active>1</Active>
+        <LoadAtStart>1</LoadAtStart>
+        <EditorClassname>org.lmn.fc.ui.editors.PluginEditor</EditorClassname>
+        <Description>A LevelOneA Plugin</Description>
+        <IconFilename>plugin.png</IconFilename>
+        <HelpFilename>Level1AHelp.html</HelpFilename>
+        <AboutFilename>AboutLevel1A.html</AboutFilename>
+        <LicenceFilename>Level1ALicence.html</LicenceFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Plugin>
+
+    <Plugin>
+        <Name>LevelOneB</Name>
+        <RoleName>Developer</RoleName>
+        <RoleName>Tester</RoleName>
+        <Editable>1</Editable>
+        <Active>1</Active>
+        <LoadAtStart>1</LoadAtStart>
+        <EditorClassname>org.lmn.fc.ui.editors.PluginEditor</EditorClassname>
+        <Description>A LevelOneB Plugin</Description>
+        <IconFilename>plugin.png</IconFilename>
+        <HelpFilename>Level1BHelp.html</HelpFilename>
+        <AboutFilename>AboutLevel1B.html</AboutFilename>
+        <LicenceFilename>Level1BLicence.html</LicenceFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Plugin>
+
+    <Plugin>
+        <Name>LevelOneC</Name>
+        <RoleName>Developer</RoleName>
+        <RoleName>Tester</RoleName>
+        <Editable>1</Editable>
+        <Active>1</Active>
+        <LoadAtStart>1</LoadAtStart>
+        <EditorClassname>org.lmn.fc.ui.editors.PluginEditor</EditorClassname>
+        <Description>A LevelOneC Plugin</Description>
+        <IconFilename>plugin.png</IconFilename>
+        <HelpFilename>Level1CHelp.html</HelpFilename>
+        <AboutFilename>AboutLevel1C.html</AboutFilename>
+        <LicenceFilename>Level1CLicence.html</LicenceFilename>
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Plugin>     -->
+
+</Plugins>

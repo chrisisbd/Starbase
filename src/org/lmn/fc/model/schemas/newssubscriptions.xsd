@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="subscriptions.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="subscriptions.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <!-- All Newsfeed Subscriptions -->
+    <xs:element name="Subscriptions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Twitter"
+                            type="TwitterSubscription"/>
+
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="RSS"
+                            type="RssSubscription"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="TwitterSubscription">
+        <xs:sequence>
+
+            <xs:element name="Username"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/\-\\:])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="15"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RssSubscription">
+        <xs:sequence>
+
+            <xs:element name="Name"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/\-\\: ])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="URL"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'\.,/\-\\:_?=])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="IconFilename"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9./\-])*"/>
+                        <xs:minLength value="5"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="ShowDetail"
+                        type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

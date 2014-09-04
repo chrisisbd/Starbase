@@ -1,0 +1,397 @@
+
+<!-- ............................................................................... -->
+<!-- Exporter Plugin -->
+
+<Plugin>
+    <Address>00</Address>
+    <Identifier>Exporter</Identifier>
+    <Name>Exporter</Name>
+    <Description>The Exporter Module</Description>
+    <ResourceKey>Exporter</ResourceKey>
+
+    <!-- Example of Configuration Metadata specific to this Plugin -->
+    <Configuration>
+        <md:Key>Example.Data</md:Key>
+        <md:Value>Example</md:Value>
+        <md:DataTypeName>String</md:DataTypeName>
+        <md:Units>Dimensionless</md:Units>
+        <md:Description>A sample item of Exporter Plugin metadata</md:Description>
+    </Configuration>
+
+    <CommandCodeBase>04</CommandCodeBase>
+
+    <Command>
+       <Identifier>exportChart</Identifier>
+       <CommandCode>00</CommandCode>
+       <Software>
+           <Identifier>Exporter Command</Identifier>
+           <Version>00.1</Version>
+           <Description>Saves the current chart as an image in the specified file</Description>
+       </Software>
+        <Parameter>
+            <Name>Filename</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Tooltip>The pathname/filename to be saved without file extension e.g. archive/chart01</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Timestamp</Name>
+            <InputDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>true, false</Choices>
+            <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Type</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>png, jpg</Choices>
+            <Tooltip>Allowed values: JPG, PNG (PNG preferred)</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Width</Name>
+            <InputDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+            <Tooltip>The width of the image in pixels (32 to 3000)</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Height</Name>
+            <InputDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>DecimalInteger</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+            <Tooltip>The height of the image in pixels (32 to 3000)</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Ack>
+            <Name>Ack</Name>
+        </Ack>
+   </Command>
+
+    <Command>
+       <Identifier>exportProcessedData</Identifier>
+       <CommandCode>01</CommandCode>
+       <Software>
+           <Identifier>Exporter Command</Identifier>
+           <Version>00.1</Version>
+           <Description>Saves the current processed data in the specified file and format</Description>
+       </Software>
+        <Parameter>
+            <Name>Filename</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Tooltip>The pathname/filename to be saved without file extension e.g. archive/data01</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Timestamp</Name>
+            <InputDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>true, false</Choices>
+            <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Format</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+            <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Ack>
+            <Name>Ack</Name>
+        </Ack>
+   </Command>
+
+    <Command>
+       <Identifier>exportRawData</Identifier>
+       <CommandCode>02</CommandCode>
+       <Software>
+           <Identifier>Exporter Command</Identifier>
+           <Version>00.1</Version>
+           <Description>Saves the current raw data in the specified file and format</Description>
+       </Software>
+        <Parameter>
+            <Name>Filename</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Tooltip>The pathname/filename to be saved without file extension e.g. archive/data01</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Timestamp</Name>
+            <InputDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>true, false</Choices>
+            <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Format</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+            <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Ack>
+            <Name>Ack</Name>
+        </Ack>
+    </Command>
+
+   <Command>
+       <Identifier>exportInstrumentLog</Identifier>
+       <CommandCode>03</CommandCode>
+       <Software>
+           <Identifier>Exporter Command</Identifier>
+           <Version>00.1</Version>
+           <Description>Saves the current Instrument Log in the specified file and format</Description>
+       </Software>
+        <Parameter>
+            <Name>Filename</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Tooltip>The pathname/filename to be saved without file extension e.g. archive/log01</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Timestamp</Name>
+            <InputDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>true, false</Choices>
+            <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Format</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+            <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Ack>
+           <Name>Ack</Name>
+        </Ack>
+   </Command>
+
+   <Command>
+       <Identifier>exportEventLog</Identifier>
+       <CommandCode>04</CommandCode>
+       <Software>
+           <Identifier>Exporter Command</Identifier>
+           <Version>00.1</Version>
+           <Description>Saves the current Event Log in the specified file and format</Description>
+       </Software>
+        <Parameter>
+            <Name>Filename</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Tooltip>The pathname/filename to be saved without file extension e.g. archive/log01</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Timestamp</Name>
+            <InputDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>true, false</Choices>
+            <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Format</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+            <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Ack>
+           <Name>Ack</Name>
+        </Ack>
+   </Command>
+
+    <Command>
+       <Identifier>exportMetadata</Identifier>
+       <CommandCode>05</CommandCode>
+       <Software>
+           <Identifier>Exporter Command</Identifier>
+           <Version>00.1</Version>
+           <Description>Saves the current MetaData in the specified file and format</Description>
+       </Software>
+        <Parameter>
+            <Name>Filename</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Tooltip>The pathname/filename to be saved without file extension e.g. archive/metadata01</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Timestamp</Name>
+            <InputDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>true, false</Choices>
+            <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Format</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+            <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Ack>
+            <Name>Ack</Name>
+        </Ack>
+   </Command>
+
+    <Command>
+       <Identifier>exportConfiguration</Identifier>
+       <CommandCode>06</CommandCode>
+       <Software>
+           <Identifier>Exporter Command</Identifier>
+           <Version>00.1</Version>
+           <Description>Saves the current Instrument configuration in the specified file and format</Description>
+       </Software>
+        <Parameter>
+            <Name>Filename</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Tooltip>The pathname/filename to be saved without file extension e.g. archive/config01</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Timestamp</Name>
+            <InputDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>Boolean</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>true, false</Choices>
+            <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Format</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+            <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Ack>
+            <Name>Ack</Name>
+        </Ack>
+   </Command>
+</Plugin>
+

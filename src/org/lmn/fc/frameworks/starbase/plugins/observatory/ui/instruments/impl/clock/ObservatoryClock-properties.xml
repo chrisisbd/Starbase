@@ -1,0 +1,116 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Properties xmlns="properties.xmlbeans.model.fc.lmn.org">
+
+    <!-- Observatory Clock -->
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>ObservatoryClock</Key>
+            <Key>Dao</Key>
+            <Key>OnError</Key>
+            <Key>Continue</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Boolean</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>true</Value>
+        <Description>A flag to control allow continued execution following an error</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>ObservatoryClock</Key>
+            <Key>Dao</Key>
+            <Key>Timeout</Key>
+            <Key>Default</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>60</Value>
+        <Description>The Timeout period in seconds for the ObservatoryClock DAO</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <!-- Specify some NTP servers, required by the NTPSynchronisedProxyClockDAO -->
+    <!-- These are not required if the SimplePlatformClock is used -->
+    <PropertyResource>
+        <ResourceKey>
+            <Key>ObservatoryClock</Key>
+            <Key>Dao</Key>
+            <Key>Server</Key>
+            <Key>Default</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.String</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>ntp1.npl.co.uk</Value>
+        <Description>The UK National Physical Laboratory Primary NTP server</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>ObservatoryClock</Key>
+            <Key>Dao</Key>
+            <Key>Server</Key>
+            <Key>1</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.String</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>ntp2.npl.co.uk</Value>
+        <Description>The UK National Physical Laboratory Secondary NTP server</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>ObservatoryClock</Key>
+            <Key>Dao</Key>
+            <Key>Server</Key>
+            <Key>2</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.String</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>tick.usno.navy.mil</Value>
+        <Description>The US Naval Observatory NTP server</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>ObservatoryClock</Key>
+            <Key>Dao</Key>
+            <Key>Server</Key>
+            <Key>3</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.String</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>time.nist.gov</Value>
+        <Description>The US National Institute of Standards and Technology NTP server</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+</Properties>

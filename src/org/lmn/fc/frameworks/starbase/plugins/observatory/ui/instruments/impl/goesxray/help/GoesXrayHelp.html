@@ -1,0 +1,99 @@
+<!-- Copyright 2000, 2001, 2002, 2003, 04, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2013 -->
+<!-- Laurence Newell -->
+<!-- starbase@ukraa.com -->
+<!-- radio.telescope@btinternet.com -->
+<!-- -->
+<!-- This file is part of Starbase. -->
+<!-- -->
+<!-- Starbase is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+<!-- -->
+<!-- Starbase is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU General Public License for more details. -->
+<!-- -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Starbase.  If not, see http://www.gnu.org/licenses. -->
+
+<html>
+<head>
+<title>Starbase GOES Xray Flux Client</title>
+<body>
+<h3>Starbase GOES Xray Flux Client</h3>
+
+<hr>
+<br>The GOES data home page may be found at http://www.swpc.noaa.gov/
+<br>News from the Space Weather Prediction Centre on http://www.swpc.noaa.gov/ftpdir/NEWS.txt
+<br>The data files available for download are at ftp://ftp.swpc.noaa.gov/pub/lists/xray
+<br>
+<br>
+<hr>
+<br><b>Data Import</b>
+<br>The GOES Instrument can read a file already on the PC, using <b>importGOESLocal</b>
+<br>
+<br>As an example, we have provided a test file in dist/workspace.
+<br>On the Commands tab, select the <b>Importer</b> Module, and the <b>importGOESLocal</b> Command.
+<br>Just copy this name from here and paste into the Filename parameter box: workspace/samples/goes/20120119_Gp_xr_5m.txt
+<br>This file has some negative values, to check they are handled correctly.
+<br>Click the 'Execute' button, and you will see the status briefly change to 'Busy'.
+<br>When the instrument again says 'Ready', you may view the data on the Chart tab.
+<br>You can display any GOES files you have previously downloaded by providing a path to the file, based on 'dist' as the working directory.
+<br>
+<br>You can also retrieve a file from the remote NOAA server, using <b>importGOESRemote</b>
+<br>
+<br>The SWPC X-ray data list naming convention was recently altered to better
+<br>support the next and future GOES satellite designation changes. SWPC
+<br>designates a Primary and a Secondary GOES Satellite for each instrument.
+<br>http://www.swpc.noaa.gov/Data/goes.html
+<br>
+<br>The old data list naming convention included the designated satellite number,
+<br>e.g. G10xr_1m.txt. This required customer changes whenever the satellite
+<br>designation changed. The new Data List Naming Convention replaces the
+<br>satellite number with a 'p' for Primary and 's' for Secondary. The satellite
+<br>number is available in the Data List file header.
+<br>
+<br><b>NOTE: SWPC Store historical data for approximately two years only.</b>
+<br><b>Older data going back as far as 1996 can be obtain direct from http://www.swpc.noaa.gov/ftpmenu/warehouse.html</b>
+<br>
+<br>The new convention began Dec 1, when GOES 14 replaced GOES 10 as the SWPC
+<br>Primary GOES X-ray Satellite.
+<br>There is no Secondary GOES X-ray Satellite at this time.
+<br>
+<br>Naming Convention:
+<br>       2-hour lists:          Gp_xr_1m.txt  and           Gs_xr_1m.txt
+<br>                              Gp_xr_5m.txt  and           Gs_xr_5m.txt
+<br>     Full day lists: 20091201_Gp_xr_1m.txt  and  20091201_Gs_xr_1m.txt
+<br>                     20091201_Gp_xr_5m.txt  and  20091201_Gs_xr_5m.txt
+<br>
+<br>On the Commands tab, select the <b>Importer</b> Module, and the <b>importGOESRemote</b> Command.
+<br>Enter *only* the file name into the Filename parameter box with the following rule:
+<br>* If the name starts with the date pattern '20YYMMDD' then use the name literally.
+<br>* e.g. 20091201_Gp_xr_1m.txt
+<br>
+<br>* Otherwise, the software will prepend today's date using that pattern.
+<br>* So you only enter e.g. Gp_xr_5m.txt
+<br>* This will always retrieve the same dataset for the current day (in this case the 5min samples).
+<br>* The above is to simplify the download of a file every day, without having to explicitly enter the date.
+<br>* Note that this will not work after 2099!
+<br>
+<br>
+<hr>
+<br>  <b>Flare Classification</b>
+<br>  A    10^-8 to 10^-7 Wm^-2
+<br>  B    10^-7 to 10^-6 Wm^-2
+<br>  C    10^-6 to 10^-5 Wm^-2
+<br>  M    10^-5 to 10^-4 Wm^-2
+<br>  X    10^-4 to 10^-3 Wm^-2
+<br>
+<br>
+<hr>
+<br><b>PLEASE NOTE! If the download fails because of 'file not found', </b>
+<br><b>CHECK that there is a data file from the satellite you specified by browsing ftp://ftp.swpc.noaa.gov/pub/lists/xray</b>
+<br><b>Quite often the satellites go off-line and no files are produced for a while.</b>
+<br>
+
+</body>
+</html>

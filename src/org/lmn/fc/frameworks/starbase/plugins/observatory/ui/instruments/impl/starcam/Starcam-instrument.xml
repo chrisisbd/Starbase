@@ -1,0 +1,911 @@
+<?xml version="1.0" standalone="yes"?>
+
+
+<Instruments xmlns="instruments.xmlbeans.model.fc.lmn.org">
+
+    <!-- ....................................................................................... -->
+    <!-- Starcam -->
+
+    <Instrument>
+        <Identifier>Starcam</Identifier>
+
+        <!-- The Starcam Controller -->
+
+        <Controller>
+            <!-- A valid IP address nnn.nnn.nnn.nnn with optional Port -->
+            <!-- Pad this field to exactly 21 characters, using only trailing underscores '_' -->
+            <IPAddress>192.168.1.68:81______</IPAddress>
+
+            <!-- ............................................................................... -->
+            <!-- Instrument (Primary Plugins) -->
+            <!-- ............................................................................... -->
+            <!-- Allow Parent to Child links to identify those physical Plugins **required** for this Instrument -->
+            <!-- The schema allows for zero Plugins -->
+
+            <PluginManifest>
+                <!-- The Key for the PrimaryPlugin, which defines the nature of the Instrument -->
+                <PrimaryResourceKey>DataCapture</PrimaryResourceKey>
+
+                <!-- There are no Secondary Plugins for this Instrument -->
+            </PluginManifest>
+
+            <Identifier>Core</Identifier>
+            <Name>Core</Name>
+            <Description>The Starcam Core</Description>
+            <ResourceKey>Core</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Controller has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Resets the Starcam</Description>
+                <Parameter>
+                    <Name>Reset.Mode</Name>
+                    <InputDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>NumericIndexedList</DataTypeName>
+                        <FieldCount>1</FieldCount>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Choices>Soft,Defaults</Choices>
+                    <Tooltip>Allowed values: Soft, Defaults</Tooltip>
+                </Parameter>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Pings the Starcam Controller</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Gets the configuration of the Starcam in XML</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- ............................................................................... -->
+            <!-- Core Commands executed entirely on the host -->
+
+            <!-- start() starts the Instrument, exactly as for the ControlPanel green button -->
+            <!-- This is required for the Macro support -->
+            <Command>
+                <Identifier>start</Identifier>
+                <CommandCode>03</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Starts the Instrument</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Ack</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <!-- stop() stops the Instrument, exactly as for the ControlPanel red button -->
+            <!-- This is required for the Macro support -->
+            <Command>
+                <Identifier>stop</Identifier>
+                <CommandCode>04</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Stops the Instrument</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Ack</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <!-- getVersion() returns a String giving the version information for the Controller OS -->
+            <Command>
+                <Identifier>getVersion</Identifier>
+                <CommandCode>0A</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Gets the Version of the Controller OS</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration.Version</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- ............................................................................... -->
+            <!-- DataCapture Plugin -->
+
+            <Plugin>
+                <!-- A virtual Plugin -->
+                <Identifier>DataCapture</Identifier>
+                <Name>DataCapture</Name>
+                <Description>The DataCapture Module</Description>
+                <ResourceKey>DataCapture</ResourceKey>
+
+                <!-- The DataCapture Plugin is always CommandCodeBase 03 -->
+                <CommandCodeBase>03</CommandCodeBase>
+
+                <Command>
+                    <Identifier>captureImage</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Gets the image from the camera</Description>
+                    <Category>Capture</Category>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>captureImageRealtime</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Gets the image from the camera repeatedly</Description>
+                    <Category>Capture</Category>
+                    <Parameter>
+                        <Name>Image.Pathname</Name>
+                        <InputDataType>
+                            <DataTypeName>PathName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive</Value>
+                        <Tooltip>The pathname used for saving the individual timestamped image files e.g. archive</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Capture.Interval</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Regex>^0*([1-9][0-9]{0,2}|1000)$</Regex>
+                        <Tooltip>The time interval between image captures (1 to 1000 seconds)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Capture.Period</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Regex>^0*([0-9]{1,6}|1000000)$</Regex>
+                        <Tooltip>The total time of image capture (0 to 1000000 seconds, 0 is continuous)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>RealtimeUpdate</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>false,true</Choices>
+                        <Tooltip>Controls Image tab updates on every capture. Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- MetadataManager Plugin -->
+
+            <Plugin>
+                <!-- A virtual Plugin -->
+                <Identifier>MetadataManager</Identifier>
+                <Name>MetadataManager</Name>
+                <Description>The MetadataManager Module</Description>
+                <ResourceKey>MetadataManager</ResourceKey>
+
+                <!-- The MetadataManager Plugin is always CommandCodeBase 58 -->
+                <CommandCodeBase>58</CommandCodeBase>
+
+                <Command>
+                    <Identifier>importMetadata</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Import the selected Metadata</Description>
+                    <Parameter>
+                        <Name>MetadataType</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Framework,Observatory,Observer,Observation,Instrument,Controller,!PluginList</Choices>
+                        <Tooltip>Allowed values: Framework, Observatory, Observer, Observation, Instrument, Controller, All Plugins</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>importMetadataLocal</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Import a custom Metadata file from the local file system</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>workspace</Value>
+                        <Tooltip>The filename of the Metadata to be imported</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setMetadataValue</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Set the Value of the selected Metadata item</Description>
+                    <Parameter>
+                        <Name>Metadata.Key</Name>
+                        <InputDataType>
+                            <DataTypeName>MetadataKey</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Tooltip>A Metadata Key valid for the current Instrument and dataset</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Metadata.Value</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Tooltip>The requested new Value of the Metadata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportMetadata</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current MetaData in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/Metadata</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/Metadata</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>removeMetadata</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Remove the selected Metadata</Description>
+                    <Parameter>
+                        <Name>MetadataType</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Framework,Observatory,Observer,Observation,Instrument,MetadataMetadata</Choices>
+                        <Tooltip>Allowed values: Framework, Observatory, Observer, Observation, Instrument (all), MetadataMetadata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Importer Plugin -->
+
+            <Plugin>
+                <Identifier>Importer</Identifier>
+                <Name>Importer</Name>
+                <Description>The Importer Module</Description>
+                <ResourceKey>Importer</ResourceKey>
+
+                <CommandCodeBase>80</CommandCodeBase>
+
+                <Command>
+                    <Identifier>importImageLocal</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Get a single image file from the local file system as PNG, JPG, GIF</Description>
+                    <Category>Import</Category>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be imported</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Exporter Plugin -->
+
+            <Plugin>
+                <!-- A virtual Plugin -->
+                <Identifier>Exporter</Identifier>
+                <Name>Exporter</Name>
+                <Description>The Exporter Module</Description>
+                <ResourceKey>Exporter</ResourceKey>
+
+                <CommandCodeBase>81</CommandCodeBase>
+
+                <Command>
+                    <Identifier>exportCommandLog</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Command Log in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/CommandLog</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/CommandLog</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportImage</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current Image in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/image01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>png,jpg,gif</Choices>
+                        <Tooltip>Allowed values: PNG, JPG, GIF (PNG preferred)</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportMetadata</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current MetaData in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/Metadata</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/Metadata</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportEventLog</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current Event Log in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/EventLog</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/EventLog</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportConfiguration</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current Instrument configuration in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/Configuration</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/Configuration</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+
+
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportCommandLexicon</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Instrument Command Lexicon in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/CommandLexicon</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/CommandLexicon</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportInstrumentXML</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Instrument XML in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/InstrumentXML</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/InstrumentXML</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Utilities Plugin -->
+
+            <Plugin>
+                <Identifier>Utilities</Identifier>
+                <Name>Utilities</Name>
+                <Description>Utilities for this Instrument</Description>
+                <ResourceKey>Utilities</ResourceKey>
+
+                <!-- The Utilities Plugin is always CommandCodeBase 01 -->
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                    <Identifier>copyResponseToClipboard</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Copies the most recent ResponseValue to the host Clipboard</Description>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+            </Plugin>
+
+        </Controller>
+
+        <Name>Starcam</Name>
+        <Description>A Starcam</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.starcam.Starcam</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>Starcam</ResourceKey>
+
+        <DAO>
+            <Name>Starcam</Name>
+            <Description>The Starcam DAO</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.starcam.dao.StarcamDLinkHttpGetDAO</DaoClassname>
+
+            <!-- The DAO has no Port -->
+
+            <!-- The DAO has no Inputs -->
+
+            <!-- DAO Outputs -->
+            <Output>
+                <Name>CommandLog</Name>
+                <Description>The Command Log produced by the DAO</Description>
+                <Tooltip>The Command Log</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>ImageData</Name>
+                <Description>The Image Data produced by the DAO</Description>
+                <Tooltip>The Image</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>Configuration</Name>
+                <Description>The Configuration produced by the DAO</Description>
+                <Tooltip>The Configuration</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>CommandLexicon</Name>
+                <Description>The Instrument Command Lexicon produced by the DAO</Description>
+                <Tooltip>The Instrument Command Lexicon</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XML</Name>
+                <Description>The Instrument XML Configuration produced by the DAO</Description>
+                <Tooltip>The Instrument XML Configuration</Tooltip>
+                <DataTypeName>XML</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+    </Instrument>
+
+</Instruments>

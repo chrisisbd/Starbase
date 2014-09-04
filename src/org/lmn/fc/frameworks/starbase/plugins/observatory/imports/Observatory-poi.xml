@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+
+<POI xmlns="poi.xmlbeans.model.fc.lmn.org">
+
+    <!-- PointOfInterest information relevant to the Observatory -->
+    <!-- POIs appear on the RegionalMap tabs in the Observatory, for e.g. the VLF Receiver -->
+
+    <PointOfInterest>
+        <Name>MyObservatory</Name>
+        <Description>The location of this Observatory</Description>
+
+        <!-- If any of these keys do not exist, then the POI is not displayed -->
+        <!-- WEST is POSITIVE (astronomical convention) -->
+        <LongitudeKey>Observatory.Longitude</LongitudeKey>
+
+        <LatitudeKey>Observatory.Latitude</LatitudeKey>
+
+        <!-- HASL {-9999.9 to 9999.9} -->
+        <HASLKey>Observatory.HASL</HASLKey>
+
+        <!-- NOTE! -->
+        <!-- Removed MaidenheadLocator because we are working via Metadata Keys -->
+        <!-- Ideally the software would calculate the ML from the supplied location -->
+        <!-- otherwise it could be out of step with the current coordinates from Metadata -->
+        <!-- See: http://www.amsat.org/cgi-bin/gridconv -->
+        <!-- See: http://www.arrl.org/locate/grid.html -->
+        <!--<MaidenheadLocator>JO01al</MaidenheadLocator>-->
+
+        <!-- Icon pathnames are relative to the 'dist' root -->
+        <IconFilename>poi.png</IconFilename>
+    </PointOfInterest>
+
+</POI>

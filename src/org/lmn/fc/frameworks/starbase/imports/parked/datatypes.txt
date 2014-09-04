@@ -1,0 +1,23 @@
+
+
+            <!--<xs:enumeration value="DecimalFloat"/>-->
+            <!--<xs:enumeration value="DecimalDouble"/>-->
+            <!--<xs:enumeration value="String"/>-->
+            <!--<xs:enumeration value="Date"/>-->
+            <!--<xs:enumeration value="Time"/>-->
+            <!--<xs:enumeration value="Boolean"/>-->
+
+            <!--<xs:enumeration value="Vector"/>-->
+            <!--<xs:enumeration value="XYDataset"/>-->
+            <!--<xs:enumeration value="List"/>-->
+
+            <!--<xs:enumeration value="BitString"/>-->
+            <!--<xs:enumeration value="XML"/>-->
+            <!--<xs:enumeration value="Url"/>-->
+            <!--<xs:enumeration value="DegMinSec"/>-->
+            <!--<xs:enumeration value="HourMinSec"/>-->
+            <!--<xs:enumeration value="YearMonthDay"/>-->
+            <!--<xs:enumeration value="Colour"/>-->
+            <!--<xs:enumeration value="Font"/>-->
+        <!--</xs:restriction>-->
+    <!--</xs:simpleType>-->

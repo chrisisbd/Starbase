@@ -1,0 +1,370 @@
+
+
+// Captured from Andrew Lutley...
+$GPGGA,,,,,,0,02,,,,,,,*64
+$GPGLL,5118.667,N,00017.336,W,152046,V*21
+$GPGSA,A,1,19,03,03,03,,,,,,,,,14.1,14.1,1.0*3A
+$GPGSV,1,1,02,19,71,161,08,03,34,152,09*70
+$GPRMC,,V,,,,,,,,,*31
+$GPGGA,,,,,,0,02,,,,,,,*64
+$GPGLL,5118.667,N,00017.336,W,152046,V*21
+$GPGSA,A,1,19,03,03,03,,,,,,,,,14.1,14.1,1.0*3A
+$GPGSV,1,1,02,19,71,161,08,03,34,153,09*71
+$GPRMC,,V,,,,,,,,,*31
+$GPGGA,,,,,,0,02,,,,,,,*64
+$GPGLL,5118.667,N,00017.336,W,152046,V*21
+$GPGSA,A,1,19,03,03,03,,,,,,,,,14.1,14.1,1.0*3A
+$GPGSV,1,1,02,19,71,161,08,03,34,153,09*71
+$GPRMC,,V,,,,,,,,,*31
+$GPGGA,,,,,,0,02,,,,,,,*64
+$GPGLL,5118.667,N,00017.336,W,152046,V*21
+$GPGSA,A,1,19,03,03,03,,,,,,,,,14.1,14.1,1.0*3A
+$GPGSV,1,1,02,19,71,161,08,03,34,153,09*71
+$GPRMC,,V,,,,,,,,,*31
+$GPGGA,152337,5118.663,N,00017.343,W,1,03,3.5,82.9,M,-47.0,M,*69
+$GPGLL,5118.663,N,00017.343,W,152337,A*35
+$GPGSA,A,2,19,03,14,,,,,,,,,,3.6,3.5,1.0*3F
+$GPGSV,1,1,03,19,71,161,08,03,34,153,09,14,28,107,05*4C
+$GPRMC,152337,A,5118.663,N,00017.343,W,000.4,172.3,250489,004.3,W*7D
+$GPGGA,152340,5118.664,N,00017.341,W,1,03,3.5,82.9,M,-47.0,M,*6C
+$GPGLL,5118.664,N,00017.341,W,152340,A*30
+$GPGSA,A,2,19,03,14,,,,,,,,,,3.6,3.5,1.0*3F
+$GPGSV,1,1,03,19,71,161,08,03,34,153,09,14,28,107,05*4C
+$GPRMC,152340,A,5118.664,N,00017.341,W,000.0,172.3,250489,004.3,W*7C
+$GPGGA,152343,5118.664,N,00017.342,W,1,03,3.5,82.9,M,-47.0,M,*6C
+$GPGLL,5118.664,N,00017.342,W,152343,A*30
+$GPGSA,A,2,19,03,14,,,,,,,,,,3.6,3.5,1.0*3F
+$GPGSV,1,1,03,19,71,161,08,03,34,153,09,14,28,107,04*4D
+
+$GPRMC,152343,A,5118.664,N,00017.342,W,000.0,172.3,250489,004.3,W*7C
+$GPRMC,081836,A,3751.65,S,14507.36,E,000.0,360.0,130998,011.3,E*62
+
+
+$GPGGA,152347,5118.665,N,00017.341,W,1,  03,3.5,82.9, M,-47.0,M,*6A
+$GPGGA,170834,4124.8963,N,08151.6838,W,1,05,1.5,280.2,M,-34.0,M,,,*75
+
+
+$GPGLL,5118.665,N,00017.341,W,152347,A*36
+
+$GPGSA,A,2,19,03,14,  ,  ,  ,  ,  ,,,,,3.6,3.5,1.0*3F
+$GPGSA,A,3,19,28,14,18,27,22,31,39,,,,,1.7,1.0,1.3*34
+
+
+$GPGSV,1,1,03,19,71,161,09,03,34,153,08,14,28,107,04*4D
+$GPGSV,3,1,11,03,03,111,00,04,15,270,00,06,01,010,00,13,06,292,00*74
+
+
+$GPRMC,152347,A,5118.665,N,00017.341,W,000.0,172.3,250489,004.3,W*7A
+
+    private boolean decode$GPGSV_OLD(final Vector sentence,
+                                     final int count,
+                                     final boolean valid)
+        {
+        StringTokenizer stringTokenizer;
+        int intCountTokens;
+        String strChecksum;
+        int intChecksum;
+        String strSentence;
+        int intMessageCount;
+        int intMessageNumber;
+        String strTemp;
+        SatelliteData GPGSVsatellite;
+        final Iterator<SatelliteData> iterSatelliteData;
+
+        if ((count < 1) || (count > MAX_MESSAGES))
+            {
+            // Input parameter invalid
+            LOGGER.debugTimedEvent("Invalid message count [count=" + count + "]");
+            return(false);
+            }
+
+        // Set some defaults
+        intGPGSV_SatellitesInView = 0;
+        listGPGSV_SatellitesInView = new Vector<SatelliteData>(10);
+
+        if (!valid)
+            {
+            LOGGER.debugTimedEvent("$GPGSV not valid, returning defaults");
+            return (false);
+            }
+
+        for (int i = 0; i < count; i++)
+            {
+            // Retrieve the ith parsed $GPGSV sentence
+            strSentence = (String)sentence.get(i);
+
+            // Return the delimiters this time, because of possible empty fields...
+            stringTokenizer = new StringTokenizer(strSentence, NMEA_DELIMITER, true);
+            intCountTokens = stringTokenizer.countTokens();
+//            LOGGER.debugTimedEvent(StringLibrary.MARKER);
+            LOGGER.debugTimedEvent("Decoding $GPGSV(" + (i+1) + ") [tokens=" + intCountTokens + "]");
+            LOGGER.debugTimedEvent("[sentence=" + strSentence + "]");
+
+            // Discard the sentence identifier
+            stringTokenizer.nextToken();
+            // Discard the trailing delimiter
+            stringTokenizer.nextToken();
+
+            // Read the total number of messages in this cycle
+            intMessageCount = Integer.parseInt(stringTokenizer.nextToken());
+            // Discard the trailing delimiter
+            stringTokenizer.nextToken();
+
+            // Double check for correct parsing earlier
+            if (intMessageCount == count)
+                {
+                LOGGER.debugTimedEvent("[messagecount=" + intMessageCount + "]");
+
+                // Read the MessageNumber
+                intMessageNumber = Integer.parseInt(stringTokenizer.nextToken());
+                // Discard the trailing delimiter
+                stringTokenizer.nextToken();
+
+                // Check that the sentences have remained in sequence
+                if (intMessageNumber == (i+1))
+                    {
+                    LOGGER.debugTimedEvent("[messagenumber=" + intMessageNumber + "]");
+
+                    // Read the SatellitesInView count
+                    this.intGPGSV_SatellitesInView = Integer.parseInt(stringTokenizer.nextToken());
+                    LOGGER.debugTimedEvent("[satellitecount=" + intGPGSV_SatellitesInView + "]");
+                    // Discard the trailing delimiter
+                    stringTokenizer.nextToken();
+
+                    // There's now a maxium of four sets of satellite data
+                    // The checksum field also contains the last SNR (duh!)
+                    // Empty fields contain one delimiter token
+
+                    for (int j = 0; j < 4; j++)
+                        {
+//                        LOGGER.debugTimedEvent(StringLibrary.MARKER);
+                        LOGGER.debugTimedEvent("[j=" + j + "]");
+
+                        // Prepare to store the data for this satellite
+                        GPGSVsatellite = new SatelliteData();
+
+                        // Read the Satellite PRN number, or NMEA_DELIMITER if none present
+                        strTemp = stringTokenizer.nextToken();
+
+                        if (!NMEA_DELIMITER.equals(strTemp))
+                            {
+                            // Discard the trailing delimiter
+                            stringTokenizer.nextToken();
+
+                            // Save the PRN in this satellite's data structure
+                            GPGSVsatellite.setSatellitePRN(Integer.parseInt(strTemp));
+                            LOGGER.debugTimedEvent("[satellitePRN=" + strTemp + "]");
+
+                            // Now read the Elevation
+                            strTemp = stringTokenizer.nextToken();
+
+                            if (!NMEA_DELIMITER.equals(strTemp))
+                                {
+                                // Discard the trailing delimiter
+                                stringTokenizer.nextToken();
+
+                                GPGSVsatellite.setElevation(Integer.parseInt(strTemp));
+                                LOGGER.debugTimedEvent("[elevation=" + strTemp + "]");
+
+                                // Now read the Azimuth
+                                strTemp = stringTokenizer.nextToken();
+
+                                if (!NMEA_DELIMITER.equals(strTemp))
+                                    {
+                                    // Discard the trailing delimiter
+                                    stringTokenizer.nextToken();
+
+                                    GPGSVsatellite.setAzimuth(Integer.parseInt(strTemp));
+                                    LOGGER.debugTimedEvent("[azimuth=" + strTemp + "]");
+
+                                    // Now read the SNR, checking for the last satellite field
+                                    // which has a different syntax...
+                                    if (j < 3)
+                                        {
+                                        strTemp = stringTokenizer.nextToken();
+
+                                        if (!NMEA_DELIMITER.equals(strTemp))
+                                            {
+                                            // Discard the trailing delimiter
+                                            stringTokenizer.nextToken();
+
+                                            GPGSVsatellite.setSNRdB(Integer.parseInt(strTemp));
+                                            LOGGER.debugTimedEvent("[snr=" + strTemp + "]");
+                                            }
+                                        else
+                                            {
+                                            // SNR is null, so not tracking this satellite
+                                            // There is no trailing delimiter in this case
+                                            // Set SNR = -1?
+
+                                            GPGSVsatellite.setSNRdB(-1);
+                                            LOGGER.debugTimedEvent("[snr=null]");
+                                            }
+
+                                        // Commit the data received
+                                        LOGGER.debugTimedEvent("Commit data to vector");
+                                        listGPGSV_SatellitesInView.add(GPGSVsatellite);
+                                        }
+                                    else
+                                        {
+                                        // It is the last satellite in the group,
+                                        // so we need to chop up the SNR and checksum
+                                        strTemp = stringTokenizer.nextToken();
+
+                                        // The SNR may be missing?!
+                                        if (CHECKSUM_DELIMITER.equals(strTemp.substring(0, 1)))
+                                            {
+                                            GPGSVsatellite.setSNRdB(-1);
+                                            LOGGER.debugTimedEvent("[snr=null]");
+
+                                            // There is no SNR information, so just read the checksum
+                                            // from CHECKSUM_DELIMITER onwards
+                                            strChecksum = strTemp.substring(1);
+                                            }
+                                        else
+                                            {
+                                            // We have an SNR and checksum, so retokenize using the checksum delimiter
+                                            // <SNR><CHECKSUM_DELIMITER><CHECKSUM_DELIMITER>  (do not return the delimiter)
+                                            stringTokenizer = new StringTokenizer(strTemp, CHECKSUM_DELIMITER);
+
+                                            // Read the SNR
+                                            strTemp = stringTokenizer.nextToken();
+                                            GPGSVsatellite.setSNRdB(Integer.parseInt(strTemp));
+                                            LOGGER.debugTimedEvent("[snr=" + strTemp + "]");
+
+                                            // Read the checksum
+                                            strChecksum = stringTokenizer.nextToken();
+                                            }
+
+                                        LOGGER.debugTimedEvent("[strchecksum=" + strChecksum + "]");
+                                        intChecksum = Integer.parseInt(strChecksum, RADIX_16);
+                                        LOGGER.debugTimedEvent("[checksum=" + Integer.toHexString(intChecksum) + "]");
+
+                                        // ToDo Check the checksum...
+                                        if (true)
+                                            {
+                                            // Commit the data received
+                                            LOGGER.debugTimedEvent("Commit data to SatellitesInView");
+                                            listGPGSV_SatellitesInView.add(GPGSVsatellite);
+                                            }
+                                        else
+                                            {
+                                            // Checksum delimiter invalid (very unlikely)
+                                            LOGGER.debugTimedEvent("Invalid checksum");
+                                            return(false);
+                                            }
+                                        }
+                                    }
+                                else
+                                    {
+                                    // Something's wrong - delimiter where Azimuth should be!
+                                    // Leave the loop early...
+                                    LOGGER.debugTimedEvent("[azimutherror=" + strTemp + "]");
+                                    return(false);
+                                    }
+                                }
+                            else
+                                {
+                                // Something's wrong - delimiter where Elevation should be!
+                                // Leave the loop early...
+                                LOGGER.debugTimedEvent("[elevationerror=" + strTemp + "]");
+                                return(false);
+                                }
+                            }
+                        else
+                            {
+                            // The PRN field was null, so skip all fields for this satellite
+                            // Only ONE NMEA_DELIMITER expected per empty field
+                            LOGGER.debugTimedEvent("Skipping null PRN");
+
+                            // Elevation
+                            stringTokenizer.nextToken();
+                            LOGGER.debugTimedEvent("Skipping null Elevation");
+
+                            // Azimuth
+                            stringTokenizer.nextToken();
+                            LOGGER.debugTimedEvent("Skipping null Azimuth");
+
+                            // SNR, checking for the last satellite (includes checksum)
+                            strTemp = stringTokenizer.nextToken();
+
+                            if (j < 3)
+                                {
+                                // Assume the SNR is null
+                                LOGGER.debugTimedEvent("Skipping null SNR");
+                                }
+                            else
+                                {
+                                // The SNR may not be missing?!
+                                if (CHECKSUM_DELIMITER.equals(strTemp.substring(0, 1)))
+                                    {
+                                    LOGGER.debugTimedEvent("[snr=null]");
+
+                                    // There is no SNR information, so just read the checksum
+                                    strChecksum = strTemp.substring(1);
+                                    }
+                                else
+                                    {
+                                    // We have an SNR and checksum, so retokenize using the checksum delimiter
+                                    stringTokenizer = new StringTokenizer(strTemp, CHECKSUM_DELIMITER);
+
+                                    // Read the SNR, but discard because it is not valid data?
+                                    strTemp = stringTokenizer.nextToken();
+                                    LOGGER.debugTimedEvent("[snr=" + strTemp + "]");
+
+                                    // Read the checksum
+                                    strChecksum = stringTokenizer.nextToken();
+                                    }
+
+                                LOGGER.debugTimedEvent("[strchecksum=" + strChecksum + "]");
+                                intChecksum = Integer.parseInt(strChecksum, RADIX_16);
+                                LOGGER.debugTimedEvent("[checksum=" + Integer.toHexString(intChecksum) + "]");
+
+                                // ToDO Check the checksum...
+                                if (false)
+                                    {
+                                    // Checksum delimiter invalid (very unlikely)
+                                    LOGGER.debugTimedEvent("Invalid checksum");
+                                    return(false);
+                                    }
+
+                                // Otherwise just leave the loop, there are no data to save
+                                }
+                            }
+                        }
+                    }
+                else
+                    {
+                    // Leave the loop early...
+                    LOGGER.debugTimedEvent("[messagenumber=" + intMessageNumber + "] [expected=" + (i+1) + "]");
+                    return(false);
+                    }
+                }
+            else
+                {
+                // Leave the loop early...
+                LOGGER.debugTimedEvent("[messagecount=" + intMessageCount + "] [expected=" + count + "]");
+                return(false);
+                }
+            }
+
+        // Everything worked Ok!
+//        LOGGER.debugTimedEvent(StringLibrary.MARKER);
+        iterSatelliteData = listGPGSV_SatellitesInView.iterator();
+
+        while (iterSatelliteData.hasNext())
+            {
+            final SatelliteData data;
+
+            data = iterSatelliteData.next();
+
+            LOGGER.debugTimedEvent("[satellitedata="
+                             + data.getSatellitePRN() + ", "
+                             + data.getElevation() + ", "
+                             + data.getAzimuth() + ", "
+                             + data.getSNRdB() + "] ");
+            }
+
+        return(true);
+        }
+

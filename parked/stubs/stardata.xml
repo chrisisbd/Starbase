@@ -1,0 +1,233 @@
+<?xml version="1.0" standalone="yes"?>
+
+
+<Stardata xmlns="stardata.xmlbeans.model.fc.lmn.org"
+          xmlns:md="metadata.xmlbeans.model.fc.lmn.org">
+
+    <!-- An optional Header, containing Metadata and Metadata describing the Metadata (!) -->
+    <Header>
+        <!-- Metadata describing the Metadata -->
+        <MetadataMetadata>
+            <md:Key>Example.0</md:Key>
+            <md:Value>Example</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>A sample item of metadata metadata</md:Description>
+        </MetadataMetadata>
+
+        <!-- The Header Metadata -->
+        <Metadata>
+            <md:Key>Observatory.Name</md:Key>
+            <md:Value>Starbase Central</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The name of the Observatory</md:Description>
+        </Metadata>
+
+    </Header>
+
+    <!-- Optional Data, containing Data and Metadata describing the Data -->
+    <Data>
+        <!-- Metadata describing the Data -->
+        <!-- Date -->
+        <DataMetadata>
+            <md:Key>Column.Name.0</md:Key>
+            <md:Value>Date</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The Date of the observation</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.DataType.0</md:Key>
+            <md:Value>Date</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The DataType of the Date</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.Units.0</md:Key>
+            <md:Value>Days</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The Units of the Date</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.Description.0</md:Key>
+            <md:Value>The Date of the observation</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The description of the Date</md:Description>
+        </DataMetadata>
+
+        <!-- Time -->
+        <DataMetadata>
+            <md:Key>Column.Name.1</md:Key>
+            <md:Value>Time</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The Time of the observation</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.DataType.1</md:Key>
+            <md:Value>Time</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The DataType of the Time</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.Units.1</md:Key>
+            <md:Value>Hours</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The Units of the Time</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.Description.1</md:Key>
+            <md:Value>The Time of the observation</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The description of the Time</md:Description>
+        </DataMetadata>
+
+        <!-- Channel 0 -->
+        <DataMetadata>
+            <md:Key>Column.Name.2</md:Key>
+            <md:Value>VLF (Channel 1)</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>VLF Rx at 21.4kHz</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.DataType.2</md:Key>
+            <md:Value>DecimalFloat</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The DataType of Channel 0</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.Units.2</md:Key>
+            <md:Value>Volts</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The Units of Channel 0</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.Description.2</md:Key>
+            <md:Value>The VLF 21.4kHz output</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The description of Channel 0</md:Description>
+        </DataMetadata>
+
+        <!-- Channel 1 -->
+        <DataMetadata>
+            <md:Key>Column.Name.3</md:Key>
+            <md:Value>VLF (Channel 1)</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>VLF Rx at 19.0kHz</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.DataType.3</md:Key>
+            <md:Value>DecimalFloat</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The DataType of Channel 1</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.Units.3</md:Key>
+            <md:Value>Volts</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The Units of Channel 1</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.Description.3</md:Key>
+            <md:Value>The VLF 19.0kHz output</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The description of Channel 1</md:Description>
+        </DataMetadata>
+
+        <!-- Channel 2 -->
+        <DataMetadata>
+            <md:Key>Column.Name.4</md:Key>
+            <md:Value>Magnetometer (Channel 2)</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The name of Channel 2</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.DataType.4</md:Key>
+            <md:Value>DecimalFloat</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The DataType of Channel 2</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.Units.4</md:Key>
+            <md:Value>nT</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The Units of Channel 2</md:Description>
+        </DataMetadata>
+
+        <DataMetadata>
+            <md:Key>Column.Description.4</md:Key>
+            <md:Value>The Magnetometer output</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The description of Channel 2</md:Description>
+        </DataMetadata>
+
+        <!-- The data block -->
+        <!-- A series of columns, as Date, Time and one or more Strings representing the data -->
+
+        <!-- A A verbose form where the meaning is clear -->
+
+        <!--<Record>-->
+            <!--<Date>2008-01-01</Date>-->
+            <!--<Time>00:00:00</Time>-->
+            <!--<Column>123.456</Column>-->
+            <!--<Column>123.456</Column>-->
+            <!--<Column>123.456</Column>-->
+        <!--</Record>-->
+
+
+        <!--<RecordData>-->
+            <!--<Column>34243</Column>-->
+            <!--<Column>34243</Column>-->
+            <!--<Column>34243</Column>-->
+        <!--</RecordData>-->
+
+
+
+        <!-- A more convenient shorter form to save storage -->
+        <!--  Column 0         Column 1       Column 2       Column 3       Column 4 -->
+        <!--  Date             Time           Channel 0      Channel 1      Channel 2 -->
+        <!--<R><D>2008-01-01</D><T>00:00:00</T><C>-123.456</C><C>-123.456</C><C>+123.456</C></R>-->
+        <!--<R><D>2008-01-01</D><T>00:00:00</T><C>-123.456</C><C>-123.456</C><C>+123.456</C></R>-->
+        <!--<R><D>2008-01-01</D><T>00:00:00</T><C>-123.456</C><C>-123.456</C><C>+123.456</C></R>-->
+        <!--<R><D>2008-01-01</D><T>00:00:00</T><C>-123.456</C><C>-123.456</C><C>+123.456</C></R>-->
+        <!--<R><D>2008-01-01</D><T>00:00:00</T><C>-123.456</C><C>-123.456</C><C>+123.456</C></R>-->
+        <!--<R><D>2008-01-01</D><T>00:00:00</T><C>-123.456</C><C>-123.456</C><C>+123.456</C></R>-->
+
+
+        <!--<RD><C>234</C><C>234</C><C>234</C><C>234</C><C>234</C><C>234</C><C>234</C></RD>-->
+    </Data>
+
+</Stardata>

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+
+<xs:schema targetNamespace="datatypes.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="datatypes.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <!-- These are the DataTypes which *must* be present in order to compile -->
+    <!-- This is a bit of a bodge, because we can't get at the XML types at compile time -->
+
+    <!-- These names must be kept in step with code in DataTypeDictionary -->
+
+    <xs:simpleType name="SchemaDataType">
+        <xs:restriction base="xs:normalizedString">
+
+            <!-- Numeric -->
+            <xs:enumeration value="UnsignedDecimalByte"/>
+            <xs:enumeration value="SignedDecimalByte"/>
+            <xs:enumeration value="DecimalDigit"/>
+            <xs:enumeration value="DecimalInteger"/>
+            <xs:enumeration value="DecimalFloat"/>
+            <xs:enumeration value="DecimalDouble"/>
+
+            <xs:enumeration value="UnsignedHexByte"/>
+            <xs:enumeration value="SignedHexByte"/>
+            <xs:enumeration value="HexDigit"/>
+            <xs:enumeration value="HexInteger"/>
+
+            <!-- Date and Time -->
+            <xs:enumeration value="Date"/>
+            <xs:enumeration value="Time"/>
+            <xs:enumeration value="TimeZone"/>
+
+            <!-- Angles -->
+            <xs:enumeration value="Angle"/>
+            <xs:enumeration value="Azimuth"/>
+            <xs:enumeration value="Elevation"/>
+
+            <!-- Signed -->
+            <xs:enumeration value="Latitude"/>
+            <xs:enumeration value="GalacticLatitude"/>
+
+            <!-- Unsigned -->
+            <xs:enumeration value="UnsignedLongitude"/>
+            <xs:enumeration value="GalacticLongitude"/>
+
+            <!-- Signed -->
+            <xs:enumeration value="Longitude"/>
+            <xs:enumeration value="SignedLongitude"/>
+
+            <xs:enumeration value="Declination"/>
+            <xs:enumeration value="RightAscension"/>
+
+            <!-- The following are to allow editing of Metadata with DataTypes and Units specified as Values -->
+            <xs:enumeration value="MetadataKey"/>
+            <xs:enumeration value="DataType"/>
+            <xs:enumeration value="Units"/>
+
+            <!-- Miscellaneous -->
+            <xs:enumeration value="String"/>
+            <xs:enumeration value="FileName"/>
+            <xs:enumeration value="PathName"/>
+            <xs:enumeration value="URL"/>
+            <xs:enumeration value="MathematicalExpression"/>
+
+            <xs:enumeration value="Boolean"/>
+            <xs:enumeration value="BitString"/>
+            <xs:enumeration value="ColourData"/>
+            <xs:enumeration value="FontData"/>
+            <xs:enumeration value="StaribusAddress"/>
+            <xs:enumeration value="IPv4Address"/>
+            <xs:enumeration value="IPv6Address"/>
+
+            <!-- These Types are probably not suitable for Metadata -->
+            <xs:enumeration value="ScaledHexInteger"/>
+            <xs:enumeration value="NumericIndexedList"/>
+            <xs:enumeration value="StaribusBlock"/>
+            <xs:enumeration value="StaribusMultichannelData"/>
+
+            <xs:enumeration value="ListData"/>
+            <xs:enumeration value="VectorData"/>
+            <xs:enumeration value="XYDataset"/>
+            <xs:enumeration value="ImageData"/>
+
+            <xs:enumeration value="XML"/>
+
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

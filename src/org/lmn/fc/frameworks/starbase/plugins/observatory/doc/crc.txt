@@ -1,0 +1,75 @@
+Mark,
+
+I know that I had real problems getting this to work. On the checker, if you
+click CCITT, change the polynomial to 8408, keep the starting CRC as FFFF,
+Final XOR as 0 and tick both the Reverse data and reverse CRC boxes, it will
+work.
+
+Enter: 2B0001 which is Ping and you will get a checksum of 60A. The CRC is
+always 4 character to what is actually sent is 060A, or the complete message
+is SYN SYN SYN STX 2 B 0 0 0 1 0 6 0 A EOT CR LF this is assuming an
+instrument address of 2Bh.
+
+The SYN (16h) characters are there to flush the UART buffers of any errored
+characters that may occur while the bus is high Z or during bus driver
+switching. The CRC is only calculated on the bit between STX and EOT. The CR
+and LF are there to make it look better if monitoring the serial link, the
+overhead is minimal.
+
+My BASIC and 8051 assembler routines use 1021 as the CRC and do nothing
+funny with data direction. I think the problem is that the CCITT standard is
+meant for the chip designer. We are looking at the output of a UART and most
+(all ?) UARTs reverse data bit flow on the serial link. The important thing
+is to get your routine giving the same answer as ours.
+
+The response to a Ping will be SYN SYN SYN STX 2 B 0 0 0 1 0 0 0 0 1 F A 8
+EOT CR LF
+
+The 0000 after the address and command code 0001 is a status byte. If all is
+ok it will be 0000h.
+
+As for other matters, I have used a Novus USB to RS485 converter and that
+'just worked'.
+
+Re: RS485 TX/RX switching. We are using a 4 wire RS485 system. It is not
+RS422 because it is electrically to the RS485 spec. I realise that many
+RS485 systems are 2 wire. The choice of how you control the bus drivers is
+hardware specific and not part of the spec. The main issue is that when the
+slave is in listening mode, the slave bus driver is off, leaving the Rx bus
+(from PC point of view) at high Z, ready for another slave to use. I use
+SN75176 drivers switched by a logic level output.
+
+Speed is not fixed at 9600. The Staribus spec target is 57600, chosen
+because this should work well up to 1200m, but we thought that we would
+start off slow and see how we get on. Testing at the higher speed through a
+long cable and with multiple controllers is on the 'to do' list. I have used
+33400 ok with my BASIC Starbase simulator.
+
+David
+
+
+Dear Laurence and David
+
+As you might expect I'm having a little difficulty with the CRC calculation.
+The main one at the moment is, if I put any of the StarBase to controller
+messages into the CRC checker at http://zorc.breitbandkatze.de/crc.html I
+don't get the CRC that is in the message no matter how I set the various
+options.  Could you give me an example that works with the CRC checker using
+simple messages like reset or ping.
+
+I'm using a Maplin dual port USB to serial adapter on an XP machine to
+communicate with my prototype and there haven't been any problems, it just
+worked.
+
+Would I be correct in assuming that when we start using RS485 to talk to the
+various bits of hardware we will use the RTS line on the serial port to
+change between Transmit and Receive?  This is the way most RS485 systems
+I've worked with in the past have done it.
+
+Why are we using the parity bit and a CRC for error checking?  It seems a
+bit of an overkill, the parity bit is more or less redundant as there are no
+errors it could detect that the CRC wouldn't also detect.
+
+Is the system data rate now fixed at 9600 for ever?
+
+Mark

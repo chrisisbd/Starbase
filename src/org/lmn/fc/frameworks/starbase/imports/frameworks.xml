@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Frameworks xmlns="frameworks.xmlbeans.model.fc.lmn.org"
+        >
+
+    <Framework>
+        <Name>Starbase</Name>
+        <Description>The ultimate data-driven Framework!</Description>
+
+        <!-- You could change these to suit your Locale -->
+        <!-- You must use the ISO standard names, which are case-sensitive -->
+        <!-- Language Codes: http://www.loc.gov/standards/iso639-2/php/English_list.php -->
+        <!-- Country Codes: http://www.iso.ch/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html -->
+        <Language>en</Language>
+        <Country>GB</Country>
+
+        <!-- A map of your locale, calibrated appropriately -->
+        <!-- Note that the map must have a projection which gives **linear** longitude and latitude -->
+        <!-- You can make your own map by following the instructions in these links -->
+        <!-- http://rimmer.ngdc.noaa.gov/ -->
+        <!-- http://www.ruf.rice.edu/~ben/gmt.html -->
+        <!-- http://www.ai.sri.com/geotransform/samples.html -->
+        <!-- The Starbase distribution contains detailed instruction in dist/maps/ReadMe.txt -->
+        <!-- Send us your maps so we can add to those available! -->
+        <MapFilename>europe.png</MapFilename>
+
+        <!-- BEWARE! Longitude is POSITIVE to the WEST -->
+        <!-- BEWARE! Latitude is POSITIVE to the NORTH -->
+
+        <!-- -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999 -->
+        <MapTopLeftLongitude>+010:37:29.0</MapTopLeftLongitude>
+
+        <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 deg:mm:ss -->
+        <MapTopLeftLatitude>+65:00:00.0</MapTopLeftLatitude>
+
+        <!-- -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999 -->
+        <MapBottomRightLongitude>-025:00:00.0</MapBottomRightLongitude>
+
+        <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 deg:mm:ss -->
+        <MapBottomRightLatitude>+34:30:00.0</MapBottomRightLatitude>
+
+        <!-- A flag to control the automatic updating of the Framework location on the status bar if GPS is available -->
+        <!-- Use the Observatory GpsReceiver Instrument -->
+        <AutoUpdate>1</AutoUpdate>
+
+        <!-- ................................................................................... -->
+        <!-- You should not need to change anything below here -->
+        <!-- Many of these items are 'old code' and may one day be removed -->
+
+        <!-- Various Framework components -->
+
+        <!-- The SplashScreen image must be 548 by 376 pixels -->
+        <SplashScreenFilename>ukraa.png</SplashScreenFilename>
+
+        <IconFilename>starbase.png</IconFilename>
+        <HelpFilename>FrameworkHelp.html</HelpFilename>
+        <AboutFilename>AboutFramework.pdf</AboutFilename>
+        <LicenceFilename>FrameworkLicence.html</LicenceFilename>
+
+        <!-- You may name the various levels of the fractal architecture, if you don't like these names -->
+        <!-- Up to 10 levels may be named -->
+        <RecursionLevel>Framework</RecursionLevel>
+        <RecursionLevel>Plugin</RecursionLevel>
+        <RecursionLevel>Component</RecursionLevel>
+        <RecursionLevel>Quark</RecursionLevel>
+
+        <!-- You could invent some Roles of your own, for particular Users -->
+        <!-- Don't forget to assign the Role to a User in users.xml -->
+        <RoleName>Developer</RoleName>
+        <RoleName>Administrator</RoleName>
+        <RoleName>Builder</RoleName>
+        <RoleName>LocalUser</RoleName>
+        <RoleName>RemoteUser</RoleName>
+        <RoleName>Demonstrator</RoleName>
+        <RoleName>Tester</RoleName>
+        <RoleName>Simplified</RoleName>
+
+        <Editable>1</Editable>
+        <Active>1</Active>
+        <LoadAtStart>1</LoadAtStart>
+        <EditorClassname>org.lmn.fc.ui.editors.FrameworkEditor</EditorClassname>
+
+        <!-- Housekeeping -->
+        <StartDate>2000-01-01Z</StartDate>
+        <StartTime>00:00:00.000Z</StartTime>
+        <StopDate>2000-01-01Z</StopDate>
+        <StopTime>00:00:00.000Z</StopTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </Framework>
+
+</Frameworks>

@@ -1,0 +1,203 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Properties xmlns="properties.xmlbeans.model.fc.lmn.org">
+
+    <!-- SpectraCyber -->
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>SpectraCyber</Key>
+            <Key>Update</Key>
+            <Key>Enable</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Boolean</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>true</Value>
+        <Description>A flag to control the SpectraCyber update function</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>SpectraCyber</Key>
+            <Key>Update</Key>
+            <Key>Period</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>5</Value>
+        <Description>The interval in seconds between SpectraCyber update cycles</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+     <PropertyResource>
+         <ResourceKey>
+             <Key>SpectraCyber</Key>
+             <Key>Dao</Key>
+             <Key>Timeout</Key>
+             <Key>Period</Key>
+         </ResourceKey>
+         <Editable>1</Editable>
+         <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+         <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+         <Value>10</Value>
+         <Description>The Timeout period in seconds for the SpectraCyber Receiver DAO</Description>
+         <CreatedDate>2000-01-01Z</CreatedDate>
+         <CreatedTime>00:00:00.000Z</CreatedTime>
+         <ModifiedDate>2000-01-01Z</ModifiedDate>
+         <ModifiedTime>00:00:00.000Z</ModifiedTime>
+     </PropertyResource>
+
+     <PropertyResource>
+         <ResourceKey>
+             <Key>SpectraCyber</Key>
+             <Key>Dao</Key>
+             <Key>Update</Key>
+             <Key>Period</Key>
+         </ResourceKey>
+         <Editable>1</Editable>
+         <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+         <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+         <Value>60</Value>
+         <Description>The interval in seconds between update cycles of the SpectraCyber Receiver</Description>
+         <CreatedDate>2000-01-01Z</CreatedDate>
+         <CreatedTime>00:00:00.000Z</CreatedTime>
+         <ModifiedDate>2000-01-01Z</ModifiedDate>
+         <ModifiedTime>00:00:00.000Z</ModifiedTime>
+     </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>SpectraCyber</Key>
+            <Key>SpectraCyber</Key>
+            <Key>Port</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.String</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>COM5</Value>
+        <Description>The COM port used for the SpectraCyber serial port</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>SpectraCyber</Key>
+            <Key>SpectraCyber</Key>
+            <Key>Port</Key>
+            <Key>Owner</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.String</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>SpectraCyber</Value>
+        <Description>The owner of the SpectraCyber serial port</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>SpectraCyber</Key>
+            <Key>SpectraCyber</Key>
+            <Key>Port</Key>
+            <Key>Baudrate</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>2400</Value>
+        <Description>The Baud Rate setting for the SpectraCyber serial port</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>SpectraCyber</Key>
+            <Key>SpectraCyber</Key>
+            <Key>Port</Key>
+            <Key>DataBits</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>8</Value>
+        <Description>The Data Bits setting for the SpectraCyber serial port (8, 7)</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>SpectraCyber</Key>
+            <Key>SpectraCyber</Key>
+            <Key>Port</Key>
+            <Key>StopBits</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>1</Value>
+        <Description>The Stop Bits setting for the SpectraCyber serial port (0, 1, 2)</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>SpectraCyber</Key>
+            <Key>SpectraCyber</Key>
+            <Key>Port</Key>
+            <Key>Parity</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>0</Value>
+        <Description>The Parity setting for the SpectraCyber serial port (0, 1)</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <PropertyResource>
+        <ResourceKey>
+            <Key>SpectraCyber</Key>
+            <Key>SpectraCyber</Key>
+            <Key>Port</Key>
+            <Key>FlowControl</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.String</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>None</Value>
+        <Description>The Flow Control setting for the SpectraCyber serial port (None, XON/XOFF, RTS/CTS)</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+</Properties>

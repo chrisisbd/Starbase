@@ -1,0 +1,249 @@
+# These are deliberately faulty Metadata for 32 channels {0...31}, no Temperature channel.
+# Cut and paste for other uses as necessary.
+# Comments should be ignored by the parser, and are here just to help you follow the tests
+
+# All Metadata are defined with {Key, Value, DataType, Units, Description}
+# Keys, DataTypes and Units must appear in their respective Starbase Dictionaries
+# Comments are preceded with '#' and are not preserved during export-import
+
+Observatory.Name,The Guest Observatory,String,Dimensionless,The name of the Observatory supplying Imported data
+Observatory.Description,The Guest Observatory could be anywhere,String,Dimensionless,The description of the Observatory
+Observatory.Notes,These data are supplied as an example of an import where the Starbase Instrument takes on the identity of the guest Observatory,String,Dimensionless,The Observatory Notes
+
+Observatory.Latitude,+53:00:00.001,Latitude,DegMinSec,The Latitude of the Framework (North is positive)  -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999
+Observatory.Longitude,+001:00:00.001,Longitude,DegMinSec,The Longitude of the Observatory (West is positive)  -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999
+Observatory.TimeZone,GMT+00:00,TimeZone,Dimensionless,The TimeZone containing the Observatory  GMT-23:59 to GMT+00:00 to GMT+23:59
+Observatory.HASL,100.0,DecimalFloat,m,The Height of the Observatory above Sea Level in metres
+Observatory.Country,GB,String,Dimensionless,The Country containing the Observatory (ISO 3166)
+
+Observer.Name,Guest Observer,String,Dimensionless,The name of the Observer
+Observer.Description,The Observer responsible for the imported data,String,Dimensionless,The description of the Observer
+Observer.Notes,This Observer made these observations,String,Dimensionless,The Observer Notes,String,Dimensionless,The notes made by the Observer
+Observer.Country,GB,String,Dimensionless,The Country containing the Observer (ISO 3166)
+
+# These Metadata items are required for Charting support
+
+Observation.Title,Title of the Observation,String, Dimensionless,The title for the Chart
+Observation.Axis.Label.X,Time,String, Dimensionless,The X axis
+Observation.Axis.Label.Y.0,Data Value,String, Dimensionless,The Y axis
+
+# The Channel Count
+Observation.Channel.Count,32,DecimalInteger,Dimensionless,The number of data channels
+
+# Channel Colours grouped together for simplicity, and for ease of copying into code or other files
+Observation.Channel.Colour.0, r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 0 graph
+Observation.Channel.Colour.1, r=255 g=102 b=000,ColourData,Dimensionless,The Colour of the Channel 1 graph
+Observation.Channel.Colour.2, r=255 g=153 b=000,ColourData,Dimensionless,The Colour of the Channel 2 graph
+Observation.Channel.Colour.3, r=255 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 3 graph
+Observation.Channel.Colour.4, r=170 g=230 b=000,ColourData,Dimensionless,The Colour of the Channel 4 graph
+Observation.Channel.Colour.5, r=000 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 5 graph
+Observation.Channel.Colour.6, r=255 g=153 b=204,ColourData,Dimensionless,The Colour of the Channel 6 graph
+Observation.Channel.Colour.7, r=000 g=085 b=204,ColourData,Dimensionless,The Colour of the Channel 7 graph
+
+# Test Metadata rejection because of leading or trailing spaces
+Observation.Channel.Colour.8, r=255 g=000 b=000,  ColourData,  Dimensionless  ,The Colour of the Channel 8 graph
+
+Observation.Channel.Colour.9, r=255 g=102 b=000,ColourData,Dimensionless,The Colour of the Channel 9 graph
+Observation.Channel.Colour.10,r=255 g=153 b=000,ColourData,Dimensionless,The Colour of the Channel 10 graph
+Observation.Channel.Colour.11,r=255 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 11 graph
+Observation.Channel.Colour.12,r=170 g=230 b=000,ColourData,Dimensionless,The Colour of the Channel 12 graph
+Observation.Channel.Colour.13,r=000 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 13 graph
+Observation.Channel.Colour.14,r=255 g=153 b=204,ColourData,Dimensionless,The Colour of the Channel 14 graph
+Observation.Channel.Colour.15,r=000 g=085 b=204,ColourData,Dimensionless,The Colour of the Channel 15 graph
+Observation.Channel.Colour.16,r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 16 graph
+Observation.Channel.Colour.17,r=255 g=102 b=000,ColourData,Dimensionless,The Colour of the Channel 17 graph
+Observation.Channel.Colour.18,r=255 g=153 b=000,ColourData,Dimensionless,The Colour of the Channel 18 graph
+Observation.Channel.Colour.19,r=255 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 19 graph
+Observation.Channel.Colour.20,r=170 g=230 b=000,ColourData,Dimensionless,The Colour of the Channel 20 graph
+Observation.Channel.Colour.21,r=000 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 21 graph
+Observation.Channel.Colour.22,r=255 g=153 b=204,ColourData,Dimensionless,The Colour of the Channel 22 graph
+Observation.Channel.Colour.23,r=000 g=085 b=204,ColourData,Dimensionless,The Colour of the Channel 23 graph
+Observation.Channel.Colour.24,r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 24 graph
+Observation.Channel.Colour.25,r=255 g=102 b=000,ColourData,Dimensionless,The Colour of the Channel 25 graph
+Observation.Channel.Colour.26,r=255 g=153 b=000,ColourData,Dimensionless,The Colour of the Channel 26 graph
+Observation.Channel.Colour.27,r=255 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 27 graph
+Observation.Channel.Colour.28,r=170 g=230 b=000,ColourData,Dimensionless,The Colour of the Channel 28 graph
+Observation.Channel.Colour.29,r=000 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 29 graph
+Observation.Channel.Colour.30,r=255 g=153 b=204,ColourData,Dimensionless,The Colour of the Channel 30 graph
+Observation.Channel.Colour.31,r=000 g=085 b=204,ColourData,Dimensionless,The Colour of the Channel 31 graph
+
+# Channel specifications, arbitrarily set to DataType=DecimalFloat, Units=mV
+
+Observation.Channel.Name.0,Channel 0,String,Dimensionless,The name of Channel 0
+Observation.Channel.Description.0,Channel 0 output,String,Dimensionless,The description of Channel 0
+Observation.Channel.DataType.0,DecimalFloat,DataType,Dimensionless,The DataType of Channel 0
+Observation.Channel.Units.0,mV,Units,Dimensionless,The Units of Channel 0
+
+Observation.Channel.Name.1,Channel 1,String,Dimensionless,The name of Channel 1
+Observation.Channel.Description.1,Channel 1 output,String,Dimensionless,The description of Channel 1
+Observation.Channel.DataType.1,DecimalFloat,DataType,Dimensionless,The DataType of Channel 1
+Observation.Channel.Units.1,mV,Units,Dimensionless,The Units of Channel 1
+
+Observation.Channel.Name.2,Channel 2,String,Dimensionless,The name of Channel 2
+Observation.Channel.Description.2,Channel 2 output,String,Dimensionless,The description of Channel 2
+Observation.Channel.DataType.2,DecimalFloat,DataType,Dimensionless,The DataType of Channel 2
+Observation.Channel.Units.2,mV,Units,Dimensionless,The Units of Channel 2
+
+Observation.Channel.Name.3,Channel 3,String,Dimensionless,The name of Channel 3
+Observation.Channel.Description.3,Channel 3 output,String,Dimensionless,The description of Channel 3
+Observation.Channel.DataType.3,DecimalFloat,DataType,Dimensionless,The DataType of Channel 3
+Observation.Channel.Units.3,mV,Units,Dimensionless,The Units of Channel 3
+
+Observation.Channel.Name.4,Channel 4,String,Dimensionless,The name of Channel 4
+Observation.Channel.Description.4,Channel 4 output,String,Dimensionless,The description of Channel 4
+Observation.Channel.DataType.4,DecimalFloat,DataType,Dimensionless,The DataType of Channel 4
+Observation.Channel.Units.4,mV,Units,Dimensionless,The Units of Channel 4
+
+Observation.Channel.Name.5,Channel 5,String,Dimensionless,The name of Channel 5
+Observation.Channel.Description.5,Channel 5 output,String,Dimensionless,The description of Channel 5
+Observation.Channel.DataType.5,DecimalFloat,DataType,Dimensionless,The DataType of Channel 5
+Observation.Channel.Units.5,mV,Units,Dimensionless,The Units of Channel 5
+
+Observation.Channel.Name.6,Channel 6,String,Dimensionless,The name of Channel 6
+Observation.Channel.Description.6,Channel 6 output,String,Dimensionless,The description of Channel 6
+Observation.Channel.DataType.6,DecimalFloat,DataType,Dimensionless,The DataType of Channel 6
+Observation.Channel.Units.6,mV,Units,Dimensionless,The Units of Channel 6
+
+Observation.Channel.Name.7,Channel 7,String,Dimensionless,The name of Channel 7
+Observation.Channel.Description.7,Channel 7 output,String,Dimensionless,The description of Channel 7
+Observation.Channel.DataType.7,DecimalFloat,DataType,Dimensionless,The DataType of Channel 7
+Observation.Channel.Units.7,mV,Units,Dimensionless,The Units of Channel 7
+
+Observation.Channel.Name.8,Channel 8,String,Dimensionless,The name of Channel 8
+Observation.Channel.Description.8,Channel 8 output,String,Dimensionless,The description of Channel 8
+Observation.Channel.DataType.8,DecimalFloat,DataType,Dimensionless,The DataType of Channel 8
+Observation.Channel.Units.8,mV,Units,Dimensionless,The Units of Channel 8
+
+# Test invalid Metadata Value
+Observation.Channel.Name.9,,String,Dimensionless,The name of Channel 9
+
+Observation.Channel.Description.9,Channel 9 output,String,Dimensionless,The description of Channel 9
+Observation.Channel.DataType.9,DecimalFloat,DataType,Dimensionless,The DataType of Channel 9
+Observation.Channel.Units.9,mV,Units,Dimensionless,The Units of Channel 9
+
+Observation.Channel.Name.10,Channel 10,String,Dimensionless,The name of Channel 10
+Observation.Channel.Description.10,Channel 10 output,String,Dimensionless,The description of Channel 10
+Observation.Channel.DataType.10,DecimalFloat,DataType,Dimensionless,The DataType of Channel 10
+Observation.Channel.Units.10,mV,Units,Dimensionless,The Units of Channel 10
+
+# Check Metadata Key not in Dictionary
+Observation.Channel.Wot.11,Channel 11,String,Dimensionless,The name of Channel 11
+Observation.Channel.Description.11,Channel 11 output,String,Dimensionless,The description of Channel 11
+Observation.Channel.DataType.11,DecimalFloat,DataType,Dimensionless,The DataType of Channel 11
+Observation.Channel.Units.11,mV,Units,Dimensionless,The Units of Channel 11
+
+Observation.Channel.Name.12,Channel 12,String,Dimensionless,The name of Channel 12
+Observation.Channel.Description.12,Channel 12 output,String,Dimensionless,The description of Channel 12
+# Check DataType not in Dictionary
+Observation.Channel.DataType.12,Squidgy,DataType,Dimensionless,The DataType of Channel 12
+Observation.Channel.Units.12,mV,Units,Dimensionless,The Units of Channel 12
+
+Observation.Channel.Name.13,Channel 13,String,Dimensionless,The name of Channel 13
+Observation.Channel.Description.13,Channel 13 output,String,Dimensionless,The description of Channel 13
+Observation.Channel.DataType.13,DecimalFloat,DataType,Dimensionless,The DataType of Channel 13
+Observation.Channel.Units.13,mV,Units,Dimensionless,The Units of Channel 13
+
+Observation.Channel.Name.14,Channel 14,String,Dimensionless,The name of Channel 14
+Observation.Channel.Description.14,Channel 14 output,String,Dimensionless,The description of Channel 14
+Observation.Channel.DataType.14,DecimalFloat,DataType,Dimensionless,The DataType of Channel 14
+# Check Units not in Dictionary
+Observation.Channel.Units.14,Bendy,Units,Dimensionless,The Units of Channel 14
+
+Observation.Channel.Name.15,Channel 15,String,Dimensionless,The name of Channel 15
+Observation.Channel.Description.15,Channel 15 output,String,Dimensionless,The description of Channel 15
+Observation.Channel.DataType.15,DecimalFloat,DataType,Dimensionless,The DataType of Channel 15
+Observation.Channel.Units.15,mV,Units,Dimensionless,The Units of Channel 15
+
+Observation.Channel.Name.16,Channel 16,String,Dimensionless,The name of Channel 16
+Observation.Channel.Description.16,Channel 16 output,String,Dimensionless,The description of Channel 16
+Observation.Channel.DataType.16,DecimalFloat,DataType,Dimensionless,The DataType of Channel 16
+Observation.Channel.Units.16,mV,Units,Dimensionless,The Units of Channel 16
+
+Observation.Channel.Name.17,Channel 17,String,Dimensionless,The name of Channel 17
+Observation.Channel.Description.17,Channel 17 output,String,Dimensionless,The description of Channel 17
+Observation.Channel.DataType.17,DecimalFloat,DataType,Dimensionless,The DataType of Channel 17
+Observation.Channel.Units.17,mV,Units,Dimensionless,The Units of Channel 17
+
+Observation.Channel.Name.18,Channel 18,String,Dimensionless,The name of Channel 18
+Observation.Channel.Description.18,Channel 18 output,String,Dimensionless,The description of Channel 18
+Observation.Channel.DataType.18,DecimalFloat,DataType,Dimensionless,The DataType of Channel 18
+Observation.Channel.Units.18,mV,Units,Dimensionless,The Units of Channel 18
+
+# Test invalid Units
+Observation.Channel.Name.19,Channel 19,String,Odd,The name of Channel 19
+
+Observation.Channel.Description.19,Channel 19 output,String,Dimensionless,The description of Channel 19
+Observation.Channel.DataType.19,DecimalFloat,DataType,Dimensionless,The DataType of Channel 19
+Observation.Channel.Units.19,mV,Units,Dimensionless,The Units of Channel 19
+
+Observation.Channel.Name.20,Channel 20,String,Dimensionless,The name of Channel 20
+Observation.Channel.Description.20,Channel 20 output,String,Dimensionless,The description of Channel 20
+Observation.Channel.DataType.20,DecimalFloat,DataType,Dimensionless,The DataType of Channel 20
+Observation.Channel.Units.20,mV,Units,Dimensionless,The Units of Channel 20
+
+# Test missing description
+Observation.Channel.Name.21,Channel 21,String,Dimensionless,
+
+Observation.Channel.Description.21,Channel 21 output,String,Dimensionless,The description of Channel 21
+Observation.Channel.DataType.21,DecimalFloat,DataType,Dimensionless,The DataType of Channel 21
+Observation.Channel.Units.21,mV,Units,Dimensionless,The Units of Channel 21
+
+Observation.Channel.Name.22,Channel 22,String,Dimensionless,The name of Channel 22
+Observation.Channel.Description.22,Channel 22 output,String,Dimensionless,The description of Channel 22
+Observation.Channel.DataType.22,DecimalFloat,DataType,Dimensionless,The DataType of Channel 22
+Observation.Channel.Units.22,mV,Units,Dimensionless,The Units of Channel 22
+
+Observation.Channel.Name.23,Channel 23,String,Dimensionless,The name of Channel 23
+Observation.Channel.Description.23,Channel 23 output,String,Dimensionless,The description of Channel 23
+Observation.Channel.DataType.23,DecimalFloat,DataType,Dimensionless,The DataType of Channel 23
+Observation.Channel.Units.23,mV,Units,Dimensionless,The Units of Channel 23
+
+# Test blank line
+
+
+
+
+Observation.Channel.Name.24,Channel 24,String,Dimensionless,The name of Channel 24
+Observation.Channel.Description.24,Channel 24 output,String,Dimensionless,The description of Channel 24
+Observation.Channel.DataType.24,DecimalFloat,DataType,Dimensionless,The DataType of Channel 24
+Observation.Channel.Units.24,mV,Units,Dimensionless,The Units of Channel 24
+
+Observation.Channel.Name.25,Channel 25,String,Dimensionless,The name of Channel 25
+Observation.Channel.Description.25,Channel 25 output,String,Dimensionless,The description of Channel 25
+Observation.Channel.DataType.25,DecimalFloat,DataType,Dimensionless,The DataType of Channel 25
+Observation.Channel.Units.25,mV,Units,Dimensionless,The Units of Channel 25
+
+Observation.Channel.Name.26,Channel 26,String,Dimensionless,The name of Channel 26
+Observation.Channel.Description.26,Channel 26 output,String,Dimensionless,The description of Channel 26
+Observation.Channel.DataType.26,DecimalFloat,DataType,Dimensionless,The DataType of Channel 26
+Observation.Channel.Units.26,mV,Units,Dimensionless,The Units of Channel 26
+
+Observation.Channel.Name.27,Channel 27,String,Dimensionless,The name of Channel 27
+Observation.Channel.Description.27,Channel 27 output,String,Dimensionless,The description of Channel 27
+Observation.Channel.DataType.27,DecimalFloat,DataType,Dimensionless,The DataType of Channel 27
+Observation.Channel.Units.27,mV,Units,Dimensionless,The Units of Channel 27
+
+Observation.Channel.Name.28,Channel 28,String,Dimensionless,The name of Channel 28
+# Test multiple lines in a field
+Observation.Channel.Description.28,"A very
+                                   long piece of text
+                                   split up",String,Dimensionless,The description of Channel 28
+Observation.Channel.DataType.28,DecimalFloat,DataType,Dimensionless,The DataType of Channel 28
+Observation.Channel.Units.28,mV,Units,Dimensionless,The Units of Channel 28
+
+Observation.Channel.Name.29,Channel 29,String,Dimensionless,The name of Channel 29
+Observation.Channel.Description.29,Channel 29 output,String,Dimensionless,The description of Channel 29
+Observation.Channel.DataType.29,DecimalFloat,DataType,Dimensionless,The DataType of Channel 29
+Observation.Channel.Units.29,mV,Units,Dimensionless,The Units of Channel 29
+
+Observation.Channel.Name.30,Channel 30,String,Dimensionless,The name of Channel 30
+Observation.Channel.Description.30,Channel 30 output,String,Dimensionless,The description of Channel 30
+Observation.Channel.DataType.30,DecimalFloat,DataType,Dimensionless,The DataType of Channel 30
+Observation.Channel.Units.30,mV,Units,Dimensionless,The Units of Channel 30
+
+Observation.Channel.Name.31,Channel 31,String,Dimensionless,The name of Channel 31
+Observation.Channel.Description.31,Channel 31 output,String,Dimensionless,The description of Channel 31
+Observation.Channel.DataType.31,DecimalFloat,DataType,Dimensionless,The DataType of Channel 31
+Observation.Channel.Units.31,mV,Units,Dimensionless,The Units of Channel 31
+
+# End of Metadata header template

@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Help file for the Framework</title>
+<body>
+<h3>Help file for the Framework</h3>
+
+<br><br><br>
+
+ToDo
+<br>
+<p>
+    For lat/long conversions...
+    http://www.jstott.me.uk/
+
+
+    Major work needed to finish a complete set of DAOs for XML and MySQL...
+
+    Turning an instrument off clears table data = need to refresh visible table - InstrumentStateChangedListener
+
+    Schema: Pattern restrictions on email in Users
+    Reports can't find AtomIcons (e.g. RegistryReport)
+    RegistryReport shows active & inactive nodes the wrong way round
+    FITS DataTranslator
+    JohnCook data translation into d/b or XML?
+    PDF saving of reports?
+    Full screen mode in FrameworkManager? -> schema for user role
+    Caption and status path for tree expanders
+    UserObjects for Users, Roles, Countries, Languages, L&F, DataTypes
+    Change schema to match all data in classes for Framework, e.g. plugins
+    Improve validate() in plugins & tasks
+    Icon design!
+    Framework editor not accessible from tree because of recursive trap
+    Telnet property reload when run
+    PluginManager
+    EventViewer truncation unpredictable
+    Observatory tabs - use decorator to handle context actions
+    DataDaemon - need implementation of update in Registry
+    NTP - allow time setting from DLL - recompile needed
+    SqlTrace ?? what does it do now? with Xml?
+    GPS - com port checks
+    TerminalEmulator focus problem, threading unreliable?
+    SNMP form layout too crude
+    JMX authorisation into http request
+    DataStoreMananger - how to do the XML store?
+    TheMatrix - finish!
+    StarMap - finish!!
+    VLF Rx - overlay FTP and local sources, and the GOES feed
+    Line height in tables does not show larger icons
+    How to access common javadoc (as opposed to framework instance)
+    Add licence files
+    Write help!
+    Missing icons on NodeReport used by DataDaemon
+
+    ToDo list
+    Multiple clicks on ActionList toolbar icon produce multiple icons!
+    Command builder sometimes has Execute enabled on startup
+    Command builder should clear command log on shutdown
+</p>
+
+<p>
+    <br>Sequence of method calls for user clicks
+    <br>
+    <br>actionPerformed
+    <br>    runTaskAndShowUI | startPluginAndShowUI
+    <br>        setTaskState
+    <br>            runTask
+    <br>        installUserObjectUI
+    <br>            clearUIOccupant
+    <br>            setUIOccupant
+    <br>                getVisibleComponentOfUserObjectAndRunUI
+    <br>                    uiComponent.runUI
+    <br>                        runSelectedTabComponent
+    <br>                installUIComponent
+    <br>                    assembleUIComponents
+    <br>                rebuildNavigation
+    <br>
+    <br>
+</p>
+</body>
+</html>

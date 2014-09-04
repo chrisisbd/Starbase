@@ -1,0 +1,60 @@
+<!-- The Data Access Object is the Java interface from the Host PC to the Controller -->
+<!-- In this case via the RS485 on a COM port as defined in properties.xml -->
+<DAO>
+    <Name>Controller Tester</Name>
+    <Description>The Controller Simulator DAO</Description>
+    <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribuslogger.dao.StaribusLoggerDAO</DaoClassname>
+    <TranslatorClassname>org.lmn.fc.common.datatranslators.skypipe.RadioSkyPipeTranslator</TranslatorClassname>
+
+    <!-- The DAO Port (possibly multiple Ports one day! -->
+    <!-- The Port is either a unique instance for this DAO, -->
+    <!-- OR a use of the Observatory StaribusPort -->
+
+    <StaribusPort>Observatory</StaribusPort>
+
+    <!-- The DAO has no Inputs -->
+
+    <!-- DAO Outputs -->
+    <Output>
+        <Name>ProcessedData</Name>
+        <Description>The Processed Data produced by the DAO</Description>
+        <Tooltip>The XYDataset (processed)</Tooltip>
+        <DataTypeName>XYDataset</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Output>
+    <Output>
+        <Name>RawData</Name>
+        <Description>The Raw Data produced by the DAO</Description>
+        <Tooltip>The Raw Data (unprocessed)</Tooltip>
+        <DataTypeName>VectorData</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Output>
+    <Output>
+        <Name>InstrumentLog</Name>
+        <Description>The Instrument Log produced by the DAO</Description>
+        <Tooltip>The Instrument Log</Tooltip>
+        <DataTypeName>VectorData</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Output>
+    <Output>
+        <Name>EventLog</Name>
+        <Description>The Event Log produced by the DAO</Description>
+        <Tooltip>The Event Log</Tooltip>
+        <DataTypeName>VectorData</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Output>
+    <Output>
+        <Name>MetaData</Name>
+        <Description>The Meta Data produced by the DAO</Description>
+        <Tooltip>The Meta Data</Tooltip>
+        <DataTypeName>ListData</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Output>
+    <Output>
+        <Name>Configuration</Name>
+        <Description>The Configuration produced by the DAO</Description>
+        <Tooltip>The Configuration</Tooltip>
+        <DataTypeName>ListData</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Output>
+</DAO>

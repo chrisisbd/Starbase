@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Users xmlns="users.xmlbeans.model.fc.lmn.org"
+        >
+
+    <!-- Password must be 8 to 25 characters -->
+    <User>
+		<UserName>user</UserName>
+        <Password>starbase</Password>
+        <Active>1</Active>
+        <SortOrder>0</SortOrder>
+        <Editable>1</Editable>
+        <RoleName>Simplified</RoleName>
+        <CountryCode>GB</CountryCode>
+        <LanguageCode>en</LanguageCode>
+        <Email>starbase@ukraa.com</Email>
+        <EditorClassname>org.lmn.fc.ui.editors.UserEditor</EditorClassname>
+        <Description>A User with simplified functionality during the launch of Starbase</Description>
+        <IconFilename>user.png</IconFilename>
+    </User>
+
+    <!-- Developers! -->
+    <User>
+		<UserName>builder</UserName>
+        <Password>starbase</Password>
+        <Active>1</Active>
+        <SortOrder>2</SortOrder>
+        <Editable>1</Editable>
+        <RoleName>Builder</RoleName>
+        <CountryCode>GB</CountryCode>
+        <LanguageCode>en</LanguageCode>
+        <Email>starbase@ukraa.com</Email>
+        <EditorClassname>org.lmn.fc.ui.editors.UserEditor</EditorClassname>
+        <Description>Starbase System Builder</Description>
+        <IconFilename>user.png</IconFilename>
+    </User>
+
+    <User>
+		<UserName>dev</UserName>
+        <Password>starbase</Password>
+        <Active>1</Active>
+        <SortOrder>3</SortOrder>
+        <Editable>1</Editable>
+        <RoleName>Developer</RoleName>
+        <CountryCode>GB</CountryCode>
+        <LanguageCode>en</LanguageCode>
+        <Email>starbase@ukraa.com</Email>
+        <EditorClassname>org.lmn.fc.ui.editors.UserEditor</EditorClassname>
+        <Description>Starbase Developer</Description>
+        <IconFilename>user.png</IconFilename>
+    </User>
+
+    <!-- All users removed for now, except the one for the Observatory!
+    <User>
+		<UserName>superuser</UserName>
+        <Password>starbase</Password>
+        <Active>1</Active>
+        <SortOrder>0</SortOrder>
+        <Editable>1</Editable>
+        <RoleName>SuperUser</RoleName>
+        <CountryCode>GB</CountryCode>
+        <LanguageCode>en</LanguageCode>
+        <Email>dsdasd</Email>
+        <EditorClassname>org.lmn.fc.ui.editors.UserEditor</EditorClassname>
+        <Description>The ultimate User!</Description>
+        <IconFilename>sdasd</IconFilename>
+    </User>
+
+    <User>
+		<UserName>administrator</UserName>
+        <Password>starbase</Password>
+        <Active>1</Active>
+        <SortOrder>1</SortOrder>
+        <Editable>1</Editable>
+        <RoleName>Administrator</RoleName>
+        <CountryCode>GB</CountryCode>
+        <LanguageCode>en</LanguageCode>
+        <Email>dsdasd</Email>
+        <EditorClassname>org.lmn.fc.ui.editors.UserEditor</EditorClassname>
+        <Description></Description>
+        <IconFilename>sdasd</IconFilename>
+    </User>
+
+    <User>
+		<UserName>demo</UserName>
+        <Password>starbase</Password>
+        <Active>1</Active>
+        <SortOrder>2</SortOrder>
+        <Editable>1</Editable>
+        <RoleName>Demonstrator</RoleName>
+        <CountryCode>GB</CountryCode>
+        <LanguageCode>en</LanguageCode>
+        <Email>dsdasd</Email>
+        <EditorClassname>org.lmn.fc.ui.editors.UserEditor</EditorClassname>
+        <Description></Description>
+        <IconFilename>sdasd</IconFilename>
+    </User>
+
+    <User>
+		<UserName>observer</UserName>
+        <Password>starbase</Password>
+        <Active>1</Active>
+        <SortOrder>3</SortOrder>
+        <Editable>1</Editable>
+        <RoleName>LocalUser</RoleName>
+        <CountryCode>GB</CountryCode>
+        <LanguageCode>en</LanguageCode>
+        <Email>starbase@baa.com</Email>
+        <EditorClassname>org.lmn.fc.ui.editors.UserEditor</EditorClassname>
+        <Description></Description>
+        <IconFilename>user.png</IconFilename>
+    </User>
+
+    <User>
+		<UserName>inactive</UserName>
+        <Password>starbase</Password>
+        <Active>0</Active>
+        <SortOrder>4</SortOrder>
+        <Editable>1</Editable>
+        <RoleName>Developer</RoleName>
+        <CountryCode>GB</CountryCode>
+        <LanguageCode>en</LanguageCode>
+        <Email>dsdasd</Email>
+        <EditorClassname>org.lmn.fc.ui.editors.UserEditor</EditorClassname>
+        <Description></Description>
+        <IconFilename>sdasd</IconFilename>
+    </User>   -->
+
+</Users>

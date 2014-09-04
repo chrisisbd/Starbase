@@ -1,0 +1,5 @@
+Java Runtime Environment (JRE)
+
+Java Development Kit (JDK)
+
+http://www.oracle.com/technetwork/java/javase/downloads/index.html

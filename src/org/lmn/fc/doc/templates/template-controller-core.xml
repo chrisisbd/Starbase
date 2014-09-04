@@ -1,0 +1,113 @@
+<!-- ............................................................................... -->
+<!-- Staribus Generic (Mandatory) Commands -->
+
+<!-- The basic Core has a CommandCodeBase of zero -->
+
+<CommandCodeBase>00</CommandCodeBase>
+
+<Command>
+    <Identifier>reset</Identifier>
+    <CommandCode>00</CommandCode>
+    <Software>
+        <Identifier>Core Command</Identifier>
+        <Version>00.1</Version>
+        <Description>Resets the Instrument Controller</Description>
+    </Software>
+    <SendToPort>true</SendToPort>
+    <Ack>
+        <Name>Ack</Name>
+    </Ack>
+</Command>
+
+<Command>
+    <Identifier>ping</Identifier>
+    <CommandCode>01</CommandCode>
+    <Software>
+        <Identifier>Core Command</Identifier>
+        <Version>00.1</Version>
+        <Description>Pings the Instrument Controller</Description>
+    </Software>
+    <SendToPort>true</SendToPort>
+    <Ack>
+        <Name>Ack</Name>
+    </Ack>
+</Command>
+
+<Command>
+    <Identifier>getConfiguration</Identifier>
+    <CommandCode>02</CommandCode>
+    <BlockedDataCommand>
+        <BlockCountCommandCode>03</BlockCountCommandCode>
+        <BlockCommandCode>04</BlockCommandCode>
+    </BlockedDataCommand>
+    <Software>
+        <Identifier>Core Command</Identifier>
+        <Version>00.1</Version>
+        <Description>Gets the XML configuration of the Instrument</Description>
+    </Software>
+    <SendToPort>false</SendToPort>
+    <Response>
+        <Name>Configuration.XML</Name>
+        <DataTypeName>XML</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Response>
+</Command>
+
+<Command>
+    <Identifier>getConfigurationBlockCount</Identifier>
+    <CommandCode>03</CommandCode>
+    <BlockedDataCommand>
+        <ParentCommandCode>02</ParentCommandCode>
+    </BlockedDataCommand>
+    <Software>
+        <Identifier>Core Command</Identifier>
+        <Version>00.1</Version>
+        <Description>Gets the number of blocks of data in the Instrument configuration</Description>
+    </Software>
+    <SendToPort>true</SendToPort>
+    <Response>
+        <Name>Configuration.BlockCount</Name>
+        <DataTypeName>HexInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Regex>[0-9A-F][0-9A-F][0-9A-F][0-9A-F]</Regex>
+    </Response>
+</Command>
+
+<Command>
+    <Identifier>getConfigurationBlock</Identifier>
+    <CommandCode>04</CommandCode>
+    <BlockedDataCommand>
+        <ParentCommandCode>02</ParentCommandCode>
+    </BlockedDataCommand>
+    <Software>
+        <Identifier>Core Command</Identifier>
+        <Version>00.1</Version>
+        <Description>Gets the specified block of Instrument configuration data, as an XML fragment</Description>
+    </Software>
+    <Parameter>
+        <Name>Configuration.BlockID</Name>
+        <InputDataType>
+            <DataTypeName>HexInteger</DataTypeName>
+        </InputDataType>
+        <TrafficDataType>
+            <DataTypeName>String</DataTypeName>
+        </TrafficDataType>
+        <Units>Dimensionless</Units>
+        <Regex>[0-9A-F][0-9A-F][0-9A-F][0-9A-F]</Regex>
+        <Tooltip>Allowed Values: BlockID 0000 to FFFF</Tooltip>
+    </Parameter>
+    <SendToPort>true</SendToPort>
+    <Response>
+        <Name>Configuration.Block</Name>
+        <DataTypeName>XML</DataTypeName>
+        <Units>Dimensionless</Units>
+    </Response>
+</Command>
+
+<Software>
+    <Identifier>Staribus</Identifier>
+    <Version>00.1</Version>
+    <Description>The Core software for the Instrument Controller
+    </Description>
+</Software>
+

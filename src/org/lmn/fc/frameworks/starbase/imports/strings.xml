@@ -1,0 +1,4849 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Strings xmlns="strings.xmlbeans.model.fc.lmn.org">
+
+    <!-- Metadata Editor -->
+
+    <!-- Labels -->
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Label</Key>
+            <Key>Key</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Metadata Key</Text>
+        <Description>The Metadata Key</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Label</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Editable</Text>
+        <Description>Indicates if the Metadata is editable</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Label</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Metadata Value</Text>
+        <Description>The value of the Metadata</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Label</Key>
+            <Key>Regex</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Metadata Regex</Text>
+        <Description>The Regular Expression used to parse the Metadata</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Label</Key>
+            <Key>DataType</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Data Type</Text>
+        <Description>The Data Type of the Metadata</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Label</Key>
+            <Key>Units</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Units</Text>
+        <Description>The Units of the Metadata</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Label</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Description</Text>
+        <Description>The description of the Metadata</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Label</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Commit changes</Text>
+        <Description>The Commit button</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Label</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Revert</Text>
+        <Description>The Revert button</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <!-- Tooltips -->
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Tooltip</Key>
+            <Key>Key</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Metadata Key, which may not be edited</Text>
+        <Description>Tooltip</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Tooltip</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enable or disable edits for this Metadata</Text>
+        <Description>Tooltip</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Tooltip</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The value of this Metadata</Text>
+        <Description>Tooltip</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Tooltip</Key>
+            <Key>Regex</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Regular Expression (Regex) used to parse the Metadata</Text>
+        <Description>Tooltip</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Tooltip</Key>
+            <Key>DataType</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Select a Data Type for this Metadata</Text>
+        <Description>Tooltip</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Tooltip</Key>
+            <Key>Units</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Select Units for this Metadata item</Text>
+        <Description>Tooltip</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Tooltip</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full description of this Metadata</Text>
+        <Description>Tooltip</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Tooltip</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>This change cannot be undone!</Text>
+        <Description>Tooltip for the Commit button</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Tooltip</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Undo all changes since the last Commit</Text>
+        <Description>Tooltip for the Revert button</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <!-- Messages -->
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Warning</Key>
+            <Key>Regex</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Regex expression contains a syntax error, please correct and try again</Text>
+        <Description>Regex Syntax Warning</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Warning</Key>
+            <Key>DataType</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Changing the Data Type of an existing Metadata item may cause the application to fail</Text>
+        <Description>DataType Warning</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Warning</Key>
+            <Key>Units</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Changing the Units of an existing Metadata item may cause the application to fail</Text>
+        <Description>Units Warning</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedDescription</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Description has been truncated to</Text>
+        <Description>Description truncation Warning</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Invalid</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Metadata Value is not valid for the selected DataType</Text>
+        <Description>Value is invalid</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Metadata</Key>
+            <Key>Title</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Metadata Editor</Text>
+        <Description>Dialog Title</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <!-- ....................................................................................... -->
+    <!-- Items below here need tidying up! (and descriptions etc. added) -->
+    <!-- ....................................................................................... -->
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>Active</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Plugin Active</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Commit changes</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>DateCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Description</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>DateModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date of last Change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Plugin Name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>Active</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Controls operation of this Plugin</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>This change cannot be undone!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>Created</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this Plugin was entered into the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full description of this Plugin</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>Modified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this Plugin was last modified</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full Plugin Model path to this Plugin</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedDescription</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Description will be truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Changed</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Property changed</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Commit changes</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>DateCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>DataType</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Data Type</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Description</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Editable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Instantiation</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>This Property value is not valid.\nYou must change the data type or value to correct
+            the problem.
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Invalid</Key>
+            <Key>Entry</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Invalid Entry</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Invalid</Key>
+            <Key>Property</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Property Value cannot be used to create an instance of</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>DateModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date of last Change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Property Name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Revert</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Tooltip</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>This change cannot be undone! ho ho</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Tooltip</Key>
+            <Key>Created</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this Property was entered into the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Tooltip</Key>
+            <Key>DataType</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Select a Data Type for this Property, as a Java class name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Tooltip</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full description of this property</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Tooltip</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enable or disable edits for this Property</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Tooltip</Key>
+            <Key>Modified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this Property was last modified</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Tooltip</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full Framework Model path to this Property</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Tooltip</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Undo all changes since the last Commit</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Tooltip</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The value of this Property</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Property Value</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Warning</Key>
+            <Key>DataType</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Changing the data type of an existing Property may cause the application to fail
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedDescription</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Description will be truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedValue</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Property value will be truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>Active</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Task Active</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Commit changes</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>DateCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Description</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Warning</Key>
+            <Key>InvalidEntry</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Invalid Entry</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>DateModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date of last Change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Task Name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>Active</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Controls operation of this Task</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>This change cannot be undone!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>Created</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this Task was entered into the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full description of this Task</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>Modified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this Task was last modified</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full Framework Model path to this Task</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Warning</Key>
+            <Key>TooLongDescription</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Warning - Description too long</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedDescription</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Description will be truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>UNINITIALISED</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>EventViewer</Key>
+            <Key>Report</Key>
+            <Key>Action</Key>
+            <Key>Truncate</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Truncate EventReport</Text>
+        <Description>The Action to truncate the report</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Report</Key>
+            <Key>ContextMenu</Key>
+            <Key>Export</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Export EventLog Report to File</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>JavaConsole</Key>
+            <Key>Action</Key>
+            <Key>ClearConsole</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Clear the Java Console</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>JavaConsole</Key>
+            <Key>Action</Key>
+            <Key>Run</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Display the Java Console</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Revert</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Undo all changes since the last Commit</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Editable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>Public</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Public</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>Runnable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Runnable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>RunAtStart</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>RunAtStart</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enable or disable edits for this Task</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>Public</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Mark this Task as public, I.e. controllable by the user</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>Runnable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Mark this Task as Runnable, I.e. may be run in the background</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Tooltip</Key>
+            <Key>RunAtStart</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Mark this Task to be run at Framework startup</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Warning</Key>
+            <Key>Uneditable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>You will not be able to make any further edits to this Property. Do you wish to
+            continue?
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Warning</Key>
+            <Key>Uneditable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>You will not be able to make any further edits to this Property. Do you wish to
+            continue?
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Editable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>LoadAtStart</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Load At Start</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>IconFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Icon Filename</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>HelpFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Help Filename</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Revert</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>IconBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Browse</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>HelpBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Browse</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>LoadAtStart</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>IconFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>HelpFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>IconBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>HelpBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Warning</Key>
+            <Key>Deactivating</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>This app is being deactivated\nDo you wish to continue?</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Warning</Key>
+            <Key>LoadAtStart</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>This app won&apos;t be loaded at start\nDo you wish to continue?</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Changed</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Plugin changed</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Component</Key>
+            <Key>Changed</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Component changed</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Changed</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>String changed</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Label</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Commit changes</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Label</Key>
+            <Key>DateCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Label</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Description</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Label</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Editable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Label</Key>
+            <Key>DateModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date of last Change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Label</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>String Name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Label</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Revert</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Label</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>String Value</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Tooltip</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>This change cannot be undone!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Tooltip</Key>
+            <Key>Created</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this String was entered into the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Tooltip</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full description of this String</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Tooltip</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enable or disable edits for this String</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Tooltip</Key>
+            <Key>Modified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this String was last modified</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Tooltip</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full Framework Model path to this String</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Tooltip</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Undo all changes since the last Commit</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Tooltip</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The value of this String</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedDescription</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Description will be truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedValue</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The String value will be truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Warning</Key>
+            <Key>Uneditable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>You will not be able to make any further edits to this String. Do you wish to
+            continue?
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Changed</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Exception changed</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Label</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Commit changes</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Label</Key>
+            <Key>DateCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Label</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Description</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Label</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Editable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Label</Key>
+            <Key>DateModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date of last Change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Label</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Exception Name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Label</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Revert</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Label</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Exception Value</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Tooltip</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>This change cannot be undone!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Tooltip</Key>
+            <Key>Created</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this Exception was entered into the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Tooltip</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full description of this Exception</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Tooltip</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enable or disable edits for this Exception</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Tooltip</Key>
+            <Key>Modified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this Exception was last modified</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Tooltip</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full Framework Model path to this Exception</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Tooltip</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Undo all changes since the last Commit</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Tooltip</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The value of this Exception</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedDescription</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Description will be truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedValue</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Exception value will be truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Warning</Key>
+            <Key>Uneditable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>You will not be able to make any further edits to this Exception. Do you wish to
+            continue?
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Changed</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Query changed</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Commit changes</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>DateCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Description</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Editable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>DateModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date of last Change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Query Name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Revert</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Query Value</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>This change cannot be undone!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>Created</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this Query was entered into the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full description of this Query</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enable or disable edits for this Query</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>Modified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The date when this Query was last modified</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The full Framework Model path to this Query</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Undo all changes since the last Commit</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>Value</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The value of this Query</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedDescription</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Description will be truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Warning</Key>
+            <Key>TruncatedValue</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Query value will be truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Warning</Key>
+            <Key>Uneditable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>You will not be able to make any further edits to this Query. Do you wish to
+            continue?
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Title</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Plugin Editor</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Warning</Key>
+            <Key>Syntax</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Unable to create a PreparedStatement from the SQL</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Title</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Query Editor</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Component</Key>
+            <Key>Title</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Component Editor</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Title</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Task Editor</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Title</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Exception Editor</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Title</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>String Editor</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Title</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Property Editor</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>ExecutionCount</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Execution Count</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Label</Key>
+            <Key>TimeModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time of last change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Label</Key>
+            <Key>TimeCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>TimeModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time of last change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Label</Key>
+            <Key>TimeCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>TimeModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time of last change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Label</Key>
+            <Key>TimeCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>TimeModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time of last change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>TimeCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Label</Key>
+            <Key>TimeModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time of last change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Label</Key>
+            <Key>TimeCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Component</Key>
+            <Key>Label</Key>
+            <Key>TimeModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time of last change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Component</Key>
+            <Key>Label</Key>
+            <Key>TimeCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>TimeModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time of last change</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>TimeCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>ExecutionTime</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Execution Time (msec)</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>ExecutionTime</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The maximum execution time in milliseconds recorded for this Query</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>ExecutionCount</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The total number of times that this Query has been executed since the last counter
+            reset
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Label</Key>
+            <Key>ResetCount</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Reset Counter</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Tooltip</Key>
+            <Key>ResetCount</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Reset the Execution Counter (and set the Execution Time to zero)</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Test</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised e e e e</Text>
+        <Description>th thteeeeee</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>MapBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>AboutBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>HelpBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>IconBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>SplashScreenBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Revert</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Commit</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Description</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>QueryByName</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Query ByName</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>QueryList</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Query List</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>AboutBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>HelpBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>IconBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>SplashScreenBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Revert</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Undo all changes</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Commit</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>These changes cannot be undone!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Description</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The description of the Framework</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>QueryByName</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The SQL Query used to retrieve a specific Framework Query using its name as the key
+            (Select.Framework.Query.ByName)
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>QueryList</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The SQL Query used to retrieve all installed FrameworkQueries
+            (Select.Framework.Query.List)
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>TimeModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Time at which this Framework was last changed</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>DateModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Date on which the Framework was last changed</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>TimeCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Time at which this Framework was created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>DateCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Date on which the Framework was created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>MapBottomRightLatitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Latitude of the bottom right corner of the Framework map in the format +dd:mm:ss
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>MapBottomRightLongitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Longitude of the bottom right corner of the Framework map in the format +dd:mm:ss
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>MapTopLeftLatitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Latitude of the top left corner of the Framework map in the format +dd:mm:ss
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>MapTopLeftLongitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Longitude of the top left corner of the Framework map in the format +dd:mm:ss
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>MapFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enter the filename of the Framework Map file, relative to the images folder</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>AboutFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enter the filename of the Framework About file, relative to the help folder</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>HelpFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enter the filename of the Framework Help file, relative to the help folder</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>IconFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enter the filename of the Framework Icon file, relative to the images folder</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>SplashScreenFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Enter the filename of the Framework SplashScreen file, relative to the images folder
+        </Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Latitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Latitude of the Framework in the format +dd:mm:ss</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Longitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Longitude of the Framework in the format +dd:mm:ss</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>TimeZone</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Select the TimeZone in which this Framework is to be used</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Country</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Select the Country in which this Framework is to be used</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Language</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Select the Language to be used for Framework resources</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>LoadAtStart</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Indicates if this Framework is to be loaded at startup</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Indicates if this Framework is editable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Active</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Indicates if this Framework is Active</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>TimeModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time Modified</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>DateModified</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date Modified</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>TimeCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Time Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>DateCreated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Date Created</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>MapBottomRightLatitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>BottomRight Latitude</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>MapBottomRightLongitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>BottomRight Longitude</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>MapTopLeftLatitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>TopLeft Latitude</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>MapTopLeftLongitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>TopLeft Longitude</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>MapFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Map Filename</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>AboutFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>About File</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>HelpFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Help File</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>IconFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Icon File</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>SplashScreenFilename</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>SplashScreen File</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Latitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Latitude</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Longitude</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Longitude</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>TimeZone</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Framework TimeZone</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Country</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Framework Country</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Language</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Framework Language</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>LoadAtStart</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>LoadAtStart</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Editable</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Editable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Active</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Framework Active</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Framework Name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Name</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Framework name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>MapBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Warning</Key>
+            <Key>LoadAtStart</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>will NOT be loaded at restart</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Warning</Key>
+            <Key>Deactivating</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>is being deactivated</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Warning</Key>
+            <Key>Truncated</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>has been truncated to</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Title</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Framework Editor</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Continue</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Are you sure that you wish to continue?</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Warning</Key>
+            <Key>SqlSyntax</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>has an error in the SQL syntax</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Question</Key>
+            <Key>Locale</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>The Framework Locale and/or TimeZone has been changed</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>ExportsBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>ExportsFolder</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Select the folder to be used for data Exports</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>ExportsBrowser</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Uninitialised</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>ExportsFolder</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Exports</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Label</Key>
+            <Key>Script</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Generate Scripts</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Plugin</Key>
+            <Key>Tooltip</Key>
+            <Key>Script</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Generate DELETE and INSERT scripts for the entire Plugin</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Label</Key>
+            <Key>Script</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Generate Scripts</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+    <StringResource>
+        <ResourceKey>
+            <Key>Editor</Key>
+            <Key>Framework</Key>
+            <Key>Tooltip</Key>
+            <Key>Script</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Generate DELETE and INSERT scripts for the entire Framework</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+    <!-- TerminalEmulator -->
+
+    <StringResource>
+        <ResourceKey>
+            <Key>TerminalEmulator</Key>
+            <Key>Action</Key>
+            <Key>ClearScreen</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.StringEditor</EditorClassname>
+        <Text>Clear the terminal screen</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </StringResource>
+
+</Strings>

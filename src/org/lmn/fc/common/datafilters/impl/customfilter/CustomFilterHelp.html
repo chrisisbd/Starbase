@@ -1,0 +1,186 @@
+<!-- Copyright 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013 -->
+<!-- Laurence Newell -->
+<!-- starbase@ukraa.com -->
+<!-- radio.telescope@btinternet.com -->
+<!-- -->
+<!-- This file is part of Starbase. -->
+<!-- -->
+<!-- Starbase is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+<!-- -->
+<!-- Starbase is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU General Public License for more details. -->
+<!-- -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Starbase.  If not, see http://www.gnu.org/licenses. -->
+
+<html>
+<head>
+    <title>Custom Filter</title>
+<body bgcolor="#ffffdd">
+<img src="CustomFilter.png" alt="CustomFilter">
+
+<h3>Custom Filter</h3>
+
+<p>
+    The Custom Filter is provided as a way to experiment with the MathematicalExpression DataType. You may enter any valid expression using
+    the symbols listed below.
+    <br><br>Three variables are predefined to refer to the data sample being transformed:
+    <br>&nbsp;&nbsp;<b>t&nbsp;</b>refers to the time coordinate in timestamped data, the units depend on the dataset
+    <br>&nbsp;&nbsp;<b>x&nbsp;</b>is the x-axis (abscissa, or index) value in indexed data
+    <br>&nbsp;&nbsp;<b>y&nbsp;</b>is the y-axis (ordinate) value in both timestamped and indexed data
+    <br>
+    <br>Mathematically, for each dataset type;
+    <br>
+    <br>Timestamped
+    <br><b>&nbsp;&nbsp;&nbsp;(t,&nbsp;y)&nbsp;-->&nbsp;(t,&nbsp;y')</b>
+    <br>
+    <br>Indexed
+    <br><b>&nbsp;&nbsp;&nbsp;(x,&nbsp;y)&nbsp;-->&nbsp;(x,&nbsp;y')</b>
+    <br>
+    <br>Where the prime (') indicates the value that has been altered by the MathematicalExpression.
+    <br>
+    <br>&nbsp;&nbsp;y' = MathematicalExpression(fn(y))
+    <br>
+    <br>For example, the following expression will produce ProcessedData where the y-values have been doubled:
+    <br>&nbsp;&nbsp;<b>y * 2.0</b>
+</p>
+<p>
+    <br><b>Built-in operators</b>
+<table>
+    <tr>
+        <td><b>+</b></td>
+        <td>Addition</td>
+    </tr>
+    <tr>
+        <td><b>-</b></td>
+        <td>Subtraction</td>
+    </tr>
+    <tr>
+        <td><b>-</b></td>
+        <td>Unary minus</td>
+    </tr>
+    <tr>
+        <td><b>*</b></td>
+        <td>Multiplication</td>
+    </tr>
+    <tr>
+        <td><b>/</b></td>
+        <td>Division</td>
+    </tr>
+    <tr>
+        <td><b>^</b></td>
+        <td>Exponentiation</td>
+    </tr>
+    <tr>
+        <td><b>%</b></td>
+        <td>Modulo</td>
+    </tr>
+</table>
+
+<br><b>Built-in functions</b>
+<table>
+    <tr>
+        <td><b>abs</b></td>
+        <td>absolute value</td>
+    </tr>
+    <tr>
+        <td><b>acos</b></td>
+        <td>arc cosine</td>
+    </tr>
+    <tr>
+        <td><b>asin</b></td>
+        <td>arc sine</td>
+    </tr>
+    <tr>
+        <td><b>atan</b></td>
+        <td>arc tangent</td>
+    </tr>
+    <tr>
+        <td><b>average</b></td>
+        <td>average of arguments e.g. avg(1,2,3,4,5,6,7,8,9) = 5</td>
+    </tr>
+    <tr>
+        <td><b>ceil</b></td>
+        <td>nearest upper integer</td>
+    </tr>
+    <tr>
+        <td><b>cos</b></td>
+        <td>cosine</td>
+    </tr>
+    <tr>
+        <td><b>cosh</b></td>
+        <td>hyperbolic cosine</td>
+    </tr>
+    <tr>
+        <td><b>floor</b></td>
+        <td>nearest lower integer</td>
+    </tr>
+    <tr>
+        <td><b>ln</b></td>
+        <td>natural logarithm (base e)</td>
+    </tr>
+    <tr>
+        <td><b>log</b></td>
+        <td>base 10 logarithm</td>
+    </tr>
+    <tr>
+        <td><b>max</b></td>
+        <td>maximum of arguments e.g. max(1,2,3,4,5,6,7,8,9) = 9</td>
+    </tr>
+    <tr>
+        <td><b>min</b></td>
+        <td>minimum of arguments e.g. min(1,2,3,4,5,6,7,8,9) = 1</td>
+    </tr>
+    <tr>
+        <td><b>round</b></td>
+        <td>nearest integer</td>
+    </tr>
+    <tr>
+        <td><b>sin</b></td>
+        <td>sine</td>
+    </tr>
+    <tr>
+        <td><b>sinh</b></td>
+        <td>hyperbolic sine</td>
+    </tr>
+    <tr>
+        <td><b>sum</b></td>
+        <td>sum of arguments e.g. sum(1,2,3,4,5,6,7,8,9) = 45</td>
+    </tr>
+    <tr>
+        <td><b>tan</b></td>
+        <td>tangent</td>
+    </tr>
+    <tr>
+        <td><b>tanh</b></td>
+        <td>hyperbolic tangent</td>
+    </tr>
+    <tr>
+        <td><b>random</b></td>
+        <td>pseudo-random number (between 0 and 1)</td>
+    </tr>
+</table>
+
+<br><b>Built-in constants</b>
+<table>
+    <tr>
+        <td><b>e</b></td>
+        <td>Base of natural algorithms</td>
+    </tr>
+    <tr>
+        <td><b>pi</b></td>
+        <td>Ratio of the circumference of a circle to its diameter</td>
+    </tr>
+</table>
+
+<br>The CustomFilter uses the Javaluator from Jean-Marc Astesana, at http://javaluator.sourceforge.net
+<br>Suggestions for new operators and functions gratefully received, send to starbase@ukraa.com.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+The StaribusTimeRecoveryTool needs to have the python 2.6 programming language installed to work.
+
+To use the tool set Enable.Debug.Staribus=true in loader.properties.
+
+Attempt to download your data using Starbase, move the resulting Starbase.log file located in
+INSTALL_PATH/logs into the folder in which you found this program.
+
+run python StaribusTimeRecoveryTool -h for a full list of options.
+
+Example for VLF data
+--------------------
+
+run the StaribusTimeRecoveryTool like so from a command line.
+
+python StaribusTimeRecoveryTool starbase.log vlf mydata.csv
+
+If recover is successful you should get a csv file with
+the recovered data.
+
+
+

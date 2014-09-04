@@ -1,0 +1,88 @@
+SEA Task List (Added on Thu, 25 Apr 2013 8:19 PM)
+-------------------------------------------------------------------
+Staribus and RS232 configuration panel
+GOES Ratio channel chart legend is still an open rectangle
+Indicator value STRINGTOOLONG - replace with truncation and ellipsis?
+Auto-adjust number of channel meters from current channel count
+SDA Metadata export title is incorrect
+SDA Staribus Temperature Channel not handled correctly
+SDA Datasets from different years are impossible to overlay.
+SDA There is no UI feedback for the import and export command panels, i.e. if the command fails, you have to look in the event log.
+
+Chart decimation checkbox does not work consistently 
+Chart button to crop to range/daytime
+
+GOES Chart ratio legend box is not filled
+Indicators show 'string too long' text rather than simply truncate with ellipsis
+Meters panel - number of meters to follow current channel count?
+Metadata export title wrong ??SDA
+
+Futurlec OS uploader
+Upgrade to Java 7?
+=============================================
+DONE SDA Chart and Metadata from imported chart seems to get confused with SEA chart primary?
+DONE SEA Channel selections are lost on composite chart rebuilds
+DONE SEA Dataset Offset changes should not cause loss of Channel Gain settings
+DONE Dataset Range sliders do not work correctly when any offset is non-zero
+DONE Jenkins RSS check
+DONE No scroll bar in the metadata editor which results in commit and revert being hidden from the user with no indication it hidden.
+DONE Command parameter validator should run on every showing of the importer and exporter panel
+DONE <md:Key>Example.Metadata.Controller</md:Key>s
+DONE Tooltip on Import/Export SEA Execute buttons is incorrect
+DONE Change 'offset' to a Greek delta, and add '%' after the number
+DONE The print button when in composite metadata mode should either be disabled, or print the metadata
+DONE ? Composite Chart Exporter does not show legend panel
+DONE Composite Exporter chart loses Channel Gain settings and legend
+DONE Main chart does not show metadata edits, SEA does
+
+Useful URLs
+http://code.google.com/p/openastronomylog/
+http://sourceforge.net/projects/javaluator/?source=directory
+http://sourceforge.net/projects/antxtras/?source=directory
+http://waterloo.sourceforge.net/
+http://sourceforge.net/projects/jmaps/
+http://sourceforge.net/projects/jcrcgen/?source=directory#screenshots
+http://sourceforge.net/projects/socdvm/?source=directory#screenshots
+http://sourceforge.net/projects/java-calculator/?source=directory
+http://sourceforge.net/projects/snmpadaptor4j/?source=directory
+http://sourceforge.net/projects/jsdr/files/?source=navbar
+http://indilib.org/
+
+General UI (Added on Fri, 26 Apr 2013 11:12 AM)
+-------------------------------------------------------------------
+Metadata updates don't get to Charts
+
+Nov 19, 2013 8:10 PM (Added on Tue, 19 Nov 2013 8:10 PM)
+-------------------------------------------------------------------
+To Do!
+
+Help  Viewer align right, add label & icon
+Star Map toolbar align right, add label & icon
+Ephemeris align right, add label & icon
+Map Viewer align right, add label & icon
+Ephemeris align right, add label & icon
+Event Log add icon
+Instrument Log add icon
+Raw Data add icon
+Processed Data add icon
+RSS News Viewer add icon
+
+XML Viewer add Save As
+
+Webserver XML make syntax highlight
+
+Metadata toolbar cuts tree, align right, add label & icon
+
+THese have no toolbar
+
+Terminal Emulator
+Configuration
+Lexicon
+
+Jetty link is incorrect
+
+
+Added a dummy note just to check svn commit.
+
+
+

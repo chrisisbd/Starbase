@@ -1,0 +1,51 @@
+<!-- ............................................................................... -->
+<!-- Importer Plugin -->
+
+<Plugin>
+    <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+    <Address>00</Address>
+    <Identifier>Importer</Identifier>
+    <Name>Importer</Name>
+    <Description>The Importer Module</Description>
+    <ResourceKey>Importer</ResourceKey>
+
+    <CommandCodeBase>03</CommandCodeBase>
+
+    <Command>
+       <Identifier>importRawDataLocal</Identifier>
+       <CommandCode>00</CommandCode>
+       <Software>
+           <Identifier>Importer Command</Identifier>
+           <Version>00.1</Version>
+           <Description>Import a single data file from the local file system</Description>
+       </Software>
+        <Parameter>
+            <Name>Filename</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <!-- ToDo Regex -->
+            <Tooltip>The filename to be imported e.g. data.xml</Tooltip>
+        </Parameter>
+        <Parameter>
+            <Name>Format</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Choices>RadioSkyPipe</Choices>
+            <Tooltip>Allowed values: RadioSkyPipe</Tooltip>
+        </Parameter>
+        <SendToPort>false</SendToPort>
+        <Ack>
+            <Name>Ack</Name>
+        </Ack>
+   </Command>
+</Plugin>

@@ -1,0 +1,3013 @@
+<?xml version="1.0" standalone="yes"?>
+
+    <!-- http://xml.silmaril.ie/authors/includes/ -->
+
+    <!-- The one thing to make sure of is that the included file
+        must not have an XML or DOCTYPE Declaration on it.
+        If you've been using one for editing the fragment,
+        remove it before using the file in this way.
+        Yes, this is a pain in the butt, but if you have lots of inclusions like this,
+        write a script to strip off the declaration (and paste it back on again for editing). -->
+
+<!-- <!DOCTYPE Instruments SYSTEM "../../../../../model/schemas/instruments.xsd"
+    [
+    <!ENTITY HydrogenReceiver SYSTEM "stubs/hrx.xml">
+    ]>  -->
+
+<Instruments xmlns="instruments.xmlbeans.model.fc.lmn.org"
+             xmlns:md="metadata.xmlbeans.model.fc.lmn.org">
+  <!--
+    <Instrument>
+        <Identifier>SelectorHeader</Identifier>
+        <Name>Observatory</Name>
+        <Description>The Starbase Observatory</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.separator.Separator</InstrumentClassname>
+        <Controllable>false</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>Header</ResourceKey>
+    </Instrument>   -->
+
+    <!-- Observatory Clock -->
+
+    <Instrument>
+        <Identifier>ObservatoryClock</Identifier>
+        <Name>Observatory Clock</Name>
+        <Description>The Observatory Clock</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.clock.ObservatoryClock</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>Clock</ResourceKey>
+    </Instrument>
+
+    <!-- Data Processor -->
+
+    <Instrument>
+        <Identifier>DataProcessor</Identifier>
+        <Name>Data Processor</Name>
+        <Description>The Observatory Data Processor</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.dataprocessor.DataProcessor</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>DataProcessor</ResourceKey>
+    </Instrument>
+
+    <!-- Martyn Kinder's VLF Receiver -->
+
+    <Instrument>
+        <Identifier>VlfReceiver.MK</Identifier>
+        <Name>Martyn Kinder's VLF Receiver</Name>
+        <Description>The VLF receiver covers 10kHz to 30kHZ, manually tuned.</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusvlf.StaribusVlfReceiver</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <PointOfInterest>
+            <Name>MK Receiver</Name>
+            <Description>Martyn Kinder VLF receiver</Description>
+            <Longitude>+002:34:56</Longitude>
+            <Latitude>+52:34:56</Latitude>
+            <PointOfInterestFilename>rx.png</PointOfInterestFilename>
+        </PointOfInterest>
+        <PointOfInterest>
+            <Name>Transmitter</Name>
+            <Description>The VLF transmitter</Description>
+            <Longitude>+002:34:56</Longitude>
+            <Latitude>+54:34:56</Latitude>
+            <PointOfInterestFilename>tx.png</PointOfInterestFilename>
+        </PointOfInterest>
+        <ResourceKey>VlfReceiverMk</ResourceKey>
+
+        <!-- The VLF Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>VLF Controller</Name>
+            <Description>The controller for the VLF RX</Description>
+            <ResourceKey>Controller</ResourceKey>
+            <DAO>
+                <Name>Martyn Kinder's VLF</Name>
+                <Classname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusvlf.dao.VlfRxFtpDAO</Classname>
+                <Description>This VLF DAO uses FTP</Description>
+                <!-- Simple DAOs have no Inputs -->
+                <Input>
+                    <Name>Test</Name>
+                    <Description>Test</Description>
+                    <Tooltip>Test</Tooltip>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Input>
+                <Output>
+                    <Name>RawData</Name>
+                    <Description>The Raw Data produced by the DAO</Description>
+                    <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>LPF</Name>
+                    <Description>The Integrated Data for the DAO</Description>
+                    <Tooltip>The Integrated Data (low pass filter)</Tooltip>
+                    <DataType>XYDataset</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>MetaData</Name>
+                    <Description>The Meta Data for the DAO</Description>
+                    <Tooltip>The Meta Data</Tooltip>
+                    <DataType>List</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+                <Output>
+                    <Name>EventLog</Name>
+                    <Description>The Event Log for the DAO</Description>
+                    <Tooltip>The Event Log</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+            </DAO>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the VLF Receiver
+                </Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- John Cook's VLF Receiver -->
+
+    <Instrument>
+        <Identifier>VlfReceiver.JC</Identifier>
+        <Name>John Cook's VLF Receiver</Name>
+        <Description>The VLF receiver covers 10kHz to 30kHZ, manually tuned.</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusvlf.StaribusVlfReceiver</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>VlfReceiverJc</ResourceKey>
+
+        <!-- The VLF Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>VLF Controller</Name>
+            <Description>The controller for the VLF RX</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <DAO>
+                <Name>John Cook's VLF</Name>
+                <Classname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusvlf.dao.StubStaribusVlfRxDAO</Classname>
+                <Description>This VLF DAO uses a local file</Description>
+                <!-- Simple DAOs have no Inputs -->
+                <Output>
+                    <Name>RawData</Name>
+                    <Description>The Raw Data produced by the DAO</Description>
+                    <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>LPF</Name>
+                    <Description>The Integrated Data for the DAO</Description>
+                    <Tooltip>The Integrated Data (low pass filter)</Tooltip>
+                    <DataType>XYDataset</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>MetaData</Name>
+                    <Description>The Meta Data for the DAO</Description>
+                    <Tooltip>The Meta Data</Tooltip>
+                    <DataType>List</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+                <Output>
+                    <Name>EventLog</Name>
+                    <Description>The Event Log for the DAO</Description>
+                    <Tooltip>The Event Log</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+            </DAO>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the VLF Receiver
+                </Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- Hydrogen Line Receiver for 1420MHz -->
+
+    <Instrument>
+        <Identifier>HydrogenReceiver</Identifier>
+        <Name>David Farn's Hydrogen Receiver</Name>
+        <Description>Hydrogen Line Receiver for 1420MHz</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.hydrogenrx.HydrogenReceiver</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>HydrogenReceiver</ResourceKey>
+
+        <!-- The Hydrogen Line Receiver Controller -->
+        <Controller>
+            <Address>01</Address>
+            <Identifier>Controller</Identifier>
+            <Name>Hydrogen Controller</Name>
+            <Description>The controller for the Hydrogen Line Receiver</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <DAO>
+                <Name>Hydrogen Rx</Name>
+                <Classname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.hydrogenrx.dao.HydrogenRxDAO</Classname>
+                <Description>The Hydrogen Receiver DAO</Description>
+                <!-- Simple DAOs have no Inputs -->
+                <Output>
+                    <Name>RawData</Name>
+                    <Description>The Raw Data produced by the DAO</Description>
+                    <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>LPF</Name>
+                    <Description>The Integrated Data for the DAO</Description>
+                    <Tooltip>The Integrated Data (low pass filter)</Tooltip>
+                    <DataType>XYDataset</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>MetaData</Name>
+                    <Description>The Meta Data for the DAO</Description>
+                    <Tooltip>The Meta Data</Tooltip>
+                    <DataType>List</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+                <Output>
+                    <Name>EventLog</Name>
+                    <Description>The Event Log for the DAO</Description>
+                    <Tooltip>The Event Log</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+            </DAO>
+
+            <Configuration>
+                <md:Key>Test.Item</md:Key>
+                <md:Value>Plugin configuration data</md:Value>
+                <md:DataType>String</md:DataType>
+                <md:Units>Dimensionless</md:Units>
+                <md:Description>A test item of Metadata</md:Description>
+            </Configuration>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- ............................................................................... -->
+            <!-- Controller low-level Commands -->
+
+            <Command>
+                <Identifier>getClockDate</Identifier>
+                <CommandCode>04</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the Date from the Controller clock</Description>
+                </Software>
+                <Response>
+                    <Name>Clock.Date</Name>
+                    <DataType>Date</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- DATE http://regexlib.com/REDetails.aspx?regexp_id=279 -->
+            <!-- ((^(10|12|0?[13578])([/])(3[01]|[12][0-9]|0?[1-9])([/])((1[8-9]\d{2})|([2-9]\d{3}))$)|(^(11|0?[469])([/])(30|[12][0-9]|0?[1-9])([/])((1[8-9]\d{2})|([2-9]\d{3}))$)|(^(0?2)([/])(2[0-8]|1[0-9]|0?[1-9])([/])((1[8-9]\d{2})|([2-9]\d{3}))$)|(^(0?2)([/])(29)([/])([2468][048]00)$)|(^(0?2)([/])(29)([/])([3579][26]00)$)|(^(0?2)([/])(29)([/])([1][89][0][48])$)|(^(0?2)([/])(29)([/])([2-9][0-9][0][48])$)|(^(0?2)([/])(29)([/])([1][89][2468][048])$)|(^(0?2)([/])(29)([/])([2-9][0-9][2468][048])$)|(^(0?2)([/])(29)([/])([1][89][13579][26])$)|(^(0?2)([/])(29)([/])([2-9][0-9][13579][26])$))-->
+
+            <Command>
+                <Identifier>setClockDate</Identifier>
+                <CommandCode>05</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the Date on the Controller clock</Description>
+                </Software>
+                <Parameter>
+                    <Name>Clock.Date</Name>
+                    <DataType>Date</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex></Regex> <!-- ToDo Regex -->
+                    <Tooltip>YYYY-MM-DD</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getClockTime</Identifier>
+                <CommandCode>06</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the Time from the Controller clock</Description>
+                </Software>
+                <Response>
+                    <Name>Clock.Time</Name>
+                    <DataType>Time</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setClockTime</Identifier>
+                <CommandCode>07</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the Time on the Controller clock</Description>
+                </Software>
+                <Parameter>
+                    <Name>Clock.Time</Name>
+                    <DataType>Time</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9])</Regex>
+                    <Tooltip>HH:MM:SS</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getTemperature</Identifier>
+                <CommandCode>08</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the Temperature of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Temperature</Name>
+                    <DataType>Float</DataType>
+                    <Units>Celsius</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getA2D</Identifier>
+                <CommandCode>09</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the voltage read by the selected A2D channel</Description>
+                </Software>
+                <Parameter>
+                    <Name>A2D.Channel</Name>
+                    <DataType>Integer</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex></Regex> <!-- ToDo Regex  0-7 -->
+                    <Tooltip>Channels 0 to 7</Tooltip>
+                </Parameter>
+                <Response>
+                    <Name>A2D.Value</Name>
+                    <DataType>Integer</DataType>
+                    <Units>Volts</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getD2AValue</Identifier>
+                <CommandCode>0A</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the voltage output by the selected D2A channel</Description>
+                </Software>
+                <Parameter>
+                    <Name>D2A.Channel</Name>
+                    <DataType>Integer</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex></Regex> <!-- ToDo Regex  0-1 -->
+                    <Tooltip>Channels 0 or 1</Tooltip>
+                </Parameter>
+                <Response>
+                    <Name>D2A.Value</Name>
+                    <DataType>Integer</DataType>
+                    <Units>Volts</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setD2AValue</Identifier>
+                <CommandCode>0B</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the voltage to be output by the selected D2A channel</Description>
+                </Software>
+                <Parameter>
+                    <Name>D2A.Channel</Name>
+                    <DataType>Integer</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex></Regex> <!-- ToDo Regex  0-1 -->
+                    <Tooltip>Channels 0 or 1</Tooltip>
+                </Parameter>
+                <Parameter>
+                    <Name>D2A.Value</Name>
+                    <DataType>Float</DataType>
+                    <Units>Volts</Units>
+                    <Regex></Regex> <!-- ToDo Regex 0-5 ?? -->
+                    <Tooltip>Volts 0.000 to 4.999</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the Hydrogen Line Receiver
+                </Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+                <Command>
+                    <Identifier>getStartDate</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Date at which logging begins</Description>
+                    </Software>
+                    <Response>
+                        <Name>Start.Date</Name>
+                        <DataType>Date</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setStartDate</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Date at which logging begins</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Start.Date</Name>
+                        <DataType>Date</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex></Regex> <!-- ToDo Regex -->
+                        <Tooltip>YYYY-MM-DD</Tooltip>
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getStartTime</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Time at which logging begins</Description>
+                    </Software>
+                    <Response>
+                        <Name>Start.Time</Name>
+                        <DataType>Time</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setStartTime</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Time at which logging begins</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Start.Time</Name>
+                        <DataType>Time</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9])</Regex>
+                        <Tooltip>HH:MM:SS</Tooltip>
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getEndDate</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Date at which logging ends</Description>
+                    </Software>
+                    <Response>
+                        <Name>End.Date</Name>
+                        <DataType>Date</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setEndDate</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Date at which logging ends</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>End.Date</Name>
+                        <DataType>Date</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex></Regex> <!-- ToDo Regex -->
+                        <Tooltip>YYYY-MM-DD</Tooltip>
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getEndTime</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Time at which logging ends</Description>
+                    </Software>
+                    <Response>
+                        <Name>End.Time</Name>
+                        <DataType>Time</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setEndTime</Identifier>
+                    <CommandCode>07</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Time at which logging ends</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>End.Time</Name>
+                        <DataType>Time</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9])</Regex>
+                        <Tooltip>HH:MM:SS</Tooltip>
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>08</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>scheduleLogging</Identifier>
+                    <CommandCode>09</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging at the StartDate and Time</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>0A</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>getDatalog</Identifier>
+                    <CommandCode>0C</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the current data record logged by the Controller</Description>
+                    </Software>
+                    <Response>
+                        <Name>Datalog</Name>
+                        <!-- ToDo Decide data format-->
+                        <DataType>XML</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- LNA -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>LNA</Identifier>
+                <Name>Low Noise Amplifier</Name>
+                <Description>The Low Noise Amplifier Module</Description>
+                <ResourceKey>LowNoiseAmplifier</ResourceKey>
+
+                <CommandCodeBase>02</CommandCodeBase>
+                <Command>
+                    <Identifier>getTemperatureReference</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Temperature of the LNA Reference</Description>
+                    </Software>
+                    <Response>
+                        <Name>Temperature.Reference</Name>
+                        <DataType>Float</DataType>
+                        <Units>Celsius</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getTemperatureMain</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Temperature of the LNA</Description>
+                    </Software>
+                    <Response>
+                        <Name>Temperature.Main</Name>
+                        <DataType>Float</DataType>
+                        <Units>Celsius</Units>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- 1420/151MHz Downconverter -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>1420MHzDownconverter</Identifier>
+                <Name>1420/151MHz Downconverter</Name>
+                <Description>The 1420/151MHz Downconverter Module</Description>
+                <ResourceKey>Downconverter.1420</ResourceKey>
+
+                <CommandCodeBase>03</CommandCodeBase>
+                <Command>
+                    <Identifier>getLoFrequency</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Frequency of the Local Oscillator of the 1420/151MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>LO.Frequency</Name>
+                        <DataType>Float</DataType>
+                        <Units>MHz</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setLoFrequency</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Frequency of the Local Oscillator of the 1420/151MHz Downconverter</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>LO.Frequency</Name>
+                        <DataType>Float</DataType>
+                        <Units>MHz</Units>
+                        <Regex></Regex> <!-- ToDo Regex -->
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getPllStatus</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Phase Locked Loop Status of the 1420/151MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>PllStatus</Name>
+                        <DataType>Boolean</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getLoOutput</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Local Oscillator Output level of the 1420/151MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>LO.Output</Name>
+                        <DataType>Float</DataType>
+                        <Units>dB</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getTemperature</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Temperature of the 1420/151MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>Temperature</Name>
+                        <DataType>Float</DataType>
+                        <Units>Celsius</Units>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- 151/38MHz Downconverter -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>151MHzDownconverter</Identifier>
+                <Name>151/38MHz Downconverter</Name>
+                <Description>The 151/38MHz Downconverter Module</Description>
+                <ResourceKey>Downconverter.151</ResourceKey>
+
+                <CommandCodeBase>04</CommandCodeBase>
+                <Command>
+                    <Identifier>getLoFrequency</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Frequency of the Local Oscillator of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>LO.Frequency</Name>
+                        <DataType>Float</DataType>
+                        <Units>MHz</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setLoFrequency</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Frequency of the Local Oscillator of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>LO.Frequency</Name>
+                        <DataType>Float</DataType>
+                        <Units>MHz</Units>
+                        <Regex></Regex> <!-- ToDo Regex -->
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getPllStatus</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Phase Locked Loop Status of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>PllStatus</Name>
+                        <DataType>Boolean</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getLoOutput</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Local Oscillator Output level of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>LO.Output</Name>
+                        <DataType>Float</DataType>
+                        <Units>dB</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getTemperature</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Temperature of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>Temperature</Name>
+                        <DataType>Float</DataType>
+                        <Units>Celsius</Units>
+                    </Response>
+                </Command>
+
+                <!-- 151/38MHz Attentuators -->
+                <Command>
+                    <Identifier>getAttenuatorA</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the value of Attentuator A of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>Attenuator.A</Name>
+                        <DataType>Float</DataType>
+                        <Units>dB</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setAttenuatorA</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the value of Attentuator A of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Attenuator.A</Name>
+                        <DataType>Float</DataType>
+                        <Units>dB</Units>
+                        <Regex></Regex> <!-- ToDo Regex -->
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getAttenuatorB</Identifier>
+                    <CommandCode>07</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the value of Attentuator B of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>Attenuator.B</Name>
+                        <DataType>Float</DataType>
+                        <Units>dB</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setAttenuatorB</Identifier>
+                    <CommandCode>08</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the value of Attentuator B of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Attenuator.B</Name>
+                        <DataType>Float</DataType>
+                        <Units>dB</Units>
+                        <Regex></Regex> <!-- ToDo Regex -->
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getAttenuatorC</Identifier>
+                    <CommandCode>09</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the value of Attentuator C of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Response>
+                        <Name>Attenuator.C</Name>
+                        <DataType>Float</DataType>
+                        <Units>dB</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setAttenuatorC</Identifier>
+                    <CommandCode>0A</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the value of Attentuator C of the 151/38MHz Downconverter</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Attenuator.C</Name>
+                        <DataType>Float</DataType>
+                        <Units>dB</Units>
+                        <Regex></Regex> <!-- ToDo Regex -->
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- 38MHz IF Amplifier -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>38MHzIF</Identifier>
+                <Name>38MHz IF Amplifier</Name>
+                <Description>The 38MHz IF Amplifier Module</Description>
+                <ResourceKey>38MHzIF</ResourceKey>
+
+                <CommandCodeBase>05</CommandCodeBase>
+                <Command>
+                    <Identifier>getTemperature</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Temperature of the 38MHz IF Amplifier</Description>
+                    </Software>
+                    <Response>
+                        <Name>Temperature</Name>
+                        <DataType>Float</DataType>
+                        <Units>Celsius</Units>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Detector -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>Detector</Identifier>
+                <Name>Detector</Name>
+                <Description>The Detector Module</Description>
+                <ResourceKey>Detector</ResourceKey>
+
+                <CommandCodeBase>06</CommandCodeBase>
+                <Command>
+                    <Identifier>getSquareLaw</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the output Voltage of the Square Law Detector</Description>
+                    </Software>
+                    <Response>
+                        <Name>SquareLaw</Name>
+                        <DataType>Float</DataType>
+                        <Units>Volts</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getLogarithmic</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the output Voltage of the Logarithmic Detector</Description>
+                    </Software>
+                    <Response>
+                        <Name>Logarithmic</Name>
+                        <DataType>Float</DataType>
+                        <Units>Volts</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getIntegratorInput</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the current selection of the Detector Integrator Input</Description>
+                    </Software>
+                    <Response>
+                        <Name>Integrator.Input</Name>
+                        <!-- QUESTION FOR DAVID - would this be clearer as a "Sq/Log" sort of flag? -->
+                        <DataType>Boolean</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setIntegratorInput</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the current selection of the Detector Integrator Input</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Integrator.Input</Name>
+                        <DataType>Boolean</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>(true|false)</Regex>
+                        <Tooltip>'true' or 'false'</Tooltip>
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getIntegratorPeriod</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the current selection of the Detector Integrator Period</Description>
+                    </Software>
+                    <Response>
+                        <Name>Integrator.Period</Name>
+                        <DataType>Float</DataType>
+                        <Units>Seconds</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setIntegratorPeriod</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the current selection of the Detector Integrator Period</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Integrator.Period</Name>
+                        <DataType>Float</DataType>
+                        <Units>Seconds</Units>
+                        <Regex></Regex> <!-- TODO 0.1 to 6553.6 sec-->
+                        <Tooltip>0.1 to 6553.6 sec</Tooltip>
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getIntegratorValue</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the output value of the Detector Integrator</Description>
+                    </Software>
+                    <Response>
+                        <Name>Integrator.Value</Name>
+                        <DataType>Integer</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getStatus</Identifier>
+                    <CommandCode>07</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Detector Status Register</Description>
+                    </Software>
+                    <Response>
+                        <Name>Status</Name>
+                        <DataType>BitString</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setStatus</Identifier>
+                    <CommandCode>08</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Detector Status Register</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Status</Name>
+                        <DataType>BitString</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>(0|1)(0|1)(0|1)(0|1)(0|1)(0|1)(0|1)(0|1)</Regex>
+                        <Tooltip>Specify all eight bits e.g. 10101010</Tooltip>
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Dicke Processor -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DickeProcessor</Identifier>
+                <Name>Dicke Processor</Name>
+                <Description>The Dicke Processor Module</Description>
+                <ResourceKey>Dicke</ResourceKey>
+
+                <CommandCodeBase>07</CommandCodeBase>
+                <Command>
+                    <Identifier>getPrescaler</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the current selection of the Dicke Prescaler</Description>
+                    </Software>
+                    <Response>
+                        <Name>Prescaler</Name>
+                        <DataType>Integer</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setPrescaler</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the current selection of the Dicke Prescaler</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Prescaler</Name>
+                        <DataType>Integer</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex></Regex> <!-- TODO Regex -->
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getSwitchingPeriod</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the current selection of the Dicke Switching Period</Description>
+                    </Software>
+                    <Response>
+                        <Name>Switching.Period</Name>
+                        <DataType>Integer</DataType>
+                        <Units>msec</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setSwitching.Period</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the current selection of the Dicke Switching Period</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Switching.Period</Name>
+                        <DataType>Float</DataType>
+                        <Units>msec</Units>
+                        <Regex></Regex> <!-- TODO Regex -->
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getPhaseOffset</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the current selection of the Dicke Phase Offset</Description>
+                    </Software>
+                    <Response>
+                        <Name>Phase.Offset</Name>
+                        <DataType>Integer</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setPhaseOffset</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the current selection of the Dicke Phase Offset</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Phase.Offset</Name>
+                        <DataType>Integer</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex></Regex> <!-- TODO Regex -->
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getAntennaSource</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the current selection of the Dicke Antenna Source Antenna/Reference</Description>
+                    </Software>
+                    <Response>
+                        <Name>Antenna.Source</Name>
+                        <DataType>Boolean</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setAntennaSource</Identifier>
+                    <CommandCode>07</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the current selection of the Dicke Antenna Source Antenna/Reference</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Antenna.Source</Name>
+                        <DataType>Boolean</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>(true|false)</Regex>
+                        <Tooltip>'true' or 'false'</Tooltip>
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getSwitchSense</Identifier>
+                    <CommandCode>08</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the current selection of the Dicke Switch Sense</Description>
+                    </Software>
+                    <Response>
+                        <Name>Switch.Sense</Name>
+                        <DataType>Boolean</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setSwitchSense</Identifier>
+                    <CommandCode>09</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the current selection of the Dicke Switch Sense</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Switch.Sense</Name>
+                        <DataType>Boolean</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>(true|false)</Regex>
+                        <Tooltip>'true' or 'false'</Tooltip>
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getIntegratorPeriod</Identifier>
+                    <CommandCode>0A</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the current selection of the Dicke Integrator Period</Description>
+                    </Software>
+                    <Response>
+                        <Name>Integrator.Period</Name>
+                        <DataType>Float</DataType>
+                        <Units>Seconds</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setIntegratorPeriod</Identifier>
+                    <CommandCode>0B</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the current selection of the Dicke Integrator Period</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Integrator.Period</Name>
+                        <DataType>Float</DataType>
+                        <Units>Seconds</Units>
+                        <Regex></Regex> <!-- TODO 0.1 to 6553.6 sec-->
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getIntegratorValue</Identifier>
+                    <CommandCode>0C</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the output value of the Dicke Integrator</Description>
+                    </Software>
+                    <Response>
+                        <Name>Integrator.Value</Name>
+                        <DataType>Integer</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getStatus</Identifier>
+                    <CommandCode>0D</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Dicke Status Register</Description>
+                    </Software>
+                    <Response>
+                        <Name>Status</Name>
+                        <DataType>BitString</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setStatus</Identifier>
+                    <CommandCode>0E</CommandCode>
+                    <Software>
+                        <Identifier>Hydrogen Rx Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Dicke Status Register</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Status</Name>
+                        <DataType>BitString</DataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>(0|1)(0|1)(0|1)(0|1)(0|1)(0|1)(0|1)(0|1)</Regex>
+                        <Tooltip>Specify all eight bits e.g. 10101010</Tooltip>
+                    </Parameter>
+                    <!-- The generic Response to acknowledge Command execution -->
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataType>String</DataType>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- LCD Display -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>LcdDisplay</Identifier>
+                <Name>LcdDisplay</Name>
+                <Description>The Lcd Display Module</Description>
+                <ResourceKey>LcdDisplay</ResourceKey>
+                <CommandCodeBase>08</CommandCodeBase>
+            </Plugin>
+
+        </Controller>
+    </Instrument>
+
+    <!-- John Cook's Magnetometer -->
+
+    <Instrument>
+        <Identifier>Magnetometer</Identifier>
+        <Name>John Cook's Magnetometer</Name>
+        <Description>John Cook's Dual Axis Magnetoresistive Magnetometer</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusmagnetometer.StaribusMagnetometer</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>Magnetometer</ResourceKey>
+
+        <!-- The Magnetometer Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>Magnetometer Controller</Name>
+            <Description>The controller for the Magnetometer</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <DAO>
+                <Name>Magnetometer</Name>
+                <Classname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusmagnetometer.dao.StaribusMagnetometerDAO</Classname>
+                <Description>The Magnetometer DAO</Description>
+                <!-- Simple DAOs have no Inputs -->
+                <Output>
+                    <Name>RawData</Name>
+                    <Description>The Raw Data produced by the DAO</Description>
+                    <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>LPF</Name>
+                    <Description>The Integrated Data for the DAO</Description>
+                    <Tooltip>The Integrated Data (low pass filter)</Tooltip>
+                    <DataType>XYDataset</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>MetaData</Name>
+                    <Description>The Meta Data for the DAO</Description>
+                    <Tooltip>The Meta Data</Tooltip>
+                    <DataType>List</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+                <Output>
+                    <Name>EventLog</Name>
+                    <Description>The Event Log for the DAO</Description>
+                    <Tooltip>The Event Log</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+            </DAO>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the Magnetometer</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- Generic DataLogger -->
+
+    <Instrument>
+        <Identifier>GenericDataLogger</Identifier>
+        <Name>Generic DataLogger</Name>
+        <Description>A DataLogger using a RadioSkyPipe file</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.datalogger.DataLogger</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>DataLogger</ResourceKey>
+
+        <!-- The DataLogger Controller -->
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>DataLogger Controller</Name>
+            <Description>The controller for the DataLogger</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <DAO>
+                <Name>Data Logger</Name>
+                <Classname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.datalogger.dao.DataLoggerDAO</Classname>
+                <Description>The Data Logger DAO</Description>
+                <!-- Simple DAOs have no Inputs -->
+                <Output>
+                    <Name>RawData</Name>
+                    <Description>The Raw Data produced by the DAO</Description>
+                    <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>LPF</Name>
+                    <Description>The Integrated Data for the DAO</Description>
+                    <Tooltip>The Integrated Data (low pass filter)</Tooltip>
+                    <DataType>XYDataset</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>MetaData</Name>
+                    <Description>The Meta Data for the DAO</Description>
+                    <Tooltip>The Meta Data</Tooltip>
+                    <DataType>List</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+                <Output>
+                    <Name>EventLog</Name>
+                    <Description>The Event Log for the DAO</Description>
+                    <Tooltip>The Event Log</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+            </DAO>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the Radio Sky Pipe Viewer</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- The GOES Xray Flux Client -->
+
+    <Instrument>
+        <Identifier>GoesXrayClient</Identifier>
+        <Name>GOES Xray Flux Client</Name>
+        <Description>Retrieves Xray Flux data from ftp.sec.noaa.gov</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.goesxray.GoesXrayClient</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>GoesXrayClient</ResourceKey>
+
+        <!-- The GOES Xray Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>GOES Xray Controller</Name>
+            <Description>The controller for the GOES Xray Client</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <DAO>
+                <Name>GOES Xray Flux</Name>
+                <Classname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.goesxray.dao.GoesXrayDAO</Classname>
+                <Description>The GOES Xray DAO</Description>
+                <!-- Simple DAOs have no Inputs -->
+                <Output>
+                    <Name>RawData</Name>
+                    <Description>The Raw Data produced by the DAO</Description>
+                    <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>LPF</Name>
+                    <Description>The Integrated Data for the DAO</Description>
+                    <Tooltip>The Integrated Data (low pass filter)</Tooltip>
+                    <DataType>XYDataset</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>MetaData</Name>
+                    <Description>The Meta Data for the DAO</Description>
+                    <Tooltip>The Meta Data</Tooltip>
+                    <DataType>List</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+                <Output>
+                    <Name>EventLog</Name>
+                    <Description>The Event Log for the DAO</Description>
+                    <Tooltip>The Event Log</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+            </DAO>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the GOES Xray Client
+                </Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+
+            <!-- Data Processor -->
+            <Plugin>
+                <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+                <Address>00</Address>
+                <Identifier>DataProcessor</Identifier>
+                <Name>DataProcessor</Name>
+                <Description>The Controller DataProcessor Module</Description>
+                <ResourceKey>DataProcessor</ResourceKey>
+
+                <CommandCodeBase>02</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>archiveCommandLog</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataProcessor Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataProcessor to send the CommandLog to the Archive</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>archiveRawData</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataProcessor Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataProcessor to send the RawData to the Archive</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                 </Command>
+
+                 <Command>
+                    <Identifier>archiveMetaData</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataProcessor Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataProcessor to send the MetaData to the Archive</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>archiveConfiguration</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataProcessor Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataProcessor to send the Configuration to the Archive</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>publishChart</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataProcessor Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataProcessor to publish the current Chart</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- The NtpClient -->
+
+    <Instrument>
+        <Identifier>NtpClient</Identifier>
+        <Name>NTP Client</Name>
+        <Description>A Network Time Protocol Client</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.ntpclient.NtpClient</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>NtpClient</ResourceKey>
+
+        <!-- The NtpClient Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>NtpClient Controller</Name>
+            <Description>The controller for the NtpClient</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <DAO>
+                <Name>NTP Client</Name>
+                <Classname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.ntpclient.dao.NtpDAO</Classname>
+                <Description>The NTP DAO</Description>
+                <!-- Simple DAOs have no Inputs -->
+                <Output>
+                    <Name>RawData</Name>
+                    <Description>The Raw Data produced by the DAO</Description>
+                    <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>MetaData</Name>
+                    <Description>The Meta Data for the DAO</Description>
+                    <Tooltip>The Meta Data</Tooltip>
+                    <DataType>List</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+                <Output>
+                    <Name>EventLog</Name>
+                    <Description>The Event Log for the DAO</Description>
+                    <Tooltip>The Event Log</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+            </DAO>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the NtpClient
+                </Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- Gps Receiver -->
+
+    <Instrument>
+        <Identifier>GpsRx</Identifier>
+        <Name>GPS Receiver</Name>
+        <Description>A Global Positioning System Receiver</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.gpsrx.GpsReceiver</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>GpsReceiver</ResourceKey>
+
+        <!-- The GpsReceiver Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>GpsReceiver Controller</Name>
+            <Description>The controller for the GpsReceiver</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <DAO>
+                <Name>GPS Rx</Name>
+                <Classname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.gpsrx.dao.GpsDAO</Classname>
+                <Description>The GPS DAO</Description>
+                <!-- Simple DAOs have no Inputs -->
+                <Output>
+                    <Name>RawData</Name>
+                    <Description>The Raw Data produced by the DAO</Description>
+                    <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Volts</Units>
+                </Output>
+                <Output>
+                    <Name>MetaData</Name>
+                    <Description>The Meta Data for the DAO</Description>
+                    <Tooltip>The Meta Data</Tooltip>
+                    <DataType>List</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+                <Output>
+                    <Name>EventLog</Name>
+                    <Description>The Event Log for the DAO</Description>
+                    <Tooltip>The Event Log</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+            </DAO>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the GpsReceiver
+                </Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- Observatory Log -->
+
+    <Instrument>
+        <Identifier>Log</Identifier>
+        <Name>Observatory Log</Name>
+        <Description>The Observatory Log</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.log.ObservatoryLog</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>Logger</ResourceKey>
+
+        <!-- The Observatory Log Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>Observatory Log Controller</Name>
+            <Description>The controller for the Observatory Log</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <DAO>
+                <Name>Observatory Log</Name>
+                <Classname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.blank.dao.GenericDAO</Classname>
+                <Description>The Generic DAO</Description>
+                <!-- Simple DAOs have no Inputs -->
+                <Output>
+                    <Name>EventLog</Name>
+                    <Description>The Event Log for the DAO</Description>
+                    <Tooltip>The Event Log</Tooltip>
+                    <DataType>Vector</DataType>
+                    <Units>Dimensionless</Units>
+                </Output>
+            </DAO>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the Observatory Log</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+</Instruments>
+
+    <!--
+    <Instrument>
+        <Identifier>ICOMR8500</Identifier>
+        <Name>Icom R8500 Receiver</Name>
+        <Description>The Icom R8500 Receiver</Description>
+        <Controllable>true</Controllable>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.separator.Separator</InstrumentClassname>
+        <ResourceKey>IcomR8500</ResourceKey>
+        <SelectorPanelHeight>3</SelectorPanelHeight>
+        <SelectorPanelFilename>icom_r8500.png</SelectorPanelFilename>
+    </Instrument> -->
+
+    <!--<Instrument>-->
+        <!--<Identifier>WeatherStation</Identifier>-->
+        <!--<Name>Weather Station</Name>-->
+        <!--<Description>A Weather Station for this Observatory</Description>-->
+        <!--<InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.weatherstation.WeatherStation</InstrumentClassname>-->
+        <!--<Controllable>true</Controllable>-->
+        <!--<SelectorPanelHeight>1</SelectorPanelHeight>-->
+        <!--<ResourceKey>WeatherStation</ResourceKey>-->
+    <!--</Instrument>-->
+

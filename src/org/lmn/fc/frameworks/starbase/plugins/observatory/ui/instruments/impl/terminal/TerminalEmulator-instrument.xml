@@ -1,0 +1,76 @@
+<?xml version="1.0" standalone="yes"?>
+
+
+<Instruments xmlns="instruments.xmlbeans.model.fc.lmn.org">
+
+    <!-- ....................................................................................... -->
+    <!-- Terminal Emulator -->
+
+    <Instrument>
+        <Identifier>TerminalEmulator</Identifier>
+
+        <!-- The TerminalEmulator must have a Controller, so that it can indicate it requires a serial port -->
+        <!-- In practice this Controller does nothing! -->
+        <Controller>
+            <!-- A virtual Controller -->
+            <!-- Three DECIMAL digits, 001 for Serial -->
+            <VirtualAddress>001</VirtualAddress>
+
+            <!-- ............................................................................... -->
+            <!-- Instrument (Primary Plugins) -->
+            <!-- ............................................................................... -->
+            <!-- Allow Parent to Child links to identify those physical Plugins **required** for this Instrument -->
+            <!-- The schema allows for zero Plugins -->
+
+            <PluginManifest>
+                <!-- The Key for the PrimaryPlugin, which defines the nature of the Instrument -->
+                <PrimaryResourceKey>Core</PrimaryResourceKey>
+
+                <!-- There are no Secondary Plugins for this Instrument -->
+            </PluginManifest>
+
+            <Identifier>Core</Identifier>
+            <Name>Core</Name>
+            <Description>The TerminalEmulator Core</Description>
+            <ResourceKey>Core</ResourceKey>
+
+            <!-- The Core has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Resets the TerminalEmulator</Description>
+                <Parameter>
+                    <Name>Reset.Mode</Name>
+                    <InputDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>NumericIndexedList</DataTypeName>
+                        <FieldCount>1</FieldCount>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Choices>Soft,Defaults</Choices>
+                    <Tooltip>Allowed values: Soft, Defaults</Tooltip>
+                </Parameter>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+        </Controller>
+
+        <Name>Terminal Emulator</Name>
+        <Description>A simple Terminal Emulator</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.terminal.TerminalEmulator</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>TerminalEmulator</ResourceKey>
+    </Instrument>
+
+</Instruments>

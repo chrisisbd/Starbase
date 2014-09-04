@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<xs:schema targetNamespace="events.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="events.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:element name="Events">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded"
+                            name="Event"
+                            type="Event"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Event">
+        <xs:sequence>
+
+            <xs:element name="EventID"
+                        type="xs:long"/>
+
+            <xs:element name="EventDate"
+                        type="xs:date"/>
+
+            <xs:element name="EventTime"
+                        type="xs:time"/>
+
+            <xs:element name="FrameworkID"
+                        type="xs:long"/>
+
+            <xs:element name="AtomID"
+                        type="xs:long"/>
+
+            <xs:element name="TaskID"
+                        type="xs:long"/>
+
+            <!-- Note that '$' may appear when logging in inner classes -->
+            <xs:element name="ClassName">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.$])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Message">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Status"
+                        type="xs:unsignedByte"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

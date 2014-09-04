@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Stardata xmlns="stardata.xmlbeans.model.fc.lmn.org" xmlns:met="metadata.xmlbeans.model.fc.lmn.org">
+    <Header>
+        <MetadataMetadata>
+            <met:Key>Metadata.Name.Name</met:Key>
+            <met:Value>Name</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of the Metadata key</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Name.DataType</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of the Metadata key</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Name.Units</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of the Metadata key</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Name.Description</met:Key>
+            <met:Value>The Metadata key</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of the Metadata key</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.DataType.Name</met:Key>
+            <met:Value>DataType</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of the Metadata DataType</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.DataType.DataType</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of the Metadata DataType</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.DataType.Units</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of the Metadata DataType</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.DataType.Description</met:Key>
+            <met:Value>The Metadata DataType</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of the Metadata DataType</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Units.Name</met:Key>
+            <met:Value>Units</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of the Metadata Units</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Units.DataType</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of the Metadata Units</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Units.Units</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of the Metadata Units</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Units.Description</met:Key>
+            <met:Value>The Metadata Units</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of the Metadata Units</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Description.Name</met:Key>
+            <met:Value>Description</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of the Metadata Description</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Description.DataType</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of the Metadata Description</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Description.Units</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of the Metadata Description</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Description.Description</met:Key>
+            <met:Value>The Metadata Description</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of the Metadata Description</met:Description>
+        </MetadataMetadata>
+        <Metadata>
+            <met:Key>Importer.Filename</met:Key>
+            <met:Value>workspace/csv/test_indexed_comma_1ch.csv</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The filename to be processed</met:Description>
+        </Metadata>
+        <Metadata>
+            <met:Key>Importer.Format</met:Key>
+            <met:Value>CommaSeparated</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>Allowed values: FormattedStardata,CompressedStardata,RadioSkyPipe,CommaSeparated,TabSeparated,JohnCook</met:Description>
+        </Metadata>
+        <Metadata>
+            <met:Key>Importer.Filter</met:Key>
+            <met:Value>PassThrough</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>Allowed values: PassThrough, SimpleIntegrator</met:Description>
+        </Metadata>
+        <Metadata>
+            <met:Key>Exporter.Filename</met:Key>
+            <met:Value>archive/RawData</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The pathname/filename to be saved without file extension e.g. archive/RawData</met:Description>
+        </Metadata>
+        <Metadata>
+            <met:Key>Exporter.Timestamp</met:Key>
+            <met:Value>true</met:Value>
+            <met:DataTypeName>Boolean</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>Allowed values: true or false, to control the addition of a timestamp to the filename</met:Description>
+        </Metadata>
+        <Metadata>
+            <met:Key>Exporter.Format</met:Key>
+            <met:Value>FormattedStardata</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>Allowed values: FormattedStardata,CompressedStardata,CommaSeparated,TabSeparated</met:Description>
+        </Metadata>
+    </Header>
+    <Data>
+        <DataMetadata>
+            <met:Key>Observation.Date.Name</met:Key>
+            <met:Value>Date</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of the Record Date</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Date.DataType</met:Key>
+            <met:Value>Date</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of the Record Date</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Date.Units</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of the Record Date</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Date.Description</met:Key>
+            <met:Value>The Record Date</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of the Record Date</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Time.Name</met:Key>
+            <met:Value>Time</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of the Record Time</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Time.DataType</met:Key>
+            <met:Value>Time</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of the Record Time</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Time.Units</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of the Record Time</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Time.Description</met:Key>
+            <met:Value>The Record Time</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of the Record Time</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.Name.0</met:Key>
+            <met:Value>Channel 0</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of Channel 0</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.DataType.0</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of Channel 0</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.Units.0</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of Channel 0</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.Description.0</met:Key>
+            <met:Value>Channel 0</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of Channel 0</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.Name.1</met:Key>
+            <met:Value>Channel 1</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of Channel 1</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.DataType.1</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of Channel 1</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.Units.1</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of Channel 1</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.Description.1</met:Key>
+            <met:Value>Channel 1</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of Channel 1</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.Name.2</met:Key>
+            <met:Value>Channel 2</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of Channel 2</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.DataType.2</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of Channel 2</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.Units.2</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of Channel 2</met:Description>
+        </DataMetadata>
+        <DataMetadata>
+            <met:Key>Observation.Channel.Description.2</met:Key>
+            <met:Value>Channel 2</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of Channel 2</met:Description>
+        </DataMetadata>
+        <RD>
+            <C>0.0</C>
+            <C>36.0</C>
+        </RD>
+        <RD>
+            <C>1.0</C>
+            <C>35.0</C>
+        </RD>
+        <RD>
+            <C>2.0</C>
+            <C>34.0</C>
+        </RD>
+        <RD>
+            <C>3.0</C>
+            <C>33.0</C>
+        </RD>
+        <RD>
+            <C>4.0</C>
+            <C>32.0</C>
+        </RD>
+        <RD>
+            <C>5.0</C>
+            <C>31.0</C>
+        </RD>
+        <RD>
+            <C>6.0</C>
+            <C>30.0</C>
+        </RD>
+        <RD>
+            <C>7.0</C>
+            <C>29.0</C>
+        </RD>
+        <RD>
+            <C>8.0</C>
+            <C>28.0</C>
+        </RD>
+        <RD>
+            <C>9.0</C>
+            <C>27.0</C>
+        </RD>
+        <RD>
+            <C>10.0</C>
+            <C>26.0</C>
+        </RD>
+        <RD>
+            <C>11.0</C>
+            <C>25.0</C>
+        </RD>
+        <RD>
+            <C>12.0</C>
+            <C>24.0</C>
+        </RD>
+        <RD>
+            <C>13.0</C>
+            <C>23.0</C>
+        </RD>
+        <RD>
+            <C>14.0</C>
+            <C>22.0</C>
+        </RD>
+        <RD>
+            <C>15.0</C>
+            <C>21.0</C>
+        </RD>
+        <RD>
+            <C>16.0</C>
+            <C>20.0</C>
+        </RD>
+        <RD>
+            <C>17.0</C>
+            <C>19.0</C>
+        </RD>
+        <RD>
+            <C>18.0</C>
+            <C>18.0</C>
+        </RD>
+        <RD>
+            <C>19.0</C>
+            <C>17.0</C>
+        </RD>
+        <RD>
+            <C>20.0</C>
+            <C>16.0</C>
+        </RD>
+        <RD>
+            <C>21.0</C>
+            <C>15.0</C>
+        </RD>
+        <RD>
+            <C>22.0</C>
+            <C>14.0</C>
+        </RD>
+        <RD>
+            <C>23.0</C>
+            <C>13.0</C>
+        </RD>
+        <RD>
+            <C>24.0</C>
+            <C>12.0</C>
+        </RD>
+        <RD>
+            <C>26.0</C>
+            <C>10.0</C>
+        </RD>
+        <RD>
+            <C>27.0</C>
+            <C>9.0</C>
+        </RD>
+        <RD>
+            <C>28.0</C>
+            <C>8.0</C>
+        </RD>
+        <RD>
+            <C>29.0</C>
+            <C>7.0</C>
+        </RD>
+        <RD>
+            <C>30.0</C>
+            <C>6.0</C>
+        </RD>
+        <RD>
+            <C>31.0</C>
+            <C>5.0</C>
+        </RD>
+        <RD>
+            <C>32.0</C>
+            <C>4.0</C>
+        </RD>
+        <RD>
+            <C>33.0</C>
+            <C>3.0</C>
+        </RD>
+        <RD>
+            <C>34.0</C>
+            <C>2.0</C>
+        </RD>
+        <RD>
+            <C>35.0</C>
+            <C>1.0</C>
+        </RD>
+        <RD>
+            <C>36.0</C>
+            <C>0.0</C>
+        </RD>
+    </Data>
+</Stardata>

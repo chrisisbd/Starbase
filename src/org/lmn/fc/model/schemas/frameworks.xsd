@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="frameworks.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="frameworks.xmlbeans.model.fc.lmn.org"
+           xmlns:roles="roles.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="roles.xmlbeans.model.fc.lmn.org"
+               schemaLocation="roles.xsd"/>
+
+    <xs:import namespace="poi.xmlbeans.model.fc.lmn.org"
+               schemaLocation="pointofinterest.xsd"/>
+
+    <xs:element name="Frameworks">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Framework"
+                            type="Framework"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Framework">
+        <xs:sequence>
+
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Language">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="[a-z][a-z]"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Country">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="[A-Z][A-Z]"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="MapFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="MapTopLeftLongitude">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!-- -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999 -->
+                        <!-- Ensure this is kept in step with FrameworkRegex REGEX_LONGITUDE_DMS_SIGNED -->
+                        <xs:pattern value="([+\-]((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|(1[0-7][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]){1,4})*)?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="MapTopLeftLatitude">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 deg:mm:ss -->
+                        <!-- Ensure this is kept in step with FrameworkRegex REGEX_LATITUDE_DMS_SIGNED -->
+                        <xs:pattern value="([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="MapBottomRightLongitude">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!-- -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999 -->
+                        <!-- Ensure this is kept in step with FrameworkRegex REGEX_LONGITUDE_DMS_SIGNED -->
+                        <xs:pattern value="([+\-]((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|(1[0-7][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]){1,4})*)?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="MapBottomRightLatitude">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 deg:mm:ss -->
+                        <!-- Ensure this is kept in step with FrameworkRegex REGEX_LATITUDE_DMS_SIGNED -->
+                        <xs:pattern value="([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="AutoUpdate" type="xs:boolean"/>
+
+            <xs:element name="SplashScreenFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="IconFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="HelpFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="AboutFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="LicenceFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="RecursionLevel"
+                        minOccurs="1"
+                        maxOccurs="10">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="RoleName"
+                        maxOccurs="20"
+                        type="roles:RoleName"/>
+
+            <xs:element name="Editable"
+                        type="xs:boolean"/>
+
+            <xs:element name="Active"
+                        type="xs:boolean"/>
+
+            <xs:element name="LoadAtStart"
+                        type="xs:boolean"/>
+
+            <xs:element name="EditorClassname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="StartDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="StartTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+            <xs:element name="StopDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="StopTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+            <xs:element name="CreatedDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="CreatedTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+            <xs:element name="ModifiedDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="ModifiedTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

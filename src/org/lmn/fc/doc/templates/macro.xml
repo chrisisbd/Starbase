@@ -1,0 +1,208 @@
+<!-- ............................................................................... -->
+<!-- The Macros Plugin  -->
+
+<Plugin>
+    <Identifier>Macros</Identifier>
+    <Name>Macros</Name>
+    <Description>The Macros Module</Description>
+    <ResourceKey>Macros</ResourceKey>
+
+    <!-- The Macros Plugin is always CommandCodeBase 90 -->
+    <CommandCodeBase>90</CommandCodeBase>
+
+    <!-- A simple one step Macro to show how it might work... -->
+    <Macro>
+        <Identifier>testMacro</Identifier>
+        <Description>Macro development tester</Description>
+
+        <!-- Scheduler not intended for direct entry, more programmatic construction -->
+        <Scheduler>
+            <StartDate>2010-01-01</StartDate>
+            <StartTime>00:00:00</StartTime>
+        </Scheduler>
+
+        <Parameter>
+            <Name>Filename.Export</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Value>archive/RawDataIn</Value>
+            <Tooltip>A parameter to the Macro as a whole</Tooltip>
+        </Parameter>
+
+        <Parameter>
+            <Name>Filename.Import</Name>
+            <InputDataType>
+                <DataTypeName>String</DataTypeName>
+            </InputDataType>
+            <TrafficDataType>
+                <DataTypeName>String</DataTypeName>
+            </TrafficDataType>
+            <Units>Dimensionless</Units>
+            <Value>archive/RawDataOut</Value>
+            <Tooltip>A parameter to the Macro as a whole</Tooltip>
+        </Parameter>
+
+        <Step>
+            <Label>Start</Label>
+            <Comment>This is a simple test Macro</Comment>
+        </Step>
+
+        <Step>
+            <Comment></Comment>
+        </Step>
+
+        <Step>
+            <!-- To allow control structures -->
+            <Label>Begin</Label>
+
+            <Comment>Prepare Instruments for use</Comment>
+        </Step>
+
+        <Step>
+            <Starscript>
+                <Instrument>GenericInstrument</Instrument>
+                <Module>Core</Module>
+                <Command>
+                    <Identifier>start</Identifier>
+                </Command>
+            </Starscript>
+        </Step>
+
+        <Step>
+            <Starscript>
+                <Instrument>GenericInstrument</Instrument>
+                <Module>Core</Module>
+                <Command>
+                    <Identifier>ping</Identifier>
+                </Command>
+            </Starscript>
+        </Step>
+
+        <Step>
+            <Starscript>
+                <Instrument>VlfReceiver</Instrument>
+                <Module>Core</Module>
+                <Command>
+                    <Identifier>start</Identifier>
+                </Command>
+            </Starscript>
+        </Step>
+
+        <Step>
+            <Starscript>
+                <Instrument>VlfReceiver</Instrument>
+                <Module>Core</Module>
+                <Command>
+                    <Identifier>ping</Identifier>
+                </Command>
+            </Starscript>
+        </Step>
+
+        <Step>
+            <Comment>Parameter Source can be Macro, Literal, Metadata or Response</Comment>
+        </Step>
+
+        <!--GenericInstrument.Importer.importRawDataLocal(archive/testfile, FormattedStardata, PassThrough)-->
+       <Step>
+           <Starscript>
+               <Instrument>GenericInstrument</Instrument>
+               <Module>Importer</Module>
+               <Command>
+                   <Identifier>importRawDataLocal</Identifier>
+
+                   <!-- Parameter Source can be Macro, Literal, Metadata or Response -->
+
+                   <!-- Import Filename -->
+                   <Parameter>
+                       <Token>Filename.Import</Token>
+                       <Source>Macro</Source>
+                   </Parameter>
+
+                   <!-- Data Format -->
+                   <Parameter>
+                       <Token>DataFormat.Importer</Token>
+                       <Source>Literal</Source>
+                   </Parameter>
+
+                   <!-- Filter -->
+                   <Parameter>
+                       <Token>Filter</Token>
+                       <Source>Literal</Source>
+                   </Parameter>
+
+               </Command>
+           </Starscript>
+       </Step>
+
+        <Step>
+            <Starscript>
+                <Instrument>VlfReceiver</Instrument>
+                <Module>Exporter</Module>
+                <Command>
+                    <Identifier>exportRawData</Identifier>
+
+                    <!-- Parameter Source can be Macro, Literal, Metadata or Response -->
+
+                    <!-- Export Filename -->
+                    <Parameter>
+                        <Token>Filename.Export</Token>
+                        <Source>Macro</Source>
+                    </Parameter>
+
+                    <!-- Timestamp flag -->
+                    <Parameter>
+                        <Token>true</Token>
+                        <Source>Literal</Source>
+                    </Parameter>
+
+                    <!-- Data Format -->
+                    <Parameter>
+                        <Token>DataFormat.Exporter</Token>
+                        <Source>Metadata</Source>
+                    </Parameter>
+                </Command>
+            </Starscript>
+        </Step>
+
+        <Step>
+            <Comment>Shutdown everything</Comment>
+        </Step>
+
+        <Step>
+            <Starscript>
+                <Instrument>GenericInstrument</Instrument>
+                <Module>Core</Module>
+                <Command>
+                    <Identifier>stop</Identifier>
+                </Command>
+            </Starscript>
+        </Step>
+
+        <Step>
+            <Starscript>
+                <Instrument>VlfReceiver</Instrument>
+                <Module>Core</Module>
+                <Command>
+                    <Identifier>stop</Identifier>
+                </Command>
+            </Starscript>
+        </Step>
+
+        <Step>
+            <Label>End</Label>
+            <Comment>The end of the Macro</Comment>
+        </Step>
+
+        <Response>
+            <Name>Macro.Response</Name>
+            <DataTypeName>String</DataTypeName>
+            <Units>Dimensionless</Units>
+            <Regex>Ok</Regex>
+        </Response>
+    </Macro>
+</Plugin>

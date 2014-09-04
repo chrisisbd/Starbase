@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Stardata xmlns="stardata.xmlbeans.model.fc.lmn.org" xmlns:met="metadata.xmlbeans.model.fc.lmn.org">
+    <Header>
+        <MetadataMetadata>
+            <met:Key>Metadata.Name.Name</met:Key>
+            <met:Value>Name</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of the Metadata key</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Name.DataType</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of the Metadata key</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Name.Units</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of the Metadata key</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Name.Description</met:Key>
+            <met:Value>The Metadata key</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of the Metadata key</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.DataType.Name</met:Key>
+            <met:Value>DataType</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of the Metadata DataType</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.DataType.DataType</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of the Metadata DataType</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.DataType.Units</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of the Metadata DataType</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.DataType.Description</met:Key>
+            <met:Value>The Metadata DataType</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of the Metadata DataType</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Units.Name</met:Key>
+            <met:Value>Units</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of the Metadata Units</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Units.DataType</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of the Metadata Units</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Units.Units</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of the Metadata Units</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Units.Description</met:Key>
+            <met:Value>The Metadata Units</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of the Metadata Units</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Description.Name</met:Key>
+            <met:Value>Description</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The name of the Metadata Description</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Description.DataType</met:Key>
+            <met:Value>String</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The DataType of the Metadata Description</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Description.Units</met:Key>
+            <met:Value>Dimensionless</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The Units of the Metadata Description</met:Description>
+        </MetadataMetadata>
+        <MetadataMetadata>
+            <met:Key>Metadata.Description.Description</met:Key>
+            <met:Value>The Metadata Description</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description>The description of the Metadata Description</met:Description>
+        </MetadataMetadata>
+
+        <Metadata>
+            <met:Key>Observation.Title</met:Key>
+            <met:Value>SpectraCyber Hydrogen Spectrum</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description/>
+        </Metadata>
+        <Metadata>
+            <met:Key>Observation.Axis.Label.X</met:Key>
+            <met:Value>Frequency Offset</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description/>
+        </Metadata>
+        <Metadata>
+            <met:Key>Observation.Axis.Label.Y.0</met:Key>
+            <met:Value>Spectrometer Output</met:Value>
+            <met:DataTypeName>String</met:DataTypeName>
+            <met:Units>Dimensionless</met:Units>
+            <met:Description/>
+        </Metadata>
+    </Header>
+
+    <Data>
+        <DataMetadata xmlns:md="metadata.xmlbeans.model.fc.lmn.org">
+            <md:Key>Observation.Channel.Count</md:Key>
+            <md:Value>1</md:Value>
+            <md:DataTypeName>DecimalInteger</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The number of channels of data produced by this Instrument</md:Description>
+        </DataMetadata>
+        <DataMetadata xmlns:md="metadata.xmlbeans.model.fc.lmn.org">
+            <md:Key>Observation.Channel.Name.0</md:Key>
+            <md:Value>Output</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The name of channel 0</md:Description>
+        </DataMetadata>
+        <DataMetadata xmlns:md="metadata.xmlbeans.model.fc.lmn.org">
+            <md:Key>Observation.Channel.DataType.0</md:Key>
+            <md:Value>DecimalInteger</md:Value>
+            <md:DataTypeName>DataType</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The DataType of channel 0</md:Description>
+        </DataMetadata>
+        <DataMetadata xmlns:md="metadata.xmlbeans.model.fc.lmn.org">
+            <md:Key>Observation.Channel.Units.0</md:Key>
+            <md:Value>Dimensionless</md:Value>
+            <md:DataTypeName>Units</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The Units of channel 0</md:Description>
+        </DataMetadata>
+        <DataMetadata xmlns:md="metadata.xmlbeans.model.fc.lmn.org">
+            <md:Key>Observation.Channel.Description.0</md:Key>
+            <md:Value>The output from Channel 0</md:Value>
+            <md:DataTypeName>String</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The Description of channel 0</md:Description>
+        </DataMetadata>
+        <RD>
+            <C>-100</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>-90</C>
+            <C>414</C>
+        </RD>
+        <RD>
+            <C>-80</C>
+            <C>414</C>
+        </RD>
+        <RD>
+            <C>-70</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>-60</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>-50</C>
+            <C>414</C>
+        </RD>
+        <RD>
+            <C>-40</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>-30</C>
+            <C>417</C>
+        </RD>
+        <RD>
+            <C>-20</C>
+            <C>1684</C>
+        </RD>
+        <RD>
+            <C>-10</C>
+            <C>445</C>
+        </RD>
+        <RD>
+            <C>0</C>
+            <C>416</C>
+        </RD>
+        <RD>
+            <C>10</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>20</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>30</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>40</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>50</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>60</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>70</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>80</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>90</C>
+            <C>415</C>
+        </RD>
+        <RD>
+            <C>100</C>
+            <C>415</C>
+        </RD>
+    </Data>
+</Stardata>

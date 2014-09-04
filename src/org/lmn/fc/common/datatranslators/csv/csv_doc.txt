@@ -1,0 +1,119 @@
+http://supercsv.sourceforge.net/csv_specification.html
+
+A formal EBNF (extended Bachus-Naur Form) where "," denotes the separation character.
+See Wikipedia/BNF  and Wikipedia/EBNF for further information on (E)BNF.
+
+CSV file
+--------
+file         ::= [ header ] { line }
+header       ::= [ { entry separator } entry ] newline
+line         ::= [ { entry separator } entry ] newline
+entry        ::= character+ | { character* " separator " } | " entry newline entry "
+newline      ::= \n
+separator    ::= ,
+character    ::= a|b|..|A|B|..|0|1|..
+escapedQuote ::= ""
+
+Or more informally..
+
+    * Entities are separated by new line characters
+
+    * Entries of an entity are separated by a separation character, often a comma (",")
+        excluding the the last element of a line
+
+    * An entry may contain the separation character in which case that character is enclosed in quotes
+
+    * An entry may contain newlines in which case the whole entry is enclosed in quotation marks
+
+    * The first line of the file may contain the header descriptions for the columns of the file,
+        and may be ignored (or as in the case of Super Csv be utilized when reading data into maps or beans.
+
+    * Any white-spaces at the start of a line, just after the separation character,
+        just before a separation character, or just before a newline character is ignored.
+
+    * An escaped quote is two consecutive quote characters.
+        The only exception to this rule is when the first character in a cell is a quote it
+        always denotes a quote for the form " entry newline entry ".
+        Hence the entry "" (double quote in a cell) denotes the empty string, whereas the input """" denotes the string "
+
+----------------------------------------------------------------------------------------------------
+
+http://www.creativyst.com/Doc/Articles/CSV/CSV01.htm
+
+----------------------------------------------------------------------------------------------------
+
+http://en.wikipedia.org/wiki/Comma-separated_values
+
+CSV is a delimited data format that has fields/columns separated by the comma character
+and records/rows separated by newlines. Fields that contain a special character (comma, newline, or double quote),
+must be enclosed in double quotes. However, if a line contains a single entry which is the empty string,
+it may be enclosed in double quotes. If a field's value contains a double quote character
+it is escaped by placing another double quote character next to it.
+The CSV file format does not require a specific character encoding, byte order, or line terminator format.
+
+    * Each record is one line terminated by a line feed (ASCII/LF=0x0A) or a carriage return and
+    line feed pair (ASCII/CRLF=0x0D 0x0A), however, line-breaks can be embedded.
+    * Fields are separated by commas (although in locales where the comma is used as a decimal point,
+    the semicolon is used instead as a delimiter, inducing some drawbacks when CSV files are exchanged
+    e.g. between France and USA)
+
+1997,Ford,E350
+
+    * In some CSV implementations, leading and trailing spaces or tabs, adjacent to commas, are trimmed.
+    This practice is contentious and in fact is specifically prohibited by RFC 4180, which states,
+    "Spaces are considered part of a field and should not be ignored."
+
+1997,   Ford   , E350
+not same as
+1997,Ford,E350
+
+    * Fields with embedded commas must be enclosed within double-quote characters.
+
+1997,Ford,E350,"Super, luxurious truck"
+
+    * Fields with embedded double-quote characters must be enclosed within double-quote characters, and each of the embedded double-quote characters must be represented by a pair of double-quote characters.
+
+1997,Ford,E350,"Super ""luxurious"" truck"
+
+    * Fields with embedded line breaks must be enclosed within double-quote characters.
+
+1997,Ford,E350,"Go get one now
+they are going fast"
+
+    * Fields with leading or trailing spaces must be enclosed within double-quote characters.
+    (See comment about leading and trailing spaces above.)
+
+1997,Ford,E350,"  Super luxurious truck    "
+
+    * Fields may always be enclosed within double-quote characters, whether necessary or not.
+
+"1997","Ford","E350"
+
+    * The first record in a csv file may contain column names in each of the fields.
+
+Year,Make,Model
+1997,Ford,E350
+2000,Mercury,Cougar
+
+[edit] Example
+1997 	Ford 	E350 	ac, abs, moon 	3000.00
+1999 	Chevy 	Venture "Extended Edition" 	  	4900.00
+1999 	Chevy 	Venture "Extended Edition, Very Large" 	  	5000.00
+1996 	Jeep 	Grand Cherokee 	MUST SELL!
+air, moon roof, loaded 	4799.00
+
+The above table of data may be represented in CSV format as follows:
+
+1997,Ford,E350,"ac, abs, moon",3000.00
+1999,Chevy,"Venture ""Extended Edition""","",4900.00
+1999,Chevy,"Venture ""Extended Edition, Very Large""","",5000.00
+1996,Jeep,Grand Cherokee,"MUST SELL!
+air, moon roof, loaded",4799.00
+
+This CSV example illustrates that:
+
+    * fields that contain commas, double-quotes, or line-breaks must be quoted.
+    * a quote within a field must be escaped with an additional quote immediately preceding the literal quote.
+    * a quote and a comma within a field must be escaped with an extra additional quote preceding the literal quote.
+    * space before and after delimiter commas may not be trimmed. This is required by RFC 4180.
+    * a line break within an element must be preserved.

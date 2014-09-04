@@ -1,0 +1,58 @@
+<!-- Copyright 2000, 2001, 2002, 2003, 04, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2013 -->
+<!-- Laurence Newell -->
+<!-- starbase@ukraa.com -->
+<!-- radio.telescope@btinternet.com -->
+<!-- -->
+<!-- This file is part of Starbase. -->
+<!-- -->
+<!-- Starbase is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+<!-- -->
+<!-- Starbase is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU General Public License for more details. -->
+<!-- -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Starbase.  If not, see http://www.gnu.org/licenses. -->
+
+<html>
+<head>
+<title>Starbase Logger</title>
+<body>
+<h3>Starbase Logger</h3>
+
+<br>Look in workspace/staribus-stub for 'stub' XML files for testing the Staribus Plug and Play system.
+
+<br>They may be written to the 8 EEPROMs in a full system,
+<br>i.e. Controller, PrimaryPlugin and Plugins 2-7
+<br>using the setModuleConfiguration(module_id, filename) Command
+
+<br>The getConfiguration() Command will read all EEPROMs
+<br>and assemble the individual files into one XML document.
+<br>The console window will give a message to show if the document is validated against the schema.
+
+You may also use the DiscoveryTester Instrument in conjunction with a stub Staribus Common Port
+to read directly from these files, to test the assembly without any EEPROMs fitted.
+To do this edit instruments-common.xml to select the stub streams:
+
+<br>TxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribuscontroller.dao.StaribusStubTxStream/TxStream>
+<br>RxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribuscontroller.dao.StaribusStubRxStream/RxStream>
+
+<br>Don't forget to restore the original real streams when you are finished:
+
+<br>TxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribuscontroller.dao.StaribusTxStream/TxStream>
+<br>RxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribuscontroller.dao.StaribusRxStream/RxStream>
+
+<br>The DiscoveryTester can be used with a real Futurlec Controller, if you wish,
+<br>just use the real Streams as above.
+
+<br>Please report any problems to:
+<br>starbase@ukraa.com
+
+
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+[Rxtx] PortInUseException - Cannot close and reopen serial port
+Greg Johnson greg.johnson at manchester.ac.uk
+Wed Jun 27 14:08:53 MDT 2007
+
+    * Previous message: [Rxtx] [PARALLEL] resource in use
+    * Next message: [Rxtx] PortInUseException - Cannot close and reopen serial port
+    * Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+
+Hello Martin,
+   We found that we had to get a fresh CommPortIdentifier each time -
+reusing the previous one, even though the port had been closed,
+caused this to barf.
+
+while (true) {
+	portId=CommPortIdentifier.getPortIdentifier(pName);
+	Thread.sleep(2000); // or else USB dongles barf
+     serialport = (SerialPort) portId.open("MyApp",100);
+	// do something interesting
+     serialport.close();
+}
+
+Previously, we just tried to do
+serialport = (SerialPort) portId.open("MyApp,100);
+or
+SerialPort serialport2 = ...
+
+a second time, but that gave the so-called PortInUseException.
+
+We're now limping along.  Still struggling with USB-dongles - seems
+to need a full 2s after insertion to reliably be able to open the
+serial port.
+
+This was a problem on OSX and WinXPSP2 both.  We downloaded the
+"2.1-8" (which reports itself as 2.1-7) from CSV - it helped on the
+OSX side as it stopped flooding the console with irrelevant locking
+warnings.  Other than that, we saw no change in behaviour.
+
+Cheers,
+greg
+------------------------------------------------------------------------
+-
+Greg Johnson
+Research Fellow at University of Manchester
+Scientific Collaborator at ESRF - European Synchrotron
+greg.johnson at esrf.fr
+greg.johnson at ieee.org
++33 (0)4 76 88 28 37
+
+
+
+On 27 Jun 2007, at 17:35, Oberhuber, Martin wrote:
+
+> Hello,
+>
+> did anybody find a solution for the issue on Windows, where after
+> port.close() the port cannot be opened immediately but throws
+> a PortInUseException?
+>
+> There were Reports that it took 30 seconds before the port got
+> actually free again, did anybody dig any deeper and find the
+> real issue?
+>
+> This is about rxtx-2.1-7r2 on Windows XP SP2.
+> Thanks,
+> --
+> Martin Oberhuber
+> Wind River Systems, Inc.
+> Target Management Project Lead, DSDP PMC Member
+> http://www.eclipse.org/dsdp/tm
+>
+>
+>
+> From: rxtx-bounces at qbang.org [mailto:rxtx-bounces at qbang.org] On
+> Behalf Of Greg Johnson
+> Sent: Wednesday, March 28, 2007 10:43 PM
+> To: rxtx at qbang.org
+> Cc: ruskin at pwlinda.mt.umist.ac.uk
+> Subject: [Rxtx] Cannot close and reopen serial port
+>
+> Dear all,
+>   It appears I cannot close a port properly:
+>
+> SerialPort serialport = portid.open("myprog",100);
+> // do some stuff, all works fine
+> serialport.close();  // all seems fine but...
+>
+> SerialPort sp2 = portid.open("myprog",100);
+>
+> throws PortInUseException.
+>
+> And when I dig into the rxtx code, I find in CommPort.java, in close
+> ():
+>
+> CommPortIdentifier cp =
+> CommPortIdentifier.getPortIdentifier(this);
+>
+>  (line 64 or there abouts)
+>
+> but this throws a NoSuchPortException which is caught but ignored
+> (line 74ish).
+>
+> Can anyone suggest how this could happen: a port that was valid,
+> opened, and used, throws a NSPE when it comes to closing it?  I'm
+> pulling my (remaining) hair out over this one!
+>
+> Cheers,
+> greg
+>
+> PS And thanks for RXTX - it's great to have!
+>
+> PPS (21.-7. winxp/osx both, java 1.5)

@@ -1,0 +1,30 @@
+Observation.Title,Test Pearson Correlation,String,Dimensionless,The title for the Chart
+
+Observation.Axis.Label.X,X increment,String,Dimensionless,The X axis
+Observation.Axis.Label.Y.0,Y value,String,Dimensionless,The Y axis
+
+Observation.Channel.Count,4,DecimalInteger,Dimensionless,The number of data channels
+
+Observation.Channel.Name.Temperature,Temperature,String,Dimensionless,The name of the Temperature Channel
+Observation.Channel.Description.Temperature,The Temperature Channel,String,Dimensionless,The description of the Temperature Channel
+Observation.Channel.DataType.Temperature,DecimalInteger,String,Dimensionless,The DataType of the Temperature Channel
+Observation.Channel.Units.Temperature,Celsius,String,Dimensionless,The Units of the Temperature Channel
+Observation.Channel.Colour.Temperature,r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Temperature Channel graph
+
+Observation.Channel.Name.0,X,String,Dimensionless,The name of Channel 0
+Observation.Channel.Description.0,The X output from the Magnetometer,String,Dimensionless,The Description of channel 0
+Observation.Channel.DataType.0,DecimalInteger,String,Dimensionless,The DataType of Channel 0
+Observation.Channel.Units.0,Dimensionless,String,Dimensionless,The Units of Channel 0
+Observation.Channel.Colour.0,r=000 g=255 b=000,ColourData,Dimensionless,The Colour of the X Channel graph
+
+Observation.Channel.Name.1,Y,String,Dimensionless,The name of Channel 1
+Observation.Channel.Description.1,The Y output from the Magnetometer,String,Dimensionless,The Description of channel 1
+Observation.Channel.DataType.1,DecimalInteger,String,Dimensionless,The DataType of Channel 1
+Observation.Channel.Units.1,Dimensionless,String,Dimensionless,The Units of Channel 1
+Observation.Channel.Colour.1,r=000 g=000 b=255,ColourData,Dimensionless,The Colour of the Y Channel graph
+
+Observation.Channel.Name.2,Z,String,Dimensionless,The name of Channel 2
+Observation.Channel.Description.2,An index,String,Dimensionless,The Description of channel 2
+Observation.Channel.DataType.2,DecimalInteger,String,Dimensionless,The DataType of Channel 2
+Observation.Channel.Units.2,Dimensionless,String,Dimensionless,The Units of Channel 2
+Observation.Channel.Colour.2,r=000 g=255 b=255,ColourData,Dimensionless,The Colour of the Channel 2 graph

@@ -1,0 +1,6 @@
+<project name="plugin"
+         basedir=".">
+
+    <import file="../../../build-single-plugin.xml"/>
+
+</project>

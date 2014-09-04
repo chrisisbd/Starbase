@@ -1,0 +1,117 @@
+<?xml version="1.0" standalone="yes"?>
+
+<POI xmlns="poi.xmlbeans.model.fc.lmn.org">
+    <!-- Framework Icon is poi-framework.png -->
+    <!-- London Icon is poi-london.png -->
+    <!-- Transmitter Icon is poi-tx.png -->
+    <!-- Receiver Icon is poi-rx.png -->
+    <!-- A plain cross icon poi.png -->
+
+    <!-- PointOfInterest information relevant to the Instrument -->
+    <!-- You may add others below -->
+
+    <!-- Kiel Longwave Monitor http://df3lp.de -->
+    <PointOfInterest>
+        <Name>Kiel Longwave 1</Name>
+        <Description>Kiel Longwave Monitor Rx 1</Description>
+        <Longitude>-010:03:13</Longitude>
+        <Latitude>+54:23:46</Latitude>
+        <HASL>0</HASL>
+        <MaidenheadLocator>JO54aj</MaidenheadLocator>
+        <IconFilename>poi-rx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>GQD Anthorn</Name>
+        <Description>Anthorn VLF TX</Description>
+        <Longitude>+003:16:43</Longitude>
+        <Latitude>+54:54:42</Latitude>
+        <HASL>0</HASL>
+        <MaidenheadLocator>IO84iv</MaidenheadLocator>
+        <IconFilename>poi-tx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>GBZ Skelton</Name>
+        <Description>UK Navy VLF TX</Description>
+        <Longitude>+002:52:59</Longitude>
+        <Latitude>+54:43:55</Latitude>
+        <HASL>0</HASL>
+        <MaidenheadLocator>IO84iv</MaidenheadLocator>
+        <IconFilename>poi-tx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>ICV Isola di Tavolara</Name>
+        <Description>Italian Navy VLF TX</Description>
+        <Longitude>-009:43:52</Longitude>
+        <Latitude>+40:32:23</Latitude>
+        <HASL>0</HASL>
+        <MaidenheadLocator>JN40uw</MaidenheadLocator>
+        <IconFilename>poi-tx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>JXN Aldra Is.</Name>
+        <Description>Norwegian Navy VLF TX</Description>
+        <Longitude>-013:01:00</Longitude>
+        <Latitude>+66:25:00</Latitude>
+        <HASL>0</HASL>
+        <MaidenheadLocator>JP66mk</MaidenheadLocator>
+        <IconFilename>poi-tx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>FTA St.Assise</Name>
+        <Description>French Navy VLF TX</Description>
+        <Longitude>+002:34:46</Longitude>
+        <Latitude>+48:32:41</Latitude>
+        <HASL>0</HASL>
+        <MaidenheadLocator>JN18gn</MaidenheadLocator>
+        <IconFilename>poi-tx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>HWU Rosnay</Name>
+        <Description>French Navy VLF TX</Description>
+        <Longitude>+001:14:43</Longitude>
+        <Latitude>+46:42:47</Latitude>
+        <HASL>0</HASL>
+        <MaidenheadLocator>JN06or</MaidenheadLocator>
+        <IconFilename>poi-tx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>DHO38 Ramsloh</Name>
+        <Description>German Military VLF TX</Description>
+        <Longitude>-007:36:54</Longitude>
+        <Latitude>+53:04:44</Latitude>
+        <HASL>0</HASL>
+        <MaidenheadLocator>JO33tb</MaidenheadLocator>
+        <IconFilename>poi-tx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>TBB Bafa</Name>
+        <Description>Turkish Navy VLF TX</Description>
+        <Longitude>-027:30:00</Longitude>
+        <Latitude>+37:28:00</Latitude>
+        <HASL>0</HASL>
+        <MaidenheadLocator>KM37sl</MaidenheadLocator>
+        <IconFilename>poi-tx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>COAA Observatory</Name>
+        <Description>COAA Observatory, Algarve, Portugal</Description>
+        <!-- WEST is POSITIVE (astronomical convention) -->
+        <Longitude>+008:36:02</Longitude>
+        <Latitude>+37:11:26</Latitude>
+        <HASL>75</HASL>
+        <!-- See: http://www.arrl.org/locate/grid.html -->
+        <!-- See: http://www.amsat.org/amsat/toys/gridconv.html -->
+        <MaidenheadLocator>JM07pe</MaidenheadLocator>
+        <IconFilename>poi-coaa.png</IconFilename>
+    </PointOfInterest>
+
+</POI>

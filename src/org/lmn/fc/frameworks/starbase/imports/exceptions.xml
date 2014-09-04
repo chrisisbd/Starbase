@@ -1,0 +1,2439 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Exceptions xmlns="exceptions.xmlbeans.model.fc.lmn.org">
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>AddSubNode</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Failed to add ChildNode</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>ChildNode</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Failed to read Node's Children</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>Application</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Application data could not be read</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>Boolean</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not get a valid Boolean: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>Component</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Component data could not be read</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>Date</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not get a valid Date: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>DegMinSec</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not get a valid DegMinSec: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>Double</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not get a valid double: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>HourMinSec</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not get a valid HourMinSec: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>Integer</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not get a valid integer: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>Property</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Requested property value is NULL</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>String</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not get a valid string: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>Task</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The TaskData object could not be read</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>YearMonthDay</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not get a valid YearMonthDay: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>LinkMenus</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to link the Menus</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Application</Key>
+            <Key>Data</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load an Application</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Application</Key>
+            <Key>Properties</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load the ApplicationProperties</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Application</Key>
+            <Key>Strings</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load the Application Strings</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Application</Key>
+            <Key>Tasks</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load the ApplicationTasks</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Applications</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load the Applications</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Component</Key>
+            <Key>Properties</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load the ComponentProperties</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Component</Key>
+            <Key>Tasks</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load the ComponentTasks</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Components</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load the Components</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Framework</Key>
+            <Key>Strings</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load the Framework Strings</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Languages</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load the Languages</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Load</Key>
+            <Key>Model</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to load the ApplicationModel</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>No</Key>
+            <Key>Application</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>No Application data available</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>No</Key>
+            <Key>Children</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Attempted to find Children of a Leaf</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>No</Key>
+            <Key>Component</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>No Component data available</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>No</Key>
+            <Key>Events</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>No Event data available</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>No</Key>
+            <Key>Name</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The item has a null name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>No</Key>
+            <Key>Properties</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>This Object has no Properties!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>No</Key>
+            <Key>Property</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>No Property data available</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>No</Key>
+            <Key>Root</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>There is no Root Node in the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>No</Key>
+            <Key>Task</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>No Task data available</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>ParameterError</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Something failed the configuration parameter parser!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>ResourceKey</Key>
+            <Key>ApplicationString</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Application Strings key not valid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>ResourceKey</Key>
+            <Key>FrameworkString</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Framework Strings key not valid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>Boolean</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not set a valid Boolean: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>Date</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not set a valid Date: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>DegMinSec</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not set a valid DegMinSec: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>Double</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not set a valid double: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>HourMinSec</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not set a valid HourMinSec: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>Integer</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not set a valid integer: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>Language</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to set the requested Language</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>Property</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not set a valid property: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>String</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not set a valid string: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>TaskState</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to change the state of the Task</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Set</Key>
+            <Key>YearMonthDay</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not set a valid YearMonthDay: DataType may be invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>StringTooLong</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The string is too long for its container</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>TooManyRoots</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>There appears to be more than one Root!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Write</Key>
+            <Key>Property</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to make the requested change to the Property</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Clock</Key>
+            <Key>Construct</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not construct a DigitalClock</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Clock</Key>
+            <Key>Update</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to update the clock</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Create</Key>
+            <Key>ClockTest</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to create a ClockTest</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Create</Key>
+            <Key>Dialog</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not make a dialog box</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Create</Key>
+            <Key>Indicator</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not create an Indicator panelInterface</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Create</Key>
+            <Key>Keypad</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not create a Keypad panelInterface</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Create</Key>
+            <Key>Status</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not create a StatusLight panelInterface</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Database</Key>
+            <Key>AlreadyActive</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The connection to the database is already open</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Database</Key>
+            <Key>Close</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to close the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Database</Key>
+            <Key>ColumnCount</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Incorrect number of columns in the table for this version!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>Database</Key>
+            <Key>Connect</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to connect to the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+            <Key>Database</Key>
+            <Key>ExecSQL</Key>
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Failed to execute SQL statement</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Database</Key>
+            <Key>Inactive</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>There is no connection to the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Database</Key>
+            <Key>InsertParams</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Failed to insert SQL parameters</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Database</Key>
+            <Key>Invalid</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The DataType is not valid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Database</Key>
+            <Key>NotBoolean</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The value in the database is not a Boolean</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Database</Key>
+            <Key>Open</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to open the database</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Database</Key>
+            <Key>ResultSet</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The database did not return a valid ResultSet</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Dummy</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Development Dummy</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Application</Key>
+            <Key>Data</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>There is no ApplicationData object in the HashTable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Application</Key>
+            <Key>Strings</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>No Application Strings found</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Boolean</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not find a key for the requested Boolean</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Component</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>There is no ComponentData object in the HashTable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Date</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not find a key for the requested Date</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>DegMinSec</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not find a key for the requested DegMinSec</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Double</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not find a key for the requested double</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Framework</Key>
+            <Key>Strings</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>No Framework Strings found</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>HourMinSec</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not find a key for the requested HourMinSec</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Integer</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not find a key for the requested integer</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>JDBC</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to find the JDBC class</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Languages</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>No Languages found</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Property</Key>
+            <Key>DataType</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Property DataType class cannot be found</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Property</Key>
+            <Key>Key</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not find a key for the requested property</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>String</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not find a key for the requested string</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>Task</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>There is no TaskData object in the HashTable</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Find</Key>
+            <Key>YearMonthDay</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not find a key for the requested YearMonthDay</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FiniteStateMachine</Key>
+            <Key>IllegalState</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The FSM has tried to enter an invalid state</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FiniteStateMachine</Key>
+            <Key>Range</Key>
+            <Key>Event</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Invalid event for this FSM</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FiniteStateMachine</Key>
+            <Key>Range</Key>
+            <Key>State</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Invalid state for this FSM</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Initialise</Key>
+            <Key>About</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Failed to initialise the About box</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Initialise</Key>
+            <Key>Failed</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to initialise the application frame</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Initialise</Key>
+            <Key>Message</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Failed to initialise the Message box</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Invalid</Key>
+            <Key>Format</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Invalid format pattern for output</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Invalid</Key>
+            <Key>JulianDay</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Julian Days cannot be negative</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Invalid</Key>
+            <Key>Language</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The requested Language ISO code is invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Invalid</Key>
+            <Key>PropertyType</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Property type is invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Invalid</Key>
+            <Key>TimeSystem</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Time system identifier not found</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Null</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Parameter is null</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Property</Key>
+            <Key>Configuration</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Two or more Property names conflict with each other</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Property</Key>
+            <Key>Level0</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Property scanner failed at Level0</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Property</Key>
+            <Key>Level1</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Property scanner failed at Level1</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Property</Key>
+            <Key>Level2</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Property scanner failed at Level2</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Property</Key>
+            <Key>Level3</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Property scanner failed at Level3</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Property</Key>
+            <Key>Nameless</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Property has no name</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Property</Key>
+            <Key>Parser</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Property parser failed</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Range</Key>
+            <Key>Error</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The parameter value is out of range</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Range</Key>
+            <Key>Minutes</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The minutes value is out of range</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Range</Key>
+            <Key>Period</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Clock update period is out of range</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Range</Key>
+            <Key>Property</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to read a Property</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Range</Key>
+            <Key>RecursionLimit</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Recursion has gone too deep!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Range</Key>
+            <Key>Seconds</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The seconds value is out of range</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>StatusLight</Key>
+            <Key>LabelTooLong</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Requested label for StatusLight is too long</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>StatusLight</Key>
+            <Key>OutOfRange</Key>
+            <Key>Index</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Light index number of StatusLight is out of range</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>StatusLight</Key>
+            <Key>OutOfRange</Key>
+            <Key>Lights</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Invalid number of StatusLights requested by constructor</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Test</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Test Framework exception ho ho</Text>
+        <Description>test descripteeeeeeeeeee34324224rrrrrrr</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>TypeConversion</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to convert to the requested type</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Write</Key>
+            <Key>Property</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to write a Property</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>EventViewer</Key>
+            <Key>Refresh</Key>
+
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Can't refresh Events</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>Create</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not lay out the TaskEditor panelInterface</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Get</Key>
+            <Key>UserObject</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Could not get a UserObject from the tree</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>FrameworkModel</Key>
+            <Key>Resource</Key>
+            <Key>DataType</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The Resource DataType is invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>Create</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to lay out the PropertyEditor panelInterface</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>DataType</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The DataType is invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Generic</Key>
+            <Key>Parse</Key>
+            <Key>Date</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to parse a Date!</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Task</Key>
+            <Key>TaskType</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The TaskType is invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>ClassCast</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to create a StringEditor from the supplied ResourceData</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>Create</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to lay out the StringEditor panelInterface</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>String</Key>
+            <Key>DataType</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The ResourceType is invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Property</Key>
+            <Key>ClassCast</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to create a StringEditor from the supplied ResourceData</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>ClassCast</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to create an ExceptionEditor from the supplied ResourceData</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>Create</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to lay out the ExceptionEditor panelInterface</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Exception</Key>
+            <Key>DataType</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The ResourceType is invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>ClassCast</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to create a QueryEditor from the supplied ResourceData</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>Create</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to lay out the QueryEditor panelInterface</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Editor</Key>
+            <Key>Query</Key>
+            <Key>DataType</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>The ResourceType is invalid</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+    <ExceptionResource>
+        <ResourceKey>
+
+            <Key>Framework</Key>
+            <Key>Editor</Key>
+            <Key>Construct</Key>
+
+        </ResourceKey>
+        <LanguageCode>en</LanguageCode>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.ExceptionEditor</EditorClassname>
+        <Text>Unable to construct the Framework Editor</Text>
+        <Description>Please enter a description</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </ExceptionResource>
+</Exceptions>

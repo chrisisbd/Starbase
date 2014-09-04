@@ -1,0 +1,126 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- See: http://utilitymill.com/utility/Regex_For_Range -->
+
+<ObserverMetadata xmlns="metadata.xmlbeans.model.fc.lmn.org">
+
+    <!-- The name of the Observer -->
+    <Metadata>
+        <Key>Observer.Name</Key>
+        <Value>Oculo Gyric</Value>
+        <Regex>([a-zA-Z0-9'., ])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The name of the Observer</Description>
+    </Metadata>
+
+    <!-- The description of the Observer -->
+    <Metadata>
+        <Key>Observer.Description</Key>
+        <Value>The really observant Observer</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The description of the Observer</Description>
+    </Metadata>
+
+    <!-- The Observer website URL -->
+    <Metadata>
+        <Key>Observer.Contact.URL</Key>
+        <Value>http://www.ukraa.com/starbase</Value>
+        <DataTypeName>URL</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observer website URL</Description>
+    </Metadata>
+
+    <!-- The email address of the Observer -->
+    <Metadata>
+        <Key>Observer.Contact.Email</Key>
+        <Value>starbase@ukraa.com</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The email address of the Observer</Description>
+    </Metadata>
+
+    <!-- The Observer telephone number -->
+    <Metadata>
+        <Key>Observer.Contact.Telephone</Key>
+        <Value>+44 123 999999</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observer telephone number</Description>
+    </Metadata>
+
+    <!-- Line 1 of the Observer postal address -->
+    <Metadata>
+        <Key>Observer.Address.Line1</Key>
+        <Value>Observer Address Line 1</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Line 1 of the Observer postal address</Description>
+    </Metadata>
+
+    <!-- Line 2 of the Observer postal address -->
+    <Metadata>
+        <Key>Observer.Address.Line2</Key>
+        <Value>Observer Address Line 2</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Line 2 of the Observer postal address</Description>
+    </Metadata>
+
+    <!-- Line 3 of the Observer postal address -->
+    <Metadata>
+        <Key>Observer.Address.Line3</Key>
+        <Value>Observer Address Line 3</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Line 3 of the Observer postal address</Description>
+    </Metadata>
+
+    <!-- Line 4 of the Observer postal address -->
+    <Metadata>
+        <Key>Observer.Address.Line4</Key>
+        <Value>Observer Address Line 4</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Line 4 of the Observer postal address</Description>
+    </Metadata>
+
+    <!-- The Observer Postcode (Zip Code) -->
+    <Metadata>
+        <Key>Observer.Address.Postcode</Key>
+        <Value>XY01 0AB</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observer Postcode (Zip Code)</Description>
+    </Metadata>
+
+    <!-- The Country containing the Observer -->
+    <!-- You must use the ISO standard names, which are case-sensitive -->
+    <!-- Country Codes: http://www.iso.ch/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html -->
+    <Metadata>
+        <Key>Observer.Country</Key>
+        <Value>GB</Value>
+        <Regex>[A-Z][A-Z]</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Country containing the Observer</Description>
+    </Metadata>
+
+    <!-- The Observer Notes -->
+    <Metadata>
+        <Key>Observer.Notes</Key>
+        <Value>Observer Notes</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observer Notes</Description>
+    </Metadata>
+
+</ObserverMetadata>
+

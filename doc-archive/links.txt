@@ -1,0 +1,12 @@
+XMLBeans  http://xmlbeans.apache.org/  Last update 2007-11-02  with version 2.3.0
+
+Saxonica http://www.saxonica.com/index.html
+
+Saxon http://sourceforge.net/projects/saxon
+
+Saxon B is the Basic version, free of charge
+
+XML beans will not work with Saxon 8.9, it MUST be 8.8!
+
+
+

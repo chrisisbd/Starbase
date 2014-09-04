@@ -1,0 +1,596 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Instruments xmlns="instruments.xmlbeans.model.fc.lmn.org"
+             xmlns:md="metadata.xmlbeans.model.fc.lmn.org">
+
+    <!-- Generic DataLogger -->
+
+    <Instrument>
+        <Identifier>GenericDataLogger1</Identifier>
+        <Name>Generic DataLogger1</Name>
+        <Description>A DataLogger using a RadioSkyPipe file</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.datalogger.DataLogger</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>DataLogger</ResourceKey>
+
+        <!-- The DataLogger Controller -->
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>DataLogger Controller</Name>
+            <Description>The controller for the DataLogger</Description>
+            <DAOClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.datalogger.dao.DataLoggerDAO</DAOClassname>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the Radio Sky Pipe Viewer</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <Instrument>
+        <Identifier>GenericDataLogger2</Identifier>
+        <Name>Generic DataLogger2</Name>
+        <Description>A DataLogger using a RadioSkyPipe file</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.datalogger.DataLogger</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>DataLogger</ResourceKey>
+
+        <!-- The DataLogger Controller -->
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>DataLogger Controller</Name>
+            <Description>The controller for the DataLogger</Description>
+            <DAOClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.datalogger.dao.DataLoggerDAO</DAOClassname>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the Radio Sky Pipe Viewer</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <Instrument>
+        <Identifier>GenericDataLogger3</Identifier>
+        <Name>Generic DataLogger3</Name>
+        <Description>A DataLogger using a RadioSkyPipe file</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.datalogger.DataLogger</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>DataLogger</ResourceKey>
+
+        <!-- The DataLogger Controller -->
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>DataLogger Controller</Name>
+            <Description>The controller for the DataLogger</Description>
+            <DAOClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.datalogger.dao.DataLoggerDAO</DAOClassname>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the Radio Sky Pipe Viewer</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <Instrument>
+        <Identifier>GenericDataLogger4</Identifier>
+        <Name>Generic DataLogger4</Name>
+        <Description>A DataLogger using a RadioSkyPipe file</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.datalogger.DataLogger</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>DataLogger</ResourceKey>
+
+        <!-- The DataLogger Controller -->
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>DataLogger Controller</Name>
+            <Description>The controller for the DataLogger</Description>
+            <DAOClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.datalogger.dao.DataLoggerDAO</DAOClassname>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Starbus Generic Commands -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+            <Command>
+                <Identifier>executePing</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getAddress</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the bus address of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setAddress</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the bus address of the Controller</Description>
+                </Software>
+                <Parameter>
+                    <Name>Address</Name>
+                    <DataType>HexByte</DataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Two characters, 00 to FF</Tooltip>
+                </Parameter>
+                <!-- The generic Response to acknowledge Command execution -->
+                <Response>
+                    <Name>Ack</Name>
+                    <DataType>String</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <Software>
+                    <Identifier>Generic Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Controller</Description>
+                </Software>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataType>XML</DataType>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Starbus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Starbus controller software for the Radio Sky Pipe Viewer</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Controller Plugins -->
+            <!-- The Plugin XML (if any) must be inserted here when the configuration is
+                 transmitted by the Controller in response to getConfiguration -->
+
+            <!-- Data Logger -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>DataLogger</Identifier>
+                <Name>DataLogger</Name>
+                <Description>The Controller DataLogger Module</Description>
+                <ResourceKey>DataLogger</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                 <Command>
+                    <Identifier>startLogging</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to begin logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+
+                 <Command>
+                    <Identifier>stopLogging</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Controller DataLogger Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Instructs the DataLogger to stop logging immediately</Description>
+                    </Software>
+                     <!-- The generic Response to acknowledge Command execution -->
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataType>String</DataType>
+                         <Units>Dimensionless</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+</Instruments>

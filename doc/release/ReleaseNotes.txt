@@ -1,0 +1,88 @@
+----------------------------------------------------------------------------------------------------
+Starbase Integrated Observatory
+UK Radio Astronomy Association
+2012-06-19
+Build 2.2.1 created with Java 6, release 27
+
+!!PLEASE READ THE RELEASE LOG in install_root/doc/release for further details!!
+
+!!PLEASE READ THE USER GUIDE!!
+
+In this release there have been many, many bug fixes and low-level improvements, and...
+
+----------------------------------------------------------------------------------------------------
+Changes in current build:
+
+Framework and Infrastructure
+
+The Framework About 'box' now has an Acknowledgements tab detailing the many third-party libraries used in the software.
+
+There is a new user login named builder, with a user Role of Builder,for those users who wish to rebuild everything from scratch.
+
+DataTypes, Metadata, POI, LOI - The internal implementation of DataTypes, Metadata, PointsOfInterest and LinesOfInterest have all been significantly changed.
+
+-----------
+Observatory
+
+Toolbars - Several Toolbars have been improved.
+
+Charts - The performance and operation of the charting facility has been improved, with the addition of a simple slider to allow selection of a range of data.
+
+Data Filters - The data filters have been completely rewritten, to make addition of new filters much simpler: the LinearTransform function is now implemented as a filter.
+
+Digital Panel Meter Tab - All logger instruments which can display numeric data now have a Digital Panel Meter tab, with one meter for each data channel.
+
+Distinction between Capture and Import - Part of the improvements in Metadata handling resulted in a clearer distinction between the action of Capturing data (for instance from a logger), and of Importing data, (for instance from a local file).
+
+Sandbox Instrument - A new instrument called the 'Sandbox' has been added, as a general-purpose testbed.
+
+SpectrumLab Support - SpectrumLab CSV files may now be imported up to a maximum of 32 channels, provided that the correct metadata appear at the start of the file.
+
+Observatory Clock - The Ephemeris can now be driven directly by metadata.
+
+Communicator - Information tabs have been added to Communicator to give RSS newsfeeds.
+
+GPS Receiver - The GPS Receiver and Simulated GPS Receiver now have a ScatterPlot tab, which can accumulate GPS fixes over a long period of time.
+
+Magnetometer - The main changes to the Magnetometer relate to the distinction between Capture and Import of data.
+
+VLF Receiver - The main changes to the VLF Receiver relate to the distinction between Capture and Import of data.
+
+--------
+Staribus
+
+WARNING! We have discovered that not all USB COM adaptors will work reliably - please contact for further details
+
+Full support for 32 and 64 bit Windows, Linux and Mac serial communications
+
+Rewrite of parts of Staribus comms to improve fault tolerance, timeouts and retries
+
+Changed operation to allow most controller commands while a capture is active
+
+Command to write an EEPROM configuration from a file
+
+Command reset(Staribus) to flush all buffers and reinitialise the bus
+
+All failed blocks are logged in dist/logs for later examination
+
+Default Staribus Addresses:
+
+001 Four Channel Logger
+002 Eight Channel Logger
+003 VLF Rx
+004 Magnetometer
+
+
+Any feedback or problems, please contact starbase@ukraa.com
+Laurence Newell
+
+!!PLEASE READ THE USER GUIDE and RELEASE LOG!!
+
+----------------------------------------------------------------------------------------------------
+You are free to use Starbase in any way that you like.
+Please note that there is NO WARRANTY of any kind that it is fit for ANY purpose whatsover,
+and UKRAA cannot be held responsible for ANY errors, omissions or damage caused.
+----------------------------------------------------------------------------------------------------
+
+
+;test

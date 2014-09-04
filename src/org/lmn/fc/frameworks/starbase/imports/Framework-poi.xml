@@ -1,0 +1,95 @@
+<?xml version="1.0" standalone="yes"?>
+
+<POI xmlns="poi.xmlbeans.model.fc.lmn.org">
+    <!-- PointOfInterest information relevant to the Framework -->
+    <!-- The Framework is its own PointOfInterest! -->
+    <!-- You may add others below -->
+    <!-- Icon pathnames are relative to the 'dist' root -->
+
+    <!-- The filename of the icon to use to show the Framework on the maps -->
+    <!--<PointOfInterestFilename>poi-framework.png</PointOfInterestFilename>-->
+
+    <!-- POIs appear on the RegionalMap tabs in the Observatory, for e.g. the VLF Receiver -->
+
+    <!-- This name of this POI *must* be the *same* as the Framework name -->
+    <!-- and may not contain spaces -->
+    <!-- It is probably best not to experiment with this one just yet! -->
+    <PointOfInterest>
+        <Name>Starbase</Name>
+        <Description>The location of this Framework</Description>
+
+        <!-- If any of these keys do not exist, then the POI is not displayed -->
+        <!-- WEST is POSITIVE (astronomical convention) -->
+        <LongitudeKey>Framework.Longitude</LongitudeKey>
+
+        <LatitudeKey>Framework.Latitude</LatitudeKey>
+
+        <!-- HASL {-9999.9 to 9999.9} -->
+        <HASLKey>Framework.HASL</HASLKey>
+
+        <!-- NOTE! -->
+        <!-- Removed MaidenheadLocator because we are working via Metadata Keys -->
+        <!-- Ideally the software would calculate the ML from the supplied location -->
+        <!-- otherwise it could be out of step with the current coordinates from Metadata -->
+        <!-- See: http://www.amsat.org/cgi-bin/gridconv -->
+        <!-- See: http://www.arrl.org/locate/grid.html -->
+        <!--<MaidenheadLocator>JO01al</MaidenheadLocator>-->
+
+        <!-- Icon pathnames are relative to the 'dist' root -->
+        <IconFilename>poi.png</IconFilename>
+    </PointOfInterest>
+
+    <!-- Other places of interest, e.g. London -->
+
+    <PointOfInterest>
+        <Name>Jodrell Bank</Name>
+        <Description>Jodrell Bank</Description>
+        <!-- WEST is POSITIVE (astronomical convention) -->
+        <Longitude>+002:18:23</Longitude>
+        <Latitude>+53:14:16</Latitude>
+        <HASL>0.0</HASL>
+        <!-- See: http://www.amsat.org/cgi-bin/gridconv -->
+        <!-- See: http://www.arrl.org/locate/grid.html -->
+        <MaidenheadLocator>IO83uf</MaidenheadLocator>
+        <IconFilename>poi-rx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>Graves Space Radar</Name>
+        <Description>French Space Surveillance - 143.050MHz</Description>
+        <!-- WEST is POSITIVE (astronomical convention) -->
+        <Longitude>-005:30:59</Longitude>
+        <Latitude>+47:20:52</Latitude>
+        <HASL>0.0</HASL>
+        <!-- See: http://www.amsat.org/cgi-bin/gridconv -->
+        <!-- See: http://www.arrl.org/locate/grid.html -->
+        <MaidenheadLocator>JO01al</MaidenheadLocator>
+        <IconFilename>poi-rx.png</IconFilename>
+    </PointOfInterest>
+
+    <PointOfInterest>
+        <Name>BRAMS Radio Beacon Dourbes</Name>
+        <Description>Belgian Radio Meteor Station - 49.970MHz</Description>
+        <!-- WEST is POSITIVE (astronomical convention) -->
+        <Longitude>-004:35:40</Longitude>
+        <Latitude>+50:05:49</Latitude>
+        <HASL>0.0</HASL>
+        <!-- See: http://www.amsat.org/cgi-bin/gridconv -->
+        <!-- See: http://www.arrl.org/locate/grid.html -->
+        <MaidenheadLocator>JO20hc</MaidenheadLocator>
+        <IconFilename>poi-rx.png</IconFilename>
+    </PointOfInterest>
+
+
+
+    <!--<PointOfInterest>-->
+        <!--<Name>London</Name>-->
+        <!--<Description>UK Capital</Description>-->
+        <!--<Longitude>-000:06:22</Longitude>-->
+        <!--<Latitude>+51:31:02</Latitude>-->
+        <!--<HASL>0</HASL>-->
+        <!--<MaidenheadLocator>JO01bq</MaidenheadLocator>-->
+        <!--<IconFilename>poi-london.png</IconFilename>-->
+    <!--</PointOfInterest>-->
+
+</POI>

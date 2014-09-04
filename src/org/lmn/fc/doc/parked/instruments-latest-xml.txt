@@ -1,0 +1,4053 @@
+<?xml version="1.0" standalone="yes"?>
+
+
+<Instruments xmlns="instruments.xmlbeans.model.fc.lmn.org"
+             xmlns:md="metadata.xmlbeans.model.fc.lmn.org"
+             xmlns:dt="datatypes.xmlbeans.model.fc.lmn.org">
+
+    <!-- This file must contain at least one Instrument -->
+
+    <!-- ....................................................................................... -->
+    <!-- Observatory Clock -->
+
+    <Instrument>
+        <Identifier>ObservatoryClock</Identifier>
+        <Name>Observatory Clock</Name>
+        <Description>The Observatory Clock</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.clock.ObservatoryClock</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>ObservatoryClock</ResourceKey>
+
+        <!-- The Data Access Object is the Java interface to the Controller -->
+        <DAO>
+            <Name>Observatory Clock</Name>
+            <Description>The ObservatoryClock DAO</Description>
+            <!-- SimplePlatformClockDAO just uses the PC platform clock -->
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.clock.dao.SimplePlatformClockDAO</DaoClassname>
+            <TranslatorClassname></TranslatorClassname>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>RawData</Name>
+                <Description>The Raw Data produced by the DAO</Description>
+                <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XYDataset</Name>
+                <Description>The XYDataset produced by the DAO</Description>
+                <Tooltip>The XYDataset</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- The Clock Controller -->
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>Controller</Name>
+            <Description>The Observatory Clock Controller</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Controller has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the Clock</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Clock Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the Clock Controller in XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Clock</Identifier>
+                <Version>00.1</Version>
+                <Description>The Clock Controller software</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Clock Plugin -->
+
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>Clock</Identifier>
+                <Name>Clock</Name>
+                <Description>The Clock Module</Description>
+                <ResourceKey>Clock</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                    <Identifier>getDate</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Clock Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Get the Date</Description>
+                    </Software>
+                     <SendToPort>false</SendToPort>
+                     <Response>
+                         <Name>Date</Name>
+                         <DataTypeName>Date</DataTypeName>
+                         <Units>Dimensionless</Units>
+                         <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$</Regex>
+                     </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getTime</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Clock Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Get the Time</Description>
+                    </Software>
+                     <SendToPort>false</SendToPort>
+                     <Response>
+                         <Name>Time</Name>
+                         <DataTypeName>Time</DataTypeName>
+                         <Units>Dimensionless</Units>
+                         <Regex>^(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                     </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getTimeZone</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Clock Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Get the TimeZone</Description>
+                    </Software>
+                     <SendToPort>false</SendToPort>
+                     <Response>
+                         <Name>TimeZone</Name>
+                         <DataTypeName>TimeZone</DataTypeName>
+                         <Units>Dimensionless</Units>
+                         <!-- ToDo TimeZone Regex -->
+                     </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>runClocks</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <Software>
+                        <Identifier>Clock Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Controls the Clock displays</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Run</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false</Tooltip>
+                    </Parameter>
+                     <SendToPort>false</SendToPort>
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataTypeName>String</DataTypeName>
+                         <Units>Dimensionless</Units>
+                         <Regex>Ok</Regex>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- Controller Simulator -->
+
+    <Instrument>
+        <Identifier>ControllerSimulator</Identifier>
+        <Name>Controller Simulator</Name>
+        <Description>A Controller Simulator to test Staribus</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribuslogger.StaribusLogger</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>ControllerSimulator</ResourceKey>
+
+        <!-- The Data Access Object is the Java interface from the Host PC to the Controller -->
+        <!-- In this case via the RS485 on a COM port as defined in properties.xml -->
+        <DAO>
+            <Name>Controller Tester</Name>
+            <Description>The Controller Simulator DAO</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribuslogger.dao.StaribusLoggerDAO</DaoClassname>
+            <TranslatorClassname>org.lmn.fc.common.datatranslators.skypipe.RadioSkyPipeTranslator</TranslatorClassname>
+
+            <!-- The DAO Port (possibly multiple Ports one day! -->
+            <!-- The Port is either a unique instance for this DAO, -->
+            <!-- OR a use of the Observatory StaribusPort -->
+
+            <StaribusPort>Observatory</StaribusPort>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>RawData</Name>
+                <Description>The Raw Data produced by the DAO</Description>
+                <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XYDataset</Name>
+                <Description>The XYDataset produced by the DAO</Description>
+                <Tooltip>The XYDataset</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- The Staribus Controller under test -->
+        <Controller>
+            <!-- A placeholder for the discovered address, or an address already assigned -->
+            <Address>128</Address>
+            <Identifier>Core</Identifier>
+            <Name>Core</Name>
+            <Description>The Core under test</Description>
+            <ResourceKey>Core</ResourceKey>
+
+            <!-- An example of Configuration Metadata specific to this Core -->
+            <Configuration>
+                <md:Key>Example.Data</md:Key>
+                <md:Value>Example</md:Value>
+                <md:DataTypeName>String</md:DataTypeName>
+                <md:Units>Dimensionless</md:Units>
+                <md:Description>A sample item of Core metadata</md:Description>
+            </Configuration>
+
+            <!-- ............................................................................... -->
+            <!-- Staribus Generic (Mandatory) Commands -->
+
+            <!-- The basic Core has a CommandCodeBase of zero -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Core Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the Controller</Description>
+                </Software>
+                <SendToPort>true</SendToPort>
+                <Ack>
+                    <Name>Ack</Name>
+                </Ack>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Core Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Controller</Description>
+                </Software>
+                <SendToPort>true</SendToPort>
+                <Ack>
+                    <Name>Ack</Name>
+                </Ack>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <BlockedDataCommand>
+                    <BlockCountCommandCode>03</BlockCountCommandCode>
+                    <BlockCommandCode>04</BlockCommandCode>
+                </BlockedDataCommand>
+                <Software>
+                    <Identifier>Core Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the XML configuration of the Instrument</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration.XML</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfigurationBlockCount</Identifier>
+                <CommandCode>03</CommandCode>
+                <BlockedDataCommand>
+                    <ParentCommandCode>02</ParentCommandCode>
+                </BlockedDataCommand>
+                <Software>
+                    <Identifier>Core Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the number of blocks of data in the Instrument configuration</Description>
+                </Software>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Configuration.BlockCount</Name>
+                    <DataTypeName>HexInteger</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F][0-9A-F][0-9A-F]</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfigurationBlock</Identifier>
+                <CommandCode>04</CommandCode>
+                <BlockedDataCommand>
+                    <ParentCommandCode>02</ParentCommandCode>
+                </BlockedDataCommand>
+                <Software>
+                    <Identifier>Core Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the specified block of Instrument configuration data, as an XML fragment</Description>
+                </Software>
+                <Parameter>
+                    <Name>Configuration.BlockID</Name>
+                    <InputDataType>
+                        <DataTypeName>HexInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F][0-9A-F][0-9A-F]</Regex>
+                    <Tooltip>Allowed Values: BlockID 0000 to FFFF</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Configuration.Block</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Staribus</Identifier>
+                <Version>00.1</Version>
+                <Description>The Core software for the Controller Tester
+                </Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Each Controller may have zero or more Plugins, up to the I2C bus addressing limit -->
+            <!-- Some Plugins are 'virtual', i.e. do not relate to separate I2C devices -->
+            <!-- for example, the processor on-chip services such as A2D and D2A -->
+            <!-- These are given an 'address' of zero -->
+
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>Utilities</Identifier>
+                <Name>Controller</Name>
+                <Description>The Utilities Module</Description>
+                <ResourceKey>Utilities</ResourceKey>
+
+                <!-- Example of Configuration Metadata specific to this Plugin -->
+                <Configuration>
+                    <md:Key>Example.Data</md:Key>
+                    <md:Value>Example</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>A sample item of Utilities Plugin metadata</md:Description>
+                </Configuration>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                    <Identifier>getClockDate</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Utilities Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Date from the Controller clock</Description>
+                    </Software>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Clock.Date</Name>
+                        <DataTypeName>Date</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setClockDate</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Utilities Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Date on the Controller clock</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Clock.Date</Name>
+                        <InputDataType>
+                            <DataTypeName>Date</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$</Regex>
+                        <Tooltip>Format YYYY-MM-DD</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+                <Command>
+                    <Identifier>getClockTime</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Utilities Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Time from the Controller clock</Description>
+                    </Software>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Clock.Time</Name>
+                        <DataTypeName>Time</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>^(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setClockTime</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <Software>
+                        <Identifier>Utilities Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Time on the Controller clock</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Clock.Time</Name>
+                        <InputDataType>
+                            <DataTypeName>Time</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^(([0-1][0-9]|[2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                        <Tooltip>Format HH:MM:SS</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+                <Command>
+                    <Identifier>getTemperature</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <Software>
+                        <Identifier>Utilities Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Temperature of the Controller</Description>
+                    </Software>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Temperature</Name>
+                        <DataTypeName>DecimalFloat</DataTypeName>
+                        <Units>Celsius</Units>
+                        <Regex>^-?\d*(\.\d+)?$</Regex>
+                    </Response>
+                </Command>
+
+                <Software>
+                    <Identifier>Staribus</Identifier>
+                    <Version>00.1</Version>
+                    <Description>The Utilities software for the Controller Tester
+                    </Description>
+                </Software>
+            </Plugin>
+
+            <!-- Analogue Plugin -->
+            <Plugin>
+
+                <Address>00</Address>
+                <Identifier>Analogue</Identifier>
+                <Name>Analogue</Name>
+                <Description>The Controller's Analogue facilities</Description>
+                <ResourceKey>Analogue</ResourceKey>
+
+                <!-- Example of Configuration Metadata specific to this Plugin -->
+                <Configuration>
+                    <md:Key>Example.Data</md:Key>
+                    <md:Value>Example</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>A sample item of Analogue Plugin metadata</md:Description>
+                </Configuration>
+
+                <!-- The Analogue Plugin has a CommandCodeBase of 02 -->
+                <CommandCodeBase>02</CommandCodeBase>
+
+                <Command>
+                    <Identifier>getA2D</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Analogue Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the voltage read by the selected A2D channel</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>A2D.Channel</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalByte</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- Staribus Decimal bytes are always three digits 000...255 -->
+                            <DataTypeName>DecimalByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^[0-7]$</Regex>
+                        <Tooltip>Allowed Values: Channels 0 to 7</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>A2D.Value</Name>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                        <Units>mV</Units>
+
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getD2A</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Analogue Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the voltage output by the selected D2A channel</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>D2A.Channel</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalByte</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- Staribus Decimal bytes are always three digits 000...255 -->
+                            <DataTypeName>DecimalByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^[0|1]$</Regex>
+                        <Tooltip>Allowed Values: Channels 0 or 1</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>D2A.Value</Name>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                        <Units>mV</Units>
+                        <Regex>^0*([0-9]{1,3}|1[0-9]{3}|2[0-4][0-9]{2}|2500)$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setD2A</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <Software>
+                        <Identifier>Analogue Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the voltage to be output by the selected D2A channel</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>D2A.Channel</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalByte</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- Staribus Decimal bytes are always three digits 000...255 -->
+                            <DataTypeName>DecimalByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^[0|1]$</Regex>
+                        <Tooltip>Allowed Values: Channels 0 or 1</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>D2A.Value</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- Staribus Decimal integers are always four digits 0000...9999 -->
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>mV</Units>
+                        <Regex>^0*([0-9]{1,3}|1[0-9]{3}|2[0-4][0-9]{2}|2500)$</Regex>
+                        <Tooltip>Allowed Values: 0000 to 2500 milliVolts</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+                <Command>
+                    <Identifier>getData</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <BlockedDataCommand>
+                        <BlockCountCommandCode>04</BlockCountCommandCode>
+                        <BlockCommandCode>05</BlockCommandCode>
+                    </BlockedDataCommand>
+                    <Software>
+                        <Identifier>Analogue Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the data produced by the Instrument</Description>
+                    </Software>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Instrument.Data</Name>
+                        <DataTypeName>VectorData</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getDataBlockCount</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <BlockedDataCommand>
+                        <ParentCommandCode>03</ParentCommandCode>
+                    </BlockedDataCommand>
+                    <Software>
+                        <Identifier>Analogue Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the number of blocks in the Instrument data</Description>
+                    </Software>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Instrument.BlockCount</Name>
+                        <DataTypeName>HexInteger</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>[0-9A-F][0-9A-F][0-9A-F][0-9A-F]</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getDataBlock</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <BlockedDataCommand>
+                        <ParentCommandCode>03</ParentCommandCode>
+                    </BlockedDataCommand>
+                    <Software>
+                        <Identifier>Analogue Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the specified block of Instrument data</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Instrument.BlockID</Name>
+                        <InputDataType>
+                            <DataTypeName>HexInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>[0-9A-F][0-9A-F][0-9A-F][0-9A-F]</Regex>
+                        <Tooltip>Allowed Values: BlockID 0000 to FFFF</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Instrument.Block</Name>
+                        <DataTypeName>VectorData</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Software>
+                    <Identifier>Analogue</Identifier>
+                    <Version>01.0</Version>
+                    <Description>The Controller processor on-chip Analogue facilities</Description>
+                </Software>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Importer Plugin -->
+
+            <Plugin>
+                <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+                <Address>00</Address>
+                <Identifier>Importer</Identifier>
+                <Name>Importer</Name>
+                <Description>The Importer Module</Description>
+                <ResourceKey>Importer</ResourceKey>
+
+                <CommandCodeBase>03</CommandCodeBase>
+
+                <Command>
+                   <Identifier>importRawDataLocal</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>Importer Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Import a single data file from the local file system</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be imported e.g. data.xml</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>RadioSkyPipe</Choices>
+                        <Tooltip>Allowed values: RadioSkyPipe</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+               </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Exporter Plugin -->
+
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>Exporter</Identifier>
+                <Name>Exporter</Name>
+                <Description>The Exporter Module</Description>
+                <ResourceKey>Exporter</ResourceKey>
+
+                <!-- Example of Configuration Metadata specific to this Plugin -->
+                <Configuration>
+                    <md:Key>Example.Data</md:Key>
+                    <md:Value>Example</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>A sample item of Exporter Plugin metadata</md:Description>
+                </Configuration>
+
+                <CommandCodeBase>04</CommandCodeBase>
+
+                <Command>
+                   <Identifier>exportChart</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current chart as an image in the specified file</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/chart01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Type</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>png, jpg</Choices>
+                        <Tooltip>Allowed values: JPG, PNG (PNG preferred)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Width</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Tooltip>The width of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Height</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Tooltip>The height of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+               </Command>
+
+                <Command>
+                   <Identifier>exportProcessedData</Identifier>
+                   <CommandCode>01</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current processed data in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/data01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+                        <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+               </Command>
+
+                <Command>
+                   <Identifier>exportRawData</Identifier>
+                   <CommandCode>02</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current raw data in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/data01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+                        <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+               <Command>
+                   <Identifier>exportInstrumentLog</Identifier>
+                   <CommandCode>03</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current Instrument Log in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/log01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+                        <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                       <Name>Ack</Name>
+                    </Ack>
+               </Command>
+
+               <Command>
+                   <Identifier>exportEventLog</Identifier>
+                   <CommandCode>04</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current Event Log in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/log01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+                        <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                       <Name>Ack</Name>
+                    </Ack>
+               </Command>
+
+                <Command>
+                   <Identifier>exportMetadata</Identifier>
+                   <CommandCode>05</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current MetaData in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/metadata01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+                        <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+               </Command>
+
+                <Command>
+                   <Identifier>exportConfiguration</Identifier>
+                   <CommandCode>06</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current Instrument configuration in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/config01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Stardata, TabSeparatedValue, Excel</Choices>
+                        <Tooltip>Allowed values: Stardata, TabSeparatedValue, Excel</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+               </Command>
+            </Plugin>
+
+            <!-- Tester Plugin -->
+            <Plugin>
+
+                <Address>00</Address>
+                <Identifier>Tester</Identifier>
+                <Name>Tester</Name>
+                <Description>The Controller's Testing facilities</Description>
+                <ResourceKey>Tester</ResourceKey>
+
+                <!-- Example of Configuration Metadata specific to this Plugin -->
+                <Configuration>
+                    <md:Key>Example.Data</md:Key>
+                    <md:Value>Example</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>A sample item of Tester Plugin metadata</md:Description>
+                </Configuration>
+
+                <!-- The Tester Plugin has a CommandCodeBase of 03 -->
+                <CommandCodeBase>05</CommandCodeBase>
+
+                <Command>
+                    <Identifier>timeoutLocal</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Tester Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Tests the timeout of a Local Command</Description>
+                    </Software>
+                    <SendToPort>false</SendToPort>
+                    <!-- Insist on a Response which will never appear -->
+                    <Response>
+                        <Name>Timeout.Local</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>TIMEOUT</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>timeoutRemote</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <LegacyCode>TEST</LegacyCode>
+                    <Software>
+                        <Identifier>Tester Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Tests the timeout of a Remote Command</Description>
+                    </Software>
+                    <SendToPort>true</SendToPort>
+                    <!-- Insist on a Response which will never appear -->
+                    <Response>
+                        <Name>Timeout.Remote</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>TIMEOUT</Regex>
+                    </Response>
+                </Command>
+
+                <Software>
+                    <Identifier>Tester</Identifier>
+                    <Version>01.0</Version>
+                    <Description>The Tester facilities</Description>
+                </Software>
+            </Plugin>
+
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- SpectraCyber Simulator -->
+
+    <Instrument>
+        <Identifier>SpectraCyberSimulator</Identifier>
+        <Name>SpectraCyber Simulator</Name>
+        <Description>SpectraCyber Simulator</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.spectracyber.SpectraCyber</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>SpectraCyberSimulator</ResourceKey>
+
+        <!-- The Data Access Object is the Java interface to the Controller -->
+
+        <DAO>
+            <Name>SpectraCyber Simulator</Name>
+            <Description>The SpectraCyber Simulator DAO</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.spectracyber.dao.SpectraCyberStubDAO</DaoClassname>
+            <TranslatorClassname>org.lmn.fc.common.datatranslators.skypipe.RadioSkyPipeTranslator</TranslatorClassname>
+
+            <!-- The DAO Port (possibly multiple Ports one day! -->
+            <!-- The Port is either a unique instance for this DAO, -->
+            <!-- OR a use of the Observatory StaribusPort -->
+
+            <Port>
+                <Name>SpectraCyber</Name>
+                <Description>The SpectraCyber Port</Description>
+                <ResourceKey>SpectraCyber</ResourceKey>
+                <TxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.spectracyber.dao.SpectraCyberStubTxStream</TxStream>
+                <RxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.spectracyber.dao.SpectraCyberStubRxStream</RxStream>
+            </Port>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>RawData</Name>
+                <Description>The Raw Data produced by the DAO</Description>
+                <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XYDataset</Name>
+                <Description>The XYDataset produced by the DAO</Description>
+                <Tooltip>The XYDataset</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- Controller under test -->
+        <Controller>
+            <!-- A virtual Controller -->
+            <Address>0</Address>
+            <Identifier>Controller</Identifier>
+            <Name>ControllerUnderTest</Name>
+            <Description>The SpectraCyber Controller under test</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The basic Controller has a CommandCodeBase of zero -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <LegacyCode>!R000</LegacyCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the SpectraCyber</Description>
+                </Software>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>R000</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the SpectraCyber Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the SpectraCyber Controller - XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>set70MHzGain</Identifier>
+                <CommandCode>03</CommandCode>
+                <LegacyCode>!A</LegacyCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the 70MHz gain 10dB to 25.75dB in 0.25dB steps</Description>
+                </Software>
+                <Parameter>
+                    <Name>70MHz.Gain</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalFloat</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>NumericIndexedList</DataTypeName>
+                        <FieldCount>3</FieldCount>
+                    </TrafficDataType>
+                    <Units>dB</Units>
+                    <Choices>10.0,10.25,10.5,10.75,11.0,11.25,11.5,11.75,12.0,12.25,12.5,12.75,13.0,13.25,13.5,13.75,14.0,14.25,14.5,14.75,15.0,15.25,15.5,15.75,16.0,16.25,16.5,16.75,17.0,17.25,17.5,17.75,18.0,18.25,18.5,18.75,19.0,19.25,19.5,19.75,20.0,20.25,20.5,20.75,21.0,21.25,21.5,21.75,22.0,22.25,22.5,22.75,23.0,23.25,23.5,23.75,24.0,24.25,24.5,24.75,25.0,25.25,25.5,25.75</Choices>
+                    <!--<Regex>^(10.0|10.25|10.5|10.75|11.0|11.25|11.5|11.75|12.0|12.25|12.5|12.75|13.0|13.25|13.5|13.75|14.0|14.25|14.5|14.75|15.0|15.25|15.5|15.75|16.0|16.25|16.5|16.75|17.0|17.25|17.5|17.75|18.0|18.25|18.5|18.75|19.0|19.25|19.5|19.75|20.0|20.25|20.5|20.75|21.0|21.25|21.5|21.75|22.0|22.25|22.5|22.75|23.0|23.25|23.5|23.75|24.0|24.25|24.5|24.75|25.0|25.25|25.5|25.75)$</Regex>-->
+                    <Tooltip>Allowed values: 10.0, 10.25, 10.5, 10.75, ... 25.5, 25.75 in 0.25 steps</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+            </Command>
+
+            <Command>
+                <Identifier>setBandwidth</Identifier>
+                <CommandCode>04</CommandCode>
+                <LegacyCode>!B</LegacyCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Sets the Bandwidth to 15kHz or 30kHz</Description>
+                </Software>
+                <Parameter>
+                    <Name>Bandwidth</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>NumericIndexedList</DataTypeName>
+                        <FieldCount>3</FieldCount>
+                    </TrafficDataType>
+                    <Units>kHz</Units>
+                    <Choices>15,30</Choices>
+                    <!--<Regex>^(15|30)$</Regex>-->
+                    <Tooltip>Allowed values: 15 or 30</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+            </Command>
+
+            <Command>
+                <Identifier>setNoiseSource</Identifier>
+                <CommandCode>05</CommandCode>
+                <LegacyCode>!N</LegacyCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Controls the external Noise Source</Description>
+                </Software>
+                <Parameter>
+                    <Name>NoiseSource</Name>
+                    <InputDataType>
+                        <DataTypeName>Boolean</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>Boolean</DataTypeName>
+                        <FieldCount>3</FieldCount>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Choices>true, false</Choices>
+                    <Tooltip>Allowed values: true or false</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+            </Command>
+
+            <Software>
+                <Identifier>SpectraCyber</Identifier>
+                <Version>00.1</Version>
+                <Description>The SpectraCyber's Controller software</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- The SpectraCyber has two virtual Plugins, a Radiometer and a Spectrometer       -->
+
+            <!-- Radiometer Plugin -->
+            <Plugin>
+
+                <Address>00</Address>
+                <Identifier>Radiometer</Identifier>
+                <Name>Radiometer</Name>
+                <Description>The SpectraCyber's Radiometer</Description>
+                <ResourceKey>Radiometer</ResourceKey>
+
+                <!-- The Radiometer Plugin has a CommandCodeBase of 01 -->
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                    <Identifier>setRadiometerGain</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <LegacyCode>!C</LegacyCode>
+                    <Software>
+                        <Identifier>Radiometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Radiometer gain x1, x5, x10, x20, x50, x60</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Radiometer.Gain</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>NumericIndexedList</DataTypeName>
+                            <FieldCount>3</FieldCount>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>1,5,10,20,50,60</Choices>
+                        <Tooltip>Allowed values: 1, 5, 10, 20, 50, 60</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                </Command>
+
+                <Command>
+                    <Identifier>setRadiometerTimeConstant</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <LegacyCode>!I</LegacyCode>
+                    <Software>
+                        <Identifier>Radiometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Radiometer Time Constant to 0.3s, 1s, 10s</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Radiometer.TimeConstant</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>NumericIndexedList</DataTypeName>
+                            <FieldCount>3</FieldCount>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Choices>0.3,1,10</Choices>
+                        <Tooltip>Allowed values: 0.3, 1, 10</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                </Command>
+
+                <Command>
+                    <Identifier>setRadiometerOffset</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <LegacyCode>!O</LegacyCode>
+                    <Software>
+                        <Identifier>Radiometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Radiometer Offset Voltage 0 to 4095mV</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Radiometer.Offset</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>HexInteger</DataTypeName>
+                            <FieldCount>3</FieldCount>
+                        </TrafficDataType>
+                        <Units>mV</Units>
+                        <Regex>^0*([0-9]{1,3}|[1-3][0-9]{3}|40[0-8][0-9]|409[0-5])$</Regex>
+                        <Tooltip>Allowed values: 0 to 4095</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                </Command>
+
+                <!-- ToDo Scale output? -->
+                <Command>
+                    <Identifier>getRadiometerOutput</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <LegacyCode>!D000</LegacyCode>
+                    <Software>
+                        <Identifier>Radiometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Radiometer output 0.0 to 10.0V</Description>
+                    </Software>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Output</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <!--  ToDo captureContinuum -->
+                <Command>
+                    <Identifier>captureContinuum</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <Software>
+                        <Identifier>Radiometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Captures the Radiometer continuum output at -2000 to 2000kHz in steps of 5kHz</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Frequency.Centre</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>kHz</Units>
+                        <Regex>^-?((([0-9]{1,2}|1[0-9]{2}|200)[0|5])|[0]|[5])$</Regex>
+                        <Tooltip>Allowed values: -2000 to 2000 in steps of 5</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Output</Name>
+                        <DataTypeName>VectorData</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Software>
+                    <Identifier>Radiometer</Identifier>
+                    <Version>01.0</Version>
+                    <Description>The SpectraCyber's Radiometer software</Description>
+                </Software>
+            </Plugin>
+
+            <!-- Spectrometer Plugin -->
+            <Plugin>
+
+                <Address>01</Address>
+                <Identifier>Spectrometer</Identifier>
+                <Name>Spectrometer</Name>
+                <Description>The SpectraCyber's Spectrometer</Description>
+                <ResourceKey>Spectrometer</ResourceKey>
+
+                <!-- The Spectrometer Plugin has a CommandCodeBase of 02 -->
+                <CommandCodeBase>02</CommandCodeBase>
+
+                <Command>
+                    <Identifier>setSpectrometerGain</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <LegacyCode>!K</LegacyCode>
+                    <Software>
+                        <Identifier>Spectrometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Spectrometer gain x1, x5, x10, x20, x50, x60</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Spectrometer.Gain</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>NumericIndexedList</DataTypeName>
+                            <FieldCount>3</FieldCount>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>1,5,10,20,50,60</Choices>
+                        <Tooltip>Allowed values: 1, 5, 10, 20, 50, 60</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                </Command>
+
+                <Command>
+                    <Identifier>setSpectrometerTimeConstant</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <LegacyCode>!L</LegacyCode>
+                    <Software>
+                        <Identifier>Spectrometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Spectrometer Time Constant to 0.3s, 0.5s, 1s</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Spectrometer.TimeConstant</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>NumericIndexedList</DataTypeName>
+                            <FieldCount>3</FieldCount>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Choices>0.3,0.5,1</Choices>
+                        <Tooltip>Allowed values: 0.3, 0.5, 1</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                </Command>
+
+                <Command>
+                    <Identifier>setSpectrometerOffset</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <LegacyCode>!J</LegacyCode>
+                    <Software>
+                        <Identifier>Spectrometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Spectrometer Offset Voltage 0 to 4095mV</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Spectrometer.Offset</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>HexInteger</DataTypeName>
+                            <FieldCount>3</FieldCount>
+                        </TrafficDataType>
+                        <Units>mV</Units>
+                        <Regex>^0*([0-9]{1,3}|[1-3][0-9]{3}|40[0-8][0-9]|409[0-5])$</Regex>
+                        <Tooltip>Allowed values: 0 to 4095</Tooltip>
+                     </Parameter>
+                    <SendToPort>true</SendToPort>
+                </Command>
+
+                <Command>
+                    <Identifier>setSpectrometerFrequency</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <LegacyCode>!F</LegacyCode>
+                    <Software>
+                        <Identifier>Spectrometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Sets the Spectrometer Receive Frequency offset -2000 to 2000 kHz in 5kHz steps</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Spectrometer.Frequency</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <!-- The SpectraCyber requires -2000 is sent as 078 hex, +2000 is sent as 398 hex -->
+                        <!-- so the values must be scaled and offset (yuk) -->
+                        <!-- The Radix is taken to be the same as that of DataType -->
+                        <!-- So 2000 decimal becomes 7D0 hex -->
+                        <TrafficDataType>
+                            <DataTypeName>ScaledHexInteger</DataTypeName>
+                            <FieldCount>3</FieldCount>
+                            <InputMin>-7D0</InputMin>
+                            <InputMax>7D0</InputMax>
+                            <OutputMin>78</OutputMin>
+                            <OutputMax>398</OutputMax>
+                        </TrafficDataType>
+                        <Units>kHz</Units>
+                        <Regex>^-?((([0-9]{1,2}|1[0-9]{2}|200)[0|5])|[0]|[5])$</Regex>
+                        <Tooltip>Allowed values: -2000 to 2000 in steps of 5</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                </Command>
+
+                <!-- ToDo Scale output? -->
+                <Command>
+                    <Identifier>getSpectrometerOutput</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <LegacyCode>!D001</LegacyCode>
+                    <Software>
+                        <Identifier>Spectrometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the Spectrometer output 0.0 to 10.0V</Description>
+                    </Software>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Output</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>captureSpectrum</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <Software>
+                        <Identifier>Spectrometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Captures the spectrum between -2000 to 2000 kHz in 5kHz steps</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Frequency.Start</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>kHz</Units>
+                        <Regex>^-?((([0-9]{1,2}|1[0-9]{2}|200)[0|5])|[0]|[5])$</Regex>
+                        <Tooltip>Allowed values: -2000 to 2000 in steps of 5</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Frequency.End</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>kHz</Units>
+                        <Regex>^-?((([0-9]{1,2}|1[0-9]{2}|200)[0|5])|[0]|[5])$</Regex>
+                        <Tooltip>Allowed values: -2000 to 2000 in steps of 5</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Output</Name>
+                        <DataTypeName>VectorData</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Software>
+                    <Identifier>Spectrometer</Identifier>
+                    <Version>01.0</Version>
+                    <Description>The SpectraCyber's Spectrometer software</Description>
+                </Software>
+            </Plugin>
+
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- AOR8600 Simulator -->
+
+    <Instrument>
+        <Identifier>AOR8600Simulator</Identifier>
+        <Name>AOR8600 Simulator</Name>
+        <Description>AOR8600 Simulator</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.aor8600.AOR8600</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>AOR8600Simulator</ResourceKey>
+
+        <!-- The Data Access Object is the Java interface to the Controller -->
+
+        <DAO>
+            <Name>AOR8600 Simulator</Name>
+            <Description>The AOR8600 Simulator DAO</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.aor8600.dao.AOR8600DAO</DaoClassname>
+            <TranslatorClassname>org.lmn.fc.common.datatranslators.skypipe.RadioSkyPipeTranslator</TranslatorClassname>
+
+            <!-- The DAO Port (possibly multiple Ports one day! -->
+            <!-- The Port is either a unique instance for this DAO, -->
+            <!-- OR a use of the Observatory StaribusPort -->
+
+            <Port>
+                <Name>AOR8600</Name>
+                <Description>The AOR8600 Port</Description>
+                <ResourceKey>AOR8600</ResourceKey>
+                <TxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.aor8600.dao.AOR8600StubTxStream</TxStream>
+                <RxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.aor8600.dao.AOR8600StubRxStream</RxStream>
+            </Port>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>RawData</Name>
+                <Description>The Raw Data produced by the DAO</Description>
+                <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XYDataset</Name>
+                <Description>The XYDataset produced by the DAO</Description>
+                <Tooltip>The XYDataset</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- Controller under test -->
+        <Controller>
+            <!-- A virtual Controller -->
+            <Address>0</Address>
+            <Identifier>Controller</Identifier>
+            <Name>ControllerUnderTest</Name>
+            <Description>The AOR8600 Controller under test</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The basic Controller has a CommandCodeBase of zero -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the AOR8600</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the AOR8600 Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the AOR8600 Controller - XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>setResponse</Identifier>
+                <CommandCode>03</CommandCode>
+                <LegacyCode>LC1</LegacyCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Set the Response format</Description>
+                </Software>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Response</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>LC1</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getSMeter</Identifier>
+                <CommandCode>04</CommandCode>
+                <LegacyCode>LM</LegacyCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Get the S meter reading</Description>
+                </Software>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Meter.Value</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <!-- LMnn% or LMnn(space) -->
+                </Response>
+            </Command>
+
+
+
+
+
+            <Software>
+                <Identifier>AOR8600</Identifier>
+                <Version>00.1</Version>
+                <Description>The AOR8600's Controller software</Description>
+            </Software>
+
+
+
+
+
+
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>Receiver</Identifier>
+                <Name>Receiver</Name>
+                <Description>The AOR8600's Receiver</Description>
+                <ResourceKey>Receiver</ResourceKey>
+
+                <!-- The Receiver Plugin has a CommandCodeBase of 01 -->
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                    <Identifier>setVFO</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <LegacyCode>V</LegacyCode>
+                    <Software>
+                        <Identifier>Receiver Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Set the VFO</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>VFO.ID</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>A,B</Choices>
+                        <Tooltip>Allowed values: A or B</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>VFO.Frequency</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>MHz</Units>
+                        <!-- ToDo range -->
+                        <Tooltip>Allowed values: 0.1 to 3000</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Frequency</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setReceiveMode</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <LegacyCode>MD</LegacyCode>
+                    <Software>
+                        <Identifier>Receiver Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Set the Receive Mode</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Mode</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^(0*[0-8])$</Regex>
+                        <Tooltip>Allowed values: 0 to 8</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Mode</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setTuningStepSize</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <LegacyCode>ST</LegacyCode>
+                    <Software>
+                        <Identifier>Receiver Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Set the Tuning Step Size</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>TuningStep</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>kHz</Units>
+                        <!-- ToDo RANGE -->
+                        <Tooltip>Allowed values: 0.05 to 999.0</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>TuningStep</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+
+
+
+
+
+
+
+
+                <Software>
+                    <Identifier>Receiver</Identifier>
+                    <Version>01.0</Version>
+                    <Description>The AOR8600's Receiver software</Description>
+                </Software>
+            </Plugin>
+
+
+            <!-- Spectrometer Plugin -->
+            <Plugin>
+
+                <Address>01</Address>
+                <Identifier>Spectrometer</Identifier>
+                <Name>Spectrometer</Name>
+                <Description>The AOR8600's Spectrometer</Description>
+                <ResourceKey>Spectrometer</ResourceKey>
+
+                <!-- The Spectrometer Plugin has a CommandCodeBase of 02 -->
+                <CommandCodeBase>02</CommandCodeBase>
+                <Command>
+                    <Identifier>captureSpectrum</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Spectrometer Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Captures the spectrum between -2000 to 2000 kHz in 5kHz steps</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Frequency.Start</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>kHz</Units>
+                        <Regex>^-?((([0-9]{1,2}|1[0-9]{2}|200)[0|5])|[0]|[5])$</Regex>
+                        <Tooltip>Allowed values: -2000 to 2000 in steps of 5</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Frequency.End</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>kHz</Units>
+                        <Regex>^-?((([0-9]{1,2}|1[0-9]{2}|200)[0|5])|[0]|[5])$</Regex>
+                        <Tooltip>Allowed values: -2000 to 2000 in steps of 5</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Output</Name>
+                        <DataTypeName>VectorData</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Software>
+                    <Identifier>Spectrometer</Identifier>
+                    <Version>01.0</Version>
+                    <Description>The AOR8600's Spectrometer software</Description>
+                </Software>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- John Cook's VLF Receiver -->
+
+    <Instrument>
+        <Identifier>VlfReceiver.JC</Identifier>
+        <Name>John Cook's VLF Receiver</Name>
+        <Description>The VLF receiver covers 10kHz to 30kHZ, manually tuned.</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusvlf.StaribusVlfReceiver</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>VlfReceiverJc</ResourceKey>
+
+        <DAO>
+            <Name>John Cook's VLF</Name>
+            <Description>This VLF DAO uses a local file</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusvlf.dao.StubStaribusVlfRxDAO</DaoClassname>
+            <TranslatorClassname>org.lmn.fc.common.datatranslators.johncook.JohnCookTranslator</TranslatorClassname>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>RawData</Name>
+                <Description>The Raw Data produced by the DAO</Description>
+                <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XYDataset</Name>
+                <Description>The XYDataset produced by the DAO</Description>
+                <Tooltip>The XYDataset</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- The VLF Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>VLF Controller</Name>
+            <Description>The controller for the VLF RX</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Controller has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the VlfReceiver</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the VlfReceiver Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the VlfReceiver in XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>VlfReceiver</Identifier>
+                <Version>00.1</Version>
+                <Description>The VlfReceiver Controller software</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- VLF Plugin -->
+
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>VLF</Identifier>
+                <Name>VLF</Name>
+                <Description>The VLF Module</Description>
+                <ResourceKey>VLF</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                   <Identifier>importRawDataLocal</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>VLF Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Get a single VLF data local file</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be processed</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- Martyn Kinder's VLF Receiver -->
+
+    <Instrument>
+        <Identifier>VlfReceiver.MK</Identifier>
+        <Name>Martyn Kinder's VLF Receiver</Name>
+        <Description>The VLF receiver covers 10kHz to 30kHz, manually tuned</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusvlf.StaribusVlfReceiver</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <PointOfInterest>
+            <Name>MK Receiver</Name>
+            <Description>Martyn Kinder VLF receiver</Description>
+            <Longitude>+002:34:56</Longitude>
+            <Latitude>+52:34:56</Latitude>
+            <PointOfInterestFilename>rx.png</PointOfInterestFilename>
+        </PointOfInterest>
+        <PointOfInterest>
+            <Name>Transmitter</Name>
+            <Description>The VLF transmitter</Description>
+            <Longitude>+002:34:56</Longitude>
+            <Latitude>+54:34:56</Latitude>
+            <PointOfInterestFilename>tx.png</PointOfInterestFilename>
+        </PointOfInterest>
+        <ResourceKey>VlfReceiverMk</ResourceKey>
+
+        <DAO>
+            <Name>Martyn Kinder's VLF</Name>
+            <Description>Delivers data from a local file or from a file on a remote server, retrieved by FTP</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusvlf.dao.CombinedVlfRxDAO</DaoClassname>
+            <TranslatorClassname>org.lmn.fc.common.datatranslators.skypipe.RadioSkyPipeTranslator</TranslatorClassname>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>XYDataset</Name>
+                <Description>The XYDataset produced by the DAO</Description>
+                <Tooltip>The XYDataset</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>RawData</Name>
+                <Description>The Raw Data produced by the DAO</Description>
+                <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>Configuration</Name>
+                <Description>The Configuration of the DAO</Description>
+                <Tooltip>The Configuration</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- The VLF Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>VLF Controller</Name>
+            <Description>The controller for the VLF RX</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Controller has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the VlfReceiver</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the VlfReceiver Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the VlfReceiver in XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>VlfReceiver</Identifier>
+                <Version>00.1</Version>
+                <Description>The VlfReceiver Controller software</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Importer Plugin -->
+
+            <Plugin>
+                <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+                <Address>00</Address>
+                <Identifier>Importer</Identifier>
+                <Name>Importer</Name>
+                <Description>The Importer Module</Description>
+                <ResourceKey>Importer</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                   <Identifier>importRawDataLocal</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>Importer Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Get a single VLF file from the local file system, using the default Translator</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be imported e.g. localdatabackup.spd</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+
+                <Command>
+                   <Identifier>importRawDataRemote</Identifier>
+                   <CommandCode>01</CommandCode>
+                   <Software>
+                       <Identifier>Importer Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Import a single VLF file from the remote server, using the default Translator</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be downloaded e.g. localdatabackup.spd</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+
+                <Command>
+                   <Identifier>importRawDataRemoteIncrement</Identifier>
+                   <CommandCode>02</CommandCode>
+                   <Software>
+                       <Identifier>Importer Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Import a single VLF file from the remote server incrementally, using the default Translator</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be downloaded e.g. localdatabackup.spd</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Exporter Plugin -->
+
+            <Plugin>
+                <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+                <Address>00</Address>
+                <Identifier>Exporter</Identifier>
+                <Name>Exporter</Name>
+                <Description>The Exporter Module</Description>
+                <ResourceKey>Exporter</ResourceKey>
+
+                <CommandCodeBase>02</CommandCodeBase>
+
+                <Command>
+                   <Identifier>exportChart</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current chart as an image in the specified file</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/chart01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Type</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>png, jpg</Choices>
+                        <Tooltip>Allowed values: JPG, PNG (PNG preferred)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Width</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Tooltip>The width of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Height</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Tooltip>The height of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+
+                <Command>
+                   <Identifier>exportProcessedData</Identifier>
+                   <CommandCode>01</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current processed data in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/data01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>TabSeparatedValue, Excel, HTML, XML, FITS</Choices>
+                        <Tooltip>Allowed values: TabSeparatedValue, Excel, HTML, XML, FITS</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+
+                <Command>
+                   <Identifier>exportRawData</Identifier>
+                   <CommandCode>02</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current raw data in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/data01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>TabSeparatedValue, Excel, HTML, XML, FITS</Choices>
+                        <Tooltip>Allowed values: TabSeparatedValue, Excel, HTML, XML, FITS</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+
+               <Command>
+                   <Identifier>exportEventLog</Identifier>
+                   <CommandCode>03</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current Event Log in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/log01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>TabSeparatedValue, Excel, HTML, XML</Choices>
+                        <Tooltip>Allowed values: TabSeparatedValue, Excel, HTML, XML</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+
+                <Command>
+                   <Identifier>exportMetadata</Identifier>
+                   <CommandCode>04</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current MetaData in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/metadata01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>TabSeparatedValue, Excel, HTML, XML</Choices>
+                        <Tooltip>Allowed values: TabSeparatedValue, Excel, HTML, XML</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+
+                <Command>
+                   <Identifier>exportConfiguration</Identifier>
+                   <CommandCode>05</CommandCode>
+                   <Software>
+                       <Identifier>Exporter Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Saves the current Instrument configuration in the specified file and format</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/config01</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>TabSeparatedValue, Excel, HTML, XML</Choices>
+                        <Tooltip>Allowed values: TabSeparatedValue, Excel, HTML, XML</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Publisher Plugin -->
+
+            <Plugin>
+                <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+                <Address>00</Address>
+                <Identifier>Publisher</Identifier>
+                <Name>Publisher</Name>
+                <Description>The Publisher Module</Description>
+                <ResourceKey>Publisher</ResourceKey>
+
+                <CommandCodeBase>03</CommandCodeBase>
+
+                <Command>
+                   <Identifier>publishChartLocal</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>Publisher Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Publishes the current chart on an HTML page at localhost/index.html</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Width</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Tooltip>The width of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Height</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Tooltip>The height of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- John Cook's Magnetometer -->
+
+    <Instrument>
+        <Identifier>Magnetometer</Identifier>
+        <Name>John Cook's Magnetometer</Name>
+        <Description>John Cook's Dual Axis Magnetoresistive Magnetometer</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusmagnetometer.StaribusMagnetometer</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>Magnetometer</ResourceKey>
+
+        <DAO>
+            <Name>Magnetometer</Name>
+            <Description>The Magnetometer DAO</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusmagnetometer.dao.StaribusMagnetometerDAO</DaoClassname>
+            <TranslatorClassname>org.lmn.fc.common.datatranslators.johncook.JohnCookTranslator</TranslatorClassname>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>RawData</Name>
+                <Description>The Raw Data produced by the DAO</Description>
+                <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XYDataset</Name>
+                <Description>The XYDataset produced by the DAO</Description>
+                <Tooltip>The XYDataset</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- The Magnetometer Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>Magnetometer Controller</Name>
+            <Description>The controller for the Magnetometer</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Controller has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the Magnetometer</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the Magnetometer Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the Magnetometer in XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>Magnetometer</Identifier>
+                <Version>00.1</Version>
+                <Description>The Magnetometer Controller software</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Magnetometer Plugin -->
+
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>Magnetometer</Identifier>
+                <Name>Magnetometer</Name>
+                <Description>The Magnetometer Module</Description>
+                <ResourceKey>Magnetometer</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                   <Identifier>importRawDataLocal</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>Magnetometer Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Get a single Magnetometer data local file</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be processed</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- The GOES Xray Flux Client -->
+
+    <Instrument>
+        <Identifier>GoesXrayClient</Identifier>
+        <Name>GOES Xray Flux Client</Name>
+        <Description>Retrieves Xray Flux data from ftp.sec.noaa.gov</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.goesxray.GoesXrayClient</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>GoesXrayClient</ResourceKey>
+
+        <DAO>
+            <Name>GOES Xray Flux</Name>
+            <Description>Delivers data from a local file or from a file on a remote server, retrieved by FTP</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.goesxray.dao.CombinedGoesXrayDAO</DaoClassname>
+            <TranslatorClassname>org.lmn.fc.common.datatranslators.goesxray.GoesXrayTranslator</TranslatorClassname>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>RawData</Name>
+                <Description>The Raw Data produced by the DAO</Description>
+                <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XYDataset</Name>
+                <Description>The XYDataset produced by the DAO</Description>
+                <Tooltip>The XYDataset</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- ................................................................................... -->
+        <!-- The GOES Xray Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>GoesXrayClient Controller</Name>
+            <Description>The controller for the GoesXrayClient</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Controller has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the GoesXray Client</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the GoesXrayClient Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the GoesXray Client in XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>GOESXRAY</Identifier>
+                <Version>00.1</Version>
+                <Description>The GoesXrayClient Controller software</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- FtpClient Plugin -->
+
+            <Plugin>
+                <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+                <Address>00</Address>
+                <Identifier>FtpClient</Identifier>
+                <Name>FtpClient</Name>
+                <Description>The GOES Xray FtpClient Module</Description>
+                <ResourceKey>FtpClient</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                   <Identifier>importRawDataLocal</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>FtpClient Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Get a single GOES Xray local file</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be downloaded e.g. 20070603_G11xr_5m.txt</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+
+                <Command>
+                   <Identifier>importRawDataRemote</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>FtpClient Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Get a single GOES Xray file from the NOAA server</Description>
+                   </Software>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be downloaded e.g. 20070603_G11xr_5m.txt</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+               </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- NTP Client -->
+
+    <Instrument>
+        <Identifier>NtpClient</Identifier>
+        <Name>NTP Client</Name>
+        <Description>A Network Time Protocol Client</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.ntpclient.NtpClient</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>NtpClient</ResourceKey>
+
+        <DAO>
+            <Name>NTP DAO</Name>
+            <Description>The NTP DAO</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.ntpclient.dao.NtpDAO</DaoClassname>
+            <TranslatorClassname></TranslatorClassname>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>RawData</Name>
+                <Description>The Raw Data produced by the DAO</Description>
+                <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XYDataset</Name>
+                <Description>The XYDataset produced by the DAO</Description>
+                <Tooltip>The XYDataset</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- The NtpClient Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>NtpClient Controller</Name>
+            <Description>The controller for the NtpClient</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Controller has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the NTP Client</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the NTP Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the NTP Controller in XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>NTP</Identifier>
+                <Version>00.1</Version>
+                <Description>The NtpClient Controller software</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- NTP Plugin -->
+
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>NTP</Identifier>
+                <Name>NTP</Name>
+                <Description>The NTP Module</Description>
+                <ResourceKey>NTP</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                    <Identifier>getNtpDatagram</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>NTP Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Get a single NTP Datagram from the server</Description>
+                    </Software>
+                     <SendToPort>false</SendToPort>
+                     <Response>
+                         <Name>Offset</Name>
+                         <DataTypeName>DecimalInteger</DataTypeName>
+                         <Units>msec</Units>
+                     </Response>
+                </Command>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- Gps Receiver -->
+
+    <Instrument>
+        <Identifier>GpsReceiver</Identifier>
+        <Name>GPS Receiver</Name>
+        <Description>A Global Positioning System Receiver</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.gpsrx.GpsReceiver</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>GpsReceiver</ResourceKey>
+
+        <DAO>
+            <Name>GPS DAO</Name>
+            <Description>The GPS DAO</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.gpsrx.dao.GpsDAO</DaoClassname>
+            <TranslatorClassname></TranslatorClassname>
+
+            <Port>
+                <Name>GPS</Name>
+                <Description>The GPS Port</Description>
+                <ResourceKey>Gps</ResourceKey>
+                <TxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.gpsrx.dao.GpsTxStream</TxStream>
+                <RxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.gpsrx.dao.GpsRxStream</RxStream>
+            </Port>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- The GpsReceiver Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>GpsReceiver Controller</Name>
+            <Description>The controller for the GpsReceiver</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Controller has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the GpsReceiver</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the GpsReceiver Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the GpsReceiver in XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>GpsReceiver</Identifier>
+                <Version>00.1</Version>
+                <Description>The GpsReceiver Controller software</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Gps Plugin -->
+
+            <Plugin>
+                <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+                <Address>00</Address>
+                <Identifier>GPS</Identifier>
+                <Name>GPS</Name>
+                <Description>The GPS Module</Description>
+                <ResourceKey>GPS</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                   <Identifier>getSupportedNMEA</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>GPS Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Get a list of supported NMEA sentence types</Description>
+                   </Software>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>NMEA</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+               </Command>
+
+                <Command>
+                   <Identifier>getGpsFix</Identifier>
+                   <CommandCode>01</CommandCode>
+                   <Software>
+                       <Identifier>GPS Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Get a single GPS fix and associated satellite data</Description>
+                   </Software>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>SatellitesInUse</Name>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*([0-9]|[1-5][0-9]|6[0-6])$</Regex>
+                    </Response>
+               </Command>
+
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- Stub Gps Receiver -->
+
+    <Instrument>
+        <Identifier>StubGpsReceiver</Identifier>
+        <Name>Stub GPS Receiver</Name>
+        <Description>A Global Positioning System Receiver</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.gpsrx.GpsReceiver</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>StubGpsReceiver</ResourceKey>
+
+        <DAO>
+            <Name>GPS DAO</Name>
+            <Description>The GPS DAO</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.gpsrx.dao.GpsDAO</DaoClassname>
+            <TranslatorClassname></TranslatorClassname>
+
+            <!-- Simple DAOs have no Inputs -->
+
+            <!-- Standard DAO Outputs -->
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+
+        <!-- The GpsReceiver Controller -->
+
+        <Controller>
+            <Address>00</Address>
+            <Identifier>Controller</Identifier>
+            <Name>GpsReceiver Controller</Name>
+            <Description>The controller for the GpsReceiver</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Controller has a CommandCodeBase of zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the GpsReceiver</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the GpsReceiver Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the GpsReceiver in XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>GpsReceiver</Identifier>
+                <Version>00.1</Version>
+                <Description>The GpsReceiver Controller software</Description>
+            </Software>
+
+            <!-- ............................................................................... -->
+            <!-- Gps Plugin -->
+
+            <Plugin>
+                <!-- The address '00' is reserved for use by Virtual Plugins implemented in Java on the host -->
+                <Address>00</Address>
+                <Identifier>GPS</Identifier>
+                <Name>GPS</Name>
+                <Description>The GPS Module</Description>
+                <ResourceKey>GPS</ResourceKey>
+
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                   <Identifier>getSupportedNMEA</Identifier>
+                   <CommandCode>00</CommandCode>
+                   <Software>
+                       <Identifier>GPS Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Get a list of supported NMEA sentence types</Description>
+                   </Software>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>NMEA</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+               </Command>
+
+                <Command>
+                   <Identifier>getGpsFix</Identifier>
+                   <CommandCode>01</CommandCode>
+                   <Software>
+                       <Identifier>GPS Command</Identifier>
+                       <Version>00.1</Version>
+                       <Description>Get a single GPS fix and associated satellite data</Description>
+                   </Software>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>SatellitesInUse</Name>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*([0-9]|[1-5][0-9]|6[0-6])$</Regex>
+                    </Response>
+               </Command>
+
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- Terminal Emulator -->
+
+    <Instrument>
+        <Identifier>TerminalEmulator</Identifier>
+        <Name>Terminal Emulator</Name>
+        <Description>A simple Terminal Emulator</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.terminal.TerminalEmulator</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>TerminalEmulator</ResourceKey>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- WebServer -->
+
+    <Instrument>
+        <Identifier>WebServer</Identifier>
+        <Name>Web Server</Name>
+        <Description>Jetty Web Server</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.webserver.WebServer</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>WebServer</ResourceKey>
+
+        <!-- The Data Access Object is the Java interface to the Controller -->
+        <DAO>
+            <Name>Web Server</Name>
+            <Description>The Web Server DAO</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.webserver.dao.WebServerDAO</DaoClassname>
+            <TranslatorClassname></TranslatorClassname>
+
+            <!-- The Input to the WebServer DAO is the file to publish -->
+
+            <Input>
+                <Name>Publication</Name>
+                <Description>The File published by the DAO</Description>
+                <Tooltip>The HTML page</Tooltip>
+                <DataTypeName>String</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Input>
+
+            <!-- The WebServer has no Outputs -->
+        </DAO>
+
+        <!-- WebServer Controller -->
+        <Controller>
+            <!-- A virtual Controller -->
+            <Address>0</Address>
+            <Identifier>Controller</Identifier>
+            <Name>WebServer Controller</Name>
+            <Description>The WebServer Controller</Description>
+            <ResourceKey>Controller</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The basic Controller has a CommandCodeBase of zero -->
+
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Resets the WebServer</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+            </Command>
+
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Pings the WebServer Controller</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Pong</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <Software>
+                    <Identifier>Controller Command</Identifier>
+                    <Version>00.1</Version>
+                    <Description>Gets the configuration of the WebServer Controller - XML</Description>
+                </Software>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <Software>
+                <Identifier>WebServer</Identifier>
+                <Version>00.1</Version>
+                <Description>The WebServer's Controller software</Description>
+            </Software>
+
+            <!-- The Jetty Server Plugin -->
+            <Plugin>
+                <Address>00</Address>
+                <Identifier>Server</Identifier>
+                <Name>Server</Name>
+                <Description>The Jetty Server</Description>
+                <ResourceKey>Server</ResourceKey>
+
+                <!-- The Server Plugin has a CommandCodeBase of 01 -->
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                    <Identifier>getServerConfiguration</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <Software>
+                        <Identifier>Controller Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Gets the configuration of the WebServer - jetty.xml</Description>
+                    </Software>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Configuration</Name>
+                        <DataTypeName>XML</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>runServer</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <Software>
+                        <Identifier>Server Command</Identifier>
+                        <Version>00.1</Version>
+                        <Description>Controls the Server</Description>
+                    </Software>
+                    <Parameter>
+                        <Name>Run</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true, false</Choices>
+                        <Tooltip>Allowed values: true or false</Tooltip>
+                    </Parameter>
+                     <SendToPort>false</SendToPort>
+                     <Response>
+                         <Name>Ack</Name>
+                         <DataTypeName>String</DataTypeName>
+                         <Units>Dimensionless</Units>
+                         <Regex>Ok</Regex>
+                     </Response>
+                </Command>
+
+                <Software>
+                    <Identifier>Server</Identifier>
+                    <Version>01.0</Version>
+                    <Description>The Server software</Description>
+                </Software>
+            </Plugin>
+        </Controller>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- Observatory Monitor -->
+
+    <Instrument>
+        <Identifier>ObservatoryMonitor</Identifier>
+        <Name>Observatory Monitor</Name>
+        <Description>The Observatory Monitor</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.monitor.ObservatoryMonitor</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>ObservatoryMonitor</ResourceKey>
+    </Instrument>
+
+    <!-- ....................................................................................... -->
+    <!-- Separator -->
+
+    <!--
+    <Instrument>
+        <Identifier>Separator</Identifier>
+        <Name> </Name>
+        <Description>Separator</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.separator.Separator</InstrumentClassname>
+        <Controllable>false</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>Separator</ResourceKey>
+    </Instrument> -->
+
+    <!-- ....................................................................................... -->
+    <!-- The (optional) common Port used by any Instrument in the Observatory -->
+
+     <StaribusPort>
+         <Name>Staribus</Name>
+         <Description>The Staribus Common Port</Description>
+         <ResourceKey>Staribus</ResourceKey>
+         <TxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.common.dao.StaribusTxStream</TxStream>
+         <RxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.common.dao.StaribusRxStream</RxStream>
+     </StaribusPort>
+
+</Instruments>

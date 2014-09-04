@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+
+
+<Instruments xmlns="instruments.xmlbeans.model.fc.lmn.org">
+
+    <!-- ....................................................................................... -->
+    <!-- Separator -->
+
+    <Instrument>
+        <Identifier>SeparatorOptical</Identifier>
+        <Name>Optical</Name>
+        <Description>Optical Instruments</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.separator.Separator</InstrumentClassname>
+        <Controllable>false</Controllable>
+        <SelectorPanelHeight>3</SelectorPanelHeight>
+        <SelectorPanelFilename>/org/lmn/fc/frameworks/starbase/plugins/observatory/ui/instruments/impl/separator/images/separator-panel-1U.png</SelectorPanelFilename>
+        <!-- The ResourceKey can be SeparatorCategory, SeparatorPlain or SeparatorGroup -->
+        <!-- SelectorPanelHeight should be 1, 2, or 3 respectively -->
+        <ResourceKey>SeparatorGroup</ResourceKey>
+    </Instrument>
+
+</Instruments>

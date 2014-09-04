@@ -1,0 +1,6 @@
+<project name="plugin"
+         basedir=".">
+
+    <import file="../build-single-instrument.xml"/>
+
+</project>

@@ -1,0 +1,1148 @@
+package org.lmn.fc.frameworks.starbase.plugins.observatory.ui.tabs;
+
+import org.lmn.fc.common.actions.ContextAction;
+import org.lmn.fc.common.exceptions.DegMinSecException;
+import org.lmn.fc.common.exceptions.IndicatorException;
+import org.lmn.fc.common.utilities.coords.GridReferenceConverter;
+import org.lmn.fc.common.utilities.coords.LatitudeLongitude;
+import org.lmn.fc.common.utilities.coords.OSGBGridReference;
+import org.lmn.fc.common.utilities.astronomy.CoordinateConversions;
+import org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.ObservatoryInstrumentInterface;
+import org.lmn.fc.model.datatypes.types.DegMinSec;
+import org.lmn.fc.model.datatypes.DegMinSecFormat;
+import org.lmn.fc.model.locale.CountryPlugin;
+import org.lmn.fc.model.registry.RegistryModelUtilities;
+import org.lmn.fc.ui.UIComponentPlugin;
+import org.lmn.fc.ui.components.UIComponent;
+import org.lmn.fc.ui.panels.PointOfInterest;
+import org.lmn.fc.ui.widgets.impl.ToolbarIndicator;
+
+import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.Point2D;
+import java.util.Iterator;
+import java.util.Vector;
+
+
+/***************************************************************************************************
+ * MapUIComponent.
+ */
+
+public final class MapUIComponent extends UIComponent
+                                  implements MapUIComponentPlugin
+    {
+    // String Resources
+    private static final String TOOLTIP_LONGITUDE   = "Longitude";
+    private static final String TOOLTIP_LATITUDE    = "Latitude";
+    private static final String TOOLTIP_GRID        = "Grid Reference";
+    private static final String TOOLTIP_TOGGLE_POI  = "Toggle Points of Interest";
+    private static final String ACTION_TOGGLE_POI   = TOOLTIP_TOGGLE_POI;
+
+    private static final String FORMAT_LONGITUDE    = "00:00:00E";
+    private static final String FORMAT_LATITUDE     = "00:00:00N";
+    private static final String FORMAT_GRID         = "000000 000000";
+
+    private static final Dimension DIM_GRID_REFERENCE = new Dimension(110, 20);
+
+    // Injections
+    private final ObservatoryInstrumentInterface hostInstrument;
+    private final CountryPlugin pluginCountry;
+
+    // UI
+    private JToolBar toolBar;
+    private JScrollPane scrollPaneMap;
+    private JLabel labelMap;
+    private Icon iconMap;
+    private ToolbarIndicator indicatorLongitude;
+    private ToolbarIndicator indicatorLatitude;
+    private ToolbarIndicator indicatorGridRef;
+
+    // Map Scaling
+    private Point2D.Double pointTopLeft;
+    private Point2D.Double pointBottomRight;
+    private double dblScaleX;
+    private double dblScaleY;
+    private boolean boolScaleValid;
+
+    // Mouse interaction
+    private Point pointStartDrag;
+    private boolean boolDoDrag;
+
+    // Points of Interest
+    private JButton buttonPOI;
+    private final Vector<PointOfInterest> vecPOI;
+    private boolean boolShowPOI;
+    private static final String FILENAME_TOOLBAR_BUTTON_POI = "toolbar-poi.png";
+
+
+    /***********************************************************************************************
+     * Construct a MapUIComponent with scale information.
+     *
+     * @param hostinstrument
+     * @param country
+     */
+
+    public MapUIComponent(final ObservatoryInstrumentInterface hostinstrument,
+                          final CountryPlugin country)
+        {
+        // UIComponent has a BorderLayout
+        super();
+
+        this.hostInstrument = hostinstrument;
+        this.pluginCountry = country;
+
+        this.toolBar = null;
+        this.scrollPaneMap = null;
+        this.labelMap = null;
+        this.iconMap = null;
+        this.indicatorLongitude = null;
+        this.indicatorLatitude = null;
+        this.indicatorGridRef = null;
+
+        this.pointTopLeft = new Point2D.Double(0.0, 0.0);
+        this.pointBottomRight = new Point2D.Double(0.0, 0.0);
+        this.dblScaleX = 1.0;
+        this.dblScaleY = 1.0;
+        this.boolScaleValid = false;
+
+        this.pointStartDrag = null;
+        this.boolDoDrag = false;
+
+        this.buttonPOI = null;
+        this.vecPOI = new Vector<PointOfInterest>(10);
+        this.boolShowPOI = true;
+        }
+
+
+    /***********************************************************************************************
+     * Initialise this UIComponent.
+     */
+
+    public void initialiseUI()
+        {
+        super.initialiseUI();
+
+        removeAll();
+        setBackground(UIComponentPlugin.DEFAULT_COLOUR_CANVAS.getColor());
+
+        // Create the Map JToolBar
+        setToolBar(new JToolBar());
+        getToolBar().setFloatable(false);
+        getToolBar().setMinimumSize(DIM_TOOLBAR_SIZE);
+        getToolBar().setPreferredSize(DIM_TOOLBAR_SIZE);
+        getToolBar().setMaximumSize(DIM_TOOLBAR_SIZE);
+
+        initialiseToolbar(getToolBar());
+
+        // Set up a scaled Map
+        add(createMapUI(REGISTRY.getFramework().getMapFilename()));
+
+        // Set the coordinates and recalculate the Scale information
+        setTopLeft(new Point2D.Double(REGISTRY.getFramework().getMapTopLeftLongitude().toDouble(),
+                                      REGISTRY.getFramework().getMapTopLeftLatitude().toDouble()));
+        setBottomRight(new Point2D.Double(REGISTRY.getFramework().getMapBottomRightLongitude().toDouble(),
+                                          REGISTRY.getFramework().getMapBottomRightLatitude().toDouble()));
+
+        // Recalculate the Map Scale factors
+        setScaleValid(recalculateScale());
+        }
+
+
+    /***********************************************************************************************
+     * Dispose of all components of this UIComponent.
+     */
+
+    public final void disposeUI()
+        {
+        stopUI();
+
+        if (getToolBar() != null)
+            {
+            getToolBar().removeAll();
+            setToolBar(null);
+            }
+
+        super.disposeUI();
+        }
+
+
+    /***********************************************************************************************
+     * Create the UI on which the Map and Toolbar are displayed.
+     *
+     * @param filename
+     *
+     * @return JComponent
+     *
+     * @throws IndicatorException
+     */
+
+    private JComponent createMapUI(final String filename) throws IndicatorException
+        {
+        final JPanel panelMap;
+        final JPanel panelUI;
+        final Border raisedBevel;
+        final Border loweredBevel;
+        final Border compoundBorder;
+
+        // Now create the main panel, and the Map JLabel
+        panelMap = new JPanel();
+        panelMap.setBackground(DEFAULT_COLOUR_CANVAS.getColor());
+
+        labelMap = new JLabel()
+            {
+            /***************************************************************************************
+             * Render the Map, and the list of PointsOfInterest.
+             *
+             * @param graphics
+             */
+
+            public void paint(final Graphics graphics)
+                {
+                super.paint(graphics);
+
+                if ((getListOfPOI() != null)
+                    && (!getListOfPOI().isEmpty())
+                    && (isScaleValid()))
+                    {
+                    // Enable the POI button only if there are some POI
+                    buttonPOI.setEnabled(true);
+
+                    // Now show the POI if it is the right time
+                    if (boolShowPOI)
+                        {
+                        final Iterator<PointOfInterest> iterPOI;
+
+                        iterPOI = getListOfPOI().iterator();
+
+                        while (iterPOI.hasNext())
+                            {
+                            final PointOfInterest poi;
+                            final ImageIcon iconPOI;
+
+                            poi = iterPOI.next();
+
+                            // All POI filenames are relative to the Framework,
+                            // since they will probably include the Framework POI itself
+                            iconPOI = RegistryModelUtilities.getAtomIcon(REGISTRY.getFramework(),
+                                                                         poi.getPointOfInterestFilename());
+                            if (iconPOI != null)
+                                {
+                                int intXPOI;
+                                int intYPOI;
+
+                                // The Icon can only be rendered if we have a valid scale factor
+                                // Longitude is POSITIVE to the WEST
+                                // Latitude is POSITIVE to the NORTH
+
+                                // Map the (Long, Lat) into pixels (x,y)
+                                intXPOI = (int)((getTopLeft().getX() - poi.getLongitude().toDouble()) / getScaleX());
+                                intYPOI = (int)((getTopLeft().getY() - poi.getLatitude().toDouble()) / getScaleY());
+
+                                // Adjust (x,y) for the size of the Icon, to point to the centre
+                                intXPOI -= (iconPOI.getIconWidth() >> 1);
+                                intYPOI -= (iconPOI.getIconHeight() >> 1);
+
+                                graphics.drawImage(iconPOI.getImage(),
+                                                   intXPOI,
+                                                   intYPOI,
+                                                   labelMap);
+                                }
+                            }
+                        }
+                    }
+                else
+                    {
+                    // Disable the POI button if there's nothing to show
+                    buttonPOI.setEnabled(false);
+                    }
+                }
+            };
+
+        labelMap.setBackground(DEFAULT_COLOUR_CANVAS.getColor());
+        labelMap.setOpaque(false);
+        labelMap.setIcon(RegistryModelUtilities.getAtomIcon(REGISTRY.getFramework(), filename));
+        panelMap.add(labelMap);
+
+        setDoDrag(false);
+
+        // Save a reference to the Map Icon
+        setMapIcon(labelMap.getIcon());
+
+        // Handle Mouse clicks
+        labelMap.addMouseListener(createMouseListener());
+
+        // Handle Mouse drags
+        labelMap.addMouseMotionListener(createMouseMotionListener());
+
+        // Create the JScrollPane for the Map
+        scrollPaneMap = new JScrollPane();
+        scrollPaneMap.setBackground(DEFAULT_COLOUR_CANVAS.getColor());
+        scrollPaneMap.setViewportView(panelMap);
+        scrollPaneMap.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPaneMap.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPaneMap.setWheelScrollingEnabled(true);
+
+        // Add a Border to the Map
+        raisedBevel = BorderFactory.createRaisedBevelBorder();
+        loweredBevel = BorderFactory.createLoweredBevelBorder();
+        compoundBorder = BorderFactory.createCompoundBorder(raisedBevel, loweredBevel);
+        scrollPaneMap.setBorder(compoundBorder);
+
+        // Put all the components together
+        panelUI = new JPanel();
+        panelUI.setLayout(new BorderLayout());
+        panelUI.setBackground(DEFAULT_COLOUR_CANVAS.getColor());
+        panelUI.add(getToolBar(), BorderLayout.NORTH);
+        panelUI.add(scrollPaneMap, BorderLayout.CENTER);
+
+        return (panelUI);
+        }
+
+
+    /***********************************************************************************************
+     * Initialise the Toolbar.
+     *
+     * @param toolbar
+     */
+
+    private void initialiseToolbar(final JToolBar toolbar)
+        {
+        if (toolbar != null)
+            {
+            final ContextAction actionContext;
+            final JLabel labelLongitude;
+            final JLabel labelLatitude;
+            final JLabel labelGrid;
+
+            toolbar.removeAll();
+            toolbar.addSeparator(DIM_TOOLBAR_SEPARATOR);
+
+            // Longitude
+            indicatorLongitude = new ToolbarIndicator(EMPTY_STRING, TOOLTIP_LONGITUDE);
+            indicatorLongitude.setValueFormat(FORMAT_LONGITUDE);
+            indicatorLongitude.setValueBackground(Color.BLACK);
+            labelLongitude = new JLabel(TOOLTIP_LONGITUDE);
+            labelLongitude.setForeground(COLOR_TOOLBAR);
+            //labelLongitude.setFont(getLabelFont().getFont());
+            toolbar.add(labelLongitude);
+            toolbar.addSeparator(DIM_LABEL_SEPARATOR);
+            toolbar.add(indicatorLongitude);
+            toolbar.addSeparator(DIM_TOOLBAR_SEPARATOR);
+
+            // Latitude
+            indicatorLatitude = new ToolbarIndicator(EMPTY_STRING, TOOLTIP_LATITUDE);
+            indicatorLatitude.setValueFormat(FORMAT_LATITUDE);
+            indicatorLatitude.setValueBackground(Color.BLACK);
+            labelLatitude = new JLabel(TOOLTIP_LATITUDE);
+            labelLatitude.setForeground(COLOR_TOOLBAR);
+            //labelLatitude.setFont(getLabelFont().getFont());
+            toolbar.add(labelLatitude);
+            toolbar.addSeparator(DIM_LABEL_SEPARATOR);
+            toolbar.add(indicatorLatitude);
+            toolbar.addSeparator(DIM_TOOLBAR_SEPARATOR);
+
+            // Grid Reference
+            indicatorGridRef = new ToolbarIndicator(DIM_GRID_REFERENCE,
+                                                    EMPTY_STRING,
+                                                    TOOLTIP_GRID);
+            indicatorGridRef.setValueFormat(FORMAT_GRID);
+            indicatorGridRef.setValueBackground(Color.BLACK);
+            labelGrid = new JLabel(TOOLTIP_GRID);
+            labelGrid.setForeground(COLOR_TOOLBAR);
+            //labelGrid.setFont(getLabelFont().getFont());
+//            toolbar.add(labelGrid);
+//            toolbar.addSeparator(DIM_LABEL_SEPARATOR);
+//            toolbar.add(indicatorGridRef);
+//            toolbar.addSeparator(DIM_TOOLBAR_SEPARATOR);
+
+            // Create the toolbar buttons to control the POI (etc.)
+            actionContext = new ContextAction(ACTION_TOGGLE_POI,
+                                              RegistryModelUtilities.getAtomIcon(getHostInstrument().getHostAtom(),
+                                                                                 FILENAME_TOOLBAR_BUTTON_POI),
+                                              TOOLTIP_TOGGLE_POI,
+                                              KeyEvent.VK_P,
+                                              false,
+                                              true)
+                {
+                public void actionPerformed(final ActionEvent event)
+                    {
+                    // Toggle the PointsOfInterest
+                    boolShowPOI = !boolShowPOI;
+                    labelMap.repaint();
+                    }
+                };
+
+            // Add the Toolbar button
+            buttonPOI = new JButton();
+            buttonPOI.setBorder(BORDER_BUTTON);
+            buttonPOI.setAction(actionContext);
+            buttonPOI.setText(EMPTY_STRING);
+            buttonPOI.setToolTipText((String)actionContext.getValue(Action.SHORT_DESCRIPTION));
+            toolbar.add(buttonPOI);
+
+            toolbar.updateUI();
+            }
+        }
+
+
+    /***********************************************************************************************
+     * Clear the map on the host JComponent.
+     * Invalidate the scale factor.
+     *
+     * @throws IndicatorException
+     */
+
+    public final void clearMap() throws IndicatorException
+        {
+        removeAll();
+        add(createMapUI(EMPTY_STRING));
+        repaint();
+
+        // Clear the coordinates and invalidate the Scale information
+        setTopLeft(null);
+        setBottomRight(null);
+        setScaleValid(false);
+        }
+
+
+    /***********************************************************************************************
+     * Create the MouseListener for interaction with the Map.
+     *
+     * @return MouseListener
+     */
+
+    private MouseListener createMouseListener()
+        {
+        final MouseListener listener;
+
+        listener = new MouseAdapter()
+            {
+            /***************************************************************************************
+             * Handle MouseEntered events.
+             *
+             * @param mouseEvent
+             */
+
+            public void mouseEntered(final MouseEvent mouseEvent)
+                {
+                labelMap.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
+
+                try
+                    {
+                    clearIndicators(Color.BLACK);
+                    }
+
+                catch (IndicatorException exception)
+                    {
+                    LOGGER.error("IndicatorException=" + exception);
+                    }
+                }
+
+
+            /***************************************************************************************
+             * Handle MouseExited events.
+             *
+             * @param mouseEvent
+             */
+
+            public void mouseExited(final MouseEvent mouseEvent)
+                {
+                labelMap.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
+                try
+                    {
+                    clearIndicators(Color.BLACK);
+                    }
+
+                catch (IndicatorException exception)
+                    {
+                    LOGGER.error("IndicatorException=" + exception);
+                    }
+                }
+
+
+            /***************************************************************************************
+             * Handle MousePressed events.
+             *
+             * @param mouseEvent
+             */
+
+            public void mousePressed(final MouseEvent mouseEvent)
+                {
+    //                LOGGER.debug("mouse pressed at x=" + mouseEvent.getX() + "  y=" + mouseEvent.getY());
+    //                labelMap.setCursor(new Cursor(Cursor.MOVE_CURSOR));
+    //                setStartPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+    //                setDoDrag(true);
+
+                }
+
+
+            /***************************************************************************************
+             * Handle MouseReleased events.
+             *
+             * @param mouseEvent
+             */
+
+            public void mouseReleased(final MouseEvent mouseEvent)
+                {
+    //                LOGGER.debug("mouse released at x=" + mouseEvent.getX() + "  y=" + mouseEvent.getY());
+    //                labelMap.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    //                setDoDrag(false);
+                }
+            };
+
+        return (listener);
+        }
+
+
+    /***********************************************************************************************
+     * Create the MouseMotionListener.
+     *
+     * @return MouseMotionListener
+     */
+
+    private MouseMotionListener createMouseMotionListener()
+        {
+        final MouseMotionListener listener;
+
+        listener = new MouseMotionListener()
+            {
+            /***************************************************************************************
+             * Handle MouseDragged events.
+             *
+             * @param mouseEvent
+             */
+
+            public void mouseDragged(final MouseEvent mouseEvent)
+                {
+    //                if (getDoDrag())
+                if (false)
+                    {
+                    int intX;
+                    int intY;
+                    final int intDeltaX;
+                    final int intDeltaY;
+                    final int intViewportX;
+                    final int intViewportY;
+                    final int intViewportWidth;
+                    final int intViewportHeight;
+
+                    try
+                        {
+                        clearIndicators(Color.BLACK);
+                        }
+
+                    catch (IndicatorException exception)
+                        {
+                        LOGGER.error("IndicatorException=" + exception);
+                        }
+
+                    intViewportX = scrollPaneMap.getViewport().getX();
+                    intViewportY = scrollPaneMap.getViewport().getY();
+                    intViewportWidth = scrollPaneMap.getViewport().getWidth();
+                    intViewportHeight = scrollPaneMap.getViewport().getHeight();
+
+    //                    System.out.println("viewport width=" + scrollPaneMap.getViewport().getWidth());
+    //                    System.out.println("viewport height=" + scrollPaneMap.getViewport().getHeight());
+    //                    System.out.println("mouse dragging at x=" + mouseEvent.getX() + "  y=" + mouseEvent.getY());
+    //                    System.out.println("(long, lat)  ("
+    //                                       + (getTopLeft().getX() + (mouseEvent.getX() * getScaleX()))
+    //                                       + ", "
+    //                                       + (getTopLeft().getY() - (mouseEvent.getY() * getScaleY()))
+    //                                       + ")" );
+
+                    intDeltaX = (int)(mouseEvent.getX() - getStartPoint().getX());
+    //                    System.out.println("mouse delta x=" + intDeltaX);
+
+                    intDeltaY = (int)(mouseEvent.getY() - getStartPoint().getY());
+    //                    System.out.println("mouse delta y=" + intDeltaY);
+
+
+                    intX = intViewportX + intDeltaX;
+
+                    // The new rectangle cannot extend beyond the size of the underlying map
+                    if (intX < intViewportX)
+                        {
+                        // Moving left, so see if we have hit the left edge
+                        if (intX < 0)
+                            {
+                            intX = 0;
+                            }
+                        }
+                    else
+                        {
+                        // Moving right, so check the right edge
+                        if ((intX + intViewportWidth) > getMapIcon().getIconWidth())
+                            {
+                            intX = getMapIcon().getIconWidth() - intViewportWidth;
+                            }
+                        }
+
+                    intY = intViewportY + intDeltaY;
+
+                    if (intY < intViewportY)
+                        {
+                        // Moving up, so see if we have hit the top edge
+                        if (intY < 0)
+                            {
+                            intY = 0;
+                            }
+                        }
+                    else
+                        {
+                        // Moving down, so check the bottom edge
+                        if ((intY + intViewportHeight) > getMapIcon().getIconHeight())
+                            {
+                            intY = getMapIcon().getIconHeight() - intViewportHeight;
+                            }
+                        }
+
+                    labelMap.scrollRectToVisible(new Rectangle(intX,
+                                                               intY,
+                                                               intViewportWidth,
+                                                               intViewportHeight));
+
+    //                    setStartPoint(getNextPoint());
+    //                    setStartPoint(new Point(intViewportX + intDeltaX,
+    //                                            intViewportY + intDeltaY));
+
+                    }
+                }
+
+            /***************************************************************************************
+             * Handle MouseMoved events.
+             *
+             * @param event
+             */
+
+            public void mouseMoved(final MouseEvent event)
+                {
+                try
+                    {
+                    if ((isScaleValid())
+                        && (indicatorLongitude != null)
+                        && (indicatorLatitude != null))
+                        {
+                        final DegMinSec dmsLongitude;
+                        final DegMinSec dmsLatitude;
+                        final OSGBGridReference gridReference;
+                        final LatitudeLongitude latLong;
+                        final String strGridReference;
+
+                        // Longitude is POSITIVE to the WEST
+                        dmsLongitude = new DegMinSec(getTopLeft().getX() - (getScaleX()*event.getX()));
+                        dmsLongitude.setUnit(DegMinSecUnit.EW);
+
+                        // Latitude is POSITIVE to the NORTH
+                        dmsLatitude = new DegMinSec(getTopLeft().getY() - (getScaleY()*event.getY()));
+                        dmsLatitude.setUnit(DegMinSecUnit.NS);
+
+                        indicatorLongitude.setValue(dmsLongitude.toString());
+                        indicatorLatitude.setValue(dmsLatitude.toString());
+
+                        if (indicatorGridRef != null)
+                            {
+                            latLong = new LatitudeLongitude(dmsLatitude.toDouble(), dmsLongitude.toDouble());
+                            gridReference = GridReferenceConverter.convertLatLongToGridRef(getHostCountry(), latLong);
+                            strGridReference = (int)(gridReference.getEasting()) + SPACE + (int)(gridReference.getNorthing());
+
+                            indicatorGridRef.setValue(strGridReference);
+                            }
+                        }
+                    }
+
+                catch (DegMinSecException exception)
+                    {
+                    LOGGER.error("DegMinSecException=" + exception);
+                    }
+
+                catch (IndicatorException exception)
+                    {
+                    LOGGER.error("IndicatorException=" + exception);
+                    }
+                }
+            };
+
+        return (listener);
+        }
+
+
+    /***********************************************************************************************
+     * Recalculate the Map Scale factors.
+     * Each Scale Factor is in degrees per pixel.
+     * Note that this will not work for maps crossing the Date Line!
+     *
+     * @return boolean
+     */
+
+    private boolean recalculateScale()
+        {
+        final double dblLongitudeRange;
+        final double dblLatitudeRange;
+        final int intXRange;
+        final int intYRange;
+
+        if ((getTopLeft() != null)
+            && (getBottomRight() != null)
+            && (getMapIcon() != null))
+            {
+//            System.out.println("top left     (long, lat) = (" + getTopLeft().getX() + "," + + getTopLeft().getY() + ")");
+//            System.out.println("bottom right (long, lat) = (" + getBottomRight().getX() + "," + + getBottomRight().getY() + ")");
+
+            // Longitude is POSITIVE to the WEST
+            if ((getTopLeft().getX() > getBottomRight().getX())
+                && (getTopLeft().getX() >= CoordinateConversions.LONG_MIN)
+                && (getTopLeft().getX() <= CoordinateConversions.LONG_MAX)
+                && (getBottomRight().getX() >= CoordinateConversions.LONG_MIN)
+                && (getBottomRight().getX() <= CoordinateConversions.LONG_MAX))
+                {
+                dblLongitudeRange = getTopLeft().getX() - getBottomRight().getX();
+                //LOGGER.debug("long range = " + dblLongitudeRange);
+
+                // Latitude is POSITIVE to the NORTH
+                if ((dblLongitudeRange > 0.0)
+                    && (getTopLeft().getY() > getBottomRight().getY())
+                    && (getTopLeft().getY() <= CoordinateConversions.LAT_MAX)
+                    && (getTopLeft().getY() >= CoordinateConversions.LAT_MIN)
+                    && (getBottomRight().getY() <= CoordinateConversions.LAT_MAX)
+                    && (getBottomRight().getY() >= CoordinateConversions.LAT_MIN))
+                    {
+                    dblLatitudeRange = getTopLeft().getY() - getBottomRight().getY();
+                    //LOGGER.debug("lat range = " + dblLatitudeRange);
+
+                    // Get the pixel ranges
+                    intXRange = getMapIcon().getIconWidth();
+                    intYRange = getMapIcon().getIconHeight();
+                    //LOGGER.debug("x range = " + intXRange);
+                    //LOGGER.debug("y range = " + intYRange);
+
+                    if ((dblLatitudeRange > 0.0)
+                        && (intXRange > 0)
+                        && (intYRange > 0))
+                        {
+                        // Set the scale factors
+                        setScaleX(dblLongitudeRange/intXRange);
+                        setScaleY(dblLatitudeRange/intYRange);
+
+                        //LOGGER.debug("x scale = " + getScaleX());
+                        //LOGGER.debug("y scale = " + getScaleY());
+
+                        return (true);
+                        }
+                    }
+                }
+            }
+
+        setScaleX(1.0);
+        setScaleY(1.0);
+
+        return (false);
+        }
+
+
+    /***********************************************************************************************
+     * Redisplay the Map centred on the specified (Long, Lat).
+     *
+     * @param longitude
+     * @param latitude
+     */
+
+    public final void centreLongLat(final DegMinSec longitude,
+                                    final DegMinSec latitude)
+        {
+        final int intTargetX;
+        final int intTargetY;
+        final int intWidth;
+        final int intHeight;
+        int intTopLeftX;
+        int intTopLeftY;
+
+        if ((longitude != null)
+            && (latitude != null))
+            {
+            // Map the (Long, Lat) into pixels (x,y)
+            intTargetX = (int)((longitude.toDouble() - getTopLeft().getX()) / getScaleX());
+            intTargetY = (int)((getTopLeft().getY() - latitude.toDouble()) / getScaleY());
+
+            // Find the current viewport size
+            intWidth = scrollPaneMap.getViewport().getWidth();
+            intHeight = scrollPaneMap.getViewport().getHeight();
+
+            // The TopLeftX cannot be less than 0
+            intTopLeftX = Math.max((intTargetX - (intWidth >> 1)), 0);
+
+            // The TopLeftX cannot be greater than the Map IconWidth less the width of the viewport
+            intTopLeftX = Math.min((getMapIcon().getIconWidth() - intWidth), intTopLeftX);
+
+            // The TopLeftY cannot be less than 0
+            intTopLeftY = Math.max((intTargetY - (intHeight >> 1)), 0);
+
+            // The TopLeftY cannot be greater than the Map IconHeight less the height of the viewport
+            intTopLeftY = Math.min((getMapIcon().getIconHeight() - intHeight), intTopLeftY);
+
+    //        System.out.println("centre at " + longitude.toString() + ", " + latitude.toString());
+    //        System.out.println("intTargetX=" + intTargetX);
+    //        System.out.println("intTargetY=" + intTargetY);
+    //        System.out.println("intWidth=" + intWidth);
+    //        System.out.println("intHeight=" + intHeight);
+    //        System.out.println("intTopLeftX=" + intTopLeftX);
+    //        System.out.println("intTopLeftY=" + intTopLeftY);
+
+            labelMap.scrollRectToVisible(new Rectangle(intTopLeftX,
+                                                       intTopLeftY,
+                                                       intWidth,
+                                                       intHeight));
+            repaint();
+            }
+        }
+
+
+    /***********************************************************************************************
+     * Redisplay the Map centred on the specified Pixel (x, y).
+     *
+     * @param x
+     * @param y
+     */
+
+    public final void centrePixel(final int x,
+                                  final int y)
+        {
+        final int intWidth;
+        final int intHeight;
+        int intTopLeftX;
+        int intTopLeftY;
+
+        // Find the current viewport size
+        intWidth = scrollPaneMap.getViewport().getWidth();
+        intHeight = scrollPaneMap.getViewport().getHeight();
+
+        // The TopLeftX cannot be less than 0
+        intTopLeftX = Math.max((x - (intWidth >> 1)), 0);
+
+        // The TopLeftX cannot be greater than the Map IconWidth less the width of the viewport
+        intTopLeftX = Math.min((getMapIcon().getIconWidth() - intWidth), intTopLeftX);
+
+        // The TopLeftY cannot be less than 0
+        intTopLeftY = Math.max((y - (intHeight >> 1)), 0);
+
+        // The TopLeftY cannot be greater than the Map IconHeight less the height of the viewport
+        intTopLeftY = Math.min((getMapIcon().getIconHeight() - intHeight), intTopLeftY);
+
+        labelMap.scrollRectToVisible(new Rectangle(intTopLeftX,
+                                                   intTopLeftY,
+                                                   intWidth,
+                                                   intHeight));
+        }
+
+
+    /***********************************************************************************************
+     * Clear all Indicators, and set the background colour to that specified.
+     *
+     * @param background
+     *
+     * @throws IndicatorException
+     */
+
+    private void clearIndicators(final Color background) throws IndicatorException
+        {
+        if ((indicatorLongitude != null)
+            && (indicatorLatitude != null)
+            && (indicatorGridRef != null))
+            {
+            indicatorLongitude.setValue(EMPTY_STRING);
+            indicatorLongitude.setValueBackground(background);
+            indicatorLatitude.setValue(EMPTY_STRING);
+            indicatorLatitude.setValueBackground(background);
+            indicatorGridRef.setValue(EMPTY_STRING);
+            indicatorGridRef.setValueBackground(background);
+            }
+        }
+
+
+    /***********************************************************************************************
+     * Add a PointOfInterest to the Map (such as the Framework location).
+     *
+     * @param poi
+     */
+
+    public final void addPointOfInterest(final PointOfInterest poi)
+        {
+        if ((poi != null)
+            && (getListOfPOI() != null))
+            {
+            // Add the PointOfInterest to the list to be rendered
+            getListOfPOI().add(poi);
+            }
+        }
+
+
+    /***********************************************************************************************
+     * Remove all PointsOfInterest from the Map.
+     */
+
+    public void clearPointsOfInterest()
+        {
+        if (getListOfPOI() != null)
+            {
+            getListOfPOI().clear();
+            }
+        }
+
+
+    /***********************************************************************************************
+     * Get the host Country.
+     * This is used to select the correct National Grid.
+     *
+     * @return CountryData
+     */
+
+    private CountryPlugin getHostCountry()
+        {
+        return (this.pluginCountry);
+        }
+
+
+    /***********************************************************************************************
+     * Get the list of PointsOfInterest.
+     *
+     * @return Vector
+     */
+
+    private Vector<PointOfInterest> getListOfPOI()
+        {
+        return (this.vecPOI);
+        }
+
+
+    /***********************************************************************************************
+     * Get the Map JToolBar.
+     *
+     * @return JToolBar
+     */
+
+    private JToolBar getToolBar()
+        {
+        return (this.toolBar);
+        }
+
+
+    /***********************************************************************************************
+     * Set the Map JToolBar.
+     *
+     * @param toolbar
+     */
+
+    private void setToolBar(final JToolBar toolbar)
+        {
+        this.toolBar = toolbar;
+        }
+
+
+    /***********************************************************************************************
+     * Get the Map TopLeft coordinates.
+     *
+     * @return Point2D.Double
+     */
+
+    private Point2D.Double getTopLeft()
+        {
+        return (this.pointTopLeft);
+        }
+
+
+    /***********************************************************************************************
+     * Set the Map TopLeft coordinates.
+     *
+     * @param point
+     */
+
+    private void setTopLeft(final Point2D.Double point)
+        {
+        this.pointTopLeft = point;
+        setScaleValid(false);
+        }
+
+
+    /***********************************************************************************************
+     * Get the Map BottomRight coordinates.
+     *
+     * @return Point2D.Double
+     */
+
+    private Point2D.Double getBottomRight()
+        {
+        return (this.pointBottomRight);
+        }
+
+
+    /***********************************************************************************************
+     * Set the Map BottomRight coordinates.
+     *
+     * @param point
+     */
+
+    private void setBottomRight(final Point2D.Double point)
+        {
+        this.pointBottomRight = point;
+        setScaleValid(false);
+        }
+
+
+    /***********************************************************************************************
+     * Get the Map Icon.
+     *
+     * @return Icon
+     */
+
+    private Icon getMapIcon()
+        {
+        return (this.iconMap);
+        }
+
+
+    /***********************************************************************************************
+     * Set the Map Icon.
+     *
+     * @param map
+     */
+
+    private void setMapIcon(final Icon map)
+        {
+        this.iconMap = map;
+        setScaleValid(false);
+        }
+
+
+    /***********************************************************************************************
+     * Get the X-axis Scale Factor in degrees per pixel.
+     *
+     * @return double
+     */
+
+    private double getScaleX()
+        {
+        return (this.dblScaleX);
+        }
+
+
+    /***********************************************************************************************
+     * Set the X-axis Scale Factor in degrees per pixel.
+     *
+     * @param scale
+     */
+
+    private void setScaleX(final double scale)
+        {
+        this.dblScaleX = scale;
+        }
+
+
+    /***********************************************************************************************
+     * Get the Y-axis Scale Factor in degrees per pixel.
+     *
+     * @return double
+     */
+
+    private double getScaleY()
+        {
+        return (this.dblScaleY);
+        }
+
+
+    /***********************************************************************************************
+     * Set the Y-axis Scale Factor in degrees per pixel.
+     *
+     * @param scale
+     */
+
+    private void setScaleY(final double scale)
+        {
+        this.dblScaleY = scale;
+        }
+
+
+    /***********************************************************************************************
+     * Get a flag indicating if the Scale Factors are valid.
+     *
+     * @return boolean
+     */
+
+    private boolean isScaleValid()
+        {
+        return (this.boolScaleValid);
+        }
+
+
+    /***********************************************************************************************
+     * Set a flag indicating if the Scale Factors are valid.
+     *
+     * @param valid
+     */
+
+    private void setScaleValid(final boolean valid)
+        {
+        this.boolScaleValid = valid;
+        }
+
+
+    /***********************************************************************************************
+     * Get a flag indicating if the mouse is being dragged.
+     *
+     * @return boolean
+     */
+
+    private boolean getDoDrag()
+        {
+        return (this.boolDoDrag);
+        }
+
+
+    /***********************************************************************************************
+     * Set a flag indicating if the mouse is being dragged.
+     *
+     * @param drag
+     */
+
+    private void setDoDrag(final boolean drag)
+        {
+        this.boolDoDrag = drag;
+        }
+
+
+    /***********************************************************************************************
+     * Get the mouse drag start Point.
+     *
+     * @return Point
+     */
+
+    private Point getStartPoint()
+        {
+        return pointStartDrag;
+        }
+
+
+    /***********************************************************************************************
+     * Get the mouse drag start Point.
+     *
+     * @param point
+     */
+
+    private void setStartPoint(final Point point)
+        {
+        this.pointStartDrag = point;
+        }
+
+
+    /***********************************************************************************************
+     * Get the ObservatoryInstrument to which this UIComponent is attached.
+     *
+     * @return ObservatoryInstrumentInterface
+     */
+
+    private ObservatoryInstrumentInterface getHostInstrument()
+        {
+        return (this.hostInstrument);
+        }
+    }

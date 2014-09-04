@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- See: http://utilitymill.com/utility/Regex_For_Range -->
+
+<InstrumentMetadata xmlns="metadata.xmlbeans.model.fc.lmn.org">
+
+    <!-- The Instrument Notes -->
+    <Metadata>
+        <Key>Instrument.Notes</Key>
+        <Value>Instrument Notes</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Starinet VlfReceiver Notes, for testing</Description>
+    </Metadata>
+
+</InstrumentMetadata>
+

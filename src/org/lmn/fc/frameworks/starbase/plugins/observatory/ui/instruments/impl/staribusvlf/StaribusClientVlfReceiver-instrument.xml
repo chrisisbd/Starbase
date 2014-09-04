@@ -1,0 +1,3540 @@
+<?xml version="1.0" standalone="yes"?>
+
+
+<Instruments xmlns="instruments.xmlbeans.model.fc.lmn.org"
+             xmlns:md="metadata.xmlbeans.model.fc.lmn.org">
+
+    <!-- ....................................................................................... -->
+    <!-- VLF Receiver  -->
+
+    <Instrument>
+        <Identifier>StaribusClientVlfReceiver</Identifier>
+
+        <!-- The VLF Controller -->
+
+        <Controller>
+            <!-- A placeholder for the discovered address on Starinet, or an address already assigned -->
+            <!-- Note the UDP Port is 1205 -->
+            <!-- Pad this field to exactly 21 characters, using only trailing underscores '_' -->
+            <IPAddress>81.174.132.72:1205___</IPAddress>
+
+            <!-- ............................................................................... -->
+            <!-- Instrument (Primary Plugins) -->
+            <!-- ............................................................................... -->
+            <!-- Allow Parent to Child links to identify those physical Plugins **required** for this Instrument -->
+            <!-- The schema allows for zero Plugins -->
+
+            <PluginManifest>
+                <!-- The Key for the PrimaryPlugin, which defines the nature of the Instrument -->
+                <PrimaryResourceKey>VlfPlugin</PrimaryResourceKey>
+
+                <!-- There are no Secondary Plugins for this Instrument -->
+            </PluginManifest>
+
+            <Identifier>Core</Identifier>
+            <Name>Core</Name>
+            <Description>The VlfReceiver Client Core</Description>
+            <ResourceKey>Core</ResourceKey>
+
+            <!-- ............................................................................... -->
+            <!-- Generic (Mandatory) Commands -->
+
+            <!-- The Core has a CommandCodeBase of zero -->
+            <!-- All Core CommandVariants are zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <!-- reset() returns the Controller to its initialised state -->
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Resets the Controller</Description>
+                <CommandMetadata>
+                    <md:Key>Instrument.Core.Reset.Timeout</md:Key>
+                    <md:Value>20</md:Value>
+                    <md:DataTypeName>DecimalInteger</md:DataTypeName>
+                    <md:Units>Seconds</md:Units>
+                    <md:Description>The time allowed for reset() to complete</md:Description>
+                </CommandMetadata>
+                <Parameter>
+                    <Name>Reset.Mode</Name>
+                    <InputDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>NumericIndexedList</DataTypeName>
+                        <FieldCount>1</FieldCount>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Choices>Soft,Defaults,Staribus</Choices>
+                    <Tooltip>Allowed values: Soft, Defaults, Staribus</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+                <Ack>
+                    <Name>Ack</Name>
+                </Ack>
+            </Command>
+
+            <!-- ping() indicates if a Controller is connected at this address -->
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Pings the Controller</Description>
+                <SendToPort>true</SendToPort>
+                <Ack>
+                    <Name>Ack</Name>
+                </Ack>
+            </Command>
+
+            <!-- getConfiguration() reads the memories of all connected Modules, -->
+            <!-- and forms the XML configuration of the composite Instrument -->
+            <!-- This Command is executed entirely on the host -->
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <!-- Obtain the assembled XML data by iterating this 'macro' -->
+                <!-- Core.getModuleConfiguration() -->
+                <SteppedDataCommand>
+                    <SteppedCommandCodeBase>00</SteppedCommandCodeBase>
+                    <SteppedCommandCode>03</SteppedCommandCode>
+                </SteppedDataCommand>
+                <Description>Gets the assembled XML configuration of the Instrument</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration.XML</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- getModuleConfiguration() first uses getConfigurationBlockCount() to get the number of blocks -->
+            <!-- then iterates over getConfigurationBlock() to get all blocks from the specified ModuleID -->
+            <!-- These sub-commands are specified through the use of the <BlockedDataCommand> element -->
+            <!-- If a Module is missing, then the ResponseValue must be 'NODATA' -->
+            <Command>
+                <Identifier>getModuleConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <!-- The SteppedCommand ParentCommandCode is missing because the BlockedData is more important! -->
+                <BlockedDataCommand>
+                    <BlockCountCommandCode>05</BlockCountCommandCode>
+                    <BlockCommandCode>06</BlockCommandCode>
+                </BlockedDataCommand>
+                <Description>Gets the Module configuration data, as an XML fragment</Description>
+                <Parameter>
+                    <Name>Configuration.ModuleID</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-7]</Regex>
+                    <Tooltip>Allowed Values: ModuleID 0 to 7</Tooltip>
+                </Parameter>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration.Module</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- setModuleConfiguration() iterates over setConfigurationBlock() -->
+            <!-- to set all blocks in the specified ModuleID, -->
+            <!-- using the configuration data in the specified filename -->
+            <!-- These sub-commands are specified through the use of the <BlockedDataCommand> element -->
+            <!-- This Command is executed entirely on the host -->
+            <Command>
+                <Identifier>setModuleConfiguration</Identifier>
+                <CommandCode>04</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <!-- Set the Module XML configuration data by iterating this 'macro' -->
+                <!-- Core.setConfigurationBlock() -->
+                <SteppedDataCommand>
+                    <SteppedCommandCodeBase>00</SteppedCommandCodeBase>
+                    <SteppedCommandCode>07</SteppedCommandCode>
+                </SteppedDataCommand>
+                <Description>Sets the Module configuration data, as an XML fragment</Description>
+                <Parameter>
+                    <Name>Configuration.ModuleID</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-7]</Regex>
+                    <Tooltip>Allowed Values: ModuleID 0 to 7</Tooltip>
+                </Parameter>
+                <Parameter>
+                    <Name>Configuration.Filename</Name>
+                    <InputDataType>
+                        <DataTypeName>FileName</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Value>workspace/configuration</Value>
+                    <!-- ToDo Regex -->
+                    <Tooltip>The pathname/filename containing the configuration XML</Tooltip>
+                </Parameter>
+                <Parameter>
+                    <Name>CompressedFormat</Name>
+                    <InputDataType>
+                        <DataTypeName>Boolean</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>Boolean</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Choices>false,true</Choices>
+                    <Tooltip>Allowed values: true or false This removes all unnecessary characters from the XML</Tooltip>
+                </Parameter>
+                <SendToPort>false</SendToPort>
+                <Ack>
+                    <Name>Ack</Name>
+                </Ack>
+            </Command>
+
+            <!-- getConfigurationBlockCount() counts the number of blocks of data in the Module memory -->
+            <!-- getConfigurationBlockCount() refers to its parent getModuleConfiguration() -->
+            <!-- through the <ParentCommandCode> element -->
+            <Command>
+                <Identifier>getConfigurationBlockCount</Identifier>
+                <CommandCode>05</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <BlockedDataCommand>
+                    <ParentCommandCode>03</ParentCommandCode>
+                </BlockedDataCommand>
+                <Description>Gets the number of blocks of data in the Module configuration</Description>
+                <CommandMetadata>
+                    <md:Key>Instrument.Core.GetConfigurationBlockCount.Timeout</md:Key>
+                    <md:Value>30</md:Value>
+                    <md:DataTypeName>DecimalInteger</md:DataTypeName>
+                    <md:Units>Seconds</md:Units>
+                    <md:Description>The time allowed for getConfigurationBlockCount() to complete</md:Description>
+                </CommandMetadata>
+                <Parameter>
+                    <Name>Configuration.ModuleID</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-7]</Regex>
+                    <Tooltip>Allowed Values: ModuleID 0 to 7</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Configuration.BlockCount</Name>
+                    <DataTypeName>HexInteger</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]</Regex>
+                </Response>
+            </Command>
+
+            <!-- getConfigurationBlock() obtains the configuration data in the specified Module memory -->
+            <!-- getConfigurationBlock() refers to its parent getModuleConfiguration() -->
+            <!-- through the <ParentCommandCode> element -->
+            <Command>
+                <Identifier>getConfigurationBlock</Identifier>
+                <CommandCode>06</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <BlockedDataCommand>
+                    <ParentCommandCode>03</ParentCommandCode>
+                </BlockedDataCommand>
+                <Description>Gets the specified block of Module configuration data, as an XML fragment</Description>
+                <Parameter>
+                    <Name>Configuration.ModuleID</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-7]</Regex>
+                    <Tooltip>Allowed Values: ModuleID 0 to 7</Tooltip>
+                </Parameter>
+                <Parameter>
+                    <Name>Configuration.BlockID</Name>
+                    <InputDataType>
+                        <DataTypeName>HexInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>(00[0-6][0-9A-Fa-f])|(00[7][0-9A-E])</Regex>
+                    <Tooltip>Allowed Values: BlockID 0000 to 007E</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Configuration.Block</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>^(\p{Graph}|\x20|\x03){512}$</Regex>
+                </Response>
+            </Command>
+
+            <!-- setConfigurationBlock() sets the configuration data in the specified Module memory -->
+            <!-- setConfigurationBlock() refers to its parent setModuleConfiguration() -->
+            <!-- through the <ParentCommandCode> element -->
+            <Command>
+                <Identifier>setConfigurationBlock</Identifier>
+                <CommandCode>07</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <SteppedDataCommand>
+                    <ParentCommandCodeBase>00</ParentCommandCodeBase>
+                    <ParentCommandCode>04</ParentCommandCode>
+                </SteppedDataCommand>
+                <Description>Sets the specified block of Module configuration data</Description>
+                <Parameter>
+                    <Name>Configuration.ModuleID</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-7]</Regex>
+                    <Tooltip>Allowed Values: ModuleID 0 to 7</Tooltip>
+                </Parameter>
+                <Parameter>
+                    <Name>Configuration.BlockID</Name>
+                    <InputDataType>
+                        <DataTypeName>HexInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>(00[0-6][0-9A-Fa-f])|(00[7][0-9A-E])</Regex>
+                    <Tooltip>Allowed Values: BlockID 0000 to 007E</Tooltip>
+                </Parameter>
+                <Parameter>
+                    <Name>Configuration.Data</Name>
+                    <InputDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>^(\p{Graph}|\x20|\x03){512}$</Regex>
+                    <Tooltip>The data must contain exactly 512 ASCII characters</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+                <Ack>
+                    <Name>Ack</Name>
+                </Ack>
+            </Command>
+
+            <!-- ............................................................................... -->
+            <!-- Core Commands executed entirely on the host -->
+
+            <!-- start() starts the Instrument, exactly as for the ControlPanel green button -->
+            <!-- This is required for the Macro support -->
+            <Command>
+                <Identifier>start</Identifier>
+                <CommandCode>08</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Starts the Instrument</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Ack</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <!-- stop() stops the Instrument, exactly as for the ControlPanel red button -->
+            <!-- This is required for the Macro support -->
+            <Command>
+                <Identifier>stop</Identifier>
+                <CommandCode>09</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Stops the Instrument</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Ack</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <!-- getVersion() returns a String giving the version information for the Controller OS -->
+            <Command>
+                <Identifier>getVersion</Identifier>
+                <CommandCode>0A</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Gets the Version of the Controller OS</Description>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Configuration.Version</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+
+            <!-- Get the Staribus Address of the Controller -->
+            <Command>
+                <Identifier>getStaribusAddress</Identifier>
+                <CommandCode>0B</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Gets the Staribus Address of the Remote Controller - Module ID 0</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration.Address.Staribus</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>^0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-3])$</Regex>
+                </Response>
+            </Command>
+
+            <!-- Set the Staribus Address of the Controller -->
+            <Command>
+                <Identifier>setStaribusAddress</Identifier>
+                <CommandCode>0C</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Sets the Staribus Address of the Remote Controller - Module ID 0</Description>
+                <Parameter>
+                    <Name>Configuration.Address.Staribus</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>^0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-3])$</Regex>
+                    <Tooltip>Allowed Values: 000 to 253</Tooltip>
+                </Parameter>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Ack</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <!-- ............................................................................... -->
+            <!-- Each Controller may have zero or more Plugins, up to the I2C bus addressing limit -->
+            <!-- Some Plugins are 'virtual', i.e. do not relate to separate I2C devices -->
+            <!-- for example, the processor on-chip services such as A2D and D2A -->
+
+            <!-- ............................................................................... -->
+            <!-- DataProcessor Plugin -->
+
+            <Plugin>
+                <!-- A virtual Plugin -->
+                <Identifier>DataProcessor</Identifier>
+                <Provider>HostPlugin</Provider>
+                <Name>DataProcessor</Name>
+                <Description>The DataProcessor Module</Description>
+                <ResourceKey>DataProcessor</ResourceKey>
+
+                <!-- The DataProcessor Plugin is always CommandCodeBase 50 -->
+                <CommandCodeBase>50</CommandCodeBase>
+
+                <Command>
+                    <Identifier>applyFilter</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Apply a Filter to the selected dataset</Description>
+                    <Parameter>
+                        <Name>Filter.Name</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!FilterList</Choices>
+                        <Tooltip>Select a Filter to apply to the RawData to create ProcessedData</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>ApplyTo.ChannelID</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Tooltip>Any Channel ID for the current dataset, or -1, to apply to all channels</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>ApplyTo.Dataset</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>RawData,ProcessedData</Choices>
+                        <Tooltip>Allowed values: RawData,ProcessedData</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>segmentTimeSeries</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Segment a Time Series into a set of files</Description>
+                    <Parameter>
+                        <Name>Segment.Size</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Day,Daytime,Hour,Minute</Choices>
+                        <Tooltip>Allowed values: Day,Daytime,Hour,Minute</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Pathname</Name>
+                        <InputDataType>
+                            <DataTypeName>PathName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive</Value>
+                        <Tooltip>The pathname used for saving the individual files e.g. archive</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>ApplyTo.Dataset</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>RawData</Choices>
+                        <Tooltip>Allowed values: RawData</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>evalTemperatureCorrelation</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <!-- See: http://en.wikipedia.org/wiki/Correlation_and_dependence -->
+                    <Description>Calculate Pearson Correlation Coefficient between Temperature and Data</Description>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>CorrelationCoefficients</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- DataCapture Plugin -->
+
+            <Plugin>
+                <!-- A virtual Plugin -->
+                <Identifier>DataCapture</Identifier>
+                <Provider>HostPlugin</Provider>
+                <Name>DataCapture</Name>
+                <Description>The DataCapture Module</Description>
+                <ResourceKey>DataCapture</ResourceKey>
+
+                <!-- Configuration Metadata specific to this Plugin, for defining the Data -->
+                <!-- Each Channel must be completely defined, in order to allow the data to be parsed -->
+                <!-- Provide: Name, DataType, Units and Description -->
+                <!-- The Metadata Keys, DataTypes and Units MUST agree with the Starbase dictionary! -->
+
+                <!-- The Metadata below results in:                                              -->
+
+                <!-- Observation.Channel.Count=2                                                 -->
+
+                <!-- Observation.Channel.Name.Temperature=Temperature                            -->
+                <!-- Observation.Channel.DataType.Temperature=DecimalInteger                     -->
+                <!-- Observation.Channel.Units.Temperature=Celsius                               -->
+                <!-- Observation.Channel.Description.Temperature=The temperature of the VLF Receiver module -->
+                <!-- Observation.Channel.Colour.Temperature=The Colour of the Temperature channel graph -->
+
+                <!-- Observation.Channel.Name.0=VLF Rx Output                                    -->
+                <!-- Observation.Channel.DataType.0=DecimalInteger                               -->
+                <!-- Observation.Channel.Units.0=mV                                              -->
+                <!-- Observation.Channel.Description.0=The output from the VLF Receiver          -->
+                <!-- Observation.Channel.Colour.0=The Colour of the VLF Rx Channel graph         -->
+
+                <!-- Tell Starbase how many channels to expect in the realtime StaribusMultichannelData -->
+                <!-- This must include the slow-speed Temperature channel, if present -->
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Count</md:Key>
+                    <md:Value>2</md:Value>
+                    <md:DataTypeName>DecimalInteger</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The number of channels of data produced by this Instrument</md:Description>
+                </PluginMetadata>
+
+                <!-- The slow-speed Temperature Channel -->
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Name.Temperature</md:Key>
+                    <md:Value>Temperature</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The name of the Temperature channel</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.DataType.Temperature</md:Key>
+                    <md:Value>DecimalFloat</md:Value>
+                    <md:DataTypeName>DataType</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The DataType of the Temperature channel</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Units.Temperature</md:Key>
+                    <md:Value>Celsius</md:Value>
+                    <md:DataTypeName>Units</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The Units of the Temperature channel</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Description.Temperature</md:Key>
+                    <md:Value>The temperature of the VLF Receiver module</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The Description of the Temperature channel</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Colour.Temperature</md:Key>
+                    <md:Value>r=255 g=000 b=000</md:Value>
+                    <md:DataTypeName>ColourData</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The Colour of the Temperature channel graph</md:Description>
+                </PluginMetadata>
+
+                <!-- Channel 0 -->
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Name.0</md:Key>
+                    <md:Value>VLF Rx Output</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The name of channel 0</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.DataType.0</md:Key>
+                    <md:Value>DecimalInteger</md:Value>
+                    <md:DataTypeName>DataType</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The DataType of channel 0</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Units.0</md:Key>
+                    <md:Value>mV</md:Value>
+                    <md:DataTypeName>Units</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The Units of channel 0</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Description.0</md:Key>
+                    <md:Value>The output from the VLF Receiver</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The Description of channel 0</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Colour.0</md:Key>
+                    <md:Value>r=000 g=255 b=000</md:Value>
+                    <md:DataTypeName>ColourData</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The Colour of the VLF Rx Channel graph</md:Description>
+                </PluginMetadata>
+
+                <!-- The DataCapture Plugin is always CommandCodeBase 03 -->
+                <CommandCodeBase>03</CommandCodeBase>
+
+                <Command>
+                    <Identifier>getSpace</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0003</CommandVariant>
+                    <Description>Gets the percentage of available storage remaining</Description>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Space</Name>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                        <Units>%</Units>
+                        <Regex>^([0-9][0-9][0-9])$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getData</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <BlockedDataCommand>
+                        <BlockCountCommandCode>02</BlockCountCommandCode>
+                        <BlockCommandCode>03</BlockCommandCode>
+                    </BlockedDataCommand>
+                    <Description>Gets the data produced by the Instrument</Description>
+                    <Category>Capture</Category>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Staribus</Choices>
+                        <Tooltip>Allowed values: Staribus</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Capture.Filter</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!FilterList</Choices>
+                        <Tooltip>Select a Filter to apply to the RawData to create ProcessedData</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Data.Timestamp</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01]) (([0-1][0-9]|[2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getDataBlockCount</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0003</CommandVariant>
+                    <BlockedDataCommand>
+                        <ParentCommandCode>01</ParentCommandCode>
+                    </BlockedDataCommand>
+                    <Description>Gets the number of blocks in the Instrument data</Description>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Data.BlockCount</Name>
+                        <DataTypeName>HexInteger</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getDataBlock</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <CommandVariant>0003</CommandVariant>
+                    <BlockedDataCommand>
+                        <ParentCommandCode>01</ParentCommandCode>
+                    </BlockedDataCommand>
+                    <Description>Gets the specified block of Instrument data</Description>
+                    <Parameter>
+                        <Name>Data.BlockID</Name>
+                        <InputDataType>
+                            <DataTypeName>HexInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]</Regex>
+                        <Tooltip>Allowed Values: BlockID 0000 to FFFF</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Data.Block</Name>
+                        <!-- A special DataType for Staribus timestamped blocks -->
+                        <!-- The DataCapture Metadata must describe how to parse the data channels -->
+                        <DataTypeName>StaribusBlock</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getRate</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <CommandVariant>0003</CommandVariant>
+                    <Description>Get the data capture sampling rate</Description>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Data.SampleRate</Name>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                        <Units>InverseSeconds</Units>
+                        <Regex>^([0-9][0-9][0-9][0-9])$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setRate</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <CommandVariant>0003</CommandVariant>
+                    <Description>Set the data capture sampling rate</Description>
+                    <Parameter>
+                        <Name>SampleRate</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- Staribus Decimal integers are always four digits 0000...9999 -->
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>InverseSeconds</Units>
+                        <!-- Limit the range to 0001 to 0255 seconds -->
+                        <!-- See:http://utilitymill.com/utility/Regex_For_Range -->
+                        <Regex>^0*([1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>
+                        <Tooltip>Allowed Values: 1 to 255 seconds</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+                <Command>
+                    <Identifier>capture</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <CommandVariant>0003</CommandVariant>
+                    <Description>Starts or stops data capture</Description>
+                    <Parameter>
+                        <Name>Run</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+                <Command>
+                    <Identifier>captureRawDataRealtime</Identifier>
+                    <CommandCode>07</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <!-- Obtain the data by iterating VlfPlugin.getRealtimeData() -->
+                    <IteratedDataCommand>
+                        <IteratedCommandCodeBase>04</IteratedCommandCodeBase>
+                        <IteratedCommandCode>01</IteratedCommandCode>
+                    </IteratedDataCommand>
+                    <Description>Captures the VLF Receiver Output</Description>
+                    <Category>Capture</Category>
+                    <Parameter>
+                        <Name>SampleInterval</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Regex>^0*([1-9][0-9]{0,2}|1000)$</Regex>
+                        <Tooltip>The time interval between data samples (1 to 1000 seconds)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Capture.Period</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Regex>^0*([0-9]{1,6}|1000000)$</Regex>
+                        <Tooltip>The total time of data capture (0 to 1000000 seconds, 0 is continuous)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Capture.Filter</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!FilterList</Choices>
+                        <Tooltip>Select a Filter to apply to the RawData to create ProcessedData</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>RealtimeUpdate</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>false,true</Choices>
+                        <Tooltip>Controls updates on every sample read. Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>VerboseLogging</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>false,true</Choices>
+                        <Tooltip>Controls verbose Command execution logging. Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Logging.Timestamp</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01]) (([0-1][0-9]|[2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>publishChartRealtime</Identifier>
+                    <CommandCode>08</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <!-- Obtain the data by iterating VlfPlugin.getRealtimeData() -->
+                    <!-- Note that the target-to-parent reverse link will not be functional -->
+                    <IteratedDataCommand>
+                        <IteratedCommandCodeBase>04</IteratedCommandCodeBase>
+                        <IteratedCommandCode>01</IteratedCommandCode>
+                    </IteratedDataCommand>
+                    <Description>Captures all A2D channels and publishes the latest Chart to a server</Description>
+                    <Category>Capture</Category>
+
+                    <!-- Capture details -->
+                    <Parameter>
+                        <Name>Capture.Interval</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Regex>^0*([1-9][0-9]{0,2}|1000)$</Regex>
+                        <Value>30</Value>
+                        <Tooltip>The time interval between data samples (1 to 1000 seconds)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Capture.Period</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Regex>^0*([0-9]{1,6}|1000000)$</Regex>
+                        <Value>0</Value>
+                        <Tooltip>The total time of data capture (0 to 1000000 seconds, 0 is continuous)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Capture.Filter</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!FilterList</Choices>
+                        <Tooltip>Select a Filter to apply to the RawData to create ProcessedData</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Upload.Counter</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*([1-9][0-9]{0,2}|1000)$</Regex>
+                        <Value>10</Value>
+                        <Tooltip>The number of data samples between data uploads (1 to 1000)</Tooltip>
+                    </Parameter>
+
+                    <!-- Image details -->
+                    <Parameter>
+                        <Name>Image.Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>png,jpg,gif</Choices>
+                        <Tooltip>Allowed values: PNG, JPG, GIF (PNG preferred)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Image.Width</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Value>1024</Value>
+                        <Tooltip>The width of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Image.Height</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Value>768</Value>
+                        <Tooltip>The height of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Image.LocalDirectory</Name>
+                        <InputDataType>
+                            <DataTypeName>PathName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive</Value>
+                        <Tooltip>The local directory to be used for saving the individual files on the local host</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Image.LocalFilename</Name>
+                        <InputDataType>
+                            <!-- Just a filename, so no Chooser -->
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex to prevent extension -->
+                        <Value>chart</Value>
+                        <Tooltip>The filename to be given to the image file (with no extension), saved locally</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Image.Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+
+                    <!-- Server details -->
+                    <Parameter>
+                        <Name>Server.Hostname</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>ukraa.com</Value>
+                        <Tooltip>The address of the server to which the Chart image will be uploaded</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Server.Username</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^.{1,513}$</Regex>
+                        <Value>dev@ukraa.com</Value>
+                        <Tooltip>The Username of the target Server Account</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Server.Password</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^.{1,20}$</Regex>
+                        <Tooltip>The Password of the target Server Account</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Server.RemoteDirectory</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- No remote Chooser is possible at the moment -->
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>/</Value>
+                        <Tooltip>The remote directory to be used for saving the individual files on the server</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Server.RemoteFilename</Name>
+                        <InputDataType>
+                            <!-- Just a filename, so no Chooser -->
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex to prevent extension -->
+                        <Value>chart</Value>
+                        <Tooltip>The filename to be given to the image file (with no extension), saved remotely</Tooltip>
+                    </Parameter>
+
+                    <!-- Miscellaneous -->
+                    <Parameter>
+                        <Name>VerboseLogging</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>false,true</Choices>
+                        <Tooltip>Controls verbose Command execution logging. Allowed values: true or false</Tooltip>
+                    </Parameter>
+
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Publisher.Timestamp</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01]) (([0-1][0-9]|[2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>publishChartRealtimeDay</Identifier>
+                    <CommandCode>09</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <!-- Obtain the data by iterating VlfPlugin.getRealtimeData() -->
+                    <!-- Note that the target-to-parent reverse link will not be functional -->
+                    <IteratedDataCommand>
+                        <IteratedCommandCodeBase>04</IteratedCommandCodeBase>
+                        <IteratedCommandCode>01</IteratedCommandCode>
+                    </IteratedDataCommand>
+                    <Description>Captures all A2D channels and publishes the latest Chart to a server, for one Day, restarting at the specified Time</Description>
+                    <Category>Capture</Category>
+
+                    <!-- Capture details -->
+                    <Parameter>
+                        <Name>Capture.Trigger</Name>
+                        <InputDataType>
+                            <DataTypeName>Time</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>HourMinSec</Units>
+                        <Regex>^(([0-1][0-9]|[2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                        <Value>00:00:00</Value>
+                        <Tooltip>The Time at which to restart the data capture (all previous data are lost!)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Capture.Interval</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Regex>^0*([1-9][0-9]{0,2}|1000)$</Regex>
+                        <Value>30</Value>
+                        <Tooltip>The time interval between data samples (1 to 1000 seconds)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Capture.Period</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Regex>^0*([0-9]{1,6}|1000000)$</Regex>
+                        <Value>0</Value>
+                        <Tooltip>The total time of data capture (0 to 1000000 seconds, 0 is continuous)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Capture.Filter</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!FilterList</Choices>
+                        <Tooltip>Select a Filter to apply to the RawData to create ProcessedData</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Upload.Counter</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*([1-9][0-9]{0,2}|1000)$</Regex>
+                        <Value>10</Value>
+                        <Tooltip>The number of data samples between data uploads (1 to 1000)</Tooltip>
+                    </Parameter>
+
+                    <!-- Image details -->
+                    <Parameter>
+                        <Name>Image.Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>png,jpg,gif</Choices>
+                        <Tooltip>Allowed values: PNG, JPG, GIF (PNG preferred)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Image.Width</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Value>1024</Value>
+                        <Tooltip>The width of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Image.Height</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Value>768</Value>
+                        <Tooltip>The height of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Image.LocalDirectory</Name>
+                        <InputDataType>
+                            <DataTypeName>PathName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive</Value>
+                        <Tooltip>The local directory to be used for saving the individual files on the local host</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Image.LocalFilename</Name>
+                        <InputDataType>
+                            <!-- Just a filename, so no Chooser -->
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex to prevent extension -->
+                        <Value>chart</Value>
+                        <Tooltip>The filename to be given to the image file (with no extension), saved locally</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Image.Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+
+                    <!-- Server details -->
+                    <Parameter>
+                        <Name>Server.Hostname</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>ukraa.com</Value>
+                        <Tooltip>The address of the server to which the Chart image will be uploaded</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Server.Username</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^.{1,513}$</Regex>
+                        <Value>dev@ukraa.com</Value>
+                        <Tooltip>The Username of the target Server Account</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Server.Password</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^.{1,20}$</Regex>
+                        <Tooltip>The Password of the target Server Account</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Server.RemoteDirectory</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- No remote Chooser is possible at the moment -->
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>/</Value>
+                        <Tooltip>The remote directory to be used for saving the individual files on the server</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Server.RemoteFilename</Name>
+                        <InputDataType>
+                            <!-- Just a filename, so no Chooser -->
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex to prevent extension -->
+                        <Value>chart</Value>
+                        <Tooltip>The filename to be given to the image file (with no extension), saved remotely</Tooltip>
+                    </Parameter>
+
+                    <!-- Miscellaneous -->
+                    <Parameter>
+                        <Name>VerboseLogging</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>false,true</Choices>
+                        <Tooltip>Controls verbose Command execution logging. Allowed values: true or false</Tooltip>
+                    </Parameter>
+
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Publisher.Timestamp</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01]) (([0-1][0-9]|[2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Signal Processor -->
+
+            <Plugin>
+                <Identifier>SignalProcessor</Identifier>
+                <Provider>HostPlugin</Provider>
+                <Name>Signal Processor</Name>
+                <Description>The Vlf Signal Processor</Description>
+                <ResourceKey>SignalProcessor</ResourceKey>
+
+                <!-- These Metadata are used to configure the measureFrequencyResponse() capture Command -->
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Count</md:Key>
+                    <md:Value>1</md:Value>
+                    <md:DataTypeName>DecimalInteger</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The number of channels of data produced by this Instrument</md:Description>
+                </PluginMetadata>
+
+                <!-- Channel 0 -->
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Name.0</md:Key>
+                    <md:Value>VLF Rx Output</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The name of channel 0</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.DataType.0</md:Key>
+                    <md:Value>DecimalInteger</md:Value>
+                    <md:DataTypeName>DataType</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The DataType of channel 0</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Units.0</md:Key>
+                    <md:Value>mV</md:Value>
+                    <md:DataTypeName>Units</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The Units of channel 0</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Description.0</md:Key>
+                    <md:Value>The output from the VLF Receiver</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The Description of channel 0</md:Description>
+                </PluginMetadata>
+
+                <PluginMetadata>
+                    <md:Key>Observation.Channel.Colour.0</md:Key>
+                    <md:Value>r=255 g=000 b=000</md:Value>
+                    <md:DataTypeName>ColourData</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>The Colour of the VLF Rx Frequency Response graph</md:Description>
+                </PluginMetadata>
+
+                <!-- The Signal Processor is always CommandCodeBase 70 -->
+                <CommandCodeBase>70</CommandCodeBase>
+
+                <Command>
+                    <Identifier>runOscillator</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Controls the Oscillator mode</Description>
+                    <Parameter>
+                        <Name>Run</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>FreeRun,Stop</Choices>
+                        <Tooltip>Allowed values: FreeRun, Stop</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>measureFrequencyResponse</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <!-- Obtain the data by iterating this 'macro' -->
+                    <!-- SignalProcessor.setOscillatorFrequency(_parameter1_) -->
+                    <SteppedDataCommand>
+                        <SteppedCommandCodeBase>70</SteppedCommandCodeBase>
+                        <SteppedCommandCode>05</SteppedCommandCode>
+                    </SteppedDataCommand>
+                    <!-- Utilities.wait(_parameter4_) -->
+                    <SteppedDataCommand>
+                        <SteppedCommandCodeBase>01</SteppedCommandCodeBase>
+                        <SteppedCommandCode>10</SteppedCommandCode>
+                    </SteppedDataCommand>
+                    <!-- Analogue.getA2D(_parameter5_) -->
+                    <SteppedDataCommand>
+                        <SteppedCommandCodeBase>02</SteppedCommandCodeBase>
+                        <SteppedCommandCode>00</SteppedCommandCode>
+                    </SteppedDataCommand>
+                    <Description>Measures the Frequency Response of a VLF receiver connected to the Controller</Description>
+                    <Category>Capture</Category>
+                    <Parameter>
+                        <Name>Output.Mixer</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!MixerSourceList</Choices>
+                        <Tooltip>A list of the audio mixers with available Source Lines (inputs)</Tooltip>
+                    </Parameter>
+                    <!-- The next Parameter is always the InitialValue, passed to the first SteppedCommand  -->
+                    <Parameter>
+                        <Name>Frequency.Start</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <!-- The Units of each control Parameter of a SteppedDataCommand must be the same! -->
+                        <Units>Hz</Units>
+                        <Regex>^([1-9][0-9]{0,3}|[1-4][0-9]{4}|50000)$</Regex>
+                        <Value>1000</Value>
+                        <Tooltip>Oscillator Start Frequency. Allowed Values: 1 to 50000 Hz</Tooltip>
+                    </Parameter>
+                    <!-- This Parameter is ignored by the SteppedCommands -->
+                    <Parameter>
+                        <Name>Frequency.End</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <!-- The Units of each control Parameter of a SteppedDataCommand must be the same! -->
+                        <Units>Hz</Units>
+                        <Regex>^([1-9][0-9]{0,3}|[1-4][0-9]{4}|50000)$</Regex>
+                        <Value>10000</Value>
+                        <Tooltip>Oscillator End Frequency. Allowed Values: 1 to 50000 Hz</Tooltip>
+                    </Parameter>
+                    <!-- This Parameter is ignored by the SteppedCommands -->
+                    <Parameter>
+                        <Name>Sweep.StepSize</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <!-- The Units of each control Parameter of a SteppedDataCommand must be the same! -->
+                        <Units>Hz</Units>
+                        <Choices>10,20,50,100,200,500,1000,2000,5000</Choices>
+                        <Tooltip>Allowed values: 10, 20, 50, 100, 200, 500, 1000, 2000, 5000 Hz</Tooltip>
+                    </Parameter>
+                    <!-- This Parameter is passed to the SteppedCommands -->
+                    <Parameter>
+                        <Name>Sweep.DwellTime</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Regex>^0*([1-9][0-9]{0,3}|10000)$</Regex>
+                        <Tooltip>Allowed values: 1 to 10000 sec</Tooltip>
+                    </Parameter>
+                    <!-- This Parameter is ignored by the SteppedCommands -->
+                    <!-- <Parameter>
+                        <Name>Filter.Name</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!FilterList</Choices>
+                        <Tooltip>Select a Filter to apply to the RawData to create ProcessedData</Tooltip>
+                    </Parameter> -->
+                    <!-- This Parameter is ignored by the SteppedCommands -->
+                    <Parameter>
+                        <Name>A2D.Channel</Name>
+                        <InputDataType>
+                            <DataTypeName>UnsignedDecimalByte</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- Staribus Decimal bytes are always three digits 000...255 -->
+                            <DataTypeName>UnsignedDecimalByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^[0-3]$</Regex>
+                        <Tooltip>Allowed Values: Channels 0 to 3</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>RealtimeUpdate</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>false,true</Choices>
+                        <Tooltip>Controls updates on every sample read. Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <!-- This Parameter is ignored by the SteppedCommands -->
+                    <Parameter>
+                        <Name>VerboseLogging</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>false,true</Choices>
+                        <Tooltip>Controls verbose Command execution logging. Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Response.Timestamp</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01]) (([0-1][0-9]|[2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>configureOscillator</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Set the Oscillator parameters</Description>
+                    <Parameter>
+                        <Name>Output.Mixer</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!MixerSourceList</Choices>
+                        <Tooltip>A list of the audio mixers with available Source Lines (inputs)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Waveform.Type</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!OscillatorWaveformList</Choices>
+                        <Tooltip>Choose the required oscillator output waveform</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Waveform.SampleRate</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>InverseSeconds</Units>
+                        <Choices>96000,48000,44100,32000,22050,16000,8000</Choices>
+                        <Value>44100</Value>
+                        <Tooltip>Allowed values: 96000, 48000, 44100, 32000, 22050, 16000, 8000 per second</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Waveform.Encoding</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>LinearPCM</Choices>
+                        <Value>LinearPCM</Value>
+                        <Tooltip>Allowed values: LinearPCM</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Waveform.BitsPerSample</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>16</Choices>
+                        <Value>16</Value>
+                        <Tooltip>Allowed values: 16 bits per sample</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Waveform.Channels</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>2</Choices>
+                        <Value>2</Value>
+                        <Tooltip>Allowed values: 2 (stereo) channels</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Oscillator.Frequency</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Hz</Units>
+                        <!-- Limit the range to 1 to 50,000 Hz -->
+                        <!-- See: http://utilitymill.com/utility/Regex_For_Range -->
+                        <Regex>^([1-9][0-9]{0,3}|[1-4][0-9]{4}|50000)(\.\d+)?$</Regex>
+                        <Value>1000</Value>
+                        <Tooltip>FreeRun or Sweep Start Frequency. Allowed Values: 1.0 to 50000.9 Hz</Tooltip>
+                    </Parameter>
+                    <!--<Parameter>-->
+                        <!--<Name>Frequency.End</Name>-->
+                        <!--<InputDataType>-->
+                            <!--<DataTypeName>DecimalInteger</DataTypeName>-->
+                        <!--</InputDataType>-->
+                        <!--<TrafficDataType>-->
+                            <!--<DataTypeName>DecimalInteger</DataTypeName>-->
+                        <!--</TrafficDataType>-->
+                        <!--<Units>Hz</Units>-->
+                        <!--&lt;!&ndash; Limit the range to 1 to 50,000 Hz &ndash;&gt;-->
+                        <!--&lt;!&ndash; See: http://utilitymill.com/utility/Regex_For_Range &ndash;&gt;-->
+                        <!--<Regex>^([1-9][0-9]{0,3}|[1-4][0-9]{4}|50000)$</Regex>-->
+                        <!--<Value>10000</Value>-->
+                        <!--<Tooltip>Sweep End Frequency. Allowed Values: 1 to 50000 Hz</Tooltip>-->
+                    <!--</Parameter>-->
+                    <Parameter>
+                        <Name>Oscillator.Amplitude</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>%</Units>
+                        <!-- See: http://utilitymill.com/utility/Regex_For_Range -->
+                        <Regex>^([0-9]{1,2})\.([0-9])$</Regex>
+                        <Value>99.9</Value>
+                        <Tooltip>Amplitude as a percentage of maximum. Allowed Values: 0.0 to 99.9</Tooltip>
+                    </Parameter>
+                    <!--<Parameter>-->
+                        <!--<Name>Sweep.StepSize</Name>-->
+                        <!--<InputDataType>-->
+                            <!--<DataTypeName>DecimalInteger</DataTypeName>-->
+                        <!--</InputDataType>-->
+                        <!--<TrafficDataType>-->
+                            <!--<DataTypeName>DecimalInteger</DataTypeName>-->
+                        <!--</TrafficDataType>-->
+                        <!--<Units>Hz</Units>-->
+                        <!--&lt;!&ndash; Limit the range to 1 to 1000 Hz &ndash;&gt;-->
+                        <!--&lt;!&ndash; See: http://utilitymill.com/utility/Regex_For_Range &ndash;&gt;-->
+                        <!--<Regex>^([1-9][0-9]{0,2}|1000)$</Regex>-->
+                        <!--<Value>100</Value>-->
+                        <!--<Tooltip>The frequency change for each step of the sweep. Allowed Values: 1 to 1000 Hz</Tooltip>-->
+                    <!--</Parameter>-->
+                    <!--<Parameter>-->
+                        <!--<Name>Sweep.DwellTime</Name>-->
+                        <!--<InputDataType>-->
+                            <!--<DataTypeName>DecimalInteger</DataTypeName>-->
+                        <!--</InputDataType>-->
+                        <!--<TrafficDataType>-->
+                            <!--<DataTypeName>DecimalInteger</DataTypeName>-->
+                        <!--</TrafficDataType>-->
+                        <!--<Units>Seconds</Units>-->
+                        <!--&lt;!&ndash; Limit the range to 1 to 100 seconds &ndash;&gt;-->
+                        <!--&lt;!&ndash; See: http://utilitymill.com/utility/Regex_For_Range &ndash;&gt;-->
+                        <!--<Regex>^([1-9][0-9]?|100)$</Regex>-->
+                        <!--<Value>1</Value>-->
+                        <!--<Tooltip>The dwell time for each step of the sweep. Allowed Values: 1 to 100 seconds</Tooltip>-->
+                    <!--</Parameter>-->
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setWaveformType</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Set the Waveform Type of the Oscillator</Description>
+                    <Parameter>
+                        <Name>Waveform.Type</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!OscillatorWaveformList</Choices>
+                        <Tooltip>Choose the required oscillator output waveform</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setWaveformSampleRate</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Set the Waveform Sample Rate of the Oscillator</Description>
+                    <Parameter>
+                        <Name>Waveform.SampleRate</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>InverseSeconds</Units>
+                        <Choices>96000,48000,44100,32000,22050,16000,8000</Choices>
+                        <Value>44100</Value>
+                        <Tooltip>Allowed values: 96000, 48000, 44100, 32000, 22050, 16000, 8000 per second</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setOscillatorFrequency</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <!-- Link back to SignalProcessor.measureFrequencyResponse() -->
+                    <!-- WARNING! This version can have only ONE entry in this list! -->
+                    <SteppedDataCommand>
+                        <ParentCommandCodeBase>70</ParentCommandCodeBase>
+                        <ParentCommandCode>01</ParentCommandCode>
+                    </SteppedDataCommand>
+                    <Description>Set the Frequency of the Oscillator</Description>
+                    <Parameter>
+                        <Name>Oscillator.Frequency</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Hz</Units>
+                        <!-- Limit the range to 1 to 50,000 Hz -->
+                        <!-- See: http://utilitymill.com/utility/Regex_For_Range -->
+                        <Regex>^([1-9][0-9]{0,3}|[1-4][0-9]{4}|50000)(\.\d+)?$</Regex>
+                        <Value>1000</Value>
+                        <Tooltip>Oscillator Frequency. Allowed Values: 1.0 to 50000.9 Hz</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setOscillatorAmplitude</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Set the Amplitude of the Oscillator</Description>
+                    <Parameter>
+                        <Name>Oscillator.Amplitude</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalFloat</DataTypeName>
+                        </TrafficDataType>
+                        <Units>%</Units>
+                        <!-- See: http://utilitymill.com/utility/Regex_For_Range -->
+                        <Regex>^([0-9]{1,2})\.([0-9])$</Regex>
+                        <Value>99.9</Value>
+                        <Tooltip>Amplitude as a percentage of maximum. Allowed Values: 0.0 to 99.9</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>playAudioFile</Identifier>
+                    <CommandCode>07</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Play an audio file from the local file system</Description>
+                    <Parameter>
+                        <Name>Output.Mixer</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!MixerSourceList</Choices>
+                        <Tooltip>A list of the audio mixers with available Source Lines (inputs)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename of the audio file</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>importAudioFile</Identifier>
+                    <CommandCode>08</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Import an audio file from the local file system, as RawData</Description>
+                    <Category>Import</Category>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename of the audio file to be imported</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- VLF Plugin -->
+
+            <Plugin>
+                <Identifier>VlfPlugin</Identifier>
+                <Provider>PrimaryPlugin</Provider>
+                <Name>Vlf Plugin</Name>
+                <Description>The Vlf Plugin</Description>
+                <ResourceKey>VlfPlugin</ResourceKey>
+
+                <!-- The VLF Plugin is always CommandCodeBase 04 -->
+                <CommandCodeBase>04</CommandCodeBase>
+
+                <Command>
+                    <Identifier>getTemperature</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0003</CommandVariant>
+                    <Description>Gets the Temperature of the VLF Plugin</Description>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>VLF.Temperature</Name>
+                        <DataTypeName>DecimalFloat</DataTypeName>
+                        <Units>Celsius</Units>
+                        <!-- (- or +), once or not at all -->
+                        <!-- zero or more digits [0...9] -->
+                        <!-- decimal point followed by one or more digits, once or not at all -->
+                        <Regex>^(-|\+)?\d*(\.\d+)?$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getRealtimeData</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0003</CommandVariant>
+                    <!-- Link back to DataCapture.captureRawDataRealtime() -->
+                    <IteratedDataCommand>
+                        <ParentCommandCodeBase>03</ParentCommandCodeBase>
+                        <ParentCommandCode>07</ParentCommandCode>
+                    </IteratedDataCommand>
+                    <Description>Gets the realtime output of the VLF Receiver</Description>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Realtime</Name>
+                        <DataTypeName>StaribusMultichannelData</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <!-- We know there must be one channel of DecimalFloat followed by 1 channel of DecimalInteger, -->
+                        <!-- each channel separated by Ascii.RS (1E hex) -->
+                        <!-- i.e. Temperature, Output-->
+                        <Regex>^(-|\+)?\d*(\.\d+)?\x1E0*([0-9]{1,3}|1[0-9]{3}|2[0-4][0-9]{2}|2500)$</Regex>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- MetadataManager Plugin -->
+
+            <Plugin>
+                <!-- A virtual Plugin -->
+                <Identifier>MetadataManager</Identifier>
+                <Provider>HostPlugin</Provider>
+                <Name>MetadataManager</Name>
+                <Description>The MetadataManager Module</Description>
+                <ResourceKey>MetadataManager</ResourceKey>
+
+                <!-- The MetadataManager Plugin is always CommandCodeBase 58 -->
+                <CommandCodeBase>58</CommandCodeBase>
+
+                <Command>
+                    <Identifier>importMetadata</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Import the selected Metadata</Description>
+                    <Parameter>
+                        <Name>MetadataType</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Framework,Observatory,Observer,Observation,Instrument,Controller,!PluginList</Choices>
+                        <Tooltip>Allowed values: Framework, Observatory, Observer, Observation, Instrument, Controller, All Plugins</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>importMetadataLocal</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Import a custom Metadata file from the local file system</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>workspace</Value>
+                        <Tooltip>The filename of the Metadata to be imported</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setMetadataValue</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Set the Value of the selected Metadata item</Description>
+                    <Parameter>
+                        <Name>Metadata.Key</Name>
+                        <InputDataType>
+                            <DataTypeName>MetadataKey</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Tooltip>A Metadata Key valid for the current Instrument and dataset</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Metadata.Value</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Tooltip>The requested new Value of the Metadata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportMetadata</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current MetaData in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/Metadata</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/Metadata</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>removeMetadata</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Remove the selected Metadata</Description>
+                    <Parameter>
+                        <Name>MetadataType</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Framework,Observatory,Observer,Observation,Instrument,MetadataMetadata</Choices>
+                        <Tooltip>Allowed values: Framework, Observatory, Observer, Observation, Instrument (all), MetadataMetadata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>importPointsOfInterest</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Import the selected PointsOfInterest and LinesOfInterest</Description>
+                    <Parameter>
+                        <Name>PointOfInterestType</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Framework,Observatory,Instrument</Choices>
+                        <Tooltip>Allowed values: Framework, Observatory, Instrument</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>removePointsOfInterest</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Remove the selected PointsOfInterest and LinesOfInterest</Description>
+                    <Parameter>
+                        <Name>PointOfInterestType</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Framework,Observatory,Instrument</Choices>
+                        <Tooltip>Allowed values: Framework, Observatory, Instrument</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Importer Plugin -->
+
+            <Plugin>
+                <!-- A virtual Controller -->
+                <Identifier>Importer</Identifier>
+                <Provider>HostPlugin</Provider>
+                <Name>Importer</Name>
+                <Description>The Importer Module</Description>
+                <ResourceKey>Importer</ResourceKey>
+
+                <PluginMetadata>
+                    <md:Key>Importer.Example</md:Key>
+                    <md:Value>Test plugin metadata</md:Value>
+                    <md:DataTypeName>String</md:DataTypeName>
+                    <md:Units>Dimensionless</md:Units>
+                    <md:Description>An item of PluginMetadata for testing</md:Description>
+                </PluginMetadata>
+
+                <CommandCodeBase>80</CommandCodeBase>
+
+                <Command>
+                    <Identifier>importRawDataLocal</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Get a single data file from the local file system</Description>
+                    <Category>Import</Category>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The filename to be processed</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata,RadioSkyPipe,JohnCook</Choices>
+                        <Tooltip>Allowed values: FormattedStardata,CompressedStardata,RadioSkyPipe,CommaSeparated,TabSeparated,JohnCook</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Import.Filter</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>!FilterList</Choices>
+                        <Tooltip>Select a Filter to apply to the RawData to create ProcessedData</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Exporter Plugin -->
+
+            <Plugin>
+                <!-- A virtual Plugin -->
+                <Identifier>Exporter</Identifier>
+                <Provider>HostPlugin</Provider>
+                <Name>Exporter</Name>
+                <Description>The Exporter Module</Description>
+                <ResourceKey>Exporter</ResourceKey>
+
+                <CommandCodeBase>81</CommandCodeBase>
+
+                <Command>
+                    <Identifier>exportCommandLog</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Command Log in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/CommandLog</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/CommandLog</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportChart</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current chart as an image in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/Chart</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/Chart</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>png,jpg</Choices>
+                        <Tooltip>Allowed values: JPG, PNG (PNG preferred)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Width</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Value>1024</Value>
+                        <Tooltip>The width of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Height</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^0*(3[2-9]|[4-9][0-9]|[1-9][0-9]{2}|[12][0-9]{3}|3000)$</Regex>
+                        <Value>768</Value>
+                        <Tooltip>The height of the image in pixels (32 to 3000)</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportProcessedData</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current processed data in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/ProcessedData</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/ProcessedData</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportRawData</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current raw data in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/RawData</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/RawData</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportMetadata</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current MetaData in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/Metadata</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/Metadata</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportRegionalMap</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current Regional Map as an image in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/RegionalMap</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/RegionalMap</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>png,jpg,gif</Choices>
+                        <Tooltip>Allowed values: PNG, JPG, GIF</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportEventLog</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current Event Log in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/EventLog</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/EventLog</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportConfiguration</Identifier>
+                    <CommandCode>07</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the current Instrument configuration in the specified file and format</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/Configuration</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/Configuration</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated,FormattedStardata,CompressedStardata</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportCommandLexicon</Identifier>
+                    <CommandCode>08</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Instrument Command Lexicon in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/CommandLexicon</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/CommandLexicon</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Format</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>CommaSeparated,TabSeparated</Choices>
+                        <Tooltip>Allowed values: CommaSeparated,TabSeparated</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>exportInstrumentXML</Identifier>
+                    <CommandCode>09</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Saves the Instrument XML in the specified file</Description>
+                    <Parameter>
+                        <Name>Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <!-- ToDo Regex -->
+                        <Value>archive/InstrumentXML</Value>
+                        <Tooltip>The pathname/filename to be saved without file extension e.g. archive/InstrumentXML</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Timestamp</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>true,false</Choices>
+                        <Tooltip>Allowed values: true or false, to control the addition of a timestamp to the filename</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Controller and Secondary Plugins -->
+            <!-- ............................................................................... -->
+
+            <!-- ............................................................................... -->
+            <!-- Analogue Plugin -->
+
+            <Plugin>
+                <!-- A virtual Plugin -->
+                <Identifier>Analogue</Identifier>
+                <Provider>Controller</Provider>
+                <Name>Analogue</Name>
+                <Description>The Controller Analogue facilities</Description>
+                <ResourceKey>Analogue</ResourceKey>
+
+                <!-- The Analogue Plugin is always CommandCodeBase 02 -->
+                <CommandCodeBase>02</CommandCodeBase>
+
+                <Command>
+                    <Identifier>getA2D</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <!-- Link back to SignalProcessor.measureFrequencyResponse() -->
+                    <!-- WARNING! This version can have only ONE entry in this list! -->
+                    <SteppedDataCommand>
+                        <ParentCommandCodeBase>70</ParentCommandCodeBase>
+                        <ParentCommandCode>01</ParentCommandCode>
+                    </SteppedDataCommand>
+                    <Description>Gets the voltage read by the selected A2D channel</Description>
+                    <Parameter>
+                        <Name>A2D.Channel</Name>
+                        <InputDataType>
+                            <DataTypeName>UnsignedDecimalByte</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- Staribus Decimal bytes are always three digits 000...255 -->
+                            <DataTypeName>UnsignedDecimalByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^[0-7]$</Regex>
+                        <Tooltip>Allowed Values: Channels 0 to 7</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>A2D.Value</Name>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                        <Units>mV</Units>
+                        <Regex>^0*([0-9]{1,3}|1[0-9]{3}|2[0-4][0-9]{2}|2500)$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>getD2A</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Gets the voltage output by the selected D2A channel</Description>
+                    <Parameter>
+                        <Name>D2A.Channel</Name>
+                        <InputDataType>
+                            <DataTypeName>UnsignedDecimalByte</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- Staribus Decimal bytes are always three digits 000...255 -->
+                            <DataTypeName>UnsignedDecimalByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^[0|1]$</Regex>
+                        <Tooltip>Allowed Values: Channels 0 or 1</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>D2A.Value</Name>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                        <Units>mV</Units>
+                        <Regex>^0*([0-9]{1,3}|1[0-9]{3}|2[0-4][0-9]{2}|2500)$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setD2A</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Sets the voltage to be output by the selected D2A channel</Description>
+                    <Parameter>
+                        <Name>D2A.Channel</Name>
+                        <InputDataType>
+                            <DataTypeName>UnsignedDecimalByte</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- Staribus Decimal bytes are always three digits 000...255 -->
+                            <DataTypeName>UnsignedDecimalByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^[0|1]$</Regex>
+                        <Tooltip>Allowed Values: Channels 0 or 1</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>D2A.Value</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <!-- Staribus Decimal integers are always four digits 0000...9999 -->
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>mV</Units>
+                        <Regex>^0*([0-9]{1,3}|1[0-9]{3}|2[0-4][0-9]{2}|2500)$</Regex>
+                        <Tooltip>Allowed Values: 0000 to 2500 milliVolts</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Utilities Plugin -->
+
+            <Plugin>
+                <!-- A virtual Plugin -->
+                <Identifier>Utilities</Identifier>
+                <Provider>Controller</Provider>
+                <Name>Utilities</Name>
+                <Description>The Utilities Module</Description>
+                <ResourceKey>Utilities</ResourceKey>
+
+                <!-- The Utilities Plugin is always CommandCodeBase 01 -->
+                <CommandCodeBase>01</CommandCodeBase>
+
+                <Command>
+                    <Identifier>getClockDate</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Gets the Date from the Controller clock</Description>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Clock.Date</Name>
+                        <DataTypeName>Date</DataTypeName>
+                        <Units>YearMonthDay</Units>
+                        <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setClockDate</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Sets the Date on the Controller clock</Description>
+                    <Parameter>
+                        <Name>Clock.Date</Name>
+                        <InputDataType>
+                            <DataTypeName>Date</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>YearMonthDay</Units>
+                        <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$</Regex>
+                        <Tooltip>Format YYYY-MM-DD</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+                <Command>
+                    <Identifier>getClockTime</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Gets the Time from the Controller clock</Description>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Clock.Time</Name>
+                        <DataTypeName>Time</DataTypeName>
+                        <Units>HourMinSec</Units>
+                        <Regex>^(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setClockTime</Identifier>
+                    <CommandCode>03</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Sets the Time on the Controller clock</Description>
+                    <Parameter>
+                        <Name>Clock.Time</Name>
+                        <InputDataType>
+                            <DataTypeName>Time</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>HourMinSec</Units>
+                        <Regex>^(([0-1][0-9]|[2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+                        <Tooltip>Format HH:MM:SS</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+                <Command>
+                    <Identifier>getTemperature</Identifier>
+                    <CommandCode>04</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Gets the Temperature of the Controller</Description>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>Controller.Temperature</Name>
+                        <DataTypeName>DecimalFloat</DataTypeName>
+                        <Units>Celsius</Units>
+                        <!-- (- or +), once or not at all -->
+                        <!-- zero or more digits [0...9] -->
+                        <!-- decimal point followed by one or more digits, once or not at all -->
+                        <Regex>^(-|\+)?\d*(\.\d+)?$</Regex>
+                    </Response>
+                </Command>
+
+                <!-- Low-level developer functions! -->
+                <Command>
+                    <Identifier>getMemoryPage</Identifier>
+                    <CommandCode>05</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Gets the specified page from the EEPROM memory</Description>
+                    <Parameter>
+                        <Name>ModuleAddress</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>UnsignedHexByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>[0-7]</Regex>
+                        <Tooltip>Allowed Values: 0 to 7 (0 is the Controller, 1 the Primary Plugin)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>PageNumber</Name>
+                        <InputDataType>
+                            <DataTypeName>UnsignedHexByte</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>UnsignedHexByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^[0-9A-Fa-f][0-9A-Fa-f]$</Regex>
+                        <Tooltip>Allowed Values: 00 to FF Hex</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Response>
+                        <Name>MemoryPage</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>^\p{ASCII}{256}$</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>setMemoryPage</Identifier>
+                    <CommandCode>06</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Sets the data into the specified page in the EEPROM memory</Description>
+                    <Parameter>
+                        <Name>ModuleAddress</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>UnsignedHexByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>[0-7]</Regex>
+                        <Tooltip>Allowed Values: 0 to 7 (0 is the Controller, 1 the Primary Plugin)</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>PageNumber</Name>
+                        <InputDataType>
+                            <DataTypeName>UnsignedHexByte</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>UnsignedHexByte</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^[0-9A-Fa-f][0-9A-Fa-f]$</Regex>
+                        <Tooltip>Allowed Values: 00 to FF Hex</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Data</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Regex>^\p{Graph}{256}$</Regex>
+                        <Tooltip>The data must contain exactly 256 ASCII characters</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+                <Command>
+                    <Identifier>wait</Identifier>
+                    <CommandCode>10</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <!-- Link back to SignalProcessor.measureFrequencyResponse() -->
+                    <!-- WARNING! This version can have only ONE entry in this list! -->
+                    <SteppedDataCommand>
+                        <ParentCommandCodeBase>70</ParentCommandCodeBase>
+                        <ParentCommandCode>01</ParentCommandCode>
+                    </SteppedDataCommand>
+                    <Description>Waits for the specified number of Seconds</Description>
+                    <Parameter>
+                        <Name>WaitPeriod</Name>
+                        <InputDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>DecimalInteger</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Seconds</Units>
+                        <Regex>^0*([1-9][0-9]{0,3}|10000)$</Regex>
+                        <Tooltip>Allowed values: 1 to 10000sec</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>copyResponseToClipboard</Identifier>
+                    <CommandCode>07</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Copies the most recent ResponseValue to the host Clipboard</Description>
+                    <SendToPort>false</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+                <Command>
+                    <Identifier>enableBacklight</Identifier>
+                    <CommandCode>08</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Controls the LCD Display backlight</Description>
+                    <Parameter>
+                        <Name>EnableBacklight</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>false,true</Choices>
+                        <Tooltip>Controls the LCD Display backlight. Allowed values: true or false</Tooltip>
+                    </Parameter>
+                    <SendToPort>true</SendToPort>
+                    <Ack>
+                        <Name>Ack</Name>
+                    </Ack>
+                </Command>
+
+            </Plugin>
+
+            <!-- ............................................................................... -->
+            <!-- Builder Plugin -->
+
+            <Plugin>
+                <!-- A virtual HostPlugin -->
+                <Identifier>Builder</Identifier>
+                <Provider>HostPlugin</Provider>
+                <Name>Builder</Name>
+                <Description>The Builder Module</Description>
+                <Category>Builder</Category>
+                <ResourceKey>Builder</ResourceKey>
+
+                <!-- The Builder Plugin is always CommandCodeBase FF -->
+                <CommandCodeBase>FF</CommandCodeBase>
+
+                <Command>
+                    <Identifier>validateConfigurationXML</Identifier>
+                    <CommandCode>00</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Validate the XML of the entire Instrument and its Plugins</Description>
+                    <Category>Builder</Category>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Report.Validation</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>writeConfigurationXML</Identifier>
+                    <CommandCode>01</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Write the Instrument XML Configuration file for the selected Module</Description>
+                    <Category>Builder</Category>
+                    <Parameter>
+                        <Name>Configuration.Filename</Name>
+                        <InputDataType>
+                            <DataTypeName>FileName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Value>workspace/configuration/config</Value>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname/filename to write the Configuration file</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Configuration.Module</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>Controller,PrimaryPlugin,SecondaryPlugin,HostPlugin</Choices>
+                        <Tooltip>Select the source Module for the configuration file. Allowed values: Controller, PrimaryPlugin, SecondaryPlugin, HostPlugin</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Configuration.Compressed</Name>
+                        <InputDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>Boolean</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>false,true</Choices>
+                        <Tooltip>Allowed values: true or false This removes all unnecessary characters from the XML</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+                <Command>
+                    <Identifier>writeCommandMap</Identifier>
+                    <CommandCode>02</CommandCode>
+                    <CommandVariant>0000</CommandVariant>
+                    <Description>Write the Command mapping files required to build the Controller Operating System</Description>
+                    <Category>Builder</Category>
+                    <Parameter>
+                        <Name>Map.Pathname</Name>
+                        <InputDataType>
+                            <DataTypeName>PathName</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Value>workspace/configuration</Value>
+                        <!-- ToDo Regex -->
+                        <Tooltip>The pathname to write the Command mapping files</Tooltip>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Map.Language</Name>
+                        <InputDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </InputDataType>
+                        <TrafficDataType>
+                            <DataTypeName>String</DataTypeName>
+                        </TrafficDataType>
+                        <Units>Dimensionless</Units>
+                        <Choices>C</Choices>
+                        <Tooltip>Selected the Programming Language for the Command mapping file. Allowed values: C</Tooltip>
+                    </Parameter>
+                    <SendToPort>false</SendToPort>
+                    <Response>
+                        <Name>Ack</Name>
+                        <DataTypeName>String</DataTypeName>
+                        <Units>Dimensionless</Units>
+                        <Regex>Ok</Regex>
+                    </Response>
+                </Command>
+
+            </Plugin>
+        </Controller>
+
+        <Name>Staribus Client VLF Receiver</Name>
+        <Description>The VLF receiver covers 10kHz to 30kHZ, manually tuned.</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusvlf.StaribusVlfReceiver</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+
+        <ResourceKey>StaribusClientVlfReceiver</ResourceKey>
+
+        <!-- Instrument Metadata optionally goes here -->
+        <InstrumentMetadata>
+            <md:Key>Observation.Channel.Frequency.0</md:Key>
+            <md:Value>23.4</md:Value>
+            <md:DataTypeName>DecimalFloat</md:DataTypeName>
+            <md:Units>kHz</md:Units>
+            <md:Description>The frequency setting of the VLF Receiver</md:Description>
+        </InstrumentMetadata>
+
+        <InstrumentMetadata>
+            <md:Key>Instrument.Staribus.Address</md:Key>
+            <md:Value>3</md:Value>
+            <md:DataTypeName>DecimalInteger</md:DataTypeName>
+            <md:Units>Dimensionless</md:Units>
+            <md:Description>The Staribus address of the Instrument to which all remote commands will be sent</md:Description>
+        </InstrumentMetadata>
+
+        <!-- Control Panel Metadata Keys optionally go here -->
+        <!-- Left Hand Control Panel Indicator -->
+        <IndicatorMetadataKey>Observation.Channel.Frequency.0</IndicatorMetadataKey>
+        <!-- Right Hand Control Panel Indicator -->
+        <IndicatorMetadataKey>Observation.Channel.Value.0</IndicatorMetadataKey>
+
+        <DAO>
+            <Name>VLF</Name>
+            <Description>This DAO controls a remote VLF Receiver on Staribus, via Starinet</Description>
+            <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.staribusvlf.dao.StaribusClientVlfRxDAO</DaoClassname>
+
+            <!-- The DAO Port (possibly multiple Ports one day! -->
+            <!-- The Port is either a unique instance for this DAO, -->
+            <!-- OR a use of the Observatory StaribusPort -->
+            <!-- In this case, use the streams for the Ethernet connection to Starinet -->
+
+            <Port>
+                <Name>Starinet</Name>
+                <Description>The Starinet Port</Description>
+                <ResourceKey>Starinet</ResourceKey>
+                <TxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.common.dao.StarinetUdpTxStream</TxStream>
+                <RxStream>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.common.dao.StarinetUdpRxStream</RxStream>
+            </Port>
+
+            <!-- The DAO has no Inputs -->
+
+            <!-- DAO Outputs -->
+            <Output>
+                <Name>CommandLog</Name>
+                <Description>The Command Log produced by the DAO</Description>
+                <Tooltip>The Command Log</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>ProcessedData</Name>
+                <Description>The Processed Data produced by the DAO</Description>
+                <Tooltip>The XYDataset (processed)</Tooltip>
+                <DataTypeName>XYDataset</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>RawData</Name>
+                <Description>The Raw Data produced by the DAO</Description>
+                <Tooltip>The Raw Data (unprocessed)</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>MetaData</Name>
+                <Description>The Meta Data produced by the DAO</Description>
+                <Tooltip>The Meta Data</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>RegionalMap</Name>
+                <Description>The RegionalMap produced by the DAO</Description>
+                <Tooltip>The RegionalMap</Tooltip>
+                <DataTypeName>ImageData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+             <Output>
+                <Name>EventLog</Name>
+                <Description>The Event Log produced by the DAO</Description>
+                <Tooltip>The Event Log</Tooltip>
+                <DataTypeName>VectorData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+           <Output>
+                <Name>Configuration</Name>
+                <Description>The Configuration produced by the DAO</Description>
+                <Tooltip>The Configuration</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>CommandLexicon</Name>
+                <Description>The Instrument Command Lexicon produced by the DAO</Description>
+                <Tooltip>The Instrument Command Lexicon</Tooltip>
+                <DataTypeName>ListData</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+            <Output>
+                <Name>XML</Name>
+                <Description>The Instrument XML Configuration produced by the DAO</Description>
+                <Tooltip>The Instrument XML Configuration</Tooltip>
+                <DataTypeName>XML</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Output>
+        </DAO>
+    </Instrument>
+
+</Instruments>

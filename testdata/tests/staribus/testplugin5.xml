@@ -1,0 +1,21 @@
+<!-- Plugin 5 -->
+<Plugin>
+    <Identifier>Plugin5</Identifier>
+    <Name>Plugin5</Name>
+    <Description>The Plugin5 Module</Description>
+    <ResourceKey>Plugin5</ResourceKey>
+
+    <CommandCodeBase>15</CommandCodeBase>
+
+    <Command>
+        <Identifier>invalidCommand</Identifier>
+        <CommandCode>00</CommandCode>
+        <CommandVariant>0000</CommandVariant>
+        <Description>Just an example</Description>
+        <SendToPort>false</SendToPort>
+        <Ack>
+            <Name>Ack</Name>
+        </Ack>
+    </Command>
+
+</Plugin>

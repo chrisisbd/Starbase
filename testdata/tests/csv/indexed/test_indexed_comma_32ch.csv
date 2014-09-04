@@ -1,0 +1,575 @@
+# Indexed, 32 Channels, NO Temperature, CSV
+# Contact starbase@ukraa.com for support
+
+# All Metadata are defined with {Key, Value, DataType, Units, Description}
+# Keys, DataTypes and Units must appear in their respective Starbase Dictionaries
+# Comments are preceded with '#' and are not preserved during export-import
+
+# This file represents an Observation, so initially it will contain only Observation Metadata
+
+# These Metadata items are required for Charting support
+Observation.Title,Test Multichannel Indexed Comma Separated Values,String, Dimensionless,The title for the Chart
+Observation.Axis.Label.X,X increment,String, Dimensionless,The X axis
+Observation.Axis.Label.Y.0,Y value,String, Dimensionless,The Y axis
+
+# The Channel Count
+Observation.Channel.Count,32,DecimalInteger,Dimensionless,The number of data channels
+
+# Channel specifications, arbitrarily set to DataType=DecimalFloat, Units=mV
+
+Observation.Channel.Name.0,Channel 0,String,Dimensionless,The name of Channel 0
+Observation.Channel.Description.0,Channel 0 output,String,Dimensionless,The description of Channel 0
+Observation.Channel.DataType.0,DecimalFloat,DataType,Dimensionless,The DataType of Channel 0
+Observation.Channel.Units.0,mV,Units,Dimensionless,The Units of Channel 0
+
+Observation.Channel.Name.1,Channel 1,String,Dimensionless,The name of Channel 1
+Observation.Channel.Description.1,Channel 1 output,String,Dimensionless,The description of Channel 1
+Observation.Channel.DataType.1,DecimalFloat,DataType,Dimensionless,The DataType of Channel 1
+Observation.Channel.Units.1,mV,Units,Dimensionless,The Units of Channel 1
+
+Observation.Channel.Name.2,Channel 2,String,Dimensionless,The name of Channel 2
+Observation.Channel.Description.2,Channel 2 output,String,Dimensionless,The description of Channel 2
+Observation.Channel.DataType.2,DecimalFloat,DataType,Dimensionless,The DataType of Channel 2
+Observation.Channel.Units.2,mV,Units,Dimensionless,The Units of Channel 2
+
+Observation.Channel.Name.3,Channel 3,String,Dimensionless,The name of Channel 3
+Observation.Channel.Description.3,Channel 3 output,String,Dimensionless,The description of Channel 3
+Observation.Channel.DataType.3,DecimalFloat,DataType,Dimensionless,The DataType of Channel 3
+Observation.Channel.Units.3,mV,Units,Dimensionless,The Units of Channel 3
+
+Observation.Channel.Name.4,Channel 4,String,Dimensionless,The name of Channel 4
+Observation.Channel.Description.4,Channel 4 output,String,Dimensionless,The description of Channel 4
+Observation.Channel.DataType.4,DecimalFloat,DataType,Dimensionless,The DataType of Channel 4
+Observation.Channel.Units.4,mV,Units,Dimensionless,The Units of Channel 4
+
+Observation.Channel.Name.5,Channel 5,String,Dimensionless,The name of Channel 5
+Observation.Channel.Description.5,Channel 5 output,String,Dimensionless,The description of Channel 5
+Observation.Channel.DataType.5,DecimalFloat,DataType,Dimensionless,The DataType of Channel 5
+Observation.Channel.Units.5,mV,Units,Dimensionless,The Units of Channel 5
+
+Observation.Channel.Name.6,Channel 6,String,Dimensionless,The name of Channel 6
+Observation.Channel.Description.6,Channel 6 output,String,Dimensionless,The description of Channel 6
+Observation.Channel.DataType.6,DecimalFloat,DataType,Dimensionless,The DataType of Channel 6
+Observation.Channel.Units.6,mV,Units,Dimensionless,The Units of Channel 6
+
+Observation.Channel.Name.7,Channel 7,String,Dimensionless,The name of Channel 7
+Observation.Channel.Description.7,Channel 7 output,String,Dimensionless,The description of Channel 7
+Observation.Channel.DataType.7,DecimalFloat,DataType,Dimensionless,The DataType of Channel 7
+Observation.Channel.Units.7,mV,Units,Dimensionless,The Units of Channel 7
+
+Observation.Channel.Name.8,Channel 8,String,Dimensionless,The name of Channel 8
+Observation.Channel.Description.8,Channel 8 output,String,Dimensionless,The description of Channel 8
+Observation.Channel.DataType.8,DecimalFloat,DataType,Dimensionless,The DataType of Channel 8
+Observation.Channel.Units.8,mV,Units,Dimensionless,The Units of Channel 8
+
+Observation.Channel.Name.9,Channel 9,String,Dimensionless,The name of Channel 9
+Observation.Channel.Description.9,Channel 9 output,String,Dimensionless,The description of Channel 9
+Observation.Channel.DataType.9,DecimalFloat,DataType,Dimensionless,The DataType of Channel 9
+Observation.Channel.Units.9,mV,Units,Dimensionless,The Units of Channel 9
+
+Observation.Channel.Name.10,Channel 10,String,Dimensionless,The name of Channel 10
+Observation.Channel.Description.10,Channel 10 output,String,Dimensionless,The description of Channel 10
+Observation.Channel.DataType.10,DecimalFloat,DataType,Dimensionless,The DataType of Channel 10
+Observation.Channel.Units.10,mV,Units,Dimensionless,The Units of Channel 10
+
+Observation.Channel.Name.11,Channel 11,String,Dimensionless,The name of Channel 11
+Observation.Channel.Description.11,Channel 11 output,String,Dimensionless,The description of Channel 11
+Observation.Channel.DataType.11,DecimalFloat,DataType,Dimensionless,The DataType of Channel 11
+Observation.Channel.Units.11,mV,Units,Dimensionless,The Units of Channel 11
+
+Observation.Channel.Name.12,Channel 12,String,Dimensionless,The name of Channel 12
+Observation.Channel.Description.12,Channel 12 output,String,Dimensionless,The description of Channel 12
+Observation.Channel.DataType.12,DecimalFloat,DataType,Dimensionless,The DataType of Channel 12
+Observation.Channel.Units.12,mV,Units,Dimensionless,The Units of Channel 12
+
+Observation.Channel.Name.13,Channel 13,String,Dimensionless,The name of Channel 13
+Observation.Channel.Description.13,Channel 13 output,String,Dimensionless,The description of Channel 13
+Observation.Channel.DataType.13,DecimalFloat,DataType,Dimensionless,The DataType of Channel 13
+Observation.Channel.Units.13,mV,Units,Dimensionless,The Units of Channel 13
+
+Observation.Channel.Name.14,Channel 14,String,Dimensionless,The name of Channel 14
+Observation.Channel.Description.14,Channel 14 output,String,Dimensionless,The description of Channel 14
+Observation.Channel.DataType.14,DecimalFloat,DataType,Dimensionless,The DataType of Channel 14
+Observation.Channel.Units.14,mV,Units,Dimensionless,The Units of Channel 14
+
+Observation.Channel.Name.15,Channel 15,String,Dimensionless,The name of Channel 15
+Observation.Channel.Description.15,Channel 15 output,String,Dimensionless,The description of Channel 15
+Observation.Channel.DataType.15,DecimalFloat,DataType,Dimensionless,The DataType of Channel 15
+Observation.Channel.Units.15,mV,Units,Dimensionless,The Units of Channel 15
+
+Observation.Channel.Name.16,Channel 16,String,Dimensionless,The name of Channel 16
+Observation.Channel.Description.16,Channel 16 output,String,Dimensionless,The description of Channel 16
+Observation.Channel.DataType.16,DecimalFloat,DataType,Dimensionless,The DataType of Channel 16
+Observation.Channel.Units.16,mV,Units,Dimensionless,The Units of Channel 16
+
+Observation.Channel.Name.17,Channel 17,String,Dimensionless,The name of Channel 17
+Observation.Channel.Description.17,Channel 17 output,String,Dimensionless,The description of Channel 17
+Observation.Channel.DataType.17,DecimalFloat,DataType,Dimensionless,The DataType of Channel 17
+Observation.Channel.Units.17,mV,Units,Dimensionless,The Units of Channel 17
+
+Observation.Channel.Name.18,Channel 18,String,Dimensionless,The name of Channel 18
+Observation.Channel.Description.18,Channel 18 output,String,Dimensionless,The description of Channel 18
+Observation.Channel.DataType.18,DecimalFloat,DataType,Dimensionless,The DataType of Channel 18
+Observation.Channel.Units.18,mV,Units,Dimensionless,The Units of Channel 18
+
+Observation.Channel.Name.19,Channel 19,String,Dimensionless,The name of Channel 19
+Observation.Channel.Description.19,Channel 19 output,String,Dimensionless,The description of Channel 19
+Observation.Channel.DataType.19,DecimalFloat,DataType,Dimensionless,The DataType of Channel 19
+Observation.Channel.Units.19,mV,Units,Dimensionless,The Units of Channel 19
+
+Observation.Channel.Name.20,Channel 20,String,Dimensionless,The name of Channel 20
+Observation.Channel.Description.20,Channel 20 output,String,Dimensionless,The description of Channel 20
+Observation.Channel.DataType.20,DecimalFloat,DataType,Dimensionless,The DataType of Channel 20
+Observation.Channel.Units.20,mV,Units,Dimensionless,The Units of Channel 20
+
+Observation.Channel.Name.21,Channel 21,String,Dimensionless,The name of Channel 21
+Observation.Channel.Description.21,Channel 21 output,String,Dimensionless,The description of Channel 21
+Observation.Channel.DataType.21,DecimalFloat,DataType,Dimensionless,The DataType of Channel 21
+Observation.Channel.Units.21,mV,Units,Dimensionless,The Units of Channel 21
+
+Observation.Channel.Name.22,Channel 22,String,Dimensionless,The name of Channel 22
+Observation.Channel.Description.22,Channel 22 output,String,Dimensionless,The description of Channel 22
+Observation.Channel.DataType.22,DecimalFloat,DataType,Dimensionless,The DataType of Channel 22
+Observation.Channel.Units.22,mV,Units,Dimensionless,The Units of Channel 22
+
+Observation.Channel.Name.23,Channel 23,String,Dimensionless,The name of Channel 23
+Observation.Channel.Description.23,Channel 23 output,String,Dimensionless,The description of Channel 23
+Observation.Channel.DataType.23,DecimalFloat,DataType,Dimensionless,The DataType of Channel 23
+Observation.Channel.Units.23,mV,Units,Dimensionless,The Units of Channel 23
+
+Observation.Channel.Name.24,Channel 24,String,Dimensionless,The name of Channel 24
+Observation.Channel.Description.24,Channel 24 output,String,Dimensionless,The description of Channel 24
+Observation.Channel.DataType.24,DecimalFloat,DataType,Dimensionless,The DataType of Channel 24
+Observation.Channel.Units.24,mV,Units,Dimensionless,The Units of Channel 24
+
+Observation.Channel.Name.25,Channel 25,String,Dimensionless,The name of Channel 25
+Observation.Channel.Description.25,Channel 25 output,String,Dimensionless,The description of Channel 25
+Observation.Channel.DataType.25,DecimalFloat,DataType,Dimensionless,The DataType of Channel 25
+Observation.Channel.Units.25,mV,Units,Dimensionless,The Units of Channel 25
+
+Observation.Channel.Name.26,Channel 26,String,Dimensionless,The name of Channel 26
+Observation.Channel.Description.26,Channel 26 output,String,Dimensionless,The description of Channel 26
+Observation.Channel.DataType.26,DecimalFloat,DataType,Dimensionless,The DataType of Channel 26
+Observation.Channel.Units.26,mV,Units,Dimensionless,The Units of Channel 26
+
+Observation.Channel.Name.27,Channel 27,String,Dimensionless,The name of Channel 27
+Observation.Channel.Description.27,Channel 27 output,String,Dimensionless,The description of Channel 27
+Observation.Channel.DataType.27,DecimalFloat,DataType,Dimensionless,The DataType of Channel 27
+Observation.Channel.Units.27,mV,Units,Dimensionless,The Units of Channel 27
+
+Observation.Channel.Name.28,Channel 28,String,Dimensionless,The name of Channel 28
+Observation.Channel.Description.28,Channel 28 output,String,Dimensionless,The description of Channel 28
+Observation.Channel.DataType.28,DecimalFloat,DataType,Dimensionless,The DataType of Channel 28
+Observation.Channel.Units.28,mV,Units,Dimensionless,The Units of Channel 28
+
+Observation.Channel.Name.29,Channel 29,String,Dimensionless,The name of Channel 29
+Observation.Channel.Description.29,Channel 29 output,String,Dimensionless,The description of Channel 29
+Observation.Channel.DataType.29,DecimalFloat,DataType,Dimensionless,The DataType of Channel 29
+Observation.Channel.Units.29,mV,Units,Dimensionless,The Units of Channel 29
+
+Observation.Channel.Name.30,Channel 30,String,Dimensionless,The name of Channel 30
+Observation.Channel.Description.30,Channel 30 output,String,Dimensionless,The description of Channel 30
+Observation.Channel.DataType.30,DecimalFloat,DataType,Dimensionless,The DataType of Channel 30
+Observation.Channel.Units.30,mV,Units,Dimensionless,The Units of Channel 30
+
+Observation.Channel.Name.31,Channel 31,String,Dimensionless,The name of Channel 31
+Observation.Channel.Description.31,Channel 31 output,String,Dimensionless,The description of Channel 31
+Observation.Channel.DataType.31,DecimalFloat,DataType,Dimensionless,The DataType of Channel 31
+Observation.Channel.Units.31,mV,Units,Dimensionless,The Units of Channel 31
+
+# Channel Colours grouped together for simplicity, and for ease of copying into code or other files
+Observation.Channel.Colour.0, r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 0 graph
+Observation.Channel.Colour.1, r=255 g=102 b=000,ColourData,Dimensionless,The Colour of the Channel 1 graph
+Observation.Channel.Colour.2, r=255 g=153 b=000,ColourData,Dimensionless,The Colour of the Channel 2 graph
+Observation.Channel.Colour.3, r=255 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 3 graph
+Observation.Channel.Colour.4, r=170 g=230 b=000,ColourData,Dimensionless,The Colour of the Channel 4 graph
+Observation.Channel.Colour.5, r=000 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 5 graph
+Observation.Channel.Colour.6, r=255 g=153 b=204,ColourData,Dimensionless,The Colour of the Channel 6 graph
+Observation.Channel.Colour.7, r=000 g=085 b=204,ColourData,Dimensionless,The Colour of the Channel 7 graph
+Observation.Channel.Colour.8, r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 8 graph
+Observation.Channel.Colour.9, r=255 g=102 b=000,ColourData,Dimensionless,The Colour of the Channel 9 graph
+Observation.Channel.Colour.10,r=255 g=153 b=000,ColourData,Dimensionless,The Colour of the Channel 10 graph
+Observation.Channel.Colour.11,r=255 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 11 graph
+Observation.Channel.Colour.12,r=170 g=230 b=000,ColourData,Dimensionless,The Colour of the Channel 12 graph
+Observation.Channel.Colour.13,r=000 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 13 graph
+Observation.Channel.Colour.14,r=255 g=153 b=204,ColourData,Dimensionless,The Colour of the Channel 14 graph
+Observation.Channel.Colour.15,r=000 g=085 b=204,ColourData,Dimensionless,The Colour of the Channel 15 graph
+Observation.Channel.Colour.16,r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 16 graph
+Observation.Channel.Colour.17,r=255 g=102 b=000,ColourData,Dimensionless,The Colour of the Channel 17 graph
+Observation.Channel.Colour.18,r=255 g=153 b=000,ColourData,Dimensionless,The Colour of the Channel 18 graph
+Observation.Channel.Colour.19,r=255 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 19 graph
+Observation.Channel.Colour.20,r=170 g=230 b=000,ColourData,Dimensionless,The Colour of the Channel 20 graph
+Observation.Channel.Colour.21,r=000 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 21 graph
+Observation.Channel.Colour.22,r=255 g=153 b=204,ColourData,Dimensionless,The Colour of the Channel 22 graph
+Observation.Channel.Colour.23,r=000 g=085 b=204,ColourData,Dimensionless,The Colour of the Channel 23 graph
+Observation.Channel.Colour.24,r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 24 graph
+Observation.Channel.Colour.25,r=255 g=102 b=000,ColourData,Dimensionless,The Colour of the Channel 25 graph
+Observation.Channel.Colour.26,r=255 g=153 b=000,ColourData,Dimensionless,The Colour of the Channel 26 graph
+Observation.Channel.Colour.27,r=255 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 27 graph
+Observation.Channel.Colour.28,r=170 g=230 b=000,ColourData,Dimensionless,The Colour of the Channel 28 graph
+Observation.Channel.Colour.29,r=000 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 29 graph
+Observation.Channel.Colour.30,r=255 g=153 b=204,ColourData,Dimensionless,The Colour of the Channel 30 graph
+Observation.Channel.Colour.31,r=000 g=085 b=204,ColourData,Dimensionless,The Colour of the Channel 31 graph
+
+# Test Indexed Data (Sin and Cos) for 32 channels
+0,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000
+1,0.0175,0.0349,0.0523,0.0698,0.0872,0.1045,0.1219,0.1392,0.1564,0.1736,0.1908,0.2079,0.2250,0.2419,0.2588,0.2756,0.9998,0.9994,0.9986,0.9976,0.9962,0.9945,0.9925,0.9903,0.9877,0.9848,0.9816,0.9781,0.9744,0.9703,0.9659,0.9613
+2,0.0349,0.0698,0.1045,0.1392,0.1736,0.2079,0.2419,0.2756,0.3090,0.3420,0.3746,0.4067,0.4384,0.4695,0.5000,0.5299,0.9994,0.9976,0.9945,0.9903,0.9848,0.9781,0.9703,0.9613,0.9511,0.9397,0.9272,0.9135,0.8988,0.8829,0.8660,0.8480
+3,0.0523,0.1045,0.1564,0.2079,0.2588,0.3090,0.3584,0.4067,0.4540,0.5000,0.5446,0.5878,0.6293,0.6691,0.7071,0.7431,0.9986,0.9945,0.9877,0.9781,0.9659,0.9511,0.9336,0.9135,0.8910,0.8660,0.8387,0.8090,0.7771,0.7431,0.7071,0.6691
+4,0.0698,0.1392,0.2079,0.2756,0.3420,0.4067,0.4695,0.5299,0.5878,0.6428,0.6947,0.7431,0.7880,0.8290,0.8660,0.8988,0.9976,0.9903,0.9781,0.9613,0.9397,0.9135,0.8829,0.8480,0.8090,0.7660,0.7193,0.6691,0.6157,0.5592,0.5000,0.4384
+5,0.0872,0.1736,0.2588,0.3420,0.4226,0.5000,0.5736,0.6428,0.7071,0.7660,0.8192,0.8660,0.9063,0.9397,0.9659,0.9848,0.9962,0.9848,0.9659,0.9397,0.9063,0.8660,0.8192,0.7660,0.7071,0.6428,0.5736,0.5000,0.4226,0.3420,0.2588,0.1736
+6,0.1045,0.2079,0.3090,0.4067,0.5000,0.5878,0.6691,0.7431,0.8090,0.8660,0.9135,0.9511,0.9781,0.9945,1.0000,0.9945,0.9945,0.9781,0.9511,0.9135,0.8660,0.8090,0.7431,0.6691,0.5878,0.5000,0.4067,0.3090,0.2079,0.1045,0.0000,-0.1045
+7,0.1219,0.2419,0.3584,0.4695,0.5736,0.6691,0.7547,0.8290,0.8910,0.9397,0.9744,0.9945,0.9998,0.9903,0.9659,0.9272,0.9925,0.9703,0.9336,0.8829,0.8192,0.7431,0.6561,0.5592,0.4540,0.3420,0.2250,0.1045,-0.0175,-0.1392,-0.2588,-0.3746
+8,0.1392,0.2756,0.4067,0.5299,0.6428,0.7431,0.8290,0.8988,0.9511,0.9848,0.9994,0.9945,0.9703,0.9272,0.8660,0.7880,0.9903,0.9613,0.9135,0.8480,0.7660,0.6691,0.5592,0.4384,0.3090,0.1736,0.0349,-0.1045,-0.2419,-0.3746,-0.5000,-0.6157
+9,0.1564,0.3090,0.4540,0.5878,0.7071,0.8090,0.8910,0.9511,0.9877,1.0000,0.9877,0.9511,0.8910,0.8090,0.7071,0.5878,0.9877,0.9511,0.8910,0.8090,0.7071,0.5878,0.4540,0.3090,0.1564,0.0000,-0.1564,-0.3090,-0.4540,-0.5878,-0.7071,-0.8090
+10,0.1736,0.3420,0.5000,0.6428,0.7660,0.8660,0.9397,0.9848,1.0000,0.9848,0.9397,0.8660,0.7660,0.6428,0.5000,0.3420,0.9848,0.9397,0.8660,0.7660,0.6428,0.5000,0.3420,0.1736,0.0000,-0.1736,-0.3420,-0.5000,-0.6428,-0.7660,-0.8660,-0.9397
+11,0.1908,0.3746,0.5446,0.6947,0.8192,0.9135,0.9744,0.9994,0.9877,0.9397,0.8572,0.7431,0.6018,0.4384,0.2588,0.0698,0.9816,0.9272,0.8387,0.7193,0.5736,0.4067,0.2250,0.0349,-0.1564,-0.3420,-0.5150,-0.6691,-0.7986,-0.8988,-0.9659,-0.9976
+12,0.2079,0.4067,0.5878,0.7431,0.8660,0.9511,0.9945,0.9945,0.9511,0.8660,0.7431,0.5878,0.4067,0.2079,0.0000,-0.2079,0.9781,0.9135,0.8090,0.6691,0.5000,0.3090,0.1045,-0.1045,-0.3090,-0.5000,-0.6691,-0.8090,-0.9135,-0.9781,-1.0000,-0.9781
+13,0.2250,0.4384,0.6293,0.7880,0.9063,0.9781,0.9998,0.9703,0.8910,0.7660,0.6018,0.4067,0.1908,-0.0349,-0.2588,-0.4695,0.9744,0.8988,0.7771,0.6157,0.4226,0.2079,-0.0175,-0.2419,-0.4540,-0.6428,-0.7986,-0.9135,-0.9816,-0.9994,-0.9659,-0.8829
+14,0.2419,0.4695,0.6691,0.8290,0.9397,0.9945,0.9903,0.9272,0.8090,0.6428,0.4384,0.2079,-0.0349,-0.2756,-0.5000,-0.6947,0.9703,0.8829,0.7431,0.5592,0.3420,0.1045,-0.1392,-0.3746,-0.5878,-0.7660,-0.8988,-0.9781,-0.9994,-0.9613,-0.8660,-0.7193
+15,0.2588,0.5000,0.7071,0.8660,0.9659,1.0000,0.9659,0.8660,0.7071,0.5000,0.2588,0.0000,-0.2588,-0.5000,-0.7071,-0.8660,0.9659,0.8660,0.7071,0.5000,0.2588,0.0000,-0.2588,-0.5000,-0.7071,-0.8660,-0.9659,-1.0000,-0.9659,-0.8660,-0.7071,-0.5000
+16,0.2756,0.5299,0.7431,0.8988,0.9848,0.9945,0.9272,0.7880,0.5878,0.3420,0.0698,-0.2079,-0.4695,-0.6947,-0.8660,-0.9703,0.9613,0.8480,0.6691,0.4384,0.1736,-0.1045,-0.3746,-0.6157,-0.8090,-0.9397,-0.9976,-0.9781,-0.8829,-0.7193,-0.5000,-0.2419
+17,0.2924,0.5592,0.7771,0.9272,0.9962,0.9781,0.8746,0.6947,0.4540,0.1736,-0.1219,-0.4067,-0.6561,-0.8480,-0.9659,-0.9994,0.9563,0.8290,0.6293,0.3746,0.0872,-0.2079,-0.4848,-0.7193,-0.8910,-0.9848,-0.9925,-0.9135,-0.7547,-0.5299,-0.2588,0.0349
+18,0.3090,0.5878,0.8090,0.9511,1.0000,0.9511,0.8090,0.5878,0.3090,0.0000,-0.3090,-0.5878,-0.8090,-0.9511,-1.0000,-0.9511,0.9511,0.8090,0.5878,0.3090,0.0000,-0.3090,-0.5878,-0.8090,-0.9511,-1.0000,-0.9511,-0.8090,-0.5878,-0.3090,0.0000,0.3090
+19,0.3256,0.6157,0.8387,0.9703,0.9962,0.9135,0.7314,0.4695,0.1564,-0.1736,-0.4848,-0.7431,-0.9205,-0.9976,-0.9659,-0.8290,0.9455,0.7880,0.5446,0.2419,-0.0872,-0.4067,-0.6820,-0.8829,-0.9877,-0.9848,-0.8746,-0.6691,-0.3907,-0.0698,0.2588,0.5592
+20,0.3420,0.6428,0.8660,0.9848,0.9848,0.8660,0.6428,0.3420,0.0000,-0.3420,-0.6428,-0.8660,-0.9848,-0.9848,-0.8660,-0.6428,0.9397,0.7660,0.5000,0.1736,-0.1736,-0.5000,-0.7660,-0.9397,-1.0000,-0.9397,-0.7660,-0.5000,-0.1736,0.1736,0.5000,0.7660
+21,0.3584,0.6691,0.8910,0.9945,0.9659,0.8090,0.5446,0.2079,-0.1564,-0.5000,-0.7771,-0.9511,-0.9986,-0.9135,-0.7071,-0.4067,0.9336,0.7431,0.4540,0.1045,-0.2588,-0.5878,-0.8387,-0.9781,-0.9877,-0.8660,-0.6293,-0.3090,0.0523,0.4067,0.7071,0.9135
+22,0.3746,0.6947,0.9135,0.9994,0.9397,0.7431,0.4384,0.0698,-0.3090,-0.6428,-0.8829,-0.9945,-0.9613,-0.7880,-0.5000,-0.1392,0.9272,0.7193,0.4067,0.0349,-0.3420,-0.6691,-0.8988,-0.9976,-0.9511,-0.7660,-0.4695,-0.1045,0.2756,0.6157,0.8660,0.9903
+23,0.3907,0.7193,0.9336,0.9994,0.9063,0.6691,0.3256,-0.0698,-0.4540,-0.7660,-0.9563,-0.9945,-0.8746,-0.6157,-0.2588,0.1392,0.9205,0.6947,0.3584,-0.0349,-0.4226,-0.7431,-0.9455,-0.9976,-0.8910,-0.6428,-0.2924,0.1045,0.4848,0.7880,0.9659,0.9903
+24,0.4067,0.7431,0.9511,0.9945,0.8660,0.5878,0.2079,-0.2079,-0.5878,-0.8660,-0.9945,-0.9511,-0.7431,-0.4067,0.0000,0.4067,0.9135,0.6691,0.3090,-0.1045,-0.5000,-0.8090,-0.9781,-0.9781,-0.8090,-0.5000,-0.1045,0.3090,0.6691,0.9135,1.0000,0.9135
+25,0.4226,0.7660,0.9659,0.9848,0.8192,0.5000,0.0872,-0.3420,-0.7071,-0.9397,-0.9962,-0.8660,-0.5736,-0.1736,0.2588,0.6428,0.9063,0.6428,0.2588,-0.1736,-0.5736,-0.8660,-0.9962,-0.9397,-0.7071,-0.3420,0.0872,0.5000,0.8192,0.9848,0.9659,0.7660
+26,0.4384,0.7880,0.9781,0.9703,0.7660,0.4067,-0.0349,-0.4695,-0.8090,-0.9848,-0.9613,-0.7431,-0.3746,0.0698,0.5000,0.8290,0.8988,0.6157,0.2079,-0.2419,-0.6428,-0.9135,-0.9994,-0.8829,-0.5878,-0.1736,0.2756,0.6691,0.9272,0.9976,0.8660,0.5592
+27,0.4540,0.8090,0.9877,0.9511,0.7071,0.3090,-0.1564,-0.5878,-0.8910,-1.0000,-0.8910,-0.5878,-0.1564,0.3090,0.7071,0.9511,0.8910,0.5878,0.1564,-0.3090,-0.7071,-0.9511,-0.9877,-0.8090,-0.4540,0.0000,0.4540,0.8090,0.9877,0.9511,0.7071,0.3090
+28,0.4695,0.8290,0.9945,0.9272,0.6428,0.2079,-0.2756,-0.6947,-0.9511,-0.9848,-0.7880,-0.4067,0.0698,0.5299,0.8660,0.9994,0.8829,0.5592,0.1045,-0.3746,-0.7660,-0.9781,-0.9613,-0.7193,-0.3090,0.1736,0.6157,0.9135,0.9976,0.8480,0.5000,0.0349
+29,0.4848,0.8480,0.9986,0.8988,0.5736,0.1045,-0.3907,-0.7880,-0.9877,-0.9397,-0.6561,-0.2079,0.2924,0.7193,0.9659,0.9703,0.8746,0.5299,0.0523,-0.4384,-0.8192,-0.9945,-0.9205,-0.6157,-0.1564,0.3420,0.7547,0.9781,0.9563,0.6947,0.2588,-0.2419
+30,0.5000,0.8660,1.0000,0.8660,0.5000,0.0000,-0.5000,-0.8660,-1.0000,-0.8660,-0.5000,0.0000,0.5000,0.8660,1.0000,0.8660,0.8660,0.5000,0.0000,-0.5000,-0.8660,-1.0000,-0.8660,-0.5000,0.0000,0.5000,0.8660,1.0000,0.8660,0.5000,0.0000,-0.5000
+31,0.5150,0.8829,0.9986,0.8290,0.4226,-0.1045,-0.6018,-0.9272,-0.9877,-0.7660,-0.3256,0.2079,0.6820,0.9613,0.9659,0.6947,0.8572,0.4695,-0.0523,-0.5592,-0.9063,-0.9945,-0.7986,-0.3746,0.1564,0.6428,0.9455,0.9781,0.7314,0.2756,-0.2588,-0.7193
+32,0.5299,0.8988,0.9945,0.7880,0.3420,-0.2079,-0.6947,-0.9703,-0.9511,-0.6428,-0.1392,0.4067,0.8290,0.9994,0.8660,0.4695,0.8480,0.4384,-0.1045,-0.6157,-0.9397,-0.9781,-0.7193,-0.2419,0.3090,0.7660,0.9903,0.9135,0.5592,0.0349,-0.5000,-0.8829
+33,0.5446,0.9135,0.9877,0.7431,0.2588,-0.3090,-0.7771,-0.9945,-0.8910,-0.5000,0.0523,0.5878,0.9336,0.9781,0.7071,0.2079,0.8387,0.4067,-0.1564,-0.6691,-0.9659,-0.9511,-0.6293,-0.1045,0.4540,0.8660,0.9986,0.8090,0.3584,-0.2079,-0.7071,-0.9781
+34,0.5592,0.9272,0.9781,0.6947,0.1736,-0.4067,-0.8480,-0.9994,-0.8090,-0.3420,0.2419,0.7431,0.9903,0.8988,0.5000,-0.0698,0.8290,0.3746,-0.2079,-0.7193,-0.9848,-0.9135,-0.5299,0.0349,0.5878,0.9397,0.9703,0.6691,0.1392,-0.4384,-0.8660,-0.9976
+35,0.5736,0.9397,0.9659,0.6428,0.0872,-0.5000,-0.9063,-0.9848,-0.7071,-0.1736,0.4226,0.8660,0.9962,0.7660,0.2588,-0.3420,0.8192,0.3420,-0.2588,-0.7660,-0.9962,-0.8660,-0.4226,0.1736,0.7071,0.9848,0.9063,0.5000,-0.0872,-0.6428,-0.9659,-0.9397
+36,0.5878,0.9511,0.9511,0.5878,0.0000,-0.5878,-0.9511,-0.9511,-0.5878,0.0000,0.5878,0.9511,0.9511,0.5878,0.0000,-0.5878,0.8090,0.3090,-0.3090,-0.8090,-1.0000,-0.8090,-0.3090,0.3090,0.8090,1.0000,0.8090,0.3090,-0.3090,-0.8090,-1.0000,-0.8090
+37,0.6018,0.9613,0.9336,0.5299,-0.0872,-0.6691,-0.9816,-0.8988,-0.4540,0.1736,0.7314,0.9945,0.8572,0.3746,-0.2588,-0.7880,0.7986,0.2756,-0.3584,-0.8480,-0.9962,-0.7431,-0.1908,0.4384,0.8910,0.9848,0.6820,0.1045,-0.5150,-0.9272,-0.9659,-0.6157
+38,0.6157,0.9703,0.9135,0.4695,-0.1736,-0.7431,-0.9976,-0.8290,-0.3090,0.3420,0.8480,0.9945,0.7193,0.1392,-0.5000,-0.9272,0.7880,0.2419,-0.4067,-0.8829,-0.9848,-0.6691,-0.0698,0.5592,0.9511,0.9397,0.5299,-0.1045,-0.6947,-0.9903,-0.8660,-0.3746
+39,0.6293,0.9781,0.8910,0.4067,-0.2588,-0.8090,-0.9986,-0.7431,-0.1564,0.5000,0.9336,0.9511,0.5446,-0.1045,-0.7071,-0.9945,0.7771,0.2079,-0.4540,-0.9135,-0.9659,-0.5878,0.0523,0.6691,0.9877,0.8660,0.3584,-0.3090,-0.8387,-0.9945,-0.7071,-0.1045
+40,0.6428,0.9848,0.8660,0.3420,-0.3420,-0.8660,-0.9848,-0.6428,0.0000,0.6428,0.9848,0.8660,0.3420,-0.3420,-0.8660,-0.9848,0.7660,0.1736,-0.5000,-0.9397,-0.9397,-0.5000,0.1736,0.7660,1.0000,0.7660,0.1736,-0.5000,-0.9397,-0.9397,-0.5000,0.1736
+41,0.6561,0.9903,0.8387,0.2756,-0.4226,-0.9135,-0.9563,-0.5299,0.1564,0.7660,0.9998,0.7431,0.1219,-0.5592,-0.9659,-0.8988,0.7547,0.1392,-0.5446,-0.9613,-0.9063,-0.4067,0.2924,0.8480,0.9877,0.6428,-0.0175,-0.6691,-0.9925,-0.8290,-0.2588,0.4384
+42,0.6691,0.9945,0.8090,0.2079,-0.5000,-0.9511,-0.9135,-0.4067,0.3090,0.8660,0.9781,0.5878,-0.1045,-0.7431,-1.0000,-0.7431,0.7431,0.1045,-0.5878,-0.9781,-0.8660,-0.3090,0.4067,0.9135,0.9511,0.5000,-0.2079,-0.8090,-0.9945,-0.6691,0.0000,0.6691
+43,0.6820,0.9976,0.7771,0.1392,-0.5736,-0.9781,-0.8572,-0.2756,0.4540,0.9397,0.9205,0.4067,-0.3256,-0.8829,-0.9659,-0.5299,0.7314,0.0698,-0.6293,-0.9903,-0.8192,-0.2079,0.5150,0.9613,0.8910,0.3420,-0.3907,-0.9135,-0.9455,-0.4695,0.2588,0.8480
+44,0.6947,0.9994,0.7431,0.0698,-0.6428,-0.9945,-0.7880,-0.1392,0.5878,0.9848,0.8290,0.2079,-0.5299,-0.9703,-0.8660,-0.2756,0.7193,0.0349,-0.6691,-0.9976,-0.7660,-0.1045,0.6157,0.9903,0.8090,0.1736,-0.5592,-0.9781,-0.8480,-0.2419,0.5000,0.9613
+45,0.7071,1.0000,0.7071,0.0000,-0.7071,-1.0000,-0.7071,0.0000,0.7071,1.0000,0.7071,0.0000,-0.7071,-1.0000,-0.7071,0.0000,0.7071,0.0000,-0.7071,-1.0000,-0.7071,0.0000,0.7071,1.0000,0.7071,0.0000,-0.7071,-1.0000,-0.7071,0.0000,0.7071,1.0000
+46,0.7193,0.9994,0.6691,-0.0698,-0.7660,-0.9945,-0.6157,0.1392,0.8090,0.9848,0.5592,-0.2079,-0.8480,-0.9703,-0.5000,0.2756,0.6947,-0.0349,-0.7431,-0.9976,-0.6428,0.1045,0.7880,0.9903,0.5878,-0.1736,-0.8290,-0.9781,-0.5299,0.2419,0.8660,0.9613
+47,0.7314,0.9976,0.6293,-0.1392,-0.8192,-0.9781,-0.5150,0.2756,0.8910,0.9397,0.3907,-0.4067,-0.9455,-0.8829,-0.2588,0.5299,0.6820,-0.0698,-0.7771,-0.9903,-0.5736,0.2079,0.8572,0.9613,0.4540,-0.3420,-0.9205,-0.9135,-0.3256,0.4695,0.9659,0.8480
+48,0.7431,0.9945,0.5878,-0.2079,-0.8660,-0.9511,-0.4067,0.4067,0.9511,0.8660,0.2079,-0.5878,-0.9945,-0.7431,0.0000,0.7431,0.6691,-0.1045,-0.8090,-0.9781,-0.5000,0.3090,0.9135,0.9135,0.3090,-0.5000,-0.9781,-0.8090,-0.1045,0.6691,1.0000,0.6691
+49,0.7547,0.9903,0.5446,-0.2756,-0.9063,-0.9135,-0.2924,0.5299,0.9877,0.7660,0.0175,-0.7431,-0.9925,-0.5592,0.2588,0.8988,0.6561,-0.1392,-0.8387,-0.9613,-0.4226,0.4067,0.9563,0.8480,0.1564,-0.6428,-0.9998,-0.6691,0.1219,0.8290,0.9659,0.4384
+50,0.7660,0.9848,0.5000,-0.3420,-0.9397,-0.8660,-0.1736,0.6428,1.0000,0.6428,-0.1736,-0.8660,-0.9397,-0.3420,0.5000,0.9848,0.6428,-0.1736,-0.8660,-0.9397,-0.3420,0.5000,0.9848,0.7660,0.0000,-0.7660,-0.9848,-0.5000,0.3420,0.9397,0.8660,0.1736
+51,0.7771,0.9781,0.4540,-0.4067,-0.9659,-0.8090,-0.0523,0.7431,0.9877,0.5000,-0.3584,-0.9511,-0.8387,-0.1045,0.7071,0.9945,0.6293,-0.2079,-0.8910,-0.9135,-0.2588,0.5878,0.9986,0.6691,-0.1564,-0.8660,-0.9336,-0.3090,0.5446,0.9945,0.7071,-0.1045
+52,0.7880,0.9703,0.4067,-0.4695,-0.9848,-0.7431,0.0698,0.8290,0.9511,0.3420,-0.5299,-0.9945,-0.6947,0.1392,0.8660,0.9272,0.6157,-0.2419,-0.9135,-0.8829,-0.1736,0.6691,0.9976,0.5592,-0.3090,-0.9397,-0.8480,-0.1045,0.7193,0.9903,0.5000,-0.3746
+53,0.7986,0.9613,0.3584,-0.5299,-0.9962,-0.6691,0.1908,0.8988,0.8910,0.1736,-0.6820,-0.9945,-0.5150,0.3746,0.9659,0.7880,0.6018,-0.2756,-0.9336,-0.8480,-0.0872,0.7431,0.9816,0.4384,-0.4540,-0.9848,-0.7314,0.1045,0.8572,0.9272,0.2588,-0.6157
+54,0.8090,0.9511,0.3090,-0.5878,-1.0000,-0.5878,0.3090,0.9511,0.8090,0.0000,-0.8090,-0.9511,-0.3090,0.5878,1.0000,0.5878,0.5878,-0.3090,-0.9511,-0.8090,0.0000,0.8090,0.9511,0.3090,-0.5878,-1.0000,-0.5878,0.3090,0.9511,0.8090,0.0000,-0.8090
+55,0.8192,0.9397,0.2588,-0.6428,-0.9962,-0.5000,0.4226,0.9848,0.7071,-0.1736,-0.9063,-0.8660,-0.0872,0.7660,0.9659,0.3420,0.5736,-0.3420,-0.9659,-0.7660,0.0872,0.8660,0.9063,0.1736,-0.7071,-0.9848,-0.4226,0.5000,0.9962,0.6428,-0.2588,-0.9397
+56,0.8290,0.9272,0.2079,-0.6947,-0.9848,-0.4067,0.5299,0.9994,0.5878,-0.3420,-0.9703,-0.7431,0.1392,0.8988,0.8660,0.0698,0.5592,-0.3746,-0.9781,-0.7193,0.1736,0.9135,0.8480,0.0349,-0.8090,-0.9397,-0.2419,0.6691,0.9903,0.4384,-0.5000,-0.9976
+57,0.8387,0.9135,0.1564,-0.7431,-0.9659,-0.3090,0.6293,0.9945,0.4540,-0.5000,-0.9986,-0.5878,0.3584,0.9781,0.7071,-0.2079,0.5446,-0.4067,-0.9877,-0.6691,0.2588,0.9511,0.7771,-0.1045,-0.8910,-0.8660,-0.0523,0.8090,0.9336,0.2079,-0.7071,-0.9781
+58,0.8480,0.8988,0.1045,-0.7880,-0.9397,-0.2079,0.7193,0.9703,0.3090,-0.6428,-0.9903,-0.4067,0.5592,0.9994,0.5000,-0.4695,0.5299,-0.4384,-0.9945,-0.6157,0.3420,0.9781,0.6947,-0.2419,-0.9511,-0.7660,0.1392,0.9135,0.8290,-0.0349,-0.8660,-0.8829
+59,0.8572,0.8829,0.0523,-0.8290,-0.9063,-0.1045,0.7986,0.9272,0.1564,-0.7660,-0.9455,-0.2079,0.7314,0.9613,0.2588,-0.6947,0.5150,-0.4695,-0.9986,-0.5592,0.4226,0.9945,0.6018,-0.3746,-0.9877,-0.6428,0.3256,0.9781,0.6820,-0.2756,-0.9659,-0.7193
+60,0.8660,0.8660,0.0000,-0.8660,-0.8660,0.0000,0.8660,0.8660,0.0000,-0.8660,-0.8660,0.0000,0.8660,0.8660,0.0000,-0.8660,0.5000,-0.5000,-1.0000,-0.5000,0.5000,1.0000,0.5000,-0.5000,-1.0000,-0.5000,0.5000,1.0000,0.5000,-0.5000,-1.0000,-0.5000
+61,0.8746,0.8480,-0.0523,-0.8988,-0.8192,0.1045,0.9205,0.7880,-0.1564,-0.9397,-0.7547,0.2079,0.9563,0.7193,-0.2588,-0.9703,0.4848,-0.5299,-0.9986,-0.4384,0.5736,0.9945,0.3907,-0.6157,-0.9877,-0.3420,0.6561,0.9781,0.2924,-0.6947,-0.9659,-0.2419
+62,0.8829,0.8290,-0.1045,-0.9272,-0.7660,0.2079,0.9613,0.6947,-0.3090,-0.9848,-0.6157,0.4067,0.9976,0.5299,-0.5000,-0.9994,0.4695,-0.5592,-0.9945,-0.3746,0.6428,0.9781,0.2756,-0.7193,-0.9511,-0.1736,0.7880,0.9135,0.0698,-0.8480,-0.8660,0.0349
+63,0.8910,0.8090,-0.1564,-0.9511,-0.7071,0.3090,0.9877,0.5878,-0.4540,-1.0000,-0.4540,0.5878,0.9877,0.3090,-0.7071,-0.9511,0.4540,-0.5878,-0.9877,-0.3090,0.7071,0.9511,0.1564,-0.8090,-0.8910,0.0000,0.8910,0.8090,-0.1564,-0.9511,-0.7071,0.3090
+64,0.8988,0.7880,-0.2079,-0.9703,-0.6428,0.4067,0.9994,0.4695,-0.5878,-0.9848,-0.2756,0.7431,0.9272,0.0698,-0.8660,-0.8290,0.4384,-0.6157,-0.9781,-0.2419,0.7660,0.9135,0.0349,-0.8829,-0.8090,0.1736,0.9613,0.6691,-0.3746,-0.9976,-0.5000,0.5592
+65,0.9063,0.7660,-0.2588,-0.9848,-0.5736,0.5000,0.9962,0.3420,-0.7071,-0.9397,-0.0872,0.8660,0.8192,-0.1736,-0.9659,-0.6428,0.4226,-0.6428,-0.9659,-0.1736,0.8192,0.8660,-0.0872,-0.9397,-0.7071,0.3420,0.9962,0.5000,-0.5736,-0.9848,-0.2588,0.7660
+66,0.9135,0.7431,-0.3090,-0.9945,-0.5000,0.5878,0.9781,0.2079,-0.8090,-0.8660,0.1045,0.9511,0.6691,-0.4067,-1.0000,-0.4067,0.4067,-0.6691,-0.9511,-0.1045,0.8660,0.8090,-0.2079,-0.9781,-0.5878,0.5000,0.9945,0.3090,-0.7431,-0.9135,0.0000,0.9135
+67,0.9205,0.7193,-0.3584,-0.9994,-0.4226,0.6691,0.9455,0.0698,-0.8910,-0.7660,0.2924,0.9945,0.4848,-0.6157,-0.9659,-0.1392,0.3907,-0.6947,-0.9336,-0.0349,0.9063,0.7431,-0.3256,-0.9976,-0.4540,0.6428,0.9563,0.1045,-0.8746,-0.7880,0.2588,0.9903
+68,0.9272,0.6947,-0.4067,-0.9994,-0.3420,0.7431,0.8988,-0.0698,-0.9511,-0.6428,0.4695,0.9945,0.2756,-0.7880,-0.8660,0.1392,0.3746,-0.7193,-0.9135,0.0349,0.9397,0.6691,-0.4384,-0.9976,-0.3090,0.7660,0.8829,-0.1045,-0.9613,-0.6157,0.5000,0.9903
+69,0.9336,0.6691,-0.4540,-0.9945,-0.2588,0.8090,0.8387,-0.2079,-0.9877,-0.5000,0.6293,0.9511,0.0523,-0.9135,-0.7071,0.4067,0.3584,-0.7431,-0.8910,0.1045,0.9659,0.5878,-0.5446,-0.9781,-0.1564,0.8660,0.7771,-0.3090,-0.9986,-0.4067,0.7071,0.9135
+70,0.9397,0.6428,-0.5000,-0.9848,-0.1736,0.8660,0.7660,-0.3420,-1.0000,-0.3420,0.7660,0.8660,-0.1736,-0.9848,-0.5000,0.6428,0.3420,-0.7660,-0.8660,0.1736,0.9848,0.5000,-0.6428,-0.9397,0.0000,0.9397,0.6428,-0.5000,-0.9848,-0.1736,0.8660,0.7660
+71,0.9455,0.6157,-0.5446,-0.9703,-0.0872,0.9135,0.6820,-0.4695,-0.9877,-0.1736,0.8746,0.7431,-0.3907,-0.9976,-0.2588,0.8290,0.3256,-0.7880,-0.8387,0.2419,0.9962,0.4067,-0.7314,-0.8829,0.1564,0.9848,0.4848,-0.6691,-0.9205,0.0698,0.9659,0.5592
+72,0.9511,0.5878,-0.5878,-0.9511,0.0000,0.9511,0.5878,-0.5878,-0.9511,0.0000,0.9511,0.5878,-0.5878,-0.9511,0.0000,0.9511,0.3090,-0.8090,-0.8090,0.3090,1.0000,0.3090,-0.8090,-0.8090,0.3090,1.0000,0.3090,-0.8090,-0.8090,0.3090,1.0000,0.3090
+73,0.9563,0.5592,-0.6293,-0.9272,0.0872,0.9781,0.4848,-0.6947,-0.8910,0.1736,0.9925,0.4067,-0.7547,-0.8480,0.2588,0.9994,0.2924,-0.8290,-0.7771,0.3746,0.9962,0.2079,-0.8746,-0.7193,0.4540,0.9848,0.1219,-0.9135,-0.6561,0.5299,0.9659,0.0349
+74,0.9613,0.5299,-0.6691,-0.8988,0.1736,0.9945,0.3746,-0.7880,-0.8090,0.3420,0.9976,0.2079,-0.8829,-0.6947,0.5000,0.9703,0.2756,-0.8480,-0.7431,0.4384,0.9848,0.1045,-0.9272,-0.6157,0.5878,0.9397,-0.0698,-0.9781,-0.4695,0.7193,0.8660,-0.2419
+75,0.9659,0.5000,-0.7071,-0.8660,0.2588,1.0000,0.2588,-0.8660,-0.7071,0.5000,0.9659,0.0000,-0.9659,-0.5000,0.7071,0.8660,0.2588,-0.8660,-0.7071,0.5000,0.9659,0.0000,-0.9659,-0.5000,0.7071,0.8660,-0.2588,-1.0000,-0.2588,0.8660,0.7071,-0.5000
+76,0.9703,0.4695,-0.7431,-0.8290,0.3420,0.9945,0.1392,-0.9272,-0.5878,0.6428,0.8988,-0.2079,-0.9994,-0.2756,0.8660,0.6947,0.2419,-0.8829,-0.6691,0.5592,0.9397,-0.1045,-0.9903,-0.3746,0.8090,0.7660,-0.4384,-0.9781,-0.0349,0.9613,0.5000,-0.7193
+77,0.9744,0.4384,-0.7771,-0.7880,0.4226,0.9781,0.0175,-0.9703,-0.4540,0.7660,0.7986,-0.4067,-0.9816,-0.0349,0.9659,0.4695,0.2250,-0.8988,-0.6293,0.6157,0.9063,-0.2079,-0.9998,-0.2419,0.8910,0.6428,-0.6018,-0.9135,0.1908,0.9994,0.2588,-0.8829
+78,0.9781,0.4067,-0.8090,-0.7431,0.5000,0.9511,-0.1045,-0.9945,-0.3090,0.8660,0.6691,-0.5878,-0.9135,0.2079,1.0000,0.2079,0.2079,-0.9135,-0.5878,0.6691,0.8660,-0.3090,-0.9945,-0.1045,0.9511,0.5000,-0.7431,-0.8090,0.4067,0.9781,0.0000,-0.9781
+79,0.9816,0.3746,-0.8387,-0.6947,0.5736,0.9135,-0.2250,-0.9994,-0.1564,0.9397,0.5150,-0.7431,-0.7986,0.4384,0.9659,-0.0698,0.1908,-0.9272,-0.5446,0.7193,0.8192,-0.4067,-0.9744,0.0349,0.9877,0.3420,-0.8572,-0.6691,0.6018,0.8988,-0.2588,-0.9976
+80,0.9848,0.3420,-0.8660,-0.6428,0.6428,0.8660,-0.3420,-0.9848,0.0000,0.9848,0.3420,-0.8660,-0.6428,0.6428,0.8660,-0.3420,0.1736,-0.9397,-0.5000,0.7660,0.7660,-0.5000,-0.9397,0.1736,1.0000,0.1736,-0.9397,-0.5000,0.7660,0.7660,-0.5000,-0.9397
+81,0.9877,0.3090,-0.8910,-0.5878,0.7071,0.8090,-0.4540,-0.9511,0.1564,1.0000,0.1564,-0.9511,-0.4540,0.8090,0.7071,-0.5878,0.1564,-0.9511,-0.4540,0.8090,0.7071,-0.5878,-0.8910,0.3090,0.9877,0.0000,-0.9877,-0.3090,0.8910,0.5878,-0.7071,-0.8090
+82,0.9903,0.2756,-0.9135,-0.5299,0.7660,0.7431,-0.5592,-0.8988,0.3090,0.9848,-0.0349,-0.9945,-0.2419,0.9272,0.5000,-0.7880,0.1392,-0.9613,-0.4067,0.8480,0.6428,-0.6691,-0.8290,0.4384,0.9511,-0.1736,-0.9994,-0.1045,0.9703,0.3746,-0.8660,-0.6157
+83,0.9925,0.2419,-0.9336,-0.4695,0.8192,0.6691,-0.6561,-0.8290,0.4540,0.9397,-0.2250,-0.9945,-0.0175,0.9903,0.2588,-0.9272,0.1219,-0.9703,-0.3584,0.8829,0.5736,-0.7431,-0.7547,0.5592,0.8910,-0.3420,-0.9744,0.1045,0.9998,0.1392,-0.9659,-0.3746
+84,0.9945,0.2079,-0.9511,-0.4067,0.8660,0.5878,-0.7431,-0.7431,0.5878,0.8660,-0.4067,-0.9511,0.2079,0.9945,0.0000,-0.9945,0.1045,-0.9781,-0.3090,0.9135,0.5000,-0.8090,-0.6691,0.6691,0.8090,-0.5000,-0.9135,0.3090,0.9781,-0.1045,-1.0000,-0.1045
+85,0.9962,0.1736,-0.9659,-0.3420,0.9063,0.5000,-0.8192,-0.6428,0.7071,0.7660,-0.5736,-0.8660,0.4226,0.9397,-0.2588,-0.9848,0.0872,-0.9848,-0.2588,0.9397,0.4226,-0.8660,-0.5736,0.7660,0.7071,-0.6428,-0.8192,0.5000,0.9063,-0.3420,-0.9659,0.1736
+86,0.9976,0.1392,-0.9781,-0.2756,0.9397,0.4067,-0.8829,-0.5299,0.8090,0.6428,-0.7193,-0.7431,0.6157,0.8290,-0.5000,-0.8988,0.0698,-0.9903,-0.2079,0.9613,0.3420,-0.9135,-0.4695,0.8480,0.5878,-0.7660,-0.6947,0.6691,0.7880,-0.5592,-0.8660,0.4384
+87,0.9986,0.1045,-0.9877,-0.2079,0.9659,0.3090,-0.9336,-0.4067,0.8910,0.5000,-0.8387,-0.5878,0.7771,0.6691,-0.7071,-0.7431,0.0523,-0.9945,-0.1564,0.9781,0.2588,-0.9511,-0.3584,0.9135,0.4540,-0.8660,-0.5446,0.8090,0.6293,-0.7431,-0.7071,0.6691
+88,0.9994,0.0698,-0.9945,-0.1392,0.9848,0.2079,-0.9703,-0.2756,0.9511,0.3420,-0.9272,-0.4067,0.8988,0.4695,-0.8660,-0.5299,0.0349,-0.9976,-0.1045,0.9903,0.1736,-0.9781,-0.2419,0.9613,0.3090,-0.9397,-0.3746,0.9135,0.4384,-0.8829,-0.5000,0.8480
+89,0.9998,0.0349,-0.9986,-0.0698,0.9962,0.1045,-0.9925,-0.1392,0.9877,0.1736,-0.9816,-0.2079,0.9744,0.2419,-0.9659,-0.2756,0.0175,-0.9994,-0.0523,0.9976,0.0872,-0.9945,-0.1219,0.9903,0.1564,-0.9848,-0.1908,0.9781,0.2250,-0.9703,-0.2588,0.9613
+90,1.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000
+91,0.9998,-0.0349,-0.9986,0.0698,0.9962,-0.1045,-0.9925,0.1392,0.9877,-0.1736,-0.9816,0.2079,0.9744,-0.2419,-0.9659,0.2756,-0.0175,-0.9994,0.0523,0.9976,-0.0872,-0.9945,0.1219,0.9903,-0.1564,-0.9848,0.1908,0.9781,-0.2250,-0.9703,0.2588,0.9613
+92,0.9994,-0.0698,-0.9945,0.1392,0.9848,-0.2079,-0.9703,0.2756,0.9511,-0.3420,-0.9272,0.4067,0.8988,-0.4695,-0.8660,0.5299,-0.0349,-0.9976,0.1045,0.9903,-0.1736,-0.9781,0.2419,0.9613,-0.3090,-0.9397,0.3746,0.9135,-0.4384,-0.8829,0.5000,0.8480
+93,0.9986,-0.1045,-0.9877,0.2079,0.9659,-0.3090,-0.9336,0.4067,0.8910,-0.5000,-0.8387,0.5878,0.7771,-0.6691,-0.7071,0.7431,-0.0523,-0.9945,0.1564,0.9781,-0.2588,-0.9511,0.3584,0.9135,-0.4540,-0.8660,0.5446,0.8090,-0.6293,-0.7431,0.7071,0.6691
+94,0.9976,-0.1392,-0.9781,0.2756,0.9397,-0.4067,-0.8829,0.5299,0.8090,-0.6428,-0.7193,0.7431,0.6157,-0.8290,-0.5000,0.8988,-0.0698,-0.9903,0.2079,0.9613,-0.3420,-0.9135,0.4695,0.8480,-0.5878,-0.7660,0.6947,0.6691,-0.7880,-0.5592,0.8660,0.4384
+95,0.9962,-0.1736,-0.9659,0.3420,0.9063,-0.5000,-0.8192,0.6428,0.7071,-0.7660,-0.5736,0.8660,0.4226,-0.9397,-0.2588,0.9848,-0.0872,-0.9848,0.2588,0.9397,-0.4226,-0.8660,0.5736,0.7660,-0.7071,-0.6428,0.8192,0.5000,-0.9063,-0.3420,0.9659,0.1736
+96,0.9945,-0.2079,-0.9511,0.4067,0.8660,-0.5878,-0.7431,0.7431,0.5878,-0.8660,-0.4067,0.9511,0.2079,-0.9945,0.0000,0.9945,-0.1045,-0.9781,0.3090,0.9135,-0.5000,-0.8090,0.6691,0.6691,-0.8090,-0.5000,0.9135,0.3090,-0.9781,-0.1045,1.0000,-0.1045
+97,0.9925,-0.2419,-0.9336,0.4695,0.8192,-0.6691,-0.6561,0.8290,0.4540,-0.9397,-0.2250,0.9945,-0.0175,-0.9903,0.2588,0.9272,-0.1219,-0.9703,0.3584,0.8829,-0.5736,-0.7431,0.7547,0.5592,-0.8910,-0.3420,0.9744,0.1045,-0.9998,0.1392,0.9659,-0.3746
+98,0.9903,-0.2756,-0.9135,0.5299,0.7660,-0.7431,-0.5592,0.8988,0.3090,-0.9848,-0.0349,0.9945,-0.2419,-0.9272,0.5000,0.7880,-0.1392,-0.9613,0.4067,0.8480,-0.6428,-0.6691,0.8290,0.4384,-0.9511,-0.1736,0.9994,-0.1045,-0.9703,0.3746,0.8660,-0.6157
+99,0.9877,-0.3090,-0.8910,0.5878,0.7071,-0.8090,-0.4540,0.9511,0.1564,-1.0000,0.1564,0.9511,-0.4540,-0.8090,0.7071,0.5878,-0.1564,-0.9511,0.4540,0.8090,-0.7071,-0.5878,0.8910,0.3090,-0.9877,0.0000,0.9877,-0.3090,-0.8910,0.5878,0.7071,-0.8090
+100,0.9848,-0.3420,-0.8660,0.6428,0.6428,-0.8660,-0.3420,0.9848,0.0000,-0.9848,0.3420,0.8660,-0.6428,-0.6428,0.8660,0.3420,-0.1736,-0.9397,0.5000,0.7660,-0.7660,-0.5000,0.9397,0.1736,-1.0000,0.1736,0.9397,-0.5000,-0.7660,0.7660,0.5000,-0.9397
+101,0.9816,-0.3746,-0.8387,0.6947,0.5736,-0.9135,-0.2250,0.9994,-0.1564,-0.9397,0.5150,0.7431,-0.7986,-0.4384,0.9659,0.0698,-0.1908,-0.9272,0.5446,0.7193,-0.8192,-0.4067,0.9744,0.0349,-0.9877,0.3420,0.8572,-0.6691,-0.6018,0.8988,0.2588,-0.9976
+102,0.9781,-0.4067,-0.8090,0.7431,0.5000,-0.9511,-0.1045,0.9945,-0.3090,-0.8660,0.6691,0.5878,-0.9135,-0.2079,1.0000,-0.2079,-0.2079,-0.9135,0.5878,0.6691,-0.8660,-0.3090,0.9945,-0.1045,-0.9511,0.5000,0.7431,-0.8090,-0.4067,0.9781,0.0000,-0.9781
+103,0.9744,-0.4384,-0.7771,0.7880,0.4226,-0.9781,0.0175,0.9703,-0.4540,-0.7660,0.7986,0.4067,-0.9816,0.0349,0.9659,-0.4695,-0.2250,-0.8988,0.6293,0.6157,-0.9063,-0.2079,0.9998,-0.2419,-0.8910,0.6428,0.6018,-0.9135,-0.1908,0.9994,-0.2588,-0.8829
+104,0.9703,-0.4695,-0.7431,0.8290,0.3420,-0.9945,0.1392,0.9272,-0.5878,-0.6428,0.8988,0.2079,-0.9994,0.2756,0.8660,-0.6947,-0.2419,-0.8829,0.6691,0.5592,-0.9397,-0.1045,0.9903,-0.3746,-0.8090,0.7660,0.4384,-0.9781,0.0349,0.9613,-0.5000,-0.7193
+105,0.9659,-0.5000,-0.7071,0.8660,0.2588,-1.0000,0.2588,0.8660,-0.7071,-0.5000,0.9659,0.0000,-0.9659,0.5000,0.7071,-0.8660,-0.2588,-0.8660,0.7071,0.5000,-0.9659,0.0000,0.9659,-0.5000,-0.7071,0.8660,0.2588,-1.0000,0.2588,0.8660,-0.7071,-0.5000
+106,0.9613,-0.5299,-0.6691,0.8988,0.1736,-0.9945,0.3746,0.7880,-0.8090,-0.3420,0.9976,-0.2079,-0.8829,0.6947,0.5000,-0.9703,-0.2756,-0.8480,0.7431,0.4384,-0.9848,0.1045,0.9272,-0.6157,-0.5878,0.9397,0.0698,-0.9781,0.4695,0.7193,-0.8660,-0.2419
+107,0.9563,-0.5592,-0.6293,0.9272,0.0872,-0.9781,0.4848,0.6947,-0.8910,-0.1736,0.9925,-0.4067,-0.7547,0.8480,0.2588,-0.9994,-0.2924,-0.8290,0.7771,0.3746,-0.9962,0.2079,0.8746,-0.7193,-0.4540,0.9848,-0.1219,-0.9135,0.6561,0.5299,-0.9659,0.0349
+108,0.9511,-0.5878,-0.5878,0.9511,0.0000,-0.9511,0.5878,0.5878,-0.9511,0.0000,0.9511,-0.5878,-0.5878,0.9511,0.0000,-0.9511,-0.3090,-0.8090,0.8090,0.3090,-1.0000,0.3090,0.8090,-0.8090,-0.3090,1.0000,-0.3090,-0.8090,0.8090,0.3090,-1.0000,0.3090
+109,0.9455,-0.6157,-0.5446,0.9703,-0.0872,-0.9135,0.6820,0.4695,-0.9877,0.1736,0.8746,-0.7431,-0.3907,0.9976,-0.2588,-0.8290,-0.3256,-0.7880,0.8387,0.2419,-0.9962,0.4067,0.7314,-0.8829,-0.1564,0.9848,-0.4848,-0.6691,0.9205,0.0698,-0.9659,0.5592
+110,0.9397,-0.6428,-0.5000,0.9848,-0.1736,-0.8660,0.7660,0.3420,-1.0000,0.3420,0.7660,-0.8660,-0.1736,0.9848,-0.5000,-0.6428,-0.3420,-0.7660,0.8660,0.1736,-0.9848,0.5000,0.6428,-0.9397,0.0000,0.9397,-0.6428,-0.5000,0.9848,-0.1736,-0.8660,0.7660
+111,0.9336,-0.6691,-0.4540,0.9945,-0.2588,-0.8090,0.8387,0.2079,-0.9877,0.5000,0.6293,-0.9511,0.0523,0.9135,-0.7071,-0.4067,-0.3584,-0.7431,0.8910,0.1045,-0.9659,0.5878,0.5446,-0.9781,0.1564,0.8660,-0.7771,-0.3090,0.9986,-0.4067,-0.7071,0.9135
+112,0.9272,-0.6947,-0.4067,0.9994,-0.3420,-0.7431,0.8988,0.0698,-0.9511,0.6428,0.4695,-0.9945,0.2756,0.7880,-0.8660,-0.1392,-0.3746,-0.7193,0.9135,0.0349,-0.9397,0.6691,0.4384,-0.9976,0.3090,0.7660,-0.8829,-0.1045,0.9613,-0.6157,-0.5000,0.9903
+113,0.9205,-0.7193,-0.3584,0.9994,-0.4226,-0.6691,0.9455,-0.0698,-0.8910,0.7660,0.2924,-0.9945,0.4848,0.6157,-0.9659,0.1392,-0.3907,-0.6947,0.9336,-0.0349,-0.9063,0.7431,0.3256,-0.9976,0.4540,0.6428,-0.9563,0.1045,0.8746,-0.7880,-0.2588,0.9903
+114,0.9135,-0.7431,-0.3090,0.9945,-0.5000,-0.5878,0.9781,-0.2079,-0.8090,0.8660,0.1045,-0.9511,0.6691,0.4067,-1.0000,0.4067,-0.4067,-0.6691,0.9511,-0.1045,-0.8660,0.8090,0.2079,-0.9781,0.5878,0.5000,-0.9945,0.3090,0.7431,-0.9135,0.0000,0.9135
+115,0.9063,-0.7660,-0.2588,0.9848,-0.5736,-0.5000,0.9962,-0.3420,-0.7071,0.9397,-0.0872,-0.8660,0.8192,0.1736,-0.9659,0.6428,-0.4226,-0.6428,0.9659,-0.1736,-0.8192,0.8660,0.0872,-0.9397,0.7071,0.3420,-0.9962,0.5000,0.5736,-0.9848,0.2588,0.7660
+116,0.8988,-0.7880,-0.2079,0.9703,-0.6428,-0.4067,0.9994,-0.4695,-0.5878,0.9848,-0.2756,-0.7431,0.9272,-0.0698,-0.8660,0.8290,-0.4384,-0.6157,0.9781,-0.2419,-0.7660,0.9135,-0.0349,-0.8829,0.8090,0.1736,-0.9613,0.6691,0.3746,-0.9976,0.5000,0.5592
+117,0.8910,-0.8090,-0.1564,0.9511,-0.7071,-0.3090,0.9877,-0.5878,-0.4540,1.0000,-0.4540,-0.5878,0.9877,-0.3090,-0.7071,0.9511,-0.4540,-0.5878,0.9877,-0.3090,-0.7071,0.9511,-0.1564,-0.8090,0.8910,0.0000,-0.8910,0.8090,0.1564,-0.9511,0.7071,0.3090
+118,0.8829,-0.8290,-0.1045,0.9272,-0.7660,-0.2079,0.9613,-0.6947,-0.3090,0.9848,-0.6157,-0.4067,0.9976,-0.5299,-0.5000,0.9994,-0.4695,-0.5592,0.9945,-0.3746,-0.6428,0.9781,-0.2756,-0.7193,0.9511,-0.1736,-0.7880,0.9135,-0.0698,-0.8480,0.8660,0.0349
+119,0.8746,-0.8480,-0.0523,0.8988,-0.8192,-0.1045,0.9205,-0.7880,-0.1564,0.9397,-0.7547,-0.2079,0.9563,-0.7193,-0.2588,0.9703,-0.4848,-0.5299,0.9986,-0.4384,-0.5736,0.9945,-0.3907,-0.6157,0.9877,-0.3420,-0.6561,0.9781,-0.2924,-0.6947,0.9659,-0.2419
+120,0.8660,-0.8660,0.0000,0.8660,-0.8660,0.0000,0.8660,-0.8660,0.0000,0.8660,-0.8660,0.0000,0.8660,-0.8660,0.0000,0.8660,-0.5000,-0.5000,1.0000,-0.5000,-0.5000,1.0000,-0.5000,-0.5000,1.0000,-0.5000,-0.5000,1.0000,-0.5000,-0.5000,1.0000,-0.5000
+121,0.8572,-0.8829,0.0523,0.8290,-0.9063,0.1045,0.7986,-0.9272,0.1564,0.7660,-0.9455,0.2079,0.7314,-0.9613,0.2588,0.6947,-0.5150,-0.4695,0.9986,-0.5592,-0.4226,0.9945,-0.6018,-0.3746,0.9877,-0.6428,-0.3256,0.9781,-0.6820,-0.2756,0.9659,-0.7193
+122,0.8480,-0.8988,0.1045,0.7880,-0.9397,0.2079,0.7193,-0.9703,0.3090,0.6428,-0.9903,0.4067,0.5592,-0.9994,0.5000,0.4695,-0.5299,-0.4384,0.9945,-0.6157,-0.3420,0.9781,-0.6947,-0.2419,0.9511,-0.7660,-0.1392,0.9135,-0.8290,-0.0349,0.8660,-0.8829
+123,0.8387,-0.9135,0.1564,0.7431,-0.9659,0.3090,0.6293,-0.9945,0.4540,0.5000,-0.9986,0.5878,0.3584,-0.9781,0.7071,0.2079,-0.5446,-0.4067,0.9877,-0.6691,-0.2588,0.9511,-0.7771,-0.1045,0.8910,-0.8660,0.0523,0.8090,-0.9336,0.2079,0.7071,-0.9781
+124,0.8290,-0.9272,0.2079,0.6947,-0.9848,0.4067,0.5299,-0.9994,0.5878,0.3420,-0.9703,0.7431,0.1392,-0.8988,0.8660,-0.0698,-0.5592,-0.3746,0.9781,-0.7193,-0.1736,0.9135,-0.8480,0.0349,0.8090,-0.9397,0.2419,0.6691,-0.9903,0.4384,0.5000,-0.9976
+125,0.8192,-0.9397,0.2588,0.6428,-0.9962,0.5000,0.4226,-0.9848,0.7071,0.1736,-0.9063,0.8660,-0.0872,-0.7660,0.9659,-0.3420,-0.5736,-0.3420,0.9659,-0.7660,-0.0872,0.8660,-0.9063,0.1736,0.7071,-0.9848,0.4226,0.5000,-0.9962,0.6428,0.2588,-0.9397
+126,0.8090,-0.9511,0.3090,0.5878,-1.0000,0.5878,0.3090,-0.9511,0.8090,0.0000,-0.8090,0.9511,-0.3090,-0.5878,1.0000,-0.5878,-0.5878,-0.3090,0.9511,-0.8090,0.0000,0.8090,-0.9511,0.3090,0.5878,-1.0000,0.5878,0.3090,-0.9511,0.8090,0.0000,-0.8090
+127,0.7986,-0.9613,0.3584,0.5299,-0.9962,0.6691,0.1908,-0.8988,0.8910,-0.1736,-0.6820,0.9945,-0.5150,-0.3746,0.9659,-0.7880,-0.6018,-0.2756,0.9336,-0.8480,0.0872,0.7431,-0.9816,0.4384,0.4540,-0.9848,0.7314,0.1045,-0.8572,0.9272,-0.2588,-0.6157
+128,0.7880,-0.9703,0.4067,0.4695,-0.9848,0.7431,0.0698,-0.8290,0.9511,-0.3420,-0.5299,0.9945,-0.6947,-0.1392,0.8660,-0.9272,-0.6157,-0.2419,0.9135,-0.8829,0.1736,0.6691,-0.9976,0.5592,0.3090,-0.9397,0.8480,-0.1045,-0.7193,0.9903,-0.5000,-0.3746
+129,0.7771,-0.9781,0.4540,0.4067,-0.9659,0.8090,-0.0523,-0.7431,0.9877,-0.5000,-0.3584,0.9511,-0.8387,0.1045,0.7071,-0.9945,-0.6293,-0.2079,0.8910,-0.9135,0.2588,0.5878,-0.9986,0.6691,0.1564,-0.8660,0.9336,-0.3090,-0.5446,0.9945,-0.7071,-0.1045
+130,0.7660,-0.9848,0.5000,0.3420,-0.9397,0.8660,-0.1736,-0.6428,1.0000,-0.6428,-0.1736,0.8660,-0.9397,0.3420,0.5000,-0.9848,-0.6428,-0.1736,0.8660,-0.9397,0.3420,0.5000,-0.9848,0.7660,0.0000,-0.7660,0.9848,-0.5000,-0.3420,0.9397,-0.8660,0.1736
+131,0.7547,-0.9903,0.5446,0.2756,-0.9063,0.9135,-0.2924,-0.5299,0.9877,-0.7660,0.0175,0.7431,-0.9925,0.5592,0.2588,-0.8988,-0.6561,-0.1392,0.8387,-0.9613,0.4226,0.4067,-0.9563,0.8480,-0.1564,-0.6428,0.9998,-0.6691,-0.1219,0.8290,-0.9659,0.4384
+132,0.7431,-0.9945,0.5878,0.2079,-0.8660,0.9511,-0.4067,-0.4067,0.9511,-0.8660,0.2079,0.5878,-0.9945,0.7431,0.0000,-0.7431,-0.6691,-0.1045,0.8090,-0.9781,0.5000,0.3090,-0.9135,0.9135,-0.3090,-0.5000,0.9781,-0.8090,0.1045,0.6691,-1.0000,0.6691
+133,0.7314,-0.9976,0.6293,0.1392,-0.8192,0.9781,-0.5150,-0.2756,0.8910,-0.9397,0.3907,0.4067,-0.9455,0.8829,-0.2588,-0.5299,-0.6820,-0.0698,0.7771,-0.9903,0.5736,0.2079,-0.8572,0.9613,-0.4540,-0.3420,0.9205,-0.9135,0.3256,0.4695,-0.9659,0.8480
+134,0.7193,-0.9994,0.6691,0.0698,-0.7660,0.9945,-0.6157,-0.1392,0.8090,-0.9848,0.5592,0.2079,-0.8480,0.9703,-0.5000,-0.2756,-0.6947,-0.0349,0.7431,-0.9976,0.6428,0.1045,-0.7880,0.9903,-0.5878,-0.1736,0.8290,-0.9781,0.5299,0.2419,-0.8660,0.9613
+135,0.7071,-1.0000,0.7071,0.0000,-0.7071,1.0000,-0.7071,0.0000,0.7071,-1.0000,0.7071,0.0000,-0.7071,1.0000,-0.7071,0.0000,-0.7071,0.0000,0.7071,-1.0000,0.7071,0.0000,-0.7071,1.0000,-0.7071,0.0000,0.7071,-1.0000,0.7071,0.0000,-0.7071,1.0000
+136,0.6947,-0.9994,0.7431,-0.0698,-0.6428,0.9945,-0.7880,0.1392,0.5878,-0.9848,0.8290,-0.2079,-0.5299,0.9703,-0.8660,0.2756,-0.7193,0.0349,0.6691,-0.9976,0.7660,-0.1045,-0.6157,0.9903,-0.8090,0.1736,0.5592,-0.9781,0.8480,-0.2419,-0.5000,0.9613
+137,0.6820,-0.9976,0.7771,-0.1392,-0.5736,0.9781,-0.8572,0.2756,0.4540,-0.9397,0.9205,-0.4067,-0.3256,0.8829,-0.9659,0.5299,-0.7314,0.0698,0.6293,-0.9903,0.8192,-0.2079,-0.5150,0.9613,-0.8910,0.3420,0.3907,-0.9135,0.9455,-0.4695,-0.2588,0.8480
+138,0.6691,-0.9945,0.8090,-0.2079,-0.5000,0.9511,-0.9135,0.4067,0.3090,-0.8660,0.9781,-0.5878,-0.1045,0.7431,-1.0000,0.7431,-0.7431,0.1045,0.5878,-0.9781,0.8660,-0.3090,-0.4067,0.9135,-0.9511,0.5000,0.2079,-0.8090,0.9945,-0.6691,0.0000,0.6691
+139,0.6561,-0.9903,0.8387,-0.2756,-0.4226,0.9135,-0.9563,0.5299,0.1564,-0.7660,0.9998,-0.7431,0.1219,0.5592,-0.9659,0.8988,-0.7547,0.1392,0.5446,-0.9613,0.9063,-0.4067,-0.2924,0.8480,-0.9877,0.6428,0.0175,-0.6691,0.9925,-0.8290,0.2588,0.4384
+140,0.6428,-0.9848,0.8660,-0.3420,-0.3420,0.8660,-0.9848,0.6428,0.0000,-0.6428,0.9848,-0.8660,0.3420,0.3420,-0.8660,0.9848,-0.7660,0.1736,0.5000,-0.9397,0.9397,-0.5000,-0.1736,0.7660,-1.0000,0.7660,-0.1736,-0.5000,0.9397,-0.9397,0.5000,0.1736
+141,0.6293,-0.9781,0.8910,-0.4067,-0.2588,0.8090,-0.9986,0.7431,-0.1564,-0.5000,0.9336,-0.9511,0.5446,0.1045,-0.7071,0.9945,-0.7771,0.2079,0.4540,-0.9135,0.9659,-0.5878,-0.0523,0.6691,-0.9877,0.8660,-0.3584,-0.3090,0.8387,-0.9945,0.7071,-0.1045
+142,0.6157,-0.9703,0.9135,-0.4695,-0.1736,0.7431,-0.9976,0.8290,-0.3090,-0.3420,0.8480,-0.9945,0.7193,-0.1392,-0.5000,0.9272,-0.7880,0.2419,0.4067,-0.8829,0.9848,-0.6691,0.0698,0.5592,-0.9511,0.9397,-0.5299,-0.1045,0.6947,-0.9903,0.8660,-0.3746
+143,0.6018,-0.9613,0.9336,-0.5299,-0.0872,0.6691,-0.9816,0.8988,-0.4540,-0.1736,0.7314,-0.9945,0.8572,-0.3746,-0.2588,0.7880,-0.7986,0.2756,0.3584,-0.8480,0.9962,-0.7431,0.1908,0.4384,-0.8910,0.9848,-0.6820,0.1045,0.5150,-0.9272,0.9659,-0.6157
+144,0.5878,-0.9511,0.9511,-0.5878,0.0000,0.5878,-0.9511,0.9511,-0.5878,0.0000,0.5878,-0.9511,0.9511,-0.5878,0.0000,0.5878,-0.8090,0.3090,0.3090,-0.8090,1.0000,-0.8090,0.3090,0.3090,-0.8090,1.0000,-0.8090,0.3090,0.3090,-0.8090,1.0000,-0.8090
+145,0.5736,-0.9397,0.9659,-0.6428,0.0872,0.5000,-0.9063,0.9848,-0.7071,0.1736,0.4226,-0.8660,0.9962,-0.7660,0.2588,0.3420,-0.8192,0.3420,0.2588,-0.7660,0.9962,-0.8660,0.4226,0.1736,-0.7071,0.9848,-0.9063,0.5000,0.0872,-0.6428,0.9659,-0.9397
+146,0.5592,-0.9272,0.9781,-0.6947,0.1736,0.4067,-0.8480,0.9994,-0.8090,0.3420,0.2419,-0.7431,0.9903,-0.8988,0.5000,0.0698,-0.8290,0.3746,0.2079,-0.7193,0.9848,-0.9135,0.5299,0.0349,-0.5878,0.9397,-0.9703,0.6691,-0.1392,-0.4384,0.8660,-0.9976
+147,0.5446,-0.9135,0.9877,-0.7431,0.2588,0.3090,-0.7771,0.9945,-0.8910,0.5000,0.0523,-0.5878,0.9336,-0.9781,0.7071,-0.2079,-0.8387,0.4067,0.1564,-0.6691,0.9659,-0.9511,0.6293,-0.1045,-0.4540,0.8660,-0.9986,0.8090,-0.3584,-0.2079,0.7071,-0.9781
+148,0.5299,-0.8988,0.9945,-0.7880,0.3420,0.2079,-0.6947,0.9703,-0.9511,0.6428,-0.1392,-0.4067,0.8290,-0.9994,0.8660,-0.4695,-0.8480,0.4384,0.1045,-0.6157,0.9397,-0.9781,0.7193,-0.2419,-0.3090,0.7660,-0.9903,0.9135,-0.5592,0.0349,0.5000,-0.8829
+149,0.5150,-0.8829,0.9986,-0.8290,0.4226,0.1045,-0.6018,0.9272,-0.9877,0.7660,-0.3256,-0.2079,0.6820,-0.9613,0.9659,-0.6947,-0.8572,0.4695,0.0523,-0.5592,0.9063,-0.9945,0.7986,-0.3746,-0.1564,0.6428,-0.9455,0.9781,-0.7314,0.2756,0.2588,-0.7193
+150,0.5000,-0.8660,1.0000,-0.8660,0.5000,0.0000,-0.5000,0.8660,-1.0000,0.8660,-0.5000,0.0000,0.5000,-0.8660,1.0000,-0.8660,-0.8660,0.5000,0.0000,-0.5000,0.8660,-1.0000,0.8660,-0.5000,0.0000,0.5000,-0.8660,1.0000,-0.8660,0.5000,0.0000,-0.5000
+151,0.4848,-0.8480,0.9986,-0.8988,0.5736,-0.1045,-0.3907,0.7880,-0.9877,0.9397,-0.6561,0.2079,0.2924,-0.7193,0.9659,-0.9703,-0.8746,0.5299,-0.0523,-0.4384,0.8192,-0.9945,0.9205,-0.6157,0.1564,0.3420,-0.7547,0.9781,-0.9563,0.6947,-0.2588,-0.2419
+152,0.4695,-0.8290,0.9945,-0.9272,0.6428,-0.2079,-0.2756,0.6947,-0.9511,0.9848,-0.7880,0.4067,0.0698,-0.5299,0.8660,-0.9994,-0.8829,0.5592,-0.1045,-0.3746,0.7660,-0.9781,0.9613,-0.7193,0.3090,0.1736,-0.6157,0.9135,-0.9976,0.8480,-0.5000,0.0349
+153,0.4540,-0.8090,0.9877,-0.9511,0.7071,-0.3090,-0.1564,0.5878,-0.8910,1.0000,-0.8910,0.5878,-0.1564,-0.3090,0.7071,-0.9511,-0.8910,0.5878,-0.1564,-0.3090,0.7071,-0.9511,0.9877,-0.8090,0.4540,0.0000,-0.4540,0.8090,-0.9877,0.9511,-0.7071,0.3090
+154,0.4384,-0.7880,0.9781,-0.9703,0.7660,-0.4067,-0.0349,0.4695,-0.8090,0.9848,-0.9613,0.7431,-0.3746,-0.0698,0.5000,-0.8290,-0.8988,0.6157,-0.2079,-0.2419,0.6428,-0.9135,0.9994,-0.8829,0.5878,-0.1736,-0.2756,0.6691,-0.9272,0.9976,-0.8660,0.5592
+155,0.4226,-0.7660,0.9659,-0.9848,0.8192,-0.5000,0.0872,0.3420,-0.7071,0.9397,-0.9962,0.8660,-0.5736,0.1736,0.2588,-0.6428,-0.9063,0.6428,-0.2588,-0.1736,0.5736,-0.8660,0.9962,-0.9397,0.7071,-0.3420,-0.0872,0.5000,-0.8192,0.9848,-0.9659,0.7660
+156,0.4067,-0.7431,0.9511,-0.9945,0.8660,-0.5878,0.2079,0.2079,-0.5878,0.8660,-0.9945,0.9511,-0.7431,0.4067,0.0000,-0.4067,-0.9135,0.6691,-0.3090,-0.1045,0.5000,-0.8090,0.9781,-0.9781,0.8090,-0.5000,0.1045,0.3090,-0.6691,0.9135,-1.0000,0.9135
+157,0.3907,-0.7193,0.9336,-0.9994,0.9063,-0.6691,0.3256,0.0698,-0.4540,0.7660,-0.9563,0.9945,-0.8746,0.6157,-0.2588,-0.1392,-0.9205,0.6947,-0.3584,-0.0349,0.4226,-0.7431,0.9455,-0.9976,0.8910,-0.6428,0.2924,0.1045,-0.4848,0.7880,-0.9659,0.9903
+158,0.3746,-0.6947,0.9135,-0.9994,0.9397,-0.7431,0.4384,-0.0698,-0.3090,0.6428,-0.8829,0.9945,-0.9613,0.7880,-0.5000,0.1392,-0.9272,0.7193,-0.4067,0.0349,0.3420,-0.6691,0.8988,-0.9976,0.9511,-0.7660,0.4695,-0.1045,-0.2756,0.6157,-0.8660,0.9903
+159,0.3584,-0.6691,0.8910,-0.9945,0.9659,-0.8090,0.5446,-0.2079,-0.1564,0.5000,-0.7771,0.9511,-0.9986,0.9135,-0.7071,0.4067,-0.9336,0.7431,-0.4540,0.1045,0.2588,-0.5878,0.8387,-0.9781,0.9877,-0.8660,0.6293,-0.3090,-0.0523,0.4067,-0.7071,0.9135
+160,0.3420,-0.6428,0.8660,-0.9848,0.9848,-0.8660,0.6428,-0.3420,0.0000,0.3420,-0.6428,0.8660,-0.9848,0.9848,-0.8660,0.6428,-0.9397,0.7660,-0.5000,0.1736,0.1736,-0.5000,0.7660,-0.9397,1.0000,-0.9397,0.7660,-0.5000,0.1736,0.1736,-0.5000,0.7660
+161,0.3256,-0.6157,0.8387,-0.9703,0.9962,-0.9135,0.7314,-0.4695,0.1564,0.1736,-0.4848,0.7431,-0.9205,0.9976,-0.9659,0.8290,-0.9455,0.7880,-0.5446,0.2419,0.0872,-0.4067,0.6820,-0.8829,0.9877,-0.9848,0.8746,-0.6691,0.3907,-0.0698,-0.2588,0.5592
+162,0.3090,-0.5878,0.8090,-0.9511,1.0000,-0.9511,0.8090,-0.5878,0.3090,0.0000,-0.3090,0.5878,-0.8090,0.9511,-1.0000,0.9511,-0.9511,0.8090,-0.5878,0.3090,0.0000,-0.3090,0.5878,-0.8090,0.9511,-1.0000,0.9511,-0.8090,0.5878,-0.3090,0.0000,0.3090
+163,0.2924,-0.5592,0.7771,-0.9272,0.9962,-0.9781,0.8746,-0.6947,0.4540,-0.1736,-0.1219,0.4067,-0.6561,0.8480,-0.9659,0.9994,-0.9563,0.8290,-0.6293,0.3746,-0.0872,-0.2079,0.4848,-0.7193,0.8910,-0.9848,0.9925,-0.9135,0.7547,-0.5299,0.2588,0.0349
+164,0.2756,-0.5299,0.7431,-0.8988,0.9848,-0.9945,0.9272,-0.7880,0.5878,-0.3420,0.0698,0.2079,-0.4695,0.6947,-0.8660,0.9703,-0.9613,0.8480,-0.6691,0.4384,-0.1736,-0.1045,0.3746,-0.6157,0.8090,-0.9397,0.9976,-0.9781,0.8829,-0.7193,0.5000,-0.2419
+165,0.2588,-0.5000,0.7071,-0.8660,0.9659,-1.0000,0.9659,-0.8660,0.7071,-0.5000,0.2588,0.0000,-0.2588,0.5000,-0.7071,0.8660,-0.9659,0.8660,-0.7071,0.5000,-0.2588,0.0000,0.2588,-0.5000,0.7071,-0.8660,0.9659,-1.0000,0.9659,-0.8660,0.7071,-0.5000
+166,0.2419,-0.4695,0.6691,-0.8290,0.9397,-0.9945,0.9903,-0.9272,0.8090,-0.6428,0.4384,-0.2079,-0.0349,0.2756,-0.5000,0.6947,-0.9703,0.8829,-0.7431,0.5592,-0.3420,0.1045,0.1392,-0.3746,0.5878,-0.7660,0.8988,-0.9781,0.9994,-0.9613,0.8660,-0.7193
+167,0.2250,-0.4384,0.6293,-0.7880,0.9063,-0.9781,0.9998,-0.9703,0.8910,-0.7660,0.6018,-0.4067,0.1908,0.0349,-0.2588,0.4695,-0.9744,0.8988,-0.7771,0.6157,-0.4226,0.2079,0.0175,-0.2419,0.4540,-0.6428,0.7986,-0.9135,0.9816,-0.9994,0.9659,-0.8829
+168,0.2079,-0.4067,0.5878,-0.7431,0.8660,-0.9511,0.9945,-0.9945,0.9511,-0.8660,0.7431,-0.5878,0.4067,-0.2079,0.0000,0.2079,-0.9781,0.9135,-0.8090,0.6691,-0.5000,0.3090,-0.1045,-0.1045,0.3090,-0.5000,0.6691,-0.8090,0.9135,-0.9781,1.0000,-0.9781
+169,0.1908,-0.3746,0.5446,-0.6947,0.8192,-0.9135,0.9744,-0.9994,0.9877,-0.9397,0.8572,-0.7431,0.6018,-0.4384,0.2588,-0.0698,-0.9816,0.9272,-0.8387,0.7193,-0.5736,0.4067,-0.2250,0.0349,0.1564,-0.3420,0.5150,-0.6691,0.7986,-0.8988,0.9659,-0.9976
+170,0.1736,-0.3420,0.5000,-0.6428,0.7660,-0.8660,0.9397,-0.9848,1.0000,-0.9848,0.9397,-0.8660,0.7660,-0.6428,0.5000,-0.3420,-0.9848,0.9397,-0.8660,0.7660,-0.6428,0.5000,-0.3420,0.1736,0.0000,-0.1736,0.3420,-0.5000,0.6428,-0.7660,0.8660,-0.9397
+171,0.1564,-0.3090,0.4540,-0.5878,0.7071,-0.8090,0.8910,-0.9511,0.9877,-1.0000,0.9877,-0.9511,0.8910,-0.8090,0.7071,-0.5878,-0.9877,0.9511,-0.8910,0.8090,-0.7071,0.5878,-0.4540,0.3090,-0.1564,0.0000,0.1564,-0.3090,0.4540,-0.5878,0.7071,-0.8090
+172,0.1392,-0.2756,0.4067,-0.5299,0.6428,-0.7431,0.8290,-0.8988,0.9511,-0.9848,0.9994,-0.9945,0.9703,-0.9272,0.8660,-0.7880,-0.9903,0.9613,-0.9135,0.8480,-0.7660,0.6691,-0.5592,0.4384,-0.3090,0.1736,-0.0349,-0.1045,0.2419,-0.3746,0.5000,-0.6157
+173,0.1219,-0.2419,0.3584,-0.4695,0.5736,-0.6691,0.7547,-0.8290,0.8910,-0.9397,0.9744,-0.9945,0.9998,-0.9903,0.9659,-0.9272,-0.9925,0.9703,-0.9336,0.8829,-0.8192,0.7431,-0.6561,0.5592,-0.4540,0.3420,-0.2250,0.1045,0.0175,-0.1392,0.2588,-0.3746
+174,0.1045,-0.2079,0.3090,-0.4067,0.5000,-0.5878,0.6691,-0.7431,0.8090,-0.8660,0.9135,-0.9511,0.9781,-0.9945,1.0000,-0.9945,-0.9945,0.9781,-0.9511,0.9135,-0.8660,0.8090,-0.7431,0.6691,-0.5878,0.5000,-0.4067,0.3090,-0.2079,0.1045,0.0000,-0.1045
+175,0.0872,-0.1736,0.2588,-0.3420,0.4226,-0.5000,0.5736,-0.6428,0.7071,-0.7660,0.8192,-0.8660,0.9063,-0.9397,0.9659,-0.9848,-0.9962,0.9848,-0.9659,0.9397,-0.9063,0.8660,-0.8192,0.7660,-0.7071,0.6428,-0.5736,0.5000,-0.4226,0.3420,-0.2588,0.1736
+176,0.0698,-0.1392,0.2079,-0.2756,0.3420,-0.4067,0.4695,-0.5299,0.5878,-0.6428,0.6947,-0.7431,0.7880,-0.8290,0.8660,-0.8988,-0.9976,0.9903,-0.9781,0.9613,-0.9397,0.9135,-0.8829,0.8480,-0.8090,0.7660,-0.7193,0.6691,-0.6157,0.5592,-0.5000,0.4384
+177,0.0523,-0.1045,0.1564,-0.2079,0.2588,-0.3090,0.3584,-0.4067,0.4540,-0.5000,0.5446,-0.5878,0.6293,-0.6691,0.7071,-0.7431,-0.9986,0.9945,-0.9877,0.9781,-0.9659,0.9511,-0.9336,0.9135,-0.8910,0.8660,-0.8387,0.8090,-0.7771,0.7431,-0.7071,0.6691
+178,0.0349,-0.0698,0.1045,-0.1392,0.1736,-0.2079,0.2419,-0.2756,0.3090,-0.3420,0.3746,-0.4067,0.4384,-0.4695,0.5000,-0.5299,-0.9994,0.9976,-0.9945,0.9903,-0.9848,0.9781,-0.9703,0.9613,-0.9511,0.9397,-0.9272,0.9135,-0.8988,0.8829,-0.8660,0.8480
+179,0.0175,-0.0349,0.0523,-0.0698,0.0872,-0.1045,0.1219,-0.1392,0.1564,-0.1736,0.1908,-0.2079,0.2250,-0.2419,0.2588,-0.2756,-0.9998,0.9994,-0.9986,0.9976,-0.9962,0.9945,-0.9925,0.9903,-0.9877,0.9848,-0.9816,0.9781,-0.9744,0.9703,-0.9659,0.9613
+180,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,-1.0000,1.0000,-1.0000,1.0000,-1.0000,1.0000,-1.0000,1.0000,-1.0000,1.0000,-1.0000,1.0000,-1.0000,1.0000,-1.0000,1.0000
+181,-0.0175,0.0349,-0.0523,0.0698,-0.0872,0.1045,-0.1219,0.1392,-0.1564,0.1736,-0.1908,0.2079,-0.2250,0.2419,-0.2588,0.2756,-0.9998,0.9994,-0.9986,0.9976,-0.9962,0.9945,-0.9925,0.9903,-0.9877,0.9848,-0.9816,0.9781,-0.9744,0.9703,-0.9659,0.9613
+182,-0.0349,0.0698,-0.1045,0.1392,-0.1736,0.2079,-0.2419,0.2756,-0.3090,0.3420,-0.3746,0.4067,-0.4384,0.4695,-0.5000,0.5299,-0.9994,0.9976,-0.9945,0.9903,-0.9848,0.9781,-0.9703,0.9613,-0.9511,0.9397,-0.9272,0.9135,-0.8988,0.8829,-0.8660,0.8480
+183,-0.0523,0.1045,-0.1564,0.2079,-0.2588,0.3090,-0.3584,0.4067,-0.4540,0.5000,-0.5446,0.5878,-0.6293,0.6691,-0.7071,0.7431,-0.9986,0.9945,-0.9877,0.9781,-0.9659,0.9511,-0.9336,0.9135,-0.8910,0.8660,-0.8387,0.8090,-0.7771,0.7431,-0.7071,0.6691
+184,-0.0698,0.1392,-0.2079,0.2756,-0.3420,0.4067,-0.4695,0.5299,-0.5878,0.6428,-0.6947,0.7431,-0.7880,0.8290,-0.8660,0.8988,-0.9976,0.9903,-0.9781,0.9613,-0.9397,0.9135,-0.8829,0.8480,-0.8090,0.7660,-0.7193,0.6691,-0.6157,0.5592,-0.5000,0.4384
+185,-0.0872,0.1736,-0.2588,0.3420,-0.4226,0.5000,-0.5736,0.6428,-0.7071,0.7660,-0.8192,0.8660,-0.9063,0.9397,-0.9659,0.9848,-0.9962,0.9848,-0.9659,0.9397,-0.9063,0.8660,-0.8192,0.7660,-0.7071,0.6428,-0.5736,0.5000,-0.4226,0.3420,-0.2588,0.1736
+186,-0.1045,0.2079,-0.3090,0.4067,-0.5000,0.5878,-0.6691,0.7431,-0.8090,0.8660,-0.9135,0.9511,-0.9781,0.9945,-1.0000,0.9945,-0.9945,0.9781,-0.9511,0.9135,-0.8660,0.8090,-0.7431,0.6691,-0.5878,0.5000,-0.4067,0.3090,-0.2079,0.1045,0.0000,-0.1045
+187,-0.1219,0.2419,-0.3584,0.4695,-0.5736,0.6691,-0.7547,0.8290,-0.8910,0.9397,-0.9744,0.9945,-0.9998,0.9903,-0.9659,0.9272,-0.9925,0.9703,-0.9336,0.8829,-0.8192,0.7431,-0.6561,0.5592,-0.4540,0.3420,-0.2250,0.1045,0.0175,-0.1392,0.2588,-0.3746
+188,-0.1392,0.2756,-0.4067,0.5299,-0.6428,0.7431,-0.8290,0.8988,-0.9511,0.9848,-0.9994,0.9945,-0.9703,0.9272,-0.8660,0.7880,-0.9903,0.9613,-0.9135,0.8480,-0.7660,0.6691,-0.5592,0.4384,-0.3090,0.1736,-0.0349,-0.1045,0.2419,-0.3746,0.5000,-0.6157
+189,-0.1564,0.3090,-0.4540,0.5878,-0.7071,0.8090,-0.8910,0.9511,-0.9877,1.0000,-0.9877,0.9511,-0.8910,0.8090,-0.7071,0.5878,-0.9877,0.9511,-0.8910,0.8090,-0.7071,0.5878,-0.4540,0.3090,-0.1564,0.0000,0.1564,-0.3090,0.4540,-0.5878,0.7071,-0.8090
+190,-0.1736,0.3420,-0.5000,0.6428,-0.7660,0.8660,-0.9397,0.9848,-1.0000,0.9848,-0.9397,0.8660,-0.7660,0.6428,-0.5000,0.3420,-0.9848,0.9397,-0.8660,0.7660,-0.6428,0.5000,-0.3420,0.1736,0.0000,-0.1736,0.3420,-0.5000,0.6428,-0.7660,0.8660,-0.9397
+191,-0.1908,0.3746,-0.5446,0.6947,-0.8192,0.9135,-0.9744,0.9994,-0.9877,0.9397,-0.8572,0.7431,-0.6018,0.4384,-0.2588,0.0698,-0.9816,0.9272,-0.8387,0.7193,-0.5736,0.4067,-0.2250,0.0349,0.1564,-0.3420,0.5150,-0.6691,0.7986,-0.8988,0.9659,-0.9976
+192,-0.2079,0.4067,-0.5878,0.7431,-0.8660,0.9511,-0.9945,0.9945,-0.9511,0.8660,-0.7431,0.5878,-0.4067,0.2079,0.0000,-0.2079,-0.9781,0.9135,-0.8090,0.6691,-0.5000,0.3090,-0.1045,-0.1045,0.3090,-0.5000,0.6691,-0.8090,0.9135,-0.9781,1.0000,-0.9781
+193,-0.2250,0.4384,-0.6293,0.7880,-0.9063,0.9781,-0.9998,0.9703,-0.8910,0.7660,-0.6018,0.4067,-0.1908,-0.0349,0.2588,-0.4695,-0.9744,0.8988,-0.7771,0.6157,-0.4226,0.2079,0.0175,-0.2419,0.4540,-0.6428,0.7986,-0.9135,0.9816,-0.9994,0.9659,-0.8829
+194,-0.2419,0.4695,-0.6691,0.8290,-0.9397,0.9945,-0.9903,0.9272,-0.8090,0.6428,-0.4384,0.2079,0.0349,-0.2756,0.5000,-0.6947,-0.9703,0.8829,-0.7431,0.5592,-0.3420,0.1045,0.1392,-0.3746,0.5878,-0.7660,0.8988,-0.9781,0.9994,-0.9613,0.8660,-0.7193
+195,-0.2588,0.5000,-0.7071,0.8660,-0.9659,1.0000,-0.9659,0.8660,-0.7071,0.5000,-0.2588,0.0000,0.2588,-0.5000,0.7071,-0.8660,-0.9659,0.8660,-0.7071,0.5000,-0.2588,0.0000,0.2588,-0.5000,0.7071,-0.8660,0.9659,-1.0000,0.9659,-0.8660,0.7071,-0.5000
+196,-0.2756,0.5299,-0.7431,0.8988,-0.9848,0.9945,-0.9272,0.7880,-0.5878,0.3420,-0.0698,-0.2079,0.4695,-0.6947,0.8660,-0.9703,-0.9613,0.8480,-0.6691,0.4384,-0.1736,-0.1045,0.3746,-0.6157,0.8090,-0.9397,0.9976,-0.9781,0.8829,-0.7193,0.5000,-0.2419
+197,-0.2924,0.5592,-0.7771,0.9272,-0.9962,0.9781,-0.8746,0.6947,-0.4540,0.1736,0.1219,-0.4067,0.6561,-0.8480,0.9659,-0.9994,-0.9563,0.8290,-0.6293,0.3746,-0.0872,-0.2079,0.4848,-0.7193,0.8910,-0.9848,0.9925,-0.9135,0.7547,-0.5299,0.2588,0.0349
+198,-0.3090,0.5878,-0.8090,0.9511,-1.0000,0.9511,-0.8090,0.5878,-0.3090,0.0000,0.3090,-0.5878,0.8090,-0.9511,1.0000,-0.9511,-0.9511,0.8090,-0.5878,0.3090,0.0000,-0.3090,0.5878,-0.8090,0.9511,-1.0000,0.9511,-0.8090,0.5878,-0.3090,0.0000,0.3090
+199,-0.3256,0.6157,-0.8387,0.9703,-0.9962,0.9135,-0.7314,0.4695,-0.1564,-0.1736,0.4848,-0.7431,0.9205,-0.9976,0.9659,-0.8290,-0.9455,0.7880,-0.5446,0.2419,0.0872,-0.4067,0.6820,-0.8829,0.9877,-0.9848,0.8746,-0.6691,0.3907,-0.0698,-0.2588,0.5592
+200,-0.3420,0.6428,-0.8660,0.9848,-0.9848,0.8660,-0.6428,0.3420,0.0000,-0.3420,0.6428,-0.8660,0.9848,-0.9848,0.8660,-0.6428,-0.9397,0.7660,-0.5000,0.1736,0.1736,-0.5000,0.7660,-0.9397,1.0000,-0.9397,0.7660,-0.5000,0.1736,0.1736,-0.5000,0.7660
+201,-0.3584,0.6691,-0.8910,0.9945,-0.9659,0.8090,-0.5446,0.2079,0.1564,-0.5000,0.7771,-0.9511,0.9986,-0.9135,0.7071,-0.4067,-0.9336,0.7431,-0.4540,0.1045,0.2588,-0.5878,0.8387,-0.9781,0.9877,-0.8660,0.6293,-0.3090,-0.0523,0.4067,-0.7071,0.9135
+202,-0.3746,0.6947,-0.9135,0.9994,-0.9397,0.7431,-0.4384,0.0698,0.3090,-0.6428,0.8829,-0.9945,0.9613,-0.7880,0.5000,-0.1392,-0.9272,0.7193,-0.4067,0.0349,0.3420,-0.6691,0.8988,-0.9976,0.9511,-0.7660,0.4695,-0.1045,-0.2756,0.6157,-0.8660,0.9903
+203,-0.3907,0.7193,-0.9336,0.9994,-0.9063,0.6691,-0.3256,-0.0698,0.4540,-0.7660,0.9563,-0.9945,0.8746,-0.6157,0.2588,0.1392,-0.9205,0.6947,-0.3584,-0.0349,0.4226,-0.7431,0.9455,-0.9976,0.8910,-0.6428,0.2924,0.1045,-0.4848,0.7880,-0.9659,0.9903
+204,-0.4067,0.7431,-0.9511,0.9945,-0.8660,0.5878,-0.2079,-0.2079,0.5878,-0.8660,0.9945,-0.9511,0.7431,-0.4067,0.0000,0.4067,-0.9135,0.6691,-0.3090,-0.1045,0.5000,-0.8090,0.9781,-0.9781,0.8090,-0.5000,0.1045,0.3090,-0.6691,0.9135,-1.0000,0.9135
+205,-0.4226,0.7660,-0.9659,0.9848,-0.8192,0.5000,-0.0872,-0.3420,0.7071,-0.9397,0.9962,-0.8660,0.5736,-0.1736,-0.2588,0.6428,-0.9063,0.6428,-0.2588,-0.1736,0.5736,-0.8660,0.9962,-0.9397,0.7071,-0.3420,-0.0872,0.5000,-0.8192,0.9848,-0.9659,0.7660
+206,-0.4384,0.7880,-0.9781,0.9703,-0.7660,0.4067,0.0349,-0.4695,0.8090,-0.9848,0.9613,-0.7431,0.3746,0.0698,-0.5000,0.8290,-0.8988,0.6157,-0.2079,-0.2419,0.6428,-0.9135,0.9994,-0.8829,0.5878,-0.1736,-0.2756,0.6691,-0.9272,0.9976,-0.8660,0.5592
+207,-0.4540,0.8090,-0.9877,0.9511,-0.7071,0.3090,0.1564,-0.5878,0.8910,-1.0000,0.8910,-0.5878,0.1564,0.3090,-0.7071,0.9511,-0.8910,0.5878,-0.1564,-0.3090,0.7071,-0.9511,0.9877,-0.8090,0.4540,0.0000,-0.4540,0.8090,-0.9877,0.9511,-0.7071,0.3090
+208,-0.4695,0.8290,-0.9945,0.9272,-0.6428,0.2079,0.2756,-0.6947,0.9511,-0.9848,0.7880,-0.4067,-0.0698,0.5299,-0.8660,0.9994,-0.8829,0.5592,-0.1045,-0.3746,0.7660,-0.9781,0.9613,-0.7193,0.3090,0.1736,-0.6157,0.9135,-0.9976,0.8480,-0.5000,0.0349
+209,-0.4848,0.8480,-0.9986,0.8988,-0.5736,0.1045,0.3907,-0.7880,0.9877,-0.9397,0.6561,-0.2079,-0.2924,0.7193,-0.9659,0.9703,-0.8746,0.5299,-0.0523,-0.4384,0.8192,-0.9945,0.9205,-0.6157,0.1564,0.3420,-0.7547,0.9781,-0.9563,0.6947,-0.2588,-0.2419
+210,-0.5000,0.8660,-1.0000,0.8660,-0.5000,0.0000,0.5000,-0.8660,1.0000,-0.8660,0.5000,0.0000,-0.5000,0.8660,-1.0000,0.8660,-0.8660,0.5000,0.0000,-0.5000,0.8660,-1.0000,0.8660,-0.5000,0.0000,0.5000,-0.8660,1.0000,-0.8660,0.5000,0.0000,-0.5000
+211,-0.5150,0.8829,-0.9986,0.8290,-0.4226,-0.1045,0.6018,-0.9272,0.9877,-0.7660,0.3256,0.2079,-0.6820,0.9613,-0.9659,0.6947,-0.8572,0.4695,0.0523,-0.5592,0.9063,-0.9945,0.7986,-0.3746,-0.1564,0.6428,-0.9455,0.9781,-0.7314,0.2756,0.2588,-0.7193
+212,-0.5299,0.8988,-0.9945,0.7880,-0.3420,-0.2079,0.6947,-0.9703,0.9511,-0.6428,0.1392,0.4067,-0.8290,0.9994,-0.8660,0.4695,-0.8480,0.4384,0.1045,-0.6157,0.9397,-0.9781,0.7193,-0.2419,-0.3090,0.7660,-0.9903,0.9135,-0.5592,0.0349,0.5000,-0.8829
+213,-0.5446,0.9135,-0.9877,0.7431,-0.2588,-0.3090,0.7771,-0.9945,0.8910,-0.5000,-0.0523,0.5878,-0.9336,0.9781,-0.7071,0.2079,-0.8387,0.4067,0.1564,-0.6691,0.9659,-0.9511,0.6293,-0.1045,-0.4540,0.8660,-0.9986,0.8090,-0.3584,-0.2079,0.7071,-0.9781
+214,-0.5592,0.9272,-0.9781,0.6947,-0.1736,-0.4067,0.8480,-0.9994,0.8090,-0.3420,-0.2419,0.7431,-0.9903,0.8988,-0.5000,-0.0698,-0.8290,0.3746,0.2079,-0.7193,0.9848,-0.9135,0.5299,0.0349,-0.5878,0.9397,-0.9703,0.6691,-0.1392,-0.4384,0.8660,-0.9976
+215,-0.5736,0.9397,-0.9659,0.6428,-0.0872,-0.5000,0.9063,-0.9848,0.7071,-0.1736,-0.4226,0.8660,-0.9962,0.7660,-0.2588,-0.3420,-0.8192,0.3420,0.2588,-0.7660,0.9962,-0.8660,0.4226,0.1736,-0.7071,0.9848,-0.9063,0.5000,0.0872,-0.6428,0.9659,-0.9397
+216,-0.5878,0.9511,-0.9511,0.5878,0.0000,-0.5878,0.9511,-0.9511,0.5878,0.0000,-0.5878,0.9511,-0.9511,0.5878,0.0000,-0.5878,-0.8090,0.3090,0.3090,-0.8090,1.0000,-0.8090,0.3090,0.3090,-0.8090,1.0000,-0.8090,0.3090,0.3090,-0.8090,1.0000,-0.8090
+217,-0.6018,0.9613,-0.9336,0.5299,0.0872,-0.6691,0.9816,-0.8988,0.4540,0.1736,-0.7314,0.9945,-0.8572,0.3746,0.2588,-0.7880,-0.7986,0.2756,0.3584,-0.8480,0.9962,-0.7431,0.1908,0.4384,-0.8910,0.9848,-0.6820,0.1045,0.5150,-0.9272,0.9659,-0.6157
+218,-0.6157,0.9703,-0.9135,0.4695,0.1736,-0.7431,0.9976,-0.8290,0.3090,0.3420,-0.8480,0.9945,-0.7193,0.1392,0.5000,-0.9272,-0.7880,0.2419,0.4067,-0.8829,0.9848,-0.6691,0.0698,0.5592,-0.9511,0.9397,-0.5299,-0.1045,0.6947,-0.9903,0.8660,-0.3746
+219,-0.6293,0.9781,-0.8910,0.4067,0.2588,-0.8090,0.9986,-0.7431,0.1564,0.5000,-0.9336,0.9511,-0.5446,-0.1045,0.7071,-0.9945,-0.7771,0.2079,0.4540,-0.9135,0.9659,-0.5878,-0.0523,0.6691,-0.9877,0.8660,-0.3584,-0.3090,0.8387,-0.9945,0.7071,-0.1045
+220,-0.6428,0.9848,-0.8660,0.3420,0.3420,-0.8660,0.9848,-0.6428,0.0000,0.6428,-0.9848,0.8660,-0.3420,-0.3420,0.8660,-0.9848,-0.7660,0.1736,0.5000,-0.9397,0.9397,-0.5000,-0.1736,0.7660,-1.0000,0.7660,-0.1736,-0.5000,0.9397,-0.9397,0.5000,0.1736
+221,-0.6561,0.9903,-0.8387,0.2756,0.4226,-0.9135,0.9563,-0.5299,-0.1564,0.7660,-0.9998,0.7431,-0.1219,-0.5592,0.9659,-0.8988,-0.7547,0.1392,0.5446,-0.9613,0.9063,-0.4067,-0.2924,0.8480,-0.9877,0.6428,0.0175,-0.6691,0.9925,-0.8290,0.2588,0.4384
+222,-0.6691,0.9945,-0.8090,0.2079,0.5000,-0.9511,0.9135,-0.4067,-0.3090,0.8660,-0.9781,0.5878,0.1045,-0.7431,1.0000,-0.7431,-0.7431,0.1045,0.5878,-0.9781,0.8660,-0.3090,-0.4067,0.9135,-0.9511,0.5000,0.2079,-0.8090,0.9945,-0.6691,0.0000,0.6691
+223,-0.6820,0.9976,-0.7771,0.1392,0.5736,-0.9781,0.8572,-0.2756,-0.4540,0.9397,-0.9205,0.4067,0.3256,-0.8829,0.9659,-0.5299,-0.7314,0.0698,0.6293,-0.9903,0.8192,-0.2079,-0.5150,0.9613,-0.8910,0.3420,0.3907,-0.9135,0.9455,-0.4695,-0.2588,0.8480
+224,-0.6947,0.9994,-0.7431,0.0698,0.6428,-0.9945,0.7880,-0.1392,-0.5878,0.9848,-0.8290,0.2079,0.5299,-0.9703,0.8660,-0.2756,-0.7193,0.0349,0.6691,-0.9976,0.7660,-0.1045,-0.6157,0.9903,-0.8090,0.1736,0.5592,-0.9781,0.8480,-0.2419,-0.5000,0.9613
+225,-0.7071,1.0000,-0.7071,0.0000,0.7071,-1.0000,0.7071,0.0000,-0.7071,1.0000,-0.7071,0.0000,0.7071,-1.0000,0.7071,0.0000,-0.7071,0.0000,0.7071,-1.0000,0.7071,0.0000,-0.7071,1.0000,-0.7071,0.0000,0.7071,-1.0000,0.7071,0.0000,-0.7071,1.0000
+226,-0.7193,0.9994,-0.6691,-0.0698,0.7660,-0.9945,0.6157,0.1392,-0.8090,0.9848,-0.5592,-0.2079,0.8480,-0.9703,0.5000,0.2756,-0.6947,-0.0349,0.7431,-0.9976,0.6428,0.1045,-0.7880,0.9903,-0.5878,-0.1736,0.8290,-0.9781,0.5299,0.2419,-0.8660,0.9613
+227,-0.7314,0.9976,-0.6293,-0.1392,0.8192,-0.9781,0.5150,0.2756,-0.8910,0.9397,-0.3907,-0.4067,0.9455,-0.8829,0.2588,0.5299,-0.6820,-0.0698,0.7771,-0.9903,0.5736,0.2079,-0.8572,0.9613,-0.4540,-0.3420,0.9205,-0.9135,0.3256,0.4695,-0.9659,0.8480
+228,-0.7431,0.9945,-0.5878,-0.2079,0.8660,-0.9511,0.4067,0.4067,-0.9511,0.8660,-0.2079,-0.5878,0.9945,-0.7431,0.0000,0.7431,-0.6691,-0.1045,0.8090,-0.9781,0.5000,0.3090,-0.9135,0.9135,-0.3090,-0.5000,0.9781,-0.8090,0.1045,0.6691,-1.0000,0.6691
+229,-0.7547,0.9903,-0.5446,-0.2756,0.9063,-0.9135,0.2924,0.5299,-0.9877,0.7660,-0.0175,-0.7431,0.9925,-0.5592,-0.2588,0.8988,-0.6561,-0.1392,0.8387,-0.9613,0.4226,0.4067,-0.9563,0.8480,-0.1564,-0.6428,0.9998,-0.6691,-0.1219,0.8290,-0.9659,0.4384
+230,-0.7660,0.9848,-0.5000,-0.3420,0.9397,-0.8660,0.1736,0.6428,-1.0000,0.6428,0.1736,-0.8660,0.9397,-0.3420,-0.5000,0.9848,-0.6428,-0.1736,0.8660,-0.9397,0.3420,0.5000,-0.9848,0.7660,0.0000,-0.7660,0.9848,-0.5000,-0.3420,0.9397,-0.8660,0.1736
+231,-0.7771,0.9781,-0.4540,-0.4067,0.9659,-0.8090,0.0523,0.7431,-0.9877,0.5000,0.3584,-0.9511,0.8387,-0.1045,-0.7071,0.9945,-0.6293,-0.2079,0.8910,-0.9135,0.2588,0.5878,-0.9986,0.6691,0.1564,-0.8660,0.9336,-0.3090,-0.5446,0.9945,-0.7071,-0.1045
+232,-0.7880,0.9703,-0.4067,-0.4695,0.9848,-0.7431,-0.0698,0.8290,-0.9511,0.3420,0.5299,-0.9945,0.6947,0.1392,-0.8660,0.9272,-0.6157,-0.2419,0.9135,-0.8829,0.1736,0.6691,-0.9976,0.5592,0.3090,-0.9397,0.8480,-0.1045,-0.7193,0.9903,-0.5000,-0.3746
+233,-0.7986,0.9613,-0.3584,-0.5299,0.9962,-0.6691,-0.1908,0.8988,-0.8910,0.1736,0.6820,-0.9945,0.5150,0.3746,-0.9659,0.7880,-0.6018,-0.2756,0.9336,-0.8480,0.0872,0.7431,-0.9816,0.4384,0.4540,-0.9848,0.7314,0.1045,-0.8572,0.9272,-0.2588,-0.6157
+234,-0.8090,0.9511,-0.3090,-0.5878,1.0000,-0.5878,-0.3090,0.9511,-0.8090,0.0000,0.8090,-0.9511,0.3090,0.5878,-1.0000,0.5878,-0.5878,-0.3090,0.9511,-0.8090,0.0000,0.8090,-0.9511,0.3090,0.5878,-1.0000,0.5878,0.3090,-0.9511,0.8090,0.0000,-0.8090
+235,-0.8192,0.9397,-0.2588,-0.6428,0.9962,-0.5000,-0.4226,0.9848,-0.7071,-0.1736,0.9063,-0.8660,0.0872,0.7660,-0.9659,0.3420,-0.5736,-0.3420,0.9659,-0.7660,-0.0872,0.8660,-0.9063,0.1736,0.7071,-0.9848,0.4226,0.5000,-0.9962,0.6428,0.2588,-0.9397
+236,-0.8290,0.9272,-0.2079,-0.6947,0.9848,-0.4067,-0.5299,0.9994,-0.5878,-0.3420,0.9703,-0.7431,-0.1392,0.8988,-0.8660,0.0698,-0.5592,-0.3746,0.9781,-0.7193,-0.1736,0.9135,-0.8480,0.0349,0.8090,-0.9397,0.2419,0.6691,-0.9903,0.4384,0.5000,-0.9976
+237,-0.8387,0.9135,-0.1564,-0.7431,0.9659,-0.3090,-0.6293,0.9945,-0.4540,-0.5000,0.9986,-0.5878,-0.3584,0.9781,-0.7071,-0.2079,-0.5446,-0.4067,0.9877,-0.6691,-0.2588,0.9511,-0.7771,-0.1045,0.8910,-0.8660,0.0523,0.8090,-0.9336,0.2079,0.7071,-0.9781
+238,-0.8480,0.8988,-0.1045,-0.7880,0.9397,-0.2079,-0.7193,0.9703,-0.3090,-0.6428,0.9903,-0.4067,-0.5592,0.9994,-0.5000,-0.4695,-0.5299,-0.4384,0.9945,-0.6157,-0.3420,0.9781,-0.6947,-0.2419,0.9511,-0.7660,-0.1392,0.9135,-0.8290,-0.0349,0.8660,-0.8829
+239,-0.8572,0.8829,-0.0523,-0.8290,0.9063,-0.1045,-0.7986,0.9272,-0.1564,-0.7660,0.9455,-0.2079,-0.7314,0.9613,-0.2588,-0.6947,-0.5150,-0.4695,0.9986,-0.5592,-0.4226,0.9945,-0.6018,-0.3746,0.9877,-0.6428,-0.3256,0.9781,-0.6820,-0.2756,0.9659,-0.7193
+240,-0.8660,0.8660,0.0000,-0.8660,0.8660,0.0000,-0.8660,0.8660,0.0000,-0.8660,0.8660,0.0000,-0.8660,0.8660,0.0000,-0.8660,-0.5000,-0.5000,1.0000,-0.5000,-0.5000,1.0000,-0.5000,-0.5000,1.0000,-0.5000,-0.5000,1.0000,-0.5000,-0.5000,1.0000,-0.5000
+241,-0.8746,0.8480,0.0523,-0.8988,0.8192,0.1045,-0.9205,0.7880,0.1564,-0.9397,0.7547,0.2079,-0.9563,0.7193,0.2588,-0.9703,-0.4848,-0.5299,0.9986,-0.4384,-0.5736,0.9945,-0.3907,-0.6157,0.9877,-0.3420,-0.6561,0.9781,-0.2924,-0.6947,0.9659,-0.2419
+242,-0.8829,0.8290,0.1045,-0.9272,0.7660,0.2079,-0.9613,0.6947,0.3090,-0.9848,0.6157,0.4067,-0.9976,0.5299,0.5000,-0.9994,-0.4695,-0.5592,0.9945,-0.3746,-0.6428,0.9781,-0.2756,-0.7193,0.9511,-0.1736,-0.7880,0.9135,-0.0698,-0.8480,0.8660,0.0349
+243,-0.8910,0.8090,0.1564,-0.9511,0.7071,0.3090,-0.9877,0.5878,0.4540,-1.0000,0.4540,0.5878,-0.9877,0.3090,0.7071,-0.9511,-0.4540,-0.5878,0.9877,-0.3090,-0.7071,0.9511,-0.1564,-0.8090,0.8910,0.0000,-0.8910,0.8090,0.1564,-0.9511,0.7071,0.3090
+244,-0.8988,0.7880,0.2079,-0.9703,0.6428,0.4067,-0.9994,0.4695,0.5878,-0.9848,0.2756,0.7431,-0.9272,0.0698,0.8660,-0.8290,-0.4384,-0.6157,0.9781,-0.2419,-0.7660,0.9135,-0.0349,-0.8829,0.8090,0.1736,-0.9613,0.6691,0.3746,-0.9976,0.5000,0.5592
+245,-0.9063,0.7660,0.2588,-0.9848,0.5736,0.5000,-0.9962,0.3420,0.7071,-0.9397,0.0872,0.8660,-0.8192,-0.1736,0.9659,-0.6428,-0.4226,-0.6428,0.9659,-0.1736,-0.8192,0.8660,0.0872,-0.9397,0.7071,0.3420,-0.9962,0.5000,0.5736,-0.9848,0.2588,0.7660
+246,-0.9135,0.7431,0.3090,-0.9945,0.5000,0.5878,-0.9781,0.2079,0.8090,-0.8660,-0.1045,0.9511,-0.6691,-0.4067,1.0000,-0.4067,-0.4067,-0.6691,0.9511,-0.1045,-0.8660,0.8090,0.2079,-0.9781,0.5878,0.5000,-0.9945,0.3090,0.7431,-0.9135,0.0000,0.9135
+247,-0.9205,0.7193,0.3584,-0.9994,0.4226,0.6691,-0.9455,0.0698,0.8910,-0.7660,-0.2924,0.9945,-0.4848,-0.6157,0.9659,-0.1392,-0.3907,-0.6947,0.9336,-0.0349,-0.9063,0.7431,0.3256,-0.9976,0.4540,0.6428,-0.9563,0.1045,0.8746,-0.7880,-0.2588,0.9903
+248,-0.9272,0.6947,0.4067,-0.9994,0.3420,0.7431,-0.8988,-0.0698,0.9511,-0.6428,-0.4695,0.9945,-0.2756,-0.7880,0.8660,0.1392,-0.3746,-0.7193,0.9135,0.0349,-0.9397,0.6691,0.4384,-0.9976,0.3090,0.7660,-0.8829,-0.1045,0.9613,-0.6157,-0.5000,0.9903
+249,-0.9336,0.6691,0.4540,-0.9945,0.2588,0.8090,-0.8387,-0.2079,0.9877,-0.5000,-0.6293,0.9511,-0.0523,-0.9135,0.7071,0.4067,-0.3584,-0.7431,0.8910,0.1045,-0.9659,0.5878,0.5446,-0.9781,0.1564,0.8660,-0.7771,-0.3090,0.9986,-0.4067,-0.7071,0.9135
+250,-0.9397,0.6428,0.5000,-0.9848,0.1736,0.8660,-0.7660,-0.3420,1.0000,-0.3420,-0.7660,0.8660,0.1736,-0.9848,0.5000,0.6428,-0.3420,-0.7660,0.8660,0.1736,-0.9848,0.5000,0.6428,-0.9397,0.0000,0.9397,-0.6428,-0.5000,0.9848,-0.1736,-0.8660,0.7660
+251,-0.9455,0.6157,0.5446,-0.9703,0.0872,0.9135,-0.6820,-0.4695,0.9877,-0.1736,-0.8746,0.7431,0.3907,-0.9976,0.2588,0.8290,-0.3256,-0.7880,0.8387,0.2419,-0.9962,0.4067,0.7314,-0.8829,-0.1564,0.9848,-0.4848,-0.6691,0.9205,0.0698,-0.9659,0.5592
+252,-0.9511,0.5878,0.5878,-0.9511,0.0000,0.9511,-0.5878,-0.5878,0.9511,0.0000,-0.9511,0.5878,0.5878,-0.9511,0.0000,0.9511,-0.3090,-0.8090,0.8090,0.3090,-1.0000,0.3090,0.8090,-0.8090,-0.3090,1.0000,-0.3090,-0.8090,0.8090,0.3090,-1.0000,0.3090
+253,-0.9563,0.5592,0.6293,-0.9272,-0.0872,0.9781,-0.4848,-0.6947,0.8910,0.1736,-0.9925,0.4067,0.7547,-0.8480,-0.2588,0.9994,-0.2924,-0.8290,0.7771,0.3746,-0.9962,0.2079,0.8746,-0.7193,-0.4540,0.9848,-0.1219,-0.9135,0.6561,0.5299,-0.9659,0.0349
+254,-0.9613,0.5299,0.6691,-0.8988,-0.1736,0.9945,-0.3746,-0.7880,0.8090,0.3420,-0.9976,0.2079,0.8829,-0.6947,-0.5000,0.9703,-0.2756,-0.8480,0.7431,0.4384,-0.9848,0.1045,0.9272,-0.6157,-0.5878,0.9397,0.0698,-0.9781,0.4695,0.7193,-0.8660,-0.2419
+255,-0.9659,0.5000,0.7071,-0.8660,-0.2588,1.0000,-0.2588,-0.8660,0.7071,0.5000,-0.9659,0.0000,0.9659,-0.5000,-0.7071,0.8660,-0.2588,-0.8660,0.7071,0.5000,-0.9659,0.0000,0.9659,-0.5000,-0.7071,0.8660,0.2588,-1.0000,0.2588,0.8660,-0.7071,-0.5000
+256,-0.9703,0.4695,0.7431,-0.8290,-0.3420,0.9945,-0.1392,-0.9272,0.5878,0.6428,-0.8988,-0.2079,0.9994,-0.2756,-0.8660,0.6947,-0.2419,-0.8829,0.6691,0.5592,-0.9397,-0.1045,0.9903,-0.3746,-0.8090,0.7660,0.4384,-0.9781,0.0349,0.9613,-0.5000,-0.7193
+257,-0.9744,0.4384,0.7771,-0.7880,-0.4226,0.9781,-0.0175,-0.9703,0.4540,0.7660,-0.7986,-0.4067,0.9816,-0.0349,-0.9659,0.4695,-0.2250,-0.8988,0.6293,0.6157,-0.9063,-0.2079,0.9998,-0.2419,-0.8910,0.6428,0.6018,-0.9135,-0.1908,0.9994,-0.2588,-0.8829
+258,-0.9781,0.4067,0.8090,-0.7431,-0.5000,0.9511,0.1045,-0.9945,0.3090,0.8660,-0.6691,-0.5878,0.9135,0.2079,-1.0000,0.2079,-0.2079,-0.9135,0.5878,0.6691,-0.8660,-0.3090,0.9945,-0.1045,-0.9511,0.5000,0.7431,-0.8090,-0.4067,0.9781,0.0000,-0.9781
+259,-0.9816,0.3746,0.8387,-0.6947,-0.5736,0.9135,0.2250,-0.9994,0.1564,0.9397,-0.5150,-0.7431,0.7986,0.4384,-0.9659,-0.0698,-0.1908,-0.9272,0.5446,0.7193,-0.8192,-0.4067,0.9744,0.0349,-0.9877,0.3420,0.8572,-0.6691,-0.6018,0.8988,0.2588,-0.9976
+260,-0.9848,0.3420,0.8660,-0.6428,-0.6428,0.8660,0.3420,-0.9848,0.0000,0.9848,-0.3420,-0.8660,0.6428,0.6428,-0.8660,-0.3420,-0.1736,-0.9397,0.5000,0.7660,-0.7660,-0.5000,0.9397,0.1736,-1.0000,0.1736,0.9397,-0.5000,-0.7660,0.7660,0.5000,-0.9397
+261,-0.9877,0.3090,0.8910,-0.5878,-0.7071,0.8090,0.4540,-0.9511,-0.1564,1.0000,-0.1564,-0.9511,0.4540,0.8090,-0.7071,-0.5878,-0.1564,-0.9511,0.4540,0.8090,-0.7071,-0.5878,0.8910,0.3090,-0.9877,0.0000,0.9877,-0.3090,-0.8910,0.5878,0.7071,-0.8090
+262,-0.9903,0.2756,0.9135,-0.5299,-0.7660,0.7431,0.5592,-0.8988,-0.3090,0.9848,0.0349,-0.9945,0.2419,0.9272,-0.5000,-0.7880,-0.1392,-0.9613,0.4067,0.8480,-0.6428,-0.6691,0.8290,0.4384,-0.9511,-0.1736,0.9994,-0.1045,-0.9703,0.3746,0.8660,-0.6157
+263,-0.9925,0.2419,0.9336,-0.4695,-0.8192,0.6691,0.6561,-0.8290,-0.4540,0.9397,0.2250,-0.9945,0.0175,0.9903,-0.2588,-0.9272,-0.1219,-0.9703,0.3584,0.8829,-0.5736,-0.7431,0.7547,0.5592,-0.8910,-0.3420,0.9744,0.1045,-0.9998,0.1392,0.9659,-0.3746
+264,-0.9945,0.2079,0.9511,-0.4067,-0.8660,0.5878,0.7431,-0.7431,-0.5878,0.8660,0.4067,-0.9511,-0.2079,0.9945,0.0000,-0.9945,-0.1045,-0.9781,0.3090,0.9135,-0.5000,-0.8090,0.6691,0.6691,-0.8090,-0.5000,0.9135,0.3090,-0.9781,-0.1045,1.0000,-0.1045
+265,-0.9962,0.1736,0.9659,-0.3420,-0.9063,0.5000,0.8192,-0.6428,-0.7071,0.7660,0.5736,-0.8660,-0.4226,0.9397,0.2588,-0.9848,-0.0872,-0.9848,0.2588,0.9397,-0.4226,-0.8660,0.5736,0.7660,-0.7071,-0.6428,0.8192,0.5000,-0.9063,-0.3420,0.9659,0.1736
+266,-0.9976,0.1392,0.9781,-0.2756,-0.9397,0.4067,0.8829,-0.5299,-0.8090,0.6428,0.7193,-0.7431,-0.6157,0.8290,0.5000,-0.8988,-0.0698,-0.9903,0.2079,0.9613,-0.3420,-0.9135,0.4695,0.8480,-0.5878,-0.7660,0.6947,0.6691,-0.7880,-0.5592,0.8660,0.4384
+267,-0.9986,0.1045,0.9877,-0.2079,-0.9659,0.3090,0.9336,-0.4067,-0.8910,0.5000,0.8387,-0.5878,-0.7771,0.6691,0.7071,-0.7431,-0.0523,-0.9945,0.1564,0.9781,-0.2588,-0.9511,0.3584,0.9135,-0.4540,-0.8660,0.5446,0.8090,-0.6293,-0.7431,0.7071,0.6691
+268,-0.9994,0.0698,0.9945,-0.1392,-0.9848,0.2079,0.9703,-0.2756,-0.9511,0.3420,0.9272,-0.4067,-0.8988,0.4695,0.8660,-0.5299,-0.0349,-0.9976,0.1045,0.9903,-0.1736,-0.9781,0.2419,0.9613,-0.3090,-0.9397,0.3746,0.9135,-0.4384,-0.8829,0.5000,0.8480
+269,-0.9998,0.0349,0.9986,-0.0698,-0.9962,0.1045,0.9925,-0.1392,-0.9877,0.1736,0.9816,-0.2079,-0.9744,0.2419,0.9659,-0.2756,-0.0175,-0.9994,0.0523,0.9976,-0.0872,-0.9945,0.1219,0.9903,-0.1564,-0.9848,0.1908,0.9781,-0.2250,-0.9703,0.2588,0.9613
+270,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000,0.0000,-1.0000,0.0000,1.0000
+271,-0.9998,-0.0349,0.9986,0.0698,-0.9962,-0.1045,0.9925,0.1392,-0.9877,-0.1736,0.9816,0.2079,-0.9744,-0.2419,0.9659,0.2756,0.0175,-0.9994,-0.0523,0.9976,0.0872,-0.9945,-0.1219,0.9903,0.1564,-0.9848,-0.1908,0.9781,0.2250,-0.9703,-0.2588,0.9613
+272,-0.9994,-0.0698,0.9945,0.1392,-0.9848,-0.2079,0.9703,0.2756,-0.9511,-0.3420,0.9272,0.4067,-0.8988,-0.4695,0.8660,0.5299,0.0349,-0.9976,-0.1045,0.9903,0.1736,-0.9781,-0.2419,0.9613,0.3090,-0.9397,-0.3746,0.9135,0.4384,-0.8829,-0.5000,0.8480
+273,-0.9986,-0.1045,0.9877,0.2079,-0.9659,-0.3090,0.9336,0.4067,-0.8910,-0.5000,0.8387,0.5878,-0.7771,-0.6691,0.7071,0.7431,0.0523,-0.9945,-0.1564,0.9781,0.2588,-0.9511,-0.3584,0.9135,0.4540,-0.8660,-0.5446,0.8090,0.6293,-0.7431,-0.7071,0.6691
+274,-0.9976,-0.1392,0.9781,0.2756,-0.9397,-0.4067,0.8829,0.5299,-0.8090,-0.6428,0.7193,0.7431,-0.6157,-0.8290,0.5000,0.8988,0.0698,-0.9903,-0.2079,0.9613,0.3420,-0.9135,-0.4695,0.8480,0.5878,-0.7660,-0.6947,0.6691,0.7880,-0.5592,-0.8660,0.4384
+275,-0.9962,-0.1736,0.9659,0.3420,-0.9063,-0.5000,0.8192,0.6428,-0.7071,-0.7660,0.5736,0.8660,-0.4226,-0.9397,0.2588,0.9848,0.0872,-0.9848,-0.2588,0.9397,0.4226,-0.8660,-0.5736,0.7660,0.7071,-0.6428,-0.8192,0.5000,0.9063,-0.3420,-0.9659,0.1736
+276,-0.9945,-0.2079,0.9511,0.4067,-0.8660,-0.5878,0.7431,0.7431,-0.5878,-0.8660,0.4067,0.9511,-0.2079,-0.9945,0.0000,0.9945,0.1045,-0.9781,-0.3090,0.9135,0.5000,-0.8090,-0.6691,0.6691,0.8090,-0.5000,-0.9135,0.3090,0.9781,-0.1045,-1.0000,-0.1045
+277,-0.9925,-0.2419,0.9336,0.4695,-0.8192,-0.6691,0.6561,0.8290,-0.4540,-0.9397,0.2250,0.9945,0.0175,-0.9903,-0.2588,0.9272,0.1219,-0.9703,-0.3584,0.8829,0.5736,-0.7431,-0.7547,0.5592,0.8910,-0.3420,-0.9744,0.1045,0.9998,0.1392,-0.9659,-0.3746
+278,-0.9903,-0.2756,0.9135,0.5299,-0.7660,-0.7431,0.5592,0.8988,-0.3090,-0.9848,0.0349,0.9945,0.2419,-0.9272,-0.5000,0.7880,0.1392,-0.9613,-0.4067,0.8480,0.6428,-0.6691,-0.8290,0.4384,0.9511,-0.1736,-0.9994,-0.1045,0.9703,0.3746,-0.8660,-0.6157
+279,-0.9877,-0.3090,0.8910,0.5878,-0.7071,-0.8090,0.4540,0.9511,-0.1564,-1.0000,-0.1564,0.9511,0.4540,-0.8090,-0.7071,0.5878,0.1564,-0.9511,-0.4540,0.8090,0.7071,-0.5878,-0.8910,0.3090,0.9877,0.0000,-0.9877,-0.3090,0.8910,0.5878,-0.7071,-0.8090
+280,-0.9848,-0.3420,0.8660,0.6428,-0.6428,-0.8660,0.3420,0.9848,0.0000,-0.9848,-0.3420,0.8660,0.6428,-0.6428,-0.8660,0.3420,0.1736,-0.9397,-0.5000,0.7660,0.7660,-0.5000,-0.9397,0.1736,1.0000,0.1736,-0.9397,-0.5000,0.7660,0.7660,-0.5000,-0.9397
+281,-0.9816,-0.3746,0.8387,0.6947,-0.5736,-0.9135,0.2250,0.9994,0.1564,-0.9397,-0.5150,0.7431,0.7986,-0.4384,-0.9659,0.0698,0.1908,-0.9272,-0.5446,0.7193,0.8192,-0.4067,-0.9744,0.0349,0.9877,0.3420,-0.8572,-0.6691,0.6018,0.8988,-0.2588,-0.9976
+282,-0.9781,-0.4067,0.8090,0.7431,-0.5000,-0.9511,0.1045,0.9945,0.3090,-0.8660,-0.6691,0.5878,0.9135,-0.2079,-1.0000,-0.2079,0.2079,-0.9135,-0.5878,0.6691,0.8660,-0.3090,-0.9945,-0.1045,0.9511,0.5000,-0.7431,-0.8090,0.4067,0.9781,0.0000,-0.9781
+283,-0.9744,-0.4384,0.7771,0.7880,-0.4226,-0.9781,-0.0175,0.9703,0.4540,-0.7660,-0.7986,0.4067,0.9816,0.0349,-0.9659,-0.4695,0.2250,-0.8988,-0.6293,0.6157,0.9063,-0.2079,-0.9998,-0.2419,0.8910,0.6428,-0.6018,-0.9135,0.1908,0.9994,0.2588,-0.8829
+284,-0.9703,-0.4695,0.7431,0.8290,-0.3420,-0.9945,-0.1392,0.9272,0.5878,-0.6428,-0.8988,0.2079,0.9994,0.2756,-0.8660,-0.6947,0.2419,-0.8829,-0.6691,0.5592,0.9397,-0.1045,-0.9903,-0.3746,0.8090,0.7660,-0.4384,-0.9781,-0.0349,0.9613,0.5000,-0.7193
+285,-0.9659,-0.5000,0.7071,0.8660,-0.2588,-1.0000,-0.2588,0.8660,0.7071,-0.5000,-0.9659,0.0000,0.9659,0.5000,-0.7071,-0.8660,0.2588,-0.8660,-0.7071,0.5000,0.9659,0.0000,-0.9659,-0.5000,0.7071,0.8660,-0.2588,-1.0000,-0.2588,0.8660,0.7071,-0.5000
+286,-0.9613,-0.5299,0.6691,0.8988,-0.1736,-0.9945,-0.3746,0.7880,0.8090,-0.3420,-0.9976,-0.2079,0.8829,0.6947,-0.5000,-0.9703,0.2756,-0.8480,-0.7431,0.4384,0.9848,0.1045,-0.9272,-0.6157,0.5878,0.9397,-0.0698,-0.9781,-0.4695,0.7193,0.8660,-0.2419
+287,-0.9563,-0.5592,0.6293,0.9272,-0.0872,-0.9781,-0.4848,0.6947,0.8910,-0.1736,-0.9925,-0.4067,0.7547,0.8480,-0.2588,-0.9994,0.2924,-0.8290,-0.7771,0.3746,0.9962,0.2079,-0.8746,-0.7193,0.4540,0.9848,0.1219,-0.9135,-0.6561,0.5299,0.9659,0.0349
+288,-0.9511,-0.5878,0.5878,0.9511,0.0000,-0.9511,-0.5878,0.5878,0.9511,0.0000,-0.9511,-0.5878,0.5878,0.9511,0.0000,-0.9511,0.3090,-0.8090,-0.8090,0.3090,1.0000,0.3090,-0.8090,-0.8090,0.3090,1.0000,0.3090,-0.8090,-0.8090,0.3090,1.0000,0.3090
+289,-0.9455,-0.6157,0.5446,0.9703,0.0872,-0.9135,-0.6820,0.4695,0.9877,0.1736,-0.8746,-0.7431,0.3907,0.9976,0.2588,-0.8290,0.3256,-0.7880,-0.8387,0.2419,0.9962,0.4067,-0.7314,-0.8829,0.1564,0.9848,0.4848,-0.6691,-0.9205,0.0698,0.9659,0.5592
+290,-0.9397,-0.6428,0.5000,0.9848,0.1736,-0.8660,-0.7660,0.3420,1.0000,0.3420,-0.7660,-0.8660,0.1736,0.9848,0.5000,-0.6428,0.3420,-0.7660,-0.8660,0.1736,0.9848,0.5000,-0.6428,-0.9397,0.0000,0.9397,0.6428,-0.5000,-0.9848,-0.1736,0.8660,0.7660
+291,-0.9336,-0.6691,0.4540,0.9945,0.2588,-0.8090,-0.8387,0.2079,0.9877,0.5000,-0.6293,-0.9511,-0.0523,0.9135,0.7071,-0.4067,0.3584,-0.7431,-0.8910,0.1045,0.9659,0.5878,-0.5446,-0.9781,-0.1564,0.8660,0.7771,-0.3090,-0.9986,-0.4067,0.7071,0.9135
+292,-0.9272,-0.6947,0.4067,0.9994,0.3420,-0.7431,-0.8988,0.0698,0.9511,0.6428,-0.4695,-0.9945,-0.2756,0.7880,0.8660,-0.1392,0.3746,-0.7193,-0.9135,0.0349,0.9397,0.6691,-0.4384,-0.9976,-0.3090,0.7660,0.8829,-0.1045,-0.9613,-0.6157,0.5000,0.9903
+293,-0.9205,-0.7193,0.3584,0.9994,0.4226,-0.6691,-0.9455,-0.0698,0.8910,0.7660,-0.2924,-0.9945,-0.4848,0.6157,0.9659,0.1392,0.3907,-0.6947,-0.9336,-0.0349,0.9063,0.7431,-0.3256,-0.9976,-0.4540,0.6428,0.9563,0.1045,-0.8746,-0.7880,0.2588,0.9903
+294,-0.9135,-0.7431,0.3090,0.9945,0.5000,-0.5878,-0.9781,-0.2079,0.8090,0.8660,-0.1045,-0.9511,-0.6691,0.4067,1.0000,0.4067,0.4067,-0.6691,-0.9511,-0.1045,0.8660,0.8090,-0.2079,-0.9781,-0.5878,0.5000,0.9945,0.3090,-0.7431,-0.9135,0.0000,0.9135
+295,-0.9063,-0.7660,0.2588,0.9848,0.5736,-0.5000,-0.9962,-0.3420,0.7071,0.9397,0.0872,-0.8660,-0.8192,0.1736,0.9659,0.6428,0.4226,-0.6428,-0.9659,-0.1736,0.8192,0.8660,-0.0872,-0.9397,-0.7071,0.3420,0.9962,0.5000,-0.5736,-0.9848,-0.2588,0.7660
+296,-0.8988,-0.7880,0.2079,0.9703,0.6428,-0.4067,-0.9994,-0.4695,0.5878,0.9848,0.2756,-0.7431,-0.9272,-0.0698,0.8660,0.8290,0.4384,-0.6157,-0.9781,-0.2419,0.7660,0.9135,0.0349,-0.8829,-0.8090,0.1736,0.9613,0.6691,-0.3746,-0.9976,-0.5000,0.5592
+297,-0.8910,-0.8090,0.1564,0.9511,0.7071,-0.3090,-0.9877,-0.5878,0.4540,1.0000,0.4540,-0.5878,-0.9877,-0.3090,0.7071,0.9511,0.4540,-0.5878,-0.9877,-0.3090,0.7071,0.9511,0.1564,-0.8090,-0.8910,0.0000,0.8910,0.8090,-0.1564,-0.9511,-0.7071,0.3090
+298,-0.8829,-0.8290,0.1045,0.9272,0.7660,-0.2079,-0.9613,-0.6947,0.3090,0.9848,0.6157,-0.4067,-0.9976,-0.5299,0.5000,0.9994,0.4695,-0.5592,-0.9945,-0.3746,0.6428,0.9781,0.2756,-0.7193,-0.9511,-0.1736,0.7880,0.9135,0.0698,-0.8480,-0.8660,0.0349
+299,-0.8746,-0.8480,0.0523,0.8988,0.8192,-0.1045,-0.9205,-0.7880,0.1564,0.9397,0.7547,-0.2079,-0.9563,-0.7193,0.2588,0.9703,0.4848,-0.5299,-0.9986,-0.4384,0.5736,0.9945,0.3907,-0.6157,-0.9877,-0.3420,0.6561,0.9781,0.2924,-0.6947,-0.9659,-0.2419
+300,-0.8660,-0.8660,0.0000,0.8660,0.8660,0.0000,-0.8660,-0.8660,0.0000,0.8660,0.8660,0.0000,-0.8660,-0.8660,0.0000,0.8660,0.5000,-0.5000,-1.0000,-0.5000,0.5000,1.0000,0.5000,-0.5000,-1.0000,-0.5000,0.5000,1.0000,0.5000,-0.5000,-1.0000,-0.5000
+301,-0.8572,-0.8829,-0.0523,0.8290,0.9063,0.1045,-0.7986,-0.9272,-0.1564,0.7660,0.9455,0.2079,-0.7314,-0.9613,-0.2588,0.6947,0.5150,-0.4695,-0.9986,-0.5592,0.4226,0.9945,0.6018,-0.3746,-0.9877,-0.6428,0.3256,0.9781,0.6820,-0.2756,-0.9659,-0.7193
+302,-0.8480,-0.8988,-0.1045,0.7880,0.9397,0.2079,-0.7193,-0.9703,-0.3090,0.6428,0.9903,0.4067,-0.5592,-0.9994,-0.5000,0.4695,0.5299,-0.4384,-0.9945,-0.6157,0.3420,0.9781,0.6947,-0.2419,-0.9511,-0.7660,0.1392,0.9135,0.8290,-0.0349,-0.8660,-0.8829
+303,-0.8387,-0.9135,-0.1564,0.7431,0.9659,0.3090,-0.6293,-0.9945,-0.4540,0.5000,0.9986,0.5878,-0.3584,-0.9781,-0.7071,0.2079,0.5446,-0.4067,-0.9877,-0.6691,0.2588,0.9511,0.7771,-0.1045,-0.8910,-0.8660,-0.0523,0.8090,0.9336,0.2079,-0.7071,-0.9781
+304,-0.8290,-0.9272,-0.2079,0.6947,0.9848,0.4067,-0.5299,-0.9994,-0.5878,0.3420,0.9703,0.7431,-0.1392,-0.8988,-0.8660,-0.0698,0.5592,-0.3746,-0.9781,-0.7193,0.1736,0.9135,0.8480,0.0349,-0.8090,-0.9397,-0.2419,0.6691,0.9903,0.4384,-0.5000,-0.9976
+305,-0.8192,-0.9397,-0.2588,0.6428,0.9962,0.5000,-0.4226,-0.9848,-0.7071,0.1736,0.9063,0.8660,0.0872,-0.7660,-0.9659,-0.3420,0.5736,-0.3420,-0.9659,-0.7660,0.0872,0.8660,0.9063,0.1736,-0.7071,-0.9848,-0.4226,0.5000,0.9962,0.6428,-0.2588,-0.9397
+306,-0.8090,-0.9511,-0.3090,0.5878,1.0000,0.5878,-0.3090,-0.9511,-0.8090,0.0000,0.8090,0.9511,0.3090,-0.5878,-1.0000,-0.5878,0.5878,-0.3090,-0.9511,-0.8090,0.0000,0.8090,0.9511,0.3090,-0.5878,-1.0000,-0.5878,0.3090,0.9511,0.8090,0.0000,-0.8090
+307,-0.7986,-0.9613,-0.3584,0.5299,0.9962,0.6691,-0.1908,-0.8988,-0.8910,-0.1736,0.6820,0.9945,0.5150,-0.3746,-0.9659,-0.7880,0.6018,-0.2756,-0.9336,-0.8480,-0.0872,0.7431,0.9816,0.4384,-0.4540,-0.9848,-0.7314,0.1045,0.8572,0.9272,0.2588,-0.6157
+308,-0.7880,-0.9703,-0.4067,0.4695,0.9848,0.7431,-0.0698,-0.8290,-0.9511,-0.3420,0.5299,0.9945,0.6947,-0.1392,-0.8660,-0.9272,0.6157,-0.2419,-0.9135,-0.8829,-0.1736,0.6691,0.9976,0.5592,-0.3090,-0.9397,-0.8480,-0.1045,0.7193,0.9903,0.5000,-0.3746
+309,-0.7771,-0.9781,-0.4540,0.4067,0.9659,0.8090,0.0523,-0.7431,-0.9877,-0.5000,0.3584,0.9511,0.8387,0.1045,-0.7071,-0.9945,0.6293,-0.2079,-0.8910,-0.9135,-0.2588,0.5878,0.9986,0.6691,-0.1564,-0.8660,-0.9336,-0.3090,0.5446,0.9945,0.7071,-0.1045
+310,-0.7660,-0.9848,-0.5000,0.3420,0.9397,0.8660,0.1736,-0.6428,-1.0000,-0.6428,0.1736,0.8660,0.9397,0.3420,-0.5000,-0.9848,0.6428,-0.1736,-0.8660,-0.9397,-0.3420,0.5000,0.9848,0.7660,0.0000,-0.7660,-0.9848,-0.5000,0.3420,0.9397,0.8660,0.1736
+311,-0.7547,-0.9903,-0.5446,0.2756,0.9063,0.9135,0.2924,-0.5299,-0.9877,-0.7660,-0.0175,0.7431,0.9925,0.5592,-0.2588,-0.8988,0.6561,-0.1392,-0.8387,-0.9613,-0.4226,0.4067,0.9563,0.8480,0.1564,-0.6428,-0.9998,-0.6691,0.1219,0.8290,0.9659,0.4384
+312,-0.7431,-0.9945,-0.5878,0.2079,0.8660,0.9511,0.4067,-0.4067,-0.9511,-0.8660,-0.2079,0.5878,0.9945,0.7431,0.0000,-0.7431,0.6691,-0.1045,-0.8090,-0.9781,-0.5000,0.3090,0.9135,0.9135,0.3090,-0.5000,-0.9781,-0.8090,-0.1045,0.6691,1.0000,0.6691
+313,-0.7314,-0.9976,-0.6293,0.1392,0.8192,0.9781,0.5150,-0.2756,-0.8910,-0.9397,-0.3907,0.4067,0.9455,0.8829,0.2588,-0.5299,0.6820,-0.0698,-0.7771,-0.9903,-0.5736,0.2079,0.8572,0.9613,0.4540,-0.3420,-0.9205,-0.9135,-0.3256,0.4695,0.9659,0.8480
+314,-0.7193,-0.9994,-0.6691,0.0698,0.7660,0.9945,0.6157,-0.1392,-0.8090,-0.9848,-0.5592,0.2079,0.8480,0.9703,0.5000,-0.2756,0.6947,-0.0349,-0.7431,-0.9976,-0.6428,0.1045,0.7880,0.9903,0.5878,-0.1736,-0.8290,-0.9781,-0.5299,0.2419,0.8660,0.9613
+315,-0.7071,-1.0000,-0.7071,0.0000,0.7071,1.0000,0.7071,0.0000,-0.7071,-1.0000,-0.7071,0.0000,0.7071,1.0000,0.7071,0.0000,0.7071,0.0000,-0.7071,-1.0000,-0.7071,0.0000,0.7071,1.0000,0.7071,0.0000,-0.7071,-1.0000,-0.7071,0.0000,0.7071,1.0000
+316,-0.6947,-0.9994,-0.7431,-0.0698,0.6428,0.9945,0.7880,0.1392,-0.5878,-0.9848,-0.8290,-0.2079,0.5299,0.9703,0.8660,0.2756,0.7193,0.0349,-0.6691,-0.9976,-0.7660,-0.1045,0.6157,0.9903,0.8090,0.1736,-0.5592,-0.9781,-0.8480,-0.2419,0.5000,0.9613
+317,-0.6820,-0.9976,-0.7771,-0.1392,0.5736,0.9781,0.8572,0.2756,-0.4540,-0.9397,-0.9205,-0.4067,0.3256,0.8829,0.9659,0.5299,0.7314,0.0698,-0.6293,-0.9903,-0.8192,-0.2079,0.5150,0.9613,0.8910,0.3420,-0.3907,-0.9135,-0.9455,-0.4695,0.2588,0.8480
+318,-0.6691,-0.9945,-0.8090,-0.2079,0.5000,0.9511,0.9135,0.4067,-0.3090,-0.8660,-0.9781,-0.5878,0.1045,0.7431,1.0000,0.7431,0.7431,0.1045,-0.5878,-0.9781,-0.8660,-0.3090,0.4067,0.9135,0.9511,0.5000,-0.2079,-0.8090,-0.9945,-0.6691,0.0000,0.6691
+319,-0.6561,-0.9903,-0.8387,-0.2756,0.4226,0.9135,0.9563,0.5299,-0.1564,-0.7660,-0.9998,-0.7431,-0.1219,0.5592,0.9659,0.8988,0.7547,0.1392,-0.5446,-0.9613,-0.9063,-0.4067,0.2924,0.8480,0.9877,0.6428,-0.0175,-0.6691,-0.9925,-0.8290,-0.2588,0.4384
+320,-0.6428,-0.9848,-0.8660,-0.3420,0.3420,0.8660,0.9848,0.6428,0.0000,-0.6428,-0.9848,-0.8660,-0.3420,0.3420,0.8660,0.9848,0.7660,0.1736,-0.5000,-0.9397,-0.9397,-0.5000,0.1736,0.7660,1.0000,0.7660,0.1736,-0.5000,-0.9397,-0.9397,-0.5000,0.1736
+321,-0.6293,-0.9781,-0.8910,-0.4067,0.2588,0.8090,0.9986,0.7431,0.1564,-0.5000,-0.9336,-0.9511,-0.5446,0.1045,0.7071,0.9945,0.7771,0.2079,-0.4540,-0.9135,-0.9659,-0.5878,0.0523,0.6691,0.9877,0.8660,0.3584,-0.3090,-0.8387,-0.9945,-0.7071,-0.1045
+322,-0.6157,-0.9703,-0.9135,-0.4695,0.1736,0.7431,0.9976,0.8290,0.3090,-0.3420,-0.8480,-0.9945,-0.7193,-0.1392,0.5000,0.9272,0.7880,0.2419,-0.4067,-0.8829,-0.9848,-0.6691,-0.0698,0.5592,0.9511,0.9397,0.5299,-0.1045,-0.6947,-0.9903,-0.8660,-0.3746
+323,-0.6018,-0.9613,-0.9336,-0.5299,0.0872,0.6691,0.9816,0.8988,0.4540,-0.1736,-0.7314,-0.9945,-0.8572,-0.3746,0.2588,0.7880,0.7986,0.2756,-0.3584,-0.8480,-0.9962,-0.7431,-0.1908,0.4384,0.8910,0.9848,0.6820,0.1045,-0.5150,-0.9272,-0.9659,-0.6157
+324,-0.5878,-0.9511,-0.9511,-0.5878,0.0000,0.5878,0.9511,0.9511,0.5878,0.0000,-0.5878,-0.9511,-0.9511,-0.5878,0.0000,0.5878,0.8090,0.3090,-0.3090,-0.8090,-1.0000,-0.8090,-0.3090,0.3090,0.8090,1.0000,0.8090,0.3090,-0.3090,-0.8090,-1.0000,-0.8090
+325,-0.5736,-0.9397,-0.9659,-0.6428,-0.0872,0.5000,0.9063,0.9848,0.7071,0.1736,-0.4226,-0.8660,-0.9962,-0.7660,-0.2588,0.3420,0.8192,0.3420,-0.2588,-0.7660,-0.9962,-0.8660,-0.4226,0.1736,0.7071,0.9848,0.9063,0.5000,-0.0872,-0.6428,-0.9659,-0.9397
+326,-0.5592,-0.9272,-0.9781,-0.6947,-0.1736,0.4067,0.8480,0.9994,0.8090,0.3420,-0.2419,-0.7431,-0.9903,-0.8988,-0.5000,0.0698,0.8290,0.3746,-0.2079,-0.7193,-0.9848,-0.9135,-0.5299,0.0349,0.5878,0.9397,0.9703,0.6691,0.1392,-0.4384,-0.8660,-0.9976
+327,-0.5446,-0.9135,-0.9877,-0.7431,-0.2588,0.3090,0.7771,0.9945,0.8910,0.5000,-0.0523,-0.5878,-0.9336,-0.9781,-0.7071,-0.2079,0.8387,0.4067,-0.1564,-0.6691,-0.9659,-0.9511,-0.6293,-0.1045,0.4540,0.8660,0.9986,0.8090,0.3584,-0.2079,-0.7071,-0.9781
+328,-0.5299,-0.8988,-0.9945,-0.7880,-0.3420,0.2079,0.6947,0.9703,0.9511,0.6428,0.1392,-0.4067,-0.8290,-0.9994,-0.8660,-0.4695,0.8480,0.4384,-0.1045,-0.6157,-0.9397,-0.9781,-0.7193,-0.2419,0.3090,0.7660,0.9903,0.9135,0.5592,0.0349,-0.5000,-0.8829
+329,-0.5150,-0.8829,-0.9986,-0.8290,-0.4226,0.1045,0.6018,0.9272,0.9877,0.7660,0.3256,-0.2079,-0.6820,-0.9613,-0.9659,-0.6947,0.8572,0.4695,-0.0523,-0.5592,-0.9063,-0.9945,-0.7986,-0.3746,0.1564,0.6428,0.9455,0.9781,0.7314,0.2756,-0.2588,-0.7193
+330,-0.5000,-0.8660,-1.0000,-0.8660,-0.5000,0.0000,0.5000,0.8660,1.0000,0.8660,0.5000,0.0000,-0.5000,-0.8660,-1.0000,-0.8660,0.8660,0.5000,0.0000,-0.5000,-0.8660,-1.0000,-0.8660,-0.5000,0.0000,0.5000,0.8660,1.0000,0.8660,0.5000,0.0000,-0.5000
+331,-0.4848,-0.8480,-0.9986,-0.8988,-0.5736,-0.1045,0.3907,0.7880,0.9877,0.9397,0.6561,0.2079,-0.2924,-0.7193,-0.9659,-0.9703,0.8746,0.5299,0.0523,-0.4384,-0.8192,-0.9945,-0.9205,-0.6157,-0.1564,0.3420,0.7547,0.9781,0.9563,0.6947,0.2588,-0.2419
+332,-0.4695,-0.8290,-0.9945,-0.9272,-0.6428,-0.2079,0.2756,0.6947,0.9511,0.9848,0.7880,0.4067,-0.0698,-0.5299,-0.8660,-0.9994,0.8829,0.5592,0.1045,-0.3746,-0.7660,-0.9781,-0.9613,-0.7193,-0.3090,0.1736,0.6157,0.9135,0.9976,0.8480,0.5000,0.0349
+333,-0.4540,-0.8090,-0.9877,-0.9511,-0.7071,-0.3090,0.1564,0.5878,0.8910,1.0000,0.8910,0.5878,0.1564,-0.3090,-0.7071,-0.9511,0.8910,0.5878,0.1564,-0.3090,-0.7071,-0.9511,-0.9877,-0.8090,-0.4540,0.0000,0.4540,0.8090,0.9877,0.9511,0.7071,0.3090
+334,-0.4384,-0.7880,-0.9781,-0.9703,-0.7660,-0.4067,0.0349,0.4695,0.8090,0.9848,0.9613,0.7431,0.3746,-0.0698,-0.5000,-0.8290,0.8988,0.6157,0.2079,-0.2419,-0.6428,-0.9135,-0.9994,-0.8829,-0.5878,-0.1736,0.2756,0.6691,0.9272,0.9976,0.8660,0.5592
+335,-0.4226,-0.7660,-0.9659,-0.9848,-0.8192,-0.5000,-0.0872,0.3420,0.7071,0.9397,0.9962,0.8660,0.5736,0.1736,-0.2588,-0.6428,0.9063,0.6428,0.2588,-0.1736,-0.5736,-0.8660,-0.9962,-0.9397,-0.7071,-0.3420,0.0872,0.5000,0.8192,0.9848,0.9659,0.7660
+336,-0.4067,-0.7431,-0.9511,-0.9945,-0.8660,-0.5878,-0.2079,0.2079,0.5878,0.8660,0.9945,0.9511,0.7431,0.4067,0.0000,-0.4067,0.9135,0.6691,0.3090,-0.1045,-0.5000,-0.8090,-0.9781,-0.9781,-0.8090,-0.5000,-0.1045,0.3090,0.6691,0.9135,1.0000,0.9135
+337,-0.3907,-0.7193,-0.9336,-0.9994,-0.9063,-0.6691,-0.3256,0.0698,0.4540,0.7660,0.9563,0.9945,0.8746,0.6157,0.2588,-0.1392,0.9205,0.6947,0.3584,-0.0349,-0.4226,-0.7431,-0.9455,-0.9976,-0.8910,-0.6428,-0.2924,0.1045,0.4848,0.7880,0.9659,0.9903
+338,-0.3746,-0.6947,-0.9135,-0.9994,-0.9397,-0.7431,-0.4384,-0.0698,0.3090,0.6428,0.8829,0.9945,0.9613,0.7880,0.5000,0.1392,0.9272,0.7193,0.4067,0.0349,-0.3420,-0.6691,-0.8988,-0.9976,-0.9511,-0.7660,-0.4695,-0.1045,0.2756,0.6157,0.8660,0.9903
+339,-0.3584,-0.6691,-0.8910,-0.9945,-0.9659,-0.8090,-0.5446,-0.2079,0.1564,0.5000,0.7771,0.9511,0.9986,0.9135,0.7071,0.4067,0.9336,0.7431,0.4540,0.1045,-0.2588,-0.5878,-0.8387,-0.9781,-0.9877,-0.8660,-0.6293,-0.3090,0.0523,0.4067,0.7071,0.9135
+340,-0.3420,-0.6428,-0.8660,-0.9848,-0.9848,-0.8660,-0.6428,-0.3420,0.0000,0.3420,0.6428,0.8660,0.9848,0.9848,0.8660,0.6428,0.9397,0.7660,0.5000,0.1736,-0.1736,-0.5000,-0.7660,-0.9397,-1.0000,-0.9397,-0.7660,-0.5000,-0.1736,0.1736,0.5000,0.7660
+341,-0.3256,-0.6157,-0.8387,-0.9703,-0.9962,-0.9135,-0.7314,-0.4695,-0.1564,0.1736,0.4848,0.7431,0.9205,0.9976,0.9659,0.8290,0.9455,0.7880,0.5446,0.2419,-0.0872,-0.4067,-0.6820,-0.8829,-0.9877,-0.9848,-0.8746,-0.6691,-0.3907,-0.0698,0.2588,0.5592
+342,-0.3090,-0.5878,-0.8090,-0.9511,-1.0000,-0.9511,-0.8090,-0.5878,-0.3090,0.0000,0.3090,0.5878,0.8090,0.9511,1.0000,0.9511,0.9511,0.8090,0.5878,0.3090,0.0000,-0.3090,-0.5878,-0.8090,-0.9511,-1.0000,-0.9511,-0.8090,-0.5878,-0.3090,0.0000,0.3090
+343,-0.2924,-0.5592,-0.7771,-0.9272,-0.9962,-0.9781,-0.8746,-0.6947,-0.4540,-0.1736,0.1219,0.4067,0.6561,0.8480,0.9659,0.9994,0.9563,0.8290,0.6293,0.3746,0.0872,-0.2079,-0.4848,-0.7193,-0.8910,-0.9848,-0.9925,-0.9135,-0.7547,-0.5299,-0.2588,0.0349
+344,-0.2756,-0.5299,-0.7431,-0.8988,-0.9848,-0.9945,-0.9272,-0.7880,-0.5878,-0.3420,-0.0698,0.2079,0.4695,0.6947,0.8660,0.9703,0.9613,0.8480,0.6691,0.4384,0.1736,-0.1045,-0.3746,-0.6157,-0.8090,-0.9397,-0.9976,-0.9781,-0.8829,-0.7193,-0.5000,-0.2419
+345,-0.2588,-0.5000,-0.7071,-0.8660,-0.9659,-1.0000,-0.9659,-0.8660,-0.7071,-0.5000,-0.2588,0.0000,0.2588,0.5000,0.7071,0.8660,0.9659,0.8660,0.7071,0.5000,0.2588,0.0000,-0.2588,-0.5000,-0.7071,-0.8660,-0.9659,-1.0000,-0.9659,-0.8660,-0.7071,-0.5000
+346,-0.2419,-0.4695,-0.6691,-0.8290,-0.9397,-0.9945,-0.9903,-0.9272,-0.8090,-0.6428,-0.4384,-0.2079,0.0349,0.2756,0.5000,0.6947,0.9703,0.8829,0.7431,0.5592,0.3420,0.1045,-0.1392,-0.3746,-0.5878,-0.7660,-0.8988,-0.9781,-0.9994,-0.9613,-0.8660,-0.7193
+347,-0.2250,-0.4384,-0.6293,-0.7880,-0.9063,-0.9781,-0.9998,-0.9703,-0.8910,-0.7660,-0.6018,-0.4067,-0.1908,0.0349,0.2588,0.4695,0.9744,0.8988,0.7771,0.6157,0.4226,0.2079,-0.0175,-0.2419,-0.4540,-0.6428,-0.7986,-0.9135,-0.9816,-0.9994,-0.9659,-0.8829
+348,-0.2079,-0.4067,-0.5878,-0.7431,-0.8660,-0.9511,-0.9945,-0.9945,-0.9511,-0.8660,-0.7431,-0.5878,-0.4067,-0.2079,0.0000,0.2079,0.9781,0.9135,0.8090,0.6691,0.5000,0.3090,0.1045,-0.1045,-0.3090,-0.5000,-0.6691,-0.8090,-0.9135,-0.9781,-1.0000,-0.9781
+349,-0.1908,-0.3746,-0.5446,-0.6947,-0.8192,-0.9135,-0.9744,-0.9994,-0.9877,-0.9397,-0.8572,-0.7431,-0.6018,-0.4384,-0.2588,-0.0698,0.9816,0.9272,0.8387,0.7193,0.5736,0.4067,0.2250,0.0349,-0.1564,-0.3420,-0.5150,-0.6691,-0.7986,-0.8988,-0.9659,-0.9976
+350,-0.1736,-0.3420,-0.5000,-0.6428,-0.7660,-0.8660,-0.9397,-0.9848,-1.0000,-0.9848,-0.9397,-0.8660,-0.7660,-0.6428,-0.5000,-0.3420,0.9848,0.9397,0.8660,0.7660,0.6428,0.5000,0.3420,0.1736,0.0000,-0.1736,-0.3420,-0.5000,-0.6428,-0.7660,-0.8660,-0.9397
+351,-0.1564,-0.3090,-0.4540,-0.5878,-0.7071,-0.8090,-0.8910,-0.9511,-0.9877,-1.0000,-0.9877,-0.9511,-0.8910,-0.8090,-0.7071,-0.5878,0.9877,0.9511,0.8910,0.8090,0.7071,0.5878,0.4540,0.3090,0.1564,0.0000,-0.1564,-0.3090,-0.4540,-0.5878,-0.7071,-0.8090
+352,-0.1392,-0.2756,-0.4067,-0.5299,-0.6428,-0.7431,-0.8290,-0.8988,-0.9511,-0.9848,-0.9994,-0.9945,-0.9703,-0.9272,-0.8660,-0.7880,0.9903,0.9613,0.9135,0.8480,0.7660,0.6691,0.5592,0.4384,0.3090,0.1736,0.0349,-0.1045,-0.2419,-0.3746,-0.5000,-0.6157
+353,-0.1219,-0.2419,-0.3584,-0.4695,-0.5736,-0.6691,-0.7547,-0.8290,-0.8910,-0.9397,-0.9744,-0.9945,-0.9998,-0.9903,-0.9659,-0.9272,0.9925,0.9703,0.9336,0.8829,0.8192,0.7431,0.6561,0.5592,0.4540,0.3420,0.2250,0.1045,-0.0175,-0.1392,-0.2588,-0.3746
+354,-0.1045,-0.2079,-0.3090,-0.4067,-0.5000,-0.5878,-0.6691,-0.7431,-0.8090,-0.8660,-0.9135,-0.9511,-0.9781,-0.9945,-1.0000,-0.9945,0.9945,0.9781,0.9511,0.9135,0.8660,0.8090,0.7431,0.6691,0.5878,0.5000,0.4067,0.3090,0.2079,0.1045,0.0000,-0.1045
+355,-0.0872,-0.1736,-0.2588,-0.3420,-0.4226,-0.5000,-0.5736,-0.6428,-0.7071,-0.7660,-0.8192,-0.8660,-0.9063,-0.9397,-0.9659,-0.9848,0.9962,0.9848,0.9659,0.9397,0.9063,0.8660,0.8192,0.7660,0.7071,0.6428,0.5736,0.5000,0.4226,0.3420,0.2588,0.1736
+356,-0.0698,-0.1392,-0.2079,-0.2756,-0.3420,-0.4067,-0.4695,-0.5299,-0.5878,-0.6428,-0.6947,-0.7431,-0.7880,-0.8290,-0.8660,-0.8988,0.9976,0.9903,0.9781,0.9613,0.9397,0.9135,0.8829,0.8480,0.8090,0.7660,0.7193,0.6691,0.6157,0.5592,0.5000,0.4384
+357,-0.0523,-0.1045,-0.1564,-0.2079,-0.2588,-0.3090,-0.3584,-0.4067,-0.4540,-0.5000,-0.5446,-0.5878,-0.6293,-0.6691,-0.7071,-0.7431,0.9986,0.9945,0.9877,0.9781,0.9659,0.9511,0.9336,0.9135,0.8910,0.8660,0.8387,0.8090,0.7771,0.7431,0.7071,0.6691
+358,-0.0349,-0.0698,-0.1045,-0.1392,-0.1736,-0.2079,-0.2419,-0.2756,-0.3090,-0.3420,-0.3746,-0.4067,-0.4384,-0.4695,-0.5000,-0.5299,0.9994,0.9976,0.9945,0.9903,0.9848,0.9781,0.9703,0.9613,0.9511,0.9397,0.9272,0.9135,0.8988,0.8829,0.8660,0.8480
+359,-0.0175,-0.0349,-0.0523,-0.0698,-0.0872,-0.1045,-0.1219,-0.1392,-0.1564,-0.1736,-0.1908,-0.2079,-0.2250,-0.2419,-0.2588,-0.2756,0.9998,0.9994,0.9986,0.9976,0.9962,0.9945,0.9925,0.9903,0.9877,0.9848,0.9816,0.9781,0.9744,0.9703,0.9659,0.9613
+# The end of the data

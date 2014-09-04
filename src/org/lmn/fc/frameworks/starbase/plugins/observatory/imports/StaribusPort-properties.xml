@@ -1,0 +1,188 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Properties xmlns="properties.xmlbeans.model.fc.lmn.org">
+
+    <!-- Staribus Shared Port -->
+
+    <!-- Set up the COM port to use for Staribus -->
+     <PropertyResource>
+         <ResourceKey>
+             <Key>Staribus</Key>
+             <Key>Port</Key>
+             <Key>Name</Key>
+         </ResourceKey>
+         <Editable>1</Editable>
+         <DataTypeClassName>java.lang.String</DataTypeClassName>
+         <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+         <Value>COM12</Value>
+         <Description>The COM port used for the Staribus serial port</Description>
+         <CreatedDate>2000-01-01Z</CreatedDate>
+         <CreatedTime>00:00:00.000Z</CreatedTime>
+         <ModifiedDate>2000-01-01Z</ModifiedDate>
+         <ModifiedTime>00:00:00.000Z</ModifiedTime>
+     </PropertyResource>
+
+    <!--<PropertyResource>-->
+        <!--<ResourceKey>-->
+            <!--<Key>Staribus</Key>-->
+            <!--<Key>Port</Key>-->
+            <!--<Key>SerialEventDelay</Key>-->
+        <!--</ResourceKey>-->
+        <!--<Editable>1</Editable>-->
+        <!--<DataTypeClassName>java.lang.Integer</DataTypeClassName>-->
+        <!--<EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>-->
+        <!--&lt;!&ndash; Allowed Values: 0 ... 1000 &ndash;&gt;-->
+        <!--<Value>0</Value>-->
+        <!--<Description>The delay in millseconds between a Rx SerialEvent and reading the characters</Description>-->
+        <!--<CreatedDate>2000-01-01Z</CreatedDate>-->
+        <!--<CreatedTime>00:00:00.000Z</CreatedTime>-->
+        <!--<ModifiedDate>2000-01-01Z</ModifiedDate>-->
+        <!--<ModifiedTime>00:00:00.000Z</ModifiedTime>-->
+    <!--</PropertyResource>-->
+
+    <!-- Enable this debug if you are having problems with Staribus! -->
+    <PropertyResource>
+        <ResourceKey>
+            <Key>Staribus</Key>
+            <Key>Enable</Key>
+            <Key>Debug</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Boolean</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <Value>true</Value>
+        <Description>A flag to control the Staribus debugging messages</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <!-- For use in the StaribusLoopbackRxStream and StaribusLoopbackTxStream -->
+    <PropertyResource>
+        <ResourceKey>
+            <Key>Staribus</Key>
+            <Key>Port</Key>
+            <Key>Loopback</Key>
+            <Key>PreambleSynCount</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+        <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+        <!-- Allowed Values: 0 ... 16 -->
+        <Value>8</Value>
+        <Description>The number of SYN characters to send on each simulated ResponseMessage</Description>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </PropertyResource>
+
+    <!-- ....................................................................................... -->
+    <!-- You should not need to change anything below here -->
+
+     <PropertyResource>
+         <ResourceKey>
+             <Key>Staribus</Key>
+             <Key>Port</Key>
+             <Key>Owner</Key>
+         </ResourceKey>
+         <Editable>1</Editable>
+         <DataTypeClassName>java.lang.String</DataTypeClassName>
+         <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+         <Value>Observatory</Value>
+         <Description>The owner of the Staribus serial port</Description>
+         <CreatedDate>2000-01-01Z</CreatedDate>
+         <CreatedTime>00:00:00.000Z</CreatedTime>
+         <ModifiedDate>2000-01-01Z</ModifiedDate>
+         <ModifiedTime>00:00:00.000Z</ModifiedTime>
+     </PropertyResource>
+
+     <PropertyResource>
+         <ResourceKey>
+             <Key>Staribus</Key>
+             <Key>Port</Key>
+             <Key>Baudrate</Key>
+         </ResourceKey>
+         <Editable>1</Editable>
+         <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+         <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+         <!-- Allowed values: 2400, 4800, 9600, 19200, 38400, 57600, 115200 depending on the controller configuration -->
+         <!-- The default value is 57600 Baud-->
+         <Value>57600</Value>
+         <Description>The Baud Rate setting for the serial port</Description>
+         <CreatedDate>2000-01-01Z</CreatedDate>
+         <CreatedTime>00:00:00.000Z</CreatedTime>
+         <ModifiedDate>2000-01-01Z</ModifiedDate>
+         <ModifiedTime>00:00:00.000Z</ModifiedTime>
+     </PropertyResource>
+
+     <PropertyResource>
+         <ResourceKey>
+             <Key>Staribus</Key>
+             <Key>Port</Key>
+             <Key>DataBits</Key>
+         </ResourceKey>
+         <Editable>1</Editable>
+         <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+         <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+         <Value>7</Value>
+         <Description>The Data Bits setting for the serial port (5, 6, 7, 8)</Description>
+         <CreatedDate>2000-01-01Z</CreatedDate>
+         <CreatedTime>00:00:00.000Z</CreatedTime>
+         <ModifiedDate>2000-01-01Z</ModifiedDate>
+         <ModifiedTime>00:00:00.000Z</ModifiedTime>
+     </PropertyResource>
+
+     <PropertyResource>
+         <ResourceKey>
+             <Key>Staribus</Key>
+             <Key>Port</Key>
+             <Key>StopBits</Key>
+         </ResourceKey>
+         <Editable>1</Editable>
+         <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+         <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+         <Value>1</Value>
+         <Description>The Stop Bits setting for the serial port (ONE=1, TWO=2, ONE.FIVE=3)</Description>
+         <CreatedDate>2000-01-01Z</CreatedDate>
+         <CreatedTime>00:00:00.000Z</CreatedTime>
+         <ModifiedDate>2000-01-01Z</ModifiedDate>
+         <ModifiedTime>00:00:00.000Z</ModifiedTime>
+     </PropertyResource>
+
+     <PropertyResource>
+         <ResourceKey>
+             <Key>Staribus</Key>
+             <Key>Port</Key>
+             <Key>Parity</Key>
+         </ResourceKey>
+         <Editable>1</Editable>
+         <DataTypeClassName>java.lang.Integer</DataTypeClassName>
+         <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+         <Value>2</Value>
+         <Description>The Parity setting for the serial port (NONE=0, ODD=1, EVEN=2, MARK=3, SPACE=4)</Description>
+         <CreatedDate>2000-01-01Z</CreatedDate>
+         <CreatedTime>00:00:00.000Z</CreatedTime>
+         <ModifiedDate>2000-01-01Z</ModifiedDate>
+         <ModifiedTime>00:00:00.000Z</ModifiedTime>
+     </PropertyResource>
+
+     <PropertyResource>
+         <ResourceKey>
+             <Key>Staribus</Key>
+             <Key>Port</Key>
+             <Key>FlowControl</Key>
+         </ResourceKey>
+         <Editable>1</Editable>
+         <DataTypeClassName>java.lang.String</DataTypeClassName>
+         <EditorClassname>org.lmn.fc.ui.editors.PropertyEditor</EditorClassname>
+         <Value>None</Value>
+         <Description>The flow control method of the serial port (None, XON/XOFF, RTS/CTS)</Description>
+         <CreatedDate>2000-01-01Z</CreatedDate>
+         <CreatedTime>00:00:00.000Z</CreatedTime>
+         <ModifiedDate>2000-01-01Z</ModifiedDate>
+         <ModifiedTime>00:00:00.000Z</ModifiedTime>
+     </PropertyResource>
+
+</Properties>

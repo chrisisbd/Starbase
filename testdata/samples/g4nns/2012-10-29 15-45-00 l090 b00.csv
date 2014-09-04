@@ -1,0 +1,105 @@
+# These data by Brian Coleman G4NNS, Redenham Observatory
+
+# Change these data for each separate Observation, others also if necessary
+Observation.Date,2012-10-29,Date,YearMonthDay,The Date of this set of observations
+Observation.Time,15:45:00,Time,HourMinSec,The Time of this set of observations
+Observation.Notes,Hydrogen Line Spectra,String,Dimensionless,The Observation Notes
+Instrument.Antenna.GalacticLatitude,+00:00:00,GalacticLatitude,DegMinSec,The Galactic Latitude at which the antenna is pointing for these observations
+Instrument.Antenna.GalacticLongitude,090:00:00,GalacticLongitude,DegMinSec,The Galactic Longitude at which the antenna is pointing for these observations
+
+# These data are PLACEHOLDERS, awaiting calculation of the Velocity of the Local Standard of Rest
+Observation.VLSR.Declination,+00:00:00,Declination,DegMinSec,The Declination of the VLSR calculation PLACEHOLDER
+Observation.VLSR.RightAscension,00:00:00,RightAscension,HourMinSec,The Right Ascension of the VLSR calculation PLACEHOLDER
+Observation.VLSR.Value,00.00,DecimalDouble,m s-1,The result of the VLSR calculation in metres per second PLACEHOLDER
+
+# VLSR Constants
+Observation.VLSR.ReferenceFrame,Geocentric,String,Dimensionless,The Reference Frame of the VLSR calculation
+Observation.VLSR.Epoch,J2000.0,String,Years,The Epoch of the VLSR calculation in Years
+
+# These data are common to the set of Observations
+
+Instrument.Antenna.Beamwidth,3.0,Angle,Degrees,The beamwidth of the antenna at the frequency of observation
+Instrument.Receiver.Bandwidth,12.5,DecimalFloat,kHz,The final IF bandwidth of the Receiver measurement system
+Instrument.Receiver.SamplePeriod,0.3,DecimalFloat,Seconds,The sampling period of the Receiver measurement system
+Instrument.Receiver.TimeConstant,0.1,DecimalFloat,Seconds,The time constant of the Receiver measurement system
+
+Observation.Axis.Label.X,Frequency,String,Dimensionless,The X axis
+Observation.Axis.Label.Y.0,Data Value,String,Dimensionless,The Y axis
+
+Observation.Channel.Colour.0,r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 0 graph
+Observation.Channel.Count,1,DecimalInteger,Dimensionless,The number of data channels
+Observation.Channel.DataType.0,DecimalFloat,DataType,Dimensionless,The DataType of Channel 0
+Observation.Channel.Description.0,The Receiver output signal,String,Dimensionless,The description of Channel 0
+Observation.Channel.Name.0,Signal,String,Dimensionless,The name of Channel 0
+Observation.Channel.Units.0,Volts,Units,Dimensionless,The DataType of Channel 0
+
+Observation.Title,Hydrogen Line Spectrum,String,Dimensionless,The title for the Chart
+
+Observatory.Country,GB,String,Dimensionless,The Country containing the Observatory (ISO 3166)
+Observatory.Description,"Redenham is near Andover Hampshire southern England",String,Dimensionless,The description of the Observatory
+Observatory.HASL,110.0,DecimalFloat,m,The Height of the Observatory above Sea Level in metres
+Observatory.Latitude,+51:14:53.1,Latitude,DegMinSec,The Latitude of the Observatory (North is positive) -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999
+Observatory.Longitude,+001:34:15.6,Longitude,DegMinSec,The Longitude of the Observatory (West is positive) -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999
+Observatory.MaidenheadLocator,IO91ff,String,Dimensionless,The MaidenheadLocator of the Observatory
+Observatory.Name,Redenham Observatory,String,Dimensionless,The name of the Observatory supplying data
+Observatory.Notes,Hydrogen Line Spectra,String,Dimensionless,The Observatory Notes
+Observatory.TimeZone,GMT+00:00,TimeZone,Dimensionless,The TimeZone containing the Observatory GMT-23:59 to GMT+00:00 to GMT+23:59
+
+Observer.Contact.Email,brian-coleman@tiscali.co.uk,String,Dimensionless,Brian Coleman email address
+Observer.Contact.URL,http://myweb.tiscali.co.uk/g4nns/radast.html,URL,Dimensionless,The URL of Redenham Observatory
+Observer.Country,GB,String,Dimensionless,The Country containing the Observer (ISO 3166)
+Observer.Description,Brian Coleman G4NNS,String,Dimensionless,The description of the Observer
+Observer.Name,Brian Coleman,String,Dimensionless,The name of the Observer
+Observer.Notes,Hydrogen Line Spectra,String,Dimensionless,The Observer Notes
+
+1420,1.11
+1420.02,1.22
+1420.04,1.2
+1420.06,1.19
+1420.08,1.09
+1420.1,1.26
+1420.12,1.28
+1420.14,1.29
+1420.16,1.17
+1420.18,1.31
+1420.2,1.25
+1420.22,1.11
+1420.24,1.43
+1420.26,1.31
+1420.28,1.18
+1420.3,1.12
+1420.32,1.4
+1420.34,1.38
+1420.36,1.42
+1420.38,2.05
+1420.4,2.21
+1420.42,2.24
+1420.44,1.92
+1420.46,1.85
+1420.48,1.77
+1420.5,1.95
+1420.52,2.04
+1420.54,1.83
+1420.56,1.78
+1420.58,1.6
+1420.6,1.89
+1420.62,1.78
+1420.64,1.81
+1420.66,1.83
+1420.68,1.72
+1420.7,1.68
+1420.72,1.64
+1420.74,1.6
+1420.76,1.65
+1420.78,1.65
+1420.8,1.66
+1420.82,1.49
+1420.84,1.4
+1420.86,1.32
+1420.88,1.35
+1420.9,1.34
+1420.92,1.17
+1420.94,1.16
+1420.96,1.08
+1420.98,1.12
+1421,1.05

@@ -1,0 +1,117 @@
+# Timestamped, Eight Channels, NO Temperature, CSV
+# Contact starbase@ukraa.com for support
+
+# All Metadata are defined with {Key, Value, DataType, Units, Description}
+# Keys, DataTypes and Units must appear in their respective Starbase Dictionaries
+# Comments are preceded with '#' and are not preserved during export-import
+
+Observatory.Name,The Guest Observatory,String,Dimensionless,The name of the Observatory supplying Imported data
+Observatory.Description,The Guest Observatory could be anywhere,String,Dimensionless,The description of the Observatory
+Observatory.Notes,These data are supplied as an example of an import where the Starbase Instrument takes on the identity of the guest Observatory,String,Dimensionless,The Observatory Notes
+
+Observatory.Latitude,+53:00:00.001,Latitude,DegMinSec,The Latitude of the Framework (North is positive)  -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999
+Observatory.Longitude,+001:00:00.001,Longitude,DegMinSec,The Longitude of the Observatory (West is positive)  -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999
+Observatory.TimeZone,GMT+00:00,TimeZone,Dimensionless,The TimeZone containing the Observatory  GMT-23:59 to GMT+00:00 to GMT+23:59
+Observatory.HASL,100.0,DecimalFloat,m,The Height of the Observatory above Sea Level in metres
+Observatory.Country,GB,String,Dimensionless,The Country containing the Observatory (ISO 3166)
+
+Observer.Name,Guest Observer,String,Dimensionless,The name of the Observer
+Observer.Description,The Observer responsible for the imported data,String,Dimensionless,The description of the Observer
+Observer.Notes,This Observer made these observations,String,Dimensionless,The Observer Notes,String,Dimensionless,The notes made by the Observer
+Observer.Country,GB,String,Dimensionless,The Country containing the Observer (ISO 3166)
+
+# These Metadata items are required for Charting support
+
+Observation.Title,Test Timestamped 8 Channel CSV,String, Dimensionless,The title for the Chart
+Observation.Axis.Label.X,Time,String, Dimensionless,The X axis
+Observation.Axis.Label.Y.0,Data Value,String, Dimensionless,The Y axis
+
+# The Channel Count
+Observation.Channel.Count,8,DecimalInteger,Dimensionless,The number of data channels
+
+# Channel specifications, arbitrarily set to DataType=DecimalFloat, Units=mV
+
+Observation.Channel.Name.0,Channel 0,String,Dimensionless,The name of Channel 0
+Observation.Channel.Description.0,Channel 0 output,String,Dimensionless,The description of Channel 0
+Observation.Channel.DataType.0,DecimalFloat,DataType,Dimensionless,The DataType of Channel 0
+Observation.Channel.Units.0,mV,Units,Dimensionless,The Units of Channel 0
+
+Observation.Channel.Name.1,Channel 1,String,Dimensionless,The name of Channel 1
+Observation.Channel.Description.1,Channel 1 output,String,Dimensionless,The description of Channel 1
+Observation.Channel.DataType.1,DecimalFloat,DataType,Dimensionless,The DataType of Channel 1
+Observation.Channel.Units.1,mV,Units,Dimensionless,The Units of Channel 1
+
+Observation.Channel.Name.2,Channel 2,String,Dimensionless,The name of Channel 2
+Observation.Channel.Description.2,Channel 2 output,String,Dimensionless,The description of Channel 2
+Observation.Channel.DataType.2,DecimalFloat,DataType,Dimensionless,The DataType of Channel 2
+Observation.Channel.Units.2,mV,Units,Dimensionless,The Units of Channel 2
+
+Observation.Channel.Name.3,Channel 3,String,Dimensionless,The name of Channel 3
+Observation.Channel.Description.3,Channel 3 output,String,Dimensionless,The description of Channel 3
+Observation.Channel.DataType.3,DecimalFloat,DataType,Dimensionless,The DataType of Channel 3
+Observation.Channel.Units.3,mV,Units,Dimensionless,The Units of Channel 3
+
+Observation.Channel.Name.4,Channel 4,String,Dimensionless,The name of Channel 4
+Observation.Channel.Description.4,Channel 4 output,String,Dimensionless,The description of Channel 4
+Observation.Channel.DataType.4,DecimalFloat,DataType,Dimensionless,The DataType of Channel 4
+Observation.Channel.Units.4,mV,Units,Dimensionless,The Units of Channel 4
+
+Observation.Channel.Name.5,Channel 5,String,Dimensionless,The name of Channel 5
+Observation.Channel.Description.5,Channel 5 output,String,Dimensionless,The description of Channel 5
+Observation.Channel.DataType.5,DecimalFloat,DataType,Dimensionless,The DataType of Channel 5
+Observation.Channel.Units.5,mV,Units,Dimensionless,The Units of Channel 5
+
+Observation.Channel.Name.6,Channel 6,String,Dimensionless,The name of Channel 6
+Observation.Channel.Description.6,Channel 6 output,String,Dimensionless,The description of Channel 6
+Observation.Channel.DataType.6,DecimalFloat,DataType,Dimensionless,The DataType of Channel 6
+Observation.Channel.Units.6,mV,Units,Dimensionless,The Units of Channel 6
+
+Observation.Channel.Name.7,Channel 7,String,Dimensionless,The name of Channel 7
+Observation.Channel.Description.7,Channel 7 output,String,Dimensionless,The description of Channel 7
+Observation.Channel.DataType.7,DecimalFloat,DataType,Dimensionless,The DataType of Channel 7
+Observation.Channel.Units.7,mV,Units,Dimensionless,The Units of Channel 7
+
+# Channel Colours grouped together for simplicity, and for ease of copying into code or other files
+Observation.Channel.Colour.0, r=255 g=000 b=000,ColourData,Dimensionless,The Colour of the Channel 0 graph
+Observation.Channel.Colour.1, r=255 g=102 b=000,ColourData,Dimensionless,The Colour of the Channel 1 graph
+Observation.Channel.Colour.2, r=255 g=153 b=000,ColourData,Dimensionless,The Colour of the Channel 2 graph
+Observation.Channel.Colour.3, r=255 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 3 graph
+Observation.Channel.Colour.4, r=170 g=230 b=000,ColourData,Dimensionless,The Colour of the Channel 4 graph
+Observation.Channel.Colour.5, r=000 g=204 b=000,ColourData,Dimensionless,The Colour of the Channel 5 graph
+Observation.Channel.Colour.6, r=255 g=153 b=204,ColourData,Dimensionless,The Colour of the Channel 6 graph
+Observation.Channel.Colour.7, r=000 g=085 b=204,ColourData,Dimensionless,The Colour of the Channel 7 graph
+
+2008-12-23,00:00:00,0,0,0,0,0,0,0,0
+2008-12-23,00:00:01,0.05,0.05,0.1,0.15,0.2,0.25,0.3,0.34
+2008-12-23,00:00:02,0.1,0.1,0.2,0.3,0.39,0.48,0.56,0.64
+2008-12-23,00:00:03,0.15,0.15,0.3,0.43,0.56,0.68,0.78,0.87
+2008-12-23,00:00:04,0.2,0.2,0.39,0.56,0.72,0.84,0.93,0.99
+2008-12-23,00:00:05,0.25,0.25,0.48,0.68,0.84,0.95,1,0.98
+2008-12-23,00:00:07,0.3,0.3,0.56,0.78,0.93,1,0.97,0.86
+2008-12-23,00:00:08,0.35,0.34,0.64,0.87,0.99,0.98,0.86,0.64
+2008-12-23,00:00:09,0.4,0.39,0.72,0.93,1,0.91,0.68,0.33
+2008-12-23,00:00:10,0.45,0.43,0.78,0.98,0.97,0.78,0.43,-0.01
+2008-12-23,00:00:11,0.5,0.48,0.84,1,0.91,0.6,0.14,-0.35
+2008-12-23,00:00:12,0.55,0.52,0.89,1,0.81,0.38,-0.16,-0.65
+2008-12-23,00:00:13,0.6,0.56,0.93,0.97,0.68,0.14,-0.44,-0.87
+2008-12-23,00:00:14,0.65,0.61,0.96,0.93,0.52,-0.11,-0.69,-0.99
+2008-12-23,00:00:15,0.7,0.64,0.99,0.86,0.33,-0.35,-0.87,-0.98
+2008-12-23,00:00:16,0.75,0.68,1,0.78,0.14,-0.57,-0.98,-0.86
+2008-12-23,00:00:17,0.8,0.72,1,0.68,-0.06,-0.76,-1,-0.63
+2008-12-23,00:00:18,0.85,0.75,0.99,0.56,-0.26,-0.89,-0.93,-0.33
+2008-12-23,00:00:19,0.9,0.78,0.97,0.43,-0.44,-0.98,-0.77,0.02
+2008-12-23,00:00:20,0.95,0.81,0.95,0.29,-0.61,-1,-0.55,0.36
+2008-12-23,00:00:21,1,0.84,0.91,0.14,-0.76,-0.96,-0.28,0.66
+2008-12-23,00:00:24,1.05,0.87,0.86,-0.01,-0.87,-0.86,0.02,0.88
+2008-12-23,00:00:26,1.1,0.89,0.81,-0.16,-0.95,-0.71,0.31,0.99
+2008-12-23,00:00:27,1.15,0.91,0.75,-0.3,-0.99,-0.51,0.58,0.98
+2008-12-23,00:00:28,1.2,0.93,0.68,-0.44,-1,-0.28,0.79,0.85
+2008-12-23,00:00:29,1.25,0.95,0.6,-0.57,-0.96,-0.03,0.94,0.62
+2008-12-23,00:00:30,1.3,0.96,0.52,-0.69,-0.88,0.22,1,0.32
+2008-12-23,00:00:31,1.35,0.98,0.43,-0.79,-0.77,0.45,0.97,-0.03
+2008-12-23,00:00:32,1.4,0.99,0.33,-0.87,-0.63,0.66,0.85,-0.37
+2008-12-23,00:00:33,1.45,0.99,0.24,-0.94,-0.46,0.82,0.66,-0.66
+2008-12-23,00:00:34,1.5,1,0.14,-0.98,-0.28,0.94,0.41,-0.88
+2008-12-23,00:00:35,1.55,1,0.04,-1,-0.08,0.99,0.12,-0.99
+2008-12-23,00:00:36,1.6,1,-0.06,-1,0.12,0.99,-0.17,-0.98
+# The end

@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Queries xmlns="queries.xmlbeans.model.fc.lmn.org">
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Plugin</Key>
+            <Key>Dummy</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML Dummy</Statement>
+            <Statement>SQL Dummy</Statement>
+        </Statements>
+        <Description>A dummy query</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+</Queries>

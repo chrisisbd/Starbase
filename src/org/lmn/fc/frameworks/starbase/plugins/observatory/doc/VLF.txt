@@ -1,0 +1,69 @@
+
+VERY LOW FREQUENCY (VLF) RADIO STATIONS
+
+   Station            Station     Frequency        Radiated
+ Site               ID          (kHz)            Power
+                                         (kW)
+  U.S. Navy
+   Cutler, ME                NAA          24.0            1000
+   Jim Creek, WA             NLK          24.8             250
+   Lualualei, HI             NPM          21.4             566
+   LaMoure, ND               NML          25.2             500
+   Aquada, Puerto Rico       NAU          40.8             100
+   Keflavik, Iceland         NRK          37.5             100
+
+  Australia
+   Harold E. Holt,           NWC          19.8            1000
+
+  Federal Republic of
+  Germany
+   Rhauderfehn                -           18.5             500
+ Burlage			   DHO	    23.4              -
+
+  France
+   Rosnay                    HWU          15.1             400
+   St. Assie                 FTA          16.8              23
+ LeBlanc			   HWU	    18.3		    -
+
+  Iceland
+ Keflavic			   TFK	    37.5		    -
+
+  Italy
+   Tavolara                  ICV          20.27             43
+
+  Norway
+   Noviken                   JXN          16.4              45
+
+  Russia
+   Arkhanghelsk              UGE          19.7          150 input
+   Batumi                    UVA          14.6          100 input
+   Kaliningrad               UGKZ         30.3          100 input
+   Matotchkinchar            UFQE         18.1          100 input
+   Vladivostok               UIK          15.0          100 input
+
+  Turkey
+ Bafa				   TBB	    26.7		     -
+
+  United Kingdom
+   Anthorn                   GQD          19.6              500
+   London			   GYA	    21.37		    120
+
+
+All information courtesy of Bill  Hopkins, Technical Representative
+for Pacific-Sierra Research Corp.
+
+Updated by Michael Hill
+
+Last updated:  02/22/05
+</p>
+
+
+
+
+
+
+
+
+
+
+

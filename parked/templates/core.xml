@@ -1,0 +1,225 @@
+            <!-- ............................................................................... -->
+            <!-- Staribus Generic (Mandatory) Commands -->
+
+            <!-- The basic Core has a CommandCodeBase of zero -->
+            <!-- All Core CommandVariants are zero -->
+            <CommandCodeBase>00</CommandCodeBase>
+
+            <!-- reset() returns the Controller to its initialised state -->
+            <Command>
+                <Identifier>reset</Identifier>
+                <CommandCode>00</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Resets the Controller</Description>
+                <Parameter>
+                    <Name>Mode</Name>
+                    <InputDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>NumericIndexedList</DataTypeName>
+                        <FieldCount>1</FieldCount>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Choices>Defaults,Soft</Choices>
+                    <Tooltip>Allowed values: Defaults, Soft</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Reset</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <!-- ping() indicates if a Controller is connected at this address -->
+            <Command>
+                <Identifier>ping</Identifier>
+                <CommandCode>01</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Pings the Controller</Description>
+                <SendToPort>true</SendToPort>
+                <Ack>
+                    <Name>Ack</Name>
+                </Ack>
+            </Command>
+
+            <!-- getConfiguration() reads the memories of all connected Modules, -->
+            <!-- and forms the XML configuration of the composite Instrument -->
+            <!-- This Command is executed entirely on the host -->
+            <Command>
+                <Identifier>getConfiguration</Identifier>
+                <CommandCode>02</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <!-- Obtain the assembled XML data by iterating this 'macro' -->
+                <!-- Core.getModuleConfiguration() -->
+                <SteppedDataCommand>
+                    <SteppedCommandCodeBase>00</SteppedCommandCodeBase>
+                    <SteppedCommandCode>03</SteppedCommandCode>
+                </SteppedDataCommand>
+                <Description>Gets the assembled XML configuration of the Instrument</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration.XML</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- getModuleConfiguration() first uses getConfigurationBlockCount() to get the number of blocks -->
+            <!-- then iterates over getConfigurationBlock() to get all blocks from the specified ModuleID -->
+            <!-- These sub-commands are specified through the use of the <BlockedDataCommand> element -->
+            <!-- If a Module is missing, then the ResponseValue must be 'NODATA' -->
+            <Command>
+                <Identifier>getModuleConfiguration</Identifier>
+                <CommandCode>03</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <BlockedDataCommand>
+                    <BlockCountCommandCode>04</BlockCountCommandCode>
+                    <BlockCommandCode>05</BlockCommandCode>
+                </BlockedDataCommand>
+                <Description>Gets the Module configuration data, as an XML fragment</Description>
+                <Parameter>
+                    <Name>Configuration.ModuleID</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-7]</Regex>
+                    <Tooltip>Allowed Values: ModuleID 0 to 7</Tooltip>
+                </Parameter>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Configuration.Module</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- getConfigurationBlockCount() counts the number of 256 byte blocks of data in the Module memory -->
+            <!-- getConfigurationBlockCount() refers to its parent getModuleConfiguration() -->
+            <!-- through the <ParentCommandCode> element -->
+            <Command>
+                <Identifier>getConfigurationBlockCount</Identifier>
+                <CommandCode>04</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <BlockedDataCommand>
+                    <ParentCommandCode>03</ParentCommandCode>
+                </BlockedDataCommand>
+                <Description>Gets the number of blocks of data in the Module configuration</Description>
+                <Parameter>
+                    <Name>Configuration.ModuleID</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-7]</Regex>
+                    <Tooltip>Allowed Values: ModuleID 0 to 7</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Configuration.BlockCount</Name>
+                    <DataTypeName>HexInteger</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-9A-F][0-9A-F][0-9A-F][0-9A-F]</Regex>
+                </Response>
+            </Command>
+
+            <!-- getConfigurationBlock() obtains the configuration data in the specified Module memory -->
+            <!-- getConfigurationBlock() refers to its parent getModuleConfiguration() -->
+            <!-- through the <ParentCommandCode> element -->
+            <Command>
+                <Identifier>getConfigurationBlock</Identifier>
+                <CommandCode>05</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <BlockedDataCommand>
+                    <ParentCommandCode>03</ParentCommandCode>
+                </BlockedDataCommand>
+                <Description>Gets the specified block of Module configuration data, as an XML fragment</Description>
+                <Parameter>
+                    <Name>Configuration.ModuleID</Name>
+                    <InputDataType>
+                        <DataTypeName>DecimalInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>[0-7]</Regex>
+                    <Tooltip>Allowed Values: ModuleID 0 to 7</Tooltip>
+                </Parameter>
+                <Parameter>
+                    <Name>Configuration.BlockID</Name>
+                    <InputDataType>
+                        <DataTypeName>HexInteger</DataTypeName>
+                    </InputDataType>
+                    <TrafficDataType>
+                        <DataTypeName>String</DataTypeName>
+                    </TrafficDataType>
+                    <Units>Dimensionless</Units>
+                    <Regex>(00[0-6][0-9A-F])|(00[7][0-9A-E])</Regex>
+                    <Tooltip>Allowed Values: BlockID 0000 to 007E</Tooltip>
+                </Parameter>
+                <SendToPort>true</SendToPort>
+                <Response>
+                    <Name>Configuration.Block</Name>
+                    <DataTypeName>XML</DataTypeName>
+                    <Units>Dimensionless</Units>
+                </Response>
+            </Command>
+
+            <!-- ............................................................................... -->
+            <!-- Core Commands executed entirely on the host -->
+
+            <!-- start() starts the Instrument, exactly as for the ControlPanel green button -->
+            <!-- This is required for the Macro support -->
+            <Command>
+                <Identifier>start</Identifier>
+                <CommandCode>06</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Starts the Instrument</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Ack</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+            <!-- stop() stops the Instrument, exactly as for the ControlPanel red button -->
+            <!-- This is required for the Macro support -->
+            <Command>
+                <Identifier>stop</Identifier>
+                <CommandCode>07</CommandCode>
+                <CommandVariant>0000</CommandVariant>
+                <Description>Stops the Instrument</Description>
+                <SendToPort>false</SendToPort>
+                <Response>
+                    <Name>Ack</Name>
+                    <DataTypeName>String</DataTypeName>
+                    <Units>Dimensionless</Units>
+                    <Regex>Ok</Regex>
+                </Response>
+            </Command>
+
+        <!-- getVersion() returns a String giving the version information for the Controller OS -->
+        <Command>
+            <Identifier>getVersion</Identifier>
+            <CommandCode>0A</CommandCode>
+            <CommandVariant>0000</CommandVariant>
+            <Description>Gets the Version of the Controller OS</Description>
+            <SendToPort>false</SendToPort>
+            <Response>
+                <Name>Version</Name>
+                <DataTypeName>String</DataTypeName>
+                <Units>Dimensionless</Units>
+            </Response>
+        </Command>

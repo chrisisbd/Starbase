@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="yes"?>
+
+<ObservatoryGroupDefinitions xmlns="groups.xmlbeans.model.fc.lmn.org">
+
+    <!-- You may create up to 10 Groups -->
+    <Definition>
+        <GroupID>0</GroupID>
+        <SortIndex>0</SortIndex>
+        <Name>Geophysics</Name>
+        <IconFilename>group-geophysics.png</IconFilename>
+        <Tooltip>Geophysical Instruments</Tooltip>
+    </Definition>
+
+    <Definition>
+        <GroupID>1</GroupID>
+        <SortIndex>1</SortIndex>
+        <Name>Radio</Name>
+        <IconFilename>group-radio.png</IconFilename>
+        <Tooltip>Radio Telescopes</Tooltip>
+    </Definition>
+
+    <Definition>
+        <GroupID>2</GroupID>
+        <SortIndex>2</SortIndex>
+        <Name>Optical</Name>
+        <IconFilename>group-optical.png</IconFilename>
+        <Tooltip>Optical Instruments</Tooltip>
+    </Definition>
+
+    <Definition>
+        <GroupID>3</GroupID>
+        <SortIndex>3</SortIndex>
+        <Name>Services</Name>
+        <IconFilename>group-services.png</IconFilename>
+        <Tooltip>NTP, GPS, Webserver etc.</Tooltip>
+    </Definition>
+
+    <Definition>
+        <GroupID>4</GroupID>
+        <SortIndex>4</SortIndex>
+        <Name>Workshop</Name>
+        <IconFilename>group-workshop.png</IconFilename>
+        <Tooltip>Instruments under test, development tools</Tooltip>
+    </Definition>
+
+    <Definition>
+        <GroupID>5</GroupID>
+        <SortIndex>5</SortIndex>
+        <Name>Manager</Name>
+        <IconFilename>group-manager.png</IconFilename>
+        <Tooltip>Management of the Observatory and its Instruments</Tooltip>
+    </Definition>
+
+    <Definition>
+        <GroupID>6</GroupID>
+        <SortIndex>6</SortIndex>
+        <Name>Demo</Name>
+        <IconFilename>group-demo.png</IconFilename>
+        <Tooltip>Demonstrations of the Observatory and its Instruments</Tooltip>
+    </Definition>
+
+</ObservatoryGroupDefinitions>

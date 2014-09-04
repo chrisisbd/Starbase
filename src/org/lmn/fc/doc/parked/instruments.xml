@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+
+
+<Instruments xmlns="instruments.xmlbeans.model.fc.lmn.org">
+
+    <!-- ....................................................................................... -->
+    <!-- Terminal Emulator -->
+
+    <Instrument>
+        <Identifier>TerminalEmulator</Identifier>
+        <Name>Terminal Emulator</Name>
+        <Description>A simple Terminal Emulator</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.terminal.TerminalEmulator</InstrumentClassname>
+        <Controllable>true</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>TerminalEmulator</ResourceKey>
+    </Instrument>
+    <!-- ....................................................................................... -->
+    <!-- Separator -->
+
+    <!--
+    <Instrument>
+        <Identifier>Separator</Identifier>
+        <Name> </Name>
+        <Description>Separator</Description>
+        <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.parsers.separator.Separator</InstrumentClassname>
+        <Controllable>false</Controllable>
+        <SelectorPanelHeight>1</SelectorPanelHeight>
+        <ResourceKey>Separator</ResourceKey>
+    </Instrument> -->
+
+</Instruments>

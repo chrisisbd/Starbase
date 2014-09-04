@@ -1,0 +1,117 @@
+Using Radio Sky Pipe with Starbase
+
+WARNING!
+
+ALWAYS SET:
+    'Logged Using UT' - it is too difficult to work out what time was intended otherwise!
+    'Integer Save' mode, otherwise the file sizes are much too large - REQUIRES PRO VERSION
+    Use Timestamps
+
+We can only deal with Channels 0...9 in this version
+It is not clear how RSP TimeZones are encoded to give a 'real' ISO TimeZone
+Also, there is an error in the way RSP encodes dates, but it won't affect us...
+
+The mapping between the RadioSkyPipe header data and the Instrument metadata
+Note that the RSP metadata implementation is very crude, and not easily extended!
+
+
+STARBASE                            RADIO SKY PIPE
+--------------------------------------------------
+Observatory.Name                    LocalName
+Observatory.Longitude               Longitude
+Observatory.Latitude                Latitude
+Observatory.Location                Location
+
+Observer.Name                       Author
+
+Observation.Start                   Start
+Observation.Finish                  Finish
+Observation.Title                   Plain NoteText i.e. metadata removed
+Observation.Date                    'YYYY-MM-DD' where possible to infer for a specific data source
+Observation.Time                    Always '00:00:00'
+
+Observation.TimeSystem              'Logged Using UT'       *WE ALWAYS USE UT
+Observation.TimeZone                TimeZone                *BEWARE NOT A PROPER TZ IN RSP
+Observation.Notes                   Plain NoteText i.e. metadata removed
+
+Observation.Channel.Count           Channel Count (0...9 in this version)
+
+----------------------------------------
+Channel Labels, Values, Offsets
+
+Channel Labels end up on ControlPanel Indicator Tooltips
+
+Observation.Channel.Label.<channel_id>              CHL <channel_id> label_text
+
+Channel Values end up on Control Panel Indicators
+
+Observation.Channel.Value.<channel_id>             (retrieved from last valid data sample)
+
+Channel Offset are shown in the Metadata tab
+
+Observation.Channel.Offset.<channel_id>             CHO <channel_id> offset
+
+
+----------------------------------------
+Miscellaneous
+
+RSP 'Source' has no equivalent in Starbase
+
+----------------------------------------
+Axis labels
+
+X Axis is always Time, shown on the graph
+Y Axis labels end up on ControlPanel Indicator *Units*, as well as on the graph
+BEWARE, Y axis only supports channel ZERO in this version
+
+Observation.Axis.Label.X                XALABEL label_text
+Observation.Axis.Label.Y.0              YALABEL label_text
+
+
+-----------------------------------------
+RSP Metadata fields, limited to 200 items
+
+These are custom built using RSP's MetaData_ construct (read their manual)
+Hard code these metadata to drive the indicators on the Instrument control panels
+If you don't, the displays will remain indicating '?'
+Note that this facility requires an update to RSP (specifically asked for by RAG!)
+
+Observation.Channel.Label.Virtual.<channel_id>    TOOLTIP ON INSTRUMENT CONTROL PANEL FREQUENCY DISPLAY
+Observation.Channel.Value.Virtual.<channel_id>    VALUE ON INSTRUMENT CONTROL PANEL FREQUENCY DISPLAY
+
+
+//--------------------------------------------------------------------------------------------------
+// Further reading...
+//--------------------------------------------------------------------------------------------------
+// The sample values are recorded in the data portion of the RSP file.
+// Timestamps are usually used however Pro version users have an option to not use timestamps.
+// In that case the beginning and ending times in the header are used and timestamps are calculated
+// under the assumption that the sample intervals are equal.
+// Pro version users also have an option to use an integer format that reduces the file size
+// considerably at the cost of dynamic range and precision.
+//
+// Data - Default Format
+//
+// The actual data is a series of groups of Date and Sample values.
+// A VB date (remember it is encoded as an 8 byte Double) is
+// followed by Double data type Sample values. If there are multiple
+// channels, then data for each of the channels follows the date. So
+// for a two channel file the structure would be:
+//
+//[Date] (8 bytes)
+//[Channel 1 Data] (8 bytes)
+//[Channel 2 Data] (8 bytes)
+//
+//Data - Integer Save Format
+//[Date] (8 bytes)
+//[Channel 1 Data] (2 bytes)
+//[Channel 2 Data] (2 bytes)
+//
+//Data - No Timestamps Format (non-Integer)
+//[Channel 1 Data] (8 bytes)
+//[Channel 2 Data] (8 bytes)
+//
+//Data - No Timestamps Format (Integer)
+//[Channel 1 Data] (2 bytes)
+//[Channel 2 Data] (2 bytes)
+

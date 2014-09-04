@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="metadata.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:datatypes="datatypes.xmlbeans.model.fc.lmn.org"
+           xmlns="metadata.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="datatypes.xmlbeans.model.fc.lmn.org"
+               schemaLocation="datatypes.xsd"/>
+
+    <!-- Collections for file imports -->
+    <xs:element name="CustomMetadata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Metadata"
+                            type="Metadata"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="FrameworkMetadata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Metadata"
+                            type="Metadata"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ObservatoryMetadata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Metadata"
+                            type="Metadata"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ObserverMetadata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Metadata"
+                            type="Metadata"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ObservationMetadata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Metadata"
+                            type="Metadata"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="InstrumentMetadata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Metadata"
+                            type="Metadata"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ControllerMetadata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Metadata"
+                            type="Metadata"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="PluginMetadata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Metadata"
+                            type="Metadata"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Metadata is a quintuplet of Key, Value, DataType, Units and Description -->
+    <xs:complexType name="Metadata">
+        <xs:sequence>
+            <!-- The Key of the Metadata in the Starbase MetadataDictionary -->
+            <!-- I recommend a dotted path hierarchy, e.g. Receiver.Port.Name -->
+            <xs:element name="Key">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Value of the Metadata -->
+            <xs:element name="Value">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The optional REGEX expression used to parse the Metadata -->
+            <xs:element name="Regex"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The DataType of the Metadata, to ensure that it is interpreted correctly -->
+            <!-- There is an issue here with range-checking, but maybe that is going too far! -->
+            <xs:element name="DataTypeName"
+                        type="datatypes:SchemaDataType"/>
+
+            <!-- The Units of the Metadata, to ensure that it is interpreted correctly -->
+            <!-- The permitted Units are also held in the Starbase database -->
+            <xs:element name="Units"
+                        type="SchemaUnits"/>
+
+            <!-- The optional Description of the Metadata -->
+            <xs:element name="Description"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Units describe the units (dimensions) of the various items which may be passed back and forth -->
+    <!-- See: http://en.wikipedia.org/wiki/SI_derived_unit -->
+
+    <xs:simpleType name="SchemaUnits">
+        <xs:restriction base="xs:normalizedString">
+            <xs:enumeration value="Dimensionless"/>
+
+            <!-- SI base and supplementary units -->
+
+            <!-- Length -->
+            <xs:enumeration value="mm"/>
+            <xs:enumeration value="cm"/>
+            <xs:enumeration value="m"/>
+            <xs:enumeration value="km"/>
+
+            <!-- Mass -->
+
+
+            <!-- Time -->
+            <xs:enumeration value="nsec"/>
+            <xs:enumeration value="usec"/>
+            <xs:enumeration value="msec"/>
+            <xs:enumeration value="Seconds"/>
+            <xs:enumeration value="InverseSeconds"/>
+            <xs:enumeration value="Minutes"/>
+            <xs:enumeration value="Hours"/>
+            <xs:enumeration value="Days"/>
+            <xs:enumeration value="Years"/>
+            <xs:enumeration value="YearMonthDay"/>
+            <xs:enumeration value="HourMinSec"/>
+
+            <!-- Plane Angle -->
+
+            <!-- Solid Angle -->
+
+            <!-- Temperature -->
+            <xs:enumeration value="Celsius"/>
+            <xs:enumeration value="Kelvin"/>
+
+            <!-- Electric Current -->
+
+            <!-- Amount of Substance -->
+
+            <!-- Luminous Intensity -->
+
+
+            <!-- IAU-recognised derived units -->
+            <!-- See: http://en.wikipedia.org/wiki/SI_derived_unit -->
+
+            <!-- Frequency -->
+            <xs:enumeration value="mHz"/>
+            <xs:enumeration value="Hz"/>
+            <xs:enumeration value="kHz"/>
+            <xs:enumeration value="MHz"/>
+            <xs:enumeration value="GHz"/>
+
+            <!-- Energy -->
+
+            <!-- Power -->
+
+            <!-- Electric Potential -->
+
+            <!-- Force, Pressure -->
+
+            <!-- Electric Charge -->
+
+            <!-- Electric Resistance -->
+
+            <!-- Electric Conductance -->
+
+            <!-- Electric Capacitance -->
+
+            <!-- Magnetic Flux -->
+
+            <!-- Magnetic Flux Density -->
+
+            <!-- Inductance -->
+
+            <!-- Luminous Flux -->
+
+            <!-- Illuminance -->
+
+            <!-- Astronomical Units -->
+
+            <!-- Events -->
+
+            <!-- Flux Density -->
+
+            <!-- Magnetic Field -->
+            <xs:enumeration value="nT"/>
+            <xs:enumeration value="uT"/>
+            <xs:enumeration value="mT"/>
+            <xs:enumeration value="T"/>
+
+            <!-- Area -->
+
+
+            <!-- Voltage -->
+            <xs:enumeration value="uV"/>
+            <xs:enumeration value="mV"/>
+            <xs:enumeration value="Volts"/>
+            <xs:enumeration value="kV"/>
+
+            <!-- Angles and Location -->
+            <xs:enumeration value="Degrees"/>
+            <xs:enumeration value="Radians"/>
+            <xs:enumeration value="DegMinSec"/>
+
+            <!-- Miscellaneous -->
+            <xs:enumeration value="dB"/>
+            <xs:enumeration value="Wm-2"/>
+            <xs:enumeration value="%"/>
+
+            <xs:enumeration value="m s-1"/>
+            <xs:enumeration value="km s-1"/>
+
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

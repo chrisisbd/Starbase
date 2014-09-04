@@ -1,0 +1,623 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Ephemerides xmlns="ephemerides.xmlbeans.model.fc.lmn.org">
+
+    <Ephemeris>
+        <Category>Solar System</Category>
+        <Mnemonic>SUN</Mnemonic>
+        <Name>Sun</Name>
+        <Description>The location of the Sun</Description>
+        <URL>http://en.wikipedia.org/wiki/Radio_astronomy</URL>
+        <IconFilename>ukraa-logo-print.png</IconFilename>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.SolarEphemerisDAO</DaoClassname>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Solar System</Category>
+        <Mnemonic>MOON</Mnemonic>
+        <Name>Moon</Name>
+        <Description>The location of the Moon</Description>
+        <URL>http://en.wikipedia.org/wiki/Radio_astronomy</URL>
+        <IconFilename>ukraa-logo-print.png</IconFilename>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.LunarEphemerisDAO</DaoClassname>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Radio Sources</Category>
+        <Mnemonic>SAG_A*</Mnemonic>
+        <Name>Sagittarius A*</Name>
+        <Description>The location of the radio source Sagittarius A*</Description>
+        <URL>http://en.wikipedia.org/wiki/Sagittarius_A*</URL>
+        <IconFilename>ukraa-logo-print.png</IconFilename>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <!-- Galactic 359:56:39.5      -00:02:46.3 -->
+        <!-- RA, Dec   17:45:40.045    -29:00:28.12 -->
+        <Galactic>
+            <l>359:56:39.5000</l>
+            <b>-00:02:46.3000</b>
+        </Galactic>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Radio Sources</Category>
+        <Mnemonic>CASS_A</Mnemonic>
+        <Name>Cassiopeia A</Name>
+        <Description>The location of the radio galaxy Cassiopeia A</Description>
+        <URL>http://en.wikipedia.org/wiki/Cassiopeia_A</URL>
+        <IconFilename>ukraa-logo-print.png</IconFilename>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <RaDec>
+            <RA>23:23:26.0000</RA>
+            <Dec>+58:48:00.0000</Dec>
+        </RaDec>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Radio Sources</Category>
+        <Mnemonic>CYG_A</Mnemonic>
+        <Name>Cygnus A</Name>
+        <Description>The location of the radio galaxy Cygnus A</Description>
+        <URL>http://en.wikipedia.org/wiki/Cygnus_A</URL>
+        <IconFilename>ukraa-logo-print.png</IconFilename>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <RaDec>
+            <RA>19:59:28.3566</RA>
+            <Dec>+40:44:02.096</Dec>
+        </RaDec>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Radio Sources</Category>
+        <Mnemonic>CENT_A</Mnemonic>
+        <Name>Centaurus A</Name>
+        <Description>The location of the radio galaxy Centaurus A</Description>
+        <URL>http://en.wikipedia.org/wiki/Centaurus_A</URL>
+        <IconFilename>ukraa-logo-print.png</IconFilename>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <RaDec>
+            <RA>13:25:27.6</RA>
+            <Dec>-43:01:09</Dec>
+        </RaDec>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Radio Sources</Category>
+        <Mnemonic>CRAB</Mnemonic>
+        <Name>Crab Nebula</Name>
+        <Description>The location of the Crab Nebula</Description>
+        <URL>http://en.wikipedia.org/wiki/Crab_Nebula</URL>
+        <IconFilename>ukraa-logo-print.png</IconFilename>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <RaDec>
+            <RA>05:34:31.94</RA>
+            <Dec>+22:00:52.2</Dec>
+        </RaDec>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Radio Sources</Category>
+        <Mnemonic>VIRGO_A</Mnemonic>
+        <Name>Virgo A</Name>
+        <Description>The location of the Virgo A Radio Galaxy</Description>
+        <URL>http://en.wikipedia.org/wiki/Messier_87</URL>
+        <IconFilename>ukraa-logo-print.png</IconFilename>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <RaDec>
+            <RA>12:30:49.4234</RA>
+            <Dec>+12:23:28.0439</Dec>
+        </RaDec>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Radio Sources</Category>
+        <Mnemonic>PUPPIS_A</Mnemonic>
+        <Name>Puppis A</Name>
+        <Description>The location of the Puppis A supernova remnant</Description>
+        <URL>http://en.wikipedia.org/wiki/Puppis_A</URL>
+        <IconFilename>ukraa-logo-print.png</IconFilename>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <!-- Galactic l = 260.2, b = -3.7 -->
+        <RaDec>
+            <RA>08:24:07</RA>
+            <Dec>-42:59:48</Dec>
+        </RaDec>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Star</Category>
+        <Mnemonic>SIRIUS_LB</Mnemonic>
+        <Name>Sirius from l, b</Name>
+        <Description>The location of Sirius</Description>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <!-- Should give (RA, Dec) =  (06:45:00, -16:42:00) -->
+        <Galactic>
+            <l>227:12:00</l>
+            <b>+08:54:00</b>
+        </Galactic>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Star</Category>
+        <Mnemonic>SIRIUS_RADEC</Mnemonic>
+        <Name>Sirius from Ra, Dec</Name>
+        <Description>The location of Sirius</Description>
+        <URL>http://simbad.u-strasbg.fr/simbad/sim-id?Ident=Sirius</URL>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <RaDec>
+            <RA>06:45:08.917</RA>
+            <Dec>-16:42:58.02</Dec>
+        </RaDec>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Test Coordinates</Category>
+        <Mnemonic>GALACTICCENTRE_LB</Mnemonic>
+        <Name>Galactic Centre from l, b</Name>
+        <Description>The location of the Galactic Centre</Description>
+        <URL>http://en.wikipedia.org/wiki/Galactic_Center</URL>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <Galactic>
+            <l>000:00:00</l>
+            <b>+00:00:00</b>
+        </Galactic>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+        <Category>Test Coordinates</Category>
+        <Mnemonic>GALACTICCENTRE_RADEC</Mnemonic>
+        <Name>Galactic Centre Ra, Dec</Name>
+        <Description>The location of the Galactic Centre</Description>
+        <URL>http://en.wikipedia.org/wiki/Galactic_Center</URL>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <!-- Should give (l, b) = (0, 0) Epoch J2000 -->
+        <RaDec>
+            <RA>17:45:40.04</RA>
+            <Dec>-29:00:28.1</Dec>
+        </RaDec>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <Ephemeris>
+    <Category>Star</Category>
+    <Mnemonic>FIXEDAZEL0</Mnemonic>
+    <Name>NSC Guest Star</Name>
+    <Description>The location of the Guest Star used in the NSC presentation</Description>
+    <IconFilename>ukraa-logo-print.png</IconFilename>
+    <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+    <AzEl>
+    <Az>90.00000000</Az>
+    <El>45.00000000</El>
+    </AzEl>
+    <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <!-- The Unique Selling Point! -->
+    <!-- The coordinates are supplied from Instrument Metadata, allowing e.g. tracking antennae -->
+    <!-- If the Instrument Metadata are not loaded then you will see an exception -->
+    <Ephemeris>
+        <Category>Test Coordinates</Category>
+        <Mnemonic>METADATA</Mnemonic>
+        <Name>Metadata Test</Name>
+        <Description>Coordinates defined by Metadata</Description>
+        <IconFilename>ukraa-logo-print.png</IconFilename>
+        <DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>
+        <Metadata>
+            <!-- These test Keys appear in Sandbox Instrument Metadata file Sandbox-metadata.xml -->
+            <KeyX>Test.Ephemeris.RA</KeyX>
+            <KeyY>Test.Ephemeris.Dec</KeyY>
+            <KeyType>Test.Ephemeris.CoordinateType</KeyType>
+        </Metadata>
+        <Epoch>J2000</Epoch>
+    </Ephemeris>
+
+    <!-- ALL BELOW HERE CAN BE DELETED OR COMMENTED OUT AFTER TESTING! -->
+    <!-- Fixed Test Points -->
+
+    <!-- Fixed (Az, El) points, for testing and e.g. fixed antennas -->
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDAZEL0</Mnemonic>-->
+        <!--<Name>Fixed AzEl0</Name>-->
+        <!--<Description>The location of a fixed AzEl test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<AzEl>-->
+            <!--<Az>90.00000000</Az>-->
+            <!--<El>45.00000000</El>-->
+        <!--</AzEl>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDALTAZ1</Mnemonic>-->
+        <!--<Name>Fixed AzEl Point1</Name>-->
+        <!--<Description>The location of a fixed AzEl test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<AzEl>-->
+            <!--<Az>010.0</Az>-->
+            <!--<El>60.0</El>-->
+        <!--</AzEl>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDALTAZ2</Mnemonic>-->
+        <!--<Name>Fixed AzEl Point2</Name>-->
+        <!--<Description>The location of a fixed AzEl test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<AzEl>-->
+            <!--<Az>050.0</Az>-->
+            <!--<El>60.0</El>-->
+        <!--</AzEl>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDALTAZ3</Mnemonic>-->
+        <!--<Name>Fixed AzEl Point3</Name>-->
+        <!--<Description>The location of a fixed AzEl test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<AzEl>-->
+            <!--<Az>090.0</Az>-->
+            <!--<El>60.0</El>-->
+        <!--</AzEl>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDALTAZ4</Mnemonic>-->
+        <!--<Name>Fixed AzEl Point4</Name>-->
+        <!--<Description>The location of a fixed AzEl test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<AzEl>-->
+            <!--<Az>130.0</Az>-->
+            <!--<El>60.0</El>-->
+        <!--</AzEl>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDALTAZ5</Mnemonic>-->
+        <!--<Name>Fixed AzEl Point5</Name>-->
+        <!--<Description>The location of a fixed AzEl test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<AzEl>-->
+            <!--<Az>180.0</Az>-->
+            <!--<El>60.0</El>-->
+        <!--</AzEl>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDALTAZ6</Mnemonic>-->
+        <!--<Name>Fixed AzEl Point6</Name>-->
+        <!--<Description>The location of a fixed AzEl test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<AzEl>-->
+            <!--<Az>230.0</Az>-->
+            <!--<El>60.0</El>-->
+        <!--</AzEl>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDALTAZ7</Mnemonic>-->
+        <!--<Name>Fixed AzEl Point7</Name>-->
+        <!--<Description>The location of a fixed AzEl test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<AzEl>-->
+            <!--<Az>300.0</Az>-->
+            <!--<El>60.0</El>-->
+        <!--</AzEl>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDALTAZ8</Mnemonic>-->
+        <!--<Name>Fixed AzEl Point8</Name>-->
+        <!--<Description>The location of a fixed AzEl test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<AzEl>-->
+            <!--<Az>350.0</Az>-->
+            <!--<El>60.0</El>-->
+        <!--</AzEl>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!-- RA, Dec -->
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDRADEC0</Mnemonic>-->
+        <!--<Name>Fixed RaDec Point0</Name>-->
+        <!--<Description>The location of a fixed RaDec test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>00:00:00</RA>-->
+            <!--<Dec>+10:00:00</Dec>-->
+        <!--</RaDec>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDRADEC1</Mnemonic>-->
+        <!--<Name>Fixed RaDec Point1</Name>-->
+        <!--<Description>The location of a fixed RaDec test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>04:00:00</RA>-->
+            <!--<Dec>+10:00:00</Dec>-->
+        <!--</RaDec>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDRADEC2</Mnemonic>-->
+        <!--<Name>Fixed RaDec Point2</Name>-->
+        <!--<Description>The location of a fixed RaDec test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>08:00:00</RA>-->
+            <!--<Dec>+10:00:00</Dec>-->
+        <!--</RaDec>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDRADEC3</Mnemonic>-->
+        <!--<Name>Fixed RaDec Point3</Name>-->
+        <!--<Description>The location of a fixed RaDec test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>12:00:00</RA>-->
+            <!--<Dec>+10:00:00</Dec>-->
+        <!--</RaDec>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDRADEC4</Mnemonic>-->
+        <!--<Name>Fixed RaDec Point4</Name>-->
+        <!--<Description>The location of a fixed RaDec test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>16:00:00</RA>-->
+            <!--<Dec>+10:00:00</Dec>-->
+        <!--</RaDec>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDRADEC5</Mnemonic>-->
+        <!--<Name>Fixed RaDec Point5</Name>-->
+        <!--<Description>The location of a fixed RaDec test point</Description>-->
+        <!--<IconFilename>ukraa-logo-print.png</IconFilename>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>20:00:00</RA>-->
+            <!--<Dec>+10:00:00</Dec>-->
+        <!--</RaDec>-->
+        <!--<Epoch>J2000</Epoch>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDRADEC</Mnemonic>-->
+        <!--<Name>Fixed RaDec Point</Name>-->
+        <!--<Description>The location of a fixed RaDec test point</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!-- 17h 45m 37.224s −28° 56′ 10.23 is (0, 0) for Galactic coordinates -->
+        <!--<RaDec>-->
+            <!--<RA>17:45:37</RA>-->
+            <!--<Dec>-28:56:10</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>FIXEDGALACTIC</Mnemonic>-->
+        <!--<Name>Fixed Galactic Point</Name>-->
+        <!--<Description>The location of a fixed Galactic test point</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!-- Should give RA 17h 45m 37.224s −28° 56′ 10.23″ -->
+        <!--<Galactic>-->
+            <!--<l>000:00:00</l>-->
+            <!--<b>+00:00:00</b>-->
+        <!--</Galactic>-->
+    <!--</Ephemeris>-->
+
+    <!-- Test the accuracy of the grid -->
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>RAGRID0</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 0</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>00:00:00</RA>-->
+            <!--<Dec>+00:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>RAGRID1</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 1</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>04:00:00</RA>-->
+            <!--<Dec>+00:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>RAGRID2</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 2</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>08:00:00</RA>-->
+            <!--<Dec>+00:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>RAGRID3</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 3</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>12:00:00</RA>-->
+            <!--<Dec>+00:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>RAGRID4</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 4</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>16:00:00</RA>-->
+            <!--<Dec>+00:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>RAGRID5</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 5</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>20:00:00</RA>-->
+            <!--<Dec>+00:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>DECGRID0</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 0</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>00:00:00</RA>-->
+            <!--<Dec>+30:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>DECGRID1</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 1</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>00:00:00</RA>-->
+            <!--<Dec>+20:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>DECGRID2</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 1</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>00:00:00</RA>-->
+            <!--<Dec>+10:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>DECGRID3</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 1</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>00:00:00</RA>-->
+            <!--<Dec>+00:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>DECGRID4</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 4</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>00:00:00</RA>-->
+            <!--<Dec>-10:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>DECGRID5</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 5</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>00:00:00</RA>-->
+            <!--<Dec>-20:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+    <!--<Ephemeris>-->
+        <!--<Category>Test Coordinates</Category>-->
+        <!--<Mnemonic>DECGRID6</Mnemonic>-->
+        <!--<Name>Grid RaDec Point 6</Name>-->
+        <!--<Description>Grid</Description>-->
+        <!--<DaoClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.astronomy.ephemerides.impl.GenericEphemerisDAO</DaoClassname>-->
+        <!--<RaDec>-->
+            <!--<RA>00:00:00</RA>-->
+            <!--<Dec>-30:00:00</Dec>-->
+        <!--</RaDec>-->
+    <!--</Ephemeris>-->
+
+</Ephemerides>

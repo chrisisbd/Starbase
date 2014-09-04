@@ -1,0 +1,51 @@
+<!-- Copyright 2000, 2001, 2002, 2003, 04, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2013, 2012 -->
+<!-- Laurence Newell -->
+<!-- starbase@ukraa.com -->
+<!-- radio.telescope@btinternet.com -->
+<!-- -->
+<!-- This file is part of Starbase. -->
+<!-- -->
+<!-- Starbase is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+<!-- -->
+<!-- Starbase is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU General Public License for more details. -->
+<!-- -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Starbase.  If not, see http://www.gnu.org/licenses. -->
+
+<html>
+<head>
+<title>Starbase Starinet VLF</title>
+<body>
+<h3>Starbase Starinet VLF</h3>
+
+<h3>Uploading a new Controller Operating System</h3>
+Go to the Manager Group tab, and execute the following command:
+<br>
+<br><b>ObservatoryExplorer.Explorer.uploadOS()</b>
+<br>
+<br>You will need the latest Starinet-Nanode HEX file from the downloads at
+<br>http://www.ukraa.com/beta/nightly-builds/Starinet.
+<br>Remember to set the Controller into <b>Bootloader mode</b> before using this command.
+<br>Hold down the bootloader button, then press reset. Then release both buttons.
+<br>The LED should blink with a different pattern to show that the mode has changed.
+<br>
+<br>
+<h3>Scanning for Starinet compatible devices on the local intranet</h3>
+Go to the Manager Group tab, and select the ObservatoryExplorer.
+<br>Click on the Starinet Scanner tab, and enter the required range of IP addresses.
+<br>Any correctly working Starinet devices will respond with their host name.
+<br>In the current implementation of Starbase, you may need to manually edit
+<br>the <b>IPAddress</b> field in the Instrument XML file in order to use the discovered IP address,
+<br>and restart the Observatory. Work is in progress to simplify this procedure.
+<br>Note that this facility does <b>not</b> work in the public Internet,
+<br>in fact such scanning might be regarded as a criminal act!
+<br>
+<br>
+</body>
+</html>

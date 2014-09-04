@@ -1,0 +1,114 @@
+This list shows the Command Code Bases and Command Variant codes for the Staribus Protocol
+
+Command Code Bases
+
+--------------------------------------------------------------
+Fundamental Controller Modules
+
+    00      Core
+
+    01      Utilities
+
+    02      Analogue
+
+    03      Clock (currently Starinet only)
+
+    07      SerialPort (currently only EthernetController)
+
+    FF      Builder
+
+--------------------------------------------------------------
+Real Instrument Specific Modules
+
+    03      DataCapture
+
+    04      LoggerPlugin
+
+    04      VlfPlugin
+
+    04      MagnetometerPlugin
+
+--------------------------------------------------------------
+Virtual Instrument Modules
+
+TODO - Review if these are all Virtual??
+
+    40      TimeProxy
+
+    40      EthernetController
+
+    40      Server
+
+    40      NTP
+
+    40      GPS
+
+    40      Monitor
+
+    40      Explorer
+
+    40      Installer
+
+    40      Radiometer
+
+    41      Spectrometer
+
+    41      FcdIF
+
+    42      Ephemerides
+
+    43      SoftwareLab
+
+    50      DataProcessor
+
+    58      MetadataManager
+
+    60      Newsreader
+
+    70      SignalProcessor
+
+--------------------------------------------------------------
+Generic Virtual Modules
+
+    80      Importer
+
+    81      Exporter
+
+    90      Macros
+
+    91      Instrument Macros
+
+--------------------------------------------------------------
+Secondary Plugins
+
+    C0      Display
+
+    D0      Colorimeter
+
+--------------------------------------------------------------
+Command Variant Codes
+
+All Controller commands always map to CV:0000.
+
+    0000    reserved for generic functions, no hardware specifics.
+
+Non-zero CV codes should appear ***only in the XML of the Primary or Secondary Plugin***.
+
+Instrument Primary Plugins
+	0001	RAG Four channel logger
+
+	0002	RAG Eight channel logger
+
+	0003    RAG single channel VLF v1
+
+	0004	RAG dual-axis magnetometer
+
+	0005	Astrometrics multichannel VLF
+
+	0006	RAG auto-null dual-axis magnetometer
+
+Secondary Plugins
+    1000    Display: ByVac four digit BV4614. See: http://www.byvac.co.uk
+
+    1100    Colorimeter
+

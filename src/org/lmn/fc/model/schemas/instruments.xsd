@@ -1,0 +1,1615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="instruments.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="instruments.xmlbeans.model.fc.lmn.org"
+           xmlns:metadata="metadata.xmlbeans.model.fc.lmn.org"
+           xmlns:datatypes="datatypes.xmlbeans.model.fc.lmn.org"
+           xmlns:poi="poi.xmlbeans.model.fc.lmn.org"
+           xmlns:sub="subscriptions.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="metadata.xmlbeans.model.fc.lmn.org"
+               schemaLocation="metadata.xsd"/>
+
+    <xs:import namespace="datatypes.xmlbeans.model.fc.lmn.org"
+               schemaLocation="datatypes.xsd"/>
+
+    <xs:import namespace="poi.xmlbeans.model.fc.lmn.org"
+               schemaLocation="pointofinterest.xsd"/>
+
+    <xs:import namespace="subscriptions.xmlbeans.model.fc.lmn.org"
+               schemaLocation="newssubscriptions.xsd"/>
+
+    <xs:import namespace="groups.xmlbeans.model.fc.lmn.org"
+               schemaLocation="observatorygroups.xsd"/>
+
+    <!-- Define all Instruments in the Observatory -->
+    <xs:element name="Instruments">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- The top-level element is an unbounded list of Instruments -->
+                <xs:element maxOccurs="unbounded"
+                            name="Instrument"
+                            type="Instrument"/>
+
+                <!-- The (optional) serial Port used by any Staribus Instrument in the Observatory -->
+                <xs:element name="StaribusPort"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="PortType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Each Instrument has some basic data, plus one Controller and an array of Plugins -->
+    <xs:complexType name="Instrument">
+        <xs:sequence>
+
+            <!-- A unique Identifier for the Instrument, recognisable by Starbase -->
+            <xs:element name="Identifier">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- There is zero or one Starbase Controller per Instrument -->
+            <!-- This allows for Instruments based on other technologies,
+                 e.g. FTP or a GPS receiver, which do not have a Starbase controller -->
+            <xs:element name="Controller"
+                        minOccurs="0"
+                        type="Controller"/>
+
+            <!-- The Name of the Instrument, recognisable by the user -->
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'., ])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- A Description of the Instrument -->
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-\(\)])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The classname of the Java implementation of the Instrument -->
+            <xs:element name="InstrumentClassname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- If the Instrument is controllable, it must have a ControlPanel with start and stop -->
+            <!-- Uncontrollable Instruments simply run continuously -->
+            <xs:element name="Controllable"
+                        type="xs:boolean"/>
+
+            <!-- The SelectorPanel height in 'U' units -->
+            <xs:element name="SelectorPanelHeight">
+                <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- An optional alternative to the standard SelectorPanel rack image -->
+            <!-- The preferred width is 250px for compatibility with the existing images -->
+            <!-- but if *all* are changed, there is no real restriction -->
+            <xs:element name="SelectorPanelFilename"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.:/\-])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- An optional alternative to the standard SelectorPanel icon -->
+            <!-- The recommended size is 24px by 24px, preferably as PNG -->
+            <xs:element name="SelectorPanelIconFilename"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.:/\-])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- An optional alternative to the standard InstrumentPanel (Header) icon -->
+            <!-- The recommended size is 48px by 48px, preferably as PNG -->
+            <xs:element name="InstrumentPanelIconFilename"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.:/\-])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- PointOfInterest information relevant to the Instrument -->
+            <xs:element name="PointOfInterest"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="poi:PointOfInterest"/>
+
+            <!-- LineOfInterest information relevant to the Instrument -->
+            <xs:element name="LineOfInterest"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="poi:LineOfInterest"/>
+
+            <!-- RSS Feeds relevant to the Instrument -->
+            <xs:element minOccurs="0"
+                        maxOccurs="unbounded"
+                        name="RSS"
+                        type="sub:RssSubscription"/>
+
+            <!-- Instrument Metadata is optional; normally use the Observatory Metadata  -->
+            <!-- The Resource Key is the prefix for each item of Instrument-specific metadata -->
+            <xs:element name="ResourceKey">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Instrument metadata are essentially (Key, Value) pairs,
+                 where the Keys come from the Starbase MetadataDictionary
+                 Unmapped Keys are ignored by the host -->
+            <xs:element name="InstrumentMetadata"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="metadata:Metadata"/>
+
+            <!-- Control Panel Metadata Keys -->
+            <!-- These map items of Metadata to the Control Panel Indicators, up to four -->
+            <xs:element name="IndicatorMetadataKey"
+                        minOccurs="0"
+                        maxOccurs="4">
+                 <xs:simpleType>
+                     <xs:restriction base="xs:normalizedString">
+                         <xs:pattern value="([a-zA-Z0-9.])*"/>
+                         <xs:minLength value="1"/>
+                         <xs:maxLength value="100"/>
+                     </xs:restriction>
+                 </xs:simpleType>
+             </xs:element>
+
+            <!-- The Data Access Object responsible for collection of the data for this Instrument -->
+            <!-- Currently only one DAO is allowed -->
+            <xs:element name="DAO"
+                        minOccurs="0"
+                        maxOccurs="1"
+                        type="DAO"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Each Controller has some basic data, an array of Commands,
+         and a description of its Software -->
+    <xs:complexType name="Controller">
+        <xs:sequence>
+            <xs:choice>
+                <!-- The address '000' is reserved for use by Virtual Controllers implemented in Java on the host -->
+                <xs:element name="VirtualAddress"
+                            minOccurs="0"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="00[0-9]"/>
+                            <xs:minLength value="3"/>
+                            <xs:maxLength value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- The Staribus RS485 address of the Controller -->
+                <!-- The address '000' is reserved for use by Virtual Controllers implemented in Java on the host -->
+                <!-- The address '254' is reserved for the discovery mechanism -->
+                <!-- The address '255' is reserved to indicate 'address not assigned' -->
+                <!-- The address is maintained by the host, and also saved on the Controller hardware -->
+                <!-- Ideally the Controller OS should write the assigned address into the XML body
+                     so that they are retrieved with a getConfiguration Command -->
+                <xs:element name="StaribusAddress"
+                            minOccurs="0"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])"/>
+                            <xs:minLength value="3"/>
+                            <xs:maxLength value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- The IP Address of Ethernet-based Controllers (with optional Port) -->
+                <!-- The address is maintained by the host, and also saved on the Controller hardware -->
+                <!-- Ideally the Controller OS should write the assigned address into the XML body
+                     so that they are retrieved with a getConfiguration Command -->
+                <xs:element name="IPAddress"
+                            minOccurs="0"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <!-- Regex Library, Vassilis Petroulias -->
+                            <xs:pattern
+                                    value="((0|1[0-9]{0,2}|2[0-9]{0,1}|2[0-4][0-9]|25[0-5]|[3-9][0-9]{0,1})\.){3}(0|1[0-9]{0,2}|2[0-9]{0,1}|2[0-4][0-9]|25[0-5]|[3-9][0-9]{0,1})(\:(6553[0-5]|655[0-2]\d|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3}|0))?\_*"/>
+                            <!--<xs:pattern value="(25[0-5]|2[0-4][0-9]|[1][0-9]?[0-9]?|[1-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[1][0-9]?[0-9]?|[1-9][0-9]?|[0])\.(25[0-5]|2[0-4][0-9]|[1][0-9]?[0-9]?|[1-9][0-9]?|[0])\.(25[0-5]|2[0-4][0-9]|[1][0-9]?[0-9]?|[1-9][0-9]?)"/>-->
+                            <!-- This one is restricted to IPv4 for now, so the format is 000.000.000.000:99999 or 21 characters -->
+                            <!-- Shorter addresses should fill with trailing underscores, which will be removed before use-->
+                            <xs:minLength value="21"/>
+                            <!-- nnn.nnn.nnn.nnn:65999 -->
+                            <xs:maxLength value="21"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- Allow Parent to Child links to identify those Plugins **required** for this Instrument -->
+            <!-- This has to be an attribute of the Controller, because with no Controller, there are no Plugins to control -->
+            <!-- To put it another way, everything referenced by the Manifest occurs in the Controller sequence -->
+            <!-- However... it must be *provided* by the PrimaryPlugin, since that is what defines the nature of the Instrument -->
+            <!-- The schema allows for no Controller and zero Plugins -->
+            <xs:element name="PluginManifest"
+                        minOccurs="1"
+                        maxOccurs="1"
+                        type="PluginManifestType">
+            </xs:element>
+
+            <!-- A unique Identifier for the Controller -->
+            <xs:element name="Identifier">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'., ])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Name of the Controller -->
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ ])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- A Description of the Controller -->
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-\(\)])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Controller Metadata is optional -->
+            <!-- The Resource Key is the prefix for each item of metadata -->
+            <xs:element name="ResourceKey">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Controller metadata are essentially (Key, Value) pairs,
+                 where the Keys come from the Starbase MetadataDictionary
+                 Unmapped Keys are ignored by the host -->
+            <xs:element name="ControllerMetadata"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="metadata:Metadata"/>
+
+            <!-- The CommandCode is the two-character upper-case pattern sent to the
+                 Controller to initiate the Command: [CommandCodeBase+CommandCode] -->
+            <xs:element name="CommandCodeBase">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                        <xs:length value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- There must be at least three commands, otherwise the Controller is uncontrollable! -->
+            <!-- Each Controller must respond to at least the following Commands
+                 reset                   resets the Instrument
+                 ping                    (broadcast) returns a message to confirm reception
+                 getConfiguration        returns the Instrument XML
+
+                 but we force only one, reset() -->
+            <xs:element name="Command"
+                        minOccurs="1"
+                        maxOccurs="unbounded"
+                        type="CommandType"/>
+
+            <!-- Each Controller may have zero or more Plugins, up to the I2C bus addressing limit -->
+            <xs:element name="Plugin"
+                        minOccurs="0"
+                        maxOccurs="255"
+                        type="PluginType"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- The Data to allow Parent to Child linking of the Plugins to the Instrument -->
+    <xs:complexType name="PluginManifestType">
+        <xs:sequence>
+            <!-- The Key for the PrimaryPlugin, which defines the nature of the Instrument -->
+            <xs:element name="PrimaryResourceKey"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="ResourceKey"
+                        minOccurs="0"
+                        maxOccurs="6">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- The Data Access Object responsible for collection of the data for this Controller -->
+    <xs:complexType name="DAO">
+        <xs:sequence>
+            <!-- The name of the DAO for display to the User -->
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ ])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The name of the DAO for display to the User -->
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-\(\)])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The classname of the Java implementation of the DAO -->
+            <xs:element name="DaoClassname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The classname of the Java implementation of the DataTranslator used for this DAO -->
+            <!--
+            REMOVED TO GENERALISE IMPORT COMMANDS IN THE DAO
+            <xs:element name="TranslatorClassname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>  -->
+
+            <!-- The DAO Port (possibly multiple Ports one day! -->
+            <!-- The Port is either a unique instance for this DAO, -->
+            <!-- OR a use of the Observatory StaribusPort -->
+
+            <xs:choice>
+                <xs:element name="Port"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="PortType"/>
+
+                <xs:element name="StaribusPort">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="Observatory"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- The array of Inputs to the DAO -->
+            <xs:element name="Input"
+                        minOccurs="0"
+                        maxOccurs="16"
+                        type="IOType"/>
+
+            <!-- The array of Outputs from the DAO -->
+            <xs:element name="Output"
+                        minOccurs="0"
+                        maxOccurs="16"
+                        type="IOType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- The full definition of a DAO PortType -->
+    <xs:complexType name="PortType">
+        <xs:sequence>
+            <!-- The Name of the Port -->
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Description of the Port -->
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-\(\)])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Resource Key is the prefix for each item of metadata for the Port-->
+            <xs:element name="ResourceKey">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The classname of the Java implementation of the Transmit Stream -->
+            <xs:element name="TxStream">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The classname of the Java implementation of the Receive Stream -->
+            <xs:element name="RxStream">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- The full definition of a DAO IO (Input or Output)-->
+    <xs:complexType name="IOType">
+        <xs:sequence>
+            <!-- The Name of the Port -->
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Description of the Port -->
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-\(\)])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The optional Tooltip -->
+            <xs:element name="Tooltip"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The DataType of the Port data -->
+            <xs:element name="DataTypeName"
+                        type="datatypes:SchemaDataType"/>
+
+            <!-- The Units of the Port data -->
+            <xs:element name="Units"
+                        type="metadata:SchemaUnits"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- The Plugins are devices addressed by the Controller, usually I2C devices -->
+    <!-- Each Plugin has some basic data, an array of Commands, and a description of its Software -->
+    <xs:complexType name="PluginType">
+        <xs:sequence>
+            <!-- A unique Identifier for the Plugin -->
+            <xs:element name="Identifier">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The name of the PluginProvider must occur in the pre-defined List -->
+            <!-- If the PluginProvider is missing, assume it is a PrimaryPlugin -->
+            <xs:element name="Provider"
+                        minOccurs="0"
+                        maxOccurs="1"
+                        type="PluginProvider"/>
+
+            <!-- The Name of the Plugin -->
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ ])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- A Description of the Plugin -->
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-\(\)])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Colour of the Plugin button text, in the format r=234 g=225 b=014 -->
+            <xs:element name="Colour"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The name of the PluginCategory must occur in the pre-defined List-->
+            <xs:element name="Category"
+                        minOccurs="0"
+                        maxOccurs="1"
+                        type="PluginCategory"/>
+
+            <!-- Plugin Metadata is optional -->
+            <!-- The Resource Key is the prefix for each item of metadata -->
+            <xs:element name="ResourceKey">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Plugin Metadata are essentially (Key, Value) pairs,
+                 where the Keys come from the Starbase MetadataDictionary
+                 Unmapped Keys are ignored by the host -->
+            <xs:element name="PluginMetadata"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="metadata:Metadata"/>
+
+            <!-- The CommandCode is the single-character upper-case pattern sent to the
+                 Plugin to initiate the Command: [CommandCodeBase+CommandCode] -->
+            <xs:element name="CommandCodeBase">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                        <xs:length value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Plugins do not necessarily require the Controller to load extra Commands -->
+            <!-- In principle, a Plugin could store specialised code for upload to the Controller -->
+            <!-- Macros are collections of Commands wrapped into a single entity -->
+            <xs:choice>
+                <xs:element name="Macro"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            type="MacroType"/>
+
+                <xs:element name="Command"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            type="CommandType"/>
+            </xs:choice>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- A list of Macros for loading from a file -->
+    <xs:element name="Macros">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Macros are collections of Commands wrapped into a single entity -->
+                <xs:element name="Macro"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            type="MacroType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Each Command has an array of Parameters and a description of the software implementation -->
+    <xs:complexType name="CommandType">
+        <xs:sequence>
+            <!-- The Command Identifier is presented to the User for convenience -->
+            <xs:element name="Identifier"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The CommandCode is part of the upper-case pattern sent to the
+                 Controller to initiate the Command: [CommandCodeBase+CommandCode+CommandVariant] -->
+            <xs:element name="CommandCode"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                        <xs:length value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The CommandVariant is part of the upper-case pattern sent to the
+                 Controller to initiate the Command: [CommandCodeBase+CommandCode+CommandVariant]
+                 It shows the Instrument type and any hardware-specificity of the Command code -->
+            <xs:element name="CommandVariant"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="[0-9A-F][0-9A-F][0-9A-F][0-9A-F]"/>
+                        <xs:length value="4"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The LegacyCode is the Command string to send to a non-Staribus controller -->
+            <!-- If present, it must be used in preference to the CommandCodeBase+CommandCode+CommandVariant to build the Command string -->
+            <xs:element name="LegacyCode"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:choice>
+                <!-- An optional indication that this Command is a composite, for the retrieval of -->
+                <!-- blocked data, i.e. the Response payload is returned in chunks of a pre-defined size, -->
+                <!-- to be assembled into one payload returned by this Command. -->
+                <!-- To achieve this we need to know which Command indicates how many blocks are to be retrieved, -->
+                <!-- and which Command will return a specified block of data. -->
+                <!-- These two sub-Commands must always belong to the same Plugin as the composite Command. -->
+                <!-- A blockable Command must always be a LOCAL Command (SendToPort = false). -->
+                <xs:element name="BlockedDataCommand"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="BlockCodes"/>
+
+                <!-- An optional indication that this Command is a composite, -->
+                <!-- in this case a single command is repeated indefinitely. -->
+                <!-- The IteratedData Command must return a single numeric data item in the Response. -->
+                <!-- Commands with no Parameters are just repeated. -->
+                <!-- ???? TODO If the IteratedCommand has a single Parameter, it is taken to be the ChannelID -->
+                <!-- Which is retrieved from the Metadata 'Observation.Channel.Count' of the host Plugin -->
+                <!-- The IteratedCommand may belong to any *Plugin* in the same Instrument as the composite Command, -->
+                <!-- but it may NOT iterate a Core Command (i.e. a Controller Command) -->
+                <xs:element name="IteratedDataCommand"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="IteratedCode"/>
+
+                <!-- An optional indication that this Command is a composite, made up of a list of Commands. -->
+                <!-- The Parameters supplied by the SteppingCommand are presented to Commands in sequence -->
+                <!-- so there must be exactly the same number of supplied Parameters as expected by the SteppedCommands -->
+                <!-- The first three Parameters are taken as the starting value, end value and step size -->
+                <!-- The last Command must return a single numeric data item in the Response.-->
+                <!-- The SteppedCommands may belong to any *Plugin* in the same Instrument as the composite Command, -->
+                <!-- but may NOT step a Core Command (i.e. a Controller Command) -->
+                <xs:element name="SteppedDataCommand"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            type="SteppedCodes"/>
+            </xs:choice>
+
+            <!-- A Description of the Command -->
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-\(\)])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The name of the CommandCategory must occur in the pre-defined List-->
+            <xs:element name="Category"
+                        minOccurs="0"
+                        maxOccurs="1"
+                        type="CommandCategory"/>
+
+            <!-- The Colour of the Command button text, in the format r=234 g=225 b=014 -->
+            <!-- This is intended for e.g. marking a Command as 'under development' -->
+            <xs:element name="Colour"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Command metadata are essentially (Key, Value) pairs,
+                 where the Keys come from the Starbase MetadataDictionary
+                 Unmapped Keys are ignored by the host -->
+            <xs:element name="CommandMetadata"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="metadata:Metadata"/>
+
+            <!-- Each Command has zero or more Parameters -->
+            <xs:element name="Parameter"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="ParameterType"/>
+
+            <!-- The Command is either executed over the Port connection, or locally in the DAO -->
+            <xs:element name="SendToPort"
+                        type="xs:boolean"/>
+
+            <!-- Each Command can generate a Response carrying a data payload with defined DataType and Units  -->
+            <!-- or a simple Acknowledgement with no data payload -->
+            <!-- If neither are present, there is no ResponseMessage generated at all -->
+
+            <!-- e.g. the Staribus protocol allows for data, or just a status word for protocol error indication -->
+            <!-- but most of the SpectraCyber commands have no response at all... -->
+
+            <xs:choice>
+                <xs:element name="Response"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="ResponseType"/>
+
+                <xs:element name="Ack"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="AckType"/>
+            </xs:choice>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- ....................................................................................... -->
+    <!-- Command Variants -->
+
+    <!-- Define the Command Codes to describe the constituent sub-Commands of a composite LOCAL Command -->
+    <!-- Define either the two sub-Commands or the parent Command of which this sub-Command is a part -->
+    <xs:complexType name="BlockCodes">
+        <xs:choice>
+            <!-- Define the sub-Commands to use to retrieve data -->
+            <xs:sequence>
+                <!-- The CommandCode of the get[Item]BlockCount() Command -->
+                <xs:element name="BlockCountCommandCode"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- The CommandCode of the get[Item]Block(blockid) Command -->
+                <xs:element name="BlockCommandCode"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+
+            <!-- Define the parent Command -->
+            <xs:sequence>
+                <!-- The CommandCode of the parent LOCAL Command -->
+                <xs:element name="ParentCommandCode"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:choice>
+    </xs:complexType>
+
+
+    <!-- Define the Command Code to describe the sub-Command of a composite LOCAL IteratedDataCommand -->
+    <!-- Define either the sub-Command or the parent Command of which this sub-Command is a part -->
+    <xs:complexType name="IteratedCode">
+        <xs:choice>
+            <!-- Define the sub-Command to use to retrieve data -->
+            <xs:sequence>
+                <!-- The CommandCodeBase of the Iterated Command -->
+                <xs:element name="IteratedCommandCodeBase"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- The CommandCode of the Iterated Command -->
+                <xs:element name="IteratedCommandCode"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+
+            <!-- Define the parent Command -->
+            <xs:sequence>
+                <!-- The CommandCodeBase of the parent LOCAL Command -->
+                <xs:element name="ParentCommandCodeBase"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- The CommandCode of the parent LOCAL Command -->
+                <xs:element name="ParentCommandCode"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:choice>
+    </xs:complexType>
+
+
+    <!-- Define the Command Codes to describe the sub-Command of a composite LOCAL SteppedDataCommand -->
+    <!-- Define either the sub-Commands or the parent Commands of which this sub-Command is a part -->
+    <xs:complexType name="SteppedCodes">
+        <xs:choice>
+            <xs:sequence>
+                <!-- The CommandCodeBase of the Stepped Command -->
+                <xs:element name="SteppedCommandCodeBase"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- The CommandCode of the Stepped Command -->
+                <xs:element name="SteppedCommandCode"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+
+            <!-- Define the parent Command -->
+            <xs:sequence>
+                <!-- The CommandCodeBase of the parent LOCAL Command -->
+                <xs:element name="ParentCommandCodeBase"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <!-- The CommandCode of the parent LOCAL Command -->
+                <xs:element name="ParentCommandCode"
+                            minOccurs="1"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="[0-9A-F][0-9A-F]"/>
+                            <xs:length value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- ....................................................................................... -->
+
+    <!-- A Command Parameter -->
+    <xs:complexType name="ParameterType">
+        <xs:sequence>
+            <!-- The Name of the Parameter -->
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- An optional SubParameter Index, for e.g. Filter Parameters -->
+            <!-- Most Parameters may leave this element undefined -->
+            <xs:element name="SubParameterIndex"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The DataTypes of the Parameter -->
+            <xs:element name="InputDataType"
+                        type="ParameterDataType"
+                        minOccurs="1"
+                        maxOccurs="1"/>
+
+            <xs:element name="TrafficDataType"
+                        type="ParameterDataType"
+                        minOccurs="1"
+                        maxOccurs="1"/>
+
+            <!-- The Units of the Parameter -->
+            <xs:element name="Units"
+                        type="metadata:SchemaUnits"/>
+
+            <!-- The optional REGEX expression used to parse the Parameter -->
+            <xs:choice>
+                <xs:element name="Regex"
+                            minOccurs="0"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:minLength value="0"/>
+                            <xs:maxLength value="1000"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="Choices"
+                            minOccurs="0"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="1000"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+            <!-- The optional Value, intended for programmatic construction rather than in
+                 the XML description of the Instrument -->
+            <xs:element name="Value"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The optional Tooltip, to aid the User when entering data -->
+            <xs:element name="Tooltip"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="500"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- The DataType of a Parameter, used for value input and transmission format -->
+    <!-- The Input and Output ranges are used only by the ScaledInteger DataTypes -->
+    <!-- The Radix is taken to be the same as that of SchemaDataType -->
+    <!-- Clearly InputMax > InputMin and OutputMax > OutputMin -->
+    <xs:complexType name="ParameterDataType">
+        <xs:sequence>
+            <xs:element name="DataTypeName"
+                        type="datatypes:SchemaDataType"/>
+
+            <xs:element name="FieldCount"
+                        type="xs:unsignedInt"
+                        minOccurs="0"
+                        maxOccurs="1"/>
+
+            <xs:element name="InputMin"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([A-Z0-9.\-\+])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="InputMax"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([A-Z0-9.\-\+])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="OutputMin"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([A-Z0-9.\-\+])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="OutputMax"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([A-Z0-9.\-\+])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Each Macro has an array of MacroType -->
+    <xs:complexType name="MacroType">
+        <xs:sequence>
+            <!-- The Macro Identifier is presented to the User for convenience -->
+            <xs:element name="Identifier"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- A Description of the Macro -->
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-\(\)])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Colour of the Macro button text, in the format r=234 g=225 b=014 -->
+            <!-- This is intended for e.g. marking a Macro as 'under development' -->
+            <xs:element name="Colour"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Specify an optional Execution Schedule -->
+            <xs:element name="Scheduler"
+                        minOccurs="0"
+                        maxOccurs="1"
+                        type="SchedulerType"/>
+
+            <!-- Each Macro has zero or more Parameters directly accessible to the caller -->
+            <xs:element name="Parameter"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="ParameterType"/>
+
+            <!-- Each Macro has one or more internal Steps -->
+            <xs:element name="Step"
+                        minOccurs="1"
+                        maxOccurs="unbounded"
+                        type="StepType"/>
+
+            <!-- Each Macro can generate a Response carrying a data payload with defined DataType and Units  -->
+            <!-- or a simple Acknowledgement with no data payload -->
+            <!-- If neither are present, there is no ResponseMessage generated at all -->
+
+            <xs:choice>
+                <xs:element name="Response"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="ResponseType"/>
+
+                <xs:element name="Ack"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="AckType"/>
+            </xs:choice>
+
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- SchedulerType controls the Scheduler -->
+    <xs:complexType name="SchedulerType">
+        <xs:sequence>
+
+            <xs:element name="StartDate"
+                        type="xs:date"
+                        minOccurs="1"
+                        maxOccurs="1"/>
+
+            <xs:element name="StartTime"
+                        type="xs:time"
+                        minOccurs="1"
+                        maxOccurs="1"/>
+
+            <xs:element name="StopDate"
+                        type="xs:date"
+                        minOccurs="0"
+                        maxOccurs="1"/>
+
+            <xs:element name="StopTime"
+                        type="xs:time"
+                        minOccurs="0"
+                        maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- StepType defines one line of a Macro -->
+    <!-- This may contain Commands, or Comments, for now -->
+    <xs:complexType name="StepType">
+        <xs:sequence>
+
+            <!-- The Macro Step has an optional Label, for control structures or line numbers -->
+            <xs:element name="Label"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:choice>
+                <xs:element name="Starscript"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="StepCommandType"/>
+
+                <xs:element name="Comment"
+                            minOccurs="0"
+                            maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:normalizedString">
+                            <xs:pattern value="([a-zA-Z0-9'.,/ \-])*"/>
+                            <xs:minLength value="0"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:choice>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- A single Step Command -->
+    <xs:complexType name="StepCommandType">
+        <xs:sequence>
+
+            <xs:element name="Instrument"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Module"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Evey Macro Step must have only one Command -->
+            <xs:element name="Command"
+                        minOccurs="1"
+                        maxOccurs="1"
+                        type="StepCommand"/>
+
+            <!-- Each Macro can generate a Response carrying a data payload with defined DataType and Units  -->
+            <!-- or a simple Acknowledgement with no data payload -->
+            <!-- If neither are present, there is no ResponseMessage generated at all -->
+
+            <xs:choice>
+                <xs:element name="Response"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="ResponseType"/>
+
+                <xs:element name="Ack"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="AckType"/>
+            </xs:choice>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- A single Macro Step Command  -->
+    <xs:complexType name="StepCommand">
+        <xs:sequence>
+            <!-- The Step Command Identifier, which must exist -->
+            <xs:element name="Identifier"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Zero or more Step Command Parameters -->
+            <xs:element name="Parameter"
+                        minOccurs="0"
+                        maxOccurs="unbounded"
+                        type="MacroParameterType"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- A single Step Comment -->
+    <xs:complexType name="StepCommentType">
+        <xs:sequence>
+
+            <xs:element name="Comment"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- The Command or Macro Response -->
+    <xs:complexType name="ResponseType">
+        <xs:sequence>
+            <!-- The Name of the ResponseValue -->
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The DataType of the ResponseValue -->
+            <xs:element name="DataTypeName"
+                        type="datatypes:SchemaDataType"/>
+
+            <!-- The Units of the ResponseValue -->
+            <xs:element name="Units"
+                        type="metadata:SchemaUnits"/>
+
+            <!-- The optional REGEX expression used to parse the ResponseValue -->
+            <xs:element name="Regex"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The optional Value, intended for programmatic construction rather than in
+                 the XML description of the Instrument -->
+            <xs:element name="Value"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="100000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- A simple Acknowledgement message, with no response payload -->
+    <xs:complexType name="AckType">
+        <xs:sequence>
+            <!-- The Name of the Ack -->
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- The specification of a Macro Step Command Parameter -->
+    <!-- ToDO REVIEW MacroParameterType - do we need to take account of SubParameterIndex? -->
+    <xs:complexType name="MacroParameterType">
+        <xs:sequence>
+
+            <!-- The literal value of the Parameter, or where to find it -->
+            <xs:element name="Token">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The name of the TokenSource must occur in the pre-defined List-->
+            <xs:element name="Source"
+                        type="TokenSource"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- Sources of Parameter Token to be passed to Macro Step Commands -->
+    <xs:simpleType name="TokenSource">
+        <xs:restriction base="xs:normalizedString">
+
+            <!-- Each Macro Step Command may have Parameter Values from the Macro wrapper -->
+            <xs:enumeration value="Macro"/>
+
+            <!-- Each Macro Step Command may have literal Parameter Values -->
+            <xs:enumeration value="Literal"/>
+
+            <!-- Each Macro Step Command may have Parameter values taken from a Metadata item -->
+            <xs:enumeration value="Metadata"/>
+
+            <!-- Each Macro Step Command may have Parameter values taken from a ResponseValue -->
+            <xs:enumeration value="Response"/>
+
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <!-- Plugin Providers -->
+    <xs:simpleType name="PluginProvider">
+        <xs:restriction base="xs:normalizedString">
+
+            <xs:enumeration value="Controller"/>
+
+            <xs:enumeration value="PrimaryPlugin"/>
+
+            <xs:enumeration value="SecondaryPlugin"/>
+
+            <!-- Not used yet, but the idea is to reduce XML in the EEPROMs, -->
+            <!-- for common Plugins which could be available on the host -->
+            <xs:enumeration value="HostPlugin"/>
+
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <!-- Plugin Categories-->
+    <xs:simpleType name="PluginCategory">
+        <xs:restriction base="xs:normalizedString">
+
+            <xs:enumeration value="Undefined"/>
+
+            <xs:enumeration value="Builder"/>
+
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <!-- Command Categories-->
+    <xs:simpleType name="CommandCategory">
+        <xs:restriction base="xs:normalizedString">
+
+            <xs:enumeration value="Undefined"/>
+
+            <xs:enumeration value="Capture"/>
+
+            <xs:enumeration value="Import"/>
+
+            <xs:enumeration value="Builder"/>
+
+        </xs:restriction>
+    </xs:simpleType>
+
+
+</xs:schema>

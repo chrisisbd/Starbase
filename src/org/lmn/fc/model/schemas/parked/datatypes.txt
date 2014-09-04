@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<xs:schema targetNamespace="datatypes.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="datatypes.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:element name="DataTypes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded"
+                        name="DataTypeResource"
+                        type="DataTypeResource"/>
+            </xs:sequence>
+          </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="DataTypeResource">
+      <xs:sequence>
+          <xs:element name="DataTypeClassName" type="DataTypeClassName" />
+          <xs:element name="ChooserClassName" type="ChooserClassName" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="DataTypeClassName">
+        <xs:restriction base="xs:normalizedString">
+            <xs:minLength value="1" />
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ChooserClassName">
+        <xs:restriction base="xs:normalizedString">
+            <xs:minLength value="0" />
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

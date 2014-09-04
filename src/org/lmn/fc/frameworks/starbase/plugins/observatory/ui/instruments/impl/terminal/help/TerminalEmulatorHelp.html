@@ -1,0 +1,48 @@
+<!-- Copyright 2000, 2001, 2002, 2003, 04, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2013 -->
+<!-- Laurence Newell -->
+<!-- starbase@ukraa.com -->
+<!-- radio.telescope@btinternet.com -->
+<!-- -->
+<!-- This file is part of Starbase. -->
+<!-- -->
+<!-- Starbase is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+<!-- -->
+<!-- Starbase is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU General Public License for more details. -->
+<!-- -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Starbase.  If not, see http://www.gnu.org/licenses. -->
+
+<html>
+<head>
+<title>Starbase Terminal Emulator</title>
+<body>
+<h3>Starbase Terminal Emulator</h3>
+
+<br>
+<br>This is a very simple Terminal Emulator, intended for debugging Instruments using RS232/485
+<br>
+<br>The communication parameters are set in TerminalEmulator-properties.xml
+<br>
+<br><b>Note that it is not possible to send just a CR:</b>
+<br>
+<br>User types LF (ctrl-J)  Terminal sends CR (ctrl-M) followed by LF (ctrl-J)
+<br>
+<br>User types CR (ctrl-M)  Terminal sends CR (ctrl-M) followed by LF (ctrl-J)
+<br>
+<br>i.e. they both produce the <b>same</b> output.
+<br>This is due to a limitation in Java,
+<br>which cannot read the CR key independently of the LF key.
+<br>It is unlikely that this limitation will cause problems,
+<br>but you need to be aware of it.
+<br>Windows and Linux handle CR/LF differently,
+<br>and this feature should make the differences less apparent.
+<br>
+<br>If you find a device which does not function correctly, please let us know.
+</body>
+</html>

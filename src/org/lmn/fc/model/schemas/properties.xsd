@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="properties.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="properties.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="datatypes.xmlbeans.model.fc.lmn.org"
+               schemaLocation="datatypes.xsd"/>
+
+    <!-- A collection for file imports -->
+    <xs:element name="Properties">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="PropertyResource"
+                            type="PropertyResource"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="PropertyResource">
+        <xs:sequence>
+
+            <xs:element name="ResourceKey">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1"
+                                    maxOccurs="unbounded"
+                                    name="Key"
+                                    type="Key"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="Editable" type="xs:boolean"/>
+
+            <!-- ToDo Could be replaced by DataType ? -->
+            <xs:element name="DataTypeClassName"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="EditorClassname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Value">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="CreatedDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="CreatedTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+            <xs:element name="ModifiedDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="ModifiedTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="Key">
+        <xs:restriction base="xs:normalizedString">
+            <xs:pattern value="([a-zA-Z0-9])*"/>
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

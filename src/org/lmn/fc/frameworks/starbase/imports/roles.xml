@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Roles xmlns="roles.xmlbeans.model.fc.lmn.org"
+        >
+
+    <Role>
+		<RoleName>SuperUser</RoleName>
+        <FrameworkViewer>1</FrameworkViewer>
+        <FrameworkEditor>1</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>1</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>1</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>1</UserEditor>
+        <UserCreator>1</UserCreator>
+		<UserDeletor>1</UserDeletor>
+        <FullScreen>0</FullScreen>
+        <Description>A Super User</Description>
+    </Role>
+
+    <Role>
+		<RoleName>Developer</RoleName>
+        <FrameworkViewer>1</FrameworkViewer>
+        <FrameworkEditor>1</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>1</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>1</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>1</UserEditor>
+        <UserCreator>1</UserCreator>
+		<UserDeletor>1</UserDeletor>
+        <FullScreen>0</FullScreen>
+        <Description>A developer</Description>
+    </Role>
+
+    <Role>
+		<RoleName>Builder</RoleName>
+        <FrameworkViewer>0</FrameworkViewer>
+        <FrameworkEditor>0</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>1</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>1</ResourceEditor>
+        <UserViewer>1</UserViewer>
+        <UserEditor>0</UserEditor>
+        <UserCreator>0</UserCreator>
+        <UserDeletor>0</UserDeletor>
+        <FullScreen>1</FullScreen>
+        <Description>A System Builder</Description>
+    </Role>
+
+    <Role>
+		<RoleName>Administrator</RoleName>
+        <FrameworkViewer>1</FrameworkViewer>
+        <FrameworkEditor>1</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>1</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>1</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>1</UserEditor>
+        <UserCreator>1</UserCreator>
+		<UserDeletor>1</UserDeletor>
+        <FullScreen>0</FullScreen>
+        <Description>The system administrator</Description>
+    </Role>
+
+    <Role>
+		<RoleName>LocalUser</RoleName>
+        <FrameworkViewer>0</FrameworkViewer>
+        <FrameworkEditor>0</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>1</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>1</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>0</UserEditor>
+        <UserCreator>0</UserCreator>
+		<UserDeletor>0</UserDeletor>
+        <FullScreen>0</FullScreen>
+        <Description>A user restricted to local database access</Description>
+    </Role>
+
+    <Role>
+		<RoleName>RemoteUser</RoleName>
+        <FrameworkViewer>0</FrameworkViewer>
+        <FrameworkEditor>0</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>1</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>0</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>0</UserEditor>
+        <UserCreator>0</UserCreator>
+		<UserDeletor>0</UserDeletor>
+        <FullScreen>0</FullScreen>
+        <Description>A simpler user permitted to access remote databases</Description>
+    </Role>
+
+    <Role>
+		<RoleName>Demonstrator</RoleName>
+        <FrameworkViewer>1</FrameworkViewer>
+        <FrameworkEditor>1</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>1</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>1</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>1</UserEditor>
+        <UserCreator>1</UserCreator>
+		<UserDeletor>1</UserDeletor>
+        <FullScreen>0</FullScreen>
+        <Description>A demonstrator</Description>
+    </Role>
+
+    <Role>
+		<RoleName>Tester</RoleName>
+        <FrameworkViewer>1</FrameworkViewer>
+        <FrameworkEditor>1</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>1</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>1</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>1</UserEditor>
+        <UserCreator>1</UserCreator>
+		<UserDeletor>1</UserDeletor>
+        <FullScreen>0</FullScreen>
+        <Description>A tester</Description>
+    </Role>
+
+    <Role>
+		<RoleName>Simplified</RoleName>
+        <FrameworkViewer>0</FrameworkViewer>
+        <FrameworkEditor>0</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>1</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>1</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>0</UserEditor>
+        <UserCreator>0</UserCreator>
+		<UserDeletor>0</UserDeletor>
+        <FullScreen>1</FullScreen>
+        <Description>A Role with simplified functionality during the launch of Starbase</Description>
+    </Role>
+
+    <Role>
+		<RoleName>Researcher</RoleName>
+        <FrameworkViewer>0</FrameworkViewer>
+        <FrameworkEditor>0</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>1</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>1</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>1</UserEditor>
+        <UserCreator>1</UserCreator>
+		<UserDeletor>1</UserDeletor>
+        <FullScreen>1</FullScreen>
+        <Description>A full-featured Role for Researchers</Description>
+    </Role>
+
+    <Role>
+		<RoleName>Educational</RoleName>
+        <FrameworkViewer>0</FrameworkViewer>
+        <FrameworkEditor>0</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>0</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>0</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>0</UserEditor>
+        <UserCreator>0</UserCreator>
+		<UserDeletor>0</UserDeletor>
+        <FullScreen>1</FullScreen>
+        <Description>A Role intended for Educational users</Description>
+    </Role>
+
+    <Role>
+		<RoleName>Tutor</RoleName>
+        <FrameworkViewer>0</FrameworkViewer>
+        <FrameworkEditor>0</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>0</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>0</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>0</UserEditor>
+        <UserCreator>0</UserCreator>
+		<UserDeletor>0</UserDeletor>
+        <FullScreen>1</FullScreen>
+        <Description>A Role intended for Educational users</Description>
+    </Role>
+
+    <Role>
+		<RoleName>Student</RoleName>
+        <FrameworkViewer>0</FrameworkViewer>
+        <FrameworkEditor>0</FrameworkEditor>
+        <AtomViewer>1</AtomViewer>
+        <AtomEditor>1</AtomEditor>
+        <TaskViewer>1</TaskViewer>
+        <TaskEditor>0</TaskEditor>
+        <ResourceViewer>1</ResourceViewer>
+        <ResourceEditor>0</ResourceEditor>
+        <UserViewer>1</UserViewer>
+		<UserEditor>0</UserEditor>
+        <UserCreator>0</UserCreator>
+		<UserDeletor>0</UserDeletor>
+        <FullScreen>1</FullScreen>
+        <Description>A Role intended for Educational users</Description>
+    </Role>
+
+</Roles>

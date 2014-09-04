@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="ephemerides.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="ephemerides.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:element name="Ephemerides">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Ephemeris"
+                            type="Ephemeris"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="Ephemeris">
+        <xs:sequence>
+
+            <!-- A Category for the Ephemeris -->
+            <xs:element name="Category">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-_*])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="25"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- A mnemonic for the Ephemeris -->
+            <xs:element name="Mnemonic">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'., _*])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The Name of the Ephemeris, recognisable by the user -->
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-_*])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="25"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- A Description of the Ephemeris -->
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'.,/ \-_*])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Optional URL to a reference for this object -->
+            <xs:element name="URL"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9'\*\.,/\-\\:_?=])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Optional Icon for use in e.g. the header of a printed Ephemeris (best at 150px by 150px) -->
+            <xs:element name="IconFilename"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9./\-])*"/>
+                        <xs:minLength value="5"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- The classname of the Java implementation of the Ephemeris Coordinate Provider -->
+            <xs:element name="DaoClassname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Optional fixed coordinates for celestial objects e.g. (Ra, Dec) -->
+            <xs:choice>
+                <!-- (Az, El) -->
+                <xs:element name="AzEl"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="AzElType"/>
+
+                <!-- (Ra, Dec) -->
+                <xs:element name="RaDec"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="RaDecType"/>
+
+                <!-- (l, b) -->
+                <xs:element name="Galactic"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="GalacticType"/>
+
+                <!-- Metadata supplies the coordinate pair -->
+                <xs:element name="Metadata"
+                            minOccurs="0"
+                            maxOccurs="1"
+                            type="MetadataType"/>
+            </xs:choice>
+
+            <xs:element name="Epoch"
+                        type="SchemaEpoch"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AzElType">
+        <xs:sequence>
+            <!-- Azimuth -->
+            <xs:element name="Az"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                     <xs:restriction base="xs:normalizedString">
+                         <!-- 000.0000000000 to 359.9999999999 Clockwise from North -->
+                         <!-- Ensure this is kept in step with FrameworkRegex REGEX_AZIMUTH_DEG_UNSIGNED -->
+                         <xs:pattern value="(((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|([12][0-9][0-9])|(3[0-5][0-9]))(\.([0-9]){1,10})*)?"/>
+                     </xs:restriction>
+                 </xs:simpleType>
+            </xs:element>
+
+            <!-- Elevation -->
+            <xs:element name="El"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!-- 00.0000000000 to 89.9999999999 -->
+                        <!-- Ensure this is kept in step with FrameworkRegex REGEX_ELEVATION_DEG_UNSIGNED -->
+                        <xs:pattern value="((([0-9])|([0-8][0-9]))(\.([0-9]){1,10})*)?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+             </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RaDecType">
+        <xs:sequence>
+            <!-- Right Ascension -->
+            <xs:element name="RA"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!-- 00:00:00.0000 to 23:59:59.9999 hh:mm:ss -->
+                        <!-- Ensure this is kept in step with FrameworkRegex REGEX_RIGHT_ASCENSION_HMS -->
+                        <xs:pattern value="((([0-9])|([0-1][0-9])|(2[0-3])):((0[0-9])|(0*[1-5][0-9])):((0[0-9])|(0*[1-5][0-9]))(\.([0-9]{1,4}))*)?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Declination -->
+            <xs:element name="Dec"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 deg:mm:ss -->
+                        <!-- Ensure this is kept in step with FrameworkRegex REGEX_DECLINATION_DMS_SIGNED -->
+                        <xs:pattern value="([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GalacticType">
+        <xs:sequence>
+            <!-- Galactic Longitude -->
+            <xs:element name="l"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!-- 000:00:00.0000 to 359:59:59.9999 deg:mm:ss -->
+                        <!-- Ensure this is kept in step with FrameworkRegex REGEX_LONGITUDE_DMS_UNSIGNED -->
+                        <xs:pattern value="((([0]{3})|(00[0-9])|(00*[1-9][0-9])|(([12][0-9]{2}|3[0-5][0-9]))):((0[0-9])|(0*[1-5][0-9])):((0[0-9])|(0*[1-5][0-9]))(\.([0-9]){1,4})*)"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Galactic Latitude -->
+            <xs:element name="b"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <!-- -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999 deg:mm:ss -->
+                        <!-- Ensure this is kept in step with FrameworkRegex REGEX_LATITUDE_DMS_SIGNED -->
+                        <xs:pattern value="([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- The Keys of the Metadata are in the Starbase MetadataDictionary -->
+    <xs:complexType name="MetadataType">
+        <xs:sequence>
+            <!-- Horizontal Coordinate Metadata Key -->
+            <xs:element name="KeyX"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Vertical Coordinate Metadata Key -->
+            <xs:element name="KeyY"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <!-- Coordinate Type Specifier Metadata Key -->
+            <xs:element name="KeyType"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9.])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="SchemaEpoch">
+        <xs:restriction base="xs:normalizedString">
+
+            <xs:enumeration value="J2000"/>
+
+            <xs:enumeration value="B1950"/>
+
+            <xs:enumeration value="B1900"/>
+
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="groups.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="groups.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <!-- Define a list of permissible Group Names -->
+    <xs:element name="ObservatoryGroupDefinitions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1"
+                            maxOccurs="10"
+                            name="Definition"
+                            type="Definition"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="Definition">
+        <xs:sequence>
+
+            <xs:element name="GroupID"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="9"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="SortIndex"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="9"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Name"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9./\-])*"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="25"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="IconFilename"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="([a-zA-Z0-9./\-])*"/>
+                        <xs:minLength value="5"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Tooltip"
+                        minOccurs="0"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="500"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="ObservatoryGroups">
+        <xs:sequence>
+            <xs:element minOccurs="1"
+                        maxOccurs="20"
+                        name="Group"
+                        type="Group"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="Group">
+        <xs:sequence>
+
+            <xs:element name="GroupID"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="9"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="SortIndex"
+                        minOccurs="1"
+                        maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Locked"
+                        type="xs:boolean"
+                        minOccurs="0"
+                        maxOccurs="1"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,251 @@
+<?xml version="1.0" standalone="yes"?>
+
+<Queries xmlns="queries.xmlbeans.model.fc.lmn.org">
+
+    <!-- User Management -->
+    <QueryResource>
+        <ResourceKey>
+            <Key>Delete</Key>
+            <Key>User</Key>
+            <Key>All</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>DELETE FROM Users</Statement>
+        </Statements>
+        <Description>Delete all Users (used during initial Login)</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Delete</Key>
+            <Key>User</Key>
+            <Key>ByID</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>DELETE FROM Users WHERE (UserID=?)</Statement>
+        </Statements>
+        <Description>Delete the specified User</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Insert</Key>
+            <Key>User</Key>
+            <Key>Data</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>INSERT INTO Users (Username, Password, UserActive, RoleID) VALUES (?, ?, ?,
+                ?)
+            </Statement>
+        </Statements>
+        <Description>Insert a new User</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Select</Key>
+            <Key>User</Key>
+            <Key>Data</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>SELECT * FROM Users WHERE (Username=?) AND (Password=?) AND (UserActive=1)
+            </Statement>
+        </Statements>
+        <Description>Select all information for the specified User</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Update</Key>
+            <Key>User</Key>
+            <Key>Data</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>UPDATE Users SET Username=?, Password=?, UserActive=?, RoleID=?,
+                LastLoginDate=?, LastLoginTime=? WHERE (UserID=?)
+            </Statement>
+        </Statements>
+        <Description>Update all information for the specified User</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Update</Key>
+            <Key>User</Key>
+            <Key>Login</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>UPDATE Users SET LastLoginDate=?, LastLoginTime=? WHERE (UserID=?)
+            </Statement>
+        </Statements>
+        <Description>Update the LastLogin Date and Time for the specified User</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+    <!-- Event Logging -->
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Insert</Key>
+            <Key>EventLog</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>INSERT INTO EventLog (FrameworkID, ApplicationID, ComponentID, TaskID,
+                OriginClassName, EventDate, EventTime, EventMessage, EventStatus) VALUES (?, ?, ?,
+                ?, ?, ?, ?, ?, ?)
+            </Statement>
+        </Statements>
+        <Description>Insert an Event into the EventLog</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Delete</Key>
+            <Key>EventLog</Key>
+            <Key>All</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>DELETE FROM EventLog</Statement>
+        </Statements>
+        <Description>Delete all Events</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Delete</Key>
+            <Key>EventLog</Key>
+            <Key>Atom</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>DELETE FROM EventLog WHERE (FrameworkID=?) AND (ApplicationID=?) AND
+                (ComponentID=?)
+            </Statement>
+        </Statements>
+        <Description>Delete all Events for the specified Component</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Select</Key>
+            <Key>EventLog</Key>
+            <Key>All</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>SELECT * FROM EventLog ORDER BY EventID Desc</Statement>
+        </Statements>
+        <Description>Select all Events</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+    <QueryResource>
+        <ResourceKey>
+            <Key>Select</Key>
+            <Key>EventLog</Key>
+            <Key>Atom</Key>
+        </ResourceKey>
+        <Editable>1</Editable>
+        <EditorClassname>org.lmn.fc.ui.editors.QueryEditor</EditorClassname>
+        <Statements>
+            <Statement>XML dummy</Statement>
+            <Statement>SELECT * FROM EventLog WHERE (FrameworkID=?) AND (ApplicationID=?) AND
+                (ComponentID=?) ORDER BY EventID Desc
+            </Statement>
+        </Statements>
+        <Description>Select Events for the specified Component</Description>
+        <ExecutionCount>0</ExecutionCount>
+        <ExecutionTime>0</ExecutionTime>
+        <CreatedDate>2000-01-01Z</CreatedDate>
+        <CreatedTime>00:00:00.000Z</CreatedTime>
+        <ModifiedDate>2000-01-01Z</ModifiedDate>
+        <ModifiedTime>00:00:00.000Z</ModifiedTime>
+    </QueryResource>
+
+</Queries>

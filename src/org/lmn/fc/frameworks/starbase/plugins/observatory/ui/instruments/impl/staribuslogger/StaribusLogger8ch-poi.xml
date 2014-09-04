@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+
+<POI xmlns="poi.xmlbeans.model.fc.lmn.org">
+    <!-- Transmitter Icon is poi-tx.png -->
+    <!-- Receiver Icon is poi-rx.png -->
+    <!-- A plain cross icon poi.png -->
+
+    <!-- PointOfInterest information relevant to the Instrument -->
+    <!-- You may add others below -->
+
+    <PointOfInterest>
+        <Name>COAA Observatory</Name>
+        <Description>COAA Observatory, Algarve, Portugal</Description>
+        <!-- WEST is POSITIVE (astronomical convention) -->
+        <Longitude>+008:36:02</Longitude>
+        <Latitude>+37:11:26</Latitude>
+        <HASL>75</HASL>
+        <!-- See: http://www.arrl.org/locate/grid.html -->
+        <!-- See: http://www.amsat.org/amsat/toys/gridconv.html -->
+        <MaidenheadLocator>JM07pe</MaidenheadLocator>
+        <IconFilename>poi-coaa.png</IconFilename>
+    </PointOfInterest>
+
+</POI>

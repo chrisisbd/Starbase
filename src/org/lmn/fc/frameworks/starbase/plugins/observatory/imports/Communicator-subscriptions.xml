@@ -1,0 +1,128 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- All subscriptions last checked on 2011-04-01 -->
+
+<Subscriptions xmlns="subscriptions.xmlbeans.model.fc.lmn.org">
+
+    <!-- Twitter -->
+
+    <Twitter>
+        <Username>ukraastarbase</Username>
+    </Twitter>
+
+    <Twitter>
+        <Username>BAARAG</Username>
+    </Twitter>
+
+    <Twitter>
+        <Username>BritAstro</Username>
+    </Twitter>
+
+    <!-- The Society of Amateur Radio Astronomers (SARA) -->
+    <Twitter>
+        <Username>RadioAstronomy1</Username>
+    </Twitter>
+
+    <!-- UKRAA -->
+    <RSS>
+        <Name>UKRAA-News</Name>
+        <URL>http://www.ukraa.com/www/index.php?format=feed</URL>
+        <ShowDetail>true</ShowDetail>
+    </RSS>
+
+    <RSS>
+        <Name>UKRAA-Starbase</Name>
+        <URL>http://twitter.com/statuses/user_timeline/124773938.rss</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <RSS>
+        <Name>UKRAA-Starbase-Blog</Name>
+        <URL>http://www.ukraa.com/wordpress/feed</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <!-- BAA RAG -->
+    <RSS>
+        <Name>BAA-RAG-Blog</Name>
+        <URL>http://baa-rag.blogspot.com/feeds/posts/default</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <RSS>
+        <Name>BAA-RAG</Name>
+        <URL>http://twitter.com/statuses/user_timeline/140555102.rss</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <!-- BAA -->
+    <RSS>
+        <Name>BAA-Blog</Name>
+        <URL>http://britastro.org/blog/?feed=rss2</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <RSS>
+        <Name>BritAstro</Name>
+        <URL>http://twitter.com/statuses/user_timeline/70160230.rss</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <!-- Miscellaneous -->
+    <RSS>
+        <Name>SARA</Name>
+        <URL>http://www.radio-astronomy.org/rss.xml</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <RSS>
+        <Name>MartynKinder</Name>
+        <URL>http://twitter.com/statuses/user_timeline/70670478.rss</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <RSS>
+        <Name>AMSAT-UK</Name>
+        <URL>http://www.uk.amsat.org/?feed=rss2</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <RSS>
+        <Name>Mars Curiosity Rover</Name>
+        <URL>http://mars.jpl.nasa.gov/rss/news.xml</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <RSS>
+        <Name>McMath Hulbert Observatory</Name>
+        <URL>http://mho.5thelement.com/?feed=rss2</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <!-- Software tools used to create Starbase -->
+    <RSS>
+        <Name>JetBrains News</Name>
+        <URL>http://www.jetbrains.com/rss.xml</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <RSS>
+        <Name>Axialis Software News</Name>
+        <URL>http://www.axialis.com/rss/news.xml</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <RSS>
+        <Name>SourceForge:OpenCSV</Name>
+        <URL>http://sourceforge.net/export/rss2_keepsake.php?group_id=148905</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+    <!-- Hardware Component Suppliers -->
+    <RSS>
+        <Name>RapidElectronics</Name>
+        <URL>http://www.rapidonline.com/netalogue/rss/news.xml</URL>
+        <ShowDetail>false</ShowDetail>
+    </RSS>
+
+</Subscriptions>

@@ -1,0 +1,166 @@
+<!-- Copyright 2000, 2001, 2002, 2003, 04, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2013 -->
+<!-- Laurence Newell -->
+<!-- starbase@ukraa.com -->
+<!-- radio.telescope@btinternet.com -->
+<!-- -->
+<!-- This file is part of Starbase. -->
+<!-- -->
+<!-- Starbase is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+<!-- -->
+<!-- Starbase is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU General Public License for more details. -->
+<!-- -->
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with Starbase.  If not, see http://www.gnu.org/licenses. -->
+
+<html>
+<head>
+    <title>Starbase VLF Receiver</title>
+</head>
+<body>
+<h3>Starbase VLF Receiver</h3>
+
+<br>
+<br>There are two variants of the VLF Receiver - Martyn Kinder's and John Cook's
+<br>These two versions are to show the power of the changeable DataTranslator,
+<br>switching between the RadioSkyPipe format for MK, and JohnCook for JC.
+<br>
+<br>The VLF Instrument can read a file on the PC, using <b>importRawDataLocal()</b>
+<br>
+<br>You can also retrieve a file from a remote FTP server, using <b>importRawDataRemote()</b>
+<br>
+<br>...and even a file from a remote FTP server using the REST command, using <b>importRawDataRemoteIncrement()</b>
+<br>This command retrieves only the latest data, and appends to the data already downloaded.
+<br>This keeps the data bandwidth as low as possible.
+<br>
+<br>MartynKinder example data files:
+<br>LOCAL: workspace/rsp/localdatabackup0.spd
+<br>REMOTE: localdatabackup.spd
+<br>
+<br>JohnCook example data files:
+<br>LOCAL: workspace/johncook/20050531.dat
+<br>REMOTE: n/a
+<br>
+<br>You can display any files you have previously downloaded by providing a path to the file,
+<br>based on 'dist' as the working directory.
+<br>
+<br>It is possible to use other data formats by changing the DataTranslator setup.
+<br>Refer to Starbase customer support for assistance!
+<br>
+<br>
+<br><b>RadioSkyPipe Configuration</b>
+<br>
+<br>Starbase can *only* recognise RSP format files when they are configured as:
+<br>
+<br>Double=false        (i.e. uses Integers)
+<br>UT=true             (Universal Time)
+<br>Timestamped=true    (Each data sample has a date and time)
+<br>
+<br>The other items of RSP configuration (LatLong, titles etc.) will appear as chart labels
+<br>or in the configuration tab.
+<br>
+<br>You may also wish to add an item of metadata so that the control panel will show the
+<br>frequency of operation automatically.
+<br>Just add the following line to the RSP metadata (changing the frequency appropriately):
+<br>
+<br><b>Observation.Channel.Value.Virtual.0=21.4kHz</b>
+<br>
+
+<B><P><FONT SIZE=4>RAG VLF Receiver</FONT></P>
+    <FONT SIZE=2><P>Specification:</P>
+        <P>Tuning range 12kHz..35kHz.</P></FONT></B>
+
+<P>Supply 15v DC at 35mA.</P>
+<P>Output 0..5v or 0..2.5v .</P>
+<P>Time constant 1 second.</P>
+<B><P>Aerial tuning:</P>
+</B><P>The aerial is tuned with an audio signal generator. Connect the signal generator through a 100k resistor to the aerial, and set it to the required frequency. Monitor the voltage across the aerial with an oscilloscope or AC voltmeter, and adjust the tuning capacitor for maximum voltage. If a maximum cannot be found, then add or remove padding capacitance according to which way the tuning capacitor has stopped. Tuning is complete once the maximum is found within the range of the variable capacitor.&nbsp;</P>
+<B><P>Receiver tuning:</P>
+</B><P>The receiver is best tuned with the aid of an audio signal generator. Adjust the signal generator to the required frequency, and then connect it to the receiver input; no more than a few mV is needed. Connect an oscilloscope or AC voltmeter to pin 14 of IC1. Start by reducing the Q (turn the control anti-clockwise), and then adjust the frequency control to give maximum signal output. With the frequency roughly set, remove the signal generator and turn it off (to avoid interference). Connect the pre-tuned aerial to the receiver input, and again monitor pin 14 of IC1.</P>
+<P>A signal should be seen, which can be maximised initially by rotating the aerial towards the transmitter. Small adjustments can be made to the aerial tuning to peak the signal. Returning to the receiver, adjust the frequency controls to the peak the signal before starting to increase the Q. Increase the Q slowly, checking that the frequency is still peaked. If the receiver suddenly bursts into oscillation, then reduce the Q. Make fine adjustments to the aerial and frequency once the Q has been set.</P>
+<P>The signal strength will depend on the time of day/night as well as D-layer conditions. With the DC gain set to x1, connect a DC voltmeter to the receiver output. Note that the output has a long time constant, and so several seconds will be required for the voltage to settle after changes are made. The RF gain can be increased, and if necessary the DC gain set to x10 to provide a suitable output in the range 0..5v. The signal must now be monitored for a period to determine the final gain settings required. The day-time output voltage should be within the 0..5v range at the expense of the night-time output, which may well go off-scale.</P>
+<P>&nbsp;Monitoring over a period of days should allow any final adjustments to be made. Beware that signals may go off for periods of time, and may indeed not be present when initial tuning is attempted! Try different times of day / night if the signal cannot be found first time. If subsequent attempts to find a signal fail, then try for an alternative signal</P>
+<B><P>Results:</P>
+</B><P>Flares are classified on a rather curious scale, running A, B, C, M and X. It is logarithmic, and is calibrated as follows:</P>
+<P>Class Energy</P>
+<P>X 10<SUP>-4</SUP>..10<SUP>-3</SUP>W/m<SUP>2</SUP> (measured at 0.1..0.8nm wavelength)</P>
+<P>M 10<SUP>-5</SUP>..10<SUP>-4</SUP>W/m<SUP>2</SUP>&nbsp;</P>
+<P>C 10<SUP>-6</SUP>..10<SUP>-5</SUP>W/m<SUP>2</SUP></P>
+<P>B 10<SUP>-7</SUP>..10<SUP>-6</SUP>W/m<SUP>2</SUP></P>
+<P>A 10<SUP>-8</SUP>..10<SUP>-7</SUP>W/m<SUP>2</SUP></P>
+<P>As it is logarithmic, each category can be subdivided into 10, with a resolution of 0.1, leading to a flare being quoted as C5.6 or M1.2. The background level from a 'quiet' sun is often within A or B-class, with most flares being of B or C-class. More energetic active regions produce M or X-class flares. At the extreme, a flare can exceed X9.9, and produce X17 or X20 flares. Flares of X-class pose a threat to orbiting satellites, as well as human space travellers. C-class flares are easily detected as sudden ionospheric disturbances, while some larger B-class events can also be recorded. X-class events produce spectacular SIDs, as the ionosphere slowly recovers from the radiation impact.</P>
+<P>&nbsp;When recording SIDs, start, peak and end times are required. 'Start' is the time at which the event is first recorded by the receiver. 'Peak' is the time at which the maximum or minimum signal strength is recorded, and 'End' is the time at which the signal strength returns to its previous diurnal trend. Start and peak times are easily read in most cases, while the end time often requires a little guesswork to identify.</P>
+<P>&nbsp;&nbsp;The amplitude of the disturbance usually correlates with the flare class, but will depend on the state of the ionosphere at the time. Since it is an indirect observation of solar activity, the amplitude is not recorded in VLF reports. The length (duration) of the SID recorded does not always correlate with flare class, but can be recorded as the 'importance' of the event on the Earth. This has traditionally been recorded as follows:</P>
+<P>Duration Importance</P>
+<P>&nbsp;&lt;18min 1-</P>
+<P>19..25min 1</P>
+<P>26..32min 1+</P>
+<P>33..45min 2</P>
+<P>46..85min 2+</P>
+<P>86..125min 3</P>
+<P>&gt;126min 3+</P>
+<P>&nbsp;</P>
+<P>The shape of recorded flares will vary from one observer to another, but a little experience while the sun is active will allow most events to be isolated from other interference. The text-book SID has a sharp rise to a definite peak, followed by a longer recovery period. In practise, many SIDs do not look that simple, and may have multiple peaks. SIDs may also appear inverted, with the peak at a lower signal strength followed by a rising recovery period.. This variation in shape is due to a combination of the path from transmitter to receiver, and the varying state of the ionosphere. The sun often produces multiple flares over a short period, leading to superimposed SIDs that can create confusion.</P>
+<P>&nbsp;The following illustrations show some typical events:</P><IMG SRC="20050310_SID.jpg" ALIGN="LEFT" HSPACE=18 WIDTH=467 HEIGHT=355>
+<P>&nbsp;</P>
+<P>This is typical of an ordinary SID. Measurement is fairly easy. It is inverted relative to 'normal', but it is clearly the correct shape.</P>
+<P>It would be recorded thus:</P>
+<P>2005 March 10<SUP>th</SUP>. Start 11:39 Peak 11:42 End 12:42 Importance 2+</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P><IMG SRC="20050915_SID.jpg" ALIGN="LEFT" HSPACE=18 WIDTH=444 HEIGHT=268>
+<P>This is typical of a much more energetic solar flare, producing a SID that has a double peaked structure. The start and end times can be measured as usual; the peak time should be measured at the maximum point, in this case at 08:37UT.</P>
+<P>It would be recorded thus:</P>
+<P>2005 September 15<SUP>th</SUP>. Start 08:33 Peak 08:37 End 10:33 Importance 3</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P><IMG SRC="20050907_SID.jpg" ALIGN="LEFT" HSPACE=18 WIDTH=402 HEIGHT=282>
+<P>&nbsp;</P>
+<P>This is much more difficult, as the flare occurred during the sunset dip in signal strength. The result is a combination of the two effects. The start is easily measured, and the peak is also clear (as above). The end time cannot be measured, and would be left blank.</P>
+<P>It would be recorded thus:</P>
+<P>2005 September 7<SUP>th</SUP>. Start 17:23 Peak 17:38 End ? Importance -</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P><IMG SRC="20050913_SID.jpg" ALIGN="LEFT" HSPACE=18 WIDTH=435 HEIGHT=276>
+<P>&nbsp;</P>
+<P>This recording shows 2 flares in rapid succession, such that the SIDs overlap. An end time for the first event cannot be measured.</P>
+<P>They would be recorded thus:</P>
+<P>2005 September 13<SUP>th</SUP>. Start 10:45 Peak 10:55 End ? Importance -</P>
+<P>2005 September 13<SUP>th</SUP>. Start 11:18 Peak 11:32 End 12:05 Importance 2+</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Note that all times are recorded in Universal Time (UT = GMT), to the nearest minute where possible.</P>
+<B><P>&nbsp;Frequencies:</P>
+</B><P>18.3kHz French navy Rosnay, France.</P>
+<P>19.6kHz Royal navy, Anthorn UK.</P>
+<P>20.27kHz NATO / Italian navy, Isola di Tavolara, Italy.</P>
+<P>20.9kHz French navy St. Assise, France.</P>
+<P>22.1kHz Royal navy Skelton, UK.</P>
+<P>22.6kHz French navy, France.</P>
+<P>23.4kHz NATO / Bundesmarine Burlage Germany.</P>
+<P>Note that not all transmitters are active all of the time. Some take breaks during the day, while others may be off for periods of weeks or months at a time. If one signal cannot be found, then try for another, or try again at a different time. Also remember that the strength of the signal will depend on the time of day as well as ionospheric conditions. Other frequencies may also be in use from time to time. List correct 2009 February.</P>
+<P>&nbsp;</P>
+<B><P>References:</P></B>
+<P><A HREF="http://www.sec.noaa.gov/today.html">www.sec.noaa.gov/today.html</A> GOES satellite data &amp; space weather.</P>
+<P><A HREF="http://www.iaragroup.org/sole/index.htm">www.iaragroup.org/sole/index.htm</A> Italian VLF group.</P>
+<br><a href="http://sidstation.lionelloudet.homedns.org">http://sidstation.lionelloudet.homedns.org</a>
+<br><a href="http://sidstation.lionelloudet.homedns.org/stations-list-en.xhtml">http://sidstation.lionelloudet.homedns.org/stations-list-en.xhtml</a>
+
+<P>Observing the sun, Peter O. Taylor, Cambridge 1991.</P>
+</body>
+</html>

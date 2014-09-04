@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="plugins.xmlbeans.model.fc.lmn.org"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="plugins.xmlbeans.model.fc.lmn.org"
+           xmlns:roles="roles.xmlbeans.model.fc.lmn.org"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="roles.xmlbeans.model.fc.lmn.org"
+               schemaLocation="roles.xsd"/>
+
+    <xs:element name="Plugins">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0"
+                            maxOccurs="unbounded"
+                            name="Plugin"
+                            type="Plugin"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Plugin">
+        <xs:sequence>
+
+            <xs:element name="Name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="RoleName"
+                        maxOccurs="6"
+                        type="roles:RoleName"/>
+
+            <xs:element name="Editable"
+                        type="xs:boolean"/>
+
+            <xs:element name="Active"
+                        type="xs:boolean"/>
+
+            <xs:element name="LoadAtStart"
+                        type="xs:boolean"/>
+
+            <xs:element name="EditorClassname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="IconFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="HelpFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="AboutFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="LicenceFilename">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="0"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="StartDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="StartTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+            <xs:element name="StopDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="StopTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+            <xs:element name="CreatedDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="CreatedTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+            <xs:element name="ModifiedDate"
+                        type="xs:date"
+                        nillable="true"/>
+
+            <xs:element name="ModifiedTime"
+                        type="xs:time"
+                        nillable="true"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

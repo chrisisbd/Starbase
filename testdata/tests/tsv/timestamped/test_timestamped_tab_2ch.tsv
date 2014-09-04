@@ -1,0 +1,80 @@
+# Test CSV data import
+   # Key	 Value	 DataType	 Units	 Description
+# Keys	 DataTypes and Units must appear in their respective Starbase Dictionaries
+
+Observatory.Name	NRAO	String	Dimensionless	The Observatory name
+Observatory.Longitude	12:34:56	DegMinSec	Dimensionless
+   Observatory.Latitude	   02:01:23  	  DegMinSec  	Dimensionless
+Observatory.TimeZone	GMT+01:00	String	Dimensionless
+Observatory.Country	GB	String	Dimensionless
+Observatory.Language	en	String	Dimensionless
+Observation.Title	Test Timestamped Tab Separated Values	String	Dimensionless	The title for the Chart
+Observation.Axis.Label.X	X increment	String	Dimensionless	The X axis
+Observation.Axis.Label.Y.0	Y value	String	Dimensionless	The Y axis
+Observation.Channel.Count	2	DecimalInteger	Dimensionless	The number of data channels
+Observation.Channel.Name.0	Channel A	String	Dimensionless	The name of Channel 0
+Observation.Channel.Name.Virtual.0	The VLF receiver frequency	String	Dimensionless	The Channel 0 data for the control panel tooltip
+Observation.Channel.Value.Virtual.0	22kHz	String	Dimensionless	The Channel 0 data for the control panel display
+Observation.Channel.DataType.0	DecimalFloat	String	Dimensionless	The DataType of Channel 0
+Observation.Channel.Units.0	mV	String	Dimensionless	The Units of Channel 0
+Observation.Channel.Description.0	The VLF receiver output	String	Dimensionless	The description of Channel 0
+# Check Metadata Key not in Dictionary
+Observation.Channel.Descrxxxiption.0	The VLF receiver output	String	Dimensionless	The description of Channel 0
+Observation.Channel.Name.1	Channel B	String	Dimensionless	The name of Channel 1
+Observation.Channel.Name.Virtual.1	The magnetometer range	String	Dimensionless	The Channel 1 data for the control panel tooltip
+Observation.Channel.Value.Virtual.1	100nT	String	Dimensionless	The Channel 1 data for the control panel display
+# Check DataType not in Dictionary
+Observation.Channel.Name.1	Channel B	Strxxxing	Dimensionless	The name of Channel 1
+Observation.Channel.DataType.1	DecimalFloat	String	Dimensionless	The DataType of Channel 1
+Observation.Channel.Units.1	mV	String	Dimensionless	The Units of Channel 1
+# Check Units not in Dictionary
+Observation.Channel.Units.1	mV	String	Dimenxxxsionless	The Units of Channel 1
+Observation.Channel.Description.1	The Magnetometer output	String	Dimensionless	The description of Channel 1
+# Check comment inside Metadata
+Observer.Name	Eyepiece	String	Dimensionless	The Observer's name
+2008-12-23	00:00:00	0	36
+2008-12-23	00:00:01	1	35
+2008-12-23	00:00:02	2	34
+2008-12-23	00:00:03	3	33
+2008-12-23	00:00:04	4	32
+2008-12-23	00:00:05	5	31
+# Check faulty Date
+2008-12-2xx3	00:00:06	6	30
+2008-12-23	00:00:07	7	29
+2008-12-23	00:00:08	8	28
+2008-12-23	00:00:09	9	27
+# Check faulty Time
+2008-12-23	00:0xx0:09	9	27
+2008-12-23	00:00:10	10	26
+2008-12-23	00:00:11	11	25
+2008-12-23	00:00:12	12	24
+2008-12-23	00:00:13	13	23
+2008-12-23	00:00:14	14	22
+# Check missing Data
+2008-12-23	00:00:14
+2008-12-23	00:00:15	15	21
+2008-12-23	00:00:16	16	20
+2008-12-23	00:00:17	17	19
+2008-12-23	00:00:18	18	18
+2008-12-23	00:00:19	19	17
+2008-12-23	00:00:20	20	16
+2008-12-23	00:00:21	21	15
+# Check too few Data columns
+2008-12-23	00:00:22	22
+# Check too many Data columns
+2008-12-23	00:00:23	23	13	19
+2008-12-23	00:00:24	24	12
+# Check faulty Data
+2008-12-23	00:00:25	2a5	11
+2008-12-23	00:00:26	26	10
+2008-12-23	00:00:27	27	9
+2008-12-23	00:00:28	28	8
+2008-12-23	00:00:29	29	7
+2008-12-23	00:00:30	30	6
+2008-12-23	00:00:31	31	5
+2008-12-23	00:00:32	32	4
+2008-12-23	00:00:33	33	3
+2008-12-23	00:00:34	34	2
+2008-12-23	00:00:35	35	1
+2008-12-23	00:00:36	36	0
+# The end

@@ -1,0 +1,12 @@
+<!-- included file!! -->
+
+<Instrument>
+    <Identifier>SelectorHeader</Identifier>
+    <Name>Observatory</Name>
+    <Description>The Starbase Observatory</Description>
+    <InstrumentClassname>org.lmn.fc.frameworks.starbase.plugins.observatory.ui.instruments.impl.separator.Separator</InstrumentClassname>
+    <Controllable>false</Controllable>
+    <SelectorPanelHeight>1</SelectorPanelHeight>
+    <ResourceKey>Header</ResourceKey>
+</Instrument>
+

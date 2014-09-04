@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+
+<POI xmlns="poi.xmlbeans.model.fc.lmn.org">
+    <!-- Receiver Icon is poi-rx.png -->
+    <!-- A plain cross icon poi.png -->
+
+    <!-- PointOfInterest information relevant to the Instrument -->
+    <!-- You may add others below -->
+
+    <!-- Latitude/Longitude: 52°39'13"N, 01°07'57"W; altitude: 185' -->
+    <PointOfInterest>
+        <Name>National Space Centre</Name>
+        <Description>National Space Centre, Leicester UK</Description>
+        <Longitude>+001:07:57</Longitude>
+        <Latitude>+52:39:13</Latitude>
+        <HASL>56.4</HASL>
+        <IconFilename>poi-rx.png</IconFilename>
+    </PointOfInterest>
+
+</POI>

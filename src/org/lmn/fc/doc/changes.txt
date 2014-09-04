@@ -1,0 +1,39 @@
+exportRegionalMap on Mag. and generic
+
+Confirm dialog on create new map
+
+Corrected Jetty URL in Webserver help
+
+Populated login user and password with defaults
+
+UI rework, new icons etc. for separators
+See http://icons.mysitemyway.com/category/red-white-pearls-icons/ for icons
+
+Command Log entries - status promoted, response entries now together
+
+Added IzPack integration to Ant script
+
+Changed importPlugins() to allow zero plugins selected in installer
+
+Removed Exports folder from Frameworks.xsd
+
+Removed redundant SQL entries in Frameworks.xsd
+
+Removed Core.getSerialNumbers()
+
+Added Core.getVersion()
+
+Removed Magnetometer Help tab
+Added Magnetometer manual as PDF
+
+Fixed XY --> AB anomaly in Mag. control panel
+Changed header text - groups
+
+TODO
+
+COM ports in config tabs
+memory problem in staribus download getdata
+save faulty blocks
+getversion fails
+
+Capture ControlPanel image on ctrl-shift-alt-rightclick in AbstractObservatoryInstrument

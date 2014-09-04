@@ -1,0 +1,8 @@
+http://www.ruf.rice.edu/~ben/gmt.html
+
+http://www.ai.sri.com/geotransform/samples.html
+
+http://rimmer.ngdc.noaa.gov/
+
+ * Use NO COMPRESSION, MAPGEN FORMAT, GMT PLOT, WORLD VECTOR SHORELINE
+ * WEST is NEGATIVE.

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="PluginGenerator"
+         default="do_single_plugin">
+
+    <taskdef name="plugin-environment"
+             classname="org.lmn.fc.common.ant.DerivePluginEnvironment"
+             classpath="${builderclasspath2}"/>
+
+    <typedef
+        name="observatory-plugin"
+        classname="org.lmn.fc.common.ant.ObservatoryPluginCondition"
+        classpath="${builderclasspath2}"/>
+
+    <!-- ....................................................................................... -->
+    <!-- Process the plugin, and then any specific processing for the Observatory -->
+
+    <target name="do_single_plugin"
+            if="is.observatory.plugin"
+            depends="process_plugin"
+            description="Handle Observatory special case">
+
+        <!-- Run the helper class to find out various paths etc. -->
+        <plugin-environment basedir="${basedir}"/>
+
+        <!-- The helper class fills in the following properties -->
+        <echo message="project-root=${project-root}"/>
+        <echo message="plugin-path=${plugin-path}"/>
+
+        <!-- Copy only the Instrument and Properties XML configuration files -->
+        <copy todir="${plugin.dist.dir}/imports">
+            <fileset dir="${project-root}/src/${plugin-path}/imports">
+                <include name="*-instrument.xml"/>
+                <include name="*-metadata.xml"/>
+                <include name="*-poi.xml"/>
+                <include name="*-properties.xml"/>
+                <exclude name="*.txt"/>
+            </fileset>
+        </copy>
+
+        <!-- Make individual Instrument Jars -->
+        <antcall target="make-all-instruments">
+        </antcall>
+
+    </target>
+
+    <!-- Runs all do_single_instrument tasks in all Ant sub-modules -->
+    <target name="make-all-instruments"
+            description="Make all Instrument Jars">
+
+        <antcall target="-make-instrument">
+            <param name="target"
+                   value="do_single_instrument"/>
+        </antcall>
+
+    </target>
+
+    <!-- Internal target for executing tasks in Observatory Instruments folder -->
+    <target name="-make-instrument"
+            description="Internal target for executing tasks in Observatory Instruments folder">
+
+        <!-- Run the helper class to find out various paths etc. -->
+        <plugin-environment basedir="${basedir}"/>
+
+        <!-- The helper class fills in the following properties -->
+        <echo message="-make-instrument project-root=${project-root}"/>
+        <echo message="-make-instrument plugin-path=${plugin-path}"/>
+
+        <subant target="${target}"
+                inheritall="false">
+            <fileset dir="${project-root}/src/${plugin-path}/ui/instruments/impl">
+                <include name="**/build-instrument.xml"/>
+                <exclude name="build-single-instrument.xml"/>
+            </fileset>
+        </subant>
+
+    </target>
+
+    <!-- ....................................................................................... -->
+    <!-- Process a single plugin -->
+
+    <target name="process_plugin"
+            description="Process a single plugin">
+
+        <echo message="Building a plugin from source in ${basedir}"/>
+
+        <!-- Run the helper class to find out various paths etc. -->
+        <plugin-environment basedir="${basedir}"/>
+
+        <!-- The helper class fills in the following properties -->
+        <echo message="project-root=${project-root}"/>
+        <echo message="plugin-basedir=${plugin-basedir}"/>
+        <echo message="plugin-path=${plugin-path}"/>
+        <echo message="plugin-package=${plugin-package}"/>
+        <echo message="plugin-classname=${plugin-classname}"/>
+        <echo message="plugin-folder=${plugin-folder}"/>
+
+        <!-- Timestamp every build -->
+        <tstamp>
+          <format property="TODAY" pattern="yyyy-MM-dd HH:mm:ss" />
+        </tstamp>
+
+        <!-- Create a dist folder for the plugin -->
+        <property name="plugin.dist.dir"
+                  location="${project-root}/dist/plugins/${plugin-folder}"/>
+
+        <mkdir dir="${plugin.dist.dir}"/>
+        <mkdir dir="${plugin.dist.dir}/imports"/>
+        <mkdir dir="${plugin.dist.dir}/libraries"/>
+        <mkdir dir="${plugin.dist.dir}/licences"/>
+        <mkdir dir="${plugin.dist.dir}/platform"/>
+        <mkdir dir="${plugin.dist.dir}/plugins"/>
+
+        <!-- Allow access to the version.number and build.number -->
+        <property file="${project-root}/build.properties"/>
+
+        <!-- Copy the XML configuration files -->
+        <copy todir="${plugin.dist.dir}/imports">
+            <fileset dir="${project-root}/src/${plugin-path}/imports/"></fileset>
+        </copy>
+
+        <!-- Leave all the library jars accessible -->
+        <copy todir="${plugin.dist.dir}/libraries">
+            <fileset dir="${project-root}/src/${plugin-path}/libraries/"></fileset>
+        </copy>
+
+        <!-- Keep all licences in their original form -->
+        <copy todir="${plugin.dist.dir}/licences">
+            <fileset dir="${project-root}/src/${plugin-path}/licences/"></fileset>
+        </copy>
+
+        <!-- Copy all platform dependent items -->
+        <copy todir="${plugin.dist.dir}/platform">
+            <fileset dir="${project-root}/src/${plugin-path}/platform/"></fileset>
+        </copy>
+
+        <!-- Are we dealing with the Starbase Observatory Plugin? -->
+        <condition property="is.observatory.plugin">
+           <observatory-plugin value="${plugin-path}"/>
+        </condition>
+
+        <property name="plugin.tmp.dir"
+                  location="${project-root}/plugin-tmp"/>
+
+        <!-- Plugins -->
+        <!-- See: http://supportweb.cs.bham.ac.uk/docs/tutorials/docsystem/build/tutorials/ant/ant.html#Ant-Advanced-Topics-Flow-Of-Control -->
+        <antcall target="jar_observatory" />
+        <antcall target="jar_plugin" />
+
+        <!-- Make the Javadoc for the plugin -->
+        <!--<mkdir dir="${plugin.tmp.dir}"/>-->
+
+        <!--<javadoc packagenames="${plugin-package}.*"-->
+                 <!--sourcepath="${project-root}/src"-->
+                 <!--defaultexcludes="yes"-->
+                 <!--destdir="${plugin.tmp.dir}/javadoc"-->
+                 <!--author="true"-->
+                 <!--version="true"-->
+                 <!--use="true"-->
+                 <!--windowtitle="${plugin-classname}"-->
+                 <!--additionalparam="-breakiterator">-->
+     <!-- todo      <packageset dir="src"
+                        defaultexcludes="yes">
+                <include name="${plugin-package}/**"/>
+                <exclude name="${plugin-package}/plugins/**"/>
+            </packageset>  -->
+        <!--</javadoc>-->
+
+        <!-- Create the Plugin Javadoc Jar from the data in plugin.tmp.dir -->
+        <!--<jar destfile="${plugin.dist.dir}/${plugin-classname}-javadoc.jar"-->
+             <!--basedir="${plugin.tmp.dir}">-->
+            <!--<exclude name="${plugin-path}/plugins/**"/>-->
+            <!--<manifest>-->
+                <!--<attribute name="Built-By" value="${plugin-classname}"/>-->
+                <!--<attribute name="Version-Number" value="${version.number}"/>-->
+                <!--<attribute name="Build-Number" value="${build.number}"/>-->
+                <!--<attribute name="Build-Status" value="${build.status}"/>-->
+                <!--<attribute name="Build-Date" value="${TODAY}"/>-->
+            <!--</manifest>-->
+        <!--</jar>-->
+
+        <!-- Tidy up -->
+        <!--<delete dir="${plugin.tmp.dir}"/>-->
+
+    </target>
+
+
+    <target name="jar_observatory"
+            if="is.observatory.plugin"
+            description="Jar the Observatory plugin">
+
+        <echo message="Jar the Observatory, excluding ${project-root}/classes/${plugin-path}/ui/instruments/impl/**" />
+
+        <mkdir dir="${plugin.tmp.dir}"/>
+        <mkdir dir="${plugin.tmp.dir}/${plugin-path}"/>
+
+        <!-- Copy the Ephemerides and Filter jars -->
+        <!-- ToDO jars -->
+
+        <!-- Obtain all plugin classes except child plugins -->
+        <!-- We must exclude ALL of the Instrument code, since that ends up in separate JARs -->
+        <copy todir="${plugin.tmp.dir}/${plugin-path}">
+            <fileset dir="${project-root}/classes/${plugin-path}">
+                <exclude name="doc/**"/>
+                <exclude name="imports/**"/>
+                <exclude name="plugins/**"/>
+                <exclude name="ui/instruments/impl/**"/>
+                <exclude name="build*.xml"/>
+            </fileset>
+        </copy>
+
+        <!-- Make the plugin Jar from everything in the tmp folder-->
+        <jar destfile="${plugin.dist.dir}/${plugin-classname}-plugin.jar"
+             basedir="${plugin.tmp.dir}">
+            <manifest>
+                <attribute name="Built-By" value="${plugin-classname}"/>
+                <attribute name="Main-Class" value="${plugin-package}.${plugin-classname}"/>
+                <attribute name="Version-Number" value="${version.number}"/>
+                <attribute name="Build-Number" value="${build.number}"/>
+                <attribute name="Build-Status" value="${build.status}"/>
+                <attribute name="Build-Date" value="${TODAY}"/>
+            </manifest>
+        </jar>
+
+        <delete dir="${plugin.tmp.dir}"/>
+    </target>
+
+    <target name="jar_plugin"
+            unless="is.observatory.plugin"
+            description="Jar a single plugin">
+
+        <echo message="Jar a normal Plugin" />
+
+        <mkdir dir="${plugin.tmp.dir}"/>
+        <mkdir dir="${plugin.tmp.dir}/${plugin-path}"/>
+
+        <!-- Obtain all plugin classes except child plugins -->
+        <copy todir="${plugin.tmp.dir}/${plugin-path}">
+            <fileset dir="${project-root}/classes/${plugin-path}">
+                <exclude name="doc/**"/>
+                <exclude name="imports/**"/>
+                <exclude name="plugins/**"/>
+                <exclude name="build*.xml"/>
+            </fileset>
+        </copy>
+
+        <!-- Make the plugin Jar from everything in the tmp folder-->
+        <jar destfile="${plugin.dist.dir}/${plugin-classname}-plugin.jar"
+             basedir="${plugin.tmp.dir}">
+            <manifest>
+                <attribute name="Built-By" value="${plugin-classname}"/>
+                <attribute name="Main-Class" value="${plugin-package}.${plugin-classname}"/>
+                <attribute name="Version-Number" value="${version.number}"/>
+                <attribute name="Build-Number" value="${build.number}"/>
+                <attribute name="Build-Status" value="${build.status}"/>
+                <attribute name="Build-Date" value="${TODAY}"/>
+            </manifest>
+        </jar>
+
+        <delete dir="${plugin.tmp.dir}"/>
+    </target>
+
+</project>

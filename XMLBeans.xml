@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="XMLBeans">
+
+    <!-- Module Starbase -->
+
+    <echo>basedir=${basedir}</echo>
+    <dirname property="module.framework.basedir"
+             file="${ant.file}"/>
+
+    <property name="framework.output.dir"
+              value="${module.framework.basedir}/classes"/>
+
+    <property name="framework.schemas.dir"
+              value="${module.framework.basedir}/src/org/lmn/fc/model/schemas"/>
+
+    <property name="framework.libraries.dir"
+              value="${module.framework.basedir}/libraries"/>
+
+    <property name="framework.src.dir"
+              value="${module.framework.basedir}/src"/>
+
+    <echo>basedir=${basedir}</echo>
+    <echo>framework.src.dir=${framework.src.dir}</echo>
+
+    <!-- XML Beans ........................................................... -->
+    <!-- The value of the property 'no.xmlbeans' is set to true if the timestamp of the
+         source file(s) is not more recent than the timestamp of the corresponding target file(s)-->
+    <target name="-check-xmlbean-required">
+        <uptodate property="no.xmlbeans"
+                  targetfile="${framework.src.dir}/org/lmn/fc/model/plugins/impl/FrameworkData.java">
+            <srcfiles dir="${framework.src.dir}/org/lmn/fc/model/schemas"
+                      includes="**/*.xsd"/>
+        </uptodate>
+    </target>
+
+    <!-- The task generates the source code that makes up the XMLBean type system specified by the schema files -->
+    <taskdef name="xmlbean"
+             classname="org.apache.xmlbeans.impl.tool.XMLBean"
+             classpath="${framework.libraries.dir}/xbean.jar:${framework.libraries.dir}/jsr173_1.0_api.jar"/>
+
+    <!--
+            unless="no.xmlbeans" -->
+
+            <!--depends="-check-xmlbean-required"-->
+    <target name="xml_beans"
+            description="Generate the XMLBeans from the schemas">
+
+        <echo>Build XML Beans</echo>
+
+        <!-- Remove old schema files -->
+        <echo>Delete ${framework.output.dir}</echo>
+        <delete dir="${framework.output.dir}"/>
+
+        <!-- This path must agree with the namespace in the XSD -->
+        <!-- e.g. [type].xmlbeans.model.fc.lmn.org -->
+        <echo>Delete ${framework.src.dir}/org/lmn/fc/model/xmlbeans</echo>
+        <delete dir="${framework.src.dir}/org/lmn/fc/model/xmlbeans"/>
+
+        <!-- WARNING! To generate setXXXList() etc. you MUST set the javasource=1.5 NOT to 1.6 ! -->
+        <!-- See http://dev2dev.bea.com/pub/a/2006/05/xmlbeans-2.html?page=3 OUT OF DATE? -->
+
+        <!-- srcgendir Set a location to generate JAVA files into -->
+        <xmlbean srcgendir="${framework.src.dir}"
+                 classgendir="${framework.output.dir}"
+                 javasource="1.5">
+            <fileset dir="${basedir}"
+                     includes="**/*.xsd"/>
+        </xmlbean>
+
+        <echo>XML Beans Complete!*************************************************</echo>
+
+    </target>
+
+</project>

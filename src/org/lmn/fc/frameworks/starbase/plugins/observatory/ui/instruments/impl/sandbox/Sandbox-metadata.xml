@@ -1,0 +1,342 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- See: http://utilitymill.com/utility/Regex_For_Range -->
+
+<InstrumentMetadata xmlns="metadata.xmlbeans.model.fc.lmn.org">
+
+    <!-- The Instrument Notes -->
+    <Metadata>
+        <Key>Instrument.Notes</Key>
+        <Value>Instrument Notes</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Sandbox Instrument Notes</Description>
+    </Metadata>
+
+    <!-- Test items for testing the metadata editor -->
+    <!-- Refer to the DataTypeDictionary for further details -->
+
+    <!-- Numerics -->
+    <Metadata>
+        <Key>Test.Numeric.UnsignedDecimalByte</Key>
+        <Value>123</Value>
+        <Regex>^0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>
+        <DataTypeName>UnsignedDecimalByte</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>An UnsignedDecimalByte for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Numeric.DecimalDigit</Key>
+        <Value>7</Value>
+        <Regex>^[0-9]$</Regex>
+        <DataTypeName>DecimalDigit</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A DecimalDigit for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Numeric.DecimalInteger</Key>
+        <Value>-1234567879</Value>
+        <Regex>^[+-]?\d{1,50}$</Regex>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A DecimalInteger for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Numeric.DecimalFloat</Key>
+        <Value>-1.2345</Value>
+        <Regex>^[+-]?\d{1,}(\.\d{1,})*$</Regex>
+        <DataTypeName>DecimalFloat</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A DecimalFloat for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Numeric.DecimalDouble</Key>
+        <Value>-1.2345E-07</Value>
+        <Regex>^[\x00-\x20]*[+-]?(NaN|Infinity|((((\p{Digit}+)(\.)?((\p{Digit}+)?)([eE][+-]?(\p{Digit}+))?)|(\.((\p{Digit}+))([eE][+-]?(\p{Digit}+))?)[fFdD]?)))[\x00-\x20]*$</Regex>
+        <DataTypeName>DecimalDouble</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A DecimalDouble for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Numeric.UnsignedHexByte</Key>
+        <Value>AB</Value>
+        <Regex>^[0-9A-Fa-f][0-9A-Fa-f]$</Regex>
+        <DataTypeName>UnsignedHexByte</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>An UnsignedHexByte for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Numeric.HexDigit</Key>
+        <Value>B</Value>
+        <Regex>^[0-9A-Fa-f]$</Regex>
+        <DataTypeName>HexDigit</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A HexDigit for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Numeric.HexInteger</Key>
+        <Value>ABCD</Value>
+        <Regex>^[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]$</Regex>
+        <DataTypeName>HexInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A HexInteger for testing the metadata editor</Description>
+    </Metadata>
+
+    <!-- Dates and Times -->
+    <Metadata>
+        <Key>Test.Clock.Date</Key>
+        <Value>2011-01-10</Value>
+        <Regex>^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$</Regex>
+        <DataTypeName>Date</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>An ISO 8601 Date for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Clock.Time</Key>
+        <Value>12:34:56</Value>
+        <Regex>^(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])$</Regex>
+        <DataTypeName>Time</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>An ISO 8601 Time for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Clock.TimeZone</Key>
+        <Value>GMT+01:00</Value>
+        <Regex>^GMT[+\-][0-9][0-9]:[0-9][0-9]$</Regex>
+        <DataTypeName>TimeZone</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A TimeZone for testing the metadata editor</Description>
+    </Metadata>
+
+    <!-- Angles -->
+    <Metadata>
+        <Key>Test.Coordinate.Angle</Key>
+        <Value>+359.99999999</Value>
+        <Regex>^([+\-]?((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|([12][0-9][0-9])|(3[0-5][0-9]))(\.([0-9]){1,10})*)?$</Regex>
+        <DataTypeName>Angle</DataTypeName>
+        <Units>Degrees</Units>
+        <Description>Test Angle from Metadata  -359.9999999999 to +000.0000000000 to +359.9999999999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Coordinate.Azimuth</Key>
+        <Value>012.34567890</Value>
+        <Regex>^(((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|([12][0-9][0-9])|(3[0-5][0-9]))(\.([0-9]){1,10})*)?$</Regex>
+        <DataTypeName>Azimuth</DataTypeName>
+        <Units>Degrees</Units>
+        <Description>Test Azimuth from Metadata  000.0000000000 to 359.9999999999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Coordinate.Elevation</Key>
+        <Value>01.23456789</Value>
+        <Regex>^((([0-9])|([0-8][0-9]))(\.([0-9]){1,10})*)?$</Regex>
+        <DataTypeName>Elevation</DataTypeName>
+        <Units>Degrees</Units>
+        <Description>Test Elevation from Metadata  00.0000000000 to 89.9999999999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Coordinate.Latitude</Key>
+        <Value>-01:23:45.6789</Value>
+        <Regex>^([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?$</Regex>
+        <DataTypeName>Latitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>Test Latitude from Metadata  -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Coordinate.GalacticLatitude</Key>
+        <Value>-01:23:45.6789</Value>
+        <Regex>^([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?$</Regex>
+        <DataTypeName>Latitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>Test Galactic Latitude from Metadata  -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Coordinate.Longitude</Key>
+        <Value>-012:23:45.6789</Value>
+        <Regex>^([+\-]((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|(1[0-7][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]){1,4})*)?$</Regex>
+        <DataTypeName>Longitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>Test Longitude from Metadata  -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Coordinate.GalacticLongitude</Key>
+        <Value>234:23:45.6789</Value>
+        <Regex>^((([0]{3})|(00[0-9])|(00*[1-9][0-9])|(([12][0-9]{2}|3[0-5][0-9]))):((0[0-9])|(0*[1-5][0-9])):((0[0-9])|(0*[1-5][0-9]))(\.([0-9]){1,4})*)$</Regex>
+        <DataTypeName>Longitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>Test Galactic Longitude from Metadata  000:00:00.0000 to 359:59:59.9999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Coordinate.Declination</Key>
+        <Value>-01:23:45.6789</Value>
+        <Regex>^([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?$</Regex>
+        <DataTypeName>Declination</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>Test Declination from Metadata  -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Coordinate.RightAscension</Key>
+        <Value>12:34:56.1234</Value>
+        <Regex>^((([0-9])|([0-1][0-9])|(2[0-3])):((0[0-9])|(0*[1-5][0-9])):((0[0-9])|(0*[1-5][0-9]))(\.([0-9]{1,4}))*)?</Regex>
+        <DataTypeName>RightAscension</DataTypeName>
+        <Units>HourMinSec</Units>
+        <Description>Test Right Ascension from Metadata  00:00:00.0000 to 23:59:59.9999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Ephemeris.RA</Key>
+        <Value>12:34:56.1234</Value>
+        <Regex>^((([0-9])|([0-1][0-9])|(2[0-3])):((0[0-9])|(0*[1-5][0-9])):((0[0-9])|(0*[1-5][0-9]))(\.([0-9]{1,4}))*)?</Regex>
+        <DataTypeName>RightAscension</DataTypeName>
+        <Units>HourMinSec</Units>
+        <Description>Test Ephemeris Right Ascension from Metadata  00:00:00.0000 to 23:59:59.9999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Ephemeris.Dec</Key>
+        <Value>-01:23:45.6789</Value>
+        <Regex>^([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?$</Regex>
+        <DataTypeName>Declination</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>Test Ephemeris Declination from Metadata  -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Ephemeris.CoordinateType</Key>
+        <Value>RaDec</Value>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Test Ephemeris CoordinateType from Metadata (AzEl, RaDec, Galactic)</Description>
+    </Metadata>
+
+    <!-- Metadata -->
+    <Metadata>
+        <Key>Test.Metadata.MetadataKey</Key>
+        <Value>Key.For.Testing</Value>
+        <DataTypeName>MetadataKey</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A Metadata Key for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Metadata.DataType</Key>
+        <Value>DecimalInteger</Value>
+        <DataTypeName>DataType</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A DataType for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Metadata.Units</Key>
+        <Value>Celsius</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Units for testing the metadata editor</Description>
+    </Metadata>
+
+    <!-- FileNames and PathNames -->
+    <Metadata>
+        <Key>Test.Miscellaneous.String</Key>
+        <Value>This is a test String</Value>
+        <Regex>^\p{ASCII}{0,1000}$</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A String for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.FileName.Relative</Key>
+        <Value>workspace/tests/csv/test_timestamped_comma_2ch.csv</Value>
+        <DataTypeName>FileName</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A relative FileName for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.FileName.Absolute</Key>
+        <Value>C:/Java/Starbase/dist/workspace/tests/csv/test_timestamped_comma_2ch.csv</Value>
+        <DataTypeName>FileName</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>An absolute FileName for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.PathName.Relative</Key>
+        <Value>workspace/tests/csv</Value>
+        <DataTypeName>PathName</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A relative PathName for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.PathName.Absolute</Key>
+        <Value>C:/Java/Starbase/dist/workspace/tests/tsv</Value>
+        <DataTypeName>PathName</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>An absolute PathName for testing the metadata editor</Description>
+    </Metadata>
+
+    <!-- Miscellaneous -->
+    <Metadata>
+        <Key>Test.Miscellaneous.URL</Key>
+        <Value>http://www.google.com</Value>
+        <Regex>^(((http|https|ftp)\://(([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})(/[a-zA-Z0-9_\-\.=\u0026\~\?]+)*)?)$</Regex>
+        <DataTypeName>URL</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A URL for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Miscellaneous.Boolean</Key>
+        <Value>true</Value>
+        <DataTypeName>Boolean</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A Boolean for testing the metadata editor (true or false)</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Miscellaneous.BitString</Key>
+        <Value>1010101010101010</Value>
+        <Regex>^(0|1)*$</Regex>
+        <DataTypeName>BitString</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A BitString for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Miscellaneous.Colour</Key>
+        <Value>r=123 g=023 b=197</Value>
+        <Regex>^r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</Regex>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A Colour for testing the metadata editor</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Test.Miscellaneous.Font</Key>
+        <Value>font=Monospaced style=italic size=14</Value>
+        <Regex>^font\s*=\s*.+\s+style\s*=\s*(plain|bold|italic|bolditalic)\s+size\s*=\s*[1-9][0-9]?$</Regex>
+        <DataTypeName>FontData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>A Font for testing the metadata editor</Description>
+    </Metadata>
+
+</InstrumentMetadata>
+

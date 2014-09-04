@@ -1,0 +1,368 @@
+<?xml version="1.0" standalone="yes"?>
+
+
+<CustomMetadata xmlns="metadata.xmlbeans.model.fc.lmn.org">
+
+    <!-- Refer to the Metadata Dictionary for a full list of the permitted Metadata Keys -->
+    <!-- and to the DataTypeDictionary for suitable DataTypes -->
+    <!-- The most useful Metadata categories are: Framework, Observatory, Observer, Observation, Instrument -->
+    <!-- See: http://utilitymill.com/utility/Regex_For_Range for calculating Regex for number ranges -->
+
+    <!-- Change these for each set of Observations -->
+
+    <Metadata>
+        <Key>Observation.Date</Key>
+        <Value>2012-11-01</Value>
+        <Regex>(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])</Regex>
+        <DataTypeName>Date</DataTypeName>
+        <Units>YearMonthDay</Units>
+        <Description>The Date of this set of observations</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Time</Key>
+        <Value>02:47:00</Value>
+        <Regex>(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])</Regex>
+        <DataTypeName>Time</DataTypeName>
+        <Units>HourMinSec</Units>
+        <Description>The Time of this set of observations</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Notes</Key>
+        <Value>Hydrogen Line Spectra</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observation Notes</Description>
+    </Metadata>
+
+    <!-- These are just placeholders for VLSR, they do not represent calculated data! -->
+
+    <Metadata>
+        <Key>Observation.VLSR.RightAscension</Key>
+        <Value>00:00:00</Value>
+        <Regex>^((([0-9])|([0-1][0-9])|(2[0-3])):((0[0-9])|(0*[1-5][0-9])):((0[0-9])|(0*[1-5][0-9]))(\.([0-9]{1,4}))*)?$</Regex>
+        <DataTypeName>RightAscension</DataTypeName>
+        <Units>HourMinSec</Units>
+        <Description>The Right Ascension of the VLSR calculation PLACEHOLDER</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.VLSR.Declination</Key>
+        <Value>+12:23:56.00</Value>
+        <Regex>^([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?$</Regex>
+        <DataTypeName>Declination</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>The Declination of the VLSR calculation PLACEHOLDER</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.VLSR.Value</Key>
+        <Value>00.00</Value>
+        <Regex>^[\x00-\x20]*[+-]?(NaN|Infinity|((((\p{Digit}+)(\.)?((\p{Digit}+)?)([eE][+-]?(\p{Digit}+))?)|(\.((\p{Digit}+))([eE][+-]?(\p{Digit}+))?)[fFdD]?)))[\x00-\x20]*$</Regex>
+        <DataTypeName>DecimalDouble</DataTypeName>
+        <Units>m s-1</Units>
+        <Description>The result of the VLSR calculation in metres per second PLACEHOLDER</Description>
+    </Metadata>
+
+    <!-- These VLSR Metadata are probably correct -->
+
+    <Metadata>
+        <Key>Observation.VLSR.Epoch</Key>
+        <Value>J2000.0</Value>
+        <Regex>^\p{ASCII}{0,1000}$</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Years</Units>
+        <Description>The Epoch of the VLSR calculation in Years</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.VLSR.ReferenceFrame</Key>
+        <Value>Geocentric</Value>
+        <Regex>^\p{ASCII}{0,1000}$</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Reference Frame of the VLSR calculation</Description>
+    </Metadata>
+
+    <!-- Antenna -->
+
+    <Metadata>
+        <Key>Instrument.Antenna.GalacticLatitude</Key>
+        <Value>+01:00:00</Value>
+        <Regex>([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?</Regex>
+        <DataTypeName>Latitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>The Galactic Latitude at which the antenna is pointing for these observations</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Instrument.Antenna.GalacticLongitude</Key>
+        <Value>001:00:00</Value>
+        <Regex>(((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|([12][0-9][0-9])|(3[0-5][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]){1,4})*)?</Regex>
+        <DataTypeName>Longitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>The Galactic Longitude at which the antenna is pointing for these observations</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Instrument.Antenna.Beamwidth</Key>
+        <Value>3.0</Value>
+        <DataTypeName>Angle</DataTypeName>
+        <Units>Degrees</Units>
+        <Description>The beamwidth of the antenna at the frequency of observation</Description>
+    </Metadata>
+
+    <!-- Receiver -->
+
+    <Metadata>
+        <Key>Instrument.Receiver.TimeConstant</Key>
+        <Value>0.1</Value>
+        <DataTypeName>DecimalFloat</DataTypeName>
+        <Units>Seconds</Units>
+        <Description>The time constant of the Receiver measurement system</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Instrument.Receiver.SamplePeriod</Key>
+        <Value>0.3</Value>
+        <DataTypeName>DecimalFloat</DataTypeName>
+        <Units>Seconds</Units>
+        <Description>The sampling period of the Receiver measurement system</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Instrument.Receiver.Bandwidth</Key>
+        <Value>12.5</Value>
+        <DataTypeName>DecimalFloat</DataTypeName>
+        <Units>kHz</Units>
+        <Description>The final IF bandwidth of the Receiver measurement system</Description>
+    </Metadata>
+
+    <!-- ...................................................................................... -->
+    <!-- These data should remain the same -->
+
+    <!-- Observatory -->
+
+    <Metadata>
+        <Key>Observatory.Name</Key>
+        <Value>Redenham Observatory</Value>
+        <Regex>([a-zA-Z0-9'.,\- ])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The name of the Observatory supplying data</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observatory.Description</Key>
+        <Value>Redenham is near Andover Hampshire, southern England</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The description of the Observatory</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observatory.Notes</Key>
+        <Value>Hydrogen Line Spectra</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observatory Notes</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observatory.Latitude</Key>
+        <Value>+51:14:53.1</Value>
+        <Regex>([+\-]((00)|([0-8][0-9])|([0-9])|([1-8][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]{1,4}))*)?</Regex>
+        <DataTypeName>Latitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>The Latitude of the Observatory (North is positive) -89:59:59.9999 to +00:00:00.0000 to +89:59:59.9999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observatory.Longitude</Key>
+        <Value>+001:34:15.6</Value>
+        <Regex>([+\-]((0)|([0-9])|(00)|(0[0-9][0-9])|(000)|(0[1-9])|([1-9][0-9])|(1[0-7][0-9])):((0[0-9])|([1-5][0-9])):((0[0-9])|([1-5][0-9]))(\.([0-9]){1,4})*)?</Regex>
+        <DataTypeName>Longitude</DataTypeName>
+        <Units>DegMinSec</Units>
+        <Description>The Longitude of the Observatory (West is positive) -179:59:59.9999 to +000:00:00.0000 to +179:59:59.9999</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observatory.MaidenheadLocator</Key>
+        <Value>IO91ff</Value>
+        <Regex>([A-R]{2}[0-9]{2}[a-x]{2})?</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The MaidenheadLocator of the Observatory</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observatory.TimeZone</Key>
+        <Value>GMT+00:00</Value>
+        <Regex>GMT[+/-]0*([0-9]|1[0-9]|2[0-3]):0*([0-9]|[1-5][0-9])</Regex>
+        <DataTypeName>TimeZone</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The TimeZone containing the Observatory GMT-23:59 to GMT+00:00 to GMT+23:59</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observatory.HASL</Key>
+        <Value>110.0</Value>
+        <Regex>-?(([0-9])([0-9])?([0-9])?([0-9])?(\.([0-9]))?)</Regex>
+        <DataTypeName>DecimalFloat</DataTypeName>
+        <Units>m</Units>
+        <Description>The Height of the Observatory above Sea Level in metres</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observatory.Country</Key>
+        <Value>GB</Value>
+        <Regex>[A-Z][A-Z]</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Country containing the Observatory (ISO 3166)</Description>
+    </Metadata>
+
+    <!-- Observer -->
+
+    <Metadata>
+        <Key>Observer.Name</Key>
+        <Value>Brian Coleman</Value>
+        <Regex>([a-zA-Z0-9'.,\- ])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The name of the Observer</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observer.Description</Key>
+        <Value>Brian Coleman G4NNS</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The description of the Observer</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observer.Contact.Email</Key>
+        <Value>brian-coleman@tiscali.co.uk</Value>
+        <Regex>(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>Brian Coleman email address</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observer.Contact.URL</Key>
+        <Value>http://myweb.tiscali.co.uk/g4nns/radast.html</Value>
+        <Regex>(((http|https|ftp)\://(([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})(/[a-zA-Z0-9_\-\.=\u0026\~\?]+)*)?)</Regex>
+        <DataTypeName>URL</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The URL of Redenham Observatory</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observer.Country</Key>
+        <Value>GB</Value>
+        <Regex>[A-Z][A-Z]</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Country containing the Observer (ISO 3166)</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observer.Notes</Key>
+        <Value>Hydrogen Line Spectra</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Observer Notes</Description>
+    </Metadata>
+
+    <!-- Channels -->
+
+    <Metadata>
+        <Key>Observation.Channel.Count</Key>
+        <Value>1</Value>
+        <Regex>([0-9]|1[0-6])</Regex>
+        <DataTypeName>DecimalInteger</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The number of data channels</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Name.0</Key>
+        <Value>Signal</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The name of Channel 0</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Description.0</Key>
+        <Value>The Receiver output signal</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The description of Channel 0</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.DataType.0</Key>
+        <Value>DecimalFloat</Value>
+        <DataTypeName>DataType</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 0</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Units.0</Key>
+        <Value>Volts</Value>
+        <DataTypeName>Units</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The DataType of Channel 0</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Channel.Colour.0</Key>
+        <Value>r=255 g=000 b=000</Value>
+        <Regex>r=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) g=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5]) b=0*([0-9]{1,2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])</Regex>
+        <DataTypeName>ColourData</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Colour of the Channel 0 graph</Description>
+    </Metadata>
+
+    <!-- Chart -->
+
+    <Metadata>
+        <Key>Observation.Title</Key>
+        <Value>Hydrogen Line Spectrum</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The title for the Chart</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Axis.Label.X</Key>
+        <Value>Frequency</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The X axis</Description>
+    </Metadata>
+
+    <Metadata>
+        <Key>Observation.Axis.Label.Y.0</Key>
+        <Value>Data Value</Value>
+        <Regex>([a-zA-Z0-9'.,/ \-])*</Regex>
+        <DataTypeName>String</DataTypeName>
+        <Units>Dimensionless</Units>
+        <Description>The Y axis</Description>
+    </Metadata>
+
+</CustomMetadata>
