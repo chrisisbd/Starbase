@@ -27,9 +27,10 @@ When first building in IntelliJ IDEA you will need to make a couple of correctio
     
         e.g. jdk.home.1.6=/home/mark/opt/jdk1.6.0_45
         
-    2.) If this is the first time you've used IntelliJ then you need to set you projects JDK; press F4 to open 
-        the Projects Settings.  Set the which JDK you are using under the 'Platform Settings' heading, SDKs.
-        Use the green plus sign to select your JDK installation. 
+    2.) If this is the first time you've used IntelliJ then you need to set you projects 
+        JDK; press F4 to open the Projects Settings.  Set the which JDK you are using under 
+        the 'Platform Settings' heading, SDKs. Use the green plus sign to select your JDK 
+        installation. 
         
       
 Files that must not be pushed to the master branches are as follows:
@@ -46,5 +47,5 @@ Files that must not be pushed to the master branches are as follows:
     
 Note regarding empty folders.
 
-    Empty folder are by default ignored if you wish an empty folder to be included in your commits and pushes you 
-    must add a .gitkeep file to the folder first. 
+    Empty folder are by default ignored if you wish an empty folder to be included in your 
+    commits and pushes you must add a .gitkeep file to the folder first. 
